@@ -1,0 +1,196 @@
+.transBlock {
+    padding: 30px 0 45px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 45px;
+}
+
+.transItem {
+    padding: 40px 35px 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+}
+
+.transItem img {
+    max-width: 70px;
+    max-height: 70px;
+}
+
+.transItemTop {
+    margin-bottom: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transTopText {
+    color: rgba(255, 255, 255, 0.775);
+    font-family: 'Nunito';
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.transTopRouble {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 5px;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 16;
+    align-items: start;
+    width: auto;
+}
+.transTopRouble img {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    transform:  none !important;
+}
+
+.transTopCircle {
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.transTopCircle img {
+    height: 30px;
+    width: 30px;
+}
+
+
+.transItemMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.transMidSign {
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.transMidSign img  {
+    width: 70px;
+    height: 70px;
+    opacity: .5;
+}
+
+.transItemMiddle div {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.transMidFirst {
+    font-size: 65px;
+    color: #fff;
+    font-family: 'Nunito';
+    line-height: 1;
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+.transMidSec {
+    font-size: 25px;
+    color: #fff;
+    font-family: 'Nunito';
+   
+    font-weight: 700;
+   opacity: .5;
+}
+
+.transItemBottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.transBtn {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid #fff;
+    padding: 10px 0;
+    color: #fff;
+    font-family: 'Nunito';
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 25px; 
+    transition: all .35s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+
+
+.dollarItem {
+    background-color: #6ee491;
+}
+
+.rubItem {
+    background-color: rgb(248, 125, 145);
+}
+
+.euroItem {
+    background-color: rgb(85, 207, 255);
+}
+
+.btcItem {
+    background-color: rgb(245, 150, 41);
+}
+
+.usdtItem {
+    background-color: #00b8bb;
+}
+
+.ethItem {
+    background-color: rgb(105, 130, 173);
+}
+
+
+
+.bchItem {
+    background-color: rgb(85, 255, 47);
+}
+
+.bchItem  img {
+    transform: rotate(-20deg);
+}
+
+.ltcItem {
+    background-color: rgb(124, 124, 124);
+}
+
+.dashItem {
+    background-color: rgb(0, 123, 255);
+}
+
+.xrpItem {
+    background-color: rgb(57, 73, 189);
+}
+
+.dageItem {
+    background-color: rgb(205, 198, 4);
+}
+
+.trxItem {
+    background-color: rgb(228, 29, 59);
+}

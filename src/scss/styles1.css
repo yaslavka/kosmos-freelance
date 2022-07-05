@@ -1,0 +1,1188 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+body::-webkit-scrollbar {
+    width: 10px;              
+}
+body::-webkit-scrollbar-track {
+background: #fff;     
+}
+body::-webkit-scrollbar-thumb {
+background-color: #4cc9f0;    
+border-radius: 20px;       
+
+}
+
+ html {
+    overflow-y: scroll !important;
+}
+
+:root {
+    --nunito: 'Nunito';
+}
+
+.body-overflow {
+    overflow-y: hidden !important;
+}
+
+.container {
+    max-width: 1730px !important;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.root-page-title  {
+    color: #99d98c;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    font-style: oblique;
+}
+
+.root-page-title-m {
+   
+    width: 100%;
+    text-align: center;
+    padding: 30px 0 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    font-style: oblique;
+}
+
+.referral-link {
+    display: flex;
+    justify-content: center;
+}
+
+.referral-link__btn {
+    width: 50px;
+    height: 50px;
+}
+
+.referral-link__url {
+    text-align: center;
+    font-size: 20px;
+    color:#545a63;
+}
+
+.leader {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    margin-bottom: 150px;
+    /* background-color: #cbf3f083; */
+      /* background: radial-gradient(circle, white 20px, #cbf3f0 10px), skyblue;
+    background-size: 25px 60px;
+    border-radius: 5px;
+    gap: 40px; */
+    background: 
+    /*shape*/
+    linear-gradient(115deg, transparent 89%, #99d98c 0) -128px -96px,
+    linear-gradient(-115deg, transparent 89%, #99d98c 0) 22px -96px,
+    linear-gradient(-115deg, #99d98c 11%, transparent 0) -128px 54px,
+    linear-gradient(115deg, #99d98c 11%, transparent 0) 22px 54px,
+    
+    /*shape*/
+    linear-gradient(-25deg, #99d98c 11%, transparent 0) -128px -22px,
+    linear-gradient(25deg, transparent 89%, #99d98c 0) -128px 128px,
+    linear-gradient(25deg, #99d98c 11%, transparent 0) 22px -22px,
+    linear-gradient(-25deg, transparent 89%, #99d98c 0) 22px 128px,
+    /*shape*/
+    linear-gradient(-25deg, #99d98c 11%, transparent 0) -53px -96px,
+    linear-gradient(25deg, transparent 89%, #99d98c 0) -53px 54px,
+    linear-gradient(25deg, #99d98c 11%, transparent 0) 97px -96px,
+    linear-gradient(-25deg, transparent 89%, #99d98c 0) 97px 54px,
+    /*shape*/
+    linear-gradient(115deg, transparent 89%, #99d98c  0) -53px -21px,
+    linear-gradient(-115deg, #99d98c 11%, transparent 0) -53px 129px,
+    linear-gradient(-115deg, transparent 89%, #99d98c 0) 97px -21px,
+    linear-gradient(115deg, #99d98c 11%, transparent 0) 97px 129px;
+    
+  background-color: #fff;
+  background-size: 150px 150px;
+  background-repeat: repeat;
+}
+
+.ava-leader {
+    background: 
+    /*shape*/
+    linear-gradient(115deg, transparent 89%, #4ccaf09d 0) -128px -96px,
+    linear-gradient(-115deg, transparent 89%, #4ccaf09d 0) 22px -96px,
+    linear-gradient(-115deg, #4ccaf09d 11%, transparent 0) -128px 54px,
+    linear-gradient(115deg, #4ccaf09d 11%, transparent 0) 22px 54px,
+    
+    /*shape*/
+    linear-gradient(-25deg, #4ccaf09d 11%, transparent 0) -128px -22px,
+    linear-gradient(25deg, transparent 89%, #4ccaf09d 0) -128px 128px,
+    linear-gradient(25deg, #4ccaf09d 11%, transparent 0) 22px -22px,
+    linear-gradient(-25deg, transparent 89%, #4ccaf09d 0) 22px 128px,
+    /*shape*/
+    linear-gradient(-25deg, #4ccaf09d 11%, transparent 0) -53px -96px,
+    linear-gradient(25deg, transparent 89%, #4ccaf09d 0) -53px 54px,
+    linear-gradient(25deg, #4ccaf09d 11%, transparent 0) 97px -96px,
+    linear-gradient(-25deg, transparent 89%, #4ccaf09d 0) 97px 54px,
+    /*shape*/
+    linear-gradient(115deg, transparent 89%, #4ccaf09d  0) -53px -21px,
+    linear-gradient(-115deg, #4ccaf09d 11%, transparent 0) -53px 129px,
+    linear-gradient(-115deg, transparent 89%, #4ccaf09d 0) 97px -21px,
+    linear-gradient(115deg, #4ccaf09d 11%, transparent 0) 97px 129px;
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    background-color: #fff;
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    margin-bottom: 150px;
+}
+
+.leader__card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.referral-link__btn span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+   transform: translateY(-7px);
+    background-image: url('./images/copy.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+}
+
+.startrek__title1  span{
+color: #545a63;
+}
+
+.startrek__title {
+    border: none;
+    box-shadow: 0 14px 24px hsl(0deg 6% 80% / 25%);
+    padding: 20px 0;
+}
+
+.countdown-timer {
+    border: none !important; 
+    border-radius: 10px;
+}
+
+.countdown-timer span {
+    font-family: var(--nunito);
+    color: #99d98c;
+}
+
+.leader__image img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%;
+    outline: 8px solid #fff;
+    border: 8px solid #99d98c;
+    transform: translateX(-50px) translateY(-75px);
+}
+
+
+.leader__image-mentor img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%;
+    outline: 8px solid #fff;
+    border: 8px solid #4ccaf09d;
+    transform: translateX(-50px) translateY(-75px);
+}
+
+.leader__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.list-info {
+    padding: 10px 0;
+}
+
+.card {
+    margin-right: 60px;
+    width: 100%;
+    min-height: 300px;
+    padding: 55px 50px;
+}
+
+
+.card__header-left {
+    text-align: center;
+}
+
+.card__title {
+    font-family: var(--nunito);
+    font-weight: 500;
+    font-size: 22px;
+    color: #8d99ae;
+}
+
+.list-info__group {
+    text-align: center;
+  
+}
+
+.form-control {
+    margin: 0 0 0 15px;
+}
+
+.list-info__value  {
+    font-size: 18px;
+    color:#8d99ae;
+}
+
+.list-info__value a {
+    font-size: 18px;
+    color:#8d99ae;
+}
+
+.list-info__label {
+    font-size: 18px;
+    color:#8d99ae;
+}
+
+.card__bot {
+    box-shadow: 0 14px 24px hsl(0deg 6% 80% / 25%);
+    border: none !important;
+    margin-bottom: 50px;
+    outline: none;
+    border-radius: 15px;
+    min-height: 250px;
+    padding: 20px 120px 35px;
+}
+
+
+.card__title-body {
+   
+    font-family: var(--nunito);
+    display: inline-block;
+    font-size: 20px;
+    color: #2ec4b6;
+    max-width: 650px;
+}
+
+.card__btn-strong {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    gap: 30px;
+    padding:  30px 0 0!important;
+    margin: 0 auto;
+}
+
+.card__strong {
+    font-family: var(--nunito);
+  
+    font-weight: 500;
+    color:#8d99ae;
+    font-size: 20px;
+   
+    display: inline-block;
+    width: 100%;
+}
+
+.card__title-info {
+    font-size: 30px;
+    text-align: start;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #8d99ae;
+    
+}
+
+.card__title-info span {
+  display: inline-block;
+  padding: 45px 0 0 120px;
+  color: #8d99ae !important;
+}
+
+
+
+.card__btn {
+    --c: #2ec4b6;
+    color: var(--c);
+    font-family: var(--nunito) !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px !important;  
+    border-radius: 10px;
+    width: 200px;
+    height: 55px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #2ec4b6 !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 0;
+    background-color: #fff !important;
+    border: 2px solid #2ec4b6 !important;
+
+}
+
+.card__btn span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+.card__btn:hover {
+    color: rgb(255, 255, 255) !important;
+    border: 2px solid #2ec4b6 !important;
+    border-color: #2ec4b6;
+}
+
+.card__btn:hover span {
+    transform: translateY(0) scale(2);
+}
+
+.card__btn span:nth-child(1) {
+    --n: 1;
+}
+
+.card__btn span:nth-child(2) {
+    --n: 2;
+}
+
+.card__btn span:nth-child(3) {
+    --n: 3;
+}
+
+.card__btn span:nth-child(4) {
+    --n: 4;
+}
+
+.video__block {
+    margin: 60px  0 120px;
+    width: 100%;
+    min-height: 700px;
+    padding: 70px 70px;
+    box-shadow: 0 14px 24px hsl(0deg 6% 80% / 25%);
+}
+
+.video__nas {
+    width: 100%;
+    height: auto;
+}
+
+.news__figure-image {
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+
+
+.news__figure-image img {
+    max-width: 100%;
+    min-height: 100%;
+    transition: all .4s ease-in-out
+}
+
+.news__figure-image:hover img {
+    filter: blur(3px) !important;
+}
+
+.news__figure-title {
+    text-align: center;
+    font-family: var(--nunito);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px 0;
+    border: 2px solid #6253e1;
+    color: #8e9aaf;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 40px 0 25px;
+} 
+.news__card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.news-title {
+    color: #6253e1;
+}
+.news__block {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-img-block {
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.news__figure-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.news__figure-image {
+    margin: 0 0 30px;
+}
+
+.btn-news {
+
+}
+
+.btn-news {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0 !important;
+    width: 200px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    margin: 20px !important;
+    height: 55px !important;
+    text-align:center !important;
+    border: none !important;
+    background-size: 300% 100% !important;
+    font-size: 18px !important;
+    font-family: var(--nunito) !important;
+    border-radius: 50px !important;
+    moz-transition: all .4s ease-in-out !important;
+    -o-transition: all .4s ease-in-out !important;
+    -webkit-transition: all .4s ease-in-out !important;
+    transition: all .4s ease-in-out !important;
+    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #852D91) !important;
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75) !important;
+    margin: 0 !important;
+}
+
+.btn-news:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-news:focus {
+    outline: none;
+}
+
+.news-descr-block {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.news__figure-description {
+    font-size: 18px;
+    font-family: var(--nunito);
+    color: #8e9aaf;
+}
+
+
+.news__figure-link {
+    color:rgba(126, 52, 161, 0.75) !important;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: var(--nunito);
+}
+
+
+.circle__container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.circle__point  {
+    transform: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff9f1c !important;
+    font-family: var(--nunito);
+    font-size: 36px;
+    font-weight: 700;
+    min-height: 200px;
+    box-shadow: 0 14px 24px hsl(0deg 6% 80% / 25%);
+}
+
+.circle__center {
+    display: none;
+}
+
+.w-1001 {
+    display: flex;
+    justify-content: center;align-items: center;
+    height: 50px;
+    margin-left: 34px;
+    font-weight: 500;
+    font-family: var(--nunito);
+    font-size: 18px;
+    color: #2ec4b6;
+    text-transform: uppercase;
+    max-width: 250px;
+    width: 100%;
+    border: 2px solid #2ec4b6;
+    background-color: #cbf3f056;
+    border-radius: 2px;
+    transition: all .35s ease-in-out;
+}
+
+.w-1001:hover {
+    border-radius: 20px;
+}
+
+.SearchSelect_SearchSelect__dps_a  {
+    padding: 20px 30px;
+    background-color: #cbf3f0 !important;
+    color: #ACACAC !important;
+}
+
+.SearchSelect_SearchSelect__dps_a input::placeholder {
+    color: #fff !important;
+    text-shadow: -1px -1px 0px #2ec4b6,
+    3px 3px 0px #2ec4b6,
+} 
+
+.solary-card {
+ 
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+}
+
+.solary-block{
+    width: 100%;
+    height:650px;
+  
+    background-color:#000;
+    border-radius: 10px;
+    background-image: url('./../scss/media/space-perple-m.jpg');
+    background-position: center;
+    background-size:cover;
+    background-repeat:no-repeat;  
+  }
+
+  .solry-all-block {
+    border-radius: 15px;
+    border: 5px solid #7209b7;
+    padding: 5px;
+    margin: 0 0 50px;
+  }
+  
+  .wrapper-solary {
+    transform-style: preserve-3d;
+    transform:rotateX(65deg);
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  .sun {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: linear-gradient(to top left,  rgb(246, 162, 45),rgb(227, 250, 23));
+    width: 11%;
+    height: 20%;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+   
+    box-shadow: -4px 2px 10vw #f9c05f;
+    transform: translate(-50%) rotateX(-65deg);
+    z-index: 1;
+  }
+  
+  .mercury {
+    position: absolute;
+    height: 6%;
+    width: 6%;
+    background-image:  linear-gradient(to top left,  rgb(160, 160, 160),rgb(76, 76, 76));
+    border-radius: 50%;
+    box-shadow: -4px 3px 56px #636363;
+    left: 45%;
+    top: 42%;
+    transform-style: flat;
+    filter: blur(1px);
+    transform: translate(-50%)  rotateX(0);
+    animation: orbit2  2s linear infinite forwards;
+    z-index: 1;
+  }
+  
+  @keyframes orbit2 {
+    from {
+      transform: rotateZ(0deg) translateX(5vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(5vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  
+  p{
+    color:#fff;
+    font-family: system-ui; 
+    position: absolute;
+    left: -62px;
+    top: -11px;
+  }
+  
+  
+    .mercury-line-1, .venus-line-1 , .earth-line-1 , .mars-line-1 , .jupiter-line-1 , .saturn-line-1, .urans-line-1, .neptune-line-1   {
+      border-radius: 50%;
+      display: block;
+      border:1px dotted #ddd9 ; 
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate(-50%, -50%) ;
+      z-index: -1;
+  }
+  
+
+  .mercury-line-1 {
+    height: 30%;
+    width: 16%;
+  }
+  
+  .venus-line-1 {
+    height: 44%;
+    width: 25%;
+  }
+  
+  .earth-line-1 {
+    height: 58%;
+    width: 33%;
+  }
+  
+  .mars-line-1 {
+    height: 74%;
+    width: 41%;
+  }
+  
+  .jupiter-line-1 {
+    height: 92%;
+    width: 51%;
+  }
+  
+  .saturn-line-1 {
+    height: 120%;
+    width: 64%;
+  }
+  
+  .urans-line-1 {
+    height: 155%;
+    width: 82%;
+  }
+  
+  .neptune-line-1 {
+    height: 186%;
+    width: 98%;
+  }
+  
+  
+  
+  
+  .mars {
+    position: absolute;
+    height: 8%;
+    width: 8%;
+    background-image: url('./../scss/media/mars.png');
+    border-radius: 50%;
+    /* box-shadow: -10px 3px 56px #f27059; */
+    background-size: contain;
+    left: 45%;
+    top: 42%;
+    filter: blur(1px);
+    transform: translate(-50%) skewX(45deg);
+    animation: orbit5  6s linear infinite;
+    z-index: 1;
+  }
+  
+  .venus {
+    position: absolute;
+    height: 7%;
+    width: 7%;
+    background-image: url('./../scss/media/mercury-origin.png');
+    border-radius: 50%;
+    box-shadow: -4px 3px 56px #f7b267;
+    left: 45%;
+    top: 42%;
+    filter: blur(1px);
+    transform: translate(-50%) skewX(45deg);
+    animation: orbit3  4s linear infinite;
+    z-index: 1;
+  }
+  
+  .earth {
+    position: absolute;
+    height: 9%;
+    width: 9%;
+    background-image: url('./../scss/media/earth.png');
+    filter: blur(1px);
+    border-radius: 50%;
+    box-shadow: -4px 3px 56px #1d86f672;
+    left: 45%;
+    top: 42%;
+    transform: translate(-50%) skewX(45deg);
+    animation: orbit4  5s linear infinite;
+    z-index: 1;
+  }
+
+  .active-planet {
+    
+  }
+  
+  .jupiter {
+    position: absolute;
+    height: 9%;
+    width: 9%;
+    background-image: url('./../scss/media/jupiter.png');
+    border-radius: 50%;
+    box-shadow: -4px 2px 26px rgb(148, 106, 80);
+    left: 45%;
+    top: 42%;
+    filter: blur(1px);
+    transform: translate(-50%) skewX(45deg);
+    animation: orbit6  8s linear infinite;
+    z-index: 1;
+  }
+  
+  
+  .saturn {
+    position: absolute;
+    height: 11%;
+    width: 11%;
+    background-image:  url('./../scss/media/saturn.png');
+    border-radius: 50%;
+    background-size: contain;
+    left: 44%;
+    top: 42%;
+    filter: blur(1px);
+    transform: translate(-50%) skewX(45deg);
+    animation: orbit7  9s linear infinite;
+    transform-style: preserve-3d;
+    z-index: 2;
+  }
+  
+  .urans {
+    position: absolute;
+    height: 3%;
+    width: 3%;
+   background-image: url('./../scss/media/uranus.png');
+    /* box-shadow: -4px 2px 26px #30665e; */
+    border-radius: 50%;
+    background-size: contain;
+    left: 48%;
+    top: 47%;
+    filter: blur(1px);
+    transform: translate(-50%) skewX(45deg);
+    animation: orbit8  13s linear infinite;
+    transform-style: preserve-3d;
+    z-index: 2;
+  }
+  
+  .neptune {
+    position: absolute;
+    height: 3.5%;
+    width: 3.5%;
+   background-image: url('./../scss/media/neptune.png');
+    /* box-shadow: -4px 2px 26px #304366; */
+    border-radius: 50%;
+    background-size: contain;
+    left: 48%;
+    top: 48%;
+    filter: blur(1px);
+    transform: translate(-50%) skewX(45deg);
+    animation: orbit9  17s linear infinite;
+    transform-style: preserve-3d;
+    z-index: 2;
+  }
+  
+  
+  
+  
+  @keyframes orbit3 {
+    from {
+      transform: rotateZ(0deg) translateX(7.5vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(7.5vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  
+  
+  @keyframes orbit4 {
+    from {
+      transform: rotateZ(0deg) translateX(11vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(11vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  
+  @keyframes orbit5 {
+    from {
+      transform: rotateZ(0deg) translateX(13.5vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(13.5vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  
+  @keyframes orbit6 {
+    from {
+      transform: rotateZ(0deg) translateX(16.5vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(16.5vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  
+  
+  @keyframes orbit7 {
+    from {
+      transform: rotateZ(0deg) translateX(21.5vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(21.5vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  
+  
+  @keyframes orbit8 {
+    from {
+      transform: rotateZ(0deg) translateX(26.5vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(26.5vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  
+  @keyframes orbit9 {
+    from {
+      transform: rotateZ(0deg) translateX(32vw) rotateX(-90deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateZ(360deg) translateX(32vw) rotateX(-90deg) rotateY(360deg);
+    }
+  }
+  .urans, .mercury,.jupiter,.earth,.mars,.saturn, .neptune, .venus {
+    filter: none;
+  }
+  
+  @media (max-width:768px) {
+    .urans, .mercury,.jupiter,.earth,.mars,.saturn, .neptune, .venus {
+      filter: none;
+    }
+  
+    .mercury-line, .venus-line-1 , .earth-line-1 , .mars-line-1 , .jupiter-line-1 , .saturn-line-1, .urans-line-1, .neptune-line-1   {
+      border-radius: 50%;
+      border:0.2px dotted #ddd9 ; 
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate(-50%, -50%) ;
+      z-index: -1;
+  }
+  }
+  
+  .planets-block {
+    padding: 30px 0;
+  }
+  
+  .planets-list {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+  }
+  
+  .planet {
+    color: #fff;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+
+  .planets-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .planet-btn-item {
+    width: 12%;
+    height: 45px;
+    margin: 0 5px;
+  }
+
+  .planet-btn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #7209b7;
+    color: #7209b7;
+    text-transform: uppercase;
+    font-weight: 500  !important;
+    font-size: 14px !important;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1;
+    transition: all .4s ease-in-out;
+  }
+
+  .planet-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translateY(100%);
+    background-color: #7209b7;
+    transition: all .4s ease-in-out;
+    z-index: -1;
+  }
+
+  .planet-btn:hover {
+    color: #fff;
+  }
+
+  .planet-btn-item:hover  .planet-btn::before {
+    color: #fff;
+    transform: translateY(0);
+  }
+
+ .color-solar {
+  color: #7209b7;
+ } 
+
+
+ .planet-descr {
+  padding: 5px;
+  border: 1px solid #fff;
+  transform: translateY(-30px) translateX(50%);
+  opacity: 0;
+ }
+
+/* 
+  ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  } */
+
+
+  .finances-title {
+    color: #a2d2ff;
+    font-family: var(--nunito);
+  }
+
+  .card__title-fin {
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-family: var(--nunito);
+  }
+
+  .card-fin-bal {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+     font-family: var(--nunito);
+     color: #8d99ae;
+  }
+
+  .list-card-fin {
+    display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+  }
+
+  .fin-btn {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    margin: 20px !important;
+    height: 55px !important;
+    text-align:center !important;
+    border: none !important;
+    background-size: 300% 100% !important;
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed) !important;
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75) !important;
+    border-radius: 50px !important;
+    moz-transition: all .4s ease-in-out !important;
+    -o-transition: all .4s ease-in-out !important;
+    -webkit-transition: all .4s ease-in-out !important; 
+    transition: all .4s ease-in-out !important;
+  }
+
+  .fin-btn:hover {
+    background-position: 100% 0 !important;
+    moz-transition: all .4s ease-in-out !important;
+    -o-transition: all .4s ease-in-out !important;
+    -webkit-transition: all .4s ease-in-out !important;
+    transition: all .4s ease-in-out !important;
+}
+
+.fin-btn:focus {
+  outline: none !important;
+}
+
+.pay-fin-title {
+  text-align: center ;
+  margin: 45px 0 35px ;
+  font-family: var(--nunito) ;
+  font-size: 26px ;
+  color: #a2d2ff;
+}
+
+.solar-list-info {
+  margin: 20px 0 50px;
+  padding: 30px;
+  border: 5px solid #7209b7; 
+  background-color: #7209b7;
+  background-image: url('./../scss/media/space-info-planet.jpg');
+  border-radius: 10px;
+}
+
+
+.list-info-s {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+}
+
+
+.item-info-s {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--nunito);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 10px 10px;
+  border: 2px solid #7209b7; 
+  background-color: #7109b7a2;
+  border-radius: 8px;
+}
+
+
+.btn-clear-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
+ 
+}
+
+.btn-clear-space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  max-width: 310px;
+  border: 2px solid #7209b7; 
+  border-radius: 5px;
+  height: 55px;
+  font-family: var(--nunito);
+  font-size: 18px;
+  color: #eedaff;
+  background-image: url('./../scss/media/space-info-planet.jpg');
+  background-position: center;
+  background-size: cover;
+
+  font-weight: 500;
+}
+
+.update-planet-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 0px;
+}
+
+.color-milkey {
+  color: #4cc9f0;
+}
+
+.fin-btn {
+  margin: 0 !important;
+}
+
+
+.link-blue {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 20px !important;
+  min-width:  180px !important;
+  padding: 0 !important;
+  min-height: 45px !important;
+  background: #4cc9f0 !important;
+  font-weight: 400 !important;
+  color: #fff !important ;
+  font-family: 'Nunito' !important;
+  font-size: 16px !important;
+  transition: all .35s ease-in-out !important;
+  border-radius: 2px !important;
+}
+.link-blue:hover {
+  border-radius: 20px !important;
+  outline: none !important;
+}

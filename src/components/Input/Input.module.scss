@@ -1,0 +1,65 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.Input {
+  position: relative;
+  margin: 2px;
+
+  .placeholder {
+    position: absolute;
+    top: 24px;
+    left: 25px;
+    font-size: 18px;
+    font-family: 'Nunito';
+    color: #8d99ae;
+    line-height: 130%;
+    transition: all 0.35s ease-in-out;
+    background-color: transparent;
+  }
+
+  input {
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 0 10px 25px;
+    font-family: 'Nunito';
+    font-size: 18px;
+    height: 75px;
+    z-index: 1;
+    width: 100%;
+    color: #8d99ae;
+    border: 2px solid #adb5bd;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.35s ease-in-out;
+    outline: none;
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:hover, &:active, &:focus {
+      color: #4cc9f0;
+      border: 2px solid #4cc9f0 ;
+    } 
+
+    &[type='text'],
+    &[type='email'],
+    &[type='password'],
+    &[type='tel'] {
+      min-height: 42px;
+      padding-top: 16px;
+
+      @include media-breakpoint-up(xl) {
+        padding-top: 22px;
+      }
+
+      &:not(:placeholder-shown) ~ .placeholder,
+      &:focus ~ .placeholder {
+        top: 11px;
+        font-size: 14px;
+        color: #4cc9f0;
+      }
+    }
+  }
+}
