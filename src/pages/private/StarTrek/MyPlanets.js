@@ -34,7 +34,7 @@ function MyPlanets() {
   const start = dayjs().tz('Europe/Minsk').startOf('date')
   const end = start.add(10, 'hour')
 
-  
+
 
   const isDisable = useMemo(() => {
     return dayjs().isBetween(start, end)
@@ -81,7 +81,7 @@ function MyPlanets() {
     </span>
   )
 
-  
+
   const [activePlanet, setActivePlanet] = useState(0)
 
   const [infoPlanet, setInfoPlanet] = useState({namePlanet: 'Mercury', frozen: '', comets: '', dateCreate: '', sum: '', id: ''})
@@ -108,7 +108,7 @@ function MyPlanets() {
   let viewSolary = solaryList.filter((el,i)=>list[i]!==undefined)
   console.log(list)
 
-  
+
   useMemo(()=>{
     if (list[activePlanet] !== undefined) {
       setInfoPlanet({...infoPlanet, namePlanet: viewSolary[activePlanet].namePlanet , frozen: !list[activePlanet].frozen ? 'Откл':'Вкл', comets: list[activePlanet].comets, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum, id: list[activePlanet].id})
@@ -117,7 +117,7 @@ function MyPlanets() {
 
   let handleOnSetPlanetForUpdate = () => dispatch(actions.setPlanetForUpdate(infoPlanet.id))
 
- 
+
 
 
 
@@ -146,26 +146,20 @@ function MyPlanets() {
                   Имя планеты: {infoPlanet.namePlanet}
                 </li>
                 <li className='item-info-s'>
-                  Заморозка: {infoPlanet.frozen}
+                  Дата создания: {infoPlanet.dateCreate}
                 </li>
                 <li className='item-info-s'>
-                  Кометы: {infoPlanet.comets}
-                </li>
-                <li className='item-info-s'>
-                  Дата создания: {infoPlanet.dateCreate} 
-                </li>
-                <li className='item-info-s'>
-                  Сумма: {infoPlanet.sum}
+                  №: {infoPlanet.id}
                 </li>
               </ul>
             </div>
           </div>
-          {/* <div className="text-center"> 
+          {/* <div className="text-center">
             <h3>
               Авто-продление планет{' '}
               <strong>{user?.autoRefill ? 'включено' : 'выключено'}</strong>
             </h3>
-            <Link to={r.settings}>изменить</Link> 
+            <Link to={r.settings}>изменить</Link>
           </div> */}
           {/* <Spinner isLoading={isLoading}>
             <Row>
@@ -187,7 +181,7 @@ function MyPlanets() {
                 marginPagesDisplayed={1}
                 activeClassName="active"
                 pageCount={Math.ceil(total / limit)}
-              
+
                 onPageChange={(props) => handleOnChangePage(props.selected)}
                 containerClassName="pagination"
                 previousLabel={<img src={arrowLeft} className="arrowLeft" alt="Arrow left" />}
@@ -226,23 +220,23 @@ function MyPlanets() {
             )}
           </div> */}
 
-              {!isEmpty(list) ? 
+              {!isEmpty(list) ?
               <div className='solry-all-block'>
                  <div className='solary-card'>
                     <div className='solary-block'>
-                      <div class="wrapper-solary">
-                      <div class="sun">
-          
+                      <div className="wrapper-solary">
+                      <div className="sun">
+
                       </div>
-          
+
                       {viewSolary.map((e,i)=>
-                        <div class={e.classItem.join` `}><div class={e.classPlanet.join` `}><p class={e.classDescr.join` `}>{list[i].values}</p></div></div>
+                        <div className={e.classItem.join` `}><div className={e.classPlanet.join` `}><p className={e.classDescr.join` `}>{list[i].values}</p></div></div>
                         )}
                     </div>
                     </div>
                   </div>
-                  <div class="planets-block">
-                    <ul class="planets-list">
+                  <div className="planets-block">
+                    <ul className="planets-list">
                     {viewSolary.map(e=><li className='planet-btn-item'><button className={'planet-btn'} id={e.count} onClick={e=>{setActivePlanet(e.target.id)}}>{e.namePlanet}</button></li>)}
                     </ul>
                     {!isLoading && (
@@ -253,18 +247,7 @@ function MyPlanets() {
                       </div>
                     )}
                     {!isEmpty(selected) &&
-                      (isDisable && end ? (
-                        <div className="mb-5">
-                          <p>
-                            В данный момент осуществляется запуск комет, <br /> продление баланса комет
-                            будет доступно с 10:00 по мск
-                          </p>
-                          <div>
-                            Осталось: <Timer date={end.format()} renderer={rendererTimer} />
-                          </div>
-                        </div>
-                      ) : (
-                        <div className='update-planet-block'>
+                    <div className='update-planet-block'>
                              <button
                               onClick={handleOnPlanetsUpdate}
                               disabled={isUpdateLoading}
@@ -274,21 +257,20 @@ function MyPlanets() {
                               Продлить выбранные
                             </button>
                         </div>
-                       
-                      ))}
+                    }
                   </div>
               </div>
-                 
-               : 
+
+               :
                 <Col>
                   <h4 className="text-center mb-4 mt-4">У вас нет планет</h4>
                 </Col>
               }
-          
+
         </Col>
 
       </Row>
-    
+
     </Container>
   )
 }
