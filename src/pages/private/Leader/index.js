@@ -62,7 +62,7 @@ function Leader() {
                           </div>
                         </div>
                         <div className="list-info__group">
-                          <div className="list-info__label">ВКонтакте:</div>
+                          <div className="list-info__label">ВКонтакте: </div>
                           <div className="list-info__value">
                             {userInfo.vk ? (
                               <a
