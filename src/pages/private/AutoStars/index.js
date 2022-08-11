@@ -16,6 +16,7 @@ import { matrixActions } from '../../../store/matrix/actions'
 
 //import UserInfo from '../../../components/UserInfo'
 import NavBar from '../../../components/layout/Navbar'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 //import Icon from '../../../components/Icon'
 
 export default function AutoStars() {
@@ -49,19 +50,22 @@ export default function AutoStars() {
             <h2 className={styles.mainTitle}>MATRIX2</h2>
             {matrixTypes && (
               <div className={styles.tables}>
-                 <Link
-                    to="/MATRIX2-table/1"
-                    className={styles.table}
-                    onClick={() => {
-                      saveMatrixInfo(matrixTypes[0])
-                    }}
-                  >
-                 
-                    <span>1</span>
-                    {!!Number(matrixTypes[0].count) && (
-                      <div className={styles.count}>{matrixTypes[0].count}</div>
-                    )}
-                  </Link>
+                <MyViewElement element={
+                  <Link
+                  to="/MATRIX2-table/1"
+                  className={styles.table}
+                  onClick={() => {
+                    saveMatrixInfo(matrixTypes[0])
+                  }}
+                >
+               
+                  <span>1</span>
+                  {!!Number(matrixTypes[0].count) && (
+                    <div className={styles.count}>{matrixTypes[0].count}</div>
+                  )}
+                </Link>
+                }/>
+                <MyViewElement element={
                  <Link
                     to="/MATRIX2-table/2"
                     className={styles.table}
@@ -75,6 +79,8 @@ export default function AutoStars() {
                       <div className={styles.count}>{matrixTypes[1].count}</div>
                     )}
                   </Link>
+                }/>
+                <MyViewElement element={
                   <Link
                     to="/MATRIX2-table/3"
                     className={styles.table}
@@ -88,6 +94,8 @@ export default function AutoStars() {
                       <div className={styles.count}>{matrixTypes[2].count}</div>
                     )}
                   </Link>
+                }/>
+                <MyViewElement element={
                 <Link
                     to="/MATRIX2-table/4"
                     className={styles.table}
@@ -101,7 +109,8 @@ export default function AutoStars() {
                       <div className={styles.count}>{matrixTypes[3].count}</div>
                     )}
                   </Link>
-                   
+                }/>
+                <MyViewElement element={
                   <Link
                     to="/MATRIX2-table/5"
                     className={styles.table}
@@ -115,6 +124,7 @@ export default function AutoStars() {
                       <div className={styles.count}>{matrixTypes[4].count}</div>
                     )}
                   </Link>
+                }/>
               </div>
             )}
             <div className="pdf-preview"></div>

@@ -2,11 +2,11 @@ import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-
+import cl from './Team.module.css';
+import personImgDef from './../../../scss/media/person-img-main.svg';
 import r from '../../../constants/routes.constants'
 import { matrixActions } from '../../../store/matrix/actions'
 import StarRating from '../../../components/StarRating'
-
 function TeamMember({ member }) {
   const history = useHistory()
   const dispatch = useDispatch()
@@ -45,40 +45,45 @@ function TeamMember({ member }) {
     },
     [dispatch],
   )
+  let personImg = '';
 
   return (
-    <div className="card">
-      <div className="card__header">
-        <div className="card__header-left">
-          <h3 className="card__title">
-            <Link className="team__user" to={`${r.team}/${id}`}>
-              {username}
-            </Link>
-          </h3>
+    <div className={cl.itemPerson}>
+      <div className={cl.personBlock}>
+      <div className={cl.personIcon}>
+        <div className={cl.personCircle}>
+          <img src={personImg ? personImg : personImgDef} className={personImg ? cl.imgPerson : cl.imgUnknow}/>
         </div>
-        <div className="card__header-right">ID: {id}</div>
+      
       </div>
-      <div className="card__body">
-        <div className="list-info list-info--horizontal">
-          <div className="list-info__group">
-            <div className="list-info__label">Имя Фамилия:</div>
-            <div className="list-info__value">{`${firstName} ${lastName}`}</div>
+      <div className={cl.viewElements}>
+          <h3 className={cl.personNick}>
+              <Link className={cl.personLink} to={`${r.team}/${id}`}>
+                {username}
+              </Link>
+            </h3>
+          <div className={cl.initialsBlock}>
+            <div className={cl.initials}>{`${firstName} ${lastName}`}</div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Почта:</div>
+
+          <div className=''>
+            <div className={cl.payedBlock}>Оплата: {payed ? <span className={cl.checkmark}></span> : <span className={cl.notPayed}></span>}</div>
+          </div>
+        
+      </div>
+      </div>
+      {/* <div className="card__header-right">ID: {id}</div> */}
+      {/* <div className="">
             <div className="list-info__value">{email}</div>
-          </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Оплата:</div>
-            <div className="list-info__value">{payed ? 'Да' : 'Нет'}</div>
-          </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Телефон:</div>
+          </div> */}
+      {/* <div className="">
             <div className="list-info__value">{phone}</div>
-          </div>
-          <div className="list-info__group">
-            <div className="list-info__label">SuperStar:</div>
-            <div className="list-info__value">
+          </div> */}
+          
+          <div className={cl.hiddenElements}>
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>SuperStar:</div>
+            <div className={cl.starsList}>
               {superStar ? (
                 <StarRating
                   max={10}
@@ -96,9 +101,9 @@ function TeamMember({ member }) {
               )}
             </div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Stars:</div>
-            <div className="list-info__value">
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>Stars:</div>
+            <div className={cl.starsList}>
               {matrix ? (
                 <StarRating
                   max={10}
@@ -114,9 +119,9 @@ function TeamMember({ member }) {
               )}
             </div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">PremiumStars:</div>
-            <div className="list-info__value">
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>PremiumStars:</div>
+            <div className={cl.starsList}>
               {auto ? (
                 <StarRating
                   max={10}
@@ -134,17 +139,17 @@ function TeamMember({ member }) {
               )}
             </div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Куплено планет:</div>
-            <div className="list-info__value">{planet}</div>
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>Куплено планет:</div>
+            <div className={cl.blockValues}>{planet}</div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Куплено комет:</div>
-            <div className="list-info__value">{comet}</div>
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>Куплено комет:</div>
+            <div className={cl.blockValues}>{comet}</div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Instagram:</div>
-            <div className="list-info__value">
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>Instagram:</div>
+            <div className={cl.blockValues}>
               {instagram ? (
                 <a href={`https://www.instagram.com/${instagram}`} rel="noreferrer" target="_blank">
                   {instagram}
@@ -154,9 +159,9 @@ function TeamMember({ member }) {
               )}
             </div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Вконтакте:</div>
-            <div className="list-info__value">
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>Вконтакте:</div>
+            <div className={cl.blockValues}>
               {vk ? (
                 <a href={`https://vk.com/${vk}`} rel="noreferrer" target="_blank">
                   {vk}
@@ -166,9 +171,9 @@ function TeamMember({ member }) {
               )}
             </div>
           </div>
-          <div className="list-info__group">
-            <div className="list-info__label">Telegram:</div>
-            <div className="list-info__value">
+          <div className={cl.cardHidden}>
+            <div className={cl.titleItems}>Telegram:</div>
+            <div className={cl.blockValues}>
               {tg ? (
                 <a href={`https://t.me/${tg}`} rel="noreferrer" target="_blank">
                   {tg}
@@ -178,8 +183,8 @@ function TeamMember({ member }) {
               )}
             </div>
           </div>
+          
         </div>
-      </div>
     </div>
   )
 }

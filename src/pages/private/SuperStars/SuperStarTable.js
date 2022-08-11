@@ -21,6 +21,7 @@ import BuyStatusModal from './modals/BuyStatus'
 import BuyMatrixModal from './modals/BuyMatrix'
 import QueueModal from './modals/Queue'
 import SuperStarPagination from './SuperStarPagination'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 // eslint-disable-next-line react/prop-types
 function SuperStarTable({ location: { state = {}, pathname } }) {
@@ -236,12 +237,15 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
   return (
     <div className={styles.Table}>
       <Container>
+        <MyViewElement element={
         <div className={styles.header}>{matrixInfo && <h1 className={styles.title}>MATRIX3 LVL {matrixInfo.level}</h1>} {backRouteElement}</div>
+        }/>
         <div className={styles.container}>
           <div className={styles.sidebar}>
             
             {matrixInfo && matrixInfo.id && matrixInfo.isActive && matrixInfo.level <= 3 && (
               <div className="d-none d-xl-block">
+              <MyViewElement element={
                 <Button
                   onClick={handleToggleQueueModal}
                   className="w-1001"
@@ -250,11 +254,15 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
                 >
                   Очередь
                 </Button>
+                }/>
               </div>
             )}
             {matrixInfo && matrixInfo.canBuy && (
               <div className={styles.footer}>
+              <MyViewElement element={
                 <p className={styles.price}>Цена - {matrixInfo.price} RUB</p>
+              }/>
+              <MyViewElement element={
                 <Button
                   onClick={showBuyMatrixModal}
                   disabled={buyingStatus.type === 'pending'}
@@ -265,11 +273,16 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
                 >
                   Купить
                 </Button>
+              }/>
+
               </div>
             )}
             {matrixInfo && !matrixInfo.canBuy && matrixInfo.level <= 3 && (
               <div className={styles.footer}>
+              <MyViewElement element={
                 <p className={styles.price}>Цена - {matrixInfo.price} RUB</p>
+              }/>
+              <MyViewElement element={
                 <Button
                   onClick={showCometsBuyModal}
                   disabled={buyingStatus.type === 'pending'}
@@ -280,45 +293,53 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
                 >
                   Купить кометы
                 </Button>
+              }/>
+
               </div>
             )}
           </div>
-          <div className={styles.content}>
-            <SearchSelect
-              values={searchUsers}
-              placeholder="Поиск партнера по логину"
-              onInput={setCurrentSearchValue}
-              onChange={redirectToUserMatrix}
-            />
-            <div className={styles.matrixTree}>
-              <MatrixCell
-                place={null}
-                info={matrixTree['0']}
-                isActive={matrixInfo && matrixInfo.isActive}
+         
+            <div className={styles.content}>
+              <MyViewElement element={
+                  <SearchSelect
+                values={searchUsers}
+                placeholder="Поиск партнера по логину"
+                onInput={setCurrentSearchValue}
+                onChange={redirectToUserMatrix}
               />
-              <div className={styles.secondRow}>
+            }/>
+              <MyViewElement element={
+
+              <div className={styles.matrixTree}>
                 <MatrixCell
-                  info={matrixTree['1']}
-                  ancestorInfo={matrixTree['0']}
+                  place={null}
+                  info={matrixTree['0']}
                   isActive={matrixInfo && matrixInfo.isActive}
                 />
-                <MatrixCell
-                  ancestorInfo={matrixTree['0']}
-                  info={matrixTree['2']}
-                  isActive={matrixInfo && matrixInfo.isActive}
-                />
-                <MatrixCell
-                  info={matrixTree['3']}
-                  ancestorInfo={matrixTree['0']}
-                  isActive={matrixInfo && matrixInfo.isActive}
-                />
-                <MatrixCell
-                  info={matrixTree['4']}
-                  ancestorInfo={matrixTree['0']}
-                  isActive={matrixInfo && matrixInfo.isActive}
-                />
+                <div className={styles.secondRow}>
+                  <MatrixCell
+                    info={matrixTree['1']}
+                    ancestorInfo={matrixTree['0']}
+                    isActive={matrixInfo && matrixInfo.isActive}
+                  />
+                  <MatrixCell
+                    ancestorInfo={matrixTree['0']}
+                    info={matrixTree['2']}
+                    isActive={matrixInfo && matrixInfo.isActive}
+                  />
+                  <MatrixCell
+                    info={matrixTree['3']}
+                    ancestorInfo={matrixTree['0']}
+                    isActive={matrixInfo && matrixInfo.isActive}
+                  />
+                  <MatrixCell
+                    info={matrixTree['4']}
+                    ancestorInfo={matrixTree['0']}
+                    isActive={matrixInfo && matrixInfo.isActive}
+                  />
+                </div>
               </div>
-            </div>
+                }/>
 
             {!isEmpty(selectItems) && (
               <SuperStarPagination items={[...selectItems]} currentId={currentId} />
@@ -326,8 +347,13 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
 
             {matrixInfo && (
               <div className={styles.footer}>
+                <MyViewElement element={
                 <p className={styles.price}>Цена - {matrixInfo.price} RUB</p>
+              }/>
+
                 {matrixInfo.canBuy && (
+                <MyViewElement element={
+
                   <Button
                     onClick={showBuyMatrixModal}
                     disabled={buyingStatus.type === 'pending'}
@@ -337,9 +363,13 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
                   >
                     Купить
                   </Button>
+              }/>
+
                 )}
                 {matrixInfo && matrixInfo.id && matrixInfo.isActive && matrixInfo.level <= 3 && (
-                  <Button
+                <MyViewElement element={
+                  
+                 <Button
                     onClick={handleToggleQueueModal}
                     className="w-1001"
                     color="violet-blue"
@@ -347,8 +377,12 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
                   >
                     Очередь
                   </Button>
+              }/>
+
                 )}
                 {matrixInfo && !matrixInfo.canBuy && matrixInfo.level <= 3 && (
+                <MyViewElement element={
+
                   <Button
                     onClick={showCometsBuyModal}
                     disabled={buyingStatus.type === 'pending'}
@@ -359,10 +393,13 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
                   >
                     Купить кометы
                   </Button>
+              }/>
+
                 )}
               </div>
             )}
           </div>
+          
         </div>
       </Container>
       {visibleBuyModal && <BuyStatusModal status={buyingStatus} onClose={closeBuyModal} />}
@@ -370,12 +407,15 @@ function SuperStarTable({ location: { state = {}, pathname } }) {
         <CometsBuy matrixType={matrixInfo.id} onClose={closeCometsBuyModal} />
       )}
       {visibleBuyMatrixModal && matrixInfo && (
+        <MyViewElement element={
         <BuyMatrixModal
           status={buyingStatus}
           onClose={closeBuyMatrixModal}
           matrixLevel={matrixInfo.level}
           onSubmit={buyMatrix}
         />
+      }/>
+
       )}
       {matrixInfo && matrixInfo.id && (
         <>

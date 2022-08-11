@@ -12,6 +12,7 @@ import Icon from '../../../components/Icon'
 import { toast } from 'react-toastify'
 import { formatter } from '../../../utils'
 import CountdownTimer from '../StarTrek/CountdownTimer/CountdownTimer'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 //import UserInfo from '../../../components/UserInfo'
 
 function Dashboard() {
@@ -32,9 +33,13 @@ function Dashboard() {
           <NavBar />
         </Col>
         <Col>
+        <MyViewElement element={
           <h1 className="root-page-title">Личный кабинет</h1>
+
+        }/>
           {userInfo && (
             <>
+          <MyViewElement element={
               <div className="leader">
                 <div className="leader__figure">
                   <div className="leader__image">
@@ -94,13 +99,23 @@ function Dashboard() {
                   </div>
                 </div>
               </div>
-              <div className="card__bot">
-                <div className="card__header">
-                  <div className="card__header-left">
-                    <h3 className="card__title card__title-info">Реферальная ссылка</h3>
+                 }/>
+                
+                <div className="card__bot">
+                <MyViewElement element={
+                  <div className="card__header">
+                    <div className="card__header-left">
+          
+
+                      <h3 className="card__title card__title-info">Реферальная ссылка</h3>
+                  
+
+                    </div>
                   </div>
-                </div>
+              }/>
                 <div className="card__body">
+          <MyViewElement element={
+
                   <div className="referral-link">
                     <div className="referral-link__url">- {userInfo.refLink} -</div>
                     <Button
@@ -111,14 +126,22 @@ function Dashboard() {
                      <span></span>
                     </Button>
                   </div>
+                 }/>
+
                 </div>
               </div>
+          <MyViewElement element={
+            <>
               <div className="startrek__title1 card__title-info">
                 <span>До запуска осталось</span>
               </div>
               <div className="startrek__title">
                 <CountdownTimer countdownTimestampMs={16599836620000} />
-              </div>
+              </div>   
+            </>           
+            }/>
+
+
             </>
           )}
         </Col>

@@ -1,0 +1,18 @@
+.myBtn {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 11px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #00b4d8;
+    transition: all .35s ease-in-out;
+    border: 1px solid #00b4d8;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.myBtn:hover {
+    background: #0096c7;
+}

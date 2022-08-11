@@ -144,9 +144,16 @@
   top: 75px;
   transition: all .35s ease-in;
   z-index: 13;
+  max-height: calc(100vh - 75);
+  overflow-y: scroll;
   height: calc(100vh - 75px);
+ 
   width: 100%;
   background-color: #fff; 
+}
+
+.mobileNavBar::-webkit-scrollbar {
+  width: 0px;
 }
 
 .opened {
@@ -157,6 +164,8 @@
 .mobileNavLink {
   font-size: 14px;
   color: #4cc9f0 !important;
+  font-family: 'Nunito';
+
   transition: all .4s ease-in-out;
 }
 
@@ -167,13 +176,15 @@
 .linkCard {
   display: flex;
   justify-content: center;
+  list-style-type: disc;
 }
 
 .linkList {
+  padding: 30px 0 30px 30px;
   display: grid;
   grid-template-rows: repeat(5, auto);
   gap: 15px;
-  max-width: 450px;
+  max-width: 750px;
   width: 100%;
   align-items: center;
 }

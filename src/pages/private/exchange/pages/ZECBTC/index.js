@@ -1,8 +1,9 @@
 import React from 'react'
-import { Row, Col, Container } from 'reactstrap'
+import { Row, Container } from 'reactstrap'
 
 import Chart from './components/Chart/Chart'
 import '../../stoc.css'
+import cl from './../../Exchange.module.css';
 import BuyFormComponent from './components/Form/BuyForm'
 import SellFormComponent from './components/Form/SellForm'
 import Market from './components/Market/Market'
@@ -13,16 +14,18 @@ const Zec = () => {
   return (
     <Container className="root-page">
       <Row>
-        <Col xl={3} className="d-none d-xl-block col-xl-38">
-          <NavBar />
-        </Col>
-        <Col xl={9}>
+      <div className={cl.navBlock}>
+            <NavBar />
+            </div>
+            <div className={cl.contentBlock}>
           <Chart />
-          <BuyFormComponent />
-          <SellFormComponent />
+          <div className={cl.buySellCard}>
+            <BuyFormComponent />
+            <SellFormComponent />
+          </div>
           <Market />
           <HistoriBuySel />
-        </Col>
+        </div>
       </Row>
     </Container>
   )

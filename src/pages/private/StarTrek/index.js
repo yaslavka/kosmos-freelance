@@ -16,6 +16,7 @@ import Statistics from './Statistics'
 //import Documents from './Documents'
 import Summary from './Summary'
 import { Spinner } from 'react-bootstrap'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 function StarTrek() {
   const dispatch = useDispatch()
@@ -57,10 +58,15 @@ function StarTrek() {
           <NavBar />
         </Col>
         <Col xl={9}>
+          <MyViewElement element={
           <div className="root-page-title color-milkey">Млечный путь</div>
+          }/>
         
           <Spinner isLoading={isLoading}>
+          <MyViewElement element={
             <Summary />
+          }/>
+
             <Statistics />
             <div className="text-center">
               <Link className='link-blue' to={r.starTrekPlanets} >

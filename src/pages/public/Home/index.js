@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react'
 import Header from './Header'
-import Banner from './Banner'
-import Authentication from './Authentication'
+//import Banner from './Banner'
+//import Authentication from './Authentication'
 import Footer from './Footer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Hero from './Hero'
+import About from './About'
+import Materials from "./Materials";
+import Authentication from "./Authentication";
 
 function Home() {
   useEffect(() => {
@@ -15,10 +19,14 @@ function Home() {
   return (
     <div className="page">
       <Header />
+      <Hero />
+      <Authentication />
+      <About />
+      <Materials />
       <div className="auth__wrapper">
         <div className="auth__page">
-          <Banner />
-          <Authentication />
+          {/* <Banner /> */}
+          {/* <Authentication /> */}
           <Footer />
         </div>
       </div>

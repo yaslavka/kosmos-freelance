@@ -20,6 +20,7 @@ import ClonesModal from './ClonesModal'
 import BuyStatusModal from './BuyStatusModal'
 import BuyMatrixModal from './BuyMatrixModal'
 import PartnersClonesModal from './PartnersClonesModal'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 // eslint-disable-next-line react/prop-types
 export default function Table({ location: { state = {}, pathname } }) {
@@ -359,12 +360,15 @@ export default function Table({ location: { state = {}, pathname } }) {
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-          {matrixInfo && <h1 className={styles.title}>Пегас - {matrixInfo.name}</h1>}
+         
+          {matrixInfo &&  <MyViewElement element={<h1 className={styles.title}>Пегас - {matrixInfo.name}</h1>}/>}
           {backRouteElement}
         </div>
         <div className={styles.container}>
           <div className={styles.sidebar}>
             {selectItems && (
+              <MyViewElement element={
+
               <Select
                 values={selectItems}
                 placeholder="Мои клоны"
@@ -375,9 +379,13 @@ export default function Table({ location: { state = {}, pathname } }) {
                   }
                 }}
               />
+            }/>
+
             )}
             {id && (
               <div className="d-none d-xl-block">
+              <MyViewElement element={
+
                 <Button
                   onClick={handleUpMatrix}
                   disabled={buyingStatus.type === 'pending'}
@@ -387,12 +395,20 @@ export default function Table({ location: { state = {}, pathname } }) {
                 >
                   Наверх
                 </Button>
+            }/>
+
               </div>
             )}
             {matrixInfo && (
               <div className={styles.footer}>
+              <MyViewElement element={
+
                 <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+            }/>
+
                 {matrixInfo.canBuy && (
+              <MyViewElement element={
+
                   <Button
                     onClick={showBuyMatrixModal}
                     disabled={buyingStatus.type === 'pending'}
@@ -402,12 +418,16 @@ export default function Table({ location: { state = {}, pathname } }) {
                   >
                     Купить
                   </Button>
+            }/>
+
                 )}
               </div>
             )}
           </div>
           <div className={styles.content}>
             <div className="d-xl-none mt-4">
+            <MyViewElement element={
+
               <Button
                 onClick={handleUpMatrix}
                 disabled={buyingStatus.type === 'pending'}
@@ -417,7 +437,11 @@ export default function Table({ location: { state = {}, pathname } }) {
               >
                 Наверх
               </Button>
+            }/>
+
             </div>
+            <MyViewElement element={
+
             <div className={styles.matrixTree}>
               <MatrixCell
                 place={0}
@@ -487,7 +511,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                 </div>
               </div>
             </div>
-
+            }/>
             <div className={styles.navigation}>
               <button className={styles.arrow} onClick={() => navigateTo('left')}>
                 <img src={rocketLeft} alt="Left" />

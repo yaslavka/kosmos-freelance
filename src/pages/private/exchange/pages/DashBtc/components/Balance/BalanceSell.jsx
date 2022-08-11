@@ -38,7 +38,7 @@ const BalanceSell = ({ Balnce }) => {
     <div className="line_first">
       <span className="c1">Баланс:</span>
       <Button href="javascript:void(0)" className="c2 clSellBalance">
-        <span id="label_sell_balance">0.00000000</span> DASH
+        <span id="label_sell_balance">0.00000000  DASH</span>
       </Button>
     </div>
   )

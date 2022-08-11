@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements';
 import { formatterNumber } from '../../../utils'
 import cl from './StarTrek.module.css';
 
@@ -8,6 +9,7 @@ function Statistics() {
   return (
     statistics && (
       <ul className={cl.statList}>
+        <MyViewElement element={
         <li className={cl.statItem}>
         <div>Куплено планет:</div>
           <div className="startrek__counter">
@@ -17,6 +19,9 @@ function Statistics() {
               .replace('₽', '')}
           </div>
         </li>
+        }/>
+        <MyViewElement element={
+
         <li className={cl.statItem}>
           <div>Мои места:</div>
           <div className="startrek__counter">
@@ -26,6 +31,10 @@ function Statistics() {
               .replace('₽', '')}
           </div>
         </li>
+        }/>
+
+        <MyViewElement element={
+
         <li className={cl.statItem}>
           <div>Всего мест:</div>
           <div className="startrek__counter">
@@ -35,6 +44,10 @@ function Statistics() {
               .replace('₽', '')}
           </div>
         </li>
+        }/>
+
+        <MyViewElement element={
+
         <li className={cl.statItem}>
           <div>Мои клонов:</div>
           <div className="startrek__counter">
@@ -44,6 +57,10 @@ function Statistics() {
               .replace('₽', '')}
           </div>
         </li>
+        }/>
+
+        <MyViewElement element={
+
         <li className={cl.statItem}>
         <div>Мест в структуре:</div>
           <div className="startrek__counter">
@@ -53,6 +70,10 @@ function Statistics() {
               .replace('₽', '')}
           </div>
         </li>
+        }/>
+
+        <MyViewElement element={
+
         <li className={cl.statItem}>
         <div>Мест в первой линии:</div>
           <div className="startrek__counter">
@@ -63,6 +84,10 @@ function Statistics() {
           </div>
          
         </li>
+        }/>
+
+        <MyViewElement element={
+
         <li className={cl.statItem}> 
           <div>Реферальные:</div>
           <div className="startrek__counter">
@@ -73,6 +98,8 @@ function Statistics() {
           </div>
          
         </li>
+        }/>
+
       </ul>
     )
   )

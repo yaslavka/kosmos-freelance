@@ -1,0 +1,108 @@
+.authPage {
+    min-height: 100vh;
+    height: 100%;
+    padding: 120px 0 0;
+    background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
+}
+
+.headerSign {
+    height: 75px;
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logoWrap {
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.logo img {
+    display: inline-block;
+    width: 50px;
+    height: 50px
+}
+
+.authTitle {
+    font-family: 'Nunito';
+    font-size: 35px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.authDescr {
+    font-family: 'Nunito';
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.formBlock {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.btnBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnGradient {
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    height: 60px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    margin: 0 auto !important;
+    text-transform: uppercase;
+}
+
+.btnGradient:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.forgotBLock, .signInFoot {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.forgotBLock a, .signInFoot a, .signUpFoot, .signUpFoot a {
+    color: rgba(255, 255, 255, 0.769) !important;
+    font-family: 'Nunito' !important;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.signUpFoot {
+    padding: 35px 0;
+}

@@ -1,13 +1,14 @@
 import React from 'react'
 import routes from '../../../../../../../constants/routes.constants'
 import { Link } from 'react-router-dom'
+import cl from './../../../../Exchange.module.css';
 
 const Viewport = () => {
   return (
     <div className="viewport">
       <div className="overview" id="market_base_list">
         <div id="trade_market_wrapper" className="dataTables_wrapper no-footer">
-          <table id="trade_market" className="marketes no-footer dataTable">
+          <table id="trade_market" className={cl.dataTable}>
             <tbody>
               <Link
                 a="40001"

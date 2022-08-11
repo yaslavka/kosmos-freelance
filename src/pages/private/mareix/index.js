@@ -16,6 +16,7 @@ import { api } from '../../../api'
 
 import TablesElement from './TablesElement'
 import NavBar from '../../../components/layout/Navbar'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 //import UserInfo from '../../../components/UserInfo'
 //import Icon from '../../../components/Icon'
 
@@ -65,12 +66,14 @@ function Matrix() {
                   const deg2 = deg * -1
                   const transform = 'rotate(' + deg + 'deg) translate(15em) rotate(' + deg2 + 'deg)'
                   return (
-                    <TablesElement
+                    <MyViewElement element={
+                      <TablesElement
                       key={i.toString()}
                       urlPrefix="personal-matrixs"
                       transform={transform}
                       matrix={matrix}
                     />
+                    }/>
                   )
                 })}
               </div>

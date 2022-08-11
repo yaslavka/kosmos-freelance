@@ -25,6 +25,7 @@
     width: 100%;
     height: 100%;
     border-radius: 30%;
+    object-fit: cover;
     border: 5px solid #fff;
 }
 
@@ -120,4 +121,52 @@ height: 60px;
     color: #6c757d;
     font-size: 18px;
     font-family: 'Nunito';
+}
+
+
+@media (max-width:992px ) {
+    .summaryCheck h3 {
+        font-size: 18px;
+    }
+    .summaryCheck strong {
+        font-size:16px;
+    }
+    .statList {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:768px ) {
+    .summaryCard {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 40px;
+    }
+    .summaryLeft {
+        align-items: center;
+    }
+    .summaryBtnDownload {
+        top: 0;
+        right: 0;
+    }
+}
+
+@media (max-width:576px ) {
+    .statList {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+    .summaryCheck h3 {
+        font-size: 14px;
+    }
+    .summaryCheck strong {
+        font-size:12px;
+    }
+    .summaryCheck {
+        padding: 35px;
+    }
+    .statItem div {
+        font-size: 14px;
+    }
 }

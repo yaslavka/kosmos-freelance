@@ -83,6 +83,23 @@
     }
   }
 
+  .subHeader {
+    .actions {
+      .btns {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        button {
+          font-size: 24px;
+          
+        }
+      }
+    }
+  }
+
   .nav {
     display: flex;
     flex-wrap: nowrap;
@@ -115,9 +132,21 @@
 
   .container {
     padding-bottom: 40px;
-
+    position: relative;
+    display: flex !important;
+    justify-content: center;
     @include media-breakpoint-up(xl) {
       display: flex;
+    }
+
+    .notFoundText {
+      width: 100%;
+      text-align: center;
+      color: #cbf3f0;
+      font-family: 'Nunito';
+      font-weight: 600;
+      font-size: 30px;
+      margin: 50px 0;
     }
   }
 

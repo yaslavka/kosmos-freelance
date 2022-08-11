@@ -159,8 +159,8 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className={isOpen ? [styles.NavBar, styles.navActive].join` ` : styles.NavBar} onClick={e=>setIsOpen(!isOpen)}>
-      <span className={styles.rightArrow}></span>
+    <div className={isOpen ? [styles.nav, styles.navActive].join` ` : styles.nav}> 
+      <nav className={styles.NavBar} onClick={e=>setIsOpen(!isOpen)}>
       {navbarLinks.map(({ label, route, icon, isDisabled, classImg }) => (
         <NavLink
           key={label}
@@ -169,11 +169,13 @@ function NavBar() {
           activeClassName={styles.active}
           onClick={()=>document.documentElement.scrollTo({top: 0, behavior: 'smooth'})}
         > 
-          <img className={[styles.icon, classImg].join` `} src={icon} alt="" /> <span className=''>{label}</span>
+          <img className={[styles.icon, classImg].join` `} src={icon} alt="" /> <span className=''>{label.replace(/ /g, "\u00a0")}</span>
         </NavLink>
       ))}
       <span className={isOpen ? [styles.bottonArrow, styles.bottomActive].join` ` : styles.bottonArrow} ></span>
     </nav>
+    </div>
+    
   )
 }
 

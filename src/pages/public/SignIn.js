@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react'
-import { FormGroup, Button } from 'reactstrap'
+import { FormGroup } from 'reactstrap'
 import { Formik, Form, Field } from 'formik'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -7,13 +7,13 @@ import * as yup from 'yup'
 import { isValidPassword, isValidUsername, setAccessToken } from '../../utils'
 import { api } from '../../api'
 import * as actions from '../../actions/auth.actions'
-import logo from '../../scss/media/kosmos.png'
 import { initial } from 'lodash'
 import Input from '../../components/Input'
 import routes from '../../constants/routes.constants'
-
+import cl from './Sign.module.css';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Planet from './../../scss/media/planet-1.gif'
 
 AOS.init()
 AOS.refresh()
@@ -72,14 +72,24 @@ function SignIn() {
   }, [])
 
   return (
-    <div className="auth__wrapper">
-      <div className="page">
-        <div className="auth__page">
-          <div className="auth__logo">
-            <Link to={routes.root}>
-              <img src={logo} alt="Stars logo" />
-            </Link>
+    <div className={cl.authPage}>
+      <div className={cl.headerSign}>
+        <div className='container'>
+          <Link to={routes.root}>
+            <div className={cl.logoWrap}>
+              <span>KOSM</span>
+              <span className={cl.logo}>
+                <img src={Planet} alt={Planet}/>
+              </span>
+              <span>S</span>
+            </div>
+          </Link>
+
           </div>
+        </div>
+      <div className={cl.authBlock}>
+        <div className={'container'}>
+        <div className={cl.formBlock}>
           <Formik
             validationSchema={validationSchema}
             onSubmit={submitSignInForm}
@@ -88,7 +98,7 @@ function SignIn() {
             {() => (
               <Form className="auth__form">
                 <div className="auth__title">
-                  <h2>Вход в системму</h2>
+                  <h2 className={cl.authTitle}>Вход в системму</h2>
                 </div>
                 <FormGroup>
                   <Field
@@ -107,20 +117,23 @@ function SignIn() {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Button type="submit" color="primary" size="lg" block>
-                    Войти
-                  </Button>
+                  <div className={cl.btnBlock}>
+                    <button type="submit" className={cl.btnGradient} >
+                      Войти
+                    </button>
+                  </div>
                 </FormGroup>
-                <div className="text-center">
+                <div className={cl.forgotBLock}>
                   <Link to={routes.resetPassword}>{'Забыли пароль?'}</Link>
                 </div>
                 {serverError && <div className="auth__error">{serverError}</div>}
               </Form>
             )}
           </Formik>
-          <div className="auth__footer">
+          <div className={cl.signInFoot}>
             <Link to={routes.signUp}>Все еще нет Аккаунта?</Link>
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,1 @@
+export const SELL_EXCHANGE_FORM = 'SELL_EXCHANGE_FORM';

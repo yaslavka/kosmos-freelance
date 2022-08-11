@@ -7,14 +7,18 @@ import formatCurrency from 'format-currency'
 import { Button, Input } from 'reactstrap'
 import OrderBooc from '../../orderBook/OrderBooc'
 import BalanceSell from '../../Balance/BalanceSell'
+import { useSelector } from 'react-redux'
 
 const SellFormComponent = ({ priceSell }) => {
+  const {sellExchange} = useSelector(state=>state)
   const optsIDR = { format: '%v %c', code: 'IDR' }
   const [priceValue, setPriceValue] = useState(0)
   const [totalValue, setTotalValue] = useState(0)
-  const total = totalValue * priceValue
+  const total = sellExchange.count * sellExchange.dash
   const fee = total * (0.2 / 100)
-  const netAmount = totalValue * priceValue - fee
+  const netAmount = total - fee
+
+  const roundDecimalFaraction = (n) => Math.floor((n*10**9))/10**9
 
   // set default prive value
   // when component mounted with useEffect hooks
@@ -34,9 +38,11 @@ const SellFormComponent = ({ priceSell }) => {
               0.07644793
             </div>
           </div>
+          <div className='sell-card'>
           <BalanceSell />
+          <div className='block-lines'>
           <div className="line">
-            <span>Количество:</span>
+            <span className='lines-title'>Количество:</span>
             <div className="poles">
               <Input
                 name="amount"
@@ -46,13 +52,13 @@ const SellFormComponent = ({ priceSell }) => {
                 onChange={(event) => {
                   setTotalValue(event.target.value)
                 }}
-                value={totalValue}
+                value={sellExchange.dash}
               />
               <span className="currency">DASH</span>
             </div>
           </div>
           <div className="line">
-            <span>Цена:</span>
+            <span  className='lines-title'>Цена:</span>
             <div className="poles">
               <Input
                 name="price"
@@ -61,13 +67,13 @@ const SellFormComponent = ({ priceSell }) => {
                 onChange={(event) => {
                   setPriceValue(event.target.value)
                 }}
-                value={priceValue}
+                value={sellExchange.count}
               />
               <span className="currency">BTC</span>
             </div>
           </div>
           <div className="line">
-            <span>Всего:</span>
+            <span  className='lines-title'>Всего:</span>
             <div className="poles">
               <Input
                 name="total"
@@ -77,36 +83,42 @@ const SellFormComponent = ({ priceSell }) => {
                 onChange={(event) => {
                   setTotalValue(event.target.value)
                 }}
-                value={totalValue}
+                value={sellExchange.btc} 
               />
               <span className="currency">BTC</span>
             </div>
           </div>
           <div className="line">
-            <span>Ком (0.2%):</span>
+            <span  className='lines-title'>Ком (0.2%):</span>
             <div className="poles">
-              <Input name="fee" maxLength="25" type="text" value={fee} disabled="">
+              <Input name="fee" maxLength="25" type="text" value={sellExchange.btc ? roundDecimalFaraction(fee) : ''} disabled="">
                 {formatCurrency(fee, optsIDR)}
               </Input>
               <span className="currency">BTC</span>
             </div>
           </div>
           <div className="line">
-            <span>Всего-Ком:</span>
+            <span  className='lines-title'>Всего-Ком:</span>
             <div className="poles">
-              <Input name="totalfee" maxLength="25" type="text" value={netAmount} disabled="">
+              <Input name="totalfee" maxLength="25" type="text" value={ sellExchange.btc ? roundDecimalFaraction(netAmount) : ''} disabled="">
                 {formatCurrency(netAmount, optsIDR)}
               </Input>
               <span className="currency">BTC</span>
             </div>
           </div>
           <div className="line" flow="horizontal">
-            <div float="left" width="98px">
+           
+            <div className='btn-block'>
               <Button type="button" className="clCreateOrder" origin="Продать" value="Продать">
                 Продать
               </Button>
+              </div>
             </div>
+         
           </div>
+          </div>
+          
+          
         </div>
         <OrderBooc />
       </div>

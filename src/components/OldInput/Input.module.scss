@@ -3,41 +3,44 @@
 @import '~bootstrap/scss/mixins';
 .Input {
   position: relative;
-
-  &.invalid {
-    input {
-      &[type='text'],
-      &[type='email'],
-      &[type='password'],
-      &[type='tel'] {
-        color: $red;
-        border-bottom-color: $red;
-      }
-    }
-  }
+  margin: 2px;
 
   .placeholder {
     position: absolute;
-    top: 20px;
-    left: 0;
-    font-size: 0.875rem;
-    line-height: 1.29;
+    top: 24px;
+    left: 25px;
+    font-size: 18px;
+    font-family: 'Nunito';
+    color: #8d99ae;
+    line-height: 130%;
+    transition: all 0.35s ease-in-out;
     background-color: transparent;
-    transition: top 0.15s ease-in-out;
   }
 
   input {
     position: relative;
+    box-sizing: border-box;
+    padding: 10px 0 10px 25px;
+    font-family: 'Nunito';
+    font-size: 18px;
+    height: 75px;
     z-index: 1;
     width: 100%;
-    color: $white;
-    border: none;
+    color: #8d99ae;
+    border: 2px solid #adb5bd;
+    border-radius: 5px;
     background-color: transparent;
+    transition: all 0.35s ease-in-out;
     outline: none;
 
     &::placeholder {
       opacity: 0;
     }
+
+    &:hover, &:active, &:focus {
+      color: #ff9f1c;
+      border: 2px solid #ff9f1c ;
+    } 
 
     &[type='text'],
     &[type='email'],
@@ -45,7 +48,6 @@
     &[type='tel'] {
       min-height: 42px;
       padding-top: 16px;
-      border-bottom: 1px solid $white;
 
       @include media-breakpoint-up(xl) {
         padding-top: 22px;
@@ -53,15 +55,10 @@
 
       &:not(:placeholder-shown) ~ .placeholder,
       &:focus ~ .placeholder {
-        top: 0;
+        top: 11px;
+        font-size: 14px;
+        color: #ff9f1c;
       }
     }
-  }
-
-  .errorMessage {
-    position: absolute;
-    top: 100%;
-    font-size: 0.875rem;
-    color: $red;
   }
 }

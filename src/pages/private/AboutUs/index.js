@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import styles from './AboutUs.module.scss'
 
 import NavBar from '../../../components/layout/Navbar'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 //import UserInfo from '../../../components/UserInfo'
 
 export default function AboutUs() {
@@ -22,11 +23,14 @@ export default function AboutUs() {
             <h1 className={styles.mainTitle}>О нас</h1>
           </Col>
           <Col xs={12} xl={9}>
+          <MyViewElement element={
             <p className={styles.mainDescription}>
               <span>Космос</span> - Вселенная возможностей.
             </p>
+             }/>
             <Row>
-              <Col xs={12} xl={9}>
+          <MyViewElement element={
+             
                 <p className={styles.text}>
                   Комбинированная платформа Космос-является доступным инструментом для заработка в
                   сети, как лидера, так и новичка. Здесь собраны почти все виды заработка в сети и
@@ -36,27 +40,33 @@ export default function AboutUs() {
                   самостоятельно создать для себя, а также своей команды комфортные условия работы и
                   задать нужный темп развития.
                 </p>
-              </Col>
+             }/>
+            
             </Row>
             <Row className={styles.buildUpWrapper}>
-              <Col xs={12} xl={9}>
+          <MyViewElement element={
+             
                 <p className={styles.text}>
                   Особенность комбинированной платформы Космос{' '}
                   <span>множество партнерских программ, объединенных в единую платформу,</span>
                   что позволяет обеспечить максимальную прибыль.
                 </p>
-              </Col>
+             }/>
+              
             </Row>
             <Row className={styles.educationWrapper}>
-              <Col xs={12} xl={9}>
+          <MyViewElement element={
+           
                 <p className={styles.text}>
                   Одним из основных продуктов нашей платформы Космос является уникальный торговый
                   бот, который позволит Вам зарабатывать в разы больше на полном пассиве,
                   прикладывая минимум усилий.
                 </p>
-              </Col>
+             }/>
+            
             </Row>
-            <Col xs={12} xl={9}>
+            <MyViewElement element={
+         
               <div className={styles.finalText}>
                 <p className={styles.text}>
                   Здесь сможет зарабатывать каждый, не важно умеешь ли ты приглашать, лидер ты или
@@ -64,7 +74,8 @@ export default function AboutUs() {
                   доходом.
                 </p>
               </div>
-            </Col>
+             }/>
+           
           </Col>
         </Row>
       </Container>

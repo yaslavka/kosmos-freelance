@@ -17,6 +17,7 @@ import styles from './SuperStars.module.scss'
 
 import TablesElement from '../Star/TablesElement'
 import NavBar from '../../../components/layout/Navbar'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 //import UserInfo from '../../../components/UserInfo'
 //import Icon from '../../../components/Icon'
 
@@ -55,12 +56,15 @@ function SuperStars() {
                   const deg2 = deg * -1
                   const transform = 'rotate(' + deg + 'deg) translate(15em) rotate(' + deg2 + 'deg)'
                   return (
+                    <MyViewElement element={
                     <TablesElement
                       key={i.toString()}
                       urlPrefix="MATRIX3-table"
                       transform={transform}
                       matrix={matrix}
                     />
+                  }/>
+
                   )
                 })}
               </div>

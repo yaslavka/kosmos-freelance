@@ -1,0 +1,16 @@
+.disableElement {
+    opacity: 0;
+    transition: all .9s cubic-bezier(.215,.61,.355,1) .1s;
+    transform: translateY(200%) scaleY(1.3);
+}
+
+.activeElement {
+    opacity: 1;
+    transform: translateY(0) scaleY(1.00100000100000000000000001);
+}
+
+@media (max-width:768px) {
+    .disableElement {
+        transition: all .7s cubic-bezier(.215,.61,.355,1) .05s;
+    }
+}

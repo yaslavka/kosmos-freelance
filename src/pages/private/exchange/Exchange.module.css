@@ -1,0 +1,138 @@
+
+/* 
+.navBlock {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: 400px;
+    z-index: 100;
+    pointer-events: none;
+} */
+
+.contentBlock {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.buySellCard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+.marketBtns {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .marketBtns a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#40ebbd;
+    max-width: 200px;
+    width: 100%;
+    padding: 15px 60px;
+    height: 45px;
+    color: #fff !important;
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .35s ease-in-out;
+  }
+
+  .marketBtns a:hover {
+    background: #fff;
+    color: #40ebbd !important;
+    border: 1px solid #40ebbd;
+
+  }
+  .result {
+    margin-bottom: 30px;
+  }
+  .result tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .result th {
+    width: 100%;
+  }
+
+  .result span {
+    display: inline-block;
+    border: 2px solid #cae9ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .dataTable {
+    width: 100%;
+    margin: 0;
+  }
+
+  .dataTable tbody{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .dataTable tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
+    transition: all .2s ease-in-out;
+    justify-content: center;
+    border-radius: 5px;
+  }
+
+  .dataTable tr:hover {
+    background: rgb(243, 243, 243) ;
+  } 
+  .dataTable td {
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-family: 'Nunito';
+    font-weight: 400;
+    color: #343a40;
+}
+.blockTable * {
+ pointer-events: none;
+}
+
+.blockTable {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+@media (max-width:768px)  {
+  .buySellCard {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .marketBtns {
+    gap: 15px;
+  }
+  .marketBtns a {
+    padding: 15px 25px !important;
+    font-size: 16px;
+  }
+}

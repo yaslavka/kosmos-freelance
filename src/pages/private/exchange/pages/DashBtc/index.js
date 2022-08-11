@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col, Container } from 'reactstrap'
+import cl from './../../Exchange.module.css';
 import NavBar from '../../../../../components/layout/Navbar'
 import BuyFormComponent from './components/Form/BuyForm'
 import SellFormComponent from './components/Form/SellForm'
@@ -11,16 +12,18 @@ const Dashbtc = () => {
   return (
     <Container className="root-page">
       <Row>
-        <Col xl={3} className="d-none d-xl-block col-xl-38">
-          <NavBar />
-        </Col>
-        <Col xl={9}>
+          <div className={cl.navBlock}>
+                <NavBar />
+            </div>
+          <div className={cl.contentBlock}>
           <Chart width="100%" />
-          <BuyFormComponent width="100%" />
-          <SellFormComponent width="100%" />
+          <div className={cl.buySellCard}>
+            <BuyFormComponent />
+            <SellFormComponent />
+          </div>
           <Markets />
           <HistoriBuySel width="100%" />
-        </Col>
+          </div>
       </Row>
     </Container>
   )

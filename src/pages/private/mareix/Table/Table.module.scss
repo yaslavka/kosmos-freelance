@@ -157,7 +157,9 @@
   }
 
   .footer {
-    display: none;
+    display: grid !important;
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
     max-width: 320px;
     margin: 0 auto;
 
@@ -168,13 +170,14 @@
       font-weight: 700;
       font-size: 18px;
       margin: 25px 0;
-      color: #fff;
+      color: #cbf3f0;
 
       @include media-breakpoint-up(xl) {
         line-height: 34px;
         font-size: 32px;
       }
     }
+    
 
     button {
       margin-bottom: 55px;

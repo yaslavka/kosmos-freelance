@@ -21,6 +21,7 @@ import ClonesModal from './ClonesModal'
 import BuyStatusModal from './BuyStatusModal'
 import BuyMatrixModal from './BuyMatrixModal'
 import PartnersClonesModal from './PartnersClonesModal'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 // eslint-disable-next-line react/prop-types
 export default function Tablemini({ location: { state = {}, pathname } }) {
@@ -360,22 +361,32 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-          {matrixInfo && <h1 className={styles.title}>MATRIX - {matrixInfo.name}</h1>}
+          
+          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>MATRIX - {matrixInfo.name}</h1>}/>}
           {backRouteElement}
         </div>
         {matrixInfo && matrixInfo.isActive && (
           <nav className={styles.nav}>
+            <MyViewElement element={
+
             <NavLink to={navRoute()} exact activeClassName={styles.active}>
               Структура
             </NavLink>
+            }/>
+            <MyViewElement element={
+
             <NavLink to={navRoute('/queue')} exact activeClassName={styles.active}>
               Очередь
             </NavLink>
+            }/>
+
           </nav>
         )}
         <div className={styles.container}>
           <div className={styles.sidebar}>
             {selectItems && (
+            <MyViewElement element={
+
               <Select
                 values={selectItems}
                 placeholder="Мои клоны"
@@ -386,9 +397,13 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                   }
                 }}
               />
+            }/>
+
             )}
             {id && (
               <div className="d-none d-xl-block">
+            <MyViewElement element={
+
                 <Button
                   onClick={handleUpMatrix}
                   disabled={buyingStatus.type === 'pending'}
@@ -398,12 +413,20 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                 >
                   Наверх
                 </Button>
+            }/>
+
               </div>
             )}
             {matrixInfo && (
               <div className={styles.footer}>
+            <MyViewElement element={
+
                 <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+            }/>
+
                 {matrixInfo.canBuy && (
+            <MyViewElement element={
+
                   <Button
                     onClick={showBuyMatrixModal}
                     disabled={buyingStatus.type === 'pending'}
@@ -413,10 +436,14 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                   >
                     Купить
                   </Button>
+            }/>
+
                 )}
                 <Row>
                   <Col>
                     {matrixInfo.isActive && (
+            <MyViewElement element={
+
                       <Button
                         onClick={showClonesModal}
                         className="w-1001"
@@ -425,6 +452,8 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                       >
                         Мои клоны
                       </Button>
+            }/>
+
                     )}
                   </Col>
                 </Row>
@@ -432,6 +461,8 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
             )}
           </div>
           <div className={styles.content}>
+          <MyViewElement element={
+
             <SearchSelect
               className={styles.searchSelect}
               values={searchUsers}
@@ -439,6 +470,9 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
               onInput={setCurrentSearchValue}
               onChange={redirectToUserMatrix}
             />
+          }/>
+          <MyViewElement element={
+
             <div className="d-xl-none mt-4">
               <Button
                 onClick={handleUpMatrix}
@@ -450,6 +484,9 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                 Наверх
               </Button>
             </div>
+          }/>
+          <MyViewElement element={
+
             <div className={styles.matrixTree}>
               <MatrixCell
                 place={0}
@@ -486,6 +523,7 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                 />
               </div>
             </div>
+          }/>
 
             <div className={styles.navigation}>
               <button className={styles.arrow} onClick={() => navigateTo('left')}>

@@ -9,7 +9,8 @@
   z-index: 10;
   width: 100%;
   height: 100%;
-  background-color: $indigo;
+  background-color: #fff;
+  border: 5px solid #cbf3f0;
   overflow: auto;
 
   @include media-breakpoint-up(xl) {
@@ -24,11 +25,15 @@
 
 
   .header {
+    position: relative;
     padding: 40px;
 
     h3 {
       margin-bottom: 0;
       font-weight: bold;
+      text-align: center;
+      color: #6c757d;
+      font-family: 'Nunito';
       font-size: 24px;
     }
 
@@ -36,20 +41,45 @@
       padding-top: 0;
     }
 
-    .close {
-      display: block;
+    .headBtn {
       position: absolute;
-      background-color: transparent;
-      border: none;
-      width: 20px;
-      right: 10px;
-      padding: 0;
-      top: 10px;
-      z-index: 11;
+      right: 20px;
+      top: 20px;
+    }
+    .close {
+      display: inline-flex;
+      right: 0;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      right: 0;
 
-      img {
-        display: block;
-        max-width: 100%;
+      .closeIT, .closeIB {
+        width: 100%;
+        height: 5px;
+        display: inline-block;
+        position: absolute;
+
+        border-radius: 15px;
+        background-color: #ff9f1c;
+        transition: all .4s ease-in-out;
+      }
+
+      .closeIT {
+        transform: rotate(-45deg);
+      }
+
+      .closeIB {
+        transform: rotate(45deg);
+      }
+
+      &:hover .closeIT {
+        transform: rotate(45deg);
+      }
+      &:hover .closeIB {
+        transform: rotate(-45deg);
       }
     }
   }
@@ -64,17 +94,16 @@
 
   .row {
     > div {
-      background-color: #0b2e13;
       border-radius: 10px;
       align-items: center;
       margin-bottom: 40px;
-      padding: 40px;
+      padding: 10px;
       flex: 1;
     }
 
     @include media-breakpoint-up(xl) {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-between;
 
       > div {
@@ -90,12 +119,21 @@
   .info {
     line-height: 34px;
     font-weight: 800;
-    font-size: 32px;
-
+    font-size: 26px;
+    font-family: 'Nunito';
+    color: #ff9f1c;
+    text-align: center;
     .counter {
-      color: #0b2e13;
-      font-size: 48px;
+     
     }
+  }
+
+  .btn {
+    width: 40%;
+    height: 50px;
+    background: #ff9f1c;
+    color: #fff;
+    border-radius: 10px;
   }
 
   .window {

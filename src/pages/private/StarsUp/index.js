@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Container, Button } from 'reactstrap'
-
+import cl from './StarsUp.module.css';
 import NavBar from '../../../components/layout/Navbar'
 
 //import UserInfo from '../../../components/UserInfo'
@@ -9,29 +9,42 @@ import { Link } from 'react-router-dom'
 
 const StarsUp = () => {
   return (
-    <Container className="root-page">
-      <Row>
-        <Col xl={3} className="d-none d-xl-block">
-          <NavBar />
-        </Col>
-        <Col xl={9}>
-          <div className="">
-            <div className="inset_page">
+    <section className={cl.invetbox}> 
+      <div className={['container', cl.cont].join` `}>
+      <div className={cl.navBlock}>
+            <NavBar />
+        </div>
+       
+          <div className="content">
+            <div className={cl.investPage}>
               <div className="startrek__title1">
-                <h1 className="h1_investbox">Investment plans</h1>
+                <h1 className={cl.title}>Investment plans</h1>
               </div>
-              <div className="investbox_page">
-                <div className="quote">
-                  Invest your free coins to InvestBox! It’s a tool for devs to promote their coins.
-                  It’s NOT Pyramid/HYIP, all payments are made from special fund.
-                  <br />
-                  InvestBoxes can change status from Active to «No coins», but you can close your
-                  investment any time, it’s 100% safe.
-                  <br />
-                  InvestBoxes with «new» type - no investment close, you can only get daily percent.
-                </div>
+              <p className={cl.descr}>Stocks, bonds, and other investments are ultra-useful financial tools that allow investors (or anyone who's willing to make educated, cash-backed financial decisions) to increase their worth and become part of today's fast-moving business landscape.</p>
+              <div className={cl.investBlock}>
+                <ul className={cl.investListText}>
+                  <li>
+                    <span>
+                      Invest your free coins to InvestBox! It’s a tool for devs to promote their coins.
+                      It’s NOT Pyramid/HYIP, all payments are made from special fund.
+                    </span>
+                   
+                  </li>
+                 <li>
+                    <span>
+                      InvestBoxes can change status from Active to «No coins», but you can close your
+                      investment any time, it’s 100% safe.
+                    </span>
+                    
+                 </li>
+                 <li>
+                  <span>
+                    InvestBoxes with «new» type - no investment close, you can only get daily percent
+                  </span>
+                 </li>
+                </ul>
                 <div className="clear"></div>
-                <div className="mn">
+                <div className={cl.listLinks}>
                   <Link to={routes.starsUp} className="active">
                     Investment plans
                   </Link>
@@ -44,130 +57,95 @@ const StarsUp = () => {
                 </div>
                 <div className="clear"></div>
                 <div className="create_new">
-                  <table className="tables_line1">
+                  <table className={cl.table}>
                     <tbody>
                       <tr>
                         <td width="49%">
                           <div className="newline">
-                            <div className="item title">Investment plans</div>
                             <div
                               id="investbox_boxes_list_wrapper"
                               className="dataTables_wrapper no-footer"
                             >
                               <div className="top"></div>
                               <div className="dataTables_scroll">
-                                <div className="dataTables_scrollHead">
-                                  <div className="dataTables_scrollHeadInner">
-                                    <table
-                                      className="tables_line investbox_table investbox_table_top dataTable no-footer"
-                                      role="grid"
-                                    >
-                                      <thead>
-                                        <tr role="row">
-                                          <th
-                                            className="first sorting_disabled"
-                                            rowSpan="1"
-                                            colSpan="1"
-                                          >
-                                            Coin
-                                          </th>
-                                          <th className="sorting_disabled" rowSpan="1" colSpan="1">
-                                            Percent
-                                          </th>
-                                          <th className="sorting_disabled" rowSpan="1" colSpan="1">
-                                            Period
-                                          </th>
-                                          <th className="sorting_disabled" rowSpan="1" colSpan="1">
-                                            MinInvest
-                                          </th>
-                                          <th className="sorting_disabled" rowSpan="1" colSpan="1">
-                                            MaxInvest
-                                          </th>
-                                          <th className="sorting_disabled" rowSpan="1" colSpan="1">
-                                            Action
-                                          </th>
-                                          <th className="sorting_disabled" rowSpan="1" colSpan="1">
-                                            Status
-                                          </th>
-                                          <th className="sorting_disabled" rowSpan="1" colSpan="1">
-                                            &nbsp;
-                                          </th>
-                                        </tr>
-                                      </thead>
-                                    </table>
-                                  </div>
-                                </div>
                                 <div className="dataTables_scrollBody jspScrollable" tabIndex="0">
                                   <div className="jspContainer">
                                     <div className="jspPane">
                                       <table
                                         id="investbox_boxes_list"
-                                        className="tables_line investbox_table investbox_table_top dataTable no-footer"
+                                        className={cl.tableMain}
                                         role="grid"
                                       >
-                                        <thead>
+                                        
+                                        <thead className={cl.thead}>
+                                       
                                           <tr role="row">
+                                         
                                             <th
-                                              className="first sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">Coin</div>
+                                              <div className={cl.theadEl}>Coin</div>
                                             </th>
                                             <th
-                                              className="sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">Percent</div>
+                                              <div className={cl.theadEl}>Percent</div>
                                             </th>
                                             <th
-                                              className="sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">Period</div>
+                                              <div className={cl.theadEl}>Period</div>
                                             </th>
                                             <th
-                                              className="sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">MinInvest</div>
+                                              <div className={cl.theadEl}>MinInvest</div>
                                             </th>
                                             <th
-                                              className="sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">MaxInvest</div>
+                                              <div className={cl.theadEl}>MaxInvest</div>
                                             </th>
                                             <th
-                                              className="sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">Action</div>
+                                              <div className={cl.theadEl}>Action</div>
                                             </th>
                                             <th
-                                              className="sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">Status</div>
+                                              <div className={cl.theadEl}>Status</div>
                                             </th>
                                             <th
-                                              className="sorting_disabled"
+                                              className={cl.sort}
                                               rowSpan="1"
                                               colSpan="1"
                                             >
-                                              <div className="dataTables_sizing">&nbsp;</div>
+                                              <div className={cl.theadEl}>&nbsp;</div>
                                             </th>
+                                           
                                           </tr>
+                                        
                                         </thead>
+                                        
+                                        
 
-                                        <tbody>
-                                          <tr role="row" className="odd">
+                                        <tbody className={cl.tbody}>
+                                          <tr role="row" className={cl.trBody}>
                                             <td>
                                               <div className="favyo"></div>
                                               YO
@@ -175,12 +153,12 @@ const StarsUp = () => {
                                             <td>0.2%</td>
                                             <td>Daily</td>
                                             <td>
-                                              <Button
+                                              <a
                                                 href="#"
                                                 onClick="$('#iboxsum834').val('0.5').trigger('change'); return false;"
                                               >
                                                 0.5
-                                              </Button>
+                                              </a>
                                             </td>
                                             <td>
                                               <a
@@ -201,7 +179,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(834);return false;"
                                                   value="Invest"
                                                 />
@@ -210,6 +188,7 @@ const StarsUp = () => {
                                                     id="iboxsum834"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -252,7 +231,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1453);return false;"
                                                   value="Invest"
                                                 />
@@ -261,6 +240,7 @@ const StarsUp = () => {
                                                     id="iboxsum1453"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -275,7 +255,7 @@ const StarsUp = () => {
                                               </div>
                                             </td>
                                           </tr>
-                                          <tr role="row" className="odd">
+                                          <tr role="row" className={cl.trBody}>
                                             <td>EASY</td>
                                             <td>1%</td>
                                             <td>Daily</td>
@@ -303,7 +283,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1203);return false;"
                                                   value="Invest"
                                                 />
@@ -312,6 +292,7 @@ const StarsUp = () => {
                                                     id="iboxsum1203"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -354,7 +335,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1199);return false;"
                                                   value="Invest"
                                                 />
@@ -363,6 +344,7 @@ const StarsUp = () => {
                                                     id="iboxsum1199"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -377,7 +359,7 @@ const StarsUp = () => {
                                               </div>
                                             </td>
                                           </tr>
-                                          <tr role="row" className="odd">
+                                          <tr role="row" className={cl.trBody}>
                                             <td>TALK</td>
                                             <td>1%</td>
                                             <td>Daily</td>
@@ -405,7 +387,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1196);return false;"
                                                   value="Invest"
                                                 />
@@ -414,6 +396,7 @@ const StarsUp = () => {
                                                     id="iboxsum1196"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -449,7 +432,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1181);return false;"
                                                   value="Invest"
                                                 />
@@ -458,6 +441,7 @@ const StarsUp = () => {
                                                     id="iboxsum1181"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -472,7 +456,7 @@ const StarsUp = () => {
                                               </div>
                                             </td>
                                           </tr>
-                                          <tr role="row" className="odd">
+                                          <tr role="row" className={cl.trBody}>
                                             <td>YOMI</td>
                                             <td>1%</td>
                                             <td>Daily</td>
@@ -496,7 +480,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1163);return false;"
                                                   value="Invest"
                                                 />
@@ -505,6 +489,7 @@ const StarsUp = () => {
                                                     id="iboxsum1163"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -547,7 +532,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1161);return false;"
                                                   value="Invest"
                                                 />
@@ -556,6 +541,7 @@ const StarsUp = () => {
                                                     id="iboxsum1161"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -570,7 +556,7 @@ const StarsUp = () => {
                                               </div>
                                             </td>
                                           </tr>
-                                          <tr role="row" className="odd">
+                                          <tr role="row" className={cl.trBody}>
                                             <td>WATER</td>
                                             <td>0.1% (new)</td>
                                             <td>Daily</td>
@@ -595,7 +581,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1159);return false;"
                                                   value="Invest"
                                                 />
@@ -604,6 +590,7 @@ const StarsUp = () => {
                                                     id="iboxsum1159"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -646,7 +633,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1140);return false;"
                                                   value="Invest"
                                                 />
@@ -655,6 +642,7 @@ const StarsUp = () => {
                                                     id="iboxsum1140"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -669,7 +657,7 @@ const StarsUp = () => {
                                               </div>
                                             </td>
                                           </tr>
-                                          <tr role="row" className="odd">
+                                          <tr role="row" className={cl.trBody}>
                                             <td>ALISA</td>
                                             <td>8%</td>
                                             <td>Daily</td>
@@ -697,7 +685,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1081);return false;"
                                                   value="Invest"
                                                 />
@@ -706,6 +694,7 @@ const StarsUp = () => {
                                                     id="iboxsum1081"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -748,7 +737,7 @@ const StarsUp = () => {
                                               <div className="create_new2">
                                                 <input
                                                   type="button"
-                                                  className="invest "
+                                                  className={cl.nameInput}
                                                   onClick="doInvestBoxInvest(1036);return false;"
                                                   value="Invest"
                                                 />
@@ -757,6 +746,7 @@ const StarsUp = () => {
                                                     id="iboxsum1036"
                                                     maxLength="25"
                                                     type="text"
+                                                    className={cl.inputValue}
                                                     value="100.00000000"
                                                   />
                                                   <span className="currency">
@@ -788,11 +778,11 @@ const StarsUp = () => {
                                 </div>
                               </div>
                               <div
-                                className="dataTables_paginate paging_simple_numbers"
+                                className={cl.paginate}
                                 id="investbox_boxes_list_paginate"
                               >
                                 <Button
-                                  className="paginate_button previous disabled"
+                                  className={cl.btnPag}
                                   aria-controls="investbox_boxes_list"
                                   data-dt-idx="0"
                                   tabIndex="0"
@@ -800,9 +790,9 @@ const StarsUp = () => {
                                 >
                                   Назад
                                 </Button>
-                                <span>
+                                <div className={cl.paginateBtns}>
                                   <Button
-                                    className="paginate_button current"
+                                    className={cl.btnPag}
                                     aria-controls="investbox_boxes_list"
                                     data-dt-idx="1"
                                     tabIndex="0"
@@ -810,7 +800,7 @@ const StarsUp = () => {
                                     1
                                   </Button>
                                   <Button
-                                    className="paginate_button "
+                                    className={cl.btnPag}
                                     aria-controls="investbox_boxes_list"
                                     data-dt-idx="2"
                                     tabIndex="0"
@@ -818,7 +808,7 @@ const StarsUp = () => {
                                     2
                                   </Button>
                                   <Button
-                                    className="paginate_button "
+                                    className={cl.btnPag}
                                     aria-controls="investbox_boxes_list"
                                     data-dt-idx="3"
                                     tabIndex="0"
@@ -826,7 +816,7 @@ const StarsUp = () => {
                                     3
                                   </Button>
                                   <Button
-                                    className="paginate_button "
+                                    className={cl.btnPag}
                                     aria-controls="investbox_boxes_list"
                                     data-dt-idx="4"
                                     tabIndex="0"
@@ -834,7 +824,7 @@ const StarsUp = () => {
                                     4
                                   </Button>
                                   <Button
-                                    className="paginate_button "
+                                    className={cl.btnPag}
                                     aria-controls="investbox_boxes_list"
                                     data-dt-idx="5"
                                     tabIndex="0"
@@ -842,16 +832,16 @@ const StarsUp = () => {
                                     5
                                   </Button>
                                   <Button
-                                    className="paginate_button "
+                                    className={cl.btnPag}
                                     aria-controls="investbox_boxes_list"
                                     data-dt-idx="6"
                                     tabIndex="0"
                                   >
                                     6
                                   </Button>
-                                </span>
+                                </div>
                                 <Button
-                                  className="paginate_button next"
+                                 className={cl.btnPag}
                                   aria-controls="investbox_boxes_list"
                                   data-dt-idx="7"
                                   tabIndex="0"
@@ -862,13 +852,15 @@ const StarsUp = () => {
                               </div>
                               <div className="clear"></div>
                             </div>
+                            <div className={cl.newPlanBlock}>
                             <Button
                               type="button"
-                              className="clInvestBoxCreate"
+                              className={cl.newPlanebtn}
                               onClick='popupInvestBoxCreateBox(0,0,"","","","","","","","","","Create new plan")'
                             >
                               Create new plan
                             </Button>
+                            </div>
                           </div>
                         </td>
                       </tr>
@@ -878,9 +870,8 @@ const StarsUp = () => {
               </div>
             </div>
           </div>
-        </Col>
-      </Row>
-    </Container>
+      </div>
+    </section>
   )
 }
 export default StarsUp

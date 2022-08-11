@@ -4,15 +4,15 @@ import Viewport from '../marketlist'
 import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
 import { Button } from 'react-bootstrap'
-
+import cl from './../../../../Exchange.module.css';
 const Market = () => {
   return (
     <div className="left_bar">
       <div className="market_box">
         <div className="all_title title">Маркет</div>
         <div>
-          <div className="market_base_container">
-            <div>
+          <div >
+            <div className={cl.marketBtns}>
               <Button href="javascript:void(0)" value="top" onClick="changeMarketBase('top')">
                 TOP
               </Button>

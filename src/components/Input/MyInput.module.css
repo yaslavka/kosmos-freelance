@@ -1,0 +1,171 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
+.inputBlock {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}  
+
+.myInput {
+    position: relative;
+    padding: 32px 18px 18px;
+    background-color: #fff;
+    border: 1px solid #DADBDD;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 3px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: #607483;
+    transition: all .35s ease-in-out;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+ .myInput:active, .myInput:focus, .myInput:valid:required {
+    border: 1px solid #9DA0AB;
+}
+
+
+.inputPlace {
+    position: absolute;
+    left: 18px;
+    top: 24px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: #607483;
+    pointer-events: none;
+    -webkit-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+    z-index: 3;
+}
+
+
+
+.myInput:valid:required ~  .inputPlace,
+.myInput:focus ~ .inputPlace {
+    -webkit-transform: translateY(-12.5px);
+        -ms-transform: translateY(-12.5px);
+            transform: translateY(-12.5px);
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px ;
+    line-height: 130%;
+    /* or 13px */
+
+    letter-spacing: -0.02em;
+
+    color: #909EA8;
+}
+
+
+@media (max-width:992px) {
+    
+.inputPlace {
+    position: absolute;
+  
+    
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+   
+    pointer-events: none;
+    -webkit-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+}
+@media (max-width:768px) {
+    .inputPlace {
+        position: absolute;
+       
+      
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+      
+        pointer-events: none;
+        -webkit-transition: all .35s ease-in-out;
+        -o-transition: all .35s ease-in-out;
+        transition: all .35s ease-in-out;
+    }
+}
+
+@media (max-width:567px) {
+
+    
+    .myInput {
+        position: relative;
+        padding: 0;
+        background-color: #fff;
+        border: 1px solid #DADBDD;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        height: 44px;
+        border-radius: 3px;
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+        color: var(--rock-grey-color);
+        border-radius: 5px;
+        z-index: 3;
+    }
+        .inputPlace {
+        position: absolute;
+        left: 18px ;
+        top: 16px ;
+            font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+        color: #607483;
+        pointer-events: none;
+        -webkit-transition: all .35s ease-in-out;
+        -o-transition: all .35s ease-in-out;
+        transition: all .35s ease-in-out;
+    }
+    
+    .myInput:valid:required ~  .inputPlace,
+    .myInput:focus ~ .inputPlace {
+        -webkit-transform: translateY(-7px);
+            -ms-transform: translateY(-7px);
+                transform: translateY(-7px);
+        font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 9px ;
+        line-height: 130%;
+        /* or 13px */
+
+        letter-spacing: -0.02em;
+
+       
+    }
+}

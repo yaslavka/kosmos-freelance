@@ -11,9 +11,9 @@ import * as actions from '../../../actions/stars.actions'
 import avatarFallback from '../../../scss/media/camera_200.png'
 import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
 import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
-import closeIcon from '../../../scss/media/close.ac2aaa1a.svg'
 import StarRating from '../../../components/StarRating'
 import { Spinner } from 'react-bootstrap'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 // eslint-disable-next-line react/prop-types
 const TableQuemini = ({ location: { state = {} } }) => {
@@ -84,43 +84,64 @@ const TableQuemini = ({ location: { state = {} } }) => {
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-          {matrixInfo && <h1 className={styles.title}>STARS - {matrixInfo.name}</h1>}
+
+
+
+          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>STARS - {matrixInfo.name}</h1>}/>}
           <Link to={routes.matrixs} className={styles.close}>
-            <img src={closeIcon} alt="Close" />
+            <span className={styles.closeIT}>
+
+            </span>
+            <span className={styles.closeIB}>
+
+            </span>
           </Link>
         </div>
         <div className={styles.subHeader}>
           {matrixInfo && matrixInfo.isActive && (
             <nav className={styles.nav}>
+              <MyViewElement element={
+
               <NavLink to={navRoute()} exact activeClassName={styles.active}>
                 Структура
               </NavLink>
+              }/>
+              <MyViewElement element={
+
               <NavLink to={navRoute('/queue')} exact activeClassName={styles.active}>
                 Очередь
               </NavLink>
+              }/>
+
             </nav>
           )}
+              <MyViewElement element={
+
           <div className={styles.actions}>
-            <div className={styles.btns}>=
+            <div className={styles.btns}>
               <button
-                className={line === 0 ? styles.active : undefined}
+                className={line === 0 ? ['w-1001', styles.active].join` ` : 'w1001'}
                 onClick={() => handleChangeLine(0)}
               >
                 Мои клоны
               </button>
               <button
-                className={line === 1 ? styles.active : undefined}
+                className={line === 0 ? ['w-1001', styles.active].join` ` : 'w1001'}
+
                 onClick={() => handleChangeLine(1)}
               >
                 Первая линия
               </button>
               <button
-                className={line === 2 ? styles.active : undefined}
+                className={line === 0 ? ['w-1001', styles.active].join` ` : 'w1001'}
+
                 onClick={() => handleChangeLine(2)}
               >
                 Вторая линия
               </button>
             </div>
+
+
             {!!line && (
               <div className={styles.search}>
                 <input
@@ -133,6 +154,7 @@ const TableQuemini = ({ location: { state = {} } }) => {
               </div>
             )}
           </div>
+           }/>
         </div>
         <div className={styles.container}>
           <Spinner isLoading={isLoading}>
@@ -186,11 +208,12 @@ const TableQuemini = ({ location: { state = {} } }) => {
                   </Col>
                 ))
               ) : (
-                <Col>
-                  <h4 className="text-center mb-4 mt-4">
+              <MyViewElement element={
+                  <h4 className={styles.notFoundText}>
                     У вас нет {line ? `пользователей в ${line} линии` : 'клонов в очереди'}
                   </h4>
-                </Col>
+                }/>
+
               )}
             </Row>
             {!isEmpty(list) && !isLoading && (

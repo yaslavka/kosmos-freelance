@@ -30,12 +30,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $indigo;
+    background-color: rgb(16, 24, 174);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 2px;
 
     @include media-breakpoint-up(xl) {
-      background-color: $indigo;;
+      background-color: rgb(37, 61, 181);;
     }
 
     svg {

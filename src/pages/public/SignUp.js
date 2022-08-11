@@ -2,15 +2,15 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, Redirect } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { Row, Col, FormGroup, Button } from 'reactstrap'
+import { Row, Col, FormGroup } from 'reactstrap'
 import { Formik, Form, Field } from 'formik'
-
-import logo from '../../scss/media/kosmos.png'
+import Planet from './../../scss/media/planet-1.gif'
 import avatar from '../../scss/media/placeholder.7e85be59.svg'
 import routes from '../../constants/routes.constants'
 import * as actions from '../../actions/auth.actions'
 import { api } from '../../api'
 import { isValidEmail, isValidPassword, isValidUsername, isValidPhone } from '../../utils'
+import cl from './Sign.module.css';
 
 import Checkbox from '../../components/Checkbox'
 import InputPhone from '../../components/InputPhone'
@@ -100,15 +100,25 @@ function SignUp({ location }) {
   }
 
   return (
-    <div className="auth__wrapper">
-      <div className="star-container"></div>
-      <div className="auth__page">
-        <div className="auth__logo">
-          <a href="/">
-            <img src={logo} alt="Stars logo" />
-          </a>
+    <div className={cl.authPage}>
+      <div className={cl.headerSign}>
+        <div className='container'>
+          <Link to={'/'}>
+            <div className={cl.logoWrap}>
+              <span>KOSM</span>
+              <span className={cl.logo}>
+                <img src={Planet} alt={Planet}/>
+              </span>
+              <span>S</span>
+            </div>
+          </Link>
+
+          </div>
         </div>
-        <Formik
+      <div className={cl.authBlock}>
+        <div className={'container'}>
+        <div className={cl.formBlock}>
+          <Formik
           initialValues={initialValues}
           validate={({
             phone,
@@ -161,8 +171,8 @@ function SignUp({ location }) {
           {() => (
             <Form className="auth__form">
               <div className="auth__title">
-                <h2>{t('Присоеденяйся уже сейчас, потом будет поздно')}</h2>
-                {!inviter && <div>Скорее регистрируйся и начни зарабатывать уже сейчас!</div>}
+                <h2 className={cl.authTitle}>{t('Присоеденяйся уже сейчас, потом будет поздно')}</h2>
+                {!inviter && <div className={cl.authDescr}>Скорее регистрируйся и начни зарабатывать уже сейчас!</div>}
               </div>
               <Spinner size="sm" isLoading={inviterLoading}>
                 {inviter && (
@@ -254,21 +264,22 @@ function SignUp({ location }) {
                   component={Checkbox}
                 />
               </FormGroup>
-              <Button
+              <div className={cl.btnBlock}>
+              <button
                 type="submit"
-                color="primary"
-                disabled={signUpStatus === 'progress'}
-                size="lg"
-                block
+                className={cl.btnGradient}
               >
                 {t('Присоеденится')}
-              </Button>
+              </button>
+              </div>
               {serverError && <div className="auth__error">{serverError}</div>}
             </Form>
           )}
         </Formik>
-        <div className="auth__footer">
+        <div className={cl.signUpFoot}>
           {t('У вас уже есть аккаунт?')} <Link to={routes.signIn}>{t('Войдите')}</Link>
+        </div>
+        </div>
         </div>
       </div>
     </div>
@@ -276,3 +287,6 @@ function SignUp({ location }) {
 }
 
 export default SignUp
+
+
+

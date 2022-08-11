@@ -66,9 +66,17 @@ function CometsBuy({ matrixType, onClose }) {
     <Formik onSubmit={submitArrangeClonesForm} initialValues={initialValue} validate={validate}>
       <Form className={styles.ClonesModal}>
         <div className={styles.header}>
+          <div className={styles.headBtn}>
           <button type="button" onClick={onClose} className={styles.close}>
-            <img src={closeIcon} alt="Close" />
+            <span className={styles.closeIT}>
+
+            </span>
+            <span className={styles.closeIB}>
+
+            </span>
           </button>
+          </div>
+          
           <h3>Купить комет</h3>
         </div>
 
@@ -76,8 +84,7 @@ function CometsBuy({ matrixType, onClose }) {
           <div className={styles.row}>
             {matrixClones > -1 && (
               <div className={styles.info}>
-                У вас есть <span className={styles.counter}>{matrixClones}</span> <br />
-                Комет в lvl{matrixType}
+                У вас есть <span className={styles.counter}>{matrixClones}</span> комет в lvl{matrixType}
               </div>
             )}
             {matrixType && matrixClones > -1 && (
@@ -88,7 +95,7 @@ function CometsBuy({ matrixType, onClose }) {
           </div>
         </div>
         <div className={styles.footer}>
-          <Button type="submit" disabled={byStatus} color="perrywinkle" size="small">
+          <Button type="submit" disabled={byStatus} color="perrywinkle" size="small" className={styles.btn + ''} >
             Купить
           </Button>
         </div>

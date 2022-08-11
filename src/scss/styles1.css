@@ -14,11 +14,12 @@ body::-webkit-scrollbar {
     width: 10px;
 }
 body::-webkit-scrollbar-track {
-background: #fff;
+background: rgb(255, 255, 255);
 }
 body::-webkit-scrollbar-thumb {
-background-color: #4cc9f0;
+background-color: #afafafcb;
 border-radius: 20px;
+width: 80%;
 
 }
 
@@ -35,7 +36,7 @@ border-radius: 20px;
 }
 
 .container {
-    max-width: 1730px !important;
+    max-width: 1430px !important;
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
@@ -72,11 +73,17 @@ border-radius: 20px;
     width: 50px;
     height: 50px;
 }
+.root-page {
+  position: relative;
+}
 
 .referral-link__url {
     text-align: center;
     font-size: 20px;
     color:#545a63;
+}
+.d-xl-block  {
+  position: relative;
 }
 
 .leader {
@@ -115,6 +122,8 @@ border-radius: 20px;
   background-size: 150px 150px;
   background-repeat: repeat;
 }
+
+
 
 .ava-leader {
     background:
@@ -170,6 +179,10 @@ border-radius: 20px;
 color: #545a63;
 }
 
+
+.root-page-title-m {
+  color: #4ccaf09d;
+}
 .startrek__title {
     border: none;
     box-shadow: 0 14px 24px hsl(0deg 6% 80% / 25%);
@@ -187,24 +200,25 @@ color: #545a63;
 }
 
 .leader__image img {
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     border-radius: 50%;
     outline: 8px solid #fff;
     border: 8px solid #99d98c;
-    transform: translateX(-50px) translateY(-75px);
+    margin: 50px;
 }
 
 
 .leader__image-mentor img {
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     border-radius: 50%;
     outline: 8px solid #fff;
     border: 8px solid #4ccaf09d;
-    transform: translateX(-50px) translateY(-75px);
+    margin: 50px;
+   
 }
 
 .leader__info {
@@ -656,7 +670,7 @@ color: #545a63;
     }
   }
 
-  p{
+  .solry-all-block p {
     color:#fff;
     font-family: system-ui;
     position: absolute;
@@ -1185,4 +1199,347 @@ color: #545a63;
 .link-blue:hover {
   border-radius: 20px !important;
   outline: none !important;
+}
+
+
+#chart_57723_1_ChartTitle {
+  margin: 30px 0 55px;
+  font-size: 32px !important;
+  font-family: 'Nunito' !important;
+  font-weight: 600 !important;
+  color: #8f8f8f !important; 
+  fill: #06d6a0 !important;
+}
+
+.all_title, .middle-title, .sm {
+  text-align: center;
+  font-style: none;
+  font-size: 28px;
+  margin: 30px 0 40px;
+  color: #5fa8d3;
+  font-family: 'Nunito';
+} 
+
+.middle-title, .sm {
+  font-size: 22px;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px;
+  justify-content: center;align-items: center;
+}
+
+.clBuyForm {
+  border: 2px solid #cae9ff;
+  border-radius: 10px;
+  padding: 0 40px 40px;
+}
+
+.line_first {
+  display: grid;
+  margin-bottom: 40px;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  align-items:start;
+  justify-content: start;
+}
+.c1 {
+  color: #62b6cb;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.c2 span {
+  color: #62b6cb;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.block-lines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 40px;
+}
+
+.block-lines .lines-title {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #5fa8d3;
+  font-family: 'Nunito';
+  font-weight: 500;
+}
+
+input {box-sizing: border-box !important;}
+.result {
+  border: 2px solid #cae9ff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+.clSellForm  {
+  border: 2px solid #cae9ff;
+  border-radius: 10px;
+  padding: 0 50px 45px;
+  transition: all .2s ease-in-out;
+ 
+}
+
+/* .lines span {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #5fa8d3;
+  font-family: 'Nunito';
+  font-weight: 500;
+} */
+
+.clRow td {
+  padding: 5px 10px;
+  transition: all .3s ease-in-out;
+}
+
+.clRow:hover {
+  background: rgba(232, 232, 232, 0.588);
+} 
+
+.poles {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.poles input {
+  box-sizing: border-box;
+  margin: 0 !important;
+  border: 1px solid #1b4965;
+  color: #62b6cb;
+  font-family: 'Nunito';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.clCreateOrder  {
+  border: 1px solid #1b4965 !important;
+  border-radius: 5px !important;
+  transition: all .35s ease-in-out;
+  width: 100%;
+  height: 38px ;
+  font-family: 'Nunito' !important;
+  font-size: 18px !important;
+  background: #fff !important;
+  color: #1b4965 !important;
+  transition: all .4s ease-in-out !important;
+}
+
+.line {
+  height: 100%;
+}
+
+.btn-block {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 15px;
+  justify-content: center;
+  height: 100%;
+  align-items: end;
+}
+
+.clCreateOrder:hover {
+  background: #cae9ff !important;
+  border: 1px solid #fff !important;
+  color: #5fa8d3 !important;
+}
+
+
+
+
+@media (max-width: 768px){
+
+  .root-page-header__left {
+    display: none;
+  }
+  .list-info-s  {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding: 0 !important;
+   
+  }
+
+  .solary-block {
+    height: 400px;
+  }
+  .item-info-s {
+
+    font-size: 16px;
+  }
+  .card__bot {
+    margin-top: 40px;
+    padding: 20px 85px 35px;
+  }
+  .leader {
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  .card {
+    margin: 0;
+    padding: 0;
+  }
+  .card__title {
+    margin-top: 25px;
+  }
+
+  .root-page-title-m, .root-page-title {
+    font-size:32px;
+  }
+  .news__card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .Table_close__lKEgQ, .Table_close__19I95, .Table_close__2vzvS, .Table_close__JNUiV, .SuperStars_close__2gDxQ {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .Table_closeIB__2MrL0, .Table_closeIT__3Xmi6, .Table_closeIT__2X83L, .Table_closeIB__3C_4S,.SuperStars_closeIT__BHfwt,.SuperStars_closeIB__1yqUD, .Table_closeIT__2LcvH, .Table_closeIB__3SXdW, .Table_closeIT__10udE, .Table_closeIB__3hfTV {
+    height: 3px !important;
+  }
+
+  .Table_header__3hOLq, .Table_header__3OhgZ, .Table_header__2bsYV, .Table_header__3F62a, .SuperStars_header__1wZ7N {
+    margin: 25px 15px !important;
+  }
+
+  .Table_title__3MsBD, .Table_title__396A9, .Table_title__2xr-s, .Table_title__1SxNE, .SuperStars_title__Dd3OK {
+    font-size: 20px !important;
+  }
+
+  .Table_nav__yylbW a {
+    padding: 7px 10px !important;
+    line-height: 1 !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+  }
+
+  .Table_content__1jgvy button {
+    min-height: 40px;
+  }
+
+  .w-1001 {
+    height: 40px;
+    font-weight: 500;
+    font-family: 'Nunito';
+    font-family: var(--nunito);
+    font-size: 14px;
+    color: #2ec4b6;
+    text-transform: uppercase;
+    max-width: 200px;
+    margin: 4px auto;
+  }
+
+  .Table_footer__3T_JB button, .Table_footer__3Pdar button, .Table_footer__2-T16 button {
+    margin-bottom: 25px !important;
+  }
+  .Table_price__-3uM2, .Table_price__2AQQA, .Table_price__1cIdi {
+    font-size: 16px !important;
+    margin: 8px 0 !important;
+  }
+}
+
+@media (max-width:576px) {
+  .list-info-s  {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin: 0 !important;
+  }
+  .item-info-s {
+
+    font-size: 14px;
+  }
+
+  .solary-block {
+    height: 260px;
+  }
+  .leader {
+    padding:  30px 15px;
+    max-width: 340px;
+  }
+  .card {
+    max-width: 350px;
+    width: 100%;
+    padding: 30px 50px;
+    margin-top: 30px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+  .list-info__label {
+    font-size: 14px;
+  }
+  .leader__figure {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .Avatar_inputWrapper__3tFDo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .leader__image img, .leader__image-mentor img  {
+    display: inline-block;
+   width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto !important;padding: 0 !important;
+  }
+  .card__bot {
+    margin-top: 40px;
+    padding: 20px 50px 35px;
+  }
+  .root-page-title-m, .root-page-title {
+    font-size:28px;
+    padding: 20px 30px;
+  }
+
+  .card__title-info span {
+    padding-left: 40px;
+    font-size: 18px;
+  }
+  .startrek__title {
+    padding: 0;
+
+  }
+  .form-control {
+    margin: 0 !important;
+  }
+  .countdown-timer {
+    font-size: 16px !important;
+  }
+
+  .news__card {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .news__figure-image img {
+    max-height: 350px;
+  }
+
 }

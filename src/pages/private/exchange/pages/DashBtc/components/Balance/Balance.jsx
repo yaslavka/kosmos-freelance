@@ -53,7 +53,7 @@ const Balance = ({ Balnce }) => {
                 .replace('₽', 'BTC')}
             </span>{' '}
           </Button>
-          <br />
+         
         </div>
       )}
     </>

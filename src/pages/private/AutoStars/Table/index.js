@@ -21,6 +21,7 @@ import BuyMatrixModal from './BuyMatrixModal'
 import PartnersClonesModal from './PartnersClonesModal'
 import rocketLeft from '../../../../scss/media/angle-left.309b1344.svg'
 import rocketRight from '../../../../scss/media/angle-right.2219c635.svg'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 // eslint-disable-next-line react/prop-types
 export default function Table({ location: { state = {}, pathname } }) {
@@ -331,11 +332,14 @@ export default function Table({ location: { state = {}, pathname } }) {
   return (
     <div className={styles.Table}>
       <Container>
+        <MyViewElement element={
         <div className={styles.header}> {matrixInfo && <h1 className={styles.title}>MATRIX2 - M{matrixInfo.id}</h1>} {backRouteElement}</div>
+      }/>
         <div className={styles.container}>
           <div className={styles.sidebar}>
            
             {selectItems && (
+              <MyViewElement element={
               <Select
                 values={selectItems}
                 placeholder="Выберите клон"
@@ -346,8 +350,11 @@ export default function Table({ location: { state = {}, pathname } }) {
                   }
                 }}
               />
+            }/>
+
             )}
             {id && (
+              <MyViewElement element={
               <Button
                 onClick={handleUpMatrix}
                 disabled={buyingStatus.type === 'pending'}
@@ -357,10 +364,15 @@ export default function Table({ location: { state = {}, pathname } }) {
               >
                 Наверх
               </Button>
+            }/>
+
             )}
             {matrixInfo && matrixInfo.canBuy && (
               <div className={styles.footer}>
+              <MyViewElement element={
                 <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+              }/>
+              <MyViewElement element={
                 <Button
                   onClick={showBuyMatrixModal}
                   disabled={buyingStatus.type === 'pending'}
@@ -370,10 +382,13 @@ export default function Table({ location: { state = {}, pathname } }) {
                 >
                   Купить
                 </Button>
+              }/>
+
               </div>
             )}
           </div>
           <div className={styles.content}>
+          <MyViewElement element={
             <SearchSelect
               className={styles.searchSelect}
               values={searchUsers}
@@ -381,6 +396,9 @@ export default function Table({ location: { state = {}, pathname } }) {
               onInput={setCurrentSearchValue}
               onChange={redirectToUserMatrix}
             />
+          }/>
+          <MyViewElement element={
+
             <div className={styles.matrixTree}>
               <MatrixCell
                 place={0}
@@ -450,6 +468,8 @@ export default function Table({ location: { state = {}, pathname } }) {
                 </div>
               </div>
             </div>
+            }/>
+
 
             <div className={styles.navigation}>
               <button className={styles.arrow} onClick={() => navigateTo('left')}>

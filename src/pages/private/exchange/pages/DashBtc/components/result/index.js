@@ -1,16 +1,24 @@
 import React from 'react'
+import cl from './../../../../Exchange.module.css';
+
 const Result = () => {
   return (
-    <div className="result">
+    <div className={cl.result}>
       <table className="marketes" width="100%">
         <thead>
           <tr id="mktspot">
             <th width="25%" className="first">
-              Валюта
+              <span>Валюта</span>
             </th>
-            <th width="33%">Цена</th>
-            <th width="26%">Изм.</th>
-            <th width="16%">Об.</th>
+            <th width="33%">
+              <span>Цена</span>
+              </th>
+            <th width="26%">
+              <span>Изм.</span>
+              </th>
+            <th width="16%">
+              <span>Об.</span>
+              </th>
           </tr>
         </thead>
       </table>

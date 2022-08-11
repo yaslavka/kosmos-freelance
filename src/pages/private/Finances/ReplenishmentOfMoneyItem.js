@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react'
 import cl from './Finance.module.css';
 import rubleImg from './../../../scss/media/rouble-svgrepo-com.svg'
+import MyViewElement from 'src/components/MyViewElements/MyViewElements';
+import MyModal from 'src/components/modal/MyModal';
 
 
-const ReplenishmentOfMoneyItem = ({infoData})=>{
+const ReplenishmentOfMoneyItem = ({infoData, activeModal, setActiveModal})=>{
+    const [modal, setModal] = useState(false)
     return (
+        <MyViewElement element={
         <div className={[cl.transItem, infoData.classes].join` `}>
             <div className={cl.transItemTop}>
                 <span className={cl.transTopText}>{infoData.nameCash}</span>
@@ -31,10 +35,16 @@ const ReplenishmentOfMoneyItem = ({infoData})=>{
                 </div>
             </div>
             <div className={cl.transItemBottom}>
-                <button className={cl.transBtn}>Пополнить</button>
-                <button className={cl.transBtn}>Вывести</button>
+                <a href={infoData.urlOut} target="_blank">
+                    <button className={cl.transBtn} onClick={e=>{e.preventDefault();setActiveModal(true)}}>Пополнить</button>
+                </a>
+                <a href={infoData.urlIn} target="_blank">
+                    <button className={cl.transBtn} onClick={e=>{e.preventDefault();setActiveModal(true)}}>Вывести</button>
+                </a>
             </div>
+           
         </div>
+         }/>
     )
 }
 

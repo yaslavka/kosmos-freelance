@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import classnames from 'classnames'
-import logo from '../../../scss/media/m.png'
-import txt from '../../../scss/media/kosmos.png'
 import routes from '../../../constants/routes.constants'
-import { CContainer, CHeader, CHeaderNav, CNavLink, CNavItem } from '@coreui/react'
-
+import cl from './../../../scss/MainPage.module.css';
+import Planet from './../../../scss/media/planet-1.gif'
 function Header() {
   const [open, setOpen] = useState(false)
   const { t, i18n } = useTranslation('common')
+  const [burger, setBurger] = useState(false)
 
+
+  const toggleNav = (e)=>{
+    e.preventDefault()
+    setBurger(!burger)
+  }
   console.log(`i18n`, i18n)
+
+
+
 
   const handleHamburgerClick = () => {
     if (window.matchMedia('(max-width: 1300px)').matches) {
@@ -21,22 +27,95 @@ function Header() {
   }
 
   return (
-    <CHeader
-      className={classnames('header', { 'header--transform-none': false })}
-      data-aos="fade-down"
-      data-aos-duration="300"
-    >
-      <CContainer className="header__container">
-        <div className="header__flex">
-          <div className="header__box">
-            <Link to="/" className={classnames('header__logo-link', { 'd-none ': open })}>
-              <img className="header__logo-star" width="40" height="40" alt={logo} src={logo} />
-              <img className="header__logo-text" width="80" height="40" alt={txt} src={txt} />
+    <header className={cl.header}>
+      <div className='container'>
+        <div className={cl.headerCont}>
+          <Link to={routes.root}>
+          <div className={cl.logoWrap}>
+            <span>KOSM</span>
+            <span className={cl.logo}>
+              <img src={Planet}  alt={Planet}/>
+            </span>
+            <span>S</span>
+          </div>
+          </Link>
+
+
+
+
+          <div className={cl.navBlock}>
+          <nav className={cl.nav}>
+            <ul className={cl.listNav}>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#about" onClick={handleHamburgerClick}>
+                  {t('О проекте')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#advantages" onClick={handleHamburgerClick}>
+                  {t('Преимущества')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a href="#roadmap" className={cl.linkNav} onClick={handleHamburgerClick}>
+                  Дорожная карта
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#materials" onClick={handleHamburgerClick}>
+                  {t('Материалы')}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+          <div className={cl.langBlock}>
+            <Link to={routes.signIn} className={cl.signIn}>
+              <button className={cl.btnGradient}>
+              {t('Sign In')}
+              </button>
+            </Link>
+            <Link to={routes.signUp} className={cl.signUp}>
+               <button className={cl.btnGradient}>
+              {t('Sign Up')}
+              </button>
             </Link>
           </div>
+          <div className={cl.burgerBlock}>
+              <button className={burger ? [cl.hamburgerButton, cl.burgerActive].join` ` : cl.hamburgerButton} onClick={e=>toggleNav(e)}>
+              <span className={cl.lineBurgerTop}></span>
+              <span className={cl.lineBurger}></span>
+              <span className={cl.lineBurgerBottom}></span>
+              </button>
+            </div>
+        </div>
+          <div className={burger ? [cl.activeDrop ,cl.dropBlock].join` ` : cl.dropBlock}>
+            <ul className={cl.dropList}>
+            <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#about" onClick={handleHamburgerClick}>
+                  {t('О проекте')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#advantages" onClick={handleHamburgerClick}>
+                  {t('Преимущества')}
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a href="#roadmap" className={cl.linkNav} onClick={handleHamburgerClick}>
+                  Дорожная карта
+                </a>
+              </li>
+              <li className={cl.itemNav}>
+                <a className={cl.linkNav} href="#materials" onClick={handleHamburgerClick}>
+                  {t('Материалы')}
+                </a>
+              </li>
+            </ul>
+          </div>
 
-          <CHeaderNav className={classnames('header__mob-menu', { open })}>
-            <CNavLink className="header__box">
+            {/* <CNavLink className="header__box">
               <CNavItem className="nav">
                 <a className="nav__item" href="#about" onClick={handleHamburgerClick}>
                   {t('О проекте')}
@@ -51,9 +130,9 @@ function Header() {
                   {t('Материалы')}
                 </a>
               </CNavItem>
-            </CNavLink>
+            </CNavLink> */}
 
-            <Link to={routes.signIn} className="header-mob__btn header-mob__sign-in button">
+            {/* <Link to={routes.signIn} className="header-mob__btn header-mob__sign-in button">
               {t('Войти')}
             </Link>
             <Link
@@ -61,9 +140,9 @@ function Header() {
               className="header-mob__btn header-mob__registration button button--violet"
             >
               {t('Регистрация')}
-            </Link>
+            </Link> */}
 
-            <div className="header__box">
+            {/* <div className="header__box">
               <div className="header__social">
                 <a
                   className="header__social-link"
@@ -135,9 +214,9 @@ function Header() {
                   </svg>
                 </a>
               </div>
-            </div>
+            </div> */}
 
-            <div className="header__box">
+            {/* <div className="header__box">
               <div className="header__lang-switcher">
                 <Link
                   to="#"
@@ -167,41 +246,9 @@ function Header() {
                   KZ
                 </Link>
               </div>
-            </div>
-          </CHeaderNav>
-          <div className="header__box">
-            <Link to={routes.signIn} className="header__sign-in">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.2608 10.6824H0.652174C0.292173 10.6824 0 10.3769 0 10.0005C0 9.62418 0.292173 9.31873 0.652174 9.31873H13.2608C13.6208 9.31873 13.913 9.62418 13.913 10.0005C13.913 10.3769 13.6208 10.6824 13.2608 10.6824Z"
-                  fill="white"
-                />
-                <path
-                  d="M9.78239 14.3184C9.61536 14.3184 9.4485 14.2522 9.32144 14.1185C9.06668 13.8522 9.06668 13.4204 9.32144 13.1539L12.3389 9.99948L9.32144 6.84492C9.06668 6.57859 9.06668 6.14663 9.32144 5.88029C9.57635 5.61396 9.98937 5.61396 10.2441 5.88029L13.7223 9.51675C13.9771 9.78308 13.9771 10.2149 13.7223 10.4812L10.2441 14.1175C10.1163 14.2522 9.94941 14.3184 9.78239 14.3184Z"
-                  fill="white"
-                />
-                <path
-                  d="M10.4345 20C6.47703 20 2.98321 17.5109 1.5319 13.6581C1.39975 13.309 1.56486 12.9127 1.89971 12.7745C2.2336 12.6382 2.61366 12.8082 2.74581 13.16C3.99889 16.4864 7.01711 18.6364 10.4345 18.6364C14.9892 18.6364 18.6954 14.7617 18.6954 10C18.6954 5.23829 14.9892 1.36363 10.4345 1.36363C7.01711 1.36363 3.99889 3.51361 2.74581 6.83995C2.6127 7.19184 2.2336 7.3618 1.89971 7.22547C1.56486 7.08731 1.39975 6.69097 1.5319 6.34191C2.98321 2.48906 6.47703 0 10.4345 0C15.7084 0 19.9998 4.48639 19.9998 10C19.9998 15.5136 15.7084 20 10.4345 20Z"
-                  fill="white"
-                />
-              </svg>
-              <span>Войти</span>
-            </Link>
-            <div className={classnames('nav__hamburger', { open })} onClick={handleHamburgerClick}>
-              <span className="nav__bar nav__bar--1" />
-              <span className="nav__bar nav__bar--2" />
-              <span className="nav__bar nav__bar--3" />
-            </div>
-          </div>
-        </div>
-      </CContainer>
-    </CHeader>
+            </div> */}
+             </div>
+          </header>
   )
 }
 

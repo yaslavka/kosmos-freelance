@@ -1,13 +1,29 @@
 
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  max-width: 400px;
+  width: 100%;
+   transition: all .35s ease-in-out;
+ top: -1270px;
+}
 
+
+.navActive {
+  top: 0;
+}
 .NavBar {
   display: grid;
   position: relative;
   grid-template-rows: repeat(4, auto);
   gap: 15px;
+ 
   padding: 20px;
   max-width: 160px;
-  overflow: none;
+  
+  overflow: hidden;
   padding-bottom: 100px;
   background-color: #eef0f2;
   border-bottom: 2px solid #4cc9f0;
@@ -16,14 +32,11 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   transition: all .35s ease-in-out;
-  transform: translateY(-1270px);
+ 
   cursor: pointer;
 }
 
 
-.navActive {
-  transform: translateY(0);
-}
 
 .bottonArrow {
   display: inline-block;
@@ -62,10 +75,12 @@
   color: #003566;
   opacity: 0;
   pointer-events: none;
-  transition: all .4s ease-in-out;
+  transform: translateX(-30px);
+  transition: all .3s ease-in-out;
 }
 
 .NavBar:hover .navLink span  {
+  transform: none;
   opacity: 1;
   pointer-events: all;
 }
@@ -101,3 +116,8 @@
   max-width: 100%;
 }
 
+@media (max-width:1200px) {
+  .nav {
+    display: none;
+  }
+}

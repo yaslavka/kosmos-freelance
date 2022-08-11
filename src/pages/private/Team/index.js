@@ -12,7 +12,7 @@ import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
 import NavBar from '../../../components/layout/Navbar'
 import TeamMember from './TeamMember'
 import { Spinner } from 'react-bootstrap'
-
+import cl from './Team.module.css';
 function Team() {
   const { userId } = useParams()
   const dispatch = useDispatch()
@@ -41,12 +41,13 @@ function Team() {
 
   return (
     <Container className="root-page">
-      <Row>
-        <Col xl={3} className="d-none d-xl-block">
-          <NavBar />
-        </Col>
-        <Col>
-          <h1 className="root-page-title">Команда</h1>
+           <div className={cl.navBlock}>
+                <NavBar />
+            </div>
+          <div className={cl.contentBlock}>
+
+         
+          <h1 className={["root-page-title", cl.title].join` `}>Команда</h1>
           <div className={styles.search}>
             <input
               type="text"
@@ -54,24 +55,30 @@ function Team() {
               defaultValue={name}
               onChange={handleOnChangeSearch}
               placeholder="Поиск партнера по логину"
+              className={cl.search}
             />
           </div>
           <Spinner isLoading={isLoading}>
-            <Row>
+            <div className={styles.teamCard}>
               {!isEmpty(list) ? (
-                list.map((member) => (
-                  <Col key={member.id} lg={6}>
-                    <TeamMember member={member} />
-                  </Col>
-                ))
+                <div className={cl.listPersons}>
+                  {
+                     list.map((member) => (
+                      <div>
+                        <TeamMember member={member} />
+                      </div>
+                    ))
+                  }
+                </div>
+               
               ) : (
                 <Col>
-                  <h4 className="text-center mb-4 mt-4">
+                  <h4 className={cl.notTeam}>
                     У этого пользователя нет людей в команде
                   </h4>
                 </Col>
               )}
-            </Row>
+            </div>
             {!isEmpty(list) && !isLoading && (
               <ReactPaginate
                 forcePage={page}
@@ -86,8 +93,9 @@ function Team() {
               />
             )}
           </Spinner>
-        </Col>
-      </Row>
+          </div>
+        
+    
     </Container>
   )
 }

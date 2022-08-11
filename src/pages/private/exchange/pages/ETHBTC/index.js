@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Container } from 'reactstrap'
 import '../../stoc.css'
+import cl from './../../Exchange.module.css';
 import NavBar from '../../../../../components/layout/Navbar'
 import Chart from "./components/Chart/Chart";
 import BuyFormComponent from "../DashBtc/components/Form/BuyForm";
@@ -12,16 +13,19 @@ class Exchange extends Component {
     return (
       <Container className="root-page">
         <Row>
-          <Col xl={3} className="d-none d-xl-block col-xl-38">
+            <div className={cl.navBlock}>
             <NavBar />
-          </Col>
-          <Col xl={9}>
+            </div>
+         
+            <div className={cl.contentBlock}>
           <Chart width="100%" />
-            <BuyFormComponent width="100%" />
-            <SellFormComponent width="100%" />
+          <div className={cl.buySellCard}>
+            <BuyFormComponent />
+            <SellFormComponent />
+          </div>
             <Markets />
             <HistoriBuySel width="100%" />
-          </Col>
+         </div>
         </Row>
       </Container>
     )

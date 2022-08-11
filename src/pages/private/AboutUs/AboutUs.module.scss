@@ -3,38 +3,36 @@
 @import "~bootstrap/scss/mixins";
 
 .AboutUs {
-  padding: 40px 0 73px;
+ 
 
-  @include media-breakpoint-up(xl) {
-    padding: 44px 0 125px;
-  }
-
-  .userInfo {
-    @include media-breakpoint-up(xl) {
-      margin-bottom: 50px;
-    }
-  }
-
-  .mainTitle {
+  .mainTitle {font-family: 'Nunito';
     margin: 0 0 12px;
     font-weight: bold;
     font-size: 1.25rem;
     text-align: center;
+    color: #00bbf9;
   }
 
   .mainDescription {
+    font-family: 'Nunito';
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 36px !important;
     line-height: 1.5;
     text-align: center;
 
+    text-shadow: 1px 0 1px #207ed0, 0 1px 1px #cccccccb, -1px 0 1px rgb(220, 220, 220), 0 -1px 1px #c7c7c7, 0 1px 0 #c7c7c7;
+    color: #fff;
+
     span {
+    font-size: 36px !important;
+     
+      font-family: 'Nunito';
       font-weight: bold;
       font-size: 0.875rem;
+      color: #fff;
 
       @include media-breakpoint-up(xl) {
         font-size: 2rem;
-        color: #0b2e13;
       }
     }
 
@@ -43,6 +41,12 @@
       font-weight: bold;
       font-size: 2rem;
     }
+  }
+
+  .gridRows {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 25px;
   }
 
   .text {
@@ -61,13 +65,17 @@
     }
 
     @include media-breakpoint-up(xl) {
-      margin: 0;
-      padding: 15px 20px 35px 35px;
-      font-size: 1.5rem;
-      line-height: 1.166;
-      background-color: #0edc30;
+      font-family: "Nunito";
+      margin: 0 auto !important;
+        text-align: center !important;
+      color: #38d1f7;
+      max-width: 950px;
+      font-size: 24px;
+      padding: 0 20px;
+      line-height: 150%;
+      background-color: #fff;
       text-align: left;
-      border-radius: 30px;
+      border-radius: 10px;
     }
   }
 
@@ -83,6 +91,12 @@
       transform: rotate(-21.6deg);
       margin-top: 63px;
     }
+  }
+
+  .centrRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .buildUpWrapper {
@@ -136,13 +150,351 @@
     }
 
     @include media-breakpoint-up(xl) {
-      margin-top: 45px;
+     
 
       .text {
-        padding: 22px 27px;
+        padding: 22px 20px;
 
         span {
           color: #0b2e13;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width:768px) {
+  .AboutUs {
+ 
+
+    .mainTitle {font-family: 'Nunito';
+      margin: 0 0 12px;
+      font-weight: bold;
+      font-size: 1.25rem;
+      text-align: center;
+      color: #00bbf9;
+    }
+  
+    .mainDescription {
+      font-family: 'Nunito';
+      margin: 0 0 25px;
+      font-size: 30px !important;
+      line-height: 1.5;
+      text-align: center;
+  
+      text-shadow: 1px 0 1px #207ed0, 0 1px 1px #cccccccb, -1px 0 1px rgb(220, 220, 220), 0 -1px 1px #c7c7c7, 0 1px 0 #c7c7c7;
+      color: #fff;
+  
+      span {
+      font-size: 30px !important;
+       
+        font-family: 'Nunito';
+        font-weight: bold;
+        font-size: 0.875rem;
+        color: #fff;
+  
+        @include media-breakpoint-up(xl) {
+          font-size: 2rem;
+        }
+      }
+  
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 31px;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+  
+    .gridRows {
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+      gap: 25px;
+    }
+  
+    .text {
+      margin-bottom: 20px;
+      font-size: 0.75rem;
+      text-align: center;
+      font-family: "Nunito";
+      margin: 0 auto !important;
+        text-align: center !important;
+      color: #38d1f7;
+      max-width: 950px;
+      font-size: 16px;
+      max-width: 550px;
+      padding: 0 20px;
+      line-height: 150%;
+      background-color: #fff;
+      text-align: left;
+      border-radius: 10px;
+      span {
+        font-weight: bold;
+        font-size: 0.875rem;
+  
+        @include media-breakpoint-up(xl) {
+          font-family: inherit;
+          font-size: 1.5rem;
+        }
+      }
+  
+      @include media-breakpoint-up(xl) {
+        font-family: "Nunito";
+        margin: 0 auto !important;
+          text-align: center !important;
+        color: #38d1f7;
+        max-width: 950px;
+        font-size: 24px;
+        padding: 0 20px;
+        line-height: 150%;
+        background-color: #fff;
+        text-align: left;
+        border-radius: 10px;
+      }
+    }
+  
+    .rocket {
+      display: block;
+      width: 187px;
+      height: 170px;
+      margin: 0 auto;
+  
+      @include media-breakpoint-up(xl) {
+        width: 214px;
+        height: 195px;
+        transform: rotate(-21.6deg);
+        margin-top: 63px;
+      }
+    }
+  
+    .centrRow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .buildUpWrapper {
+      @include media-breakpoint-up(xl) {
+        margin-top: 45px;
+  
+        .text {
+          padding: 18px 43px 23px 26px;
+          text-align: right;
+        }
+      }
+    }
+  
+    .constructor {
+      display: block;
+      width: 163px;
+      height: 107px;
+      margin: 0 auto 18px;
+  
+      @include media-breakpoint-up(xl) {
+        width: 177px;
+        height: 116px;
+        margin-bottom: 0;
+      }
+    }
+  
+    .educationWrapper {
+      @include media-breakpoint-up(xl) {
+        margin-top: 45px;
+      }
+    }
+  
+    .education {
+      display: block;
+      width: 103px;
+      height: 103px;
+      margin: 0 auto 25px;
+  
+      @include media-breakpoint-up(xl) {
+        width: 168px;
+        height: 168px;
+        margin-bottom: 0;
+      }
+    }
+  
+    .finalText {
+      margin-top: 16px;
+  
+      .text {
+        margin: 0;
+      }
+  
+      @include media-breakpoint-up(xl) {
+       
+  
+        .text {
+          padding: 22px 20px;
+  
+          span {
+            color: #0b2e13;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:576px) {
+  .AboutUs {
+ 
+
+    .mainTitle {font-family: 'Nunito';
+      margin: 0 0 12px;
+      font-weight: bold;
+      font-size: 1.25rem;
+      text-align: center;
+      color: #00bbf9;
+    }
+  
+    .mainDescription {
+      font-family: 'Nunito';
+      margin: 0 0 25px;
+      font-size: 24px !important;
+      line-height: 1.1;
+      text-align: center;
+  
+      text-shadow: 1px 0 1px #207ed0, 0 1px 1px #cccccccb, -1px 0 1px rgb(220, 220, 220), 0 -1px 1px #c7c7c7, 0 1px 0 #c7c7c7;
+      color: #fff;
+  
+      span {
+      font-size: 24px !important;
+       
+        font-family: 'Nunito';
+        font-weight: bold;
+        font-size: 0.875rem;
+        color: #fff;
+  
+        @include media-breakpoint-up(xl) {
+          font-size: 2rem;
+        }
+      }
+  
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 31px;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+  
+    .gridRows {
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+      gap: 25px;
+    }
+  
+    .text {
+      margin-bottom: 20px;
+      font-size: 0.75rem;
+      text-align: center;
+  
+      span {
+        font-weight: bold;
+        font-size: 0.875rem;
+  
+        @include media-breakpoint-up(xl) {
+          font-family: inherit;
+          font-size: 1.5rem;
+        }
+      }
+  
+      @include media-breakpoint-up(xl) {
+        font-family: "Nunito";
+        margin: 0 auto !important;
+          text-align: center !important;
+        color: #38d1f7;
+        max-width: 950px;
+        font-size: 24px;
+        padding: 0 20px;
+        line-height: 150%;
+        background-color: #fff;
+        text-align: left;
+        border-radius: 10px;
+      }
+    }
+  
+    .rocket {
+      display: block;
+      width: 187px;
+      height: 170px;
+      margin: 0 auto;
+  
+      @include media-breakpoint-up(xl) {
+        width: 214px;
+        height: 195px;
+        transform: rotate(-21.6deg);
+        margin-top: 63px;
+      }
+    }
+  
+    .centrRow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .buildUpWrapper {
+      @include media-breakpoint-up(xl) {
+        margin-top: 45px;
+  
+        .text {
+          padding: 18px 43px 23px 26px;
+          text-align: right;
+        }
+      }
+    }
+  
+    .constructor {
+      display: block;
+      width: 163px;
+      height: 107px;
+      margin: 0 auto 18px;
+  
+      @include media-breakpoint-up(xl) {
+        width: 177px;
+        height: 116px;
+        margin-bottom: 0;
+      }
+    }
+  
+    .educationWrapper {
+      @include media-breakpoint-up(xl) {
+        margin-top: 45px;
+      }
+    }
+  
+    .education {
+      display: block;
+      width: 103px;
+      height: 103px;
+      margin: 0 auto 25px;
+  
+      @include media-breakpoint-up(xl) {
+        width: 168px;
+        height: 168px;
+        margin-bottom: 0;
+      }
+    }
+  
+    .finalText {
+      margin-top: 16px;
+  
+      .text {
+        margin: 0;
+      }
+  
+      @include media-breakpoint-up(xl) {
+       
+  
+        .text {
+          padding: 22px 20px;
+  
+          span {
+            color: #0b2e13;
+          }
         }
       }
     }

@@ -164,11 +164,11 @@
     .price {
       text-transform: uppercase;
       text-align: center;
-      line-height: 2px;
+      line-height: 34px;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 32px;
       margin: 25px 0;
-      color: #fff;
+      color: #cbf3f0;
 
       @include media-breakpoint-up(xl) {
         line-height: 34px;
