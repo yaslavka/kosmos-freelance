@@ -36,7 +36,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-          <div>Всего мест:</div>
+          <div>Всего Клонов:</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.allComet)
@@ -65,38 +65,10 @@ function Statistics() {
         <div>Мест в структуре:</div>
           <div className="startrek__counter">
             {formatterNumber
-              .format(statistics.structurePlanet)
+              .format(statistics.active)
               .replace(new RegExp(String.fromCharCode(160), 'g'), '')
               .replace('₽', '')}
           </div>
-        </li>
-        }/>
-
-        <MyViewElement element={
-
-        <li className={cl.statItem}>
-        <div>Мест в первой линии:</div>
-          <div className="startrek__counter">
-            {formatterNumber
-              .format(statistics.firstLinePlanet)
-              .replace(new RegExp(String.fromCharCode(160), 'g'), '')
-              .replace('₽', '')}
-          </div>
-         
-        </li>
-        }/>
-
-        <MyViewElement element={
-
-        <li className={cl.statItem}> 
-          <div>Реферальные:</div>
-          <div className="startrek__counter">
-            {formatterNumber
-              .format(statistics.myInviterIncome)
-              .replace(new RegExp(String.fromCharCode(160), 'g'), '')
-              .replace('₽', '')}
-          </div>
-         
         </li>
         }/>
 

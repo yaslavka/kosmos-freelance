@@ -5,7 +5,7 @@ import MyViewElement from 'src/components/MyViewElements/MyViewElements';
 import MyModal from 'src/components/modal/MyModal';
 
 
-const ReplenishmentOfMoneyItem = ({infoData, activeModal, setActiveModal})=>{
+const ReplenishmentOfMoneyItem = ({infoData, activeModal, setActiveModal, cardInfo, setCardInfo})=>{
     const [modal, setModal] = useState(false)
     return (
         <MyViewElement element={
@@ -35,11 +35,11 @@ const ReplenishmentOfMoneyItem = ({infoData, activeModal, setActiveModal})=>{
                 </div>
             </div>
             <div className={cl.transItemBottom}>
-                <a href={infoData.urlOut} target="_blank">
-                    <button className={cl.transBtn} onClick={e=>{e.preventDefault();setActiveModal(true)}}>Пополнить</button>
+                <a href={infoData.urlOut} target="_blank" >
+                    <button className={cl.transBtn} onClick={e=>{e.preventDefault();setActiveModal(true);setCardInfo({...cardInfo, pay:true,currency:infoData.nameCash})}}>Пополнить</button>
                 </a>
                 <a href={infoData.urlIn} target="_blank">
-                    <button className={cl.transBtn} onClick={e=>{e.preventDefault();setActiveModal(true)}}>Вывести</button>
+                    <button className={cl.transBtn} onClick={e=>{e.preventDefault();setActiveModal(true);setCardInfo({...cardInfo, pay:false,currency:infoData.nameCash})}}>Вывести</button>
                 </a>
             </div>
            

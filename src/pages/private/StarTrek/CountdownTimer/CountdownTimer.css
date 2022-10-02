@@ -1,9 +1,7 @@
 .countdown-timer {
-    width: 100%;
+    width: 90%;
     height: 100%;
     border: 2px solid #11ff00;
-
-    font-family: "Oswald";
     font-size: 30px;
 
     display: flex;

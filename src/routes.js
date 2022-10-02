@@ -61,6 +61,10 @@ import TableQueuem from './pages/private/mareix/TableQueue'
 import Matrixmini from './pages/private/martrix'
 import Tablemini from './pages/private/martrix/Table'
 import TableQuemini from './pages/private/martrix/TableQueue'
+import Milkyway from "./pages/private/StarTrek-new";
+import MyPlanetsmilkyway from "./pages/private/StarTrek-new/MyPlanets";
+import Statisticmilkyway from "./pages/private/StarTrek-new/Statistic";
+import Megaciti from "./pages/private/Casino/components/MegaCity/Megaciti";
 
 export const publicRouteConfig = [
   {
@@ -205,6 +209,24 @@ export const panelRouteConfig = [
     exact: true,
   },
   {
+    id: 'a682cca2-82df-4daa-81ed-70ccs65df4zs5',
+    path: r.milkyway,
+    component: Milkyway,
+    exact: true,
+  },
+  {
+    id: '3c6eb283-5d8c-4775-b9d0-43c64f5sd4f5z4',
+    path: r.milkywayPlanets,
+    component: MyPlanetsmilkyway,
+    exact: true,
+  },
+  {
+    id: 'ef10ab44-2bc9-4498-a8e8-b89d3156s1fs5',
+    path: r.milkywayStatistic,
+    component: Statisticmilkyway,
+    exact: true,
+  },
+  {
     id: 'bb41be1a-b5a0-4502-a06b-a338ea47904d',
     path: r.starsUp,
     component: StarsUp,
@@ -286,6 +308,12 @@ export const panelRouteConfig = [
     id: 'b611f7bb-58bf-4230-826d-ec4174e45',
     path: r.rollet,
     component: JuegoRuleta,
+    exact: true,
+  },
+  {
+    id: 'b611f7bb-58bf-4230-826d-ec4154kjkjhkf',
+    path: r.megacity,
+    component: Megaciti,
     exact: true,
   },
   {

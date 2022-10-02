@@ -10,12 +10,12 @@ function Roll() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
+        <Col xl={8}>
           <Spin />
           <iframe
             src="https://demo.evoplay.games/demo/fullstate/html5/evoplay/animalquest"
             width="100%"
-            height="44%"
+            height={500}
           />
         </Col>
       </Row>

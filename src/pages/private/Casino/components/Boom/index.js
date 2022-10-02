@@ -12,7 +12,8 @@ function Booom() {
         </Col>
         <Col xl={8}>
           <Spin />
-          <iframe src="http://admiral/lobby/game/garage/" width="100%" height="44%" />
+          <iframe src="http://admiral/lobby/game/garage/" width="100%"
+                  height={500} />
         </Col>
       </Row>
     </Container>

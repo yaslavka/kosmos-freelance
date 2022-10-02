@@ -1,14 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Row, Col, Container, Button } from 'reactstrap'
-
 //import posterVideo from '../../../scss/media/leader-poster-video.56a4c9bf.jpg'
 //import avatar from '../../../scss/media/placeholder.7e85be59.svg'
 //import video from '../../../scss/media/leader-poster-video.56a4c9bf.jpg'
 
 import NavBar from '../../../components/layout/Navbar'
 import Avatar from '../../../components/Avatar'
-import Icon from '../../../components/Icon'
+//import Icon from '../../../components/Icon'
 import { toast } from 'react-toastify'
 import { formatter } from '../../../utils'
 import CountdownTimer from '../StarTrek/CountdownTimer/CountdownTimer'
@@ -32,11 +31,10 @@ function Dashboard() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col>
-        <MyViewElement element={
+        <Col xl={8}>
+          <MyViewElement element={
           <h1 className="root-page-title">Личный кабинет</h1>
-
-        }/>
+          }/>
           {userInfo && (
             <>
           <MyViewElement element={
@@ -100,15 +98,15 @@ function Dashboard() {
                 </div>
               </div>
                  }/>
-                
+
                 <div className="card__bot">
                 <MyViewElement element={
                   <div className="card__header">
                     <div className="card__header-left">
-          
+
 
                       <h3 className="card__title card__title-info">Реферальная ссылка</h3>
-                  
+
 
                     </div>
                   </div>
@@ -137,8 +135,8 @@ function Dashboard() {
               </div>
               <div className="startrek__title">
                 <CountdownTimer countdownTimestampMs={16599836620000} />
-              </div>   
-            </>           
+              </div>
+            </>
             }/>
 
 

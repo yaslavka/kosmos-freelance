@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import dayjs from 'dayjs'
 
-import avatarFallback from '../../../../../scss/media/placeholder.7e85be59.svg'
+import avatarFallback from '../../../../../scss/media/camera_200.png'
 import styles from './MatrixCell.module.scss'
 
 const branchingLines = (place) => {
@@ -23,13 +23,13 @@ const branchingLines = (place) => {
   } else if (place === 1 || place === 2 || place === 3) {
     return (
       <svg
-        className={styles.branchingLines}
-        width="92"
-        height="20"
-        viewBox="0 0 92 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      ></svg>
+  className={styles.branchingLines}
+  width="92"
+  height="20"
+  viewBox="0 0 92 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  />
     )
   }
 }

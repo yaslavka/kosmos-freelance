@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Loader from 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import classNames from 'classnames'
 
 const settings = {
@@ -18,7 +17,7 @@ function Spinner({ children, size, isLoading }) {
         children
       ) : (
         <div className={spinnerClass}>
-          <Loader {...settings} />
+
         </div>
       )}
     </>

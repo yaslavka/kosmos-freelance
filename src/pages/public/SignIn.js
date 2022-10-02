@@ -75,11 +75,11 @@ function SignIn() {
     <div className={cl.authPage}>
       <div className={cl.headerSign}>
         <div className='container'>
-          <Link to={routes.root}>
+          <Link to={'/'}>
             <div className={cl.logoWrap}>
               <span>KOSM</span>
               <span className={cl.logo}>
-                <img src={Planet} alt={Planet}/>
+                <img alt={Planet} src={Planet}/>
               </span>
               <span>S</span>
             </div>

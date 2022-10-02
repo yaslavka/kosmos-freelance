@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+//import classnames from 'classnames'
+//import logo from '../../../scss/media/m.png'
+//import txt from '../../../scss/media/kosmos.png'
 import routes from '../../../constants/routes.constants'
+//import { CContainer, CHeader, CHeaderNav, CNavLink, CNavItem } from '@coreui/react'
 import cl from './../../../scss/MainPage.module.css';
 import Planet from './../../../scss/media/planet-1.gif'
 function Header() {
@@ -30,16 +34,13 @@ function Header() {
     <header className={cl.header}>
       <div className='container'>
         <div className={cl.headerCont}>
-          <Link to={routes.root}>
           <div className={cl.logoWrap}>
             <span>KOSM</span>
             <span className={cl.logo}>
-              <img src={Planet}  alt={Planet}/>
+              <img alt={Planet} src={Planet}/>
             </span>
             <span>S</span>
           </div>
-          </Link>
-
 
 
 
@@ -47,22 +48,22 @@ function Header() {
           <nav className={cl.nav}>
             <ul className={cl.listNav}>
               <li className={cl.itemNav}>
-                <a className={cl.linkNav} href="#about" onClick={handleHamburgerClick}>
+                <a className={cl.linkNav} href={"#about"} onClick={handleHamburgerClick}>
                   {t('О проекте')}
                 </a>
               </li>
               <li className={cl.itemNav}>
-                <a className={cl.linkNav} href="#advantages" onClick={handleHamburgerClick}>
+                <a className={cl.linkNav} href={"#advantages"} onClick={handleHamburgerClick}>
                   {t('Преимущества')}
                 </a>
               </li>
               <li className={cl.itemNav}>
-                <a href="#roadmap" className={cl.linkNav} onClick={handleHamburgerClick}>
+                <a href={"#roadmap"} className={cl.linkNav} onClick={handleHamburgerClick}>
                   Дорожная карта
                 </a>
               </li>
               <li className={cl.itemNav}>
-                <a className={cl.linkNav} href="#materials" onClick={handleHamburgerClick}>
+                <a className={cl.linkNav} href={"#materials"} onClick={handleHamburgerClick}>
                   {t('Материалы')}
                 </a>
               </li>
@@ -84,31 +85,31 @@ function Header() {
           </div>
           <div className={cl.burgerBlock}>
               <button className={burger ? [cl.hamburgerButton, cl.burgerActive].join` ` : cl.hamburgerButton} onClick={e=>toggleNav(e)}>
-              <span className={cl.lineBurgerTop}></span>
-              <span className={cl.lineBurger}></span>
-              <span className={cl.lineBurgerBottom}></span>
+              <span className={cl.lineBurgerTop}/>
+              <span className={cl.lineBurger}/>
+              <span className={cl.lineBurgerBottom}/>
               </button>
             </div>
         </div>
           <div className={burger ? [cl.activeDrop ,cl.dropBlock].join` ` : cl.dropBlock}>
             <ul className={cl.dropList}>
             <li className={cl.itemNav}>
-                <a className={cl.linkNav} href="#about" onClick={handleHamburgerClick}>
+                <a className={cl.linkNav} href={"#about"} onClick={handleHamburgerClick}>
                   {t('О проекте')}
                 </a>
               </li>
               <li className={cl.itemNav}>
-                <a className={cl.linkNav} href="#advantages" onClick={handleHamburgerClick}>
+                <a className={cl.linkNav} href={"#advantages"} onClick={handleHamburgerClick}>
                   {t('Преимущества')}
                 </a>
               </li>
               <li className={cl.itemNav}>
-                <a href="#roadmap" className={cl.linkNav} onClick={handleHamburgerClick}>
+                <a href={"#roadmap"} className={cl.linkNav} onClick={handleHamburgerClick}>
                   Дорожная карта
                 </a>
               </li>
               <li className={cl.itemNav}>
-                <a className={cl.linkNav} href="#materials" onClick={handleHamburgerClick}>
+                <a className={cl.linkNav} href={"#materials"} onClick={handleHamburgerClick}>
                   {t('Материалы')}
                 </a>
               </li>

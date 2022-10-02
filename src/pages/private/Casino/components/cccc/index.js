@@ -9,12 +9,12 @@ function Blaccd() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
+        <Col xl={8}>
           <Spin />
           <iframe
             src="https://demo.evoplay.games/demo/table/html5/evoplay/europeanroulette"
             width="100%"
-            height="44%"
+            height={500}
           />
         </Col>
       </Row>

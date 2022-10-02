@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../../../actions/finance.actions";
 import {formatter} from "../../../utils";
 import ReplenishmentOfMoney from "./ReplenishmentOfMoney";
-import WithdrawalOfMoney from "./WithdrawalOfMoney";
+//import WithdrawalOfMoney from "./WithdrawalOfMoney";
 import MoneyTransferModal from "./MoneyTransferModal";
 import OperationsHistoryModal from "./OperationsHistoryModal";
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
@@ -44,7 +44,7 @@ function Finances() {
           <Col xl={3} className="d-none d-xl-block">
             <NavBar />
           </Col>
-          <Col>
+          <Col xl={8}>
             <h1 className="root-page-title finances-title">Финансы</h1>
             {userInfo && (
               <>

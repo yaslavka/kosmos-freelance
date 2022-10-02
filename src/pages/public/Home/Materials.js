@@ -8,7 +8,9 @@ AOS.refresh()
 function Materials() {
   const opts={
     padding: -2,
-    width: '100%',
+    width: '100%'
+
+
   }
   return (
     <div id="materials"  data-aos="flip-left" className="materials">

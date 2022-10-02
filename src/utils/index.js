@@ -112,6 +112,25 @@ export const getStartrekTimer = () => {
   }
 }
 
+export const getMILKYWAYTimer = () => {
+  try {
+    const timer = localStorage.getItem('s')
+    if (timer === null) {
+      return null
+    } else if (timer) {
+      const diff = dayjs(timer).diff(dayjs().format(), 's')
+      if (diff <= 1) {
+        localStorage.removeItem('s')
+        return null
+      }
+    }
+    return timer
+  } catch (error) {
+    return null
+  }
+}
+
+
 export const randomBetween = (min, max) => {
   const minCeil = Math.ceil(min)
   const maxFloor = Math.floor(max)

@@ -15,7 +15,7 @@ function Blacs() {
           <iframe
             src="https://demo.evoplay.games/demo/fullstate/html5/evoplay/treeoflight"
             width="100%"
-            height="44%"
+            height={500}
           />
         </Col>
       </Row>

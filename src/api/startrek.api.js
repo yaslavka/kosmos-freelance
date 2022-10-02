@@ -9,9 +9,11 @@ export const startrekBuy = () => baseInstance({ url: 'star-trek/buy', method: 'p
 export const startrekPlanets = (params) =>
   baseInstance({ url: 'star-trek/list', method: 'get', params })
 
+
 export const startrekPlanetsUpdate = (planets) =>
   baseInstance({
     url: 'star-trek/update',
     method: 'post',
     data: { planets },
   })
+

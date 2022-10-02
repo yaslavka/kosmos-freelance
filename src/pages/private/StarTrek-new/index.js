@@ -6,27 +6,28 @@ import confirm from 'reactstrap-confirm'
 import { Link } from 'react-router-dom'
 
 import r from '../../../constants/routes.constants'
-import * as actions from '../../../actions/startrek.actions'
+import * as actions from '../../../actions/milkyway.actions'
 //import previewText from '../../../scss/media/startrek-logo.f688a0a8.svg'
 import NavBar from '../../../components/layout/Navbar'
 //import UserInfo from '../../../components/UserInfo'
 import Button from '../../../components/Button'
 
-import Statistics from './Statistics'
+import Statisticsmilkyway from './Statistics'
 //import Documents from './Documents'
-import Summary from './Summary'
+import Summarymilkyway from './Summary'
 import { Spinner } from 'react-bootstrap'
+import MyViewElements from '../../../components/MyViewElements/MyViewElement'
 
-function StarTrek() {
+function Milkyway() {
   const dispatch = useDispatch()
-  const timer = useSelector((state) => state.startrek.timer)
-  const statistics = useSelector((state) => state.startrek.statistics)
-  const isLoading = useSelector((state) => state.startrek.loadings.statistics)
-  const isBuyLoading = useSelector((state) => state.startrek.loadings.buy)
+  const timer = useSelector((state) => state.milkyway.timer)
+  const statistics = useSelector((state) => state.milkyway.statistics)
+  const isLoading = useSelector((state) => state.milkyway.loadings.statistics)
+  const isBuyLoading = useSelector((state) => state.milkyway.loadings.buy)
 
   useEffect(() => {
-    dispatch(actions.startrekStatistics())
-    dispatch(actions.startrekResetTimer())
+    dispatch(actions.milkywayStatistics())
+    dispatch(actions.milkywayResetTimer())
   }, [dispatch])
 
   const handleButtonClick = async () => {
@@ -40,7 +41,7 @@ function StarTrek() {
     })
 
     if (result) {
-      dispatch(actions.startrekBuy())
+      dispatch(actions.milkywayBuy())
     }
   }
 
@@ -56,18 +57,25 @@ function StarTrek() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
-          <div className="startrek__title"></div>
+        <Col xl={8}>
+          <MyViewElements element={
+          <div className="root-page-title color-milkey">Млечный путь v2.0</div>
+          }/>
+
           <Spinner isLoading={isLoading}>
-            <Statistics />
+          <MyViewElements element={
+            <Summarymilkyway />
+          }/>
+
+            <Statisticsmilkyway />
             <div className="text-center">
-              <Button className="m-2" tag={Link} to={r.starTrekPlanets} color="primary">
+              <Link className='link-blue' to={r.milkywayPlanets} >
                 Мои места
-              </Button>
+              </Link>
               {/* TODO: delete all functions */}
               <Button
-                color="primary"
-                className="m-2"
+
+                className='link-blue'
                 loading={isBuyLoading}
                 disabled={Boolean(timer) || isBuyLoading}
                 onClick={handleButtonClick}
@@ -77,25 +85,25 @@ function StarTrek() {
                     date={timer}
                     renderer={renderer}
                     onComplete={() => {
-                      dispatch(actions.startrekResetTimer())
+                      dispatch(actions.milkywayResetTimer())
                     }}
                   />
                 ) : (
                   `${
                     statistics?.myPlanet > 0
                       ? 'Приобрести место'
-                      : 'Активировать Matrix Reloaded'.toLocaleUpperCase()
+                      : 'Активировать Млечный путь v2.0'.toLocaleUpperCase()
                   }`
                 )}
               </Button>
             </div>
             <div className="text-center">
-              <Button className="m-2" to={r.starTrekStatistic} color="primary" tag={Link}>
+              <Link className='link-blue' to={r.milkywayStatistic}>
                 Статистика
-              </Button>
+              </Link>
             </div>
 
-            <Summary />
+
           </Spinner>
         </Col>
       </Row>
@@ -103,4 +111,4 @@ function StarTrek() {
   )
 }
 
-export default StarTrek
+export default Milkyway

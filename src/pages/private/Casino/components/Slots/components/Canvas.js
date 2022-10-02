@@ -13,7 +13,8 @@ class Canvas extends React.Component {
           </Col>
           <Col>
             <Spin />
-            <iframe src="http://admiral/lobby/game/keks/" width="100%" height="44%"></iframe>
+            <iframe src="http://admiral/lobby/game/keks/" width="100%"
+                    height={500}></iframe>
           </Col>
         </Row>
       </Container>

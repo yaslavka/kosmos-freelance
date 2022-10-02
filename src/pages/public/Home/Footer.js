@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import contractOffer from '../documents/contract-offer.pdf'
 import privacyPolicy from '../documents/privacy-policy.pdf'
 import termsOfUse from '../documents/terms-of-use.pdf'
+//import payeerLogo from '../../../scss/media/payeer-logo.8aa750cc.svg'
 import AOS from 'aos'
 import cl from './../../../scss/MainPage.module.css';
 
@@ -20,7 +21,7 @@ function Footer() {
         <div className={cl.logoWrap}>
             <span>KOSM</span>
             <span className={cl.logo}>
-              <img src={Planet} alt={Planet}/>
+              <img alt={Planet} src={Planet}/>
             </span>
             <span>S</span>
           </div>
@@ -74,7 +75,7 @@ function Footer() {
           >
 
             {/* <span>tg&nbsp;media -</span> */}
-            <span className={[cl.icon, cl.tg].join` `}></span>
+            <span className={[cl.icon, cl.tg].join` `}/>
           </a>
 
           <a
@@ -85,7 +86,7 @@ function Footer() {
           >
 
             {/* <span>inst -</span> */}
-            <span className={[cl.icon, cl.inst].join` `}></span>
+            <span className={[cl.icon, cl.inst].join` `}/>
           </a>
 
           <a
@@ -96,13 +97,13 @@ function Footer() {
           >
 
             {/* <span>youtube -</span> */}
-            <span className={[cl.icon, cl.yb].join` `}></span>
+            <span className={[cl.icon, cl.yb].join` `}/>
           </a>
 
           <a className={cl.footerLinkBlock} href="/" rel="noreferrer" target="_blank">
 
             {/* <span>vk -</span> */}
-            <span className={[cl.icon, cl.vk].join` `}></span>
+            <span className={[cl.icon, cl.vk].join` `}/>
           </a>
         </div>
         </div>

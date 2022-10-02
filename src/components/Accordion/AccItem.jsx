@@ -11,16 +11,16 @@ import { Formik, Form, Field } from 'formik'
 import Input from '../Input';
 import InputMultiline from '../InputMultiline';
 
-const AccItem = ({title, inputsArr, handleChange, expanded, check,initialValues,validationSchema,handleOnSubmit })=>{
+const AccItem = ({title, inputsArr, nameBtn, linkBtn,handleChange, expanded, check,initialValues,validationSchema,handleOnSubmit })=>{
     const [isActive, setIsActive] = useState(false)
     return (
             <MyViewElement element={
                 <Accordion expanded={isActive ? expanded === check : false} onClick={e=>setIsActive(true)} defaultExpanded={false} onChange={handleChange(check)} className={cl.Accordion}>
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" className={cl.accSummary}>
           <Typography className={cl.accordionTitle}>
-               {title}
+               {title} 
           </Typography>
-            <div className={'accordionSignBlock'}>
+            <div className={'accordionSignBlock'}> 
                 <span className={'accordionLineV'}/>
                 <span className={'accordionLineH'}/>
             </div>
@@ -33,9 +33,9 @@ const AccItem = ({title, inputsArr, handleChange, expanded, check,initialValues,
                         initialValues={initialValues}
                         validationSchema={validationSchema}
                         onSubmit={handleOnSubmit}
-                    >
+                    > 
                     <Form className={cl.card}>
-                    {inputsArr.textArea !== undefined ?
+                    {inputsArr.textArea !== undefined ? 
                         <FormGroup>
                             <Field
                             type="text"
@@ -65,8 +65,8 @@ const AccItem = ({title, inputsArr, handleChange, expanded, check,initialValues,
           </AccordionDetails>
       </Accordion>
             }/>
-
-
+          
+        
     )
 }
 

@@ -1,13 +1,22 @@
-import React from 'react'
-import Banne from '../../../scss/media/kosmos.png'
-import AOS from 'aos'
-AOS.init()
-AOS.refresh()
-function Banner() {
+import React from 'react';
+import cl from './../../../scss/MainPage.module.css';
+import Planet from './../../../scss/media/planet-1.gif'
+
+const Banner = ()=>{
   return (
-    <div className="main-banner main-banner__logo" data-aos="flip-left">
-      <img src={Banne} alt={Banne} width="100%" height="100%" />
-    </div>
+    <section className={cl.Hero}>
+      <div className='container'>
+        <div className={cl.wrap}>
+          <h1 className={cl.titles} data-aos="flip-left">
+            <span>KOSM</span>
+            <span className={cl.logos}  >
+              <img src={Planet} alt={Planet}/>
+            </span>
+            <span>S</span>
+          </h1>
+        </div>
+      </div>
+    </section>
   )
 }
 

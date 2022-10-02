@@ -5,15 +5,12 @@ import classname from 'classnames'
 
 import routes from '../../../constants/routes.constants'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
-
+AOS.init()
+AOS.refresh()
 function Authentication() {
   const [animation, setAnimation] = useState(true)
   const { t } = useTranslation('common')
-  useEffect(() => {
-    AOS.init()
-    AOS.refresh()
-  }, [])
+
   useEffect(() => {
     setAnimation(false)
   }, [setAnimation])
@@ -27,7 +24,7 @@ function Authentication() {
       <div className="authentication__container">
         <div className="authentication__flex">
           <div className="authentication__btn-wrap">
-
+  
             <Link
               to={routes.signUp}
               className="authentication__link button button--violet authentication__btn"

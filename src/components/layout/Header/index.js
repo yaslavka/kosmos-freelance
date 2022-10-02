@@ -94,6 +94,12 @@ const privateNavLinks = [
     icon: superstar,
   },
   {
+    label: 'Млечный путь v2.0',
+    route: routes.milkyway,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
     label: 'Млечный путь',
     route: routes.starTrek,
     isDisabled: false,
@@ -277,15 +283,15 @@ export default function Header({ variant }) {
             <div className={styles.headerMCont}>
               <div className={styles.headerLogoBlock}>
                 <Link to={routes.root} className={styles.mainLogoLink}>
-                    <span className={styles.mainLogo}></span>
+                    <span className={styles.mainLogo}/>
                 </Link>
               </div>
               <div className={styles.contentCard}>
                 <div className={styles.burgerBlock}>
                   <button className={burger ? [styles.hamburgerButton, styles.burgerActive].join` ` : styles.hamburgerButton} onClick={toggleNavMenu}>
-                  <span className={styles.lineBurgerTop}></span>
-                  <span className={styles.lineBurger}></span>
-                  <span className={styles.lineBurgerBottom}></span>
+                  <span className={styles.lineBurgerTop}/>
+                  <span className={styles.lineBurger}/>
+                  <span className={styles.lineBurgerBottom}/>
                   </button>
                 </div>
                 <div className={styles.logoutBlock}>
@@ -299,7 +305,7 @@ export default function Header({ variant }) {
 
 
 
-          
+
         </div>
         <nav className={`${styles.mobileNavBar} ${isNavMenuVisible ? styles.opened : ''}`}>
           <div>

@@ -15,15 +15,13 @@ import Button from '../../../components/Button'
 import Statistics from './Statistics'
 //import Documents from './Documents'
 import Summary from './Summary'
-import { Spinner } from 'react-bootstrap'
+//import { Spinner } from 'react-bootstrap'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 function StarTrek() {
   const dispatch = useDispatch()
   const timer = useSelector((state) => state.startrek.timer)
   const statistics = useSelector((state) => state.startrek.statistics)
-  const isLoading = useSelector((state) => state.startrek.loadings.statistics)
-  const isBuyLoading = useSelector((state) => state.startrek.loadings.buy)
 
   useEffect(() => {
     dispatch(actions.startrekStatistics())
@@ -57,12 +55,11 @@ function StarTrek() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
+        <Col xl={8}>
           <MyViewElement element={
           <div className="root-page-title color-milkey">Млечный путь</div>
           }/>
-        
-          <Spinner isLoading={isLoading}>
+
           <MyViewElement element={
             <Summary />
           }/>
@@ -74,10 +71,8 @@ function StarTrek() {
               </Link>
               {/* TODO: delete all functions */}
               <Button
-              
+
                 className='link-blue'
-                loading={isBuyLoading}
-                disabled={Boolean(timer) || isBuyLoading}
                 onClick={handleButtonClick}
               >
                 {timer ? (
@@ -102,9 +97,6 @@ function StarTrek() {
                 Статистика
               </Link>
             </div>
-
-            
-          </Spinner>
         </Col>
       </Row>
     </Container>

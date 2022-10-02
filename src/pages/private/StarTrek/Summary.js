@@ -7,7 +7,7 @@ import { Button } from 'reactstrap'
 import Raven from 'raven-js'
 import cl from './StarTrek.module.css';
 import * as actions from '../../../actions/app.actions'
-import avatar from '../../../scss/media/placeholder.7e85be59.svg'
+import avatar from '../../../scss/media/camera_200.png'
 import inImage from '../../../scss/media/insta.svg'
 import vkImage from '../../../scss/media/vk.svg'
 import tgImage from '../../../scss/media/vk.svg'
@@ -78,8 +78,8 @@ function Summary() {
           >
             <Icon iconName="download" />
           </Button>
-            
-          </div> 
+
+          </div>
           <div className={cl.summaryRight}>
           <div className={cl.summaryInitials}>
               <div>{userInfo.firstName}</div>
@@ -134,14 +134,14 @@ function Summary() {
             </li>
           </ul>
           <div className={cl.summaryCheck}>
-            <h3>Общий чек MATRIX Reloaded:</h3>
+            <h3>Общий чек Млечного пути:</h3>
             <strong>
               {formatterNumber
                 .format(statistics.totalSum + statistics.myInviterIncome || 0)
                 .replace('₽', 'RUB')}
             </strong>
           </div>
-          </div>         
+          </div>
         </div>
       </div>
     )

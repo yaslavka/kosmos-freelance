@@ -26,14 +26,13 @@ const MyViewElement = ({element})=>{
         if(inView)setClasses([...classes, cl.activeElement])
     },[inView])
     return (
-        
-                <div ref={ref}>
-                     <div  className={classes.join` `}>
-                        {element}
-                    </div>
-                </div>
-    
-      
+      <div ref={ref}>
+        <div  className={classes.join` `}>
+          {element}
+        </div>
+      </div>
+
+
     )
 }
 

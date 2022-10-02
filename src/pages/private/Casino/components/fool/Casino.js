@@ -12,7 +12,8 @@ function Fool() {
         </Col>
         <Col>
           <Spin />
-          <iframe src="http://admiral/lobby/game/resident/" width="100%" height="44%"></iframe>
+          <iframe src="http://admiral/lobby/game/resident/" width="100%"
+                  height={500}/>
         </Col>
       </Row>
     </Container>

@@ -27,7 +27,7 @@ function TablesElement({ matrix, transform, urlPrefix }) {
       to={`/${urlPrefix}/${matrix.id}`}
       onClick={() => saveMatrixInfo(matrix)}
     >
-      <div className="circle__star"></div>
+      <div className="circle__star"/>
       {/* eslint-disable-next-line react/prop-types */}
       <span className="circle__point-number">{matrix.id}</span>
       {/* eslint-disable-next-line react/prop-types */}

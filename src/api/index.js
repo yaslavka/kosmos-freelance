@@ -48,7 +48,7 @@ export const api = {
   },
   signIn(credentials) {
     return baseInstance.post(
-      '/oauth/v2/token',
+      '/auth/token',
       createFormDataObj({ ...credentials, grant_type: 'password' }),
     )
   },

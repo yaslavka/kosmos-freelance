@@ -7,9 +7,7 @@ import news from '../../../scss/media/news.svg'
 import question from '../../../scss/media/about-m.svg'
 import money from '../../../scss/media/briefcase.svg'
 import team from '../../../scss/media/seo.svg'
-import car from '../../../scss/media/suprestar.424178cf.svg'
 import logo from '../../../scss/media/business.svg'
-import superstar from '../../../scss/media/suprestar.424178cf.svg'
 import luckyStar from '../../../scss/media/stonks.svg'
 import starsUp from '../../../scss/media/marketing.svg'
 import bbb from '../../../scss/media/gamepad.svg'
@@ -80,6 +78,12 @@ const navbarLinks = [
   {
     label: 'Млечный путь',
     route: routes.starTrek,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'Млечный путь v2.0',
+    route: routes.milkyway,
     isDisabled: false,
     icon: logo,
   },
@@ -159,7 +163,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className={isOpen ? [styles.nav, styles.navActive].join` ` : styles.nav}> 
+    <div className={isOpen ? [styles.nav, styles.navActive].join` ` : styles.nav}>
       <nav className={styles.NavBar} onClick={e=>setIsOpen(!isOpen)}>
       {navbarLinks.map(({ label, route, icon, isDisabled, classImg }) => (
         <NavLink
@@ -168,14 +172,14 @@ function NavBar() {
           className={`${styles.navLink} ${isDisabled ? styles.disabled : ''}`}
           activeClassName={styles.active}
           onClick={()=>document.documentElement.scrollTo({top: 0, behavior: 'smooth'})}
-        > 
+        >
           <img className={[styles.icon, classImg].join` `} src={icon} alt="" /> <span className=''>{label.replace(/ /g, "\u00a0")}</span>
         </NavLink>
       ))}
       <span className={isOpen ? [styles.bottonArrow, styles.bottomActive].join` ` : styles.bottonArrow} ></span>
     </nav>
     </div>
-    
+
   )
 }
 

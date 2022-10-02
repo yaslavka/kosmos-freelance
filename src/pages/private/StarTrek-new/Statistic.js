@@ -2,16 +2,17 @@ import React, { useEffect, useMemo } from 'react'
 import { Row, Col, Container } from 'reactstrap'
 import { useSelector, useDispatch } from 'react-redux'
 
-import * as actions from '../../../actions/startrek.actions'
+
+import * as actions from '../../../actions/milkyway.actions'
 import NavBar from '../../../components/layout/Navbar'
 //import UserInfo from '../../../components/UserInfo'
 import Table from '../../../components/Table'
 import { Spinner } from 'react-bootstrap'
 
-const Statistic = () => {
+const Statisticmilkyway = () => {
   const dispatch = useDispatch()
-  const isLoading = useSelector((state) => state.startrek.loadings.table)
-  const list = useSelector((state) => state.startrek.table)
+  const isLoading = useSelector((state) => state.milkyway.loadings.table)
+  const list = useSelector((state) => state.milkyway.table)
 
   const arrayList = useMemo(
     () => list.map((el) => ({ ...el, level: `Уровень ${el.level}` })),
@@ -27,7 +28,7 @@ const Statistic = () => {
   )
 
   useEffect(() => {
-    dispatch(actions.startrekStatistic())
+    dispatch(actions.milkywayStatistic())
   }, [dispatch])
 
   return (
@@ -47,4 +48,4 @@ const Statistic = () => {
   )
 }
 
-export default Statistic
+export default Statisticmilkyway

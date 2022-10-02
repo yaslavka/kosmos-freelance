@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Container } from 'reactstrap'
+import { Row, Container } from 'reactstrap'
 
 import Chart from './components/Chart/Chart'
 import '../../stoc.css'
@@ -17,7 +17,7 @@ const Wawes = () => {
         <div className={cl.navBlock}>
             <NavBar />
             </div>
-        
+
           <Chart />
           <div className={cl.buySellCard}>
             <BuyFormComponent />
@@ -25,7 +25,7 @@ const Wawes = () => {
           </div>
           <Market />
           <HistoriBuySel />
-       
+
       </Row>
     </Container>
   )

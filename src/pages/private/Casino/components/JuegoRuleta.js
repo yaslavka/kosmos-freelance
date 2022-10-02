@@ -18,7 +18,7 @@ function JuegoRuleta() {
           <iframe
             src="https://eldorad.host/casino/games/lobby/game/cocktail/index.php"
             width="100%"
-            height="100%"
+            height={500}
           />
         </Col>
       </Row>

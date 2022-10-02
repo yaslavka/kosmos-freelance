@@ -26,6 +26,7 @@ import MagicWheel from './Games/MagicWheel'
 import ChristmasParty from './Games/ChristmasParty'
 import ETRaces from './Games/ETRaces'
 import SimpleBar from 'simplebar-react'
+import City from "./Games/City";
 function Casino() {
   return (
     <Container className="root-page">
@@ -33,19 +34,20 @@ function Casino() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
-          <div className="startrek__title1">
-            <span>До запуска осталось</span>
-          </div>
+        <Col xl={8}>
+          <h1 className="startrek__title1">
+            До запуска осталось
+          </h1>
           <div className="startrek__title">
             <CountdownTimer countdownTimestampMs={16599836620000} />
           </div>
           <h1 className="startrek__title1">ИГРЫ</h1>
-          <SimpleBar style={{ height: '44%', width: '100%' }}>
-            <video autoPlay muted loop>
-              <source src={evoo} autoFocus />
-              <source src={evo} autoFocus />
-            </video>
+          <video autoPlay muted loop style={{width:"100%"}}>
+            <source src={evoo} autoFocus />
+            <source src={evo} autoFocus />
+          </video>
+          <SimpleBar style={{ height: '50%', width: '100%' }}>
+            <City/>
             <Fruit />
             <FairyLand />
             <Resident />

@@ -52,12 +52,12 @@ function Matrixmini() {
           <Col className="d-none d-xl-block" xl={3}>
             <NavBar />
           </Col>
-          <Col xl={9}>
+          <Col xl={8}>
             <div className="circle-stars__container">
               <div className="circle__container">
                 <div className="circle__center">
                   <div className="circle__center-content">
-                    <div className={styles.userInfo}></div>
+                    <div className={styles.userInfo}/>
                   </div>
                 </div>
                 {matrixTypes.map((matrix, i) => {

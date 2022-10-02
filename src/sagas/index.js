@@ -6,6 +6,7 @@ import teamSagas from './team.sagas'
 import newsSagas from './news.sagas'
 import casinoSagas from './casino.sagas'
 import financeSagas from './finance.sagas'
+import milkywaySagas from './milkyway.sagas'
 import startrekSagas from './startrek.sagas'
 import superstarSagas from './superstar.sagas'
 import starsupSagas from './starsup.sagas'
@@ -25,5 +26,6 @@ export default function* mainSaga() {
     starsupSagas(),
     starsSagas(),
     matrixUnoQueue(),
+    milkywaySagas(),
   ])
 }

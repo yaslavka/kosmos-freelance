@@ -47,7 +47,6 @@ export default function AutoStars() {
             <NavBar />
           </Col>
           <Col xs={12} xl={9}>
-            <h2 className={styles.mainTitle}>MATRIX2</h2>
             {matrixTypes && (
               <div className={styles.tables}>
                 <MyViewElement element={
@@ -58,7 +57,7 @@ export default function AutoStars() {
                     saveMatrixInfo(matrixTypes[0])
                   }}
                 >
-               
+
                   <span>1</span>
                   {!!Number(matrixTypes[0].count) && (
                     <div className={styles.count}>{matrixTypes[0].count}</div>
@@ -73,7 +72,7 @@ export default function AutoStars() {
                       saveMatrixInfo(matrixTypes[1])
                     }}
                   >
-                   
+
                     <span>2</span>
                     {!!Number(matrixTypes[1].count) && (
                       <div className={styles.count}>{matrixTypes[1].count}</div>
@@ -88,7 +87,7 @@ export default function AutoStars() {
                       saveMatrixInfo(matrixTypes[2])
                     }}
                   >
-                  
+
                     <span>3</span>
                     {!!Number(matrixTypes[2].count) && (
                       <div className={styles.count}>{matrixTypes[2].count}</div>
@@ -103,7 +102,7 @@ export default function AutoStars() {
                       saveMatrixInfo(matrixTypes[3])
                     }}
                   >
-                    
+
                     <span>4</span>
                     {!!Number(matrixTypes[3].count) && (
                       <div className={styles.count}>{matrixTypes[3].count}</div>
@@ -118,7 +117,7 @@ export default function AutoStars() {
                       saveMatrixInfo(matrixTypes[4])
                     }}
                   >
-                  
+
                     <span>5</span>
                     {!!Number(matrixTypes[4].count) && (
                       <div className={styles.count}>{matrixTypes[4].count}</div>

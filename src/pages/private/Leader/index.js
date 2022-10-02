@@ -19,8 +19,8 @@ function Leader() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col>
-          
+        <Col xl={8}>
+
           <MyViewElement element={<h1 className="root-page-title-m">Наставник</h1>}/>
           {userInfo && (
             <>
@@ -123,7 +123,7 @@ function Leader() {
                     <strong className='card__strong'>
                       ОБЯЗАТЕЛЬНО вступай в него нажав на кнопку ниже!
                     </strong>
-                  
+
                     <Button tag="a" color="primary" href={``} className='card__btn'>
                       Вступить
                       <span></span><span></span><span></span><span></span>
@@ -132,7 +132,7 @@ function Leader() {
                   }/>
                 </div>
               </div>
-        
+
 
               <div className="card__bot">
                 <div className="card__header">

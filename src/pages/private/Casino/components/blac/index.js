@@ -16,7 +16,7 @@ function Blac() {
           <iframe
             src="https://demo.evoplay.games/demo/fullstate/html5/evoplay/raccoontales"
             width="100%"
-            height="44%"
+            height={500}
           />
         </Col>
       </Row>

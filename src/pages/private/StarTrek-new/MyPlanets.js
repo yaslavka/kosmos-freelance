@@ -1,52 +1,44 @@
 import React, { useEffect, useCallback, useMemo, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import Timer, { zeroPad } from 'react-countdown'
+import { zeroPad } from 'react-countdown'
 import { Row, Col, Container } from 'reactstrap'
-import ReactPaginate from 'react-paginate'
 import confirm from 'reactstrap-confirm'
 import isEmpty from 'lodash-es/isEmpty'
 import { declOfNum } from '../../../utils'
 import dayjs from 'dayjs'
-
-import * as actions from '../../../actions/startrek.actions'
-import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
-import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
-import MyPlanetsElement from './MyPlanetsElement'
+import * as actions from '../../../actions/milkyway.actions'
 import NavBar from '../../../components/layout/Navbar'
-import UserInfo from '../../../components/UserInfo'
 import Button from '../../../components/Button'
 import Icon from '../../../components/Icon'
-import { Spinner } from 'react-bootstrap'
 
 
 
-function MyPlanets() {
+
+function MyPlanetsmilkyway() {
   const history = useHistory()
   const dispatch = useDispatch()
-  const list = useSelector((state) => state.startrek.list)
-  const selected = useSelector((state) => state.startrek.selected)
-  const isLoading = useSelector((state) => state.startrek.loadings.list)
-  const isUpdateLoading = useSelector((state) => state.startrek.loadings.update)
+  const list = useSelector((state) => state.milkyway.list)
+  const selected = useSelector((state) => state.milkyway.selected)
+  const isLoading = useSelector((state) => state.milkyway.loadings.list)
+  const isUpdateLoading = useSelector((state) => state.milkyway.loadings.update)
   // const user = useSelector(state => state.app.user);
-  const { total, page } = useSelector((state) => state.startrek.meta)
-  const { limit } = useSelector((state) => state.startrek.query)
   const start = dayjs().tz('Europe/Minsk').startOf('date')
   const end = start.add(10, 'hour')
 
-  
+
 
   const isDisable = useMemo(() => {
     return dayjs().isBetween(start, end)
   }, [start, end])
 
   useEffect(() => {
-    dispatch(actions.startrekPlanets())
+    dispatch(actions.milkywayPlanets())
   }, [dispatch])
 
   const handleOnChangePage = useCallback(
     (page) => {
-      dispatch(actions.setStartrekPlanetsPage(page))
+      dispatch(actions.setMilkywayPlanetsPage(page))
     },
     [dispatch],
   )
@@ -59,7 +51,7 @@ function MyPlanets() {
         'место',
         'места',
         'мест',
-      ])}, на сумму ${planetLength * 360} RUB`,
+      ])}, на сумму ${planetLength * 2500} RUB`,
       confirmText: 'Подтвердить',
       confirmColor: 'danger',
       cancelText: 'Отмена',
@@ -67,12 +59,12 @@ function MyPlanets() {
     })
 
     if (result) {
-      dispatch(actions.startrekPlanetsUpdate())
+      dispatch(actions.milkywayPlanetsUpdate())
     }
   }
 
   const handleSelectAllOnPage = () => {
-    dispatch(actions.toggleAllPlanetOnPage())
+    dispatch(actions.toggleAllPlanetmilkywayOnPage())
   }
 
   const rendererTimer = ({ hours, minutes, seconds }) => (
@@ -81,16 +73,16 @@ function MyPlanets() {
     </span>
   )
 
-  
+
   const [activePlanet, setActivePlanet] = useState(0)
 
   const [infoPlanet, setInfoPlanet] = useState({namePlanet: 'Mercury', frozen: '', comets: '', dateCreate: '', sum: '', id: ''})
 
-  // useEffect(()=>{
-  //   if (list[activePlanet] !== undefined) {
-  //     setInfoPlanet({...infoPlanet, id: list[activePlanet].id, level: list[activePlanet].level, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum})
-  //   }
-  // },[list, activePlanet])
+  useEffect(()=>{
+    if (list[activePlanet] !== undefined) {
+      setInfoPlanet({...infoPlanet, id: list[activePlanet].id, level: list[activePlanet].level, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum})
+    }
+  },[list, activePlanet])
 
 
 
@@ -108,16 +100,16 @@ function MyPlanets() {
   let viewSolary = solaryList.filter((el,i)=>list[i]!==undefined)
   console.log(list)
 
-  
+
   useMemo(()=>{
     if (list[activePlanet] !== undefined) {
       setInfoPlanet({...infoPlanet, namePlanet: viewSolary[activePlanet].namePlanet , frozen: !list[activePlanet].frozen ? 'Откл':'Вкл', comets: list[activePlanet].comets, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum, id: list[activePlanet].id})
     }
   },[list, activePlanet])
 
-  let handleOnSetPlanetForUpdate = () => dispatch(actions.setPlanetForUpdate(infoPlanet.id))
+  let handleOnSetPlanetForUpdate = () => dispatch(actions.setMilkywayForUpdate(infoPlanet.id))
 
- 
+
 
 
 
@@ -127,7 +119,7 @@ function MyPlanets() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
+        <Col xl={8}>
           <div className="root-page-header">
             <div className="root-page-header__left">
               <Button
@@ -146,26 +138,20 @@ function MyPlanets() {
                   Имя планеты: {infoPlanet.namePlanet}
                 </li>
                 <li className='item-info-s'>
-                  Заморозка: {infoPlanet.frozen}
+                  Дата создания: {infoPlanet.dateCreate}
                 </li>
                 <li className='item-info-s'>
-                  Кометы: {infoPlanet.comets}
-                </li>
-                <li className='item-info-s'>
-                  Дата создания: {infoPlanet.dateCreate} 
-                </li>
-                <li className='item-info-s'>
-                  Сумма: {infoPlanet.sum}
+                  №: {infoPlanet.id}
                 </li>
               </ul>
             </div>
           </div>
-          {/* <div className="text-center"> 
+          {/* <div className="text-center">
             <h3>
               Авто-продление планет{' '}
               <strong>{user?.autoRefill ? 'включено' : 'выключено'}</strong>
             </h3>
-            <Link to={r.settings}>изменить</Link> 
+            <Link to={r.settings}>изменить</Link>
           </div> */}
           {/* <Spinner isLoading={isLoading}>
             <Row>
@@ -187,7 +173,7 @@ function MyPlanets() {
                 marginPagesDisplayed={1}
                 activeClassName="active"
                 pageCount={Math.ceil(total / limit)}
-              
+
                 onPageChange={(props) => handleOnChangePage(props.selected)}
                 containerClassName="pagination"
                 previousLabel={<img src={arrowLeft} className="arrowLeft" alt="Arrow left" />}
@@ -226,23 +212,23 @@ function MyPlanets() {
             )}
           </div> */}
 
-              {!isEmpty(list) ? 
+              {!isEmpty(list) ?
               <div className='solry-all-block'>
                  <div className='solary-card'>
                     <div className='solary-block'>
-                      <div class="wrapper-solary">
-                      <div class="sun">
-          
+                      <div className="wrapper-solary">
+                      <div className="sun" >
+
                       </div>
-          
+
                       {viewSolary.map((e,i)=>
-                        <div class={e.classItem.join` `}><div class={e.classPlanet.join` `}><p class={e.classDescr.join` `}>{list[i].values}</p></div></div>
+                        <div className={e.classItem.join` `}><div className={e.classPlanet.join` `}><p className={e.classDescr.join` `}>{list[i].values}</p></div></div>
                         )}
                     </div>
                     </div>
                   </div>
-                  <div class="planets-block">
-                    <ul class="planets-list">
+                  <div className="planets-block">
+                    <ul className="planets-list" onClick={handleOnSetPlanetForUpdate}>
                     {viewSolary.map(e=><li className='planet-btn-item'><button className={'planet-btn'} id={e.count} onClick={e=>{setActivePlanet(e.target.id)}}>{e.namePlanet}</button></li>)}
                     </ul>
                     {!isLoading && (
@@ -253,44 +239,33 @@ function MyPlanets() {
                       </div>
                     )}
                     {!isEmpty(selected) &&
-                      (isDisable && end ? (
-                        <div className="mb-5">
-                          <p>
-                            В данный момент осуществляется запуск комет, <br /> продление баланса комет
-                            будет доступно с 10:00 по мск
-                          </p>
-                          <div>
-                            Осталось: <Timer date={end.format()} renderer={rendererTimer} />
-                          </div>
-                        </div>
-                      ) : (
-                        <div className='update-planet-block'>
+                    <div className='update-planet-block'>
                              <button
                               onClick={handleOnPlanetsUpdate}
                               disabled={isUpdateLoading}
                               loading={isUpdateLoading}
+
                               className={'btn-clear-space'}
                             >
                               Продлить выбранные
                             </button>
                         </div>
-                       
-                      ))}
+                    }
                   </div>
               </div>
-                 
-               : 
+
+               :
                 <Col>
                   <h4 className="text-center mb-4 mt-4">У вас нет планет</h4>
                 </Col>
               }
-          
+
         </Col>
 
       </Row>
-    
+
     </Container>
   )
 }
 
-export default MyPlanets
+export default MyPlanetsmilkyway

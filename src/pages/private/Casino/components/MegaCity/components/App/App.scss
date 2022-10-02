@@ -1,0 +1,56 @@
+@import "../../vars";
+
+.app {
+  margin: 20px auto;
+  text-align: center;
+  width: 750px;
+  background: $color1;
+
+  .app-name {
+    text-align: center;
+    padding: 15px 0 20px;
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .game-status {
+    margin-top: 0;
+
+    &.win {
+      color: white;
+    }
+
+    &.fail {
+      color: #b55d5d;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .column {
+      width: 250px;
+
+      &:last-child {
+        width: 470px;
+      }
+    }
+  }
+
+  .title {
+    background: $color2;
+    border: 1px solid $color2;
+    padding: 10px;
+    margin: 0;
+    color: $color5;
+    font-size: 18px;
+  }
+
+  .panel {
+    border: 1px solid $color2;
+    border-top: 0;
+    margin-bottom: 10px;
+  }
+}

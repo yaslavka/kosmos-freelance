@@ -360,26 +360,9 @@ export default function Tablem({ location: { state = {}, pathname } }) {
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-          
-          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>MATRIX - {matrixInfo.name}</h1>}/>}
-
+          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>PEGAS-UNO - {matrixInfo.name}</h1>}/>}
           {backRouteElement}
         </div>
-        {matrixInfo && matrixInfo.isActive && (
-          <nav className={styles.nav}>
-            <MyViewElement element={
-              <NavLink to={navRoute()} exact activeClassName={styles.active}>
-              Структура
-            </NavLink>
-            }/>
-            <MyViewElement element={
-            <NavLink to={navRoute('/queue')} exact activeClassName={styles.active}>
-              Очередь
-            </NavLink>
-            }/>
-
-          </nav>
-        )}
         <div className={styles.container}>
           <div className={styles.sidebar}>
             {selectItems && (
@@ -432,44 +415,15 @@ export default function Tablem({ location: { state = {}, pathname } }) {
                     size="small"
                   >
                     Купить
-                    
+
                   </Button>
             }/>
 
                 )}
-                <Row>
-                  <Col>
-                    {matrixInfo.isActive && (
-            <MyViewElement element={
-
-                      <Button
-                        onClick={showClonesModal}
-                        className="w-1001"
-                        color="violet-blue"
-                        size="small"
-                      >
-                        Мои клоны
-                     
-                      </Button>
-            }/>
-
-                    )}
-                  </Col>
-                </Row>
               </div>
             )}
           </div>
           <div className={styles.content}>
-          <MyViewElement element={
-
-            <SearchSelect
-              className={styles.searchSelect}
-              values={searchUsers}
-              placeholder="Поиск партнера по логину"
-              onInput={setCurrentSearchValue}
-              onChange={redirectToUserMatrix}
-            />
-          }/>
           <MyViewElement element={
 
             <div className="d-xl-none mt-4">

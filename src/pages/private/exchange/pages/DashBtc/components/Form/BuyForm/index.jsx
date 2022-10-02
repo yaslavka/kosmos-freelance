@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import formatCurrency from 'format-currency'
 import { Button, Input } from 'reactstrap'
 import OrderBook from '../../orderBook/OrderBook'
@@ -41,7 +41,7 @@ const BuyFormComponent = ({ priceBuy }) => {
           <div className='block-lines'>
           <div className="line">
             <span  className='lines-title'>Количество:</span>
-          
+
             <div className="poles">
               <Input
                 name="amount"

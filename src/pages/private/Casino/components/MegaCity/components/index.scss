@@ -1,0 +1,68 @@
+@import "./vars";
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $color5;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+input, select {
+  box-sizing: border-box;
+  border: 1px solid $color3;
+  color: $color5;
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.button {
+  background: $color3;
+  color: $color5;
+  border: 1px solid $color3;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 10px;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &[disabled] {
+    background: $color2;
+    cursor: not-allowed;
+    color: $color4;
+  }
+}
+.cities-list {
+  text-align: center;
+  padding: 0 10px;
+
+  background: $color2;
+
+  .city {
+    color: $color4;
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+
+    &.active {
+      color: $color5;
+      text-decoration: none;
+      background: $color3;
+    }
+  }
+}

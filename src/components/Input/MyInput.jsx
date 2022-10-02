@@ -7,7 +7,7 @@ const MyInput = (props)=>{
     const {classesInput, classesPlace,type, place, setInput, input, valueInput, setCheckInputSite} = props
     return (
         <label className={cl.inputBlock} htmlFor="inp">
-            <input type={type} required id="inp" className={[cl.myInput, classesInput].join` `} value={valueInput} onChange={e=>{e.preventDefault(); setInput ? setInput({...input, namePerson: e.target.value}) : setCheckInputSite(e.target.value)}}/>
+            <input type={type} required id="inp" className={[cl.myInput, classesInput].join` `} value={valueInput} onChange={e=>{e.preventDefault(); setInput ? setInput({...input, count: e.target.value}) : setCheckInputSite(e.target.value)}} {...props}/>
             <span className={[cl.inputPlace, classesPlace].join` `}>{place}</span>
         </label>
        

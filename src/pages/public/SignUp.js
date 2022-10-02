@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Row, Col, FormGroup } from 'reactstrap'
 import { Formik, Form, Field } from 'formik'
 import Planet from './../../scss/media/planet-1.gif'
+
+//import logo from '../../scss/media/kosmos.png'
 import avatar from '../../scss/media/placeholder.7e85be59.svg'
 import routes from '../../constants/routes.constants'
 import * as actions from '../../actions/auth.actions'
@@ -107,7 +109,7 @@ function SignUp({ location }) {
             <div className={cl.logoWrap}>
               <span>KOSM</span>
               <span className={cl.logo}>
-                <img src={Planet} alt={Planet}/>
+                <img alt={Planet} src={Planet}/>
               </span>
               <span>S</span>
             </div>

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import dayjs from 'dayjs'
 
-import avatarFallback from '../../../../../scss/media/placeholder.7e85be59.svg'
+import avatarFallback from '../../../../../scss/media/camera_200.png'
 import styles from './MatrixCell.module.scss'
 
 const branchingLines = (place) => {

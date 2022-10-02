@@ -8,7 +8,7 @@ import 'aos/dist/aos.css'
 import Hero from './Hero'
 import About from './About'
 import Materials from "./Materials";
-import Authentication from "./Authentication";
+
 
 function Home() {
   useEffect(() => {
@@ -20,7 +20,6 @@ function Home() {
     <div className="page">
       <Header />
       <Hero />
-      <Authentication />
       <About />
       <Materials />
       <div className="auth__wrapper">

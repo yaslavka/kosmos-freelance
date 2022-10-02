@@ -13,9 +13,9 @@ function Fruit() {
                 <div className="grid-wrapp-cols pd-sm-both game-listen">
                   <div className="grid-col__4-12">
                     <div className="tmbv">
-                      <i className="stickerc"></i>
+                      <i className="stickerc"/>
                       <div className="tmb-fav">
-                        <div className="icoc icoc-tmb-fav"></div>
+                        <div className="icoc icoc-tmb-fav"/>
                       </div>
                       <Link to={routes.rollet}>
                         <div className="tmb-img">

@@ -15,7 +15,7 @@ function MyPlanetsElement({ planet, classPlanet }) {
   const random = useMemo(() => randomBetween(1, 8), [])
   const planetImg = useMemo(() => require(`../../../scss/media/planet-${random}.png`), [random])
 
-  const handleOnSetPlanetForUpdate = () => dispatch(actions.setPlanetForUpdate(id))
+  const handleOnSetPlanetForUpdate = () => dispatch(actions.setMilkywayForUpdate(id))
 
 
   console.log(id,dateCreate,level,sum,comets);
@@ -27,7 +27,7 @@ function MyPlanetsElement({ planet, classPlanet }) {
       })}
     >
       <div className={['planet', classPlanet].join` `}>
-        
+
       </div>
     </div>
   )

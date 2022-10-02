@@ -11,7 +11,8 @@ function DICE() {
         </Col>
         <Col xl={9}>
           <Spin />
-          <iframe src="http://admiral/lobby/game/fairy_land/" width="100%" height="44%" />
+          <iframe src="http://admiral/lobby/game/fairy_land/" width="100%"
+                  height={500} />
         </Col>
       </Row>
     </Container>

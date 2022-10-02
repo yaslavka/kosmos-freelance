@@ -1,14 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
-body {
-  font-family: 'Lato', sans-serif;
-}
 .page {
-  background-image: url("../scss/images/kosmos-1.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   font-family: "Raleway",sans-serif;
   line-height: 1;
   font-size: 14px;
@@ -131,6 +124,9 @@ body {
   }
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
 
 .Roadmap_slider__ZE18o {
   width: calc(100% + 40px);

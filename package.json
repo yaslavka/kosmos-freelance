@@ -1,17 +1,10 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
+  "name": "kosmos",
   "version": "4.1.1",
-  "description": "CoreUI Free React Admin Template",
+  "description": "Invest platform KOSMOS",
   "homepage": "https://eldorad.host",
-  "bugs": {
-    "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
-  },
   "license": "MIT",
-  "author": "The CoreUI Team (https://github.com/orgs/coreui/people)",
+  "author": "Obrubinskii@gmail.com",
   "scripts": {
     "build": "react-scripts build",
     "build:n17": "react-scripts --openssl-legacy-provider build",
@@ -84,6 +77,7 @@
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-bootstrap": "^2.1.1",
+    "react-chartjs-2": "^4.3.1",
     "react-chat-elements": "^10.16.2",
     "react-copy-to-clipboard": "^5.0.4",
     "react-countdown": "^2.3.2",

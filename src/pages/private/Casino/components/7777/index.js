@@ -15,7 +15,7 @@ function Sas() {
           <iframe
             src="https://demo.evoplay.games/demo/socketgames/evoplay/savethehamster"
             width="100%"
-            height="44%"
+            height={500}
           />
         </Col>
       </Row>

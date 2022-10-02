@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useMemo} from 'react'
 import { Formik, Form, Field } from 'formik'
 import { Row, Col, Button, FormGroup } from 'reactstrap'
 import * as yup from 'yup'
@@ -35,6 +35,8 @@ const validationSchema = yup.object({
 })
 
 function ReplenishmentOfMoney() {
+  const [isCurrencyAndCount, setIsCurrencyAndCount] = useState({count: '', currency: ''})
+  const [isInfoCard, setIsInfoCard] = useState({currency: '', pay: '', option: ''})
   const submitCreatePayForm = ({ amount }) => {
     api
       .createPay({ amount: Number(amount) })
@@ -47,10 +49,9 @@ function ReplenishmentOfMoney() {
   }
   
   const financeData = useSelector(state=>state.financeMoney)
-  console.log(financeData.find(e=>e.currency === 'usd').value)
-  const submitCreatePayeerPayForm = ({ amount }) => {
+  const submitCreatePayeerPayForm = ( amount,currency,option,pay ) => {
     api
-      .createPayeerPay({ amount: Number(amount) })
+      .createPayeerPay({ amount: Number(amount), curr: currency, option: option, pay: pay })
       .then((response) => {
         if (response.url) {
           window.location.replace(response.url)
@@ -58,6 +59,12 @@ function ReplenishmentOfMoney() {
       })
       .catch(() => {})
   }
+  console.log(isInfoCard)
+  useMemo(()=>{
+    if(isCurrencyAndCount.count) {
+      submitCreatePayeerPayForm(isCurrencyAndCount.count, isCurrencyAndCount.currency, isInfoCard.currency)
+    }
+  },[isCurrencyAndCount])
 
   const infoData = [{nameCash: 'usd', sign: dollarImg,count: financeData.find(e=>e.currency === 'usd').value , classes: cl.dollarItem, roubleCount: financeData.find(e=>e.currency === 'usd').ruble, urlOut: '', urlIn: ''},
   {nameCash: 'rub', sign: roubleImg,count: financeData.find(e=>e.currency === 'rub').value , classes: cl.rubItem, roubleCount: financeData.find(e=>e.currency === 'rub').ruble, urlOut: '', urlIn: ''},
@@ -73,7 +80,8 @@ function ReplenishmentOfMoney() {
   {nameCash: 'trx', sign: trxImg,count: financeData.find(e=>e.currency === 'trx').value , classes: cl.trxItem, roubleCount: financeData.find(e=>e.currency === 'trx').ruble, urlOut: '', urlIn: ''}]
   const [modal, setModal] = useState(false)
   
-
+  
+   
 
   return (
     <div className={cl.transBlock}>
@@ -138,9 +146,9 @@ function ReplenishmentOfMoney() {
         </Formik>
       </div> */}
       {infoData.map(e=>
-        <ReplenishmentOfMoneyItem infoData={e} setActiveModal={setModal} activeModal={modal}/>
+        <ReplenishmentOfMoneyItem cardInfo={isInfoCard} setCardInfo={setIsInfoCard} infoData={e} setActiveModal={setModal} activeModal={modal}/>
       )}
-      <MyModal  title={'Укажите сумму'} setVisible={setModal} visible={modal}/>
+      <MyModal currencyAndCount={isCurrencyAndCount} changeCurrencyAndCount={setIsCurrencyAndCount} title={'Укажите сумму'} setVisible={setModal} visible={modal}/>
     </div>
   )
 }

@@ -361,32 +361,13 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-          
-          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>MATRIX - {matrixInfo.name}</h1>}/>}
+          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>PEGAS-MINI- {matrixInfo.name}</h1>}/>}
           {backRouteElement}
         </div>
-        {matrixInfo && matrixInfo.isActive && (
-          <nav className={styles.nav}>
-            <MyViewElement element={
-
-            <NavLink to={navRoute()} exact activeClassName={styles.active}>
-              Структура
-            </NavLink>
-            }/>
-            <MyViewElement element={
-
-            <NavLink to={navRoute('/queue')} exact activeClassName={styles.active}>
-              Очередь
-            </NavLink>
-            }/>
-
-          </nav>
-        )}
         <div className={styles.container}>
           <div className={styles.sidebar}>
             {selectItems && (
             <MyViewElement element={
-
               <Select
                 values={selectItems}
                 placeholder="Мои клоны"
@@ -398,36 +379,28 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                 }}
               />
             }/>
-
             )}
             {id && (
               <div className="d-none d-xl-block">
-            <MyViewElement element={
-
-                <Button
-                  onClick={handleUpMatrix}
-                  disabled={buyingStatus.type === 'pending'}
-                  className="w-1001"
-                  color="perrywinkle"
-                  size="small"
-                >
-                  Наверх
-                </Button>
-            }/>
-
+                <MyViewElement element={
+                  <Button onClick={handleUpMatrix}
+                          disabled={buyingStatus.type === 'pending'}
+                          className="w-1001"
+                          color="perrywinkle"
+                          size="small">
+                    Наверх
+                  </Button>
+                }/>
               </div>
             )}
             {matrixInfo && (
               <div className={styles.footer}>
-            <MyViewElement element={
-
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
-            }/>
-
+                <MyViewElement element={
+                  <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                }/>
                 {matrixInfo.canBuy && (
-            <MyViewElement element={
-
-                  <Button
+                  <MyViewElement element={
+                    <Button
                     onClick={showBuyMatrixModal}
                     disabled={buyingStatus.type === 'pending'}
                     className="w-1001"
@@ -436,41 +409,14 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                   >
                     Купить
                   </Button>
-            }/>
+                  }/>
 
                 )}
-                <Row>
-                  <Col>
-                    {matrixInfo.isActive && (
-            <MyViewElement element={
 
-                      <Button
-                        onClick={showClonesModal}
-                        className="w-1001"
-                        color="violet-blue"
-                        size="small"
-                      >
-                        Мои клоны
-                      </Button>
-            }/>
-
-                    )}
-                  </Col>
-                </Row>
               </div>
             )}
           </div>
           <div className={styles.content}>
-          <MyViewElement element={
-
-            <SearchSelect
-              className={styles.searchSelect}
-              values={searchUsers}
-              placeholder="Поиск партнера по логину"
-              onInput={setCurrentSearchValue}
-              onChange={redirectToUserMatrix}
-            />
-          }/>
           <MyViewElement element={
 
             <div className="d-xl-none mt-4">

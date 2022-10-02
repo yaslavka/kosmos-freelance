@@ -13,12 +13,7 @@ const Market = () => {
         <div>
           <div className="market_base_container">
             <div>
-              <Button
-                href="javascript:void(0)"
-                value="top"
-                onClick="changeMarketBase('top')"
-                className="active"
-              >
+              <Button href="javascript:void(0)" value="top" onClick="changeMarketBase('top')" className="active">
                 TOP
               </Button>
               <Button href="javascript:void(0)" value="btc" onClick="changeMarketBase('btc')">
@@ -39,7 +34,7 @@ const Market = () => {
                 RUR
               </Button>
             </div>
-            <div className="clear"></div>
+            <div className="clear"/>
           </div>
         </div>
         <Result />

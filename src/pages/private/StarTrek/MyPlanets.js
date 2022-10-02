@@ -1,23 +1,23 @@
 import React, { useEffect, useCallback, useMemo, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import Timer, { zeroPad } from 'react-countdown'
+import { zeroPad } from 'react-countdown'
 import { Row, Col, Container } from 'reactstrap'
-import ReactPaginate from 'react-paginate'
+//import ReactPaginate from 'react-paginate'
 import confirm from 'reactstrap-confirm'
 import isEmpty from 'lodash-es/isEmpty'
 import { declOfNum } from '../../../utils'
 import dayjs from 'dayjs'
 
 import * as actions from '../../../actions/startrek.actions'
-import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
-import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
-import MyPlanetsElement from './MyPlanetsElement'
+//import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
+//import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
+//import MyPlanetsElement from './MyPlanetsElement'
 import NavBar from '../../../components/layout/Navbar'
-import UserInfo from '../../../components/UserInfo'
+//import UserInfo from '../../../components/UserInfo'
 import Button from '../../../components/Button'
 import Icon from '../../../components/Icon'
-import { Spinner } from 'react-bootstrap'
+//import { Spinner } from 'react-bootstrap'
 
 
 
@@ -28,7 +28,7 @@ function MyPlanets() {
   const selected = useSelector((state) => state.startrek.selected)
   const isLoading = useSelector((state) => state.startrek.loadings.list)
   const isUpdateLoading = useSelector((state) => state.startrek.loadings.update)
-  // const user = useSelector(state => state.app.user);
+  const user = useSelector(state => state.app.user);
   const { total, page } = useSelector((state) => state.startrek.meta)
   const { limit } = useSelector((state) => state.startrek.query)
   const start = dayjs().tz('Europe/Minsk').startOf('date')
@@ -59,7 +59,7 @@ function MyPlanets() {
         'место',
         'места',
         'мест',
-      ])}, на сумму ${planetLength * 360} RUB`,
+      ])}, на сумму ${planetLength * 2000} RUB`,
       confirmText: 'Подтвердить',
       confirmColor: 'danger',
       cancelText: 'Отмена',
@@ -86,11 +86,11 @@ function MyPlanets() {
 
   const [infoPlanet, setInfoPlanet] = useState({namePlanet: 'Mercury', frozen: '', comets: '', dateCreate: '', sum: '', id: ''})
 
-  // useEffect(()=>{
-  //   if (list[activePlanet] !== undefined) {
-  //     setInfoPlanet({...infoPlanet, id: list[activePlanet].id, level: list[activePlanet].level, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum})
-  //   }
-  // },[list, activePlanet])
+  useEffect(()=>{
+    if (list[activePlanet] !== undefined) {
+      setInfoPlanet({...infoPlanet, id: list[activePlanet].id, level: list[activePlanet].level, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum})
+    }
+  },[list, activePlanet])
 
 
 
@@ -111,7 +111,7 @@ function MyPlanets() {
 
   useMemo(()=>{
     if (list[activePlanet] !== undefined) {
-      setInfoPlanet({...infoPlanet, namePlanet: viewSolary[activePlanet].namePlanet , frozen: !list[activePlanet].frozen ? 'Откл':'Вкл', comets: list[activePlanet].comets, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum, id: list[activePlanet].id})
+      setInfoPlanet({...infoPlanet, id: list[activePlanet].id, namePlanet: viewSolary[activePlanet].namePlanet , frozen: !list[activePlanet].frozen ? 'Откл':'Вкл', comets: list[activePlanet].comets, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum, level: list[activePlanet].level})
     }
   },[list, activePlanet])
 
@@ -127,7 +127,7 @@ function MyPlanets() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
+        <Col xl={8}>
           <div className="root-page-header">
             <div className="root-page-header__left">
               <Button
@@ -139,17 +139,20 @@ function MyPlanets() {
                 <Icon iconName="back" />
               </Button>
             </div>
-            <h1 className="root-page-title color-solar">Моя система</h1>
+            <h1 className="root-page-title color-solar">Моя Солнечная системма</h1>
             <div className="solar-list-info">
               <ul className="list-info-s">
                 <li className='item-info-s'>
                   Имя планеты: {infoPlanet.namePlanet}
                 </li>
                 <li className='item-info-s'>
+                  №: {infoPlanet.id}
+                </li>
+                <li className='item-info-s'>
                   Дата создания: {infoPlanet.dateCreate}
                 </li>
                 <li className='item-info-s'>
-                  №: {infoPlanet.id}
+                  Уровень: {infoPlanet.level}
                 </li>
               </ul>
             </div>
@@ -236,7 +239,7 @@ function MyPlanets() {
                     </div>
                   </div>
                   <div className="planets-block">
-                    <ul className="planets-list">
+                    <ul className="planets-list" onClick={handleOnSetPlanetForUpdate}>
                     {viewSolary.map(e=><li className='planet-btn-item'><button className={'planet-btn'} id={e.count} onClick={e=>{setActivePlanet(e.target.id)}}>{e.namePlanet}</button></li>)}
                     </ul>
                     {!isLoading && (
@@ -263,7 +266,7 @@ function MyPlanets() {
 
                :
                 <Col>
-                  <h4 className="text-center mb-4 mt-4">У вас нет планет</h4>
+                  <h4 className="text-center mb-4 mt-4">Солнечная системма не активирована</h4>
                 </Col>
               }
 
