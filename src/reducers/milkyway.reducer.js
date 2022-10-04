@@ -119,7 +119,7 @@ const milkywayReducer = (state = initialState, action) => {
       }
     }
     case ActionTypes.MILKYWAY_PLANETS_SUCCESS: {
-      const { total, items } = action.payload
+      const { total, items } = action.payload.data
 
       return {
         ...state,
