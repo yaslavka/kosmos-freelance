@@ -19,12 +19,14 @@ import dogeImg from './../../../scss/media/doge-alt-svgrepo-com.svg'
 import trxImg from './../../../scss/media/trx-logo.svg'
 import MyModal from 'src/components/modal/MyModal';
 import { useSelector } from 'react-redux'
+import {formatter} from "../../../utils";
 
 
 import Input from '../../../components/Input'
 import ReplenishmentOfMoneyItem from './ReplenishmentOfMoneyItem'
 
 const initialValues = { amount: '' }
+
 
 const validationSchema = yup.object({
   amount: yup
@@ -35,6 +37,8 @@ const validationSchema = yup.object({
 })
 
 function ReplenishmentOfMoney() {
+  const userInfo = useSelector(state => state.app.user);
+  
   const [isCurrencyAndCount, setIsCurrencyAndCount] = useState({count: '', currency: ''})
   const [isInfoCard, setIsInfoCard] = useState({currency: '', pay: '', option: ''})
   const submitCreatePayForm = ({ amount }) => {
@@ -59,25 +63,28 @@ function ReplenishmentOfMoney() {
       })
       .catch(() => {})
   }
-  console.log(isInfoCard)
   useMemo(()=>{
     if(isCurrencyAndCount.count) {
       submitCreatePayeerPayForm(isCurrencyAndCount.count, isCurrencyAndCount.currency, isInfoCard.currency)
     }
   },[isCurrencyAndCount])
 
-  const infoData = [{nameCash: 'usd', sign: dollarImg,count: financeData.find(e=>e.currency === 'usd').value , classes: cl.dollarItem, roubleCount: financeData.find(e=>e.currency === 'usd').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'rub', sign: roubleImg,count: financeData.find(e=>e.currency === 'rub').value , classes: cl.rubItem, roubleCount: financeData.find(e=>e.currency === 'rub').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'eur', sign: euroImg,count:financeData.find(e=>e.currency === 'eur').value, classes: cl.euroItem, roubleCount: financeData.find(e=>e.currency === 'eur').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'btc', sign: btcImg,count: financeData.find(e=>e.currency === 'btc').value , classes: cl.btcItem, roubleCount: financeData.find(e=>e.currency === 'btc').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'usdt', sign: usdtImg,count:financeData.find(e=>e.currency === 'usdt').value, classes: cl.usdtItem, roubleCount: financeData.find(e=>e.currency === 'usdt').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'eth', sign: ethImg,count:financeData.find(e=>e.currency === 'eth').value , classes: cl.ethItem, roubleCount: financeData.find(e=>e.currency === 'eth').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'bch', sign: btcImg,count:financeData.find(e=>e.currency === 'bch').value , classes: cl.bchItem, roubleCount: financeData.find(e=>e.currency === 'bch').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'ltc', sign: ltcImg,count:financeData.find(e=>e.currency === 'ltc').value , classes: cl.ltcItem, roubleCount: financeData.find(e=>e.currency === 'ltc').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'dash', sign: dogeImg,count: financeData.find(e=>e.currency === 'dash').value , classes: cl.dashItem, roubleCount: financeData.find(e=>e.currency === 'dash').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'xrp', sign:xrpImg,count: financeData.find(e=>e.currency === 'xrp').value, classes: cl.xrpItem, roubleCount: financeData.find(e=>e.currency === 'xrp').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'doge', sign: dogeImg,count: financeData.find(e=>e.currency === 'doge').value  , classes: cl.dageItem, roubleCount: financeData.find(e=>e.currency === 'doge').ruble, urlOut: '', urlIn: ''},
-  {nameCash: 'trx', sign: trxImg,count: financeData.find(e=>e.currency === 'trx').value , classes: cl.trxItem, roubleCount: financeData.find(e=>e.currency === 'trx').ruble, urlOut: '', urlIn: ''}]
+
+
+
+
+  const infoData = [{nameCash: 'usd', sign: dollarImg , classes: cl.dollarItem, urlOut: '', urlIn: ''},
+  {nameCash: 'rub', sign: roubleImg , classes: cl.rubItem, urlOut: '', urlIn: ''},
+  {nameCash: 'eur', sign: euroImg, classes: cl.euroItem, urlOut: '', urlIn: ''},
+  {nameCash: 'btc', sign: btcImg , classes: cl.btcItem, urlOut: '', urlIn: ''},
+  {nameCash: 'usdt', sign: usdtImg, classes: cl.usdtItem, urlOut: '', urlIn: ''},
+  {nameCash: 'eth', sign: ethImg, classes: cl.ethItem, urlOut: '', urlIn: ''},
+  {nameCash: 'bch', sign: btcImg, classes: cl.bchItem, urlOut: '', urlIn: ''},
+  {nameCash: 'ltc', sign: ltcImg, classes: cl.ltcItem, urlOut: '', urlIn: ''},
+  {nameCash: 'dash', sign: dogeImg , classes: cl.dashItem, urlOut: '', urlIn: ''},
+  {nameCash: 'xrp', sign:xrpImg, classes: cl.xrpItem, urlOut: '', urlIn: ''},
+  {nameCash: 'doge', sign: dogeImg  , classes: cl.dageItem, urlOut: '', urlIn: ''},
+  {nameCash: 'trx', sign: trxImg , classes: cl.trxItem, urlOut: '', urlIn: ''}]
   const [modal, setModal] = useState(false)
   
   
@@ -145,8 +152,11 @@ function ReplenishmentOfMoney() {
           )}
         </Formik>
       </div> */}
+      
       {infoData.map(e=>
-        <ReplenishmentOfMoneyItem cardInfo={isInfoCard} setCardInfo={setIsInfoCard} infoData={e} setActiveModal={setModal} activeModal={modal}/>
+        <ReplenishmentOfMoneyItem cardInfo={isInfoCard} 
+              // countPriceInfo={formatter.format(userInfo.balance.filter(el=>el.nameCash == e.nameCash)[0].price > -1 && userInfo.balance.filter(el=>el.nameCash == e.nameCash)[0])} 
+              setCardInfo={setIsInfoCard} defaultPriceCount={financeData.filter(el=>el.currency == e.nameCash)[0].value} infoData={e} setActiveModal={setModal} activeModal={modal}/>
       )}
       <MyModal currencyAndCount={isCurrencyAndCount} changeCurrencyAndCount={setIsCurrencyAndCount} title={'Укажите сумму'} setVisible={setModal} visible={modal}/>
     </div>

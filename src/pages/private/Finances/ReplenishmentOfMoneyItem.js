@@ -5,8 +5,9 @@ import MyViewElement from 'src/components/MyViewElements/MyViewElements';
 import MyModal from 'src/components/modal/MyModal';
 
 
-const ReplenishmentOfMoneyItem = ({infoData, activeModal, setActiveModal, cardInfo, setCardInfo})=>{
+const ReplenishmentOfMoneyItem = ({infoData,countPriceInfo,defaultPriceCount, activeModal, setActiveModal, cardInfo, setCardInfo})=>{
     const [modal, setModal] = useState(false)
+ 
     return (
         <MyViewElement element={
         <div className={[cl.transItem, infoData.classes].join` `}>
@@ -17,7 +18,7 @@ const ReplenishmentOfMoneyItem = ({infoData, activeModal, setActiveModal, cardIn
                      :
                     <span className={cl.transTopRouble}>
                         <img src={rubleImg}/>
-                        {infoData.roubleCount}
+                        {countPriceInfo !== undefined ? countPriceInfo.rouble : '0'}
                     </span>
                  }
               
@@ -30,8 +31,8 @@ const ReplenishmentOfMoneyItem = ({infoData, activeModal, setActiveModal, cardIn
                     <img src={infoData.sign}/>
                 </span>
                 <div classname={cl.transMidValue}>
-                    <span className={cl.transMidFirst}>{infoData.count.split`.`[0]}</span>
-                    <span className={cl.transMidSec}>.{infoData.count.split`.`[1]}</span>
+                    <span className={cl.transMidFirst}>{countPriceInfo !== undefined ?countPriceInfo.count.split`.`[0] :  defaultPriceCount.split`.`[0]}</span>
+                    <span className={cl.transMidSec}>.{countPriceInfo !== undefined ?countPriceInfo.count.split`.`[1]:  defaultPriceCount.split`.`[1]}</span>
                 </div>
             </div>
             <div className={cl.transItemBottom}>

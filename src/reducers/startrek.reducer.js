@@ -3,7 +3,6 @@ import isEmpty from 'lodash-es/isEmpty'
 
 import * as ActionTypes from '../constants/startrek.constants'
 import { getStartrekTimer } from '../utils'
-
 const initialState = {
   list: [],
   query: {
@@ -119,8 +118,8 @@ const startrekReducer = (state = initialState, action) => {
       }
     }
     case ActionTypes.STARTREK_PLANETS_SUCCESS: {
-      const { total, items } = action.payload
-
+      const { total, items } = action.payload.data
+     
       return {
         ...state,
         list: items,

@@ -9,6 +9,7 @@ import isEmpty from 'lodash-es/isEmpty'
 import { declOfNum } from '../../../utils'
 import dayjs from 'dayjs'
 
+
 import * as actions from '../../../actions/startrek.actions'
 //import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
 //import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
@@ -24,6 +25,7 @@ import Icon from '../../../components/Icon'
 function MyPlanets() {
   const history = useHistory()
   const dispatch = useDispatch()
+  const startrekState = useSelector((state) => state.startrek)
   const list = useSelector((state) => state.startrek.list)
   const selected = useSelector((state) => state.startrek.selected)
   const isLoading = useSelector((state) => state.startrek.loadings.list)
@@ -34,7 +36,7 @@ function MyPlanets() {
   const start = dayjs().tz('Europe/Minsk').startOf('date')
   const end = start.add(10, 'hour')
 
-
+  
 
   const isDisable = useMemo(() => {
     return dayjs().isBetween(start, end)
@@ -75,26 +77,17 @@ function MyPlanets() {
     dispatch(actions.toggleAllPlanetOnPage())
   }
 
+
+  useEffect(()=>{
+    const data = ''
+    console.log(data)
+  },[])
+
   const rendererTimer = ({ hours, minutes, seconds }) => (
     <span>
       {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
     </span>
   )
-
-
-  const [activePlanet, setActivePlanet] = useState(0)
-
-  const [infoPlanet, setInfoPlanet] = useState({namePlanet: 'Mercury', frozen: '', comets: '', dateCreate: '', sum: '', id: ''})
-
-  useEffect(()=>{
-    if (list[activePlanet] !== undefined) {
-      setInfoPlanet({...infoPlanet, id: list[activePlanet].id, level: list[activePlanet].level, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum})
-    }
-  },[list, activePlanet])
-
-
-
-
   const [solaryList, setSolaryList]  = useState([{count: 0, namePlanet: 'Mercury', classItem:['mercury-line-1'], classPlanet: ['mercury active-planet'], classDescr: ['mercury-descr planet-descr'], descr: 'mercury'},
   {count: 1, namePlanet: 'Venus', classItem:['venus-line-1'], classPlanet: ['venus'], classDescr: ['venus-descr planet-descr'], descr: 'venus'},
   {count: 2, namePlanet: 'Earth', classItem:['earth-line-1'], classPlanet: ['earth'], classDescr: ['earth-descr planet-descr'], descr: 'earth'},
@@ -103,17 +96,36 @@ function MyPlanets() {
   {count: 5, namePlanet: 'Saturn', classItem:['saturn-line-1'], classPlanet: ['saturn'], classDescr: ['saturn-descr planet-descr'], descr: 'saturn'},
   {count: 6, namePlanet: 'Urans', classItem:['urans-line-1'], classPlanet: ['urans'], classDescr: ['urans-descr planet-descr'], descr: 'urans'},
   {count: 7, namePlanet: 'Neptune', classItem:['neptune-line-1'], classPlanet: ['neptune'], classDescr: ['neptune-descr planet-descr'], descr: 'neptune'}
-  ])
+])
 
-  let viewSolary = solaryList.filter((el,i)=>list[i]!==undefined)
+
+  const [activePlanet, setActivePlanet] = useState(0)
+
+  const [infoPlanet, setInfoPlanet] = useState({namePlanet: 'Mercury', frozen: '', comets: '', dateCreate: '', sum: '', id: ''})
+  const [viewSolary, setViewSolary] = useState('')
+  useEffect(()=>{
+    setViewSolary(solaryList.map((el,i)=>list[i]!==undefined?el:'').filter(e=>e))
+   
+      if(list[activePlanet]!==undefined) {
+        setInfoPlanet({...infoPlanet, id: list[activePlanet].id, level: list[activePlanet].level, dateCreate: list[activePlanet].createDate, sum: list[activePlanet].sum})
+      }
+    
+  },[list, activePlanet])
+
+
   console.log(list)
 
+ 
 
-  useMemo(()=>{
-    if (list[activePlanet] !== undefined) {
-      setInfoPlanet({...infoPlanet, id: list[activePlanet].id, namePlanet: viewSolary[activePlanet].namePlanet , frozen: !list[activePlanet].frozen ? 'Откл':'Вкл', comets: list[activePlanet].comets, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum, level: list[activePlanet].level})
-    }
-  },[list, activePlanet])
+
+
+
+  // useMemo(()=>{
+  //   if (list[activePlanet] !== undefined) {
+  //     console.log(list[activePlanet], viewSolary)
+  //     // setInfoPlanet({...infoPlanet, id: list[activePlanet].id, namePlanet: viewSolary[activePlanet].namePlanet , frozen: !list[activePlanet].frozen ? 'Откл':'Вкл', comets: list[activePlanet].comets, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum, level: list[activePlanet].level})
+  //   }
+  // },[list, activePlanet])
 
   let handleOnSetPlanetForUpdate = () => dispatch(actions.setPlanetForUpdate(infoPlanet.id))
 
@@ -157,6 +169,14 @@ function MyPlanets() {
               </ul>
             </div>
           </div>
+
+
+
+
+
+
+
+
           {/* <div className="text-center">
             <h3>
               Авто-продление планет{' '}
@@ -223,52 +243,61 @@ function MyPlanets() {
             )}
           </div> */}
 
-              {!isEmpty(list) ?
-              <div className='solry-all-block'>
-                 <div className='solary-card'>
-                    <div className='solary-block'>
-                      <div className="wrapper-solary">
-                      <div className="sun">
 
-                      </div>
 
-                      {viewSolary.map((e,i)=>
-                        <div className={e.classItem.join` `}><div className={e.classPlanet.join` `}><p className={e.classDescr.join` `}>{list[i].values}</p></div></div>
-                        )}
+
+
+
+
+
+
+
+          {!isEmpty(list) ?
+            <div className='solry-all-block'>
+              <div className='solary-card'>
+                <div className='solary-block'>
+                  <div className="wrapper-solary">
+                    <div className="sun">
+
                     </div>
-                    </div>
-                  </div>
-                  <div className="planets-block">
-                    <ul className="planets-list" onClick={handleOnSetPlanetForUpdate}>
-                    {viewSolary.map(e=><li className='planet-btn-item'><button className={'planet-btn'} id={e.count} onClick={e=>{setActivePlanet(e.target.id)}}>{e.namePlanet}</button></li>)}
-                    </ul>
-                    {!isLoading && (
-                      <div className="mt-3 btn-clear-block">
-                        <btn className="btn-clear-space" onClick={handleSelectAllOnPage}>
-                          {selected.length !== list.length ? 'Выбрать' : 'Убрать'} все
-                        </btn>
-                      </div>
+
+                    {viewSolary.map((e,i)=>
+                      <div className={e.classItem.join` `}><div className={e.classPlanet.join` `}><p className={e.classDescr.join` `}>{}</p></div></div>
                     )}
-                    {!isEmpty(selected) &&
-                    <div className='update-planet-block'>
-                             <button
-                              onClick={handleOnPlanetsUpdate}
-                              disabled={isUpdateLoading}
-                              loading={isUpdateLoading}
-                              className={'btn-clear-space'}
-                            >
-                              Продлить выбранные
-                            </button>
-                        </div>
-                    }
                   </div>
+                </div>
               </div>
+              <div className="planets-block">
+                <ul className="planets-list" onClick={handleOnSetPlanetForUpdate}>
+                  {viewSolary.map(e=><li className='planet-btn-item'><button className={'planet-btn'} id={e.count} onClick={e=>{setActivePlanet(e.target.id)}}>{e.namePlanet}</button></li>)}
+                </ul>
+                {!isLoading && (
+                  <div className="mt-3 btn-clear-block">
+                    <btn className="btn-clear-space" onClick={handleSelectAllOnPage}>
+                      {selected.length !== list.length ? 'Выбрать' : 'Убрать'} все
+                    </btn>
+                  </div>
+                )}
+                {!isEmpty(selected) &&
+                <div className='update-planet-block'>
+                  <button
+                    onClick={handleOnPlanetsUpdate}
+                    disabled={isUpdateLoading}
+                    loading={isUpdateLoading}
+                    className={'btn-clear-space'}
+                  >
+                    Продлить выбранные
+                  </button>
+                </div>
+                }
+              </div>
+            </div>
 
-               :
-                <Col>
-                  <h4 className="text-center mb-4 mt-4">Солнечная системма не активирована</h4>
-                </Col>
-              }
+            :
+            <Col>
+              <h4 className="text-center mb-4 mt-4">Солнечная системма не активирована</h4>
+            </Col>
+          }
 
         </Col>
 

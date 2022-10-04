@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../../../actions/finance.actions";
 import {formatter} from "../../../utils";
 import ReplenishmentOfMoney from "./ReplenishmentOfMoney";
-//import WithdrawalOfMoney from "./WithdrawalOfMoney";
+import WithdrawalOfMoney from "./WithdrawalOfMoney";
 import MoneyTransferModal from "./MoneyTransferModal";
 import OperationsHistoryModal from "./OperationsHistoryModal";
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
@@ -44,7 +44,7 @@ function Finances() {
           <Col xl={3} className="d-none d-xl-block">
             <NavBar />
           </Col>
-          <Col xl={8}>
+          <Col>
             <h1 className="root-page-title finances-title">Финансы</h1>
             {userInfo && (
               <>
@@ -63,12 +63,14 @@ function Finances() {
                       <MyViewElement element={
 
                         <h3 className='card-fin-bal'>
-                          {/* {formatter
+                          {/* {`${formatter
                             .format(
-                              (userInfo.balance > -1 && userInfo.balance) || 0,
-                            )
-                            .replace('₽', 'ST')} */}
-                            {filedData.reduce((ac,e)=>+e.ruble+ac,0)}
+                              (userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0) > -1 && userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0)) || 0,
+                            )} `} */}
+                              {`${formatter
+                            .format(
+                              (userInfo.balance> -1 && userInfo.balance) || 0,
+                            ).replace('₽', 'ST')}`}
                         </h3>
                           }/>
 
@@ -99,7 +101,7 @@ function Finances() {
                       <div className="card__body">
                       <MyViewElement element={
                         <h3 className='card-fin-bal'>
-
+                      
 
                           {formatter
                             .format(
@@ -108,7 +110,7 @@ function Finances() {
                               0,
                             )
                             .replace('₽', 'ST')}
-
+                        
                         </h3>
                         }/>
 
