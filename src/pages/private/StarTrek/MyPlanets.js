@@ -36,7 +36,7 @@ function MyPlanets() {
   const start = dayjs().tz('Europe/Minsk').startOf('date')
   const end = start.add(10, 'hour')
 
-  
+
 
   const isDisable = useMemo(() => {
     return dayjs().isBetween(start, end)
@@ -105,17 +105,17 @@ function MyPlanets() {
   const [viewSolary, setViewSolary] = useState('')
   useEffect(()=>{
     setViewSolary(solaryList.map((el,i)=>list[i]!==undefined?el:'').filter(e=>e))
-   
+
       if(list[activePlanet]!==undefined) {
         setInfoPlanet({...infoPlanet, id: list[activePlanet].id, level: list[activePlanet].level, dateCreate: list[activePlanet].createDate, sum: list[activePlanet].sum})
       }
-    
+
   },[list, activePlanet])
 
 
   console.log(list)
 
- 
+
 
 
 
@@ -253,7 +253,7 @@ function MyPlanets() {
 
 
           {!isEmpty(list) ?
-            <div className='solry-all-block'>
+            <div className='solry-all-block' key={infoPlanet.id}>
               <div className='solary-card'>
                 <div className='solary-block'>
                   <div className="wrapper-solary">
