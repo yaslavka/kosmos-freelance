@@ -10,11 +10,12 @@ function Blac() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={8}>
+        <Col xl={7}>
           <Spio />
-          ОЧЕНЬ СКОРО
           <iframe
-            src="https://demo.evoplay.games/demo/fullstate/html5/evoplay/raccoontales"
+            id="game-frame"
+            allowFullScreen={"allowfullscreen"}
+            src="http://raccoontales/"
             width="100%"
             height={500}
           />

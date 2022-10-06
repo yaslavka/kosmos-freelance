@@ -15848,6 +15848,11 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+use-match-media-hook@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/use-match-media-hook/-/use-match-media-hook-1.0.1.tgz#fe0b14d08f8518b6a4754186bb45733cec8f60a5"
+  integrity sha512-ZNHKyJeGVBSaOGVgPL19+W3p5d7Tx9O28cG04jKW3yKKrEHq3eTyLnGyLrgGWFkGX1xGWeRKjBUhdpti16/Z/w==
+
 use-sound@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/use-sound/-/use-sound-4.0.1.tgz#8c8de4badd16902db7762fd9418a4283b9bf7b3e"

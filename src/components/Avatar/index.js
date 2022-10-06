@@ -85,7 +85,7 @@ export default function Avatar({ url, className }) {
           </Form>
         )}
       </Formik>
-      <span className={styles.circle}></span>
+      <span className={styles.circle}/>
     </div>
   )
 }

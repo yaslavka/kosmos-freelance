@@ -7,7 +7,7 @@ import { Formik, Form, Field } from 'formik'
 import Planet from './../../scss/media/planet-1.gif'
 
 //import logo from '../../scss/media/kosmos.png'
-import avatar from '../../scss/media/placeholder.7e85be59.svg'
+import avatar from '../../scss/media/camera_200.png'
 import routes from '../../constants/routes.constants'
 import * as actions from '../../actions/auth.actions'
 import { api } from '../../api'
@@ -18,6 +18,8 @@ import Checkbox from '../../components/Checkbox'
 import InputPhone from '../../components/InputPhone'
 import Input from '../../components/Input'
 import { Spinner } from 'react-bootstrap'
+import Avatar from "../../components/Avatar";
+import styles from "../../components/Avatar/Avatar.module.scss";
 
 // eslint-disable-next-line react/prop-types
 function SignUp({ location }) {
@@ -178,6 +180,7 @@ function SignUp({ location }) {
               </div>
               <Spinner size="sm" isLoading={inviterLoading}>
                 {inviter && (
+                  <>
                   <div className="inviter">
                     <div className="inviter__avatar">
                       <img
@@ -189,11 +192,13 @@ function SignUp({ location }) {
                         alt={`${inviter.firstName} ${inviter.lastName}`}
                       />
                     </div>
-                    <div className="inviter__info">
-                      <div className="inviter__name">{`${inviter.firstName} ${inviter.lastName}`}</div>
-                      <div>Скорее регистрируйся и начни зарабатывать уже сейчас!</div>
-                    </div>
+
                   </div>
+                  <div className="inviter__info">
+                  <div className="inviter__name">{`${inviter.firstName} ${inviter.lastName}`}</div>
+                  <div>Скорее регистрируйся и начни зарабатывать уже сейчас!</div>
+                  </div>
+                  </>
                 )}
               </Spinner>
               <FormGroup>

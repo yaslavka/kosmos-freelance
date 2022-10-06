@@ -105,7 +105,7 @@ export default function MatrixCell({
       )}
       <div className={styles.photo}>
         <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 62">
-          <circle cx="30.6305" cy="30.9177" r="25.2154" stroke="#8083E6" strokeWidth="9.86691" />
+          <circle cx="30.6305" cy="30.9177" r="25.2154" stroke="#a7ffb673" strokeWidth="9.86691" />
         </svg>
         <img
           src={`${
