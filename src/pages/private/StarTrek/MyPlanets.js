@@ -169,99 +169,13 @@ function MyPlanets() {
               </ul>
             </div>
           </div>
-
-
-
-
-
-
-
-
-          {/* <div className="text-center">
-            <h3>
-              Авто-продление планет{' '}
-              <strong>{user?.autoRefill ? 'включено' : 'выключено'}</strong>
-            </h3>
-            <Link to={r.settings}>изменить</Link>
-          </div> */}
-          {/* <Spinner isLoading={isLoading}>
-            <Row>
-              {!isEmpty(list) ? (
-                list.map((planet) => (
-                  <Col key={planet.id} lg={6}>
-                    <MyPlanetsElement planet={planet} />
-                  </Col>
-                ))
-              ) : (
-                <Col>
-                  <h4 className="text-center mb-4 mt-4">У вас нет планет</h4>
-                </Col>
-              )}
-            </Row>
-            {!isEmpty(list) && !isLoading && (
-              <ReactPaginate
-                forcePage={page}
-                marginPagesDisplayed={1}
-                activeClassName="active"
-                pageCount={Math.ceil(total / limit)}
-
-                onPageChange={(props) => handleOnChangePage(props.selected)}
-                containerClassName="pagination"
-                previousLabel={<img src={arrowLeft} className="arrowLeft" alt="Arrow left" />}
-                nextLabel={<img src={arrowRight} className="arrowRight" alt="Arrow right" />}
-              />
-            )}
-          </Spinner> */}
-          {/* <div className="text-center mt-5 mb-5">
-            {!isEmpty(selected) &&
-              (isDisable && end ? (
-                <div className="mb-5">
-                  <p>
-                    В данный момент осуществляется запуск комет, <br /> продление баланса комет
-                    будет доступно с 10:00 по мск
-                  </p>
-                  <div>
-                    Осталось: <Timer date={end.format()} renderer={rendererTimer} />
-                  </div>
-                </div>
-              ) : (
-                <Button
-                  color="primary"
-                  onClick={handleOnPlanetsUpdate}
-                  disabled={isUpdateLoading}
-                  loading={isUpdateLoading}
-                >
-                  Продлить выбранные
-                </Button>
-              ))}
-            {!isLoading && (
-              <div className="mt-3">
-                <Button color="primary" onClick={handleSelectAllOnPage}>
-                  {selected.length !== list.length ? 'Выбрать' : 'Убрать'} все
-                </Button>
-              </div>  list
-            )}
-          </div> */}
-
-
-
-
-
-
-
-
-
-
           {!isEmpty(list) ?
-            <div className='solry-all-block' key={infoPlanet.id}>
+            <div className='solry-all-block'>
               <div className='solary-card'>
                 <div className='solary-block'>
                   <div className="wrapper-solary">
-                    <div className="sun">
-
-                    </div>
-
-                    {viewSolary.map((e,i)=>
+                    <div className="sun"/>
+                    {viewSolary.map((e)=>
                       <div className={e.classItem.join` `}><div className={e.classPlanet.join` `}><p className={e.classDescr.join` `}>{}</p></div></div>
                     )}
                   </div>
