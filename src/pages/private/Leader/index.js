@@ -105,7 +105,7 @@ function Leader() {
                 <div className="card__header">
                   <div className="card__header-left">
                   <MyViewElement element={
-                    <h3 className="card__title card__title-info">Kosmo_Bot</h3>
+                    <h3 className="card__title card__title-info">Kosmo_ЧАТ</h3>
                   }/>
 
                   </div>
@@ -113,18 +113,16 @@ function Leader() {
                 <div className="card__body">
                 <MyViewElement element={
                   <span className="card__title-body">
-                    Хочешь быть в курсе всех новостей, оперативно отслеживать все регистрации и
-                    финансовые операции в своём кабинете? Специально для тебя у нас есть KosmoBot,{' '}
+                    Хочешь быть в курсе всех новостей, оперативно отслеживать все события и
+                    новых продуктов? Специально для тебя у нас есть KosmoЧАТ,{' '}
                   </span>
                   }/>
                 <MyViewElement element={
-
                   <div className='card__btn-strong'>
                     <strong className='card__strong'>
                       ОБЯЗАТЕЛЬНО вступай в него нажав на кнопку ниже!
                     </strong>
-
-                    <Button tag="a" color="primary" href={``} className='card__btn'>
+                    <Button tag="a" color="primary" href={`https://t.me/kosmosmatrix`} className='card__btn'>
                       Вступить
                       <span></span><span></span><span></span><span></span>
                     </Button>
@@ -165,17 +163,6 @@ function Leader() {
                 </video>
               </div>
                 }/>
-
-              {userInfo && userInfo.showInviter && (
-                <MyViewElement element={
-
-                <h3 className="text-center mb-5 mt-5">
-                  Если хотите пополнить кабинет без комиссии, напишите мне в Telegram, ссылка
-                  наверху
-                </h3>
-                }/>
-
-              )}
             </>
           )}
         </Col>

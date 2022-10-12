@@ -103,11 +103,7 @@ function Dashboard() {
                 <MyViewElement element={
                   <div className="card__header">
                     <div className="card__header-left">
-
-
                       <h3 className="card__title card__title-info">Реферальная ссылка</h3>
-
-
                     </div>
                   </div>
               }/>
@@ -115,7 +111,7 @@ function Dashboard() {
           <MyViewElement element={
 
                   <div className="referral-link">
-                    <div className="referral-link__url">- {userInfo.refLink} -</div>
+                    <div className="referral-link__url">{userInfo.refLink}</div>
                     <Button
                       color="link"
                       className="referral-link__btn"
