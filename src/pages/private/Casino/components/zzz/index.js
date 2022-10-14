@@ -9,7 +9,7 @@ function Sasn() {
     '(min-width: 800px)'
   ]
   const [mobile, desktop] = useMatchMedia(queries)
-  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} src="http://forestdreams/mobile.html" width="100%" height={500}/>
+  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src="http://forestdreams/mobile.html" width="100%" height={500}/>
   return (
     <Container className="root-page">
       <Row>
@@ -27,7 +27,7 @@ function Sasn() {
                 width="100%"
                 height={500}
               />
-              :<iframe id="game-frame" allowFullScreen src="http://forestdreams/mobile.html" width="100%" height={600} autofocus/>
+              :<iframe id="game-frame" allowFullScreen src="http://forestdreams/mobile.html"  width="100%" height={600} autofocus/>
           }
         </Col>
       </Row>
