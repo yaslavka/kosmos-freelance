@@ -2,25 +2,38 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect, useMemo} from 'react'
 import formatCurrency from 'format-currency'
-import { Button, Input } from 'reactstrap'
-import OrderBook from '../../orderBook/OrderBook'
-import Balance from '../../Balance/Balance'
+import { Input } from 'reactstrap'
+import Button from '../../../../../../../../components/OldButton'
+import {useDispatch, useSelector} from "react-redux";
+import SimpleBar from "simplebar-react";
+import cl from './../../../../../Exchange.module.css';
 
-const BuyFormComponent = ({ priceBuy }) => {
-  const optsBTC = { format: '%v %c', code: 'BTC', maxFraction: 4 }
-  const [priceValue, setPriceValue] = useState(0)
-  const [totalValue, setTotalValue] = useState(0)
-  const estimatedAmount = totalValue / priceValue
-  const fee = estimatedAmount * (0.2 / 100)
 
-  // set default prive value
-  // when component mounted with useEffect hooks
+const BuyFormComponent = ({ priceBuy, children}) => {
+  const {buyExchange} = useSelector(state=>state)
+  const userInfo = useSelector((state) => state.app.user)
+  const optsBTC = {  maxFraction: 8 }
+  const [priceValue, setPriceValue] = useState(0.00000000)
+  const [totalValue, setTotalValue] = useState(0.00000000)
+  const total = totalValue * priceValue
+  const fee = total * (0.2 / 100)
+  const netAmount = totalValue * priceValue + fee
+  const [amount, setAmount]=useState(totalValue)
+  const [isActiveOrder, setIsActiveOrder] = useState({count: '', dash: '', btc: ''})
+  const dispatch = useDispatch();
+  const clickRows = (e)=>{
+    setIsActiveOrder({...isActiveOrder, count: [...e.target.childNodes][0].textContent, dash: [...e.target.childNodes][1].textContent, btc: [...e.target.childNodes][2].textContent})
+  }
+  useMemo(()=>{dispatch({type: 'BUY_EXCHANGE_FORM', info: isActiveOrder});console.log(buyExchange)},[isActiveOrder])
+
   useEffect(() => {
     setPriceValue(priceBuy)
   }, [priceBuy])
-  const [totalBalanse, setTotalBalanse] = useState('Anil')
+  useEffect(()=>{
+    setTotalValue(amount)
+  },[amount])
   return (
     <div className="col_1">
       <div className="buy_box fild_box">
@@ -30,21 +43,30 @@ const BuyFormComponent = ({ priceBuy }) => {
           <div className="meta">
             <div className="all_title title">ПОКУПКА</div>
             <div className="sm" id="label_bestbuy">
-              1.00000000
+              {priceBuy}
             </div>
           </div>
-          <Balance />
+          <>
+            {userInfo && (
+              <div className="line_first">
+                <span className="c1">Баланс: {'BTC'}</span>
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,no-script-url */}
+                <Button className="c2 clBuyBalance">
+                  <span id="label_buy_balance" onClick={()=>setAmount(userInfo.balance > -1 && userInfo.balance)}>
+                    {(userInfo.balance > -1 && userInfo.balance)}
+                  </span>
+                </Button>
+              </div>
+            )}
+          </>
           <div className="line">
             <span className="span">Количество:</span>
             <div className="poles">
               <Input
                 name="amount"
-                type="text"
-                placeholder=""
-                min={0}
+                min={0.00000000}
                 onChange={(event) => {
                   setTotalValue(event.target.value)
-                  setTotalBalanse(event.target.value)
                 }}
                 value={totalValue}
               />
@@ -61,8 +83,8 @@ const BuyFormComponent = ({ priceBuy }) => {
                 onChange={(event) => {
                   setPriceValue(event.target.value)
                 }}
+                min={0.00000000}
                 value={priceValue}
-                aria-valuemax={totalBalanse}
               />
               <span className="currency">BTC</span>
             </div>
@@ -74,13 +96,11 @@ const BuyFormComponent = ({ priceBuy }) => {
                 name="total"
                 maxLength="25"
                 type="text"
-                min={0}
+                min={0.00000000}
                 onChange={(event) => {
-                  setTotalValue(event.target.value)
-                  setTotalBalanse(event.target.value)
+                  setPriceValue(event.target.value)
                 }}
-                value={totalValue}
-                aria-valuemax={totalBalanse}
+                value={priceValue}
               />
               <span className="currency">BTC</span>
             </div>
@@ -88,7 +108,7 @@ const BuyFormComponent = ({ priceBuy }) => {
           <div className="line">
             <span className="span">Ком (0.2%):</span>
             <div className="poles">
-              <Input name="fee" maxLength="25" type="text" value={fee} disabled="">
+              <Input name="fee" maxLength="25" type="text" min={0.00000000} value={fee} disabled="">
                 {formatCurrency(fee, optsBTC)}
               </Input>
               <span className="currency">BTC</span>
@@ -101,23 +121,59 @@ const BuyFormComponent = ({ priceBuy }) => {
                 name="totalfee"
                 maxLength="25"
                 type="text"
-                value={estimatedAmount + fee}
+                value={netAmount}
                 disabled=""
               >
-                {formatCurrency(estimatedAmount + fee, optsBTC)}
+                {formatCurrency(netAmount, optsBTC)}
               </Input>
               <span className="currency">BTC</span>
             </div>
           </div>
           <div className="line" flow="horizontal">
-            <div float="left" width="98px">
+            <div float="left">
               <Button type="button" className="clCreateOrder" origin="Купить">
                 Купить
               </Button>
             </div>
           </div>
         </div>
-        <OrderBook />
+        <div className="sell_orders_box">
+          <div className="all_title title">Ордера на продажу</div>
+          <div className="result">
+            <table className="sell_orders" width="100%">
+              <thead>
+              <tr>
+                <th width="35%" className="first">
+                  Цена
+                </th>
+                <th width="38%">ETH</th>
+                <th width="27%">BTC</th>
+              </tr>
+              </thead>
+            </table>
+          </div>
+          <div className="scrolling" id="scrollbar3">
+            <SimpleBar style={{ height: 100, width: '100%' }}>
+              <div className="viewport">
+                <div className="overview">
+                  <table className="sell_orders" width="100%">
+                    <tbody id="sellord_table">
+                    <tr className={[cl.blockTable, 'clRow'].join` `} onClick={e=>{clickRows(e)}} role={"button"}>
+                      <td width="35%" className="first" >
+                        10000.00000000
+                      </td>
+                      <td width="38%" onClick={()=>setAmount(totalValue)}>10000.00000000</td>
+                      <td width="27%">{0.00000000}</td>
+                    </tr>
+                    {children}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              {children}
+            </SimpleBar>
+          </div>
+        </div>
       </div>
     </div>
   )

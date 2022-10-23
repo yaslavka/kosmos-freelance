@@ -2,8 +2,15 @@ import { Col, Container, Row } from 'reactstrap'
 import NavBar from '../../../../../components/layout/Navbar'
 import React from 'react'
 import Spio from '../../../../../components/Header'
+import useMatchMedia from "use-match-media-hook";
 
-function Blac() {
+function Raccoontales() {
+  const queries = [
+    '(max-width: 400px)',
+    '(min-width: 800px)'
+  ]
+  const [mobile, desktop] = useMatchMedia(queries)
+  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src="https://pervyimillion.host/raccoontales/mobile.html" width="100%" height={500}/>
   return (
     <Container className="root-page">
       <Row>
@@ -12,16 +19,20 @@ function Blac() {
         </Col>
         <Col xl={7}>
           <Spio />
-          <iframe
-            id="game-frame"
-            allowFullScreen={"allowfullscreen"}
-            src="http://raccoontales/"
-            width="100%"
-            height={500}
-          />
+          {
+            desktop
+              ?<iframe
+                id="game-frame"
+                allowFullScreen={"allowfullscreen"}
+                src="https://pervyimillion.host/raccoontales"
+                width="100%"
+                height={500}
+              />
+              :<iframe id="game-frame" allowFullScreen src="https://pervyimillion.host/raccoontales/mobile.html"  width="100%" height={600} autofocus/>
+          }
         </Col>
       </Row>
     </Container>
   )
 }
-export default Blac
+export default Raccoontales

@@ -4,6 +4,7 @@ import { Button } from 'reactstrap'
 import Viewport from '../marketlist'
 import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
+import cl from "../../../../Exchange.module.css";
 
 const Market = () => {
   return (
@@ -11,14 +12,9 @@ const Market = () => {
       <div className="market_box">
         <div className="all_title title">Маркет</div>
         <div>
-          <div className="market_base_container">
-            <div>
-              <Button
-                href="javascript:void(0)"
-                value="top"
-                onClick="changeMarketBase('top')"
-                className="active"
-              >
+          <div >
+            <div className={cl.marketBtns}>
+              <Button href="javascript:void(0)" value="top" onClick="changeMarketBase('top')">
                 TOP
               </Button>
               <Button href="javascript:void(0)" value="btc" onClick="changeMarketBase('btc')">
@@ -42,11 +38,11 @@ const Market = () => {
             <div className="clear"></div>
           </div>
         </div>
-        <Result />
-        <SimpleBar style={{ height: 150, width: '100%' }}>
-          <Viewport />
-        </SimpleBar>
       </div>
+      <Result />
+      <SimpleBar style={{ height: 150, width: '100%' }}>
+        <Viewport />
+      </SimpleBar>
     </div>
   )
 }

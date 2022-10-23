@@ -37,18 +37,10 @@ import Cost from './pages/private/Casino/components/cost/Components/Cost'
 import Costs from './pages/private/Casino/components/Costs/Costs'
 import Monk from './pages/private/Casino/components/obesyn'
 import Booom from './pages/private/Casino/components/Boom'
-import Blac from './pages/private/Casino/components/blac'
-import Blacc from './pages/private/Casino/components/vvvvv'
 import Blaccd from './pages/private/Casino/components/cccc'
-import Dashbtc from './pages/private/exchange/pages/DashBtc'
 import Exchange from './pages/private/exchange/pages/ETHBTC'
-import Usd from './pages/private/exchange/pages/USDBTC'
-import Zec from './pages/private/exchange/pages/ZECBTC'
-import Wawes from './pages/private/exchange/pages/WAWESBTC'
 import Blacsd from './pages/private/Casino/components/777'
 import Blacs from './pages/private/Casino/components/DDD'
-import Sas from './pages/private/Casino/components/7777'
-import Sasn from './pages/private/Casino/components/zzz'
 import Roll from './pages/private/Casino/components/roulette'
 import MagicWhee from './pages/private/Casino/components/MagicWheel'
 import Christmas from './pages/private/Casino/components/ChristmasParty'
@@ -65,6 +57,10 @@ import Milkyway from "./pages/private/StarTrek-new";
 import MyPlanetsmilkyway from "./pages/private/StarTrek-new/MyPlanets";
 import Statisticmilkyway from "./pages/private/StarTrek-new/Statistic";
 import Megaciti from "./pages/private/Casino/components/MegaCity/Megaciti";
+import Nukeworld from "./pages/private/Casino/components/vvvvv";
+import Raccoontales from "./pages/private/Casino/components/blac";
+import Forestdreams from "./pages/private/Casino/components/zzz";
+import Savethehamster from "./pages/private/Casino/components/7777";
 
 export const publicRouteConfig = [
   {
@@ -366,44 +362,20 @@ export const panelRouteConfig = [
   },
   {
     id: 'b611f7bb-58bf-4230-82d-ec4174e454584147477',
-    path: r.blac,
-    component: Blac,
+    path: r.raccoontales,
+    component: Raccoontales,
     exact: true,
   },
   {
     id: 'b611f7b-58bf-4230-82d-ec4174e454584147477',
-    path: r.blaac,
-    component: Blacc,
+    path: r.nukeworld,
+    component: Nukeworld,
     exact: true,
   },
   {
     id: 'b611f7b-58bf-4230-82d-ec4174e4545847477',
     path: r.blaacb,
     component: Blaccd,
-    exact: true,
-  },
-  {
-    id: 'b611f7b-5845bf-423440-82d-ec4174e4545847477',
-    path: r.dash,
-    component: Dashbtc,
-    exact: true,
-  },
-  {
-    id: 'b611x7b-5845bf-423440-82d-ec4174e4545847477',
-    path: r.usd,
-    component: Usd,
-    exact: true,
-  },
-  {
-    id: 'b611tdd-5845bf-423440-82d-ec4174e4545847477',
-    path: r.zec,
-    component: Zec,
-    exact: true,
-  },
-  {
-    id: 'b611tdd-5845bf-423440-82d-ec4174e4545847477',
-    path: r.wawes,
-    component: Wawes,
     exact: true,
   },
   {
@@ -420,14 +392,14 @@ export const panelRouteConfig = [
   },
   {
     id: '1tdffrd-5845bf-423440-82d-ec4174e4545847477',
-    path: r.sas,
-    component: Sas,
+    path: r.savethehamster,
+    component: Savethehamster,
     exact: true,
   },
   {
     id: '1tdddfrd-5845bf-423440-82d-ec4174e4545847477',
-    path: r.sasn,
-    component: Sasn,
+    path: r.forestdreams,
+    component: Forestdreams,
     exact: true,
   },
   {

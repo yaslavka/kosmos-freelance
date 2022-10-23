@@ -17,7 +17,7 @@ function RaccoonTales() {
                       <div className="tmb-fav">
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
-                      <Link to={routes.blac}>
+                      <Link to={routes.raccoontales}>
                         <div className="tmb-img">
                           <img src={raccoonTales} />
                         </div>

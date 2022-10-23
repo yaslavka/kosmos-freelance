@@ -12,7 +12,6 @@ import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 function Leader() {
   const userInfo = useSelector((state) => state.app.user)
-  const user = 'Наставник'
   return (
     <Container className="root-page">
       <Row>
@@ -30,11 +29,11 @@ function Leader() {
                 <div className="leader__image-mentor">
                   <img
                     src={
-                      userInfo.inviterAvatar
-                        ? `${process.env.REACT_APP_BASE_URL}${userInfo.inviterAvatar}`
+                      userInfo.referal.avatar
+                        ? `${process.env.REACT_APP_BASE_URL}/user/${userInfo.referal.avatar}`
                         : avatar
                     }
-                    alt={userInfo.inviterFio}
+                    alt={userInfo.referal.avatar}
                   />
                 </div>
               </div>
@@ -42,7 +41,7 @@ function Leader() {
                 <div className="card">
                   <div className="card__header">
                     <div className="card__header-left">
-                      <h3 className="card__title">{userInfo.inviterFio}</h3>
+                      <h3 className="card__title">{userInfo.referal.first_name} {userInfo.referal.last_name}</h3>
                     </div>
                   </div>
                   <div className="card__body">
@@ -50,13 +49,13 @@ function Leader() {
                       <div className="list-info__group">
                         <div className="list-info__label">Telegram:</div>
                         <div className="list-info__value">
-                          {userInfo.tg ? (
+                          {userInfo.referal.telegram ? (
                             <a
-                              href={`https://t.me/${userInfo.tg}`}
+                              href={`https://t.me/${userInfo.referal.telegram}`}
                               rel="noreferrer"
                               target="_blank"
                             >
-                              {userInfo.tg}
+                              {userInfo.referal.telegram}
                             </a>
                           ) : (
                             '-'
@@ -66,13 +65,13 @@ function Leader() {
                       <div className="list-info__group">
                         <div className="list-info__label">ВКонтакте: </div>
                         <div className="list-info__value">
-                          {userInfo.vk ? (
+                          {userInfo.referal.vkontakte ? (
                             <a
-                              href={`https://vk.com/${userInfo.vk}`}
+                              href={`https://vk.com/${userInfo.referal.vkontakte}`}
                               rel="noreferrer"
                               target="_blank"
                             >
-                              {userInfo.vk}
+                              {userInfo.referal.vkontakte}
                             </a>
                           ) : (
                             '-'
@@ -82,13 +81,13 @@ function Leader() {
                       <div className="list-info__group">
                         <div className="list-info__label">Instagram:</div>
                         <div className="list-info__value">
-                          {userInfo.instagram ? (
+                          {userInfo.referal.instagram ? (
                             <a
-                              href={`https://www.instagram.com/${userInfo.instagram}`}
+                              href={`https://www.instagram.com/${userInfo.referal.instagram}`}
                               rel="noreferrer"
                               target="_blank"
                             >
-                              {userInfo.instagram}
+                              {userInfo.referal.instagram}
                             </a>
                           ) : (
                             '-'
@@ -145,7 +144,7 @@ function Leader() {
                 <div className="card__body">
                 <MyViewElement element={
 
-                  <p className='card__title-body'> {userInfo.description || '-'}</p>
+                  <p className='card__title-body'> {userInfo.referal.description || '-'}</p>
                 }/>
 
                 </div>

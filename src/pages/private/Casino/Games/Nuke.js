@@ -17,7 +17,7 @@ function NUKEWORLD() {
                       <div className="tmb-fav">
                         <div className="icoc icoc-tmb-fav"/>
                       </div>
-                      <Link to={routes.blaac}>
+                      <Link to={routes.nukeworld}>
                         <div className="tmb-img">
                           <img src={NUKEWORLd} height="1%"  alt={""}/>
                         </div>

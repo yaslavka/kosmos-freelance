@@ -2245,7 +2245,9 @@ input {box-sizing: border-box !important;}
   border-radius: 5px !important;
   transition: all .35s ease-in-out;
   width: 100%;
+  max-width: 20%;
   height: 38px ;
+  margin-top: 10px;
   font-family: 'Nunito' !important;
   font-size: 18px !important;
   background: #fff !important;

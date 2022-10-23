@@ -97,12 +97,12 @@ const SellFormComponent = ({ priceSell }) => {
               <Input name="totalfee" maxLength="25" type="text" value={netAmount} disabled="">
                 {formatCurrency(netAmount, optsIDR)}
               </Input>
-              <span className="currency">BTC</span>
+              <span className="currency">{}</span>
             </div>
           </div>
           <div className="line" flow="horizontal">
-            <div float="left" width="98px">
-              <Button type="button" className="clCreateOrder" origin="Продать" value="Продать">
+            <div>
+              <Button type="button" className="clCreateOrder">
                 Продать
               </Button>
             </div>

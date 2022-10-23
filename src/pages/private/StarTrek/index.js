@@ -87,7 +87,7 @@ function StarTrek() {
                   `${
                     statistics?.myPlanet > 0
                       ? 'Приобрести место'
-                      : 'Активировать Matrix Reloaded'.toLocaleUpperCase()
+                      : 'Активировать Млечный путь'.toLocaleUpperCase()
                   }`
                 )}
               </Button>

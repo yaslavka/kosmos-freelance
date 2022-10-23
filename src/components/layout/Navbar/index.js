@@ -176,7 +176,7 @@ function NavBar() {
           <img className={[styles.icon, classImg].join` `} src={icon} alt="" /> <span className=''>{label.replace(/ /g, "\u00a0")}</span>
         </NavLink>
       ))}
-      <span className={isOpen ? [styles.bottonArrow, styles.bottomActive].join` ` : styles.bottonArrow} ></span>
+      <span className={isOpen ? [styles.bottonArrow, styles.bottomActive].join` ` : styles.bottonArrow} />
     </nav>
     </div>
 

@@ -3,9 +3,8 @@ import { Col, Container, Row } from 'reactstrap'
 import NavBar from '../../../../../../components/layout/Navbar'
 import Spin from '../../Header'
 
-class Canvas extends React.Component {
-  render() {
-    return (
+function Canvas() {
+  return (
       <Container className="root-page">
         <Row>
           <Col xl={3} className="d-none d-xl-block">
@@ -13,13 +12,12 @@ class Canvas extends React.Component {
           </Col>
           <Col>
             <Spin />
-            <iframe src="http://admiral/lobby/game/keks/" width="100%"
-                    height={500}></iframe>
+            <iframe src="http://admiral/lobby/game/keks/" width="100%" height={500}/>
           </Col>
         </Row>
       </Container>
-    )
-  }
+  )
+
 }
 
 export default Canvas

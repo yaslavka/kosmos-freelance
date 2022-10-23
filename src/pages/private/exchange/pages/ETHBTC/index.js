@@ -1,35 +1,36 @@
-import React, { Component } from 'react'
-import { Row, Col, Container } from 'reactstrap'
+import React, { useState} from 'react'
+import {Row, Container, Col} from 'reactstrap'
 import '../../stoc.css'
 import cl from './../../Exchange.module.css';
 import NavBar from '../../../../../components/layout/Navbar'
 import Chart from "./components/Chart/Chart";
-import BuyFormComponent from "../DashBtc/components/Form/BuyForm";
-import SellFormComponent from "../DashBtc/components/Form/SellForm";
-import Markets from "../DashBtc/components/Market/Market";
-import HistoriBuySel from "../DashBtc/components/Market/HistoriBuySel";
-class Exchange extends Component {
-  render() {
+import BuyFormComponent from "./components/Form/BuyForm";
+import SellFormComponent from "./components/Form/SellForm";
+import HistoriBuySel from "./components/Market/HistoriBuySel";
+import Market from "./components/Market/Market";
+
+function Exchange() {
+  const [priceBuy, setPriceBuy] = useState(0.00000000)
+  const [priceSell, setPriceSell] = useState(10000)
+
     return (
       <Container className="root-page">
         <Row>
-            <div className={cl.navBlock}>
+          <Col xl={3} className={cl.navBlock}>
             <NavBar />
+          </Col>
+          <div className={cl.contentBlock}>
+            <Chart width="100%" />
+            <div className={cl.buySellCard}>
+              <BuyFormComponent priceBuy={priceBuy}/>
+              <SellFormComponent priceSell={priceSell}/>
             </div>
-         
-            <div className={cl.contentBlock}>
-          <Chart width="100%" />
-          <div className={cl.buySellCard}>
-            <BuyFormComponent />
-            <SellFormComponent />
-          </div>
-            <Markets />
+            <Market />
             <HistoriBuySel width="100%" />
-         </div>
+          </div>
         </Row>
       </Container>
     )
-  }
 }
 
 export default Exchange

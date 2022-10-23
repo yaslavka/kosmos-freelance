@@ -12,8 +12,7 @@ const Bar = () => {
         </Col>
         <Col xl={9}>
           <Spin />
-          <iframe src="http://admiral/lobby/game/crmonkey/" width="100%"
-                  height={500} />
+          <iframe src="http://admiral/lobby/game/crmonkey/" width="100%" height={500} />
         </Col>
       </Row>
     </Container>

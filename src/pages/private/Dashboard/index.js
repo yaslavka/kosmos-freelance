@@ -18,8 +18,8 @@ function Dashboard() {
   const userInfo = useSelector((state) => state.app.user)
 
   const copyRefLinkToClipboard = async () => {
-    if (userInfo && userInfo.refLink) {
-      navigator.clipboard.writeText(userInfo.refLink).then(() => {
+    if (userInfo && `http://localhost:3000/sign-up?ref=${userInfo.username}`) {
+      navigator.clipboard.writeText(`http://localhost:3000/sign-up?ref=${userInfo.username}`).then(() => {
         toast.info('Ссылка успешно скопирована')
       })
     }
@@ -43,7 +43,7 @@ function Dashboard() {
                   <div className="leader__image">
                     <Avatar
                       className="user-info__avatar"
-                      url={userInfo.avatar && `${process.env.REACT_APP_BASE_URL}${userInfo.avatar}`}
+                      url={userInfo.avatar && `${process.env.REACT_APP_BASE_URL}/user/${userInfo.avatar}`}
                     />
                   </div>
                 </div>
@@ -52,7 +52,7 @@ function Dashboard() {
                     <div className="card__header">
                       <div className="card__header-left">
                         <h3 className="card__title">
-                          {userInfo.firstName || '-'} {userInfo.lastName || '-'}
+                          {userInfo.first_name || '-'} {userInfo.last_name || '-'}
                         </h3>
                       </div>
                     </div>
@@ -73,8 +73,8 @@ function Dashboard() {
                         <div className="list-info__group">
                           <div className="list-info__label">Дата регистрации:</div>
                           <div className="list-info__value">
-                            {userInfo.registrationDate ? (
-                              <div>{userInfo.registrationDate}</div>
+                            {userInfo.createdAt ? (
+                              <div>{userInfo.createdAt}</div>
                             ) : (
                               '-'
                             )}
@@ -89,7 +89,7 @@ function Dashboard() {
                         <div className="list-info__group">
                           <div className="list-info__label">Пригласитель:</div>
                           <div className="list-info__value">
-                            {userInfo.inviter ? <div>{userInfo.inviter}</div> : '-'}
+                            {userInfo.referal ? <div>{userInfo.referal.username}</div> : '-'}
                           </div>
                         </div>
                       </div>
@@ -111,7 +111,7 @@ function Dashboard() {
           <MyViewElement element={
 
                   <div className="referral-link">
-                    <div className="referral-link__url">{userInfo.refLink}</div>
+                    <div className="referral-link__url">{`http://localhost:3000/sign-up?ref=${userInfo.username}`}</div>
                     <Button
                       color="link"
                       className="referral-link__btn"
