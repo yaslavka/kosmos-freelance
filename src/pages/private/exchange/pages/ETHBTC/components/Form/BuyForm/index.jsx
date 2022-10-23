@@ -14,26 +14,27 @@ import cl from './../../../../../Exchange.module.css';
 const BuyFormComponent = ({ priceBuy, children}) => {
   const {buyExchange} = useSelector(state=>state)
   const userInfo = useSelector((state) => state.app.user)
-  const optsBTC = {  maxFraction: 8 }
   const [priceValue, setPriceValue] = useState(0.00000000)
   const [totalValue, setTotalValue] = useState(0.00000000)
   const total = totalValue * priceValue
   const fee = total * (0.2 / 100)
   const netAmount = totalValue * priceValue + fee
-  const [amount, setAmount]=useState(totalValue)
+  const [amount, setAmount]=useState(0.00000000)
   const [isActiveOrder, setIsActiveOrder] = useState({count: '', dash: '', btc: ''})
   const dispatch = useDispatch();
   const clickRows = (e)=>{
     setIsActiveOrder({...isActiveOrder, count: [...e.target.childNodes][0].textContent, dash: [...e.target.childNodes][1].textContent, btc: [...e.target.childNodes][2].textContent})
   }
   useMemo(()=>{dispatch({type: 'BUY_EXCHANGE_FORM', info: isActiveOrder});console.log(buyExchange)},[isActiveOrder])
-
-  useEffect(() => {
+  useEffect(()=>{
     setPriceValue(priceBuy)
-  }, [priceBuy])
+  },[priceBuy])
+
   useEffect(()=>{
     setTotalValue(amount)
   },[amount])
+
+
   return (
     <div className="col_1">
       <div className="buy_box fild_box">
@@ -52,13 +53,14 @@ const BuyFormComponent = ({ priceBuy, children}) => {
                 <span className="c1">Баланс: {'BTC'}</span>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,no-script-url */}
                 <Button className="c2 clBuyBalance">
-                  <span id="label_buy_balance" onClick={()=>setAmount(userInfo.balance > -1 && userInfo.balance)}>
+                  <span id="label_buy_balance" onClick={()=> {setAmount(userInfo.balance > -1 && userInfo.balance)}}>
                     {(userInfo.balance > -1 && userInfo.balance)}
                   </span>
                 </Button>
               </div>
             )}
           </>
+          <form>
           <div className="line">
             <span className="span">Количество:</span>
             <div className="poles">
@@ -97,9 +99,7 @@ const BuyFormComponent = ({ priceBuy, children}) => {
                 maxLength="25"
                 type="text"
                 min={0.00000000}
-                onChange={(event) => {
-                  setPriceValue(event.target.value)
-                }}
+                onChange={(event) => {setPriceValue(event.target.value)}}
                 value={priceValue}
               />
               <span className="currency">BTC</span>
@@ -109,7 +109,7 @@ const BuyFormComponent = ({ priceBuy, children}) => {
             <span className="span">Ком (0.2%):</span>
             <div className="poles">
               <Input name="fee" maxLength="25" type="text" min={0.00000000} value={fee} disabled="">
-                {formatCurrency(fee, optsBTC)}
+                {formatCurrency(fee)}
               </Input>
               <span className="currency">BTC</span>
             </div>
@@ -124,7 +124,7 @@ const BuyFormComponent = ({ priceBuy, children}) => {
                 value={netAmount}
                 disabled=""
               >
-                {formatCurrency(netAmount, optsBTC)}
+                {formatCurrency(netAmount)}
               </Input>
               <span className="currency">BTC</span>
             </div>
@@ -136,6 +136,7 @@ const BuyFormComponent = ({ priceBuy, children}) => {
               </Button>
             </div>
           </div>
+          </form>
         </div>
         <div className="sell_orders_box">
           <div className="all_title title">Ордера на продажу</div>
@@ -160,9 +161,9 @@ const BuyFormComponent = ({ priceBuy, children}) => {
                     <tbody id="sellord_table">
                     <tr className={[cl.blockTable, 'clRow'].join` `} onClick={e=>{clickRows(e)}} role={"button"}>
                       <td width="35%" className="first" >
-                        10000.00000000
+                        100
                       </td>
-                      <td width="38%" onClick={()=>setAmount(totalValue)}>10000.00000000</td>
+                      <td width="38%" >{}</td>
                       <td width="27%">{0.00000000}</td>
                     </tr>
                     {children}

@@ -10,8 +10,8 @@ import HistoriBuySel from "./components/Market/HistoriBuySel";
 import Market from "./components/Market/Market";
 
 function Exchange() {
-  const [priceBuy, setPriceBuy] = useState(0.00000000)
-  const [priceSell, setPriceSell] = useState(10000)
+  const [priceBuy, setPriceBuy] = useState(10000.00000000)
+  const [priceSell, setPriceSell] = useState(10000.00000000)
 
     return (
       <Container className="root-page">
