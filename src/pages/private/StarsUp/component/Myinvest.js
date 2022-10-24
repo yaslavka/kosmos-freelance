@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import routes from '../../../../constants/routes.constants'
-import { Row, Col, Container, Button } from 'reactstrap'
-//import UserInfo from '../../../../components/UserInfo'
+import { Row, Col, Button } from 'reactstrap'
 import NavBar from '../../../../components/layout/Navbar'
 import cl from './../StarsUp.module.css';
 
@@ -11,50 +10,47 @@ class Myinvest extends Component {
     return (
       <section className={cl.investbox}>
         <div className={['container', cl.cont].join` `}>
-        <div className={cl.navBlock}>
+          <Row>
+            <Col xl={3} className={cl.navBlock}>
               <NavBar />
-          </div>
-          
+            </Col>
+            <Col xl={8} style={{marginLeft:'14%'}}>
             <div className="inset_page">
               <div className="startrek__title1">
-                <h1 className={cl.title}>My investments</h1>
+                <h1 className={cl.title}>Мои инвестиции</h1>
               </div>
-              <p className={cl.descr}>Stocks, bonds, and other investments are ultra-useful financial tools that allow investors (or anyone who's willing to make educated, cash-backed financial decisions) to increase their worth and become part of today's fast-moving business landscape.</p>
+              <p className={cl.descr}>Вкладывайте свободные Средства в InvestBox! Это инструмент для получения дополнительного дохода</p>
               <div className="investbox_page">
               <ul className={cl.investListText}>
-                    <li>
-                      <span>
-                        Invest your free coins to InvestBox! It’s a tool for devs to promote their coins.
-                        It’s NOT Pyramid/HYIP, all payments are made from special fund.
-                      </span>
-                    
-                    </li>
-                  <li>
-                      <span>
-                        InvestBoxes can change status from Active to «No coins», but you can close your
-                        investment any time, it’s 100% safe.
-                      </span>
-                      
-                  </li>
-                  <li>
+                <li>
                     <span>
-                      InvestBoxes with «new» type - no investment close, you can only get daily percent
+                      Это НЕ пирамида/HYIP, все платежи делаются из специального фонда.
                     </span>
-                  </li>
-                  </ul>
-                <div className="clear"></div>
+
+                </li>
+                <li>
+                    <span>
+                      InvestBox может менять статус с «Активен» на «Нет монет», но вы можете закрыть инвестицию в любой момент, это 100% безопасно.
+                    </span>
+
+                </li>
+                <li>
+                  <span>InvestBox со статусом «новый» - невозможно закрыть, вы можете получать только месячный процент.</span>
+                </li>
+              </ul>
+                <div className="clear"/>
                 <div className={cl.listLinks}>
                   <Link to={routes.starsUp} className="active">
-                    Investment plans
+                    Инвестиционный план
                   </Link>
                   <span>/</span>
-                  <Link to={routes.myinvestments}>My investments</Link>
+                  <Link to={routes.myinvestments}>Мои инвестиции</Link>
                   <span>/</span>
                   <Link to={routes.investbox} className="active">
-                    History
+                    история инвестиций
                   </Link>
                 </div>
-                <div className="clear"></div>
+                <div className="clear"/>
                 <div className="create_new">
                   <table className={cl.tableMain}>
                     <tbody >
@@ -65,52 +61,8 @@ class Myinvest extends Component {
                               id="investbox_packs_list_wrapper"
                               className="dataTables_wrapper no-footer"
                             >
-                              <div className="top"></div>
+                              <div className="top"/>
                               <div className="dataTables_scroll">
-                                <div className="dataTables_scrollHead">
-                                  <div className="dataTables_scrollHeadInner">
-                                    {/* <table
-                                      className={cl.tableMain}
-                                      role="grid"
-                                    >
-                                      <thead className={cl.thead}>
-                                        <tr role="row">
-                                          <th
-                                            className={cl.sort}
-                                            rowSpan="1"
-                                            colSpan="1"
-                                          >
-                                            <div className={cl.theadEl}>Packet</div>
-                                            
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                            <div className={cl.theadEl}>Percent</div>
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Period</div>
-                                            
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                            <div className={cl.theadEl}>Amount</div>
-                                            
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Status</div>
-                                            
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Next</div>
-                                            
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          
-                                            &nbsp;
-                                          </th>
-                                        </tr>
-                                      </thead>
-                                    </table> */}
-                                  </div>
-                                </div>
                                 <div className="dataTables_scrollBody">
                                   <div className="jspContainer">
                                     <div className="jspPane">
@@ -127,29 +79,29 @@ class Myinvest extends Component {
                                             colSpan="1"
                                           >
                                             <div className={cl.theadEl}>Packet</div>
-                                            
+
                                           </th>
                                           <th className={cl.sort} rowSpan="1" colSpan="1">
                                             <div className={cl.theadEl}>Percent</div>
                                           </th>
                                           <th className={cl.sort} rowSpan="1" colSpan="1">
                                           <div className={cl.theadEl}>Period</div>
-                                            
+
                                           </th>
                                           <th className={cl.sort} rowSpan="1" colSpan="1">
                                             <div className={cl.theadEl}>Amount</div>
-                                            
+
                                           </th>
                                           <th className={cl.sort} rowSpan="1" colSpan="1">
                                           <div className={cl.theadEl}>Status</div>
-                                            
+
                                           </th>
                                           <th className={cl.sort} rowSpan="1" colSpan="1">
                                           <div className={cl.theadEl}>Next</div>
-                                            
+
                                           </th>
                                           <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          
+
                                             &nbsp;
                                           </th>
                                         </tr>
@@ -194,7 +146,7 @@ class Myinvest extends Component {
                                   Далее
                                 </Button>
                               </div>
-                              <div className="clear"></div>
+                              <div className="clear"/>
                             </div>
                           </div>
                         </td>
@@ -202,12 +154,13 @@ class Myinvest extends Component {
                     </tbody>
                   </table>
                 </div>
-                <div className="clear"></div>
-                <div className="create_new"></div>
-                <div className="clear"></div>
+                <div className="clear"/>
+                <div className="create_new"/>
+                <div className="clear"/>
               </div>
             </div>
-         
+            </Col>
+          </Row>
         </div>
       </section>
     )

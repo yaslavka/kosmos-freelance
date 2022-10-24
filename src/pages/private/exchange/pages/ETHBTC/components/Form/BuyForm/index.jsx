@@ -50,11 +50,11 @@ const BuyFormComponent = ({ priceBuy, children}) => {
           <>
             {userInfo && (
               <div className="line_first">
-                <span className="c1">Баланс: {'BTC'}</span>
+                <span className="c1">Баланс: </span>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,no-script-url */}
                 <Button className="c2 clBuyBalance">
                   <span id="label_buy_balance" onClick={()=> {setAmount(userInfo.balance > -1 && userInfo.balance)}}>
-                    {(userInfo.balance > -1 && userInfo.balance)}
+                    {(userInfo.balance > -1 && userInfo.balance)} {'BTC'}
                   </span>
                 </Button>
               </div>

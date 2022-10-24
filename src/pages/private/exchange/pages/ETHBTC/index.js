@@ -9,7 +9,7 @@ import SellFormComponent from "./components/Form/SellForm";
 import HistoriBuySel from "./components/Market/HistoriBuySel";
 import Market from "./components/Market/Market";
 
-function Exchange() {
+function Exchange({children}) {
   const [priceBuy, setPriceBuy] = useState(10000.00000000)
   const [priceSell, setPriceSell] = useState(10000.00000000)
 
@@ -19,16 +19,19 @@ function Exchange() {
           <Col xl={3} className={cl.navBlock}>
             <NavBar />
           </Col>
-          <div className={cl.contentBlock}>
-            <Chart width="100%" />
-            <div className={cl.buySellCard}>
-              <BuyFormComponent priceBuy={priceBuy}/>
-              <SellFormComponent priceSell={priceSell}/>
+          <Col xl={11} style={{marginLeft:'9%'}}>
+            <div className={cl.contentBlock}>
+              <Chart width="100%" />
+              <div className={cl.buySellCard}>
+                <BuyFormComponent priceBuy={priceBuy}/>
+                <SellFormComponent priceSell={priceSell}/>
+              </div>
+              <Market />
+              <HistoriBuySel width="100%" />
             </div>
-            <Market />
-            <HistoriBuySel width="100%" />
-          </div>
+          </Col>
         </Row>
+        {children}
       </Container>
     )
 }

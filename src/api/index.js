@@ -8,7 +8,25 @@ export const baseInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 })
 
+export const baseInstanc = axios.create({
+  baseURL: process.env.REACT_APP_BASE_URLL,
+})
+
 baseInstance.interceptors.request.use(
+  (config) => {
+    const token = getAccessToken()
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`
+    }
+    return config
+  },
+  (error) => {
+    Raven.captureException(error)
+    return Promise.reject(error)
+  },
+)
+
+baseInstanc.interceptors.request.use(
   (config) => {
     const token = getAccessToken()
     if (token) {
@@ -41,10 +59,29 @@ baseInstance.interceptors.response.use(
   },
 )
 
+baseInstanc.interceptors.response.use(
+  (response) => response?.data,
+  (error) => {
+    Raven.captureException(error)
+    if (error?.response?.status === 401) {
+      const timer = localStorage.getItem('w')
+      localStorage.clear()
+      localStorage.setItem('w', timer)
+
+      store.dispatch(actions.signOut())
+    } else if (error?.response) {
+      // Global path to error message
+      throw new Error(error?.response?.data?.message)
+    } else {
+      throw new Error(error?.message)
+    }
+  },
+)
+
 export const api = {
   // Auth
   createClient() {
-    return baseInstance.get('create-client')
+    return baseInstanc.get('/api/v2/coin')
   },
   signIn(credentials) {
     return baseInstance.post(
