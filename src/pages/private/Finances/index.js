@@ -101,7 +101,7 @@ function Finances() {
                       <div className="card__body">
                       <MyViewElement element={
                         <h3 className='card-fin-bal'>
-                      
+
 
                           {formatter
                             .format(
@@ -110,7 +110,7 @@ function Finances() {
                               0,
                             )
                             .replace('₽', 'ST')}
-                        
+
                         </h3>
                         }/>
 
@@ -135,14 +135,14 @@ function Finances() {
               }/>
 
                 <ReplenishmentOfMoney />
-                {/* <h2>Вывод</h2>
-                <WithdrawalOfMoney /> */}
+                {/*<h2>Вывод</h2>*/}
+                {/*<WithdrawalOfMoney />*/}
               </>
             )}
           </Col>
         </Row>
       </Container>
-      <MyModal title={'Укажите сумму'} visible={modal} setVisible={setModal} setThx={()=>{}}/>
+      <MyModal title={'Укажите сумму'} visible={modal} setVisible={setModal} setThx={()=>{}} WithdrawalOfMoney={WithdrawalOfMoney}/>
       <MoneyTransferModal />
       {isOperationsHistoryModalVisible && (
         <OperationsHistoryModal onClose={closeOperationsHistoryModal} />

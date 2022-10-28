@@ -58,18 +58,6 @@ function SignIn() {
     [dispatch, clientCredentials],
   )
 
-  useEffect(() => {
-    api
-      .createClient()
-      .then((response) => {
-        if (response && response.client_id && response.client_secret) {
-          setClientCredentials(response)
-          localStorage.setItem('client_id', response.client_id)
-          localStorage.setItem('client_secret', response.client_secret)
-        }
-      })
-      .catch(() => {})
-  }, [])
 
   return (
     <div className={cl.authPage}>

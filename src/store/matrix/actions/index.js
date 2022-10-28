@@ -19,4 +19,10 @@ export const matrixActions = {
       payload: matricesInfo,
     }
   },
+  buyExchange(data) {
+    return {
+      type: types.BUY_EXCHANGE_FORM,
+      payload: data,
+    }
+  },
 }

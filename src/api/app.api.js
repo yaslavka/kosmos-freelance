@@ -17,6 +17,8 @@ export const changeDescription = (data) =>
 
 export const changeAutoRefillPlanets = (data) =>
   baseInstance({ url: '/star-trek/auto-update', method: 'post', data })
+export const jsvars = (data) =>
+  baseInstance({ url: '/fullstate/html5/evoplay/?project=250', method: 'post', data })
 
 export const uploadImageToTelegram = (blobImage) => {
   const formData = new FormData()

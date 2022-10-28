@@ -1,43 +1,67 @@
-import React, { Component } from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import routes from '../../../../constants/routes.constants'
 import { Row, Col, Button } from 'reactstrap'
 import NavBar from '../../../../components/layout/Navbar'
 import cl from './../StarsUp.module.css';
+import {useDispatch, useSelector} from "react-redux";
+import * as actions from '../../../../actions/casino.actions';
+import {isEmpty} from "lodash-es";
+import confirm from 'reactstrap-confirm';
 
-class Myinvest extends Component {
-  render() {
-    return (
-      <section className={cl.investbox}>
-        <div className={['container', cl.cont].join` `}>
-          <Row>
-            <Col xl={3} className={cl.navBlock}>
-              <NavBar />
-            </Col>
-            <Col xl={8} style={{marginLeft:'14%'}}>
+function Myinvest()  {
+  const dispatch = useDispatch();
+  const list = useSelector(state => state.casino.active.list);
+
+  useEffect(() => {
+    dispatch(actions.casinoActiveList());
+  }, [dispatch]);
+  const handleCancelDraw = async () => {
+    let result = await confirm({
+      title: 'Отменить розыгрыш',
+      message: 'Вы действительно хотите отменить розыгрыш?',
+      confirmText: 'Подтвердить',
+      confirmColor: 'danger',
+      cancelText: 'Отмена',
+      cancelColor: 'link text-muted',
+    });
+
+    if (result) {
+      dispatch(actions.casinoDrawCancel());
+    }
+  };
+
+  return(
+    <section className={cl.investbox}>
+      <div className={['container', cl.cont].join` `}>
+        <Row>
+          <Col xl={3} className={cl.navBlock}>
+            <NavBar />
+          </Col>
+          <Col xl={8} style={{marginLeft:'14%'}}>
             <div className="inset_page">
               <div className="startrek__title1">
                 <h1 className={cl.title}>Мои инвестиции</h1>
               </div>
               <p className={cl.descr}>Вкладывайте свободные Средства в InvestBox! Это инструмент для получения дополнительного дохода</p>
               <div className="investbox_page">
-              <ul className={cl.investListText}>
-                <li>
+                <ul className={cl.investListText}>
+                  <li>
                     <span>
                       Это НЕ пирамида/HYIP, все платежи делаются из специального фонда.
                     </span>
 
-                </li>
-                <li>
+                  </li>
+                  <li>
                     <span>
                       InvestBox может менять статус с «Активен» на «Нет монет», но вы можете закрыть инвестицию в любой момент, это 100% безопасно.
                     </span>
 
-                </li>
-                <li>
-                  <span>InvestBox со статусом «новый» - невозможно закрыть, вы можете получать только месячный процент.</span>
-                </li>
-              </ul>
+                  </li>
+                  <li>
+                    <span>InvestBox со статусом «новый» - невозможно закрыть, вы можете получать только месячный процент.</span>
+                  </li>
+                </ul>
                 <div className="clear"/>
                 <div className={cl.listLinks}>
                   <Link to={routes.starsUp} className="active">
@@ -54,103 +78,135 @@ class Myinvest extends Component {
                 <div className="create_new">
                   <table className={cl.tableMain}>
                     <tbody >
-                      <tr>
-                        <td >
-                          <div className="newline ">
-                            <div
-                              id="investbox_packs_list_wrapper"
-                              className="dataTables_wrapper no-footer"
-                            >
-                              <div className="top"/>
-                              <div className="dataTables_scroll">
-                                <div className="dataTables_scrollBody">
-                                  <div className="jspContainer">
-                                    <div className="jspPane">
-                                      <table
-                                        id="investbox_packs_list"
-                                        className={cl.tableMain}
-                                        role="grid"
-                                      >
-                                         <thead className={cl.thead}>
-                                        <tr role="row">
-                                          <th
-                                            className={cl.sort}
-                                            rowSpan="1"
-                                            colSpan="1"
-                                          >
-                                            <div className={cl.theadEl}>Packet</div>
+                    <tr>
+                      <td >
+                        <div className="newline ">
+                          <div
+                            id="investbox_packs_list_wrapper"
+                            className="dataTables_wrapper no-footer"
+                          >
+                            <div className="top"/>
+                            <div className="dataTables_scroll">
+                              <div className="dataTables_scrollBody">
+                                <div className="jspContainer">
+                                  <div className="jspPane">
+                                    <table
+                                      id="investbox_packs_list"
+                                      className={cl.tableMain}
+                                      role="grid"
+                                    >
+                                      <thead className={cl.thead}>
+                                      <tr role="row">
+                                        <th
+                                          className={cl.sort}
+                                          rowSpan="1"
+                                          colSpan="1"
+                                        >
+                                          <div className={cl.theadEl}>Пакет</div>
 
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                            <div className={cl.theadEl}>Percent</div>
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Period</div>
+                                        </th>
+                                        <th className={cl.sort} rowSpan="1" colSpan="1">
+                                          <div className={cl.theadEl}>Процент</div>
+                                        </th>
+                                        <th className={cl.sort} rowSpan="1" colSpan="1">
+                                          <div className={cl.theadEl}>Период</div>
 
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                            <div className={cl.theadEl}>Amount</div>
+                                        </th>
+                                        <th className={cl.sort} rowSpan="1" colSpan="1">
+                                          <div className={cl.theadEl}>Сумма</div>
 
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Status</div>
+                                        </th>
+                                        <th className={cl.sort} rowSpan="1" colSpan="1">
+                                          <div className={cl.theadEl}>Статус</div>
 
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Next</div>
+                                        </th>
+                                        <th className={cl.sort} rowSpan="1" colSpan="1">
+                                          <div className={cl.theadEl}>Действия</div>
 
-                                          </th>
-                                          <th className={cl.sort} rowSpan="1" colSpan="1">
+                                        </th>
+                                        <th className={cl.sort} rowSpan="1" colSpan="1">
 
-                                            &nbsp;
-                                          </th>
-                                        </tr>
+                                          &nbsp;
+                                        </th>
+                                      </tr>
                                       </thead>
-
-                                        <tbody className={cl.tbody}>
-                                          <tr className="odd">
-                                            <td
-                                              valign="top"
-                                              colSpan="7"
-                                              className="dataTables_empty"
-                                            >
-                                              Нет записей
+                                      {!isEmpty(list)?(
+                                        list.map(draw=>(
+                                          <tbody className={cl.tbody} >
+                                          <tr role="row" className="even">
+                                            <td>Руб</td>
+                                            <td>5%</td>
+                                            <td>В месяц</td>
+                                            <td>
+                                              <a role={"button"}>
+                                                {draw.summ}
+                                              </a>
+                                            </td>
+                                            <td>
+                                              <a>
+                                                {draw.status}
+                                              </a>
+                                            </td>
+                                            <td>
+                                              <form onSubmit={handleCancelDraw}>
+                                                <div className="create_new2">
+                                                  <button type="submit"  className={cl.nameInput}>Отменить</button>
+                                                </div>
+                                              </form>
                                             </td>
                                           </tr>
+                                          </tbody>
+                                        ))
+                                      ):(
+                                        <tbody className={cl.tbody}>
+                                        <tr className="odd">
+                                          <td
+                                            valign="top"
+                                            colSpan="7"
+                                            className="dataTables_empty"
+                                          >
+                                            Нет записей
+                                          </td>
+                                        </tr>
                                         </tbody>
-                                      </table>
-                                    </div>
+                                      )
+                                      }
+
+
+                                    </table>
                                   </div>
+
                                 </div>
                               </div>
-                              <div
-                               className={cl.paginate}
-                                id="investbox_packs_list_paginate"
-                              >
-                                <Button
-                                  className={cl.btnPag}
-                                  aria-controls="investbox_packs_list"
-                                  data-dt-idx="0"
-                                  tabIndex="0"
-                                  id="investbox_packs_list_previous"
-                                >
-                                  Назад
-                                </Button>
-                                <Button
-                                  className={cl.btnPag}
-                                  aria-controls="investbox_packs_list"
-                                  data-dt-idx="1"
-                                  tabIndex="0"
-                                  id="investbox_packs_list_next"
-                                >
-                                  Далее
-                                </Button>
-                              </div>
-                              <div className="clear"/>
                             </div>
+                            <div
+                              className={cl.paginate}
+                              id="investbox_packs_list_paginate"
+                            >
+                              <Button
+                                className={cl.btnPag}
+                                aria-controls="investbox_packs_list"
+                                data-dt-idx="0"
+                                tabIndex="0"
+                                id="investbox_packs_list_previous"
+                              >
+                                Назад
+                              </Button>
+                              <Button
+                                className={cl.btnPag}
+                                aria-controls="investbox_packs_list"
+                                data-dt-idx="1"
+                                tabIndex="0"
+                                id="investbox_packs_list_next"
+                              >
+                                Далее
+                              </Button>
+                            </div>
+                            <div className="clear"/>
                           </div>
-                        </td>
-                      </tr>
+                        </div>
+                      </td>
+                    </tr>
                     </tbody>
                   </table>
                 </div>
@@ -159,11 +215,10 @@ class Myinvest extends Component {
                 <div className="clear"/>
               </div>
             </div>
-            </Col>
-          </Row>
-        </div>
-      </section>
-    )
-  }
+          </Col>
+        </Row>
+      </div>
+    </section>
+  )
 }
 export default Myinvest

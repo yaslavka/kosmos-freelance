@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useMemo, useState } from 'react'
+﻿import React, { useEffect, useCallback, useMemo, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { zeroPad } from 'react-countdown'
@@ -61,7 +61,7 @@ function MyPlanets() {
         'место',
         'места',
         'мест',
-      ])}, на сумму ${planetLength * 2000} RUB`,
+      ])}, на сумму ${planetLength * 2160} RUB`,
       confirmText: 'Подтвердить',
       confirmColor: 'danger',
       cancelText: 'Отмена',

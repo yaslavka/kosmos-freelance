@@ -4,14 +4,24 @@ import NavBar from '../../../components/layout/Navbar'
 import routes from '../../../constants/routes.constants'
 import {Link} from 'react-router-dom'
 import {Col, Row} from "reactstrap";
+import {api} from "../../../api";
 
 
 const StarsUp = () => {
-  const [value, setValue] = useState()
-  const [button, setButton] = useState()
-  useEffect(() => {
-    setValue(button)
-  }, [button])
+  const initialState = { amount: '' }
+  const [userData, setUserData] = useState(initialState)
+  const { amount } = userData
+
+
+  const handleChangeInput = e => {
+    const { name, value } = e.target
+    setUserData({...userData, [name]:value})
+  }
+  const handleSubmit = e => {
+    e.preventDefault()
+    api.investBox(userData).then().catch(() => {})
+  }
+
   return (
     <section className={cl.invetbox}>
       <Row>
@@ -129,24 +139,23 @@ const StarsUp = () => {
                                           <td>В месяц</td>
                                           <td>
                                             <a role={"button"}>
-                                              10
+                                              {10}
                                             </a>
                                           </td>
                                           <td>
                                             <a>
-                                              10000000
+                                              {10000000}
                                             </a>
                                           </td>
                                           <td>
-                                            <form>
+                                            <form onSubmit={handleSubmit}>
                                               <div className="create_new2">
                                                 <input
+                                                  name="amount"
                                                   maxLength="25"
                                                   type="text"
-                                                  onChange={(event) => {
-                                                    setValue(event.target.value)
-                                                  }}
-                                                  value={value}
+                                                  onChange={handleChangeInput}
+                                                  value={amount}
                                                   className={cl.inputValue}
                                                 />
                                                 <button type="submit" className={cl.nameInput}>Инвестировать</button>

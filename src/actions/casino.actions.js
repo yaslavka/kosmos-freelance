@@ -41,6 +41,9 @@ export const casinoDrawBuyError = (error) => ({
   payload: error,
 })
 
+export const casinoDrawCancel = () => ({
+  type: ActionTypes.CASINO_DRAW_CANCEL_REQUEST,
+})
 export const casinoDrawCancelSuccess = () => ({
   type: ActionTypes.CASINO_DRAW_CANCEL_SUCCESS,
 })

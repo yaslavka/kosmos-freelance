@@ -10,9 +10,9 @@ function Nukeworld() {
     '(min-width: 800px)'
   ]
   const [mobile, desktop] = useMatchMedia(queries)
-  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src="https://pervyimillion.host/nukeworld/mobile.html" width="100%" height={500}/>
+  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src={'./QuickRPG/mobile.html'}  width="100%" height={500}/>
     return(
-      <Container className="root-page">
+      <Container className="root-page" title={'Nuke World'}>
         <Row>
           <Col xl={3} className="d-none d-xl-block">
             <NavBar />
@@ -24,11 +24,11 @@ function Nukeworld() {
                 ?<iframe
                   id="game-frame"
                   allowFullScreen={"allowfullscreen"}
-                  src="https://pervyimillion.host/nukeworld"
                   width="100%"
+                  src={'./QuickRPG'}
                   height={500}
                 />
-                :<iframe id="game-frame" allowFullScreen src="https://pervyimillion.host/nukeworld/mobile.html"  width="100%" height={600} autofocus/>
+                :<iframe id="game-frame" allowFullScreen src={'./QuickRPG/mobile.html'} width="100%" height={600} autofocus/>
               }
           </Col>
         </Row>

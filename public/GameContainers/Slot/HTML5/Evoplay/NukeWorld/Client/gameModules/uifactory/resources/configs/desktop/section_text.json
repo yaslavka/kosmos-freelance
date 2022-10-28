@@ -1,0 +1,1 @@
+{"__type":"Container","y":20,"children":[{"__type":"PrefabText","text":"${text}","fontName":"text","breakWords":true,"wordWrapWidth":"$[100pw - 120]","x":60}]}

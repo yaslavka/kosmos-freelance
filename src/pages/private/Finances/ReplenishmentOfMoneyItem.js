@@ -1,27 +1,25 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import cl from './Finance.module.css';
 import rubleImg from './../../../scss/media/rouble-svgrepo-com.svg'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
-import MyModal from 'src/components/modal/MyModal';
 
 
 const ReplenishmentOfMoneyItem = ({infoData,countPriceInfo,defaultPriceCount, activeModal, setActiveModal, cardInfo, setCardInfo})=>{
-    const [modal, setModal] = useState(false)
- 
+
     return (
         <MyViewElement element={
         <div className={[cl.transItem, infoData.classes].join` `}>
             <div className={cl.transItemTop}>
                 <span className={cl.transTopText}>{infoData.nameCash}</span>
-                {infoData.nameCash === 'rub' ? 
-                    <span></span>                 
+                {infoData.nameCash === 'rub' ?
+                    <span></span>
                      :
                     <span className={cl.transTopRouble}>
                         <img src={rubleImg}/>
                         {countPriceInfo !== undefined ? countPriceInfo.rouble : '0'}
                     </span>
                  }
-              
+
                 <span className={cl.transTopCircle}>
                     <img src={infoData.sign}/>
                 </span>
@@ -43,7 +41,7 @@ const ReplenishmentOfMoneyItem = ({infoData,countPriceInfo,defaultPriceCount, ac
                     <button className={cl.transBtn} onClick={e=>{e.preventDefault();setActiveModal(true);setCardInfo({...cardInfo, pay:false,currency:infoData.nameCash})}}>Вывести</button>
                 </a>
             </div>
-           
+
         </div>
          }/>
     )

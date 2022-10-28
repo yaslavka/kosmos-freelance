@@ -15,9 +15,9 @@ export const casinoDraw = (params) => baseInstance({ url: 'api/casino/get', meth
 export const casinoDrawMy = () => baseInstance({ url: 'api/casino/get-my', method: 'get' })
 
 export const casinoList = (params) =>
-  baseInstance({ url: 'api/casino/list', method: 'get', params })
+  baseInstance({ url: '/casino/list', method: 'get', params })
 
 export const casinoListWinners = (params) =>
   baseInstance({ url: 'api/casino/list-winners', method: 'get', params })
 
-export const casinoDrawAdmin = () => baseInstance({ url: 'api/casino/admin', method: 'get' })
+export const casinoDrawAdmin = () => baseInstance({ url: '/casino/admin', method: 'get' })

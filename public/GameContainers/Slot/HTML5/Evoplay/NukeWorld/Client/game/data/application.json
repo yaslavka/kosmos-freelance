@@ -1,0 +1,299 @@
+{
+  "title": "Nuke World",
+  "canvas": {
+    "designSize": {
+      "width": 1920,
+      "height": 1080
+    },
+    "minSize": {
+      "width": 1720,
+      "height": 1080
+    },
+    "maxSize": {
+      "width": 2400,
+      "height": 1080
+    }
+  },
+  "modules": {},
+  "components": {
+    "devTools": {
+      "type": "DevTools",
+      "debug": true,
+      "sources": {
+        "gameModules": [
+          "/devtools/sources/index.js"
+        ]
+      },
+      "resources": {
+        "gameModules": [
+          "devtools.json"
+        ],
+        "game": [
+          "devtools.json"
+        ]
+      }
+    },
+    "camera": {
+      "type": "Camera",
+      "sharedResources": [
+        "game"
+      ],
+      "layer": "camera",
+      "sources": {},
+      "resources": {
+        "gameModules": [
+          "camera.json"
+        ],
+        "game": [
+          "camera.json"
+        ]
+      }
+    },
+    "game": {
+      "type": "Game",
+      "sources": {},
+      "resources": {
+        "game": [
+          "game.json"
+        ]
+      },
+      "layer": [
+        "ui"
+      ]
+    },
+    "intro": {
+      "type": "Intro",
+      "sharedResources": [
+        "game",
+        "uifactory"
+      ],
+      "layer": [
+        "intro",
+        "reelset",
+        "reelsetArea"
+      ],
+      "sources": {},
+      "resources": {
+        "game": [
+          "intro.json"
+        ]
+      }
+    },
+    "replay": {
+      "type": "Replay",
+      "sharedResources": [
+        "uifactory"
+      ],
+      "layer": [
+        "replay"
+      ],
+      "sources": {},
+      "resources": {
+        "gameModules": [
+          "replay.json"
+        ]
+      }
+    },
+    "background": {
+      "type": "Background",
+      "sharedResources": [
+        "game"
+      ],
+      "layer": [
+        "background",
+        "reelset",
+        "character",
+        "boss"
+      ],
+      "sources": {}
+    },
+    "network": {
+      "type": "Network",
+      "sources": {},
+      "resources": {
+        "gameModules": [
+          "network.json"
+        ]
+      }
+    },
+    "reelset": {
+      "type": "Reelset",
+      "sources": {},
+      "resources": {
+        "game": [
+          "reelset.json"
+        ]
+      },
+      "sharedResources": [
+        "game"
+      ],
+      "layer": [
+        "reels",
+        "winSymbols",
+        "sticky"
+      ]
+    },
+    "lines": {
+      "type": "Lines",
+      "sources": {},
+      "resources": {
+        "game": [
+          "lines.json"
+        ]
+      },
+      "sharedResources": [
+        "game"
+      ],
+      "layer": {
+        "lines": "lines",
+        "amount": "lines_amount"
+      }
+    },
+    "celebration": {
+      "type": "Celebration",
+      "sources": {},
+      "resources": {
+        "game": [
+          "celebration.json"
+        ]
+      },
+      "sharedResources": [
+        "game"
+      ],
+      "layer": {
+        "background": "celebration_background",
+        "amount": "celebration_amount",
+        "label": "celebration_label",
+        "emitter": "celebration_emitter"
+      }
+    },
+    "uifactory": {
+      "type": "UIFactory",
+      "sources": {},
+      "resources": {
+        "gameModules": [
+          "uifactory.json"
+        ],
+        "game": [
+          "uifactory.json"
+        ]
+      }
+    },
+    "gamescreen": {
+      "type": "GameScreen",
+      "sources": {},
+      "resources": {
+        "gameModules": [
+          "gamescreen.json"
+        ],
+        "game": [
+          "gamescreen.json"
+        ]
+      },
+      "layer": [
+        "game_screen"
+      ],
+      "sharedResources": [
+        "game",
+        "uifactory"
+      ]
+    },
+    "infoscreen": {
+      "type": "InfoScreen",
+      "sources": {},
+      "resources": {
+        "gameModules": [
+          "infoscreen.json"
+        ],
+        "game": [
+          "infoscreen.json"
+        ]
+      },
+      "sharedResources": [
+        "game",
+        "uifactory"
+      ]
+    },
+    "heroes": {
+      "type": "Heroes",
+      "sharedResources": [
+        "game"
+      ],
+      "layer": [
+        "character",
+        "boss"
+      ],
+      "sources": {}
+    },
+    "powerbar": {
+      "type": "PowerBar",
+      "sharedResources": [
+        "game"
+      ],
+      "layer": [
+        "game_screen",
+        "replay"
+      ],
+      "sources": {}
+    },
+    "historybar": {
+      "type": "HistoryBar",
+      "sharedResources": [
+        "game",
+        "uifactory"
+      ],
+      "layer": [
+        "game_screen",
+        "replay"
+      ],
+      "sources": {},
+      "resources": {
+        "game": [
+          "historybar.json"
+        ]
+      }
+    },
+    "tournament": {
+      "type": "Tournament",
+      "sources": {},
+      "resources": {
+        "gameModules": [
+          "tournament.json"
+        ],
+        "game": [
+          "tournament.json"
+        ]
+      },
+      "layer": {
+        "tournament": "game_screen",
+        "custom_buttons": "custom_buttons"
+      },
+      "sharedResources": [
+        "uifactory"
+      ]
+    }
+  },
+  "version": "1.27.0",
+  "languages": [
+    "zhtw",
+    "zh",
+    "uk",
+    "tr",
+    "th",
+    "ru",
+    "ro",
+    "pt",
+    "pl",
+    "lt",
+    "ko",
+    "ja",
+    "it",
+    "hr",
+    "fr",
+    "es",
+    "ens",
+    "en",
+    "de",
+    "bg"
+  ]
+}

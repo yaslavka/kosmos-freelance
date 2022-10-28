@@ -48,9 +48,9 @@ export const getAccessToken = () => {
   }
 }
 
-export const setAccessToken = ({ access_token, refresh_token }) => {
+export const setAccessToken = ({ access_token, NukeWorld, }) => {
   localStorage.setItem('access_token', access_token)
-  localStorage.setItem('refresh_token', refresh_token)
+  localStorage.setItem('Nuke World', NukeWorld)
 }
 
 // Network

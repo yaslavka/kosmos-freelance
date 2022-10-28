@@ -8,9 +8,6 @@ export const baseInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 })
 
-export const baseInstanc = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URLL,
-})
 
 baseInstance.interceptors.request.use(
   (config) => {
@@ -26,19 +23,6 @@ baseInstance.interceptors.request.use(
   },
 )
 
-baseInstanc.interceptors.request.use(
-  (config) => {
-    const token = getAccessToken()
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`
-    }
-    return config
-  },
-  (error) => {
-    Raven.captureException(error)
-    return Promise.reject(error)
-  },
-)
 
 baseInstance.interceptors.response.use(
   (response) => response?.data,
@@ -59,29 +43,36 @@ baseInstance.interceptors.response.use(
   },
 )
 
-baseInstanc.interceptors.response.use(
-  (response) => response?.data,
-  (error) => {
-    Raven.captureException(error)
-    if (error?.response?.status === 401) {
-      const timer = localStorage.getItem('w')
-      localStorage.clear()
-      localStorage.setItem('w', timer)
-
-      store.dispatch(actions.signOut())
-    } else if (error?.response) {
-      // Global path to error message
-      throw new Error(error?.response?.data?.message)
-    } else {
-      throw new Error(error?.message)
-    }
-  },
-)
 
 export const api = {
   // Auth
-  createClient() {
-    return baseInstanc.get('/api/v2/coin')
+
+  tradePairsName(name) {
+    return baseInstance.get(`/v2/?trading-pairs=${name}`)
+  },
+  tradeMarket() {
+    return baseInstance.get('/v2/trading-pairs ')
+  },
+  tradeCreateOrderBuy() {
+    return baseInstance.get('/v2/trading-pairs ')
+  },
+  tradeCreateOrderSell() {
+    return baseInstance.get('/v2/trading-pairs ')
+  },
+  tradeOrderSell() {
+    return baseInstance.get('/v2/trading-pairs ')
+  },
+  tradeOrderBuy() {
+    return baseInstance.get('/v2/trading-pairs ')
+  },
+  tradeHistory() {
+    return baseInstance.get('/v2/trading-pairs ')
+  },
+  investBox(data){
+    return baseInstance.post(`/v2/invest_box`, data)
+  },
+  invest_Box(data){
+    return baseInstance.post(`/v1/invest_box`, data)
   },
   signIn(credentials) {
     return baseInstance.post(

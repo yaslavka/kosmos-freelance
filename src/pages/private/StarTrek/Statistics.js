@@ -11,7 +11,7 @@ function Statistics() {
       <ul className={cl.statList}>
         <MyViewElement element={
         <li className={cl.statItem}>
-        <div>Куплено планет:</div>
+        <div>Всего куплено Мест:</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.allPlanet)
@@ -36,7 +36,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-          <div>Всего Клонов:</div>
+          <div>Бюджет :</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.allComet)
@@ -49,7 +49,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-          <div>Мои клонов:</div>
+          <div>Общий Баланс Моих Мест:</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.myComet)
@@ -62,7 +62,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-        <div>Мест в структуре:</div>
+        <div>Активних Мест:</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.active)
