@@ -1,49 +1,36 @@
 import React, {useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import routes from '../../../../constants/routes.constants'
-import { Row, Col, Button } from 'reactstrap'
+import {Row, Col, Button} from 'reactstrap'
 import NavBar from '../../../../components/layout/Navbar'
 import cl from './../StarsUp.module.css';
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from '../../../../actions/casino.actions';
 import {isEmpty} from "lodash-es";
-import confirm from 'reactstrap-confirm';
+import List from "./list";
 
-function Myinvest()  {
+function Myinvest() {
   const dispatch = useDispatch();
   const list = useSelector(state => state.casino.active.list);
 
   useEffect(() => {
     dispatch(actions.casinoActiveList());
   }, [dispatch]);
-  const handleCancelDraw = async () => {
-    let result = await confirm({
-      title: 'Отменить розыгрыш',
-      message: 'Вы действительно хотите отменить розыгрыш?',
-      confirmText: 'Подтвердить',
-      confirmColor: 'danger',
-      cancelText: 'Отмена',
-      cancelColor: 'link text-muted',
-    });
 
-    if (result) {
-      dispatch(actions.casinoDrawCancel());
-    }
-  };
-
-  return(
+  return (
     <section className={cl.investbox}>
       <div className={['container', cl.cont].join` `}>
         <Row>
           <Col xl={3} className={cl.navBlock}>
-            <NavBar />
+            <NavBar/>
           </Col>
-          <Col xl={8} style={{marginLeft:'14%'}}>
+          <Col xl={8} style={{marginLeft: '14%'}}>
             <div className="inset_page">
               <div className="startrek__title1">
                 <h1 className={cl.title}>Мои инвестиции</h1>
               </div>
-              <p className={cl.descr}>Вкладывайте свободные Средства в InvestBox! Это инструмент для получения дополнительного дохода</p>
+              <p className={cl.descr}>Вкладывайте свободные Средства в InvestBox! Это инструмент для получения
+                дополнительного дохода</p>
               <div className="investbox_page">
                 <ul className={cl.investListText}>
                   <li>
@@ -77,9 +64,9 @@ function Myinvest()  {
                 <div className="clear"/>
                 <div className="create_new">
                   <table className={cl.tableMain}>
-                    <tbody >
+                    <tbody>
                     <tr>
-                      <td >
+                      <td>
                         <div className="newline ">
                           <div
                             id="investbox_packs_list_wrapper"
@@ -130,34 +117,13 @@ function Myinvest()  {
                                         </th>
                                       </tr>
                                       </thead>
-                                      {!isEmpty(list)?(
-                                        list.map(draw=>(
-                                          <tbody className={cl.tbody} >
-                                          <tr role="row" className="even">
-                                            <td>Руб</td>
-                                            <td>5%</td>
-                                            <td>В месяц</td>
-                                            <td>
-                                              <a role={"button"}>
-                                                {draw.summ}
-                                              </a>
-                                            </td>
-                                            <td>
-                                              <a>
-                                                {draw.status}
-                                              </a>
-                                            </td>
-                                            <td>
-                                              <form onSubmit={handleCancelDraw}>
-                                                <div className="create_new2">
-                                                  <button type="submit"  className={cl.nameInput}>Отменить</button>
-                                                </div>
-                                              </form>
-                                            </td>
-                                          </tr>
+                                      {!isEmpty(list) ? (
+                                        list.map(draw => (
+                                          <tbody className={cl.tbody} key={draw.id}>
+                                          <List draw={draw}/>
                                           </tbody>
                                         ))
-                                      ):(
+                                      ) : (
                                         <tbody className={cl.tbody}>
                                         <tr className="odd">
                                           <td
@@ -171,8 +137,6 @@ function Myinvest()  {
                                         </tbody>
                                       )
                                       }
-
-
                                     </table>
                                   </div>
 
@@ -221,4 +185,5 @@ function Myinvest()  {
     </section>
   )
 }
+
 export default Myinvest
