@@ -14,7 +14,11 @@ const Megaciti = () => {
         </Col>
         <Col xl={7}>
           <Spin />
-
+          <iframe
+            src={'/bookofra'}
+            width="100%"
+            height={500}
+          />
         </Col>
       </Row>
     </Container>

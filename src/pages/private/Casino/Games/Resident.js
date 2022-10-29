@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import routes from '../../../../constants/routes.constants'
-import resident from '../uploads/games/icon/84/846d4235c18ca62e412458c875539415bdeb330b.jpg'
+import resident from '../uploads/games/400x254_resident.svg'
 function Resident() {
   return (
     <div className="wrapp">
@@ -18,8 +18,8 @@ function Resident() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.fool}>
-                        <div className="tmb-img">
-                          <img src={resident} />
+                        <div className="tmb-img" style={{width:"400px", marginLeft:"10px" }}>
+                          <img src={resident} style={{height:"105px", }}/>
                         </div>
                         <div className="tmb-title">Resident</div>
                       </Link>

@@ -13,7 +13,7 @@ function Blacs() {
         <Col xl={8}>
           <Spin />
           <iframe
-            src="https://demo.evoplay.games/demo/fullstate/html5/evoplay/treeoflight"
+            src={"/treeoflight"}
             width="100%"
             height={500}
           />

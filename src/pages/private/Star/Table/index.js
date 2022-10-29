@@ -360,7 +360,7 @@ export default function Table({ location: { state = {}, pathname } }) {
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-         
+
           {matrixInfo &&  <MyViewElement element={<h1 className={styles.title}>Пегас - {matrixInfo.name}</h1>}/>}
           {backRouteElement}
         </div>
@@ -403,7 +403,7 @@ export default function Table({ location: { state = {}, pathname } }) {
               <div className={styles.footer}>
               <MyViewElement element={
 
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
             }/>
 
                 {matrixInfo.canBuy && (
@@ -523,7 +523,7 @@ export default function Table({ location: { state = {}, pathname } }) {
 
             {matrixInfo && (
               <div className={styles.footer}>
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
                 {matrixInfo.canBuy && (
                   <Button
                     onClick={showBuyMatrixModal}

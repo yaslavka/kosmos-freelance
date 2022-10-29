@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import routes from "../../../../constants/routes.constants";
-import Coktail from "../uploads/games/zootopia-zveropolis-2016.jpg";
+import Coktail from "../uploads/games/400x254_bord.svg";
 
 const City = () => {
   return (
@@ -18,11 +18,11 @@ const City = () => {
                       <div className="tmb-fav">
                         <div className="icoc icoc-tmb-fav"/>
                       </div>
-                      <Link to={routes.megacity}>
-                        <div className="tmb-img">
-                          <img alt={Coktail} src={Coktail}/>
+                      <Link to={routes.megacity} >
+                        <div className="tmb-img" style={{width:"400px", marginLeft:"10px" }}>
+                          <img alt={Coktail} src={Coktail} style={{height:"105px", }}/>
                         </div>
-                        <div className="tmb-title">Mega City</div>
+                        <div className="tmb-title">Book of ra</div>
                       </Link>
                     </div>
                   </div>

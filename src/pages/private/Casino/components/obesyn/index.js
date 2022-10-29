@@ -12,7 +12,7 @@ function Monk() {
         </Col>
         <Col xl={8}>
           <Spin />
-          <iframe src="http://admiral/lobby/game/rockclimber/" width="100%"
+          <iframe src={"/rockclimber"} width="100%"
                   height={500} />
         </Col>
       </Row>

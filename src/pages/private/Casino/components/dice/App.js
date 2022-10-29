@@ -9,10 +9,12 @@ function DICE() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={9}>
+        <Col xl={7}>
           <Spin />
-          <iframe src="http://admiral/lobby/game/fairy_land/" width="100%"
-                  height={500} />
+          <iframe
+            src={"/fairyland2"}
+            width="100%"
+            height={500} />
         </Col>
       </Row>
     </Container>

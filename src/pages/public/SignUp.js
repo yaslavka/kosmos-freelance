@@ -18,8 +18,7 @@ import Checkbox from '../../components/Checkbox'
 import InputPhone from '../../components/InputPhone'
 import Input from '../../components/Input'
 import { Spinner } from 'react-bootstrap'
-import Avatar from "../../components/Avatar";
-import styles from "../../components/Avatar/Avatar.module.scss";
+
 
 // eslint-disable-next-line react/prop-types
 function SignUp({ location }) {
@@ -186,7 +185,7 @@ function SignUp({ location }) {
                       <img
                         src={
                           inviter.avatar
-                            ? `${process.env.REACT_APP_BASE_URL}${inviter.avatar}`
+                            ? `${process.env.REACT_APP_BASE_URL}/user/${inviter.avatar}`
                             : avatar
                         }
                         alt={`${inviter.firstName} ${inviter.lastName}`}
@@ -205,7 +204,7 @@ function SignUp({ location }) {
                 <Field
                   type="text"
                   name="referral"
-                  placeholder={t('Логин вашего пригласилеля')}
+                  placeholder={t('Логин вашего пригласителя')}
                   onBlur={handleOnBlurReferralField}
                   component={Input}
                 />

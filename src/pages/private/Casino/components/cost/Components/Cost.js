@@ -7,12 +7,12 @@ function Cost() {
   return (
     <Container className="root-page">
       <Row>
-        <Col xl={2} className="d-none d-xl-block">
+        <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col>
+        <Col xl={7}>
           <Spin />
-          <iframe src="http://admiral/lobby/game/lucky_haunter/" width="100%"
+          <iframe src={"/lucky_haunter"} width="100%"
                   height={500} />
         </Col>
       </Row>

@@ -9,10 +9,10 @@ function Blacsd() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={8}>
+        <Col xl={7}>
           <Spin />
           <iframe
-            src="https://demo.evoplay.games/demo/fullstate/html5/evoplay/starguardians"
+            src={"/starguardians"}
             width="100%"
             height={500}
           />

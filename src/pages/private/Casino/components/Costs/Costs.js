@@ -14,8 +14,8 @@ function Costs() {
         </Col>
         <Col xl={8}>
           <Spin />
-          <iframe src="http://admiral/lobby/game/gnom/" width="100%"
-                  height={500}></iframe>
+          <iframe src={"/gnom"} width="100%"
+  height={500}/>
         </Col>
       </Row>
     </Container>
