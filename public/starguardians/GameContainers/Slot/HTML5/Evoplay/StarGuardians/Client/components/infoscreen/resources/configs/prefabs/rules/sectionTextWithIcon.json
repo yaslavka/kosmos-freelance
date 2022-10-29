@@ -1,0 +1,1 @@
+{"__type":"PrefabText","x":60,"y":50,"text":"${text}","fontName":"text__white","tint":"${styles.color__secondary}","leading":6,"breakWords":true,"wordWrapWidth":"$[100pw - 120 - 90]"}

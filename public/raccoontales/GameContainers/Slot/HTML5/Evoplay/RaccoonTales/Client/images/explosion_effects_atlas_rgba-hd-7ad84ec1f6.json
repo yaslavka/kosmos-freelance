@@ -1,0 +1,30 @@
+{"frames": {
+
+"blank":
+{
+	"frame": {"x":12,"y":149,"w":3,"h":3},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":3,"h":3},
+	"sourceSize": {"w":4,"h":4}
+},
+"yellow_glow1":
+{
+	"frame": {"x":12,"y":12,"w":112,"h":113},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":112,"h":113},
+	"sourceSize": {"w":113,"h":113}
+}},
+"animations": {
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "explosion_effects_atlas_rgba-hd.png",
+	"format": "RGBA8888",
+	"size": {"w":136,"h":164},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3bb06b51febbe24547002b426e15cf91:db40735d9e50cbacf59391e06b80d7fc:b4d87861fe9f28d5e08975832c0ba9d7$"
+}
+}

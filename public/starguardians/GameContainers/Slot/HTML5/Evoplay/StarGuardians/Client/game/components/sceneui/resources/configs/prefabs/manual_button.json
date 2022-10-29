@@ -1,0 +1,1 @@
+{"__type":"FactoryButton","__states":{"texture":{"normal":"${textures.ui_hand}","hover":"${textures.ui_hand_hover}","disabled_active":"${textures.ui_hand_disable}","disabled_normal":"${textures.ui_hand_disable_normal}"}},"children":[{"__type":"Sprite","texture":"${states.texture}","anchor":{"x":0,"y":0.5}}],"buttonActions":{"pointerDown":{"playAudio":["click"]}}}

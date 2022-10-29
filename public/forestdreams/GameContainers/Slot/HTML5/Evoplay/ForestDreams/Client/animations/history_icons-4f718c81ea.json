@@ -1,0 +1,129 @@
+{
+"skeleton": { "hash": "l62QXYjlralimSxViHU1kB1lzI0", "spine": "3.8.97", "x": -160, "y": -160, "width": 320, "height": 320 },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "history_spirit", "bone": "root", "attachment": "history_spirit" },
+	{ "name": "history_kodama_fs", "bone": "root", "attachment": "history_kodama_fs" },
+	{ "name": "history_kodama_event", "bone": "root", "attachment": "history_kodama_event" },
+	{ "name": "history_kodama_respins", "bone": "root", "attachment": "history_kodama_respins" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"history_kodama_event": {
+				"history_kodama_event": { "width": 320, "height": 320 }
+			},
+			"history_kodama_fs": {
+				"history_kodama_fs": { "width": 320, "height": 320 }
+			},
+			"history_kodama_respins": {
+				"history_kodama_respins": { "width": 320, "height": 320 }
+			},
+			"history_spirit": {
+				"history_spirit": { "width": 320, "height": 320 }
+			}
+		}
+	}
+],
+"animations": {
+	"history_kodama_event": {
+		"slots": {
+			"history_kodama_event": {
+				"attachment": [
+					{ "name": "history_kodama_event" }
+				]
+			},
+			"history_kodama_fs": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_kodama_respins": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_spirit": {
+				"attachment": [
+					{ "name": null }
+				]
+			}
+		}
+	},
+	"history_kodama_fs": {
+		"slots": {
+			"history_kodama_event": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_kodama_fs": {
+				"attachment": [
+					{ "name": "history_kodama_fs" }
+				]
+			},
+			"history_kodama_respins": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_spirit": {
+				"attachment": [
+					{ "name": null }
+				]
+			}
+		}
+	},
+	"history_kodama_respins": {
+		"slots": {
+			"history_kodama_event": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_kodama_fs": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_kodama_respins": {
+				"attachment": [
+					{ "name": "history_kodama_respins" }
+				]
+			},
+			"history_spirit": {
+				"attachment": [
+					{ "name": null }
+				]
+			}
+		}
+	},
+	"history_spirit": {
+		"slots": {
+			"history_kodama_event": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_kodama_fs": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_kodama_respins": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"history_spirit": {
+				"attachment": [
+					{ "name": "history_spirit" }
+				]
+			}
+		}
+	}
+}
+}

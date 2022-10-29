@@ -1,0 +1,55 @@
+{"frames": {
+
+"dragon_fon":
+{
+	"frame": {"x":2,"y":2,"w":2562,"h":1231},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":2562,"h":1231},
+	"sourceSize": {"w":2562,"h":1231}
+},
+"orb_fx_000":
+{
+	"frame": {"x":2567,"y":2,"w":143,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":135},
+	"sourceSize": {"w":143,"h":135}
+},
+"orb_fx_011":
+{
+	"frame": {"x":2567,"y":140,"w":143,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":135},
+	"sourceSize": {"w":143,"h":135}
+},
+"orb_fx_022":
+{
+	"frame": {"x":2567,"y":278,"w":143,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":135},
+	"sourceSize": {"w":143,"h":135}
+},
+"orb_fx_033":
+{
+	"frame": {"x":2567,"y":416,"w":143,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":135},
+	"sourceSize": {"w":143,"h":135}
+}},
+"animations": {
+	"orb_fx": ["orb_fx_000","orb_fx_011","orb_fx_022","orb_fx_033"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "intro_rgb-hd.jpg",
+	"format": "RGB888",
+	"size": {"w":2712,"h":1235},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:585a82598ba7eecf520b0bb93af631e1:5620cd479cf715a8724bb57aecbde893:77e359ab83bbeaa75174d965940927cd$"
+}
+}

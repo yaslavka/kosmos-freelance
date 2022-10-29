@@ -1,0 +1,44 @@
+{"frames": {
+
+"Biotic.png":
+{
+	"frame": {"x":138,"y":1,"w":115,"h":97},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":97},
+	"sourceSize": {"w":115,"h":97}
+},
+"Commandos.png":
+{
+	"frame": {"x":1,"y":1,"w":135,"h":130},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":135,"h":130},
+	"sourceSize": {"w":135,"h":130}
+},
+"key.png":
+{
+	"frame": {"x":1,"y":133,"w":86,"h":101},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":86,"h":101},
+	"sourceSize": {"w":86,"h":101}
+},
+"Scout.png":
+{
+	"frame": {"x":138,"y":118,"w":92,"h":102},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":102},
+	"sourceSize": {"w":92,"h":102}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "buffs_icons.png",
+	"format": "RGBA8888",
+	"size": {"w":236,"h":221},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:622e9f6e09983a33cd2e46b13e879421:028ca950a8995b0fddda8e43b5f14496:724082ceec24b76dbec99dac1dab8cb8$"
+}
+}

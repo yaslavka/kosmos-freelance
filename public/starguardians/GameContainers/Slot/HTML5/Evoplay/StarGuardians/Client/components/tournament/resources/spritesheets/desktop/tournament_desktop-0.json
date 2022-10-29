@@ -1,0 +1,156 @@
+{"frames": {
+
+"background":
+{
+	"frame": {"x":321,"y":60,"w":107,"h":178},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":107,"h":178},
+	"sourceSize": {"w":107,"h":178}
+},
+"background_points":
+{
+	"frame": {"x":321,"y":169,"w":98,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":98,"h":30},
+	"sourceSize": {"w":98,"h":30}
+},
+"btn_close":
+{
+	"frame": {"x":421,"y":169,"w":28,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":28},
+	"sourceSize": {"w":28,"h":28}
+},
+"btn_close_header":
+{
+	"frame": {"x":404,"y":39,"w":19,"h":18},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":19,"h":18},
+	"sourceSize": {"w":19,"h":18}
+},
+"btn_close_welcome":
+{
+	"frame": {"x":0,"y":0,"w":402,"h":58},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":402,"h":58},
+	"sourceSize": {"w":402,"h":58}
+},
+"btn_finished":
+{
+	"frame": {"x":0,"y":60,"w":319,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":319,"h":45},
+	"sourceSize": {"w":319,"h":45}
+},
+"btn_live":
+{
+	"frame": {"x":0,"y":107,"w":319,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":319,"h":45},
+	"sourceSize": {"w":319,"h":45}
+},
+"btn_pending":
+{
+	"frame": {"x":0,"y":154,"w":319,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":319,"h":45},
+	"sourceSize": {"w":319,"h":45}
+},
+"btn_tournament_back":
+{
+	"frame": {"x":443,"y":0,"w":28,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":28},
+	"sourceSize": {"w":28,"h":28}
+},
+"ic_btn_close":
+{
+	"frame": {"x":478,"y":169,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"ic_rules":
+{
+	"frame": {"x":443,"y":30,"w":28,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":28},
+	"sourceSize": {"w":28,"h":28}
+},
+"icon_tournament_info":
+{
+	"frame": {"x":451,"y":169,"w":25,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":24},
+	"sourceSize": {"w":25,"h":24}
+},
+"icon_tournament_rules":
+{
+	"frame": {"x":473,"y":0,"w":24,"h":25},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":25},
+	"sourceSize": {"w":24,"h":25}
+},
+"icon_tournament_timer":
+{
+	"frame": {"x":404,"y":0,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"mobile_close":
+{
+	"frame": {"x":473,"y":27,"w":24,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":24,"h":24},
+	"sourceSize": {"w":24,"h":24}
+},
+"pin_finished":
+{
+	"frame": {"x":424,"y":39,"w":9,"h":9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":9,"h":9},
+	"sourceSize": {"w":9,"h":9}
+},
+"pin_live":
+{
+	"frame": {"x":478,"y":189,"w":9,"h":9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":9,"h":9},
+	"sourceSize": {"w":9,"h":9}
+},
+"pin_pending":
+{
+	"frame": {"x":489,"y":189,"w":9,"h":9},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":9,"h":9},
+	"sourceSize": {"w":9,"h":9}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "tournament_desktop-0.png",
+	"format": "RGBA8888",
+	"size": {"w":499,"h":199},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8f64a879a645094b97e1ed6982e81db4:83d57cf2eb869d96e9d091b774c1eb1a:a40a40deb31c0a3853adfdb2e7932c20$"
+}
+}

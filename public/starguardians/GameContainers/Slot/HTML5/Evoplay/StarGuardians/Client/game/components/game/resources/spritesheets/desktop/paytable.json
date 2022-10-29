@@ -1,0 +1,135 @@
+{"frames": {
+
+"paytable/biotic":
+{
+	"frame": {"x":0,"y":604,"w":296,"h":296},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":296,"h":296},
+	"sourceSize": {"w":300,"h":300}
+},
+"paytable/commando":
+{
+	"frame": {"x":0,"y":0,"w":296,"h":300},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":296,"h":300},
+	"sourceSize": {"w":300,"h":300}
+},
+"paytable/finger":
+{
+	"frame": {"x":298,"y":790,"w":121,"h":126},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":121,"h":126},
+	"sourceSize": {"w":121,"h":126}
+},
+"paytable/lootbox_gold":
+{
+	"frame": {"x":298,"y":0,"w":272,"h":323},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":272,"h":323},
+	"sourceSize": {"w":272,"h":323}
+},
+"paytable/lootbox_gray_opened":
+{
+	"frame": {"x":298,"y":325,"w":241,"h":311},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":241,"h":311},
+	"sourceSize": {"w":241,"h":311}
+},
+"paytable/scout":
+{
+	"frame": {"x":0,"y":302,"w":296,"h":300},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":296,"h":300},
+	"sourceSize": {"w":300,"h":300}
+},
+"paytable/second_weapon":
+{
+	"frame": {"x":601,"y":706,"w":58,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":57},
+	"sourceSize": {"w":58,"h":57}
+},
+"paytable/shooting":
+{
+	"frame": {"x":601,"y":607,"w":97,"h":58},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":97,"h":58},
+	"sourceSize": {"w":97,"h":58}
+},
+"paytable/symbol_0":
+{
+	"frame": {"x":298,"y":638,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"paytable/symbol_1":
+{
+	"frame": {"x":541,"y":455,"w":150,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":150},
+	"sourceSize": {"w":150,"h":150}
+},
+"paytable/symbol_4":
+{
+	"frame": {"x":572,"y":0,"w":150,"h":149},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":149},
+	"sourceSize": {"w":150,"h":150}
+},
+"paytable/symbol_5":
+{
+	"frame": {"x":572,"y":304,"w":149,"h":149},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":149,"h":149},
+	"sourceSize": {"w":150,"h":150}
+},
+"paytable/symbol_6":
+{
+	"frame": {"x":450,"y":638,"w":149,"h":149},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":149,"h":149},
+	"sourceSize": {"w":150,"h":150}
+},
+"paytable/symbol_7":
+{
+	"frame": {"x":572,"y":152,"w":150,"h":149},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":149},
+	"sourceSize": {"w":150,"h":150}
+},
+"paytable/symbol_8":
+{
+	"frame": {"x":450,"y":789,"w":149,"h":149},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":149,"h":149},
+	"sourceSize": {"w":150,"h":150}
+}},
+"animations": {
+	"paytable/symbol": ["paytable/symbol_0","paytable/symbol_1","paytable/symbol_4","paytable/symbol_5","paytable/symbol_6","paytable/symbol_7","paytable/symbol_8"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "paytable.png",
+	"format": "RGBA8888",
+	"size": {"w":721,"h":938},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:047e82f1001f5d7a5ef01f2555f45a4d:3214374cbc0fead98865a038fc72927e:89ea7024b7d74a20c638ee41bbab499e$"
+}
+}

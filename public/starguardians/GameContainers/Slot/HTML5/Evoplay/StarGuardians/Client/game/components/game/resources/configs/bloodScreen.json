@@ -1,0 +1,1 @@
+{"__type":"Graphics","anchor":{"x":0,"y":0},"name":"blood_screen","interactive":false,"x":"$[-50pw]","y":"$[-50ph]","__static":{"alpha":0},"chain":[{"beginFill":["0xff0000",0.25]},{"drawRect":[0,0,"$[300gw]","$[300gh]"]}]}

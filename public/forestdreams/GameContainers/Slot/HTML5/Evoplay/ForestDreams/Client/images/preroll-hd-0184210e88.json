@@ -1,0 +1,20 @@
+{"frames": {
+
+"logo_preroll_hd":
+{
+	"frame": {"x":0,"y":0,"w":1920,"h":1080},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
+	"sourceSize": {"w":1920,"h":1080}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "preroll-hd.jpg",
+	"format": "RGB888",
+	"size": {"w":1920,"h":1080},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e535d61c39453dfa94c6a7302081750d:5c5389779c91734da7b0f700ba431c3c:f2a3da11bc254e18c9b83b1e5e1e9af2$"
+}
+}

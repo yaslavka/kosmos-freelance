@@ -1,0 +1,1 @@
+{"__type":"FactoryButton","name":"${name}","buttonActions":{"pointerDown":{"playAudio":["click"]}},"children":[{"__type":"Graphics","alpha":0,"chain":[{"beginFill":["${styles.color__primary--dark}"]},{"drawRect":[-30,-30,60,60]}]},{"__type":"Sprite","anchor":{"x":0.5,"y":0.5},"texture":"${button_texture}"}]}

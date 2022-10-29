@@ -1,0 +1,76 @@
+{
+"skeleton": { "hash": "MoHubiBFuPvSpqD0ZThAuh9GhEo", "spine": "3.8.99", "x": -1.5, "y": -186.5, "width": 3, "height": 3 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "counter", "parent": "root", "y": -185 }
+],
+"slots": [
+	{ "name": "text", "bone": "counter", "color": "ffffff00", "attachment": "blank" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"text": {
+				"blank": { "width": 3, "height": 3 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle_counter": {
+		"slots": {
+			"text": {
+				"color": [
+					{ "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"counter": {
+				"scale": [
+					{ "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.5, "x": 1.05, "y": 1.05, "curve": 0.25, "c3": 0.75 },
+					{ "time": 1 }
+				]
+			}
+		}
+	},
+	"in_counter": {
+		"slots": {
+			"text": {
+				"color": [
+					{ "color": "ffffff00", "curve": 0.19, "c2": 0.57, "c3": 0.577 },
+					{ "time": 0.3333, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"counter": {
+				"translate": [
+					{ "y": -30, "curve": 0.19, "c2": 0.57, "c3": 0.577 },
+					{ "time": 0.5 }
+				]
+			}
+		}
+	},
+	"out_counter": {
+		"slots": {
+			"text": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.13, "c2": 0.39, "c3": 0.563 },
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"counter": {
+				"translate": [
+					{ "curve": 0.13, "c2": 0.39, "c3": 0.563 },
+					{ "time": 0.5, "y": -30 }
+				]
+			}
+		}
+	}
+}
+}

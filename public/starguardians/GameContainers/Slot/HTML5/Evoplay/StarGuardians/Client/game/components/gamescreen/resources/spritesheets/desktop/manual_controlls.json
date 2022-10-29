@@ -1,0 +1,132 @@
+{"frames": {
+
+"big_arc":
+{
+	"frame": {"x":0,"y":0,"w":334,"h":334},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":334,"h":334},
+	"sourceSize": {"w":334,"h":334}
+},
+"crosshair":
+{
+	"frame": {"x":363,"y":484,"w":64,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":63},
+	"sourceSize": {"w":64,"h":64}
+},
+"first_weapon":
+{
+	"frame": {"x":165,"y":460,"w":97,"h":58},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":97,"h":58},
+	"sourceSize": {"w":97,"h":58}
+},
+"first_weapon_active":
+{
+	"frame": {"x":264,"y":460,"w":97,"h":58},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":97,"h":58},
+	"sourceSize": {"w":97,"h":58}
+},
+"mouse_0_off":
+{
+	"frame": {"x":429,"y":120,"w":28,"h":39},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":39},
+	"sourceSize": {"w":28,"h":39}
+},
+"mouse_0_on":
+{
+	"frame": {"x":429,"y":484,"w":28,"h":39},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":39},
+	"sourceSize": {"w":28,"h":39}
+},
+"mouse_1_off":
+{
+	"frame": {"x":165,"y":520,"w":28,"h":39},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":39},
+	"sourceSize": {"w":28,"h":39}
+},
+"mouse_1_on":
+{
+	"frame": {"x":206,"y":520,"w":28,"h":39},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":39},
+	"sourceSize": {"w":28,"h":39}
+},
+"second_weapon":
+{
+	"frame": {"x":429,"y":0,"w":58,"h":57},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":57},
+	"sourceSize": {"w":58,"h":57}
+},
+"second_weapon_active":
+{
+	"frame": {"x":429,"y":60,"w":58,"h":57},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":58,"h":57},
+	"sourceSize": {"w":58,"h":57}
+},
+"small_arc":
+{
+	"frame": {"x":336,"y":165,"w":152,"h":150},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":150},
+	"sourceSize": {"w":152,"h":150}
+},
+"weapon_active_bg":
+{
+	"frame": {"x":336,"y":0,"w":163,"h":91},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":163,"h":91},
+	"sourceSize": {"w":163,"h":91}
+},
+"weapon_border":
+{
+	"frame": {"x":382,"y":319,"w":163,"h":91},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":163,"h":91},
+	"sourceSize": {"w":163,"h":91}
+},
+"weapon_border_active":
+{
+	"frame": {"x":0,"y":460,"w":163,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":163,"h":91},
+	"sourceSize": {"w":163,"h":91}
+},
+"weapons_container":
+{
+	"frame": {"x":0,"y":336,"w":380,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":380,"h":122},
+	"sourceSize": {"w":380,"h":122}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "manual_controlls.png",
+	"format": "RGBA8888",
+	"size": {"w":486,"h":551},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0a2c8845a38af1ab692c14775471af34:1cc9e3e85f7627eb6058c097805a1352:eb9d299ac1173edd9e7f724bde3fbb9e$"
+}
+}

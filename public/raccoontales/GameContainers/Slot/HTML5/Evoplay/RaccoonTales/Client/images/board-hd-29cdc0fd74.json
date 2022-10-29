@@ -1,0 +1,28 @@
+{"frames": {
+
+"raccon_symbol.png":
+{
+	"frame": {"x":2,"y":2,"w":962,"h":691},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":962,"h":691},
+	"sourceSize": {"w":962,"h":691}
+},
+"raccon_symbol_short.png":
+{
+	"frame": {"x":2,"y":695,"w":962,"h":691},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":962,"h":691},
+	"sourceSize": {"w":962,"h":691}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "board-hd.png",
+	"format": "RGBA8888",
+	"size": {"w":966,"h":1388},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dd950a66b342d96d4af9ddf4b2c05ef4:8c119b84b17a4bf030ef3a3c52b27335:7cab6bebc2e6e529ac849030e6a3585e$"
+}
+}

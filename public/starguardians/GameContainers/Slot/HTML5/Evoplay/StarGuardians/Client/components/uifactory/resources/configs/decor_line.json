@@ -1,0 +1,1 @@
+{"__type":"Graphics","anchor":{"x":0.5,"y":0.5},"chain":[{"beginFill":["${styles.color__primary--mute}",0.2]},{"drawRect":[0,0,"$[100pw]",4]}]}
