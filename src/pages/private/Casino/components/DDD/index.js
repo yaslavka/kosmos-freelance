@@ -10,7 +10,7 @@ function Blacs() {
         <Col xl={3} className="d-none d-xl-block">
           <NavBar />
         </Col>
-        <Col xl={8}>
+        <Col xl={7}>
           <Spin />
           <iframe
             src={"/treeoflight"}

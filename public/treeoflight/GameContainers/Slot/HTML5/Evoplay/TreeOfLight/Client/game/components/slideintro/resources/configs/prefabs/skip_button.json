@@ -1,0 +1,1 @@
+{"__type":"FactoryButton","setHitArea":[-185,-65,370,130],"__states":{"animation":{"normal":"idle1","pressed":"press"}},"buttonStates":{"default":{"animation":["idle1"]},"pointerDown":{"animation":["pressed"]}},"buttonActions":{"pointerDown":{"playAudio":["click"]}},"children":[{"__type":"Spine","skeleton":"${skeletons.button}","animation":"${states.animation}","loop":true}]}

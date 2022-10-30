@@ -1,0 +1,1 @@
+{"__type":"Sprite","__states":{"texture":{"normal":"${textures.slideintro/CIRCLE_normal}","active":"${textures.slideintro/CIRCLE_hover}"}},"texture":"${states.texture}","anchor":{"x":0.5,"y":0.5},"interactive":true,"buttonMode":true}

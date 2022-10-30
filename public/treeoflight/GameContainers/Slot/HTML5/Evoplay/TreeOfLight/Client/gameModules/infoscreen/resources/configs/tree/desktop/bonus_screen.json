@@ -1,0 +1,1 @@
+{"children":[{"__type":"Graphics","chain":[{"beginFill":["${styles.color__primary--dark}",1]},{"drawRect":[0,0,"$[100pw]","$[100ph]"]}],"interactive":true},{"__prefab":"panelBase","__variables":{"title":"${texts.core.bonus_room_title}","subTitle":"${texts.game.game_name}"}},{"y":62,"customBounds":[null,null,"$[100pw]","$[100ph - 62]"],"__prefab":"bonusTab"}]}
