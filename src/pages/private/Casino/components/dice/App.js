@@ -14,6 +14,7 @@ function DICE() {
           <iframe
             src={"/fairyland2"}
             width="100%"
+            allowFullScreen
             height={500} />
         </Col>
       </Row>

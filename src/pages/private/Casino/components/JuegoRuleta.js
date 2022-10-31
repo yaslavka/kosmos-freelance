@@ -17,6 +17,7 @@ function JuegoRuleta() {
           <Spin />
           <iframe
             src={'/fruitcocktail'}
+            allowFullScreen
             width="100%"
             height={500}
           />

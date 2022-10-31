@@ -13,6 +13,7 @@ function Cost() {
         <Col xl={7}>
           <Spin />
           <iframe src={"/lucky_haunter"} width="100%"
+                  allowFullScreen
                   height={500} />
         </Col>
       </Row>

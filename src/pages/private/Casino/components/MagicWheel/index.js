@@ -14,6 +14,7 @@ function MagicWhee() {
           <iframe
             src="https://demo.evoplay.games/demo/instant/html5/evoplay/magicwheel"
             width="100%"
+            allowFullScreen
             height={500}
           />
         </Col>

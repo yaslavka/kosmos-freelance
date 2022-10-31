@@ -16,6 +16,7 @@ function ETRace() {
             src="https://demo.evoplay.games/demo/instant/html5/evoplay/etraces"
             width="100%"
             height={500}
+            allowFullScreen
           />
         </Col>
       </Row>

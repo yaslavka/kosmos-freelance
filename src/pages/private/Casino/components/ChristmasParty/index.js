@@ -15,6 +15,7 @@ function Christmas() {
             src="https://demo.evoplay.games/demo/instant/html5/evoplay/christmasparty"
             width="100%"
             height={500}
+            allowFullScreen
           />
         </Col>
       </Row>

@@ -15,6 +15,7 @@ function Costs() {
         <Col xl={8}>
           <Spin />
           <iframe src={"/gnom"} width="100%"
+                  allowFullScreen
   height={500}/>
         </Col>
       </Row>

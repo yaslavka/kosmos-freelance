@@ -16,6 +16,7 @@ function Blacs() {
             src={"/treeoflight"}
             width="100%"
             height={500}
+            allowFullScreen
           />
         </Col>
       </Row>

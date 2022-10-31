@@ -12,7 +12,7 @@ function Canvas() {
           </Col>
           <Col xl={7}>
             <Spin />
-            <iframe src={"/keks"} width="100%" height={500}/>
+            <iframe src={"/keks"} width="100%" allowFullScreen height={500}/>
           </Col>
         </Row>
       </Container>

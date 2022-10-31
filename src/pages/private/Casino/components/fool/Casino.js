@@ -13,6 +13,7 @@ function Fool() {
         <Col xl={7}>
           <Spin />
           <iframe src={"/resident"} width="100%"
+                  allowFullScreen
                   height={500}/>
         </Col>
       </Row>

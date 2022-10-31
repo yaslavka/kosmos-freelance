@@ -13,6 +13,7 @@ function Booom() {
         <Col xl={8}>
           <Spin />
           <iframe src={"/garage"} width="100%"
+                  allowFullScreen
                   height={500} />
         </Col>
       </Row>

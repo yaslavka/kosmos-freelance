@@ -13,6 +13,7 @@ function Monk() {
         <Col xl={8}>
           <Spin />
           <iframe src={"/rockclimber"} width="100%"
+                  allowFullScreen
                   height={500} />
         </Col>
       </Row>

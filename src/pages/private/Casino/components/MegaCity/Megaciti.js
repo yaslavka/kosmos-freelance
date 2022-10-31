@@ -16,6 +16,7 @@ const Megaciti = () => {
           <Spin />
           <iframe
             src={'/bookofra'}
+            allowFullScreen
             width="100%"
             height={500}
           />
