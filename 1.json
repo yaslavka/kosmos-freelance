@@ -1,0 +1,54 @@
+{
+  "items": {
+    "0": {
+      "id": 1,
+      "userName": "slon",
+      "photo": "/getFile/avatar/37b6cecb-62a3-4b20-b261-fb09d9d201f1.jpg",
+      "typeId": null,
+      "place": 0,
+      "date": "2022-10-09T08:33:43.081792"
+    },
+    "1": {
+      "id": 2,
+      "userName": "slon",
+      "photo": "/getFile/avatar/37b6cecb-62a3-4b20-b261-fb09d9d201f1.jpg",
+      "typeId": null,
+      "place": 0,
+      "date": "2022-10-09T08:34:01.224705"
+    },
+    "2": {
+      "id": 3,
+      "userName": "slon",
+      "photo": "/getFile/avatar/37b6cecb-62a3-4b20-b261-fb09d9d201f1.jpg",
+      "typeId": null,
+      "place": 0,
+      "date": "2022-10-09T08:34:27.166338"
+    },
+    "3": {
+      "id": 4,
+      "userName": "slon",
+      "photo": "/getFile/avatar/37b6cecb-62a3-4b20-b261-fb09d9d201f1.jpg",
+      "typeId": null,
+      "place": 0,
+      "date": "2022-10-09T08:34:32.557817"
+    },
+    "4": {
+      "id": 5,
+      "userName": "slon",
+      "photo": "/getFile/avatar/37b6cecb-62a3-4b20-b261-fb09d9d201f1.jpg",
+      "typeId": null,
+      "place": 0,
+      "date": "2022-10-09T08:34:35.358028"
+    },
+    "5": {
+      "id": 6,
+      "userName": "slon",
+      "photo": "/getFile/avatar/37b6cecb-62a3-4b20-b261-fb09d9d201f1.jpg",
+      "typeId": null,
+      "place": 0,
+      "date": "2022-10-09T08:44:38.814634"
+    },
+    "6": null,
+    "count": 7
+  }
+}

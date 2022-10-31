@@ -41,12 +41,11 @@ function Team() {
 
   return (
     <Container className="root-page">
-           <div className={cl.navBlock}>
-                <NavBar />
-            </div>
-          <div className={cl.contentBlock}>
-
-         
+      <Row>
+        <Col xl={3} className={cl.navBlock}>
+          <NavBar />
+        </Col>
+        <Col xl={7} className={cl.contentBlock}>
           <h1 className={["root-page-title", cl.title].join` `}>Команда</h1>
           <div className={styles.search}>
             <input
@@ -63,14 +62,14 @@ function Team() {
               {!isEmpty(list) ? (
                 <div className={cl.listPersons}>
                   {
-                     list.map((member) => (
+                    list.map((member) => (
                       <div>
                         <TeamMember member={member} />
                       </div>
                     ))
                   }
                 </div>
-               
+
               ) : (
                 <Col>
                   <h4 className={cl.notTeam}>
@@ -93,9 +92,8 @@ function Team() {
               />
             )}
           </Spinner>
-          </div>
-        
-    
+        </Col>
+      </Row>
     </Container>
   )
 }

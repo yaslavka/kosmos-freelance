@@ -33,7 +33,7 @@ function TablesElement({ matrix, transform, urlPrefix }) {
       {/* eslint-disable-next-line react/prop-types */}
       {!!Number(matrix.count) && (
         // eslint-disable-next-line react/prop-types
-        <span className="circle__point-count">{matrix.count}</span>
+        <span className="circle__point-count">клоны {matrix.count}</span>
       )}
       {/* eslint-disable-next-line react/prop-types */}
       {!!Number(matrix.clones) && (
