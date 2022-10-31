@@ -1,0 +1,411 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
+.modalBlock {
+    position:fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+   
+    grid-template-rows: repeat(1, 600px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 15px ;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10000;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    -webkit-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.modalMini {
+    display: -ms-grid;
+    display: grid;
+}
+
+.modalCard {
+    height: 100%;
+   
+    display: -webkit-box;
+   
+    display: -ms-flexbox;
+   
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+
+
+
+
+.modalContent {
+   
+    position: relative;
+    padding: 54px 77px 63px;
+    max-width: 560px;
+    margin: 35px auto;
+    background: #fff;
+    border-radius: 10px;
+    position: relative; pointer-events: all;
+    width: 100%;
+    -webkit-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+    opacity: 0;
+    -webkit-transform:  translateX(20vw);
+        -ms-transform:  translateX(20vw);
+            transform:  translateX(20vw);
+    height: auto;
+    z-index: 100000;
+    overflow: auto;
+    pointer-events: none;
+}
+
+.modalBlock::-webkit-scrollbar {
+
+ display: none;
+}
+
+
+
+.modalBlock.active {
+pointer-events: all;
+   opacity: 1;
+}
+
+.modalBlock .activeContent {
+    opacity: 1;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    pointer-events: all;
+   
+}
+
+
+.modalExit {
+   display: inline-block;
+    position: absolute;
+    top: 19px;right: 17px;
+    width: 30px;
+    height: 30px;
+    /* background-image: url('../../../../public/img/exit-modal.svg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.modalTitle {
+   
+   font-family: 'Nunito', sans-serif;
+    margin-bottom: 32px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--deep-blue);
+}
+
+
+
+.modalDescr {
+    
+    margin: 0 auto 32px;
+    padding:  0 10px;
+    max-width: 406px;
+   width: 100%;
+   font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #607483;
+    opacity: 0.8;
+}
+
+.modalWarning {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 406px;
+   font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--rock-grey-color);
+    opacity: 0.7;
+}
+
+.modalBtn {
+    padding: 28px 163px;
+}
+
+.modalInput {
+    
+    margin-bottom: 10px;
+    width: 100%;
+    height: 68px;
+    padding: 32px 18px 18px !important;
+}
+
+.btnBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.modalMask {
+    margin-bottom: 32px;
+    width: 100%;
+   
+}
+
+.modalMask::-webkit-input-placeholder {
+    color: var(--rock-grey-color);
+    font-size: 14px;
+}
+
+.modalMask::-moz-placeholder {
+    color: var(--rock-grey-color);
+    font-size: 14px;
+}
+
+.modalMask:-ms-input-placeholder {
+    color: var(--rock-grey-color);
+    font-size: 14px;
+}
+
+.modalMask::-ms-input-placeholder {
+    color: var(--rock-grey-color);
+    font-size: 14px;
+}
+
+.modalMask::placeholder {
+    color: var(--rock-grey-color);
+    font-size: 14px;
+}
+
+
+
+.select {
+    width: 100%;
+    height: 68px;
+    outline: none;
+    padding: 20px 18px 20px !important;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 14px;
+    color: #607483 !important;
+    border: 1px solid #DADBDD;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.select option {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 16px;
+    color: #607483 !important;
+}
+
+
+
+
+
+
+@media (max-height:603px) and (min-width: 576px){
+    .modalBlock {
+        display: -ms-grid;
+        display: grid;
+    }
+}
+
+@media (max-height:400px) and (max-width: 576px){
+    .modalBlock {
+        display: -ms-grid;
+        display: grid;
+        height: auto;
+        grid-template-rows: repeat(1,400px);
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+              
+    }
+}
+
+
+
+
+@media (max-width:992px) {
+    .modalContent {
+        max-width: 500px;
+        padding: 40px 45px;
+       
+    }
+
+
+}
+
+@media (max-width:576px) {
+
+    .modalBlock {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: 100%;
+    }
+
+    .modalContent {
+        max-width: 400px;
+        padding: 30px;
+    }
+
+
+        
+    .modalInput {
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 350px;
+        height: 50px !important;
+        font-size: 12px !important;
+        padding: 25px 19px 15px  !important;
+    }
+    
+    .modalMask {
+        margin-bottom: 15px;
+        width: 100%;
+        font-size: 12px !important;
+        min-height: 44px;
+        height: 50px !important;
+        max-width: 350px;
+       
+    }
+
+    .modalMaskPlace {
+        top: 6px;
+    }
+
+    .modalMask::-webkit-input-placeholder {
+        font-size: 12px !important;
+    }
+
+    .modalMask::-moz-placeholder {
+        font-size: 12px !important;
+    }
+
+    .modalMask:-ms-input-placeholder {
+        font-size: 12px !important;
+    }
+
+    .modalMask::-ms-input-placeholder {
+        font-size: 12px !important;
+    }
+
+    .modalMask::placeholder {
+        font-size: 12px !important;
+    }
+
+    .modalBtn {
+        padding: 0;
+        width: 100%;
+        height: 54px;
+        max-width: 350px;
+    }
+
+ 
+
+    .modalTitle {
+       font-family: 'Nunito', sans-serif;
+        margin-bottom: 10px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 110%;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: var(--deep-blue);
+    }
+    
+    
+    
+    .modalDescr {
+        display: inline-block;
+        padding:  0 ;
+        max-width: 350px;
+        margin-bottom: 10px;
+       font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: #607483;
+        opacity: 0.8;
+    }
+    
+    .modalWarning {
+        display: inline-block;
+        margin-bottom: 10px;
+        max-width: 350px;
+       font-family: 'Nunito', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: var(--rock-grey-color);
+        opacity: 0.7;
+    }
+
+    
+.modalExit {
+    display: inline-block;
+    position: absolute;
+    top: 10px;right: 10px;
+    width: 25px;
+    height: 25px;
+    /* background-image: url('../../../../public/img/exit-modal.svg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+}

@@ -5,11 +5,9 @@ import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../../../actions/finance.actions";
 import {formatter} from "../../../utils";
 import ReplenishmentOfMoney from "./ReplenishmentOfMoney";
-import WithdrawalOfMoney from "./WithdrawalOfMoney";
 import MoneyTransferModal from "./MoneyTransferModal";
 import OperationsHistoryModal from "./OperationsHistoryModal";
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
-import MyModal from 'src/components/modal/MyModal';
 function Finances() {
   const dispatch = useDispatch();
   const [
@@ -35,8 +33,6 @@ function Finances() {
   const financeData = useSelector(state=>state.financeMoney)
   const filedData = financeData.filter(e=>e.value)
   console.log(filedData)
-
-  const [modal, setModal] = useState(false)
   return (
     <>
       <Container className="root-page">
@@ -63,14 +59,10 @@ function Finances() {
                       <MyViewElement element={
 
                         <h3 className='card-fin-bal'>
-                          {/* {`${formatter
-                            .format(
-                              (userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0) > -1 && userInfo.filter((e)=>e.price != 0).reduce((ac,el)=>ac+el,0)) || 0,
-                            )} `} */}
                               {`${formatter
                             .format(
                               (userInfo.balance> -1 && userInfo.balance) || 0,
-                            ).replace('₽', 'ST')}`}
+                            ).replace('₽', 'RUR')}`}
                         </h3>
                           }/>
 
@@ -109,7 +101,7 @@ function Finances() {
                                 userInfo.transferBalance) ||
                               0,
                             )
-                            .replace('₽', 'ST')}
+                            .replace('₽', 'RUR')}
 
                         </h3>
                         }/>
@@ -133,16 +125,12 @@ function Finances() {
 
                 <h2 className='pay-fin-title'>Приобрести/вывести</h2>
               }/>
-
-                <ReplenishmentOfMoney />
-                {/*<h2>Вывод</h2>*/}
-                {/*<WithdrawalOfMoney />*/}
+              <ReplenishmentOfMoney />
               </>
             )}
           </Col>
         </Row>
       </Container>
-      <MyModal title={'Укажите сумму'} visible={modal} setVisible={setModal} setThx={()=>{}} WithdrawalOfMoney={WithdrawalOfMoney}/>
       <MoneyTransferModal />
       {isOperationsHistoryModalVisible && (
         <OperationsHistoryModal onClose={closeOperationsHistoryModal} />

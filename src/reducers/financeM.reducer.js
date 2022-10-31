@@ -20,7 +20,7 @@ const initialState = [
 export function financeMoneyReducer (state = initialState, {type, payload}) {
     switch (type) {
         case 'CHANGE_FINANCE_BALANCE': {
-            return[...state, ...payload].filter((el,i,arr)=> arr.filter((item,n)=>n< i &&el.currency==item.currency).length!==0 || arr.filter((item,n)=>el.currency==item.currency).length<=1)
+            return[...state, ...payload].filter((el,i,arr)=> arr.filter((item,n)=>n< i &&el.currency===item.currency).length!==0 || arr.filter((item,n)=>el.currency===item.currency).length<=1)
         }
         default: return state
     }

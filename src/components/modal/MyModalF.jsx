@@ -4,7 +4,7 @@ import MyBtnFiled from "../buttonback/MyBtnFiled";
 import MyInput from "../Input/MyInput";
 
 
-const MyModalP = ({ title, visible, setVisible, changeCurrencyAndCount, currencyAndCount})=>{
+const MyModalF = ({ title, visible, setVisible, changeCurrencyAndCount, currencyAndCount})=>{
   const [modalInfo, setModalInfo] = useState({count: '', currency: ''})
   const blockModal = useRef('')
   let forServerInfo = {}
@@ -30,9 +30,9 @@ const MyModalP = ({ title, visible, setVisible, changeCurrencyAndCount, currency
                         <p className={cl.modalDescr}>Менеджер свяжется с вами в течение дня, чтобы обсудить вашу задачу</p>
                         <MyInput valueInput={modalInfo.namePerson} type="number"  required clean={clean} classesInput={cl.modalInput} classesPlace={cl.modalPlace} place='Введите сумму' setInput={setModalInfo} input={modalInfo}/>
                         <select className={cl.select} onChange={e=>setModalInfo({...modalInfo, currency:e.target.value})}>
-                            <option value={"USD"}>USD</option>
-                            <option value={"RUB"}>RUB</option>
-                            <option value={"EUR"}>EUR</option>
+                          <option value={"USD"}>USD</option>
+                          <option value={"RUB"}>RUB</option>
+                          <option value={"EUR"}>EUR</option>
                         </select>
                         <p className={cl.modalWarning}>Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных</p>
                         <span className={cl.modalExit} onClick={e=>{e.preventDefault();setVisible(false)}}></span>
@@ -48,4 +48,4 @@ const MyModalP = ({ title, visible, setVisible, changeCurrencyAndCount, currency
     )
 }
 
-export default MyModalP
+export default MyModalF

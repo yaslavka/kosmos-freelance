@@ -239,6 +239,9 @@ export const api = {
   createWithdraw(withdrawInfo) {
     return baseInstance.post('wallet/create-withdraw', withdrawInfo)
   },
+  submitCreatePayeerWithdraw(withdrawInfo) {
+    return baseInstance.post('wallet/create-payeer-withdraw', withdrawInfo)
+  },
   createPay(payInfo) {
     return baseInstance.post('wallet/create-pay', payInfo)
   },

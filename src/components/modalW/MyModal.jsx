@@ -4,7 +4,7 @@ import MyBtnFiled from "../buttonback/MyBtnFiled";
 import MyInput from "../Input/MyInput";
 
 
-const MyModalP = ({ title, visible, setVisible, changeCurrencyAndCount, currencyAndCount})=>{
+const MyModalsP = ({ title, visible, setVisible, changeCurrencyAndCount, currencyAndCount})=>{
   const [modalInfo, setModalInfo] = useState({count: '', currency: ''})
   const blockModal = useRef('')
   let forServerInfo = {}
@@ -48,4 +48,4 @@ const MyModalP = ({ title, visible, setVisible, changeCurrencyAndCount, currency
     )
 }
 
-export default MyModalP
+export default MyModalsP
