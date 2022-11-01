@@ -2,6 +2,8 @@ import React from 'react';
 import cl from './../../../scss/MainPage.module.css';
 import Planet from "../../../scss/media/planet-1.gif";
 import Authentication from "./Authentication";
+import About from "./About";
+import Footer from "./Footer";
 
 
 const Hero = ()=>{
@@ -19,6 +21,7 @@ const Hero = ()=>{
             </div>
             <Authentication/>
           </div>
+          <About />
         </section>
     )
 }

@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-//import classnames from 'classnames'
-//import logo from '../../../scss/media/m.png'
-//import txt from '../../../scss/media/kosmos.png'
 import routes from '../../../constants/routes.constants'
-//import { CContainer, CHeader, CHeaderNav, CNavLink, CNavItem } from '@coreui/react'
 import cl from './../../../scss/MainPage.module.css';
 import Planet from './../../../scss/media/planet-1.gif'
 function Header() {
@@ -41,9 +37,6 @@ function Header() {
             </span>
             <span>S</span>
           </div>
-
-
-
           <div className={cl.navBlock}>
           <nav className={cl.nav}>
             <ul className={cl.listNav}>
@@ -54,7 +47,7 @@ function Header() {
               </li>
               <li className={cl.itemNav}>
                 <a className={cl.linkNav} href={"#advantages"} onClick={handleHamburgerClick}>
-                  {t('Преимущества')}
+                  {t('Услуги')}
                 </a>
               </li>
               <li className={cl.itemNav}>

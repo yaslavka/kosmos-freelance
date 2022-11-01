@@ -178,8 +178,8 @@
 }
 
 .Hero {
+  width: 100%;
   margin-top: 75px;
-  min-height: 70px;
   height: auto;
   background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
 }
@@ -268,15 +268,14 @@
   display: grid;
 
   grid-template-columns: repeat(2, auto);
-  gap: 25px;
+  gap: 20px;
   justify-content: space-between;
   align-items: start;
 }
 
 
 .footer {
-  padding: 45px 0;
-
+  padding: 41px 0;
   background-image: linear-gradient(to bottom,  rgb(14, 66, 150) 10%, rgba(32,18,111,1) 100%);
 }
 
@@ -537,7 +536,7 @@
     margin-bottom: 10px;
   }
   .titles {
-    font-size: 85px;
+    font-size: 80px;
     margin-bottom: 1px;
     padding-left: 1px;
     padding-top:0px;

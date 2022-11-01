@@ -6,8 +6,8 @@ import Footer from './Footer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Hero from './Hero'
-import About from './About'
-import Materials from "./Materials";
+import Advantages from "./advantages";
+//import Materials from "./Materials";
 
 
 function Home() {
@@ -20,15 +20,9 @@ function Home() {
     <div className="page">
       <Header />
       <Hero />
-      <About />
-      <Materials />
-      <div className="auth__wrapper">
-        <div className="auth__page">
-          {/* <Banner /> */}
-          {/* <Authentication /> */}
-          <Footer />
-        </div>
-      </div>
+      <Advantages/>
+      {/*<Materials />*/}
+      <Footer />
     </div>
   )
 }
