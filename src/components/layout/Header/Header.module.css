@@ -3,7 +3,7 @@
 .Header {
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
   height: 75px;
   padding: 7.5px 0;
   z-index: 1000;
@@ -110,7 +110,7 @@
 
 
 .burgerActive .lineBurger{
-  
+
   opacity: 0;
 }
 
@@ -147,9 +147,9 @@
   max-height: calc(100vh - 75);
   overflow-y: scroll;
   height: calc(100vh - 75px);
- 
+
   width: 100%;
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 .mobileNavBar::-webkit-scrollbar {
@@ -201,5 +201,5 @@
     pointer-events: all;
     opacity: 1;
   }
-  
+
 }

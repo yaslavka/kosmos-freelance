@@ -313,6 +313,7 @@
   background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
   z-index: 1
 }
+
 .page .authentication {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1526,7 +1527,9 @@ body {
   justify-content: flex-start;
   opacity: 1
 }
-
+.star-container{
+  background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
+}
 .Education_Education__10oY- a[class=carousel-control-next] {
   justify-content: flex-end
 }
