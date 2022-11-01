@@ -34,9 +34,9 @@ function TeamMember({ member }) {
     // eslint-disable-next-line react/prop-types
     instagram,
     // eslint-disable-next-line react/prop-types
-    firstName,
+    first_Name,
     // eslint-disable-next-line react/prop-types
-    lastName,
+    last_Name,
   } = member
 
   const saveCurrentMatrix = useCallback(
@@ -52,9 +52,9 @@ function TeamMember({ member }) {
       <div className={cl.personBlock}>
       <div className={cl.personIcon}>
         <div className={cl.personCircle}>
-          <img src={personImg ? personImg : personImgDef} className={personImg ? cl.imgPerson : cl.imgUnknow}/>
+          <img src={personImg ? personImg : personImgDef} className={personImg ? cl.imgPerson : cl.imgUnknow} alt={''}/>
         </div>
-      
+
       </div>
       <div className={cl.viewElements}>
           <h3 className={cl.personNick}>
@@ -63,13 +63,13 @@ function TeamMember({ member }) {
               </Link>
             </h3>
           <div className={cl.initialsBlock}>
-            <div className={cl.initials}>{`${firstName} ${lastName}`}</div>
+            <div className={cl.initials}>{`${first_Name} ${last_Name}`}</div>
           </div>
 
           <div className=''>
             <div className={cl.payedBlock}>Оплата: {payed ? <span className={cl.checkmark}></span> : <span className={cl.notPayed}></span>}</div>
           </div>
-        
+
       </div>
       </div>
       {/* <div className="card__header-right">ID: {id}</div> */}
@@ -79,7 +79,7 @@ function TeamMember({ member }) {
       {/* <div className="">
             <div className="list-info__value">{phone}</div>
           </div> */}
-          
+
           <div className={cl.hiddenElements}>
           <div className={cl.cardHidden}>
             <div className={cl.titleItems}>SuperStar:</div>
@@ -183,7 +183,7 @@ function TeamMember({ member }) {
               )}
             </div>
           </div>
-          
+
         </div>
     </div>
   )

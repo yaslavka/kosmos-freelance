@@ -1,10 +1,8 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-
 import contractOffer from '../documents/contract-offer.pdf'
 import privacyPolicy from '../documents/privacy-policy.pdf'
 import termsOfUse from '../documents/terms-of-use.pdf'
-//import payeerLogo from '../../../scss/media/payeer-logo.8aa750cc.svg'
 import AOS from 'aos'
 import cl from './../../../scss/MainPage.module.css';
 
@@ -39,10 +37,10 @@ function Footer() {
           </a>
           <a
             className="footer__contract-offer"
-            download={t('Правила использования')}
+            download={t('Пользовательское соглашение')}
             href={termsOfUse}
           >
-            {t('Правила использования')}
+            {t('Пользовательское соглашение')}
           </a>
           {/* <a
             className="footer__bottom-box"

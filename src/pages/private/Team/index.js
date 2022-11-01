@@ -45,7 +45,7 @@ function Team() {
         <Col xl={3} className={cl.navBlock}>
           <NavBar />
         </Col>
-        <Col xl={7} className={cl.contentBlock}>
+        <Col xl={8} className={cl.contentBlock}>
           <h1 className={["root-page-title", cl.title].join` `}>Команда</h1>
           <div className={styles.search}>
             <input

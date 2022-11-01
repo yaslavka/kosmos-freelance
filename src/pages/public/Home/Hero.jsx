@@ -3,7 +3,6 @@ import cl from './../../../scss/MainPage.module.css';
 import Planet from "../../../scss/media/planet-1.gif";
 import Authentication from "./Authentication";
 import About from "./About";
-import Footer from "./Footer";
 
 
 const Hero = ()=>{
@@ -11,11 +10,11 @@ const Hero = ()=>{
         <section className={cl.Hero}>
           <div className='container'>
             <div className={cl.wrap}>
-              <h1 className={cl.titles} data-aos="flip-left">
+              <h1 className={cl.titles} data-aos="flip-left" style={{marginLeft:"8%"}}>
                 <span>KOSM</span>
                 <span className={cl.logos}  >
-              <img src={Planet} alt={Planet}/>
-            </span>
+                  <img src={Planet} alt={Planet} style={{width:"15%"}}/>
+                </span>
                 <span>S</span>
               </h1>
             </div>
