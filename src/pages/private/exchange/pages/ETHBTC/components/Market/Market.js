@@ -1,49 +1,69 @@
-import React from 'react'
-import Result from '../result'
-import { Button } from 'reactstrap'
-import Viewport from '../marketlist'
-import SimpleBar from 'simplebar-react'
+import React, {Component} from 'react'
 import 'simplebar/dist/simplebar.min.css'
-import cl from "../../../../Exchange.module.css";
+import { connect } from 'react-redux'
+import {loadAllMarkets,  sortMarkets} from '../../../../../../../actions/exchenge.action'
+import {
+  chartsByMarketSelector,
+  marketSelector,
+  sortBySelector,
+  sortOrderSelector,
+} from '../../../../selectors'
+import PropTypes from 'prop-types'
+import Markets from "./Marcets";
+import MarketsToggle from "./MarketsToggle";
+import MarketsTable from "./MarketsTable";
 
-const Market = () => {
-  return (
-    <div className="left_bar">
-      <div className="market_box">
-        <div className="all_title title">Маркет</div>
-        <div>
-          <div >
-            <div className={cl.marketBtns}>
-              <Button href="javascript:void(0)" value="top" onClick="changeMarketBase('top')">
-                TOP
-              </Button>
-              <Button href="javascript:void(0)" value="btc" onClick="changeMarketBase('btc')">
-                BTC
-              </Button>
-              <Button href="javascript:void(0)" value="eth" onClick="changeMarketBase('eth')">
-                ETH
-              </Button>
-              <Button
-                href="javascript:void(0)"
-                value="usd"
-                onClick="changeMarketBase('usd')"
-                className="manimr"
-              >
-                USD
-              </Button>
-              <Button href="javascript:void(0)" value="rur" onClick="changeMarketBase('rur')">
-                RUR
-              </Button>
-            </div>
-            <div className="clear"></div>
-          </div>
-        </div>
+class Market extends Component{
+  static propTypes = {
+    marketsData: PropTypes.array.isRequired,
+    market: PropTypes.string,
+    sortBy: PropTypes.string,
+    sortOrder: PropTypes.bool,
+    pair: PropTypes.string
+  };
+  componentDidMount() {
+    const { loadAllMarkets } = this.props
+    loadAllMarkets()
+  }
+
+  render() {
+    const { marketsData, market, pair } = this.props
+    const markets = marketsData ?
+      marketsData.map( (market) => <Markets key={market.id} market={market} pair={pair} /> ) : null
+    return (
+      <div className="left_bar">
+        <MarketsToggle market={market}/>
+        <MarketsTable
+          getClassName = { this.getClassName }
+          handleClick = { this.handleClick }
+          markets = { markets }
+          pair = { pair }
+        />
       </div>
-      <Result />
-      <SimpleBar style={{ height: 150, width: '100%' }}>
-        <Viewport />
-      </SimpleBar>
-    </div>
-  )
+    )
+  }
+
+
+handleClick = (ev) => {
+  const { sortMarkets, sortBy, sortOrder } = this.props
+  const column = ev.target.getAttribute('data-column')
+  column === sortBy ? sortMarkets(column, !sortOrder) : sortMarkets(column, false)
 }
-export default Market
+getClassName = (value) => {
+  const { sortBy, sortOrder } = this.props
+  if(value === sortBy) {
+    return sortOrder ? ('markets-list__table-header markets-list__table-header--sorted-up') :
+      ('markets-list__table-header markets-list__table-header--sorted-down')
+  }
+  return 'markets-list__table-header'
+}
+}
+
+export default connect(
+  (state) => ({
+    marketsData: chartsByMarketSelector(state),
+    market: marketSelector(state),
+    sortBy: sortBySelector(state),
+    sortOrder: sortOrderSelector(state)
+  }),
+  { loadAllMarkets, sortMarkets })(Market);

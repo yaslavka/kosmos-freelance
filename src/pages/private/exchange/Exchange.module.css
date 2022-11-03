@@ -1,5 +1,5 @@
 
-/* 
+/*
 .navBlock {
     position: absolute;
     top: 0px;
@@ -12,6 +12,20 @@
 .contentBlock {
     margin-top: 50px;
     margin-bottom: 100px;
+}
+.markets-list__button--active {
+  color: #1aba1a;
+  border: 1px solid #d3d3d3;
+  border-bottom: none;
+}
+.markets-list__percent--minus {
+  color: red;
+}
+.markets-list__percent--plus {
+  color: green;
+}
+.markets-list__table-row--active {
+  background-color: #dbdbdb!important;
 }
 
 .buySellCard {
@@ -30,7 +44,7 @@
     margin-bottom: 30px;
   }
 
-  .marketBtns a {
+  .marketBtns button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,14 +115,13 @@
 
   .dataTable tr:hover {
     background: rgb(243, 243, 243) ;
-  } 
+  }
   .dataTable td {
     padding: 10px 20px;
     border-radius: 5px;
     width: 100%;
     font-family: 'Nunito';
     font-weight: 400;
-    color: #343a40;
 }
 .blockTable * {
  pointer-events: none;

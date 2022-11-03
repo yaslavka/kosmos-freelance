@@ -1,0 +1,35 @@
+.stock-chart-headers {
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: calc(10px + 0.3vw);
+    font-weight: 400;
+    background: #fff;
+    padding: 10px 50px;
+    @media (max-width: 700px) {
+      padding: 0 5px;
+    }
+    &__header {
+      margin-top: 0px;
+      margin-right: 10px;
+      margin-bottom: 0px;
+      font-size: calc(10px + 0.3vw);
+      font-weight: 400;
+    }
+    &__price {
+      margin-right: 10px;
+      color: #666;
+    }
+    &__percent {
+      min-width: 40px;
+      margin-right: 10px;
+      color: #1aba1a;
+    }
+    &__volume {
+      color: #666;
+    }
+}
+#container {
+  height: 400px;
+  min-width: 310px;
+}

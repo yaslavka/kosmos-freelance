@@ -290,7 +290,13 @@ export const panelRouteConfig = [
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454af',
-    path: [r.exchange,r.exchang],
+    path: r.exchange,
+    component: Exchange,
+    exact: true,
+  },
+  {
+    id: 'b611f7bb-58bf-4230-826d-ec4174e454afhfhf',
+    path: `${r.exchang}`,
     component: Exchange,
     exact: true,
   },

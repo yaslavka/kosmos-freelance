@@ -7,6 +7,7 @@ import { getAccessToken } from '../utils'
 
 import rootSaga from '../sagas'
 import rootReducer from '../store/rootReducer'
+import getApi from "./getApi";
 
 const persistedState = {
   auth: {
@@ -37,7 +38,7 @@ if (process.env.NODE_ENV === 'development') {
   )
 }
 
-const enhancers = [applyMiddleware(...middleware)]
+const enhancers = [applyMiddleware(...middleware, getApi)]
 
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&

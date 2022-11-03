@@ -11,6 +11,21 @@
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
+
+.markets-list__button--active {
+  color: #1aba1a;
+  border: 1px solid #d3d3d3;
+  border-bottom: none;
+}
+.markets-list__table-row:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+.markets-list__percent--minus {
+  color: red;
+}
+.markets-list__table-row{
+  background-color: #f0f0f0;
+}
 .why-choose-us {
   position: -ms-device-fixed;
   display: -webkit-box;

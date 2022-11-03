@@ -1,50 +1,26 @@
-import React from 'react'
-import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  CandleSeries,
-  Inject,
-  DateTime,
-  Tooltip,
-  Crosshair,
-} from '@syncfusion/ej2-react-charts'
-import './App.css'
-import { chartData } from './data'
-function Chart() {
-  return (
-    //Hilo Chart
-    <ChartComponent
-      title="График торгов"
-      primaryXAxis={{
-        valueType: 'DateTime',
-        minimum: new Date('2016, 12, 31'),
-        maximum: new Date('2017, 9, 30'),
-        labelFormat: 'yMMM',
-        title: 'Время',
-        crosshairTooltip: { enable: true },
-      }}
-      primaryYAxis={{ title: 'Цена' }}
-      tooltip={{ enable: true }}
-      crosshair={{ enable: true, lineType: 'Vertical' }}
-    >
-      <Inject services={[CandleSeries, DateTime, Tooltip, Crosshair]}/>
-      <SeriesCollectionDirective>
-        {/* To create a Hilo Open Close series, import HiloOpenCloseSeries from the chart package and inject it into chart services. Then change the series type to HiloOpenClose*/}
-        {/* To create a CandleSeries,import CandleSeries from chart package and inject it into chart series. Then change services type to Candle*/}
-        <SeriesDirective
-          type="Candle"
-          name="Apple INC."
-          dataSource={chartData}
-          xName="date"
-          high="high"
-          low="low"
-          open="open"
-          close="close"
-        />
-      </SeriesCollectionDirective>
-    </ChartComponent>
-  )
+import React, {Component} from 'react'
+import Highcharts from 'highcharts/highstock'
+
+class ChartWrap extends Component {
+  // When the DOM is ready, create the chart.
+  componentDidMount() {
+    this.chart = new Highcharts[this.props.type || 'Chart'](
+      this.props.container,
+      console.log(this.props.container),
+      this.props.options,
+      console.log(this.props.options),
+    )
+    console.log(this.chart)
+  }
+
+
+  //Create the div which the chart will be rendered to.
+  render() {
+    return (
+      <div id={this.props.container} >
+      </div>
+    )
+  }
 }
 
-export default Chart
+export default ChartWrap
