@@ -123,15 +123,16 @@ function SignUp({ location }) {
         <div className={cl.formBlock}>
           <Formik
           initialValues={initialValues}
-          validate={({
-            phone,
-            first_name,
-            last_name,
-            username,
-            email,
-            password,
-            repeatPassword,
-            acceptPrivacyPolicy,
+          validate={
+            ({
+               phone,
+               first_name,
+               last_name,
+               username,
+               email,
+               password,
+               repeatPassword,
+               acceptPrivacyPolicy,
           }) => {
             const errors = {}
 
@@ -188,13 +189,13 @@ function SignUp({ location }) {
                             ? `${process.env.REACT_APP_BASE_URL}/user/${inviter.avatar}`
                             : avatar
                         }
-                        alt={`${inviter.firstName} ${inviter.lastName}`}
+                        alt={`${inviter.first_name} ${inviter.last_name}`}
                       />
                     </div>
 
                   </div>
                   <div className="inviter__info">
-                  <div className="inviter__name">{`${inviter.firstName} ${inviter.lastName}`}</div>
+                  <div className="inviter__name">{`${inviter.first_name} ${inviter.last_name}`}</div>
                   <div>Скорее регистрируйся и начни зарабатывать уже сейчас!</div>
                   </div>
                   </>

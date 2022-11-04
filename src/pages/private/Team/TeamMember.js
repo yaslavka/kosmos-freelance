@@ -15,28 +15,21 @@ function TeamMember({ member }) {
     username,
     email,
     // eslint-disable-next-line react/prop-types
-    payed,
     phone,
     // eslint-disable-next-line react/prop-types
-    matrix,
+    telegram,
     // eslint-disable-next-line react/prop-types
-    super: superStar,
-    // eslint-disable-next-line react/prop-types
-    comet,
-    // eslint-disable-next-line react/prop-types
-    planet,
-    // eslint-disable-next-line react/prop-types
-    auto,
-    // eslint-disable-next-line react/prop-types
-    tg,
-    // eslint-disable-next-line react/prop-types
-    vk,
+    vkontakte,
     // eslint-disable-next-line react/prop-types
     instagram,
     // eslint-disable-next-line react/prop-types
-    first_Name,
+    first_name,
+    matrix,
+    auto,
     // eslint-disable-next-line react/prop-types
-    last_Name,
+    last_name,
+    payed,
+    superStar
   } = member
 
   const saveCurrentMatrix = useCallback(
@@ -63,7 +56,7 @@ function TeamMember({ member }) {
               </Link>
             </h3>
           <div className={cl.initialsBlock}>
-            <div className={cl.initials}>{`${first_Name} ${last_Name}`}</div>
+            <div className={cl.initials}>{`${first_name} ${last_name}`}</div>
           </div>
 
           <div className=''>
@@ -82,7 +75,7 @@ function TeamMember({ member }) {
 
           <div className={cl.hiddenElements}>
           <div className={cl.cardHidden}>
-            <div className={cl.titleItems}>SuperStar:</div>
+            <div className={cl.titleItems}>Млечный путь 2.0:</div>
             <div className={cl.starsList}>
               {superStar ? (
                 <StarRating
@@ -102,7 +95,7 @@ function TeamMember({ member }) {
             </div>
           </div>
           <div className={cl.cardHidden}>
-            <div className={cl.titleItems}>Stars:</div>
+            <div className={cl.titleItems}>Млечный путь:</div>
             <div className={cl.starsList}>
               {matrix ? (
                 <StarRating
@@ -120,7 +113,7 @@ function TeamMember({ member }) {
             </div>
           </div>
           <div className={cl.cardHidden}>
-            <div className={cl.titleItems}>PremiumStars:</div>
+            <div className={cl.titleItems}>Пегас:</div>
             <div className={cl.starsList}>
               {auto ? (
                 <StarRating
@@ -140,12 +133,12 @@ function TeamMember({ member }) {
             </div>
           </div>
           <div className={cl.cardHidden}>
-            <div className={cl.titleItems}>Куплено планет:</div>
-            <div className={cl.blockValues}>{planet}</div>
+            <div className={cl.titleItems}>Email:</div>
+            <div className={cl.blockValues}>{email}</div>
           </div>
           <div className={cl.cardHidden}>
-            <div className={cl.titleItems}>Куплено комет:</div>
-            <div className={cl.blockValues}>{comet}</div>
+            <div className={cl.titleItems}>Телефон:</div>
+            <div className={cl.blockValues}>{phone}</div>
           </div>
           <div className={cl.cardHidden}>
             <div className={cl.titleItems}>Instagram:</div>
@@ -162,9 +155,9 @@ function TeamMember({ member }) {
           <div className={cl.cardHidden}>
             <div className={cl.titleItems}>Вконтакте:</div>
             <div className={cl.blockValues}>
-              {vk ? (
-                <a href={`https://vk.com/${vk}`} rel="noreferrer" target="_blank">
-                  {vk}
+              {vkontakte ? (
+                <a href={`https://vk.com/${vkontakte}`} rel="noreferrer" target="_blank">
+                  {vkontakte}
                 </a>
               ) : (
                 '-'
@@ -174,9 +167,9 @@ function TeamMember({ member }) {
           <div className={cl.cardHidden}>
             <div className={cl.titleItems}>Telegram:</div>
             <div className={cl.blockValues}>
-              {tg ? (
-                <a href={`https://t.me/${tg}`} rel="noreferrer" target="_blank">
-                  {tg}
+              {telegram ? (
+                <a href={`https://t.me/${telegram}`} rel="noreferrer" target="_blank">
+                  {telegram}
                 </a>
               ) : (
                 '-'

@@ -3,7 +3,7 @@ import {Record, Map} from 'immutable'
 
 
 const chartRecord = Record({
-  data: [],
+  //data: [],
   loading: false,
   loaded: false,
   start: '',

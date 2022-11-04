@@ -20,7 +20,7 @@
     color: #6d6875;
 }
 .contentBlock {
-    
+
     margin-bottom: 100px;
 }
 
@@ -63,7 +63,7 @@
     font-family: 'Nunito';
     font-weight: 500;
     color: #290063 !important;
-    
+
 }
 
 
@@ -76,7 +76,7 @@
 
 .personCircle {
     max-width: 140px;
-    height: 140px;
+    height: 70px;
    overflow: hidden;
     display: flex;
     justify-content: center;
@@ -137,7 +137,7 @@
     font-size: 17px;
     font-family: "Nunito";
     color: #290063;
-    font-weight: 500;  
+    font-weight: 500;
 }
 
 .cardHidden {

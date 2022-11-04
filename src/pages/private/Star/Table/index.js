@@ -82,9 +82,9 @@ export default function Table({ location: { state = {}, pathname } }) {
             })
             .catch()
         })
-        .catch((err) => {
+        .catch(() => {
           setVisibleBuyMatrixModal(false)
-          setBuyingStatus({ type: 'error', message: err.message })
+          setBuyingStatus({ type: 'error', message: 'не достаточно средств' })
           setVisibleBuyModal(true)
         })
     }
