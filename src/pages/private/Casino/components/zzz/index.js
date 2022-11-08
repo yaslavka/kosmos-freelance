@@ -9,7 +9,7 @@ function Forestdreams() {
     '(min-width: 800px)'
   ]
   const [mobile, desktop] = useMatchMedia(queries)
-  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src={"/forestdreams/mobile.html"} width="100%" height={500}/>
+  if(mobile) return <iframe id="game-frame" title={'Nuke World'} allowFullScreen={"allowfullscreen"} autofocus src={"/forestdreams/mobile.html"} width="100%" height={500}/>
   return (
     <Container className="root-page">
       <Row>
@@ -24,10 +24,12 @@ function Forestdreams() {
                 id="game-frame"
                 allowFullScreen={"allowfullscreen"}
                 src={"/forestdreams"}
+                title={'Nuke World'}
                 width="100%"
+                autoFocus
                 height={500}
               />
-              :<iframe id="game-frame" allowFullScreen src={"/forestdreams/mobile.html"}  width="100%" height={600} autofocus/>
+              :<iframe id="game-frame" allowFullScreen={"allowfullscreen"} title={'Nuke World'} autoFocus src={"/forestdreams/mobile.html"}  width="100%" height={600} autofocus/>
           }
         </Col>
       </Row>

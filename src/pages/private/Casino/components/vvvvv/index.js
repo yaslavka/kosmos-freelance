@@ -7,32 +7,35 @@ import useMatchMedia from "use-match-media-hook";
 function Nukeworld() {
   const queries = [
     '(max-width: 400px)',
-    '(min-width: 800px)'
+    '(min-width: 800px)',
+    '(f)'
   ]
   const [mobile, desktop] = useMatchMedia(queries)
-  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src={'/nukeworld/mobile.html'}  width="100%" height={500}/>
+  if(mobile) return <iframe id="game-frame"  title={'Nuke World'} allowFullScreen={true} autofocus={true} src={'/nukeworld/mobile.html'} height={500}/>
     return(
-      <Container className="root-page" title={'Nuke World'}>
-        <Row>
-          <Col xl={3} className="d-none d-xl-block">
-            <NavBar />
-          </Col>
-          <Col xl={7}>
-            <Spin />
-            {
-                desktop
-                ?<iframe
-                  id="game-frame"
-                  allowFullScreen={"allowfullscreen"}
-                  width="100%"
-                  src={'/nukeworld'}
-                  height={500}
-                />
-                :<iframe id="game-frame" allowFullScreen src={'/nukeworld/mobile.html'} width="100%" height={600} autofocus/>
-              }
-          </Col>
-        </Row>
-      </Container>
+     <>
+       {
+         desktop
+           ?
+           <Container className="root-page" title={'Nuke World'}>
+             <Row>
+               <Col xl={3} className="d-none d-xl-block">
+                 <NavBar />
+               </Col>
+               <Col xl={7}>
+                 <Spin />
+                 <iframe
+                   id="game-frame"
+                   allowFullScreen={true}
+                   width="100%"
+                   title={'Nuke World'}
+                   src={'/nukeworld'}
+                   height={400}
+                 />
+               </Col>
+             </Row>
+           </Container>:<iframe id="game-frame"  title={'Nuke World'} allowFullScreen={true} src={'/nukeworld/mobile.html'}  autofocus={true}  height={500}/>}
+     </>
 
     )
 }
