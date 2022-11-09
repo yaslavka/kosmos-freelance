@@ -121,7 +121,7 @@ width: 80%;
     linear-gradient(-115deg, transparent 89%, #99d98c 0) 97px -21px,
     linear-gradient(115deg, #99d98c 11%, transparent 0) 97px 129px;
 
-  background-color: rgba(20,67,221,.7019607843137254);
+  background-color: rgba(255, 255, 255, 0.7);
   background-size: 150px 150px;
   background-repeat: repeat;
 }
