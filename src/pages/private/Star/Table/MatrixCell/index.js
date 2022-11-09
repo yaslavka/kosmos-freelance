@@ -97,7 +97,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
               ? // eslint-disable-next-line react/prop-types
                 info.photo
                 ? // eslint-disable-next-line react/prop-types
-                  `${process.env.REACT_APP_BASE_URL}${info.photo}`
+                  `${process.env.REACT_APP_BASE_URL}/user/${info.photo}`
                 : avatarFallback
               : avatarFallback
           }`}
