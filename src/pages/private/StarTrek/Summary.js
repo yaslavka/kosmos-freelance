@@ -47,8 +47,8 @@ function Summary() {
         // Send to Telegram
         dispatch(actions.publishSummaryToTelegramUpload(imgData))
       } else if (imgData && userInfo) {
-        const filename = userInfo.firstName.trim()
-          ? `startrek-summary-${userInfo.firstName.trim()}`
+        const filename = userInfo.last_name.trim()
+          ? `startrek-summary-${userInfo.first_name.trim()}`
           : 'startrek-summary'
 
         saveAs(imgData, `${filename}.jpeg`)
@@ -67,7 +67,7 @@ function Summary() {
             <figure className={cl.summaryFigure}>
               <img
                 src={freeInfoAvatar || avatar}
-                alt={`${userInfo.firstName} ${userInfo.lastName}`}
+                alt={`${userInfo.first_name} ${userInfo.last_name}`}
               />
             </figure>
             <Button
@@ -82,8 +82,8 @@ function Summary() {
           </div>
           <div className={cl.summaryRight}>
           <div className={cl.summaryInitials}>
-              <div>{userInfo.firstName}</div>
-              <div>{userInfo.lastName}</div>
+              <div>{userInfo.first_name}</div>
+              <div>{userInfo.last_name}</div>
             </div>
           <ul className={cl.summaryInfoList}>
             <li className={cl.summaryInfoItem}>
@@ -136,9 +136,7 @@ function Summary() {
           <div className={cl.summaryCheck}>
             <h3>Общий чек Млечного пути:</h3>
             <strong>
-              {formatterNumber
-                .format(statistics.totalSum + statistics.myInviterIncome || 0)
-                .replace('₽', 'RUB')}
+              {statistics.myInventoryIncome || 0} ₽
             </strong>
           </div>
           </div>

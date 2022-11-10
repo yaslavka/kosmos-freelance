@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { Row, Col, Button } from 'reactstrap'
+import { Button } from 'reactstrap'
 import Lightbox from 'react-image-lightbox'
 import { useSelector } from 'react-redux'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
@@ -9,14 +9,14 @@ function NewsBlock() {
   const blocks = useSelector((state) => state.news.block)
 
   const lastWeekNews = useMemo(
-    () => (blocks && blocks.week[blocks.week.length - 1]) || null,
+    () => (blocks && blocks[blocks - 1]) || null,
     [blocks],
   )
 
-  const lastDayNews = useMemo(() => (blocks && blocks.day[blocks.day.length - 1]) || null, [blocks])
+  const lastDayNews = useMemo(() => (blocks && blocks[blocks- 1]) || null, [blocks])
 
   const imageSrc = useMemo(
-    () => lastWeekNews && `${process.env.REACT_APP_BASE_URL}${lastWeekNews.image}`,
+    () => lastWeekNews && `${process.env.REACT_APP_BASE_URL}/user/${lastWeekNews.image}`,
     [lastWeekNews],
   )
 
@@ -41,7 +41,7 @@ function NewsBlock() {
                 onClick={handleOpenPreview}
               >
                 <img
-                  src={`${process.env.REACT_APP_BASE_URL}${lastWeekNews.image}`}
+                  src={`${process.env.REACT_APP_BASE_URL}/user/${lastWeekNews.image}`}
                   alt={lastWeekNews.ruTitle}
                 />
               </div>
@@ -70,14 +70,14 @@ function NewsBlock() {
 
               <div className="news__figure-image">
                 <img
-                  src={`${process.env.REACT_APP_BASE_URL}${lastDayNews.image}`}
+                  src={`${process.env.REACT_APP_BASE_URL}/user/${lastDayNews.image}`}
                   alt={lastDayNews.ruTitle}
                 />
               </div>
             }/>
 
               <figcaption className="news__figure-body">
-                
+
               </figcaption>
             </figure>
             {lastDayNews.event && lastDayNews.link && (

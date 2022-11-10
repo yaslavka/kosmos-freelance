@@ -58,8 +58,8 @@ export default function NewsItemPage({ match: { params } }) {
       {newsInfo && (
         <Container>
           <Row>
-            <div className={styles.mainImage}>
-              <img src={`${process.env.REACT_APP_BASE_URL}${newsInfo.image}`} alt="" />
+            <div className={styles.mainImage} style={{marginTop: "100px"}}>
+              <img src={`${process.env.REACT_APP_BASE_URL}/user/${newsInfo.image}`} alt="" />
             </div>
             <Col xs={12}>
               <div className={styles.newsContent}>
@@ -90,12 +90,8 @@ export default function NewsItemPage({ match: { params } }) {
                       fill="#8083E6"
                     />
                   </svg>
-                  <time>{newsInfo.date.split('-').reverse().join('.')}</time>
                 </div>
-                <p
-                  className={styles.text}
-                  dangerouslySetInnerHTML={{ __html: newsInfo.ruText }}
-                ></p>
+                <p className={styles.text} dangerouslySetInnerHTML={{__html: newsInfo.ruText}}/>
                 <Scrollbar
                   className={styles.scrollbar}
                   trackYProps={{

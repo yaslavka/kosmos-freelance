@@ -6,8 +6,8 @@ import { getStartrekTimer } from '../utils'
 const initialState = {
   list: [],
   query: {
-    limit: 8,
-    offset: 0,
+    limit: 100,
+    offset: 100,
   },
   meta: {
     total: 0,
@@ -111,15 +111,15 @@ const startrekReducer = (state = initialState, action) => {
     case ActionTypes.STARTREK_PLANETS_REQUEST: {
       return {
         ...state,
-        meta: { ...state.meta, page: 0 },
-        query: { ...state.query, offset: 0 },
+        meta: { ...state.meta, page: 100 },
+        query: { ...state.query, offset: 100 },
         loadings: { ...state.loadings, list: true },
         errors: { ...state.errors, list: null },
       }
     }
     case ActionTypes.STARTREK_PLANETS_SUCCESS: {
       const { total, items } = action.payload.data
-     
+
       return {
         ...state,
         list: items,

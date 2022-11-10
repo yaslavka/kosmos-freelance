@@ -37,7 +37,7 @@ function NewsList() {
                 }/>
                 <MyViewElement element={
                 <Link className="news__figure-image news-img-block" to={`/news/${id}`}>
-                  <img src={`${process.env.REACT_APP_BASE_URL}${image}`} alt={ruTitle} />
+                  <img src={`${process.env.REACT_APP_BASE_URL}/user/${image}`} alt={ruTitle} />
                 </Link>
                 }/>
                 <MyViewElement element={

@@ -12,14 +12,13 @@
 
   .mainImage {
     position: absolute;
-    top: 22px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 50%;
     height: 0;
     margin: 0 auto;
     border-radius: 12px;
-    overflow: hidden;
+
 
     @include media-breakpoint-up(xl) {
       top: 44px;
@@ -28,8 +27,8 @@
 
     img {
       position: absolute;
-      top: 50%;
       left: 50%;
+      margin-top: 110px;
       transform: translate(-50%, -50%);
       display: block;
       width: 100%;
@@ -40,13 +39,14 @@
     position: relative;
     max-width: calc(100% - 13px);
     margin: 67px auto 0;
-    background-color: #0b2e13;
+    background-color: #59e5ca;
     padding: 22px;
+    margin-top: 240px;
     border-radius: 30px;
 
     @include media-breakpoint-up(xl) {
       max-width: 714px;
-      margin-top: 140px;
+      margin-top: 540px;
       padding: 41px 39px 39px;
     }
 
@@ -95,6 +95,7 @@
       margin: 15px 0 0;
       font-size: 0.875rem;
       line-height: 1.42857;
+      color: #0b2e13;
 
       @include media-breakpoint-up(xl) {
         display: none;
@@ -128,7 +129,7 @@
 
     .thumbY {
       display: block;
-      background-color: #0b2e13 !important;
+      background-color: #94d0a1 !important;
       border-radius: 24px !important;
     }
 
@@ -146,6 +147,7 @@
       .footerTitle {
         margin: 17px 0 11px;
         font-size: 0.875rem;
+        color: #0b2e13;
 
         @include media-breakpoint-up(xl) {
           margin: 0 24px 0 0;

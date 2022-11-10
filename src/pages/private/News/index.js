@@ -22,7 +22,6 @@ const NewsPage = () => {
 
   return (
     <>
-      <NewsBlock />
       <Spinner isLoading={isLoading}>
         <NewsList />
       </Spinner>
