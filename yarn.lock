@@ -8940,10 +8940,10 @@ highcharts-react-official@^3.1.0:
   resolved "https://registry.yarnpkg.com/highcharts-react-official/-/highcharts-react-official-3.1.0.tgz#921e5614f9e8580bc99a1e3b531d51a70f396500"
   integrity sha512-CkWJHrVMOc6CT8KFu1dR+a0w5OxCVKKgZUNWtEi5TmR0xqBDIDe+RyM652MAN/jBYppxMo6TCUVlRObCyWAn0Q==
 
-highcharts@^6.1.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-6.2.0.tgz#2a6d04652eb43c66f462ca7e2d2808f1f2782b61"
-  integrity sha512-A4E89MA+kto8giic7zyLU6ZxfXnVeCUlKOyzFsah3+n4BROx4bgonl92KIBtwLud/mIWir8ahqhuhe2by9LakQ==
+highcharts@^10.3.1:
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-10.3.1.tgz#d06d7e7543823c80eea24f44e1c3c2142cf1ccda"
+  integrity sha512-8UgVcLmgpiYwnsII0Ht76O+GRutfbrLslZFH3c53fXgl3aZ6NRB4mW5qsIyfsUExMny/n9JqYO/BFNejOKC6AA==
 
 history@^3.0.0:
   version "3.3.0"

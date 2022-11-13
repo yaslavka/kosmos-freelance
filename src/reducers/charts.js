@@ -3,7 +3,7 @@ import {Record, Map} from 'immutable'
 
 
 const chartRecord = Record({
-  //data: [],
+  data: [],
   loading: false,
   loaded: false,
   start: '',
@@ -16,13 +16,13 @@ const chartRecord = Record({
 })
 
 const formRecord = Record({
-    price: '',
-    amount: ''
+    price: [],
+    amount: []
 })
 
 const ReducerState = Record({
   chartsData: new Map({}),
-  currentPair: ''
+  currentPair: []
 })
 
 // eslint-disable-next-line import/no-anonymous-default-export

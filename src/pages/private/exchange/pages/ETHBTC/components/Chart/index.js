@@ -15,71 +15,62 @@ class Chart extends Component {
   }
 
   componentDidMount() {
-    const { loadChart, pair } = this.props
+    const { loadChart, pair} = this.props
     loadChart(pair)
   }
   render() {
-    const { chartData, marketData, pair } = this.props
+    const { chartData, marketData, pair, t } = this.props
     if(chartData && chartData.loading) return <div className='trade-page__spinner-wrap'><MoonLoader color={'#1aba1a'}/></div>
     if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
     if(chartData && chartData.loaded && chartData.data && marketData) {
-      var ohlc = chartData.data.map(item => [item.date*1000, item.open, item.high, item.low, item.close])
-      var volume = chartData.data.map(item => [item.date*1000, item.volume])
-
+      var ohlc = chartData.data.map(item => [[item.date*10000], [item.open], [item.high], [item.low], [item.close]])
+      var volume = chartData.data.map(item => [[item.date*10000], [item.volume]])
+      var groupingUnits = [[
+        'week',             // unit name
+        [1]               // allowed multiples
+      ], [
+        'month',
+        [1, 2, 3, 4, 6]
+      ]]
       const options ={
+        credits:{
+          enabled: false
+        },
         rangeSelector: {
-          allButtonsEnabled: true,
+          type: 'datetime',
           enabled: true,
-          buttons:[{
-            type: 'month',
-            count: 1,
-            text: '1m'
-          }, {
-            type: 'month',
-            count: 3,
-            text: '3m'
-          }, {
-            type: 'month',
-            count: 6,
-            text: '6m'
-          }, {
-            type: 'ytd',
-            text: 'YTD'
-          }, {
-            type: 'year',
-            count: 1,
-            text: '1y'
-          }, {
-            type: 'all',
-            text: 'All'
-          }]
+          selected: 1
         },
         title: {
-          text: ''
+          text: 'График Цены'
         },
         navigator: {
           enabled: true,
-          series: {
-            data: []
-          }
+          series: [{
+            data: volume
+          }]
         },
-        tooltip: {split: true},
         legend: { enabled: false },
         yAxis: [{
           labels: {
-            align: 'right',
-            x: -3
+            position:{
+              align: 'right',
+              x: -2
+            }
           },
           title: {
-            text: 'OHLC'
+            text: `${t('private.exchange.trade.pair.price')}`
           },
           height: '60%',
-          lineWidth: 2
+          lineWidth: 2,
+          resize: {
+            enabled: true
+          }
         }, {
           labels: {
             align: 'right',
-            x: -3
+            x: -2
           },
           title: {
             text: 'Volume'
@@ -89,6 +80,10 @@ class Chart extends Component {
           offset: 0,
           lineWidth: 2
         }],
+
+        tooltip: {
+          split: true
+        },
         xAxis:{
           type: 'datetime',
           range: 30 * 24 * 3600 * 1000,
@@ -96,27 +91,25 @@ class Chart extends Component {
             day: '%e. %b'
           }
         },
-        plotOptions:{
-          series:{
-            turboThreshold:1000000
-          },
-          candlestick: {
-            color: 'red',
-            upColor: 'green'
-          }
-        },
+
         series:[{
           type: 'candlestick',
-          name: 'AAPL',
+          name: `${marketData.coin}`,
           data: ohlc,
-          id: 'dataseries',
           yAxis: 0,
+          dataGrouping: {
+            units: groupingUnits
+          }
+
         },{
           type: 'column',
-          name: 'Volume',
+          name: `${marketData.baseVolume}`,
           data: volume,
           yAxis: 1,
-          id: 'dataseries',
+          dataGrouping: {
+            units: groupingUnits
+          }
+
         }
         ]
       }
@@ -126,7 +119,7 @@ class Chart extends Component {
       options.series[0].data = ohlc
       options.series[1].data = volume
       return (
-        <div id='stock-chart' className='trade-page__chart'>
+        <div id='stock-chart'>
           <div className='stock-chart-headers'>
             <h3 className='stock-chart-headers__header'>{marketData.market} / {marketData.coin}</h3>
             <span className='stock-chart-headers__price'>Price: {marketData.last}</span>
@@ -134,7 +127,7 @@ class Chart extends Component {
             <span className='stock-chart-headers__volume'>Volume: {marketData.baseVolume}BTC</span>
           </div>
           <ChartWrap
-            container = {'stock'}
+            container = {'container'}
             options = {options}
             id = {pair}
           />

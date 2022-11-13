@@ -75,7 +75,7 @@
     "font-awesome": "^4.7.0",
     "format-currency": "^1.0.0",
     "gsap": "^3.9.1",
-    "highcharts": "^6.1.0",
+    "highcharts": "^10.3.1",
     "highcharts-react-official": "^3.1.0",
     "i18next-xhr-backend": "^3.2.2",
     "immutable": "^4.1.0",
