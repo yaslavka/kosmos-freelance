@@ -36,3 +36,41 @@
 .trade-page__chart{
   width: 100%;
 }
+.highcharts-background{
+  fill: none;
+}
+.highcharts-container {
+  position: relative;
+  overflow: hidden;
+  width: 1740px;
+  height: 400px;
+  text-align: left;
+  line-height: normal;
+  z-index: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  touch-action: manipulation;
+  outline: none;
+  font-family: Signika, serif;
+  background: url("https://www.highcharts.com/samples/graphics/sand.png");
+}
+.highcharts-axis-title{
+  color: rgb(102, 102, 102); fill: rgb(102, 102, 102);
+}
+.highcharts-a11y-proxy-button .highcharts-no-tooltip{
+  border-width: 0px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.001;
+  z-index: 999;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  position: absolute;
+  width: 23.9995px;
+  height: 22px;
+  left: 1657px;
+  top: 10px;
+}

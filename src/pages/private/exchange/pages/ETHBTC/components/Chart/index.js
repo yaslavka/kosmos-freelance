@@ -24,8 +24,8 @@ class Chart extends Component {
     if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
     if(chartData && chartData.loaded && chartData.data && marketData) {
-      var ohlc = chartData.data.map(item => [[item.date*10000], [item.open], [item.high], [item.low], [item.close]])
-      var volume = chartData.data.map(item => [[item.date*10000], [item.volume]])
+      var ohlc = chartData.data.map(item => [[item.date*100000], [item.open], [item.high], [item.low], [item.close]])
+      var volume = chartData.data.map(item => [[item.date*100000], [item.volume]])
       var groupingUnits = [[
         'week',             // unit name
         [1]               // allowed multiples
@@ -37,10 +37,12 @@ class Chart extends Component {
         credits:{
           enabled: false
         },
-        rangeSelector: {
-          type: 'datetime',
+        styledMode:{
           enabled: true,
-          selected: 1
+        },
+        rangeSelector: {
+          enabled: true,
+          selected: 1,
         },
         title: {
           text: 'График Цены'
@@ -53,11 +55,19 @@ class Chart extends Component {
         },
         legend: { enabled: false },
         yAxis: [{
+          dateTimeLabelFormats:{
+            millisecond: '%H:%M:%S.%L',
+            second: '%H:%M:%S',
+            minute: '%H:%M',
+            hour: '%H:%M',
+            day: '%e. %b',
+            week: '%e. %b',
+            month: '%b \'%y',
+            year: '%Y'
+          },
           labels: {
-            position:{
-              align: 'right',
-              x: -2
-            }
+            align: 'right',
+            x: -2
           },
           title: {
             text: `${t('private.exchange.trade.pair.price')}`
@@ -88,22 +98,37 @@ class Chart extends Component {
           type: 'datetime',
           range: 30 * 24 * 3600 * 1000,
           dateTimeLabelFormats: {
-            day: '%e. %b'
+            millisecond: '%H:%M:%S.%L',
+            second: '%H:%M:%S',
+            minute: '%H:%M',
+            hour: '%H:%M',
+            day: '%e. %b',
+            week: '%e. %b',
+            month: '%b \'%y',
+            year: '%Y'
           }
         },
-
+        plotOptions:{
+          series:{
+            turboThreshold:1000000
+          },
+          candlestick: {
+            color: 'red',
+            upColor: 'green'
+          }
+        },
         series:[{
           type: 'candlestick',
           name: `${marketData.coin}`,
           data: ohlc,
-          yAxis: 0,
+
           dataGrouping: {
             units: groupingUnits
           }
 
         },{
           type: 'column',
-          name: `${marketData.baseVolume}`,
+          name: `${marketData.coin}`,
           data: volume,
           yAxis: 1,
           dataGrouping: {
