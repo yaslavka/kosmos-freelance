@@ -41,6 +41,7 @@ class Chart extends Component {
           enabled: true,
         },
         rangeSelector: {
+          allButtonsEnabled: true,
           enabled: true,
           selected: 1,
         },

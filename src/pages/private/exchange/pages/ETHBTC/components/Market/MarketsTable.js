@@ -31,7 +31,7 @@ class MarketsTable extends Component {
             </thead>
           </table>
         </div>
-        <SimpleBar style={{ height: 150, width: '100%' }}>
+        <SimpleBar style={{ width: '100%', height:500 }}>
           <div className="viewport">
             <div className="overview" id="market_base_list">
               <div id="trade_market_wrapper" className="dataTables_wrapper no-footer">
@@ -62,7 +62,7 @@ class MarketsTable extends Component {
             </thead>
           </table>
         </div>
-        <SimpleBar style={{ height: 150, width: '100%' }}>
+        <SimpleBar style={{ width: '100%', height:500 }}>
           <div className="viewport">
             <div className="overview" id="market_base_list">
               <div id="trade_market_wrapper" className="dataTables_wrapper no-footer">
