@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Table.module.scss'
 
 import ReactPaginate from 'react-paginate'
+import {useTranslation} from "react-i18next";
 
 export default function Table({
   // eslint-disable-next-line react/prop-types
@@ -25,6 +26,7 @@ export default function Table({
     }
     return render
   }
+  const { t } = useTranslation('common');
 
   return (
     <div className={styles.TableContainer}>
@@ -47,8 +49,8 @@ export default function Table({
                   <div className={styles.Table_cell}>
                     {props[prop] === true || props[prop] === false
                       ? props[prop] === true
-                        ? 'Да'
-                        : 'Нет'
+                        ? `${t('private.StarTrek.Statistic.yes')}`
+                        : `${t('private.StarTrek.Statistic.no')}`
                       : renderValue(props[prop], prop, props)}
                   </div>
                 </div>
@@ -58,7 +60,7 @@ export default function Table({
         ) : (
           <div className={styles.Table_row}>
             <td colSpan={columns && Object.keys(columns).length} className={styles.Table_NoData}>
-              Нет данных
+              {t('private.StarTrek.Statistic.NoData')}
             </td>
           </div>
         )}

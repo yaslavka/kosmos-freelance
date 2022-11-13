@@ -1,7 +1,7 @@
 {
   "balance": {
-    "before": 2000,
-    "after": 2000
+    "before": 1000,
+    "after": 1000
   },
   "denomination": 1,
   "init": {
@@ -224,21 +224,21 @@
     "start_symbols": {
       "0": {
         "0": {
-          "code": 3
+          "code": 4
         },
         "1": {
-          "code": 6
+          "code": 8
         },
         "2": {
-          "code": 8
+          "code": 0
         }
       },
       "1": {
         "0": {
-          "code": 0
+          "code": 3
         },
         "1": {
-          "code": 6
+          "code": 8
         },
         "2": {
           "code": 5
@@ -246,21 +246,21 @@
       },
       "2": {
         "0": {
-          "code": 4
+          "code": 0
         },
         "1": {
-          "code": 8
+          "code": 5
         },
         "2": {
-          "code": 5
+          "code": 6
         }
       },
       "3": {
         "0": {
-          "code": 8
+          "code": 4
         },
         "1": {
-          "code": 4
+          "code": 8
         },
         "2": {
           "code": 5
@@ -268,10 +268,10 @@
       },
       "4": {
         "0": {
-          "code": 5
+          "code": 6
         },
         "1": {
-          "code": 4
+          "code": 7
         },
         "2": {
           "code": 8

@@ -8,14 +8,18 @@ import {useDispatch, useSelector} from "react-redux";
 import * as actions from '../../../../actions/casino.actions';
 import {isEmpty} from "lodash-es";
 import List from "./list";
+import {useTranslation} from "react-i18next";
+
 
 function Myinvest() {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch();
   const list = useSelector(state => state.casino.active.list);
 
   useEffect(() => {
     dispatch(actions.casinoActiveList());
   }, [dispatch]);
+
 
   return (
     <section className={cl.investbox}>
@@ -27,39 +31,34 @@ function Myinvest() {
           <Col xl={8} style={{marginLeft: '14%'}}>
             <div className="inset_page">
               <div className="startrek__title1">
-                <h1 className={cl.title}>Мои инвестиции</h1>
+                <h1 className={cl.title}>{t('private.investbox.Myinvest.title')}</h1>
               </div>
-              <p className={cl.descr}>Вкладывайте свободные Средства в InvestBox! Это инструмент для получения
-                дополнительного дохода</p>
+              <p className={cl.descr}>{t('private.investbox.descr')}</p>
               <div className="investbox_page">
                 <ul className={cl.investListText}>
                   <li>
                     <span>
-                      Это НЕ пирамида/HYIP, все платежи делаются из специального фонда.
+                      {t('private.investbox.text1')}
                     </span>
 
                   </li>
                   <li>
                     <span>
-                      InvestBox может менять статус с «Активен» на «Нет монет», но вы можете закрыть инвестицию в любой момент, это 100% безопасно.
+                      {t('private.investbox.text2')}
                     </span>
 
                   </li>
                   <li>
-                    <span>InvestBox со статусом «новый» - невозможно закрыть, вы можете получать только месячный процент.</span>
+                    <span>{t('private.investbox.text3')}</span>
                   </li>
                 </ul>
                 <div className="clear"/>
                 <div className={cl.listLinks}>
                   <Link to={routes.starsUp} className="active">
-                    Инвестиционный план
+                    {t('private.investbox.starsUp')}
                   </Link>
                   <span>/</span>
-                  <Link to={routes.myinvestments}>Мои инвестиции</Link>
-                  <span>/</span>
-                  <Link to={routes.investbox} className="active">
-                    история инвестиций
-                  </Link>
+                  <Link to={routes.myinvestments}>{t('private.investbox.myinvestments')}</Link>
                 </div>
                 <div className="clear"/>
                 <div className="create_new">
@@ -89,38 +88,39 @@ function Myinvest() {
                                           rowSpan="1"
                                           colSpan="1"
                                         >
-                                          <div className={cl.theadEl}>Пакет</div>
+                                          <div className={cl.theadEl}>{t('private.investbox.valuta')}</div>
 
                                         </th>
                                         <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Процент</div>
+                                          <div className={cl.theadEl}>{t('private.investbox.procent')}</div>
                                         </th>
                                         <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Период</div>
+                                          <div className={cl.theadEl}>{t('private.investbox.period')}</div>
 
                                         </th>
                                         <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Сумма</div>
+                                          <div className={cl.theadEl}>{t('private.investbox.Myinvest.sum')}</div>
 
                                         </th>
                                         <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Статус</div>
+                                          <div className={cl.theadEl}>{t('private.investbox.Myinvest.status')}</div>
 
                                         </th>
                                         <th className={cl.sort} rowSpan="1" colSpan="1">
-                                          <div className={cl.theadEl}>Действия</div>
+                                          <div className={cl.theadEl}>{t('private.investbox.Myinvest.action')}</div>
 
-                                        </th>
-                                        <th className={cl.sort} rowSpan="1" colSpan="1">
-
-                                          &nbsp;
                                         </th>
                                       </tr>
                                       </thead>
                                       {!isEmpty(list) ? (
-                                        list.map(draw => (
-                                          <tbody className={cl.tbody} key={draw.id}>
+                                        list.map(draw =>(
+                                          <tbody className={cl.tbody}>
+                                          <tr>
+                                          <td>руб</td>
+                                          <td>5%</td>
+                                          <td>{t('private.investbox.period')}</td>
                                           <List draw={draw}/>
+                                          </tr>
                                           </tbody>
                                         ))
                                       ) : (
@@ -131,7 +131,7 @@ function Myinvest() {
                                             colSpan="7"
                                             className="dataTables_empty"
                                           >
-                                            Нет записей
+                                            {t('private.investbox.action')}
                                           </td>
                                         </tr>
                                         </tbody>
@@ -154,7 +154,7 @@ function Myinvest() {
                                 tabIndex="0"
                                 id="investbox_packs_list_previous"
                               >
-                                Назад
+                                {t('private.investbox.btnPag')}
                               </Button>
                               <Button
                                 className={cl.btnPag}
@@ -163,7 +163,7 @@ function Myinvest() {
                                 tabIndex="0"
                                 id="investbox_packs_list_next"
                               >
-                                Далее
+                                {t('private.investbox.next')}
                               </Button>
                             </div>
                             <div className="clear"/>

@@ -23,12 +23,12 @@ class OrderBook extends Component{
     loadOrders(pair)
   }
   render() {
-    const { pair, chartData } = this.props
+    const { pair, chartData, t } = this.props
     if (chartData && chartData.orders){
       const asks = chartData.orders.asks
       return (
         <div className="sell_orders_box">
-          <Orders type={'sell'} data={asks} pair={pair}/>
+          <Orders type={'sell'} data={asks} pair={pair} t={t}/>
         </div>
       )
     }else {

@@ -11,78 +11,75 @@ import logo from '../../../scss/media/business.svg'
 import luckyStar from '../../../scss/media/stonks.svg'
 import starsUp from '../../../scss/media/marketing.svg'
 import bbb from '../../../scss/media/gamepad.svg'
-
-// import megaphone from 'static/icons/megaphone.svg';
 import cap from '../../../scss/media/bot.svg'
 import chat from '../../../scss/media/chat-met.svg'
-// import chat from 'static/icons/chat.svg';
-// import reviews from 'static/icons/reviews.svg';
 import gear from '../../../scss/media/settings-met.svg'
 import leader from '../../../scss/media/mentor-blue.svg'
+import {useTranslation} from "react-i18next";
 
 const navbarLinks = [
   {
-    label: 'Наставник',
+    label: 'leader',
     route: routes.leader,
     isDisabled: false,
     icon: leader,
   },
   {
-    label: 'Кабинет',
+    label: 'dashboard',
     route: routes.dashboard,
     isDisabled: false,
     icon: user,
   },
   {
-    label: 'Кошелек',
+    label: 'finances',
     route: routes.finances,
     isDisabled: false,
     icon: money,
   },
   {
-    label: 'Новости',
+    label: 'news',
     route: routes.news,
     isDisabled: false,
     icon: news,
   },
   {
-    label: 'Пегас mini',
+    label: 'matrixmini',
     route: routes.matrixmini,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Пегас uno',
+    label: 'matrixs',
     route: routes.matrixs,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Пегас',
+    label: 'tables',
     route: routes.tables,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Аида',
+    label: 'premiumStars',
     route: routes.premiumStars,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Андромеда',
+    label: 'superStars',
     route: routes.superStars,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Млечный путь',
+    label: 'starTrek',
     route: routes.starTrek,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Млечный путь v2.0',
+    label: 'milkyway',
     route: routes.milkyway,
     isDisabled: false,
     icon: logo,
@@ -94,33 +91,33 @@ const navbarLinks = [
     icon: starsUp ,
   },
   {
-    label: 'Investbox',
+    label: 'starsUp',
     route: routes.starsUp,
     isDisabled: false,
     icon: luckyStar,
   },
   {
-    label: 'Игры',
+    label: 'casino',
     route: routes.casino,
     isDisabled: false,
     classImg: styles.gamepad,
     icon: bbb,
   },
   {
-    label: 'О нас',
+    label: 'aboutUs',
     route: routes.aboutUs,
     isDisabled: false,
     classImg: styles.questImg,
     icon: question,
   },
   {
-    label: 'Рефераллы',
+    label: 'team',
     route: routes.team,
     isDisabled: false,
     icon: team,
   },
   {
-    label: 'Продвижение',
+    label: 'smm',
     route: routes.smm,
     isDisabled: false,
     icon: team,
@@ -132,13 +129,13 @@ const navbarLinks = [
   //   icon: megaphone,
   // },
   {
-    label: 'Торговый бот',
+    label: 'education',
     route: routes.education,
     isDisabled: false,
     icon: cap,
   },
   {
-    label: 'Чат участников',
+    label: 'chat',
     isDisabled: false,
     route: routes.chat,
     icon: chat,
@@ -150,7 +147,7 @@ const navbarLinks = [
   //   icon: reviews,
   // },
   {
-    label: 'Настройки',
+    label: 'settings',
     route: routes.settings,
     isDisabled: false,
     icon: gear,
@@ -160,6 +157,7 @@ const navbarLinks = [
 
 
 function NavBar() {
+  const { t } = useTranslation('common');
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -173,7 +171,8 @@ function NavBar() {
           activeClassName={styles.active}
           onClick={()=>document.documentElement.scrollTo({top: 0, behavior: 'smooth'})}
         >
-          <img className={[styles.icon, classImg].join` `} src={icon} alt="" /> <span className=''>{label.replace(/ /g, "\u00a0")}</span>
+          <img className={[styles.icon, classImg].join` `} src={icon} alt="" />
+          <span className=''>{t(`private.navlinks.${label.replace(/ /g, "\u00a0")}`)}</span>
         </NavLink>
       ))}
       <span className={isOpen ? [styles.bottonArrow, styles.bottomActive].join` ` : styles.bottonArrow} />

@@ -4,21 +4,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import Timer, { zeroPad } from 'react-countdown'
 import confirm from 'reactstrap-confirm'
 import { Link } from 'react-router-dom'
-
 import r from '../../../constants/routes.constants'
 import * as actions from '../../../actions/milkyway.actions'
-//import previewText from '../../../scss/media/startrek-logo.f688a0a8.svg'
 import NavBar from '../../../components/layout/Navbar'
-//import UserInfo from '../../../components/UserInfo'
 import Button from '../../../components/Button'
-
 import Statisticsmilkyway from './Statistics'
-//import Documents from './Documents'
 import Summarymilkyway from './Summary'
 import { Spinner } from 'react-bootstrap'
 import MyViewElements from '../../../components/MyViewElements/MyViewElement'
+import {useTranslation} from "react-i18next";
 
 function Milkyway() {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const timer = useSelector((state) => state.milkyway.timer)
   const statistics = useSelector((state) => state.milkyway.statistics)
@@ -32,11 +29,11 @@ function Milkyway() {
 
   const handleButtonClick = async () => {
     let result = await confirm({
-      title: 'Приобретение планеты',
-      message: 'Вы хотите приобрести место в очереди?',
-      confirmText: 'Подтвердить',
+      title: `${t('private.StarTrek.result.title')}`,
+      message: `${t('private.StarTrek.result.message')}`,
+      confirmText: `${t('private.StarTrek.result.confirmText')}`,
       confirmColor: 'danger',
-      cancelText: 'Отмена',
+      cancelText: `${t('private.StarTrek.result.cancelText')}`,
       cancelColor: 'link text-muted',
     })
 
@@ -59,7 +56,7 @@ function Milkyway() {
         </Col>
         <Col xl={8}>
           <MyViewElements element={
-          <div className="root-page-title color-milkey">Млечный путь v2.0</div>
+          <div className="root-page-title color-milkey">{t('private.StarTrek.title')} v2.0</div>
           }/>
 
           <Spinner isLoading={isLoading}>
@@ -70,7 +67,7 @@ function Milkyway() {
             <Statisticsmilkyway />
             <div className="text-center">
               <Link className='link-blue' to={r.milkywayPlanets} >
-                Мои места
+                {t('private.StarTrek.link.starTrekPlanets')}
               </Link>
               {/* TODO: delete all functions */}
               <Button
@@ -91,17 +88,17 @@ function Milkyway() {
                 ) : (
                   `${
                     statistics?.myPlanet > 0
-                      ? 'Приобрести место'
-                      : 'Активировать Млечный путь v2.0'.toLocaleUpperCase()
+                      ? `${t('private.StarTrek.link.statistics')}`
+                      : `${t('private.StarTrek.link.myPlanet')} v2.0`.toLocaleUpperCase()
                   }`
                 )}
               </Button>
             </div>
-            <div className="text-center">
-              <Link className='link-blue' to={r.milkywayStatistic}>
-                Статистика
-              </Link>
-            </div>
+            {/*<div className="text-center">*/}
+            {/*  <Link className='link-blue' to={r.milkywayStatistic}>*/}
+            {/*    {t('private.StarTrek.link.starTrekStatistic')}*/}
+            {/*  </Link>*/}
+            {/*</div>*/}
 
 
           </Spinner>

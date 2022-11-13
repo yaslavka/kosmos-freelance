@@ -111,11 +111,7 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: underline;
-}
+
 .vkc{
   display: inline-block; width: 120px; vertical-align: top
 }

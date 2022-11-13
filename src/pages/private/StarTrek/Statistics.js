@@ -3,15 +3,17 @@ import { useSelector } from 'react-redux'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
 import { formatterNumber } from '../../../utils'
 import cl from './StarTrek.module.css';
+import {useTranslation} from "react-i18next";
 
 function Statistics() {
+  const { t } = useTranslation('common');
   const statistics = useSelector((state) => state.startrek.statistics)
   return (
     statistics && (
       <ul className={cl.statList}>
         <MyViewElement element={
         <li className={cl.statItem}>
-        <div>Всего куплено Мест:</div>
+        <div>{t('private.StarTrek.statItem')}</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.allPlanet)
@@ -23,7 +25,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-          <div>Мои места:</div>
+          <div>{t('private.StarTrek.myp')}</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.myPlanet)
@@ -36,7 +38,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-          <div>Бюджет :</div>
+          <div>{t('private.StarTrek.allComet')}</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.allComet)
@@ -49,7 +51,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-          <div>Общий Баланс Моих Мест:</div>
+          <div>{t('private.StarTrek.myComet')}</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.myComet)
@@ -62,7 +64,7 @@ function Statistics() {
         <MyViewElement element={
 
         <li className={cl.statItem}>
-        <div>Активних Мест:</div>
+        <div>{t('private.StarTrek.active')}</div>
           <div className="startrek__counter">
             {formatterNumber
               .format(statistics.active)

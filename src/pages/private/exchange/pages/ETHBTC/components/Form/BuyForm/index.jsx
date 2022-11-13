@@ -10,11 +10,11 @@ class BuyFormComponent extends Component{
     marketData: PropTypes.object
   };
   render() {
-    const { marketData, pair, userInfo } = this.props
+    const { marketData, pair, userInfo, t } = this.props
     if (marketData){
       return (
         <div className="col_1">
-          <Form1 orderType={'buy'} market = {marketData} pair={pair} userInfo={userInfo}/>
+          <Form1 orderType={'buy'} market = {marketData} pair={pair} userInfo={userInfo} t={t}/>
         </div>
 
       )

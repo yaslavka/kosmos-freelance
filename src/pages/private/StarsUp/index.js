@@ -5,9 +5,11 @@ import routes from '../../../constants/routes.constants'
 import {Link} from 'react-router-dom'
 import {Col, Row} from "reactstrap";
 import {api} from "../../../api";
+import {useTranslation} from "react-i18next";
 
 
 const StarsUp = () => {
+  const { t } = useTranslation('common');
   const initialState = { amount: '' }
   const [userData, setUserData] = useState(initialState)
   const { amount } = userData
@@ -33,38 +35,34 @@ const StarsUp = () => {
             <div className="content">
               <div className={cl.investPage}>
                 <div className="startrek__title1">
-                  <h1 className={cl.title}>Инвистиционные планы</h1>
+                  <h1 className={cl.title}>{t('private.investbox.title')}</h1>
                 </div>
-                <p className={cl.descr}>Вкладывайте свободные Средства в InvestBox! Это инструмент для получения дополнительного дохода</p>
+                <p className={cl.descr}>{t('private.investbox.descr')}</p>
                 <div className={cl.investBlock}>
                   <ul className={cl.investListText}>
                     <li>
                     <span>
-                      Это НЕ пирамида/HYIP, все платежи делаются из специального фонда.
+                      {t('private.investbox.text1')}
                     </span>
 
                     </li>
                     <li>
                     <span>
-                      InvestBox может менять статус с «Активен» на «Нет монет», но вы можете закрыть инвестицию в любой момент, это 100% безопасно.
+                      {t('private.investbox.text2')}
                     </span>
 
                     </li>
                     <li>
-                      <span>InvestBox со статусом «новый» - невозможно закрыть, вы можете получать только месячный процент.</span>
+                      <span>{t('private.investbox.text3')}</span>
                     </li>
                   </ul>
                   <div className="clear"/>
                   <div className={cl.listLinks}>
                     <Link to={routes.starsUp} className="active">
-                      Инвестиционный план
+                      {t('private.investbox.starsUp')}
                     </Link>
                     <span>/</span>
-                    <Link to={routes.myinvestments}>Мои инвестиции</Link>
-                    <span>/</span>
-                    <Link to={routes.investbox} className="active">
-                      история инвестиций
-                    </Link>
+                    <Link to={routes.myinvestments}>{t('private.investbox.myinvestments')}</Link>
                   </div>
                   <div className="clear"/>
                   <div className="create_new">
@@ -86,45 +84,42 @@ const StarsUp = () => {
                                         id="investbox_boxes_list"
                                         className={cl.tableMain}
                                         role="grid">
-
                                         <thead className={cl.thead}>
-
                                         <tr role="row">
-
                                           <th
                                             className={cl.sort}
                                             rowSpan="1"
                                             colSpan="1"
                                           >
-                                            <div className={cl.theadEl}>Валюта</div>
+                                            <div className={cl.theadEl}>{t('private.investbox.valuta')}</div>
                                           </th>
                                           <th
                                             className={cl.sort}
                                             rowSpan="1"
                                             colSpan="1"
                                           >
-                                            <div className={cl.theadEl}>Процент</div>
+                                            <div className={cl.theadEl}>{t('private.investbox.procent')}</div>
                                           </th>
                                           <th
                                             className={cl.sort}
                                             rowSpan="1"
                                             colSpan="1"
                                           >
-                                            <div className={cl.theadEl}>Период</div>
+                                            <div className={cl.theadEl}>{t('private.investbox.period')}</div>
                                           </th>
                                           <th
                                             className={cl.sort}
                                             rowSpan="1"
                                             colSpan="1"
                                           >
-                                            <div className={cl.theadEl}>Минимальная сумма</div>
+                                            <div className={cl.theadEl}>{t('private.investbox.minimalsum')}</div>
                                           </th>
                                           <th
                                             className={cl.sort}
                                             rowSpan="1"
                                             colSpan="1"
                                           >
-                                            <div className={cl.theadEl}>Максимальная сумма</div>
+                                            <div className={cl.theadEl}>{t('private.investbox.maximalsum')}</div>
                                           </th>
                                           <th className={cl.sort} rowSpan="1" colSpan="1">
                                             <div className={cl.theadEl}>&nbsp;</div>
@@ -134,9 +129,9 @@ const StarsUp = () => {
 
                                         <tbody className={cl.tbody}>
                                         <tr role="row" className="even">
-                                          <td>Руб</td>
+                                          <td>RUB</td>
                                           <td>5%</td>
-                                          <td>В месяц</td>
+                                          <td>{t('private.investbox.mouns')}</td>
                                           <td>
                                             <a role={"button"}>
                                               {10}
@@ -158,7 +153,7 @@ const StarsUp = () => {
                                                   value={amount}
                                                   className={cl.inputValue}
                                                 />
-                                                <button type="submit" className={cl.nameInput}>Инвестировать</button>
+                                                <button type="submit" className={cl.nameInput}>{t('private.investbox.nameInput')}</button>
                                               </div>
                                             </form>
                                           </td>

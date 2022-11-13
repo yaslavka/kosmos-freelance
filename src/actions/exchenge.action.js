@@ -16,7 +16,7 @@ export function loadAllMarkets() {
   }
 }
 
-export function loadChart(pair='BTC_XRP', end = new Date().getTime()/1000, start = 1405699200, period=86400) {
+export function loadChart(pair=[], end = new Date().getTime()/1000, start = 1405699200, period=86400) {
   return {
     type: LOAD_CHART,
     service: 'charts',

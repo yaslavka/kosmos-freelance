@@ -3,26 +3,20 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { zeroPad } from 'react-countdown'
 import { Row, Col, Container } from 'reactstrap'
-//import ReactPaginate from 'react-paginate'
 import confirm from 'reactstrap-confirm'
 import isEmpty from 'lodash-es/isEmpty'
 import { declOfNum } from '../../../utils'
 import dayjs from 'dayjs'
-
-
 import * as actions from '../../../actions/startrek.actions'
-//import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
-//import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
-//import MyPlanetsElement from './MyPlanetsElement'
 import NavBar from '../../../components/layout/Navbar'
-//import UserInfo from '../../../components/UserInfo'
 import Button from '../../../components/Button'
 import Icon from '../../../components/Icon'
-//import { Spinner } from 'react-bootstrap'
+import {useTranslation} from "react-i18next";
 
 
 
 function MyPlanets() {
+  const { t } = useTranslation('common');
   const history = useHistory()
   const dispatch = useDispatch()
   const startrekState = useSelector((state) => state.startrek)
@@ -56,15 +50,15 @@ function MyPlanets() {
   const handleOnPlanetsUpdate = async () => {
     const planetLength = selected.length
     let result = await confirm({
-      title: 'Продление мест',
-      message: `Вы хотите продлить ${planetLength} ${declOfNum(planetLength, [
-        'место',
-        'места',
-        'мест',
-      ])}, на сумму ${planetLength * 2160} RUB`,
-      confirmText: 'Подтвердить',
+      title:`${t('private.StarTrek.MyPlanets.result.title')}`,
+      message: `${t('private.StarTrek.MyPlanets.result.message')} ${planetLength} ${declOfNum(planetLength, [
+        `${t('private.StarTrek.MyPlanets.result.variant1')}`,
+        `${t('private.StarTrek.MyPlanets.result.variant2')}`,
+        `${t('private.StarTrek.MyPlanets.result.variant3')}`,
+      ])}, ${t('private.StarTrek.MyPlanets.result.variant4')} ${planetLength * 2160} RUB?`,
+      confirmText: `${t('private.StarTrek.MyPlanets.result.confirmText')}`,
       confirmColor: 'danger',
-      cancelText: 'Отмена',
+      cancelText: `${t('private.StarTrek.MyPlanets.result.cancelText')}`,
       cancelColor: 'link text-muted',
     })
 
@@ -111,22 +105,7 @@ function MyPlanets() {
       }
 
   },[list, activePlanet])
-
-
   console.log(list)
-
-
-
-
-
-
-  // useMemo(()=>{
-  //   if (list[activePlanet] !== undefined) {
-  //     console.log(list[activePlanet], viewSolary)
-  //     // setInfoPlanet({...infoPlanet, id: list[activePlanet].id, namePlanet: viewSolary[activePlanet].namePlanet , frozen: !list[activePlanet].frozen ? 'Откл':'Вкл', comets: list[activePlanet].comets, dateCreate: list[activePlanet].dateCreate, sum: list[activePlanet].sum, level: list[activePlanet].level})
-  //   }
-  // },[list, activePlanet])
-
   let handleOnSetPlanetForUpdate = () => dispatch(actions.setPlanetForUpdate(infoPlanet.id))
 
 
@@ -151,20 +130,20 @@ function MyPlanets() {
                 <Icon iconName="back" />
               </Button>
             </div>
-            <h1 className="root-page-title color-solar">Моя Солнечная системма</h1>
+            <h1 className="root-page-title color-solar">{t('private.StarTrek.MyPlanets.title')}</h1>
             <div className="solar-list-info">
               <ul className="list-info-s">
                 <li className='item-info-s'>
-                  Имя планеты: {infoPlanet.namePlanet}
+                  {t('private.StarTrek.MyPlanets.namePlanet')} {infoPlanet.namePlanet}
                 </li>
                 <li className='item-info-s'>
                   №: {infoPlanet.id}
                 </li>
                 <li className='item-info-s'>
-                  Дата создания: {infoPlanet.dateCreate}
+                  {t('private.StarTrek.MyPlanets.dateCreate')} {infoPlanet.dateCreate}
                 </li>
                 <li className='item-info-s'>
-                  Уровень: {infoPlanet.level}
+                  {t('private.StarTrek.MyPlanets.level')} {infoPlanet.level}
                 </li>
               </ul>
             </div>
@@ -188,7 +167,7 @@ function MyPlanets() {
                 {!isLoading && (
                   <div className="mt-3 btn-clear-block">
                     <btn className="btn-clear-space" onClick={handleSelectAllOnPage}>
-                      {selected.length !== list.length ? 'Выбрать' : 'Убрать'} все
+                      {selected.length !== list.length ? `${t('private.StarTrek.MyPlanets.selected')}` : `${t('private.StarTrek.MyPlanets.space')}`} {t('private.StarTrek.MyPlanets.all')}
                     </btn>
                   </div>
                 )}
@@ -200,7 +179,7 @@ function MyPlanets() {
                     loading={isUpdateLoading}
                     className={'btn-clear-space'}
                   >
-                    Продлить выбранные
+                    {t('private.StarTrek.MyPlanets.button')}
                   </button>
                 </div>
                 }
@@ -209,7 +188,7 @@ function MyPlanets() {
 
             :
             <Col>
-              <h4 className="text-center mb-4 mt-4">Солнечная системма не активирована</h4>
+              <h4 className="text-center mb-4 mt-4">{t('private.StarTrek.MyPlanets.solar')}</h4>
             </Col>
           }
 

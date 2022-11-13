@@ -25,82 +25,43 @@ function Footer() {
           </div>
         <div className={cl.footerleft}>
         <div className={cl.footerBottom}>
-          <a className="footer__contract-offer" download="Договор оферты" href={contractOffer}>
-            {t('Договор оферты')}
+          <a className="footer__contract-offer" download={t('mainPage.footer.links.contractOffer')} href={contractOffer}>
+            {t('mainPage.footer.links.contractOffer')}
           </a>
           <a
             className="footer__contract-offer"
-            download={t('Политика конфендициальности')}
+            download={t('mainPage.footer.links.privacyPolicy')}
             href={privacyPolicy}
           >
-            {t('Политика конфендициальности')}
+            {t('mainPage.footer.links.privacyPolicy')}
           </a>
           <a
             className="footer__contract-offer"
-            download={t('Пользовательское соглашение')}
+            download={t('mainPage.footer.links.termsOfUse')}
             href={termsOfUse}
           >
-            {t('Пользовательское соглашение')}
+            {t('mainPage.footer.links.termsOfUse')}
           </a>
-          {/* <a
-            className="footer__bottom-box"
-            href="https://www.free-kassa.ru/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="https://www.free-kassa.ru/img/fk_btn/23.png" alt="" />
-          </a> */}
-          {/* <div className="footer__bottom-box payeer-logo">
-            <img src={payeerLogo} alt="" />
-          </div> */}
         </div>
         <div className={cl.footerSoc}>
-          {/* <a
-            className={cl.footerLinkBlock}
-            href="https://t.me/kosmosmatrix"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <span>tg&nbsp;chat -</span>
-            <span className={[cl.icon, cl.tg].join` `}></span>
-          </a> */}
-
           <a
             className={cl.footerLinkBlock}
             href="https://t.me/kosmosmatrix"
             rel="noreferrer"
             target="_blank"
           >
-
-            {/* <span>tg&nbsp;media -</span> */}
             <span className={[cl.icon, cl.tg].join` `}/>
           </a>
-
           <a
             className={cl.footerLinkBlock}
             href="https://t.me/kosmosmatrix"
             rel="noreferrer"
             target="_blank"
           >
-
-            {/* <span>inst -</span> */}
-            <span className={[cl.icon, cl.inst].join` `}/>
-          </a>
-
-          <a
-            className={cl.footerLinkBlock}
-            href="https://t.me/kosmosmatrix"
-            rel="noreferrer"
-            target="_blank"
-          >
-
-            {/* <span>youtube -</span> */}
             <span className={[cl.icon, cl.yb].join` `}/>
           </a>
 
           <a className={cl.footerLinkBlock} href="/" rel="noreferrer" target="_blank">
-
-            {/* <span>vk -</span> */}
             <span className={[cl.icon, cl.vk].join` `}/>
           </a>
         </div>

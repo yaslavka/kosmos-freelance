@@ -8,9 +8,11 @@ import video from '../../../scss/media/leader-poster-video.56a4c9bf.jpg'
 
 import NavBar from '../../../components/layout/Navbar'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
-//import UserInfo from '../../../components/UserInfo'
+import {useTranslation} from "react-i18next";
+
 
 function Leader() {
+  const { t } = useTranslation('common');
   const userInfo = useSelector((state) => state.app.user)
   return (
     <Container className="root-page">
@@ -20,7 +22,7 @@ function Leader() {
         </Col>
         <Col xl={8}>
 
-          <MyViewElement element={<h1 className="root-page-title-m">Наставник</h1>}/>
+          <MyViewElement element={<h1 className="root-page-title-m">{t('private.leader.title')}</h1>}/>
           {userInfo && (
             <>
             <MyViewElement element={
@@ -47,7 +49,7 @@ function Leader() {
                   <div className="card__body">
                     <div className="list-info list-info--horizontal">
                       <div className="list-info__group">
-                        <div className="list-info__label">Telegram:</div>
+                        <div className="list-info__label">{t('private.leader.links3')}</div>
                         <div className="list-info__value">
                           {userInfo.referal.telegram ? (
                             <a
@@ -63,7 +65,7 @@ function Leader() {
                         </div>
                       </div>
                       <div className="list-info__group">
-                        <div className="list-info__label">ВКонтакте: </div>
+                        <div className="list-info__label">{t('private.leader.links')}</div>
                         <div className="list-info__value">
                           {userInfo.referal.vkontakte ? (
                             <a
@@ -79,7 +81,7 @@ function Leader() {
                         </div>
                       </div>
                       <div className="list-info__group">
-                        <div className="list-info__label">Instagram:</div>
+                        <div className="list-info__label">{t('private.leader.links2')}</div>
                         <div className="list-info__value">
                           {userInfo.referal.instagram ? (
                             <a
@@ -104,7 +106,7 @@ function Leader() {
                 <div className="card__header">
                   <div className="card__header-left">
                   <MyViewElement element={
-                    <h3 className="card__title card__title-info">Kosmo_ЧАТ</h3>
+                    <h3 className="card__title card__title-info">{t('private.leader.chat')}</h3>
                   }/>
 
                   </div>
@@ -112,17 +114,16 @@ function Leader() {
                 <div className="card__body">
                 <MyViewElement element={
                   <span className="card__title-body">
-                    Хочешь быть в курсе всех новостей, оперативно отслеживать все события и
-                    новых продуктов? Специально для тебя у нас есть KosmoЧАТ,{' '}
+                    {t('private.leader.chat1')}{' '}
                   </span>
                   }/>
                 <MyViewElement element={
                   <div className='card__btn-strong'>
                     <strong className='card__strong'>
-                      ОБЯЗАТЕЛЬНО вступай в него нажав на кнопку ниже!
+                      {t('private.leader.chat2')}
                     </strong>
                     <Button tag="a" color="primary" href={`https://t.me/kosmosmatrix`} className='card__btn'>
-                      Вступить
+                      {t('private.leader.button')}
                       <span></span><span></span><span></span><span></span>
                     </Button>
                   </div>
@@ -136,7 +137,7 @@ function Leader() {
                   <div className="card__header-left">
                   <MyViewElement element={
 
-                    <h3 className="card__title card__title-info">Обо мне</h3>
+                    <h3 className="card__title card__title-info">{t('private.leader.info')}</h3>
                   }/>
 
                   </div>

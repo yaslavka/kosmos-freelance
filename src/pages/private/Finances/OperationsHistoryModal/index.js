@@ -6,9 +6,11 @@ import styles from './OperationsHistoryModal.module.scss'
 import { api } from '../../../../api'
 
 import Table from '../../../../components/Table'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 export default function OperationsHistoryModal({ onClose }) {
+  const { t } = useTranslation('common');
   const [operationsList, setOperationsList] = useState(null)
   const [currentOperationsPage, setCurrentOperationsPage] = useState(0)
 
@@ -52,7 +54,7 @@ export default function OperationsHistoryModal({ onClose }) {
           </Row>
           <Row>
             <Col>
-              <h1 className={styles.mainTitle}>История операций</h1>
+              <h1 className={styles.mainTitle}>{t('private.finances.hystory')}</h1>
             </Col>
           </Row>
           <Row>
@@ -60,12 +62,12 @@ export default function OperationsHistoryModal({ onClose }) {
               {operationsList && (
                 <Table
                   columns={{
-                    user: 'Кому',
-                    type: 'Тип операции',
-                    amount: 'Сумма',
-                    status: 'Статус',
-                    date: 'Дата',
-                    time: 'Время',
+                    user: `${t('private.finances.user')}`,
+                    type: `${t('private.finances.type')}`,
+                    amount:`${t('private.finances.amount')}`,
+                    status:`${t('private.finances.status')}`,
+                    date:`${t('private.finances.date')}`,
+                    time:`${t('private.finances.time')}`,
                   }}
                   data={operationsList.items}
                   count={operationsList.count}

@@ -1,11 +1,12 @@
 import React from "react";
-import cl from "../StarsUp.module.css";
-import confirm from "reactstrap-confirm";
-import * as actions from "../../../../actions/casino.actions";
 import {useDispatch} from "react-redux";
+import * as actions from '../../../../actions/casino.actions';
+import confirm from "reactstrap-confirm";
 import {useTranslation} from "react-i18next";
+import cl from './../StarsUp.module.css';
 
-function List({draw}){
+
+function Cancel({draw}){
   const { t } = useTranslation('common');
   const dispatch = useDispatch();
   const {id}=draw
@@ -20,27 +21,13 @@ function List({draw}){
     });
 
     if (result) {
-      dispatch(actions.casinoDrawCancel((id)));
+      dispatch(actions.casinoDrawCancel(id));
     }
   };
   return(
     <>
-      <td>
-        <a>
-          {draw.summ}
-        </a>
-      </td>
-      <td>
-        <a>
-          {draw.status}
-        </a>
-      </td>
-      <td>
-        <div className="create_new2" onClick={handleCancelDraw} key={id}>
-          <button type="submit" className={cl.nameInput}>{t('private.investbox.cencell')}</button>
-        </div>
-      </td>
+      <button className={cl.nameInput} onClick={handleCancelDraw} key={draw.id}>{t('private.investbox.cencell')}</button>
     </>
   )
 }
-export default List
+export default Cancel

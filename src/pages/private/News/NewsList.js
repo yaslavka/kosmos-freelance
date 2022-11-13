@@ -10,8 +10,10 @@ import * as actions from '../../../actions/news.actions'
 import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
 import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
+import {useTranslation} from "react-i18next";
 
 function NewsList() {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const list = useSelector((state) => state.news.list)
   const { limit } = useSelector((state) => state.news.query)
@@ -29,11 +31,17 @@ function NewsList() {
     <>
       {!isEmpty(list) ? (
         <Row>
-          {list.map(({ id, image, ruTitle, ruDescription }) => (
+          {list.map(({ id, image, ruTitle, ruDescription,enDescription,ruHeadline }) => (
             <Col lg={6} key={id}>
               <figure className="news__figure">
                 <MyViewElement element={
-                  <h3 className="news__figure-title">{ruTitle}</h3>
+                  <>
+                    {
+                      t
+                      ?<h3 className="news__figure-title">{ruTitle}</h3>
+                        :<h3 className="news__figure-title">{ruHeadline}</h3>
+                    }
+                  </>
                 }/>
                 <MyViewElement element={
                 <Link className="news__figure-image news-img-block" to={`/news/${id}`}>
@@ -43,9 +51,13 @@ function NewsList() {
                 <MyViewElement element={
 
                 <figcaption className="news__figure-body news-descr-block">
-                  <div className="news__figure-description">{ruDescription}</div>
+                  {
+                    t
+                    ?<div className="news__figure-description">{ruDescription}</div>
+                      :<div className="news__figure-description">{enDescription}</div>
+                  }
                   <Link className="news__figure-link" to={`/news/${id}`}>
-                    -    Подробнее
+                    {t('private.NewsList.ruDescription')}
                   </Link>
                 </figcaption>
                 }/>
@@ -56,7 +68,7 @@ function NewsList() {
         </Row>
       ) : (
         <MyViewElement element={
-          <h4 className="text-center mb-5 mt-5">К сожалению в данный момент новости отсутствуют</h4>
+          <h4 className="text-center mb-5 mt-5">{t('private.NewsList.center')}</h4>
         }/>
       )}
       {!isEmpty(list) && !isLoading && (

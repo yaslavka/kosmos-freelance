@@ -12,8 +12,10 @@ import inImage from '../../../scss/media/insta.svg'
 import vkImage from '../../../scss/media/vk.svg'
 import tgImage from '../../../scss/media/vk.svg'
 import Icon from '../../../components/Icon'
+import {useTranslation} from "react-i18next";
 
 function Summarymilkyway() {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const userInfo = useSelector((state) => state.app.user)
   const statistics = useSelector((state) => state.milkyway.statistics)
@@ -101,7 +103,7 @@ function Summarymilkyway() {
                   {userInfo.myInstagram}
                 </a>
               ) : (
-                'Не указано'
+                `${t('private.StarTrek.myInstagram')}`
               )}
             </li>
             <li  className={cl.summaryInfoItem}>
@@ -115,7 +117,7 @@ function Summarymilkyway() {
                   {userInfo.myTg}
                 </a>
               ) : (
-                'Не указано'
+                `${t('private.StarTrek.myInstagram')}`
               )}
             </li>
             <li  className={cl.summaryInfoItem}>
@@ -129,7 +131,7 @@ function Summarymilkyway() {
                   {userInfo.myVk}
                 </a>
               ) : (
-                'Не указано'
+                `${t('private.StarTrek.myInstagram')}`
               )}
             </li>
           </ul>

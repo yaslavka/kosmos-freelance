@@ -2,10 +2,11 @@ import React from 'react'
 import cl from './Finance.module.css';
 import rubleImg from './../../../scss/media/rouble-svgrepo-com.svg'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
+import {useTranslation} from "react-i18next";
 
 
 const ReplenishmentOfMoneyItem = ({infoData,countPriceInfo,defaultPriceCount, setModal,setModalW, cardInfo, setCardInfo})=>{
-
+  const { t } = useTranslation('common');
     return (
       <MyViewElement element={
         <div className={[cl.transItem, infoData.classes].join` `}>
@@ -34,10 +35,10 @@ const ReplenishmentOfMoneyItem = ({infoData,countPriceInfo,defaultPriceCount, se
           </div>
           <div className={cl.transItemBottom}>
             <a href={infoData.urlOut} target="_blank" rel="noreferrer" >
-              <button className={cl.transBtn} onClick={e=>{e.preventDefault();setModal(true);setCardInfo({...cardInfo, pay:true,currency:infoData.nameCash})}}>Пополнить</button>
+              <button className={cl.transBtn} onClick={e=>{e.preventDefault();setModal(true);setCardInfo({...cardInfo, pay:true,currency:infoData.nameCash})}}>{t('private.finances.pays')}</button>
             </a>
             <a href={infoData.urlIn} target="_blank" rel="noreferrer">
-              <button className={cl.transBtn} onClick={e=>{e.preventDefault();setModalW(true);setCardInfo({...cardInfo, pay:false,currency:infoData.nameCash})}}>Вывести</button>
+              <button className={cl.transBtn} onClick={e=>{e.preventDefault();setModalW(true);setCardInfo({...cardInfo, pay:false,currency:infoData.nameCash})}}>{t('private.finances.winthdraw')}</button>
             </a>
           </div>
         </div>

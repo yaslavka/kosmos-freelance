@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ChartWrap from './Chart'
 import { loadChart } from '../../../../../../../actions/exchenge.action'
-import { options } from './options'
 import { marketDataSelector, chartDataSelector } from '../../../../selectors'
 import { MoonLoader } from 'react-spinners';
 import './stockChart.scss'
@@ -28,6 +27,100 @@ class Chart extends Component {
       var ohlc = chartData.data.map(item => [item.date*1000, item.open, item.high, item.low, item.close])
       var volume = chartData.data.map(item => [item.date*1000, item.volume])
 
+      const options ={
+        rangeSelector: {
+          allButtonsEnabled: true,
+          enabled: true,
+          buttons:[{
+            type: 'month',
+            count: 1,
+            text: '1m'
+          }, {
+            type: 'month',
+            count: 3,
+            text: '3m'
+          }, {
+            type: 'month',
+            count: 6,
+            text: '6m'
+          }, {
+            type: 'ytd',
+            text: 'YTD'
+          }, {
+            type: 'year',
+            count: 1,
+            text: '1y'
+          }, {
+            type: 'all',
+            text: 'All'
+          }]
+        },
+        title: {
+          text: ''
+        },
+        navigator: {
+          enabled: true,
+          series: {
+            data: []
+          }
+        },
+        tooltip: {split: true},
+        legend: { enabled: false },
+        yAxis: [{
+          labels: {
+            align: 'right',
+            x: -3
+          },
+          title: {
+            text: 'OHLC'
+          },
+          height: '60%',
+          lineWidth: 2
+        }, {
+          labels: {
+            align: 'right',
+            x: -3
+          },
+          title: {
+            text: 'Volume'
+          },
+          top: '65%',
+          height: '35%',
+          offset: 0,
+          lineWidth: 2
+        }],
+        xAxis:{
+          type: 'datetime',
+          range: 30 * 24 * 3600 * 1000,
+          dateTimeLabelFormats: {
+            day: '%e. %b'
+          }
+        },
+        plotOptions:{
+          series:{
+            turboThreshold:1000000
+          },
+          candlestick: {
+            color: 'red',
+            upColor: 'green'
+          }
+        },
+        series:[{
+          type: 'candlestick',
+          name: 'AAPL',
+          data: ohlc,
+          id: 'dataseries',
+          yAxis: 0,
+        },{
+          type: 'column',
+          name: 'Volume',
+          data: volume,
+          yAxis: 1,
+          id: 'dataseries',
+        }
+        ]
+      }
+      console.log(options)
       options.series[0].pointStart = chartData.start*1000
       options.series[0].pointInterval = chartData.period*1000
       options.series[0].data = ohlc

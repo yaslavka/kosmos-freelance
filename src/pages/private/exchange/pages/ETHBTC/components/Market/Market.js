@@ -27,17 +27,18 @@ class Market extends Component{
   }
 
   render() {
-    const { marketsData, market, pair } = this.props
+    const { marketsData, market, pair, t } = this.props
     const markets = marketsData ?
-      marketsData.map( (market) => <Markets key={market.id} market={market} pair={pair} /> ) : null
+      marketsData.map( (market) => <Markets key={market.id} market={market} pair={pair} t={t}/> ) : null
     return (
       <div className="left_bar">
-        <MarketsToggle market={market}/>
+        <MarketsToggle market={market} t={t}/>
         <MarketsTable
           getClassName = { this.getClassName }
           handleClick = { this.handleClick }
           markets = { markets }
           pair = { pair }
+          t={t}
         />
       </div>
     )

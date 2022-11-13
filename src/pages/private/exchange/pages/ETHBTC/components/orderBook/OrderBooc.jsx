@@ -23,12 +23,12 @@ class OrderBooc extends Component{
     loadOrders(pair)
   }
   render() {
-    const { pair, chartData } = this.props
+    const { pair, chartData, t } = this.props
     if (chartData && chartData.orders){
       const bids = chartData.orders.bids
       return (
         <div className="buy_orders_box">
-          <Swll type={'buy'} data={bids} pair={pair}/>
+          <Swll type={'buy'} data={bids} pair={pair} t={t}/>
         </div>
       )
     }else {

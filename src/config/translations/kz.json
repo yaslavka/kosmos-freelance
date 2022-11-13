@@ -1,10 +1,195 @@
 {
-  "show-answer": {
-    "title": "Открыть решение?",
-    "ok": "Открыть",
-    "cancel": "Сам решу"
+  "signInPage": {
+    "inputs": {
+      "username": {
+        "error": "error",
+        "placeholder": "Enter your login"
+      },
+      "password": {
+        "error": "error",
+        "placeholder": "Enter password"
+      }
+    },
+    "mainTitle": "Login",
+    "buttons": {
+      "signIn": "Sign in"
+    },
+    "links": {
+      "forgotPassword": "Forgot your password?",
+      "signUp": "Still no Account?"
+    }
   },
-  "placeholder": "Ваш ответ",
-  "not_enough_energy": "Недостаточно очков энергии",
-  "add_energy": "Добыть энергию"
+  "mainPage":{
+    "header": {
+      "navLinks": {
+        "aboutProject": "About the project",
+        "advantages": "Services",
+        "materials": "Materials"
+      },
+      "links": {
+        "signin": "Sign in",
+        "signup": "Sign up"
+      }
+    },
+    "authentication": {
+      "links": {
+        "signup": "Sign up",
+        "signin": "Sign in",
+        "watch": "Watch"
+      }
+    },
+    "sections": {
+      "advantages": {
+        "mainTitle": "What we offer",
+        "mainTitles": "Our Services",
+        "advantagesList": {
+          "title": "Service package for",
+          "titles": "once,",
+          "text": "You get constant access to a regularly updated database of author's business trainings on the following topics:",
+          "text2": "Maintaining social networks and their monetization",
+          "text3": "Traffic Arbitration",
+          "text4": "Design",
+          "text5": "Psychology",
+          "text6": "Advertising Management",
+          "text7": "Copywriting",
+          "text8": "Access to creatives and promotional materials",
+          "text9": "Access to Pegasus Affiliate Program",
+          "text10": "Purchase package"
+        }
+      },
+      "about": {
+        "mainTitle": {
+          "mainWord": "Why Choose",
+          "title1": "Reliability",
+          "text1": "Cosmos Platform is officially registered in the UK",
+          "title2": "Relevance",
+          "text2": "The creators of the platform regularly update Cosmos programs in accordance with current trends in the network industry,",
+          "title3": "Community of Network Entrepreneurs",
+          "text3": "The first independent community of network entrepreneurs in Russia and the CIS",
+          "title4": "Expertise",
+          "text4": "The creators of the Cosmos platform are successful network entrepreneurs and share personally verified knowledge",
+          "title5": "Affiliate Program",
+          "text5": "Having an affiliate program helps users grow as teams",
+          "title6": "Accessibility",
+          "text6": "All learning materials are available to every user of the Kosmos platform"
+        }
+      }
+    },
+    "sections2": {
+      "advantages": {
+        "advantagesList": {
+          "title": "Service package for",
+          "titles": "(monthly)",
+          "text": "You get constant access to a regularly updated database of author's business trainings on the following topics:",
+          "text2": "Creating and configuring sites",
+          "text3": "Traffic Arbitration",
+          "text4": "Design",
+          "text5": "Writing code",
+          "text6": "Advertising Management,",
+          "text7": "Copywriting",
+          "text8": "Access to creatives and promotional materials",
+          "text9": "Access to the Milky Way affiliate program",
+          "text10": "Purchase a package"
+        }
+      }
+    },
+    "footer": {
+      "links": {
+        "contractOffer": "Contract offer",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfUse": "User Agreement"
+      }
+    }
+  },
+  "signUpPage": {
+    "inputs": {
+      "firstName": {
+        "error": "Please fill in the field",
+        "placeholder": "Name"
+      },
+      "lastName": {
+        "error": "Please fill in the field",
+        "placeholder": "Last name"
+      },
+      "phone": {
+        "error": "Please enter a valid Phone",
+        "placeholder": "Phone"
+      },
+      "email": {
+        "error": "Please enter a valid email",
+        "placeholder": "Enter email"
+      },
+      "username": {
+        "error": "Enter Login",
+        "placeholder": "Create a login"
+      },
+      "password": {
+        "error": "Enter password",
+        "placeholder": "Create a password"
+      },
+      "repeatPassword": {
+        "error": "Passwords don't match",
+        "placeholder": "Repeat Password"
+      },
+      "referral": {
+        "placeholder": "Your inviter's login",
+        "error": "Specify inviter"
+      },
+      "acceptPrivacyPolicy": {
+        "placeholder": "I accept the terms of the privacy policy",
+        "error": "Agree to the rules"
+      }
+    },
+    "mainTitle": "Join now",
+    "text": "Sign up soon and start earning now!",
+    "buttons": {
+      "signUp": "Join"
+    },
+    "links": {
+      "signIn": {
+        "title": "Do you already have an account?",
+        "text": "Login"
+      }
+    }
+  },
+  "private": {
+    "leader": {
+      "title": "Mentor",
+      "links": "VKontakte:",
+      "links2": "Instagram:",
+      "links3": "Telegram:",
+      "chat": "Kosmo_CHAT",
+      "chat1": "Do you want to be aware of all the news, quickly track all events and new products? Especially for you, we have KosmoCHAT,",
+      "chat2": "MUST join by clicking the button below!",
+      "button": "Join",
+      "info": "About me"
+    },
+    "Dashboard": {
+      "copy": "Link copied successfully",
+      "title": "Personal account",
+      "balance": "My balance is:",
+      "createdAt": "Registration Date:",
+      "created": "Activation date:",
+      "inviter": "Inviter:",
+      "referrallink": "Referral link",
+      "timer": "Time left until launch",
+      "days": "Days"
+    },
+    "finances": {
+      "title": "Finance",
+      "balance": "Total balance",
+      "transfer": "Transfer to partner",
+      "transit": "Transit balance",
+      "history": "History of operations",
+      "pay": "Purchase/Withdraw",
+      "sistem": "Select Payment System",
+      "pays": "Top up",
+      "winthdraw": "Withdraw",
+      "sum": "Enter the amount",
+      "modalDescr": "A manager will contact you during the day to discuss your issue",
+      "place": "Enter amount",
+      "modalWarning": "By clicking the button, you consent to the processing of your personal data",
+      "modalBtn" : "submit"
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import { FormGroup } from 'reactstrap'
 import { Formik, Form, Field } from 'formik'
 import { useDispatch } from 'react-redux'
@@ -14,10 +14,12 @@ import cl from './Sign.module.css';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Planet from './../../scss/media/planet-1.gif'
+import {useTranslation} from "react-i18next";
 
 AOS.init()
 AOS.refresh()
 function SignIn() {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const [serverError, setServerError] = useState(null)
   const [clientCredentials, setClientCredentials] = useState(null)
@@ -28,11 +30,11 @@ function SignIn() {
         username: yup
           .string()
           .required()
-          .test('username', 'username', (value) => isValidUsername(value)),
+          .test('username', t('signInPage.inputs.username.error'), (value) => isValidUsername(value)),
         password: yup
           .string()
           .required()
-          .test('password', 'password', (value) => isValidPassword(value)),
+          .test('password', t('signInPage.inputs.password.error'), (value) => isValidPassword(value)),
       }),
     [],
   )
@@ -86,14 +88,14 @@ function SignIn() {
             {() => (
               <Form className="auth__form">
                 <div className="auth__title">
-                  <h2 className={cl.authTitle}>Вход в системму</h2>
+                  <h2 className={cl.authTitle}>{t('signInPage.mainTitle')}</h2>
                 </div>
                 <FormGroup>
                   <Field
                     type="text"
                     name="username"
                     component={Input}
-                    placeholder="Введите логин"
+                    placeholder={t('signInPage.inputs.username.placeholder')}
                   />
                 </FormGroup>
                 <FormGroup className="mb-5">
@@ -101,25 +103,25 @@ function SignIn() {
                     type="password"
                     name="password"
                     component={Input}
-                    placeholder="Введите пароль"
+                    placeholder={t('signInPage.inputs.password.placeholder')}
                   />
                 </FormGroup>
                 <FormGroup>
                   <div className={cl.btnBlock}>
                     <button type="submit" className={cl.btnGradient} >
-                      Войти
+                      {t('signInPage.buttons.signIn')}
                     </button>
                   </div>
                 </FormGroup>
                 <div className={cl.forgotBLock}>
-                  <Link to={routes.resetPassword}>{'Забыли пароль?'}</Link>
+                  <Link to={routes.resetPassword}>{t('signInPage.links.forgotPassword')}</Link>
                 </div>
                 {serverError && <div className="auth__error">{serverError}</div>}
               </Form>
             )}
           </Formik>
           <div className={cl.signInFoot}>
-            <Link to={routes.signUp}>Все еще нет Аккаунта?</Link>
+            <Link to={routes.signUp}>{t('signInPage.links.signUp')}</Link>
           </div>
         </div>
         </div>

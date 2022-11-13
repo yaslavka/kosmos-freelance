@@ -13,7 +13,7 @@ class MarketsTable extends Component {
   };
 
   render() {
-    const { handleClick, getClassName, markets, pair, isMobile  } = this.props
+    const { handleClick, getClassName, markets, pair, isMobile, t  } = this.props
 
     if(pair || isMobile) return (
       <>
@@ -22,11 +22,11 @@ class MarketsTable extends Component {
             <thead>
             <tr id="mktspot" onClick={handleClick}>
               <th data-column='pair' width="25%" className={"first" + getClassName('pair')}>
-                Валюта
+                {t('private.exchange.trade.pair.valuta')}
               </th>
-              <th data-column='last' className={getClassName('last')} width="33%">Цена</th>
-              <th data-column='percentChange' width="26%" className={getClassName('percentChange')}>Изм.</th>
-              <th data-column='last' className={getClassName('last')} width="16%">Об.</th>
+              <th data-column='last' className={getClassName('last')} width="33%">{t('private.exchange.trade.pair.price')}</th>
+              <th data-column='percentChange' width="26%" className={getClassName('percentChange')}>{t('private.exchange.trade.pair.percentChange')}</th>
+              <th data-column='last' className={getClassName('last')} width="16%">{t('private.exchange.trade.pair.last')}</th>
             </tr>
             </thead>
           </table>
@@ -53,16 +53,16 @@ class MarketsTable extends Component {
             <thead>
             <tr id="mktspot" onClick={handleClick}>
               <th data-column='pair' width="25%" className={"first" + getClassName('pair')}>
-                Валюта
+                {t('private.exchange.trade.pair.valuta')}
               </th>
-              <th data-column='last' className={getClassName('last')} width="33%">Цена</th>
-              <th data-column='percentChange' width="26%" className={getClassName('percentChange')}>Изм.</th>
-              <th data-column='last' className={getClassName('last')} width="16%">Об.</th>
+              <th data-column='last' className={getClassName('last')} width="33%">{t('private.exchange.trade.pair.price')}</th>
+              <th data-column='percentChange' width="26%" className={getClassName('percentChange')}>{t('private.exchange.trade.pair.percentChange')}</th>
+              <th data-column='last' className={getClassName('last')} width="16%">{t('private.exchange.trade.pair.last')}</th>
             </tr>
             </thead>
           </table>
         </div>
-        <SimpleBar style={{ height: 250, width: '100%' }}>
+        <SimpleBar style={{ height: 150, width: '100%' }}>
           <div className="viewport">
             <div className="overview" id="market_base_list">
               <div id="trade_market_wrapper" className="dataTables_wrapper no-footer">

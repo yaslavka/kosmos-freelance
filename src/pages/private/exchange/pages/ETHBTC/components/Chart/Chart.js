@@ -2,15 +2,13 @@ import React, {Component} from 'react'
 import Highcharts from 'highcharts/highstock'
 
 class ChartWrap extends Component {
+
   // When the DOM is ready, create the chart.
   componentDidMount() {
     this.chart = new Highcharts[this.props.type || 'Chart'](
       this.props.container,
-      console.log(this.props.container),
-      this.props.options,
-      console.log(this.props.options),
+      this.props.options
     )
-    console.log(this.chart)
   }
 
 

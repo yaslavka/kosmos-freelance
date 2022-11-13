@@ -137,35 +137,35 @@ function SignUp({ location }) {
             const errors = {}
 
             if (!first_name.trim()) {
-              errors.first_name = t('Введите Имя')
+              errors.first_name = t('signUpPage.inputs.firstName.error')
             }
 
             if (!last_name.trim()) {
-              errors.last_name = t('Фамилия')
+              errors.last_name = t('signUpPage.inputs.lastName.error')
             }
 
             if (!isValidPhone(phone)) {
-              errors.phone = t('Номер телефона')
+              errors.phone = t('signUpPage.inputs.phone.error');
             }
 
             if (!isValidEmail(email)) {
-              errors.email = t('почтовый ящик')
+              errors.email = t('signUpPage.inputs.email.error')
             }
 
             if (!isValidUsername(username)) {
-              errors.username = t('Придумайте Логин')
+              errors.username = t('signUpPage.inputs.username.error');
             }
 
             if (!isValidPassword(password)) {
-              errors.password = t('Придумайте пароль')
+              errors.password = t('signUpPage.inputs.password.error');
             }
 
             if (repeatPassword !== password) {
-              errors.repeatPassword = t('Повторите пароль')
+              errors.repeatPassword = t('signUpPage.inputs.repeatPassword.error')
             }
 
             if (!acceptPrivacyPolicy) {
-              errors.acceptPrivacyPolicy = 'Required'
+              errors.acceptPrivacyPolicy = t('signUpPage.inputs.acceptPrivacyPolicy.error')
             }
 
             return errors
@@ -175,8 +175,8 @@ function SignUp({ location }) {
           {() => (
             <Form className="auth__form">
               <div className="auth__title">
-                <h2 className={cl.authTitle}>{t('Присоеденяйся уже сейчас, потом будет поздно')}</h2>
-                {!inviter && <div className={cl.authDescr}>Скорее регистрируйся и начни зарабатывать уже сейчас!</div>}
+                <h2 className={cl.authTitle}>{t('signUpPage.mainTitle')}</h2>
+                {!inviter && <div className={cl.authDescr}>{t('signUpPage.text')}</div>}
               </div>
               <Spinner size="sm" isLoading={inviterLoading}>
                 {inviter && (
@@ -196,7 +196,7 @@ function SignUp({ location }) {
                   </div>
                   <div className="inviter__info">
                   <div className="inviter__name">{`${inviter.first_name} ${inviter.last_name}`}</div>
-                  <div>Скорее регистрируйся и начни зарабатывать уже сейчас!</div>
+                  <div>{t('signUpPage.text')}</div>
                   </div>
                   </>
                 )}
@@ -205,7 +205,7 @@ function SignUp({ location }) {
                 <Field
                   type="text"
                   name="referral"
-                  placeholder={t('Логин вашего пригласителя')}
+                  placeholder={t('signUpPage.inputs.referral.placeholder')}
                   onBlur={handleOnBlurReferralField}
                   component={Input}
                 />
@@ -213,7 +213,7 @@ function SignUp({ location }) {
               <Row>
                 <Col lg={6}>
                   <FormGroup>
-                    <Field type="text" name="first_name" placeholder={t('Имя')} component={Input} />
+                    <Field type="text" name="first_name" placeholder={t('signUpPage.inputs.firstName.placeholder')} component={Input} />
                   </FormGroup>
                 </Col>
                 <Col lg={6}>
@@ -221,23 +221,23 @@ function SignUp({ location }) {
                     <Field
                       type="text"
                       name="last_name"
-                      placeholder={t('Фамилия')}
+                      placeholder={t('signUpPage.inputs.lastName.placeholder')}
                       component={Input}
                     />
                   </FormGroup>
                 </Col>
               </Row>
               <FormGroup>
-                <Field name="phone" placeholder={t('Телефон')} component={InputPhone} />
+                <Field name="phone" placeholder={t('signUpPage.inputs.phone.placeholder')} component={InputPhone} />
               </FormGroup>
               <FormGroup>
-                <Field type="text" name="email" placeholder={t('email')} component={Input} />
+                <Field type="text" name="email" placeholder={t('signUpPage.inputs.email.placeholder')} component={Input} />
               </FormGroup>
               <FormGroup>
                 <Field
                   type="text"
                   name="username"
-                  placeholder={t('Придумайте логин')}
+                  placeholder={t('signUpPage.inputs.username.placeholder')}
                   component={Input}
                 />
               </FormGroup>
@@ -247,7 +247,7 @@ function SignUp({ location }) {
                     <Field
                       type="password"
                       name="password"
-                      placeholder={t('Придумайте пароль')}
+                      placeholder={t('signUpPage.inputs.password.placeholder')}
                       component={Input}
                     />
                   </FormGroup>
@@ -257,7 +257,7 @@ function SignUp({ location }) {
                     <Field
                       type="password"
                       name="repeatPassword"
-                      placeholder={t('Повторите пароль')}
+                      placeholder={t('signUpPage.inputs.repeatPassword.placeholder')}
                       component={Input}
                     />
                   </FormGroup>
@@ -267,7 +267,7 @@ function SignUp({ location }) {
                 <Field
                   type="checkbox"
                   name="acceptPrivacyPolicy"
-                  label={t('принимаю условия политики конфендициальности')}
+                  label={t('signUpPage.inputs.acceptPrivacyPolicy.placeholder')}
                   component={Checkbox}
                 />
               </FormGroup>
@@ -276,7 +276,7 @@ function SignUp({ location }) {
                 type="submit"
                 className={cl.btnGradient}
               >
-                {t('Присоеденится')}
+                {t('signUpPage.buttons.signUp')}
               </button>
               </div>
               {serverError && <div className="auth__error">{serverError}</div>}
@@ -284,7 +284,7 @@ function SignUp({ location }) {
           )}
         </Formik>
         <div className={cl.signUpFoot}>
-          {t('У вас уже есть аккаунт?')} <Link to={routes.signIn}>{t('Войдите')}</Link>
+          {t('signUpPage.links.signIn.title')} <Link to={routes.signIn}>{t('signUpPage.links.signIn.text')}</Link>
         </div>
         </div>
         </div>

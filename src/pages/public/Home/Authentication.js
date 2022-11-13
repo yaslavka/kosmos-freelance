@@ -24,15 +24,15 @@ function Authentication() {
       <div className="authentication__container">
         <div className="authentication__flex">
           <div className="authentication__btn-wrap">
-  
+
             <Link
               to={routes.signUp}
               className="authentication__link button button--violet authentication__btn"
             >
-              {t('Ркгистрация')}
+              {t('mainPage.authentication.links.signup')}
             </Link>
             <Link to={routes.signIn} className="authentication__link button authentication__btn">
-              {t('Вход')}
+              {t('mainPage.authentication.links.signin')}
             </Link>
           </div>
           <div className="authentication__btn-wrap">
@@ -42,7 +42,7 @@ function Authentication() {
               rel="noreferrer"
               target="_blank"
             >
-              <span>{t('Смотреть')}</span>
+              <span>{t('mainPage.authentication.links.watch')}</span>
               <svg
                 className="button__svg-eclipses"
                 width="92"

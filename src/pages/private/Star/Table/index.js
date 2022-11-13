@@ -21,9 +21,11 @@ import BuyStatusModal from './BuyStatusModal'
 import BuyMatrixModal from './BuyMatrixModal'
 import PartnersClonesModal from './PartnersClonesModal'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 export default function Table({ location: { state = {}, pathname } }) {
+  const { t } = useTranslation('common');
   const history = useHistory()
   const dispatch = useDispatch()
   const { id } = useParams()
@@ -49,7 +51,7 @@ export default function Table({ location: { state = {}, pathname } }) {
         .then(() => {
           setBuyingStatus({
             type: 'success',
-            message: 'Оплата прошла успешно!',
+            message: `${t('private.Pegasus.buyMatrix.message')}`,
           })
           setVisibleBuyMatrixModal(false)
           setVisibleBuyModal(true)
@@ -84,7 +86,7 @@ export default function Table({ location: { state = {}, pathname } }) {
         })
         .catch(() => {
           setVisibleBuyMatrixModal(false)
-          setBuyingStatus({ type: 'error', message: 'не достаточно средств' })
+          setBuyingStatus({ type: 'error', message: `${t('private.Pegasus.buyMatrix.error')}` })
           setVisibleBuyModal(true)
         })
     }
@@ -361,7 +363,7 @@ export default function Table({ location: { state = {}, pathname } }) {
       <Container>
         <div className={styles.header}>
 
-          {matrixInfo &&  <MyViewElement element={<h1 className={styles.title}>Пегас - {matrixInfo.name}</h1>}/>}
+          {matrixInfo &&  <MyViewElement element={<h1 className={styles.title}>{t('private.Pegasus.title')} - {matrixInfo.name}</h1>}/>}
           {backRouteElement}
         </div>
         <div className={styles.container}>
@@ -371,7 +373,7 @@ export default function Table({ location: { state = {}, pathname } }) {
 
               <Select
                 values={selectItems}
-                placeholder="Мои клоны"
+                placeholder={`${t('private.Pegasus.placeholder')}`}
                 className={styles.matrixSelect}
                 onChange={(value) => {
                   if (value) {
@@ -393,7 +395,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                   color="perrywinkle"
                   size="small"
                 >
-                  Наверх
+                  {t('private.Pegasus.upp')}
                 </Button>
             }/>
 
@@ -403,7 +405,7 @@ export default function Table({ location: { state = {}, pathname } }) {
               <div className={styles.footer}>
               <MyViewElement element={
 
-                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
+                <p className={styles.price}>{t('private.Pegasus.price')} - {matrixInfo.summ} RUB</p>
             }/>
 
                 {matrixInfo.canBuy && (
@@ -416,7 +418,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                     color="perrywinkle"
                     size="small"
                   >
-                    Купить
+                    {t('private.Pegasus.buy')}
                   </Button>
             }/>
 
@@ -435,7 +437,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                 color="perrywinkle"
                 size="small"
               >
-                Наверх
+                {t('private.Pegasus.upp')}
               </Button>
             }/>
 
@@ -532,7 +534,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                     color="perrywinkle"
                     size="small"
                   >
-                    Купить
+                    {t('private.Pegasus.buy')}
                   </Button>
                 )}
               </div>

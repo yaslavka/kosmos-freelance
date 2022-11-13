@@ -1,26 +1,22 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Row, Col, Container, Button } from 'reactstrap'
-//import posterVideo from '../../../scss/media/leader-poster-video.56a4c9bf.jpg'
-//import avatar from '../../../scss/media/placeholder.7e85be59.svg'
-//import video from '../../../scss/media/leader-poster-video.56a4c9bf.jpg'
-
 import NavBar from '../../../components/layout/Navbar'
 import Avatar from '../../../components/Avatar'
-//import Icon from '../../../components/Icon'
 import { toast } from 'react-toastify'
 import { formatter } from '../../../utils'
 import CountdownTimer from '../StarTrek/CountdownTimer/CountdownTimer'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
-//import UserInfo from '../../../components/UserInfo'
+import {useTranslation} from "react-i18next";
 
 function Dashboard() {
+  const { t } = useTranslation('common');
   const userInfo = useSelector((state) => state.app.user)
 
   const copyRefLinkToClipboard = async () => {
     if (userInfo && `http://localhost:3000/sign-up?ref=${userInfo.username}`) {
       navigator.clipboard.writeText(`http://localhost:3000/sign-up?ref=${userInfo.username}`).then(() => {
-        toast.info('Ссылка успешно скопирована')
+        toast.info(`${t('private.Dashboard.copy')}`)
       })
     }
   }
@@ -33,7 +29,7 @@ function Dashboard() {
         </Col>
         <Col xl={8}>
           <MyViewElement element={
-          <h1 className="root-page-title">Личный кабинет</h1>
+          <h1 className="root-page-title">{t('private.Dashboard.title')}</h1>
           }/>
           {userInfo && (
             <>
@@ -59,7 +55,7 @@ function Dashboard() {
                     <div className="card__body">
                       <div className="list-info list-info--horizontal">
                         <div className="list-info__group">
-                          <div className="list-info__label">Мой баланс:</div>
+                          <div className="list-info__label">{t('private.Dashboard.balance')}</div>
                           <div className="list-info__value">
                             {formatter.format(userInfo.balance || 0).replace('₽', 'RUB') ? (
                               <div>
@@ -71,7 +67,7 @@ function Dashboard() {
                           </div>
                         </div>
                         <div className="list-info__group">
-                          <div className="list-info__label">Дата регистрации:</div>
+                          <div className="list-info__label">{t('private.Dashboard.createdAt')}</div>
                           <div className="list-info__value">
                             {userInfo.createdAt ? (
                               <div>{userInfo.createdAt}</div>
@@ -81,13 +77,13 @@ function Dashboard() {
                           </div>
                         </div>
                         <div className="list-info__group">
-                          <div className="list-info__label">Дата активации:</div>
+                          <div className="list-info__label">{t('private.Dashboard.created')}</div>
                           <div className="list-info__value">
                             {userInfo.activationDate ? <div>{userInfo.activationDate}</div> : '-'}
                           </div>
                         </div>
                         <div className="list-info__group">
-                          <div className="list-info__label">Пригласитель:</div>
+                          <div className="list-info__label">{t('private.Dashboard.inviter')}</div>
                           <div className="list-info__value">
                             {userInfo.referal ? <div>{userInfo.referal.username}</div> : '-'}
                           </div>
@@ -103,7 +99,7 @@ function Dashboard() {
                 <MyViewElement element={
                   <div className="card__header">
                     <div className="card__header-left">
-                      <h3 className="card__title card__title-info">Реферальная ссылка</h3>
+                      <h3 className="card__title card__title-info">{t('private.Dashboard.referallink')}</h3>
                     </div>
                   </div>
               }/>
@@ -117,7 +113,7 @@ function Dashboard() {
                       className="referral-link__btn"
                       onClick={copyRefLinkToClipboard}
                     >
-                     <span></span>
+                     <span> </span>
                     </Button>
                   </div>
                  }/>
@@ -127,7 +123,7 @@ function Dashboard() {
           <MyViewElement element={
             <>
               <div className="startrek__title1 card__title-info">
-                <span>До запуска осталось</span>
+                <span>{t('private.Dashboard.timer')}</span>
               </div>
               <div className="startrek__title">
                 <CountdownTimer countdownTimestampMs={16599836620000} />

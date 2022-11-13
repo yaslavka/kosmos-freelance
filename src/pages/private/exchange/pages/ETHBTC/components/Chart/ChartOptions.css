@@ -1,0 +1,50 @@
+.options-list {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 100px;
+  align-items: center;
+}
+
+.exchange-btn {
+  cursor: pointer;
+  height: 34px;
+  border-radius: 5px;
+  border-color: inherit;
+}
+
+.market-exchange {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exchanges-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.exchanges-list > * {
+  margin-right: 2vw;
+}
+
+.active {
+  background-color: coral;
+}
+
+.market-select {
+  width: 20vw;
+  z-index: 100;
+}
+
+.timespan-select {
+  width: 8vw;
+  z-index: 100;
+}
+
+.exchange-select {
+  width: 15vw;
+  z-index: 100;
+}

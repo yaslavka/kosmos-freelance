@@ -23,11 +23,11 @@ class HistoriBuySel extends  Component{
   }
 
   render() {
-    const { pair, chartData } = this.props
+    const { pair, chartData, t } = this.props
     if(chartData && chartData.tradeHistory){
       return(
         <div className="col_3">
-          <TradeHistoryList  data={chartData.tradeHistory} pair={pair}/>
+          <TradeHistoryList  data={chartData.tradeHistory} pair={pair} t={t}/>
         </div>
       )
     }else {

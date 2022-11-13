@@ -8,7 +8,10 @@ import ReplenishmentOfMoney from "./ReplenishmentOfMoney";
 import MoneyTransferModal from "./MoneyTransferModal";
 import OperationsHistoryModal from "./OperationsHistoryModal";
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
+import {useTranslation} from "react-i18next";
+
 function Finances() {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch();
   const [
     isOperationsHistoryModalVisible,
@@ -41,7 +44,7 @@ function Finances() {
             <NavBar />
           </Col>
           <Col>
-            <h1 className="root-page-title finances-title">Финансы</h1>
+            <h1 className="root-page-title finances-title">{t('private.finances.title')}</h1>
             {userInfo && (
               <>
                 <Row>
@@ -50,7 +53,7 @@ function Finances() {
                       <div className="card__header">
                         <div className="card__header-left">
                           <MyViewElement element={
-                          <h3 className="card__title card__title-fin">Общий баланс</h3>
+                          <h3 className="card__title card__title-fin">{t('private.finances.balance')}</h3>
 
                           }/>
                         </div>
@@ -73,7 +76,7 @@ function Finances() {
                           onClick={handleVisibleTransferMoneyModal}
                           className='fin-btn'
                         >
-                          Перевод партнеру
+                          {t('private.finances.perevod')}
                         </button>
                           }/>
 
@@ -85,7 +88,7 @@ function Finances() {
                       <div className="card__header">
                         <div className="card__header-left">
                         <MyViewElement element={
-                            <h3 className="card__title card__title-fin">Транзитный баланс</h3>
+                            <h3 className="card__title card__title-fin">{t('private.finances.tranzit')}</h3>
                         }/>
 
                         </div>
@@ -113,7 +116,7 @@ function Finances() {
                           onClick={openOperationsHistoryModal}
                           className='fin-btn'
                         >
-                          История операций
+                          {t('private.finances.hystory')}
                         </button>
                         }/>
 
@@ -123,7 +126,7 @@ function Finances() {
                 </Row>
                 <MyViewElement element={
 
-                <h2 className='pay-fin-title'>Приобрести/вывести</h2>
+                <h2 className='pay-fin-title'>{t('private.finances.pay')}</h2>
               }/>
               <ReplenishmentOfMoney />
               </>

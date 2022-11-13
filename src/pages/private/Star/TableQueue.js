@@ -14,9 +14,11 @@ import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
 import closeIcon from '../../../scss/media/close.ac2aaa1a.svg'
 import StarRating from '../../../components/StarRating'
 import { Spinner } from 'react-bootstrap'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 const TableQueue = ({ location: { state = {} } }) => {
+  const { t } = useTranslation('common');
   const { type } = useParams()
   const dispatch = useDispatch()
 

@@ -1,3 +1,4 @@
+
 export const options = {
     rangeSelector: {
       allButtonsEnabled: true,
@@ -78,7 +79,7 @@ export const options = {
     },
     series: [{
       type: 'candlestick',
-      name: '',
+      name: 'AAPL',
       data: [],
       id: 'dataseries'
       }, {

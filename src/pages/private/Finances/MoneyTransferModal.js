@@ -9,29 +9,32 @@ import * as yup from 'yup'
 import * as actions from '../../../actions/finance.actions'
 import Button from '../../../components/Button'
 import Input from '../../../components/Input'
+import {useTranslation} from "react-i18next";
 
-const validationSchema = yup.object({
-  username: yup.string().required('Необходимо заполнить это поле'),
-  password: yup.string().required('Необходимо заполнить это поле'),
-  amount: yup
-    .number()
-    .typeError('Сумма должно быть числом')
-    .positive('Сумма должна быть положительной')
-    .required('Необходимо заполнить это поле'),
-})
 
 function MoneyTransferModal() {
+  const { t } = useTranslation('common');
+
   const dispatch = useDispatch()
   const isVisible = useSelector((state) => state.finance.modals.transfer)
   const isLoading = useSelector((state) => state.finance.loadings.transfer)
+  const validationSchema = yup.object({
+    username: yup.string().required(`${t('private.MoneyTrans.username')}`),
+    password: yup.string().required(`${t('private.MoneyTrans.username')}`),
+    amount: yup
+      .number()
+      .typeError(`${t('private.MoneyTrans.typeError')}`)
+      .positive(`${t('private.MoneyTrans.positive')}`)
+      .required(`${t('private.MoneyTrans.required')}`),
+  })
 
   const submitTransferMoneyForm = async ({ username, amount, password }) => {
     let result = await confirm({
-      title: `Перевод ${username}`,
-      message: `Перевести ${formatter.format(amount).replace('₽', 'RUB')} партнеру "${username}"`,
-      confirmText: 'Подтвердить',
+      title: `${t('private.MoneyTrans.result.title')}  ${username}`,
+      message: `${t('private.MoneyTrans.result.message')} ${formatter.format(amount).replace('₽', 'RUB')} ${t('private.MoneyTrans.partner')} "${username}"`,
+      confirmText: `${t('private.MoneyTrans.result.confirmText')}`,
       confirmColor: 'primary',
-      cancelText: 'Отмена',
+      cancelText: `${t('private.MoneyTrans.result.cancelText')}`,
       cancelColor: 'link text-muted',
     })
 
@@ -61,20 +64,20 @@ function MoneyTransferModal() {
         <Modal keyboard={false} backdrop="static" isOpen={isVisible} toggle={handleCloseModal}>
           <Form>
             <ModalHeader toggle={handleCloseModal}>
-              Перевод с транзитного баланса партнеру
+              {t('private.MoneyTrans.title')}
             </ModalHeader>
             <ModalBody>
               <FormGroup>
-                <Field type="text" name="amount" placeholder="Сумма" component={Input} />
+                <Field type="text" name="amount" placeholder={t('private.MoneyTrans.placeholder')} component={Input} />
               </FormGroup>
               <FormGroup>
-                <Field type="text" name="username" placeholder="Логин" component={Input} />
+                <Field type="text" name="username" placeholder={t('private.MoneyTrans.placeholder2')} component={Input} />
               </FormGroup>
               <FormGroup>
                 <Field
                   type="password"
                   name="password"
-                  placeholder="Финансовый пароль"
+                  placeholder={t('private.MoneyTrans.placeholder3')}
                   component={Input}
                 />
               </FormGroup>
@@ -87,7 +90,7 @@ function MoneyTransferModal() {
                 loading={isLoading}
                 block
               >
-                Отправить
+                {t('private.MoneyTrans.submit')}
               </Button>
             </ModalFooter>
           </Form>

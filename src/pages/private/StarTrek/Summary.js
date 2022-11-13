@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { resizeFreeInformationImage, formatterNumber } from '../../../utils'
+import { resizeFreeInformationImage } from '../../../utils'
 import { useSelector, useDispatch } from 'react-redux'
 import * as htmlToImage from 'html-to-image'
 import { saveAs } from 'file-saver'
@@ -12,8 +12,10 @@ import inImage from '../../../scss/media/insta.svg'
 import vkImage from '../../../scss/media/vk.svg'
 import tgImage from '../../../scss/media/vk.svg'
 import Icon from '../../../components/Icon'
+import {useTranslation} from "react-i18next";
 
 function Summary() {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const userInfo = useSelector((state) => state.app.user)
   const statistics = useSelector((state) => state.startrek.statistics)
@@ -101,7 +103,7 @@ function Summary() {
                   {userInfo.myInstagram}
                 </a>
               ) : (
-                'Не указано'
+                `${t('private.StarTrek.myInstagram')}`
               )}
             </li>
             <li  className={cl.summaryInfoItem}>
@@ -115,7 +117,7 @@ function Summary() {
                   {userInfo.myTg}
                 </a>
               ) : (
-                'Не указано'
+                `${t('private.StarTrek.myInstagram')}`
               )}
             </li>
             <li  className={cl.summaryInfoItem}>
@@ -129,12 +131,12 @@ function Summary() {
                   {userInfo.myVk}
                 </a>
               ) : (
-                'Не указано'
+                `${t('private.StarTrek.myInstagram')}`
               )}
             </li>
           </ul>
           <div className={cl.summaryCheck}>
-            <h3>Общий чек Млечного пути:</h3>
+            <h3>{t('private.StarTrek.summaryCheck')}</h3>
             <strong>
               {statistics.myInventoryIncome || 0} ₽
             </strong>

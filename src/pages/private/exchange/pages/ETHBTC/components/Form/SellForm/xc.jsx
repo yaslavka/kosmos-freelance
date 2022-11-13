@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 class Xc extends Component{
   render() {
-    const { orderType, market, chartData,pair, userInfo } = this.props
+    const { orderType, market, chartData,pair, userInfo, t } = this.props
     const pairFormatted = (pair?? '-').replace('-', '_')
     return (
       <div className="sell_box fild_box">
@@ -16,14 +16,14 @@ class Xc extends Component{
           <input type="hidden" name="order_type" value="2" />
           <input type="hidden" name="fee_type" value="2" />
           <div className="meta">
-            <div className="all_title title">ПРОДАЖА</div>
+            <div className="all_title title">{t('private.exchange.trade.pair.sell.title')}</div>
             <div className="sm" id="label_bestsell">
               {chartData[orderType].price} {market.price}
             </div>
           </div>
           <>
             <div className="line_first">
-              <span className="c1">Баланс: </span>
+              <span className="c1">{t('private.exchange.trade.pair.sell.balance')}</span>
               <Button className="c2 clBuyBalance">
                   <span id="label_buy_balance">
                      {userInfo.balance} {market.coin}
@@ -33,7 +33,7 @@ class Xc extends Component{
           </>
           <form onChange={this.handleChange}>
           <div className="line">
-            <label htmlFor={'amount-'+orderType}>Количество:</label>
+            <label htmlFor={'amount-'+orderType}>{t('private.exchange.trade.pair.sell.Input.amount')}</label>
             <div className="poles">
               <Input
                 name="amount"
@@ -48,7 +48,7 @@ class Xc extends Component{
             </div>
           </div>
           <div className="line">
-            <label htmlFor={'price-'+orderType}>Цена:</label>
+            <label htmlFor={'price-'+orderType}>{t('private.exchange.trade.pair.sell.Input.price')}</label>
             <div className="poles">
               <Input
                 name="price"
@@ -62,7 +62,7 @@ class Xc extends Component{
             </div>
           </div>
           <div className="line">
-            <label htmlFor='total'>Всего:</label>
+            <label htmlFor='total'>{t('private.exchange.trade.pair.sell.Input.total')}</label>
             <div className="poles">
               <Input
                 name="total"
@@ -76,14 +76,14 @@ class Xc extends Component{
             </div>
           </div>
           <div className="line">
-            <span>Ком (0.2%):</span>
+            <span>{t('private.exchange.trade.pair.sell.Input.fee')} (0.2%):</span>
             <div className="poles">
               <Input name="fee" maxLength="25" type="text"  disabled="" value={this.handleTotal()+0.2}/>
               <span className="currency">{market.market}</span>
             </div>
           </div>
           <div className="line">
-            <span>Всег-Ком:</span>
+            <span>{t('private.exchange.trade.pair.sell.Input.totalfee')}</span>
             <div className="poles">
               <Input name="totalfee" maxLength="25" type="text"  disabled=""/>
               <span className="currency">{market.market}</span>
@@ -92,13 +92,13 @@ class Xc extends Component{
           <div className="line" flow="horizontal">
             <div>
               <Button type="button" className="clCreateOrder">
-                Продать
+                {t('private.exchange.trade.pair.sell.Input.button')}
               </Button>
             </div>
           </div>
           </form>
         </div>
-        <OrderBooc pair = { pairFormatted }/>
+        <OrderBooc pair = { pairFormatted } t={t}/>
       </div>
     )
   }

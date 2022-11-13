@@ -1,10 +1,414 @@
 {
-  "show-answer": {
-    "title": "Открыть решение?",
-    "ok": "Открыть",
-    "cancel": "Сам решу"
+  "signInPage": {
+    "inputs": {
+      "username": {
+        "error": "error",
+        "placeholder": "Enter your login"
+      },
+      "password": {
+        "error": "error",
+        "placeholder": "Enter password"
+      }
+    },
+    "mainTitle": "Login",
+    "buttons": {
+      "signIn": "Sign in"
+    },
+    "links": {
+      "forgotPassword": "Forgot your password?",
+      "signUp": "Still no Account?"
+    }
   },
-  "placeholder": "Ваш ответ",
-  "not_enough_energy": "Недостаточно очков энергии",
-  "add_energy": "Добыть энергию"
+  "mainPage":{
+    "header": {
+      "navLinks": {
+        "aboutProject": "About the project",
+        "advantages": "Services",
+        "materials": "Materials"
+      },
+      "links": {
+        "signin": "Sign in",
+        "signup": "Sign up"
+      }
+    },
+    "authentication": {
+      "links": {
+        "signup": "Sign up",
+        "signin": "Sign in",
+        "watch": "Watch"
+      }
+    },
+    "sections": {
+      "advantages": {
+        "mainTitle": "What we offer",
+        "mainTitles": "Our Services",
+        "advantagesList": {
+          "title": "Service package for",
+          "titles": "once,",
+          "text": "You get constant access to a regularly updated database of author's business trainings on the following topics:",
+          "text2": "Maintaining social networks and their monetization",
+          "text3": "Traffic Arbitration",
+          "text4": "Design",
+          "text5": "Psychology",
+          "text6": "Advertising Management",
+          "text7": "Copywriting",
+          "text8": "Access to creatives and promotional materials",
+          "text9": "Access to Pegasus Affiliate Program",
+          "text10": "Purchase package"
+        }
+      },
+      "about": {
+        "mainTitle": {
+          "mainWord": "Why Choose",
+          "title1": "Reliability",
+          "text1": "Cosmos Platform is officially registered in the UK",
+          "title2": "Relevance",
+          "text2": "The creators of the platform regularly update Cosmos programs in accordance with current trends in the network industry,",
+          "title3": "Community of Network Entrepreneurs",
+          "text3": "The first independent community of network entrepreneurs in Russia and the CIS",
+          "title4": "Expertise",
+          "text4": "The creators of the Cosmos platform are successful network entrepreneurs and share personally verified knowledge",
+          "title5": "Affiliate Program",
+          "text5": "Having an affiliate program helps users grow as teams",
+          "title6": "Accessibility",
+          "text6": "All learning materials are available to every user of the Kosmos platform"
+        }
+      }
+    },
+    "sections2": {
+      "advantages": {
+        "advantagesList": {
+          "title": "Service package for",
+          "titles": "(monthly)",
+          "text": "You get constant access to a regularly updated database of author's business trainings on the following topics:",
+          "text2": "Creating and configuring sites",
+          "text3": "Traffic Arbitration",
+          "text4": "Design",
+          "text5": "Writing code",
+          "text6": "Advertising Management,",
+          "text7": "Copywriting",
+          "text8": "Access to creatives and promotional materials",
+          "text9": "Access to the Milky Way affiliate program",
+          "text10": "Purchase a package"
+        }
+      }
+    },
+    "footer": {
+      "links": {
+        "contractOffer": "Contract offer",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfUse": "User Agreement"
+      }
+    }
+  },
+  "signUpPage": {
+    "inputs": {
+      "firstName": {
+        "error": "Please fill in the field",
+        "placeholder": "Name"
+      },
+      "lastName": {
+        "error": "Please fill in the field",
+        "placeholder": "Last name"
+      },
+      "phone": {
+        "error": "Please enter a valid Phone",
+        "placeholder": "Phone"
+      },
+      "email": {
+        "error": "Please enter a valid email",
+        "placeholder": "Enter email"
+      },
+      "username": {
+        "error": "Enter Login",
+        "placeholder": "Create a login"
+      },
+      "password": {
+        "error": "Enter password",
+        "placeholder": "Create a password"
+      },
+      "repeatPassword": {
+        "error": "Passwords don't match",
+        "placeholder": "Repeat Password"
+      },
+      "referral": {
+        "placeholder": "Your inviter's login",
+        "error": "Specify inviter"
+      },
+      "acceptPrivacyPolicy": {
+        "placeholder": "I accept the terms of the privacy policy",
+        "error": "Agree to the rules"
+      }
+    },
+    "mainTitle": "Join now",
+    "text": "Sign up soon and start earning now!",
+    "buttons": {
+      "signUp": "Join"
+    },
+    "links": {
+      "signIn": {
+        "title": "Do you already have an account?",
+        "text": "Login"
+      }
+    }
+  },
+  "private": {
+    "leader": {
+      "title": "Mentor",
+      "links": "VKontakte:",
+      "links2": "Instagram:",
+      "links3": "Telegram:",
+      "chat": "Kosmo_CHAT",
+      "chat1": "Do you want to be aware of all the news, quickly track all events and new products? Especially for you, we have KosmoCHAT,",
+      "chat2": "MUST join by clicking the button below!",
+      "button": "Join",
+      "info": "About me"
+    },
+    "Dashboard": {
+      "copy": "Link copied successfully",
+      "title": "Personal account",
+      "balance": "My balance is:",
+      "createdAt": "Registration Date:",
+      "created": "Activation date:",
+      "inviter": "Inviter:",
+      "referallink": "Referral link",
+      "timer": "Time left until launch",
+      "days": "Days"
+    },
+    "finances": {
+      "title": "Finance",
+      "balance": "Total balance",
+      "perevod": "Transfer to partner",
+      "tranzit": "Transit balance",
+      "hystory": "History of operations",
+      "pay": "Purchase/Withdraw",
+      "sistem": "Select Payment System",
+      "pays": "Top up",
+      "winthdraw": "Withdraw",
+      "sum": "Enter the amount",
+      "modalDescr": "A manager will contact you during the day to discuss your issue",
+      "place": "Enter amount",
+      "modalWarning": "By clicking the button, you consent to the processing of your personal data",
+      "modalBtn" : "submit",
+      "user": "To whom",
+      "type": "Type of transaction",
+      "amount": "Sum",
+      "status": "Status",
+      "date": "the date",
+      "time": "Time"
+    },
+    "navlinks": {
+      "leader": "Mentor",
+      "dashboard": "Dashboard",
+      "finances": "Finances",
+      "news": "News",
+      "matrixmini": "Pegasus mini",
+      "matrixs": "Pegasus uno",
+      "tables": "Pegasus",
+      "premiumStars": "Aida",
+      "superStars": "Andromeda",
+      "starTrek": "Milky Way",
+      "milkyway": "Milky Way v2.0",
+      "exchange": "Exchange",
+      "starsUp": "Invest Box",
+      "casino": "Games",
+      "aboutUs": "About Us",
+      "team": "Referrals",
+      "smm": "Promotion",
+      "education": "Trading bot",
+      "chat": "Member Chat",
+      "settings": "Settings"
+    },
+    "MoneyTrans": {
+      "result": {
+        "title": "Send",
+        "message": "Send",
+        "confirmText": "Confirm",
+        "cancelText": "Cancel"
+      },
+      "placeholder": "Sum",
+      "placeholder2": "Recipient Login",
+      "placeholder3": "Financial password",
+      "submit": "Send",
+      "title": "Transfer to the transit balance to the partner",
+      "username": "This field is required",
+      "typeError": "Amount must be a number",
+      "positive": "Amount must be a number",
+      "required": "This field is required",
+      "partner": "partner"
+    },
+    "NewsList": {
+      "ruDescription": "-    More",
+      "center": "Unfortunately there are no news at the moment"
+    },
+    "StarTrek": {
+      "title": "Milky Way",
+      "result": {
+        "title": "Acquisition of the planet",
+        "message": "Would you like to purchase a seat in line?",
+        "confirmText": "Confirm",
+        "cancelText": "Cancel"
+      },
+      "link": {
+        "starTrekPlanets": "My places",
+        "statistics": "Buy a seat",
+        "myPlanet": "Activate the Milky Way",
+        "starTrekStatistic": "Statistics"
+      },
+      "myInstagram": "Not specified",
+      "summaryCheck": "General check of the Milky Way:",
+      "statItem": "Total seats purchased:",
+      "myp": "My places:",
+      "allComet": "Budget:",
+      "myComet": "Overall Balance of My Places:",
+      "active": "Active Places:",
+      "MyPlanets": {
+        "result": {
+          "title": "Seat extension",
+          "message": "Do you want to extend",
+          "variant1": "place",
+          "variant2": "places",
+          "variant3": "places",
+          "variant4": "for the amount",
+          "confirmText": "Confirm",
+          "cancelText": "Cancel"
+        },
+        "title": "My solar system",
+        "namePlanet": "Planet name:",
+        "dateCreate": "date of creation:",
+        "level": "Level:",
+        "selected": "Choose",
+        "space": "Put away",
+        "all": "all",
+        "button": "Extend selected",
+        "solar": "Solar system not activated"
+      },
+      "Statistic": {
+        "level": "Level",
+        "columns": {
+          "level": "Levels",
+          "matrix": "№ last number"
+        },
+        "title": "Statistic",
+        "yes": "Yes",
+        "no": "Not",
+        "NoData": "No data"
+      }
+    },
+    "Pegasus": {
+      "title": "Pegasus",
+      "buyMatrix": {
+        "message": "Payment was successful!",
+        "error": "insufficient funds",
+        "title": "Matrix Purchase Confirmation",
+        "text": "Are you sure you want to buy a matrix?",
+        "onSubmit": "Buy"
+      },
+      "placeholder": "My clones",
+      "upp": "Top",
+      "price": "Price",
+      "buy": "Buy",
+      "ClonesModal": {
+        "message": "Clone installed successfully",
+        "erro": "An error has occurred",
+        "counter": "clones",
+        "circle": "clones",
+        "onClick": "Put"
+      }
+    },
+    "investbox": {
+      "title": "Investment plans",
+      "descr": "Invest free Funds in InvestBox! This is a tool for generating additional income.",
+      "text1": "This is NOT a pyramid/HYIP, all payments are made from a special fund.",
+      "text2": "InvestBox can change the status from \"Active\" to \"No coins\", but you can close the investment at any time, it's 100% safe.",
+      "text3": "InvestBox with \"new\" status - cannot be closed, you can only receive monthly interest.",
+      "starsUp": "Investment plan",
+      "myinvestments": "My investments",
+      "investbox": "investment history",
+      "valuta": "Currency",
+      "procent": "Percent",
+      "period": "Period",
+      "minimalsum": "Minimum amount",
+      "maximalsum": "Maximum amount",
+      "mouns": "Per month",
+      "nameInput": "Invest",
+      "action": "No records",
+      "btnPag": "Back",
+      "next": "Next",
+      "cencell": "Cancel",
+      "Myinvest": {
+        "title": "My investments",
+        "sum": "Sum",
+        "status": "Status",
+        "action": "Actions"
+      },
+      "List": {
+        "result": {
+          "title": "Cancel installment",
+          "message": "Are you sure you want to cancel the deposit?",
+          "confirmText": "Confirm",
+          "cancelText": "Cancel"
+        }
+      }
+    },
+    "exchange": {
+      "trade": {
+        "title": "Market",
+        "pair": {
+          "valuta": "Currency",
+          "price": "Price",
+          "percentChange": "Changes",
+          "last": "Volume",
+          "buy": {
+            "title": "PURCHASE",
+            "balance": "Balance:",
+            "Input": {
+              "amount": "Quantity:",
+              "price": "Price:",
+              "total": "Total:",
+              "fee": "Commission",
+              "totalfee": "Total+Commission:",
+              "button": "Buy"
+            }
+          },
+          "sell": {
+            "title": "SALE",
+            "balance": "Balance:",
+            "Input": {
+              "amount": "Quantity:",
+              "price": "Price:",
+              "total": "Total:",
+              "fee": "Commission",
+              "totalfee": "Total-Commission:",
+              "button": "Sell"
+            }
+          }
+        },
+        "History": {
+          "title": "Buy / Sell history",
+          "first": "Time",
+          "result": "Type of"
+        },
+        "Swll": {
+          "title": "Buy Orders",
+          "first": "Price"
+        },
+        "Orders": {
+          "title": "Sell Orders",
+          "first": "Price"
+        }
+      }
+    },
+    "AboutUs": {
+      "title": "About Us",
+      "title1": "Kosmos",
+      "title2": " - Universe of Opportunities.",
+      "text": "The combined Cosmos platform is an affordable tool for making money online, both for a leader and a beginner. Almost all types of earnings in the network are collected here and this is a unique feature of our platform, and we also have unlimited opportunities for an affiliate program. Thanks to this approach, each partner of the Cosmos platform can choose the most profitable way of earning for themselves and independently create comfortable working conditions for themselves and their team and set the desired pace of development.",
+      "text1": "Feature of the combined platform Kosmos",
+      "text2": "many affiliate programs combined into a single platform,",
+      "text3": "allowing for maximum profit.",
+      "text4": "One of the main products of our Cosmos platform is a unique trading bot that will allow you to earn many times more on full liabilities with a minimum of effort..",
+      "text5": "Everyone can earn here, no matter if you know how to invite, whether you are a leader or a beginner, thanks to the combined Cosmos platform, with unlimited affiliate income."
+    }
+  }
 }

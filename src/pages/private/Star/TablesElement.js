@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import classnames from 'classnames'
 import { matrixActions } from '../../../store/matrix/actions'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 function TablesElement({ matrix, transform, urlPrefix }) {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const pointClass = classnames('circle__point', {
     // eslint-disable-next-line react/prop-types
@@ -33,7 +35,7 @@ function TablesElement({ matrix, transform, urlPrefix }) {
       {/* eslint-disable-next-line react/prop-types */}
       {!!Number(matrix.count) && (
         // eslint-disable-next-line react/prop-types
-        <span className="circle__point-count">клоны {matrix.count}</span>
+        <span className="circle__point-count">{t('private.Pegasus.ClonesModal.circle')} {matrix.count}</span>
       )}
       {/* eslint-disable-next-line react/prop-types */}
       {!!Number(matrix.clones) && (

@@ -3,8 +3,6 @@ import './JuegoRuleta.css'
 import { Col, Container, Row } from 'reactstrap'
 import NavBar from '../../../../components/layout/Navbar'
 import Spin from './Header'
-//import 'react-swf'
-//import ReactSWF from 'react-swf'
 
 function JuegoRuleta() {
   return (
@@ -20,6 +18,7 @@ function JuegoRuleta() {
             allowFullScreen
             width="100%"
             height={500}
+            title={'Fruit Cocktail'}
           />
         </Col>
       </Row>

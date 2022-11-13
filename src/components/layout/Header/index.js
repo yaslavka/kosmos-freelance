@@ -13,8 +13,6 @@ import * as actions from '../../../actions/auth.actions'
 import leader from '../../../scss/media/leader.42ee91d2.svg'
 import user from '../../../scss/media/user.5e48b571.svg'
 import news from '../../../scss/media/news.58147b12.svg'
-import car from '../../../scss/media/car.9ce679da.svg'
-import superstar from '../../../scss/media/suprestar.424178cf.svg'
 import luckyStar from '../../../scss/media/12345.png'
 import starsUp from '../../../scss/media/leader.42ee91d2.svg'
 import question from '../../../scss/media/question.d8eb4f5a.svg'
@@ -24,6 +22,7 @@ import cap from '../../../scss/media/academic-cap.24d75e30.svg'
 import gear from '../../../scss/media/gear.08e3a0ec.svg'
 import bbb from '../../../scss/media/bbb.svg'
 import chat from '../../../scss/media/chat.svg'
+import {useTranslation} from "react-i18next";
 
 const publicNavLinks = [
   {
@@ -46,62 +45,68 @@ const publicNavLinks = [
 
 const privateNavLinks = [
   {
-    label: 'Наставник',
+    label: 'leader',
     route: routes.leader,
     isDisabled: false,
     icon: leader,
   },
   {
-    label: 'Кабинет',
+    label: 'dashboard',
     route: routes.dashboard,
     isDisabled: false,
     icon: user,
   },
   {
-    label: 'Новости',
+    label: 'finances',
+    route: routes.finances,
+    isDisabled: false,
+    icon: money,
+  },
+  {
+    label: 'news',
     route: routes.news,
     isDisabled: false,
     icon: news,
   },
   {
-    label: 'Пегас mini',
+    label: 'matrixmini',
     route: routes.matrixmini,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Пегас uno',
+    label: 'matrixs',
     route: routes.matrixs,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Пегас',
+    label: 'tables',
     route: routes.tables,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Аида',
+    label: 'premiumStars',
     route: routes.premiumStars,
-    isDisabled: false,
-    icon: car,
-  },
-  {
-    label: 'Андромеда',
-    route: routes.superStars,
-    isDisabled: false,
-    icon: superstar,
-  },
-  {
-    label: 'Млечный путь v2.0',
-    route: routes.milkyway,
     isDisabled: false,
     icon: logo,
   },
   {
-    label: 'Млечный путь',
+    label: 'superStars',
+    route: routes.superStars,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'starTrek',
     route: routes.starTrek,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'milkyway',
+    route: routes.milkyway,
     isDisabled: false,
     icon: logo,
   },
@@ -109,40 +114,36 @@ const privateNavLinks = [
     label: 'exchange',
     route: routes.exchange,
     isDisabled: false,
+    icon: starsUp ,
+  },
+  {
+    label: 'starsUp',
+    route: routes.starsUp,
+    isDisabled: false,
     icon: luckyStar,
   },
   {
-    label: 'Investbox',
-    route: routes.starsUp,
-    isDisabled: false,
-    icon: starsUp,
-  },
-  {
-    label: 'Игры',
+    label: 'casino',
     route: routes.casino,
     isDisabled: false,
+    classImg: styles.gamepad,
     icon: bbb,
   },
   {
-    label: 'О нас',
+    label: 'aboutUs',
     route: routes.aboutUs,
     isDisabled: false,
+    classImg: styles.questImg,
     icon: question,
   },
   {
-    label: 'Кошелек',
-    route: routes.finances,
-    isDisabled: false,
-    icon: money,
-  },
-  {
-    label: 'Рефераллы',
+    label: 'team',
     route: routes.team,
     isDisabled: false,
     icon: team,
   },
   {
-    label: 'Продвижение',
+    label: 'smm',
     route: routes.smm,
     isDisabled: false,
     icon: team,
@@ -154,13 +155,13 @@ const privateNavLinks = [
   //   icon: megaphone,
   // },
   {
-    label: 'Торговый бот',
+    label: 'education',
     route: routes.education,
     isDisabled: false,
     icon: cap,
   },
   {
-    label: 'Чат участников',
+    label: 'chat',
     isDisabled: false,
     route: routes.chat,
     icon: chat,
@@ -172,7 +173,7 @@ const privateNavLinks = [
   //   icon: reviews,
   // },
   {
-    label: 'Настройки',
+    label: 'settings',
     route: routes.settings,
     isDisabled: false,
     icon: gear,
@@ -181,6 +182,7 @@ const privateNavLinks = [
 
 // eslint-disable-next-line react/prop-types
 export default function Header({ variant }) {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const [isNavMenuVisible, setIsNavMenuVisible] = useState(false)
   const [isHeaderVisible, setIsHeaderVisible] = useState(false)
@@ -196,13 +198,9 @@ export default function Header({ variant }) {
 
   const toggleNavMenu = () => {
     if (isNavMenuVisible) {
-      // document.documentElement.classList.remove('body-overflow')
-      // document.body.classList.remove('html-overflow')
       setIsNavMenuVisible(false)
       setBurger(false)
     } else {
-      // document.documentElement.classList.add('body-overflow')
-      // document.body.classList.add('html-overflow')
       setIsNavMenuVisible(true)
       setBurger(true)
     }
@@ -318,7 +316,7 @@ export default function Header({ variant }) {
                     className={styles.mobileNavLink}
                     onClick={toggleNavMenu}
                   >
-                    {label}
+                    {t(`private.navlinks.${label.replace(/ /g, "\u00a0")}`)}
                   </Link>
                 ))}
               </div>

@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux'
 import ReplenishmentOfMoneyItem from './ReplenishmentOfMoneyItem'
 import MyModalW from "../../../components/modal/MyModalW";
 import MyModalsW from "../../../components/modalW/MyModalW";
+import {useTranslation} from "react-i18next";
 function ReplenishmentOfMoney() {
   const [isInfoCard, setIsInfoCard] = useState({currency: '', pay: '', option: ''})
   const financeData = useSelector(state=>state.financeMoney)
@@ -33,6 +34,7 @@ function ReplenishmentOfMoney() {
     {nameCash: 'trx', sign: trxImg , classes: cl.trxItem, urlOut: '', urlIn: ''}]
   const [modal, setModal] = useState(false)
   const [modaleW, setModalW] = useState(false)
+  const { t } = useTranslation('common');
 
 
 
@@ -43,8 +45,8 @@ function ReplenishmentOfMoney() {
         <ReplenishmentOfMoneyItem cardInfo={isInfoCard}
               setCardInfo={setIsInfoCard} defaultPriceCount={financeData.filter(el=>el.currency === e.nameCash)[0].value} infoData={e} setModal={setModal} modal={modal} setModalW={setModalW} modaleW={modaleW}/>
       )}
-      <MyModalW title={'Выберите Платежную системму'} isInfoCards={isInfoCards} setIsInfoCards={setIsInfoCards} isInfoCard={isInfoCard} setIsInfoCard={setIsInfoCard} setModal={setModal} modal={modal}/>
-      <MyModalsW title={'Выберите Платежную системму'} isInfoCards={isInfoCards} setIsInfoCards={setIsInfoCards} isInfoCard={isInfoCard} setIsInfoCard={setIsInfoCard} setModal={setModalW} modal={modaleW}/>
+      <MyModalW title={`${t('private.finances.sistem')}`} isInfoCards={isInfoCards} setIsInfoCards={setIsInfoCards} isInfoCard={isInfoCard} setIsInfoCard={setIsInfoCard} setModal={setModal} modal={modal}/>
+      <MyModalsW title={`${t('private.finances.sistem')}`} isInfoCards={isInfoCards} setIsInfoCards={setIsInfoCards} isInfoCard={isInfoCard} setIsInfoCard={setIsInfoCard} setModal={setModalW} modal={modaleW}/>
     </div>
   )
 }

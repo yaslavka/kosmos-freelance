@@ -5,9 +5,11 @@ import { api } from '../../../../../api'
 import * as actions from '../../../../../actions/app.actions'
 
 import Button from '../../../../../components/OldButton'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
-export default function PartnersClonesModal({ onClose, showPartnersModal }) {
+export default function PartnersClonesModal({ onClose }) {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const matrixCellInfo = useSelector((state) => state.matrixReducer.matrixCellInfo)
   const matrixInfo = useSelector((state) => state.matrixReducer.matrixInfo)
@@ -21,7 +23,7 @@ export default function PartnersClonesModal({ onClose, showPartnersModal }) {
       api
         .setClone(matrixCellInfo)
         .then(() => {
-          setInstallCloneStatus('Ваша заявка отправлена')
+          setInstallCloneStatus(`${t('private.Pegasus.ClonesModal.message')}`)
           api.getUserInfo().then((response) => {
             dispatch(actions.userInfoSuccess(response))
           })
@@ -144,7 +146,7 @@ export default function PartnersClonesModal({ onClose, showPartnersModal }) {
                 </defs>
               </svg>
               <h3 className={styles.title}>
-                <span>{matrixClones || 0}</span> клонов
+                <span>{matrixClones || 0}</span>{t('private.Pegasus.ClonesModal.counter')}
               </h3>
             </div>
             <Button
@@ -153,7 +155,7 @@ export default function PartnersClonesModal({ onClose, showPartnersModal }) {
               color="perrywinkle"
               onClick={installClones}
             >
-              Поставить
+              {t('private.Pegasus.ClonesModal.onClick')}
             </Button>
           </div>
         </div>

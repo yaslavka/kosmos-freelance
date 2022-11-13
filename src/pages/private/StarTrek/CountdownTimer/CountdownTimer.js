@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './CountdownTimer.css'
 import { getRemainingTimeUntilMsTimestamp } from './Utils/CountdownTimerUtils'
 import PropTypes from 'prop-types'
-
+import {useTranslation} from "react-i18next";
 const defaultRemainingTime = {
   seconds: '00',
   minutes: '00',
@@ -11,6 +11,7 @@ const defaultRemainingTime = {
 }
 
 const CountdownTimer = ({ countdownTimestampMs }) => {
+  const { t } = useTranslation('common');
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const CountdownTimer = ({ countdownTimestampMs }) => {
   return (
     <div className="countdown-timer">
       <span>{remainingTime.days}</span>
-      <span>Дней</span>
+      <span>{t('private.Dashboard.days')}</span>
       <span className="two-numbers">{remainingTime.hours}</span>
       <span>:</span>
       <span className="two-numbers">{remainingTime.minutes}</span>
