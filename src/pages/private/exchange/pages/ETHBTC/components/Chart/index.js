@@ -9,8 +9,6 @@ import { StockChartComponent, StockChartSeriesCollectionDirective, StockChartSer
 import { EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator, Export } from '@syncfusion/ej2-react-charts';
 import './App.css'
 import {chartDatas} from "../../Chart/data";
-
-//import {chartData} from "../../Chart/data";
 class Chart extends Component {
   constructor() {
     super(...arguments);
@@ -40,9 +38,9 @@ class Chart extends Component {
     if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
     if(chartData && chartData.loaded && chartData.data && marketData) {
-      var ohlc = chartData.data.map(item => [{date:new Date(item.date*1000),open:item.open,high:item.high,low:item.low,close:item.close,volume:item.volume}])
+      var ohlc = chartData.data.map(item => [new Date(item.date*1000), item.open, item.high, item.low, item.close, item.volume])
       console.log(ohlc)
-      // var volume = chartData.data.map(item => [item.date * 1000, item.volume])
+      // var volume = chartData.data.map(item => [new Date(item.date*1000) * 1000, item.volume])
       // var groupingUnits = [[
       //   'week',             // unit name
       //   [1]               // allowed multiples
