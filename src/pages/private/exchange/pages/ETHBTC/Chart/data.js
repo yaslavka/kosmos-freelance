@@ -1,6 +1,7 @@
 Object.defineProperty(exports, '__esModule', { value: true })
-exports.chartData = [
+exports.chartDatas = [
   {
+    //new Date(item.date*1-1000000), item.open, item.high, item.low, item.close, item.volume
     date: new Date('2012-04-02'),
     open: 85.9757,
     high: 90.6657,

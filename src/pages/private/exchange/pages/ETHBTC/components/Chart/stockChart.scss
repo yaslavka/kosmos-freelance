@@ -38,6 +38,23 @@
 }
 .highcharts-background{
   fill: none;
+  x: 0;
+  y: 0;
+  width: 100%;
+  height: 100%;
+  rx: 0;
+  ry: 0;
+}
+.highcharts-plot-background{
+  fill: none;
+  x: 10;
+  y: 84;
+  width: 100%;
+  height: 100%;
+}
+.highcharts-root{
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  font-size: 12px;
 }
 .highcharts-container {
   position: relative;
@@ -73,4 +90,16 @@
   height: 22px;
   left: 1657px;
   top: 10px;
+}
+.highcharts-series .highcharts-series-0 .highcharts-candlestick-series .highcharts-color-0 .highcharts-tracker{
+  opacity: 1;
+  transform: translate(10, 85) scale(1, 1);
+  clip-path: url(#highcharts-9hhda4h-16-);
+}
+.highcharts-point .highcharts-color-0 .highcharts-point-up{
+  fill: rgb(255, 255, 255);
+  stroke: rgb(0, 0, 0);
+  stroke-width: 1;
+  opacity: 1;
+  d: path("M -7.5 48.5 L -7.5 44.5 L 6.5 44.5 L 6.5 48.5 Z M -0.5 44.5 L -0.5 44.5 M -0.5 48.5 L -0.5 49");
 }

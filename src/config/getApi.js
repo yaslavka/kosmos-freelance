@@ -1,5 +1,6 @@
 import { START, SUCCESS, FAIL } from '../constants/exchange.constants'
-import { app } from '../utils/api'
+import {app} from "../api";
+
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default getApi => next => action => {

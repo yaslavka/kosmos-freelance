@@ -19,6 +19,8 @@ class Fmat extends Component{
         <Col xl={9}>
           <div className={cl.contentBlock}>
             <Chart pair = { pairFormatted } t={t} />
+            <br/>
+            <br/>
             <div className={cl.buySellCard}>
               <BuyFormComponent pair = { pairFormatted } userInfo={userInfo} t={t}/>
               <SellFormComponent pair = { pairFormatted } userInfo={userInfo} t={t}/>

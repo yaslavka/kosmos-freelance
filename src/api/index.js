@@ -3,6 +3,9 @@ import Raven from 'raven-js'
 import { getAccessToken, createFormDataObj } from '../utils'
 import * as actions from '../actions/auth.actions'
 import { store } from '../index'
+import feathers from "feathers-client";
+import rest from "feathers-rest/client";
+import auth from "feathers-authentication-client";
 
 export const baseInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
@@ -42,7 +45,11 @@ baseInstance.interceptors.response.use(
     }
   },
 )
-
+const host = 'http://localhost:3030'|| 'https://sheltered-tor-24523.herokuapp.com'
+export const app = feathers()
+  .configure(rest(host).fetch(fetch))
+  .configure(feathers.hooks())
+  .configure(auth({ storage: window.localStorage}));
 
 export const api = {
   // Auth

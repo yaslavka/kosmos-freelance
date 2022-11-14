@@ -16,14 +16,14 @@ export function loadAllMarkets() {
   }
 }
 
-export function loadChart(pair='BTC_FARM', end = new Date().getTime()/1000, start = 1405699200, period=86400) {
+export function loadChart(pair='BTC_FARM', end = new Date().getTime()/1000, start = 1666715532.1838162, period=86400) {
   return {
     type: LOAD_CHART,
     service: 'charts',
     getAPI: `public?command=returnChartData&currencyPair=${pair}&start=${start}&end=${end}&period=${period}`,
     pair: pair,
     start: start,
-    period: period
+    period: period,
   }
 }
 
