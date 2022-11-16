@@ -46,8 +46,8 @@ class Chart extends Component {
     if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
     if(chartData && chartData.loaded && chartData.data && marketData) {
-      var ohlc = chartData.data.map(item => ({date:new Date(item.date*1), open:item.open, high:item.high, low:item.low, close:item.close, volume:item.volume}))
-      var volume = chartData.data.map(item => [ +item.volume])
+      var ohlc = chartData.data.map(item => ({date:new Date(+item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close, volume:+item.volume}))
+      var volume = chartData.data.map(item => ({date:new Date(+item.date), volume:+item.volume}))
       console.log(ohlc)
       return (
         <div id='stock-chart'>
@@ -73,8 +73,7 @@ class Chart extends Component {
                                      valueType: 'DateTime',
                                    }}
                                    chartArea={{ border: { width: 0 } }}
-                                   tooltip={{ enable: true, animation: { enable: true }}}
-                                   animation={{ enable: true }}
+                                   tooltip={{ enable: true}}
                                    tooltipRender={tooltipRender}
                                    axisLabelRender={this.axisLabelRender.bind(this)}
                                    crosshair={{ enable: true }}
@@ -91,8 +90,8 @@ class Chart extends Component {
                   <StockChartAxisDirective name='yAxis1' rowIndex={1} labelPosition={'Inside'} tickPosition={'Inside'} opposedPosition={true} lineStyle={{ color: 'transparent' }} majorTickLines={{ color: 'transparent' }}/>
                 </StockChartAxesDirective>
                 <StockChartSeriesCollectionDirective>
-                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='close' type='Candle' yAxisName='yAxis1' animation={{ enable: true }}/>
-                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='volume' type='Column' enableTooltip={false} animation={{ enable: true }}/>
+                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='close' type='Candle' yAxisName='yAxis1' id={pair}/>
+                  <StockChartSeriesDirective dataSource={volume} xName='date' yName='volume' type='Column' enableTooltip={false} id={pair}/>
                   {console.log(chartDatas)}
                 </StockChartSeriesCollectionDirective>
               </StockChartComponent>
