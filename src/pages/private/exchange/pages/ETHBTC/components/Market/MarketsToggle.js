@@ -9,7 +9,8 @@ class MarketsToggle extends Component{
   render() {
     const { tradeMarkets, t } = this.props
     if(tradeMarkets.length) {
-      const buttons = tradeMarkets.map((market, index) => <Button key = {index} type='button' value= {market}  className={this.getClassName(market)}>{market}</Button>)
+      const buttons = tradeMarkets.map((market, index) => <Button key = {index} type='button' value= {market}  className={this.getClassName(market)}>{market} {console.log(market)}</Button>)
+
     return(
       <div className="market_box">
         <div className="all_title title">{t('private.exchange.trade.title')}</div>

@@ -1,13 +1,12 @@
 Object.defineProperty(exports, '__esModule', { value: true })
-exports.chartDatas = [
+exports.chartData = [
   {
-    //new Date(item.date*1-1000000), item.open, item.high, item.low, item.close, item.volume
     date: new Date('2012-04-02'),
     open: 85.9757,
     high: 90.6657,
     low: 85.7685,
     close: 90.5257,
-    volume: 58.57054407,
+    volume: 660187068
   },
   {
     date: new Date('2012-04-09'),
@@ -15,7 +14,7 @@ exports.chartDatas = [
     high: 92,
     low: 86.2157,
     close: 86.4614,
-    volume: 912634864,
+    volume: 912634864
   },
   {
     date: new Date('2012-04-16'),
@@ -23,7 +22,7 @@ exports.chartDatas = [
     high: 88.6071,
     low: 81.4885,
     close: 81.8543,
-    volume: 58.57054407,
+    volume: 1221746066
   },
   {
     date: new Date('2012-04-23'),
@@ -31,7 +30,7 @@ exports.chartDatas = [
     high: 88.2857,
     low: 79.2857,
     close: 86.1428,
-    volume: 965935749,
+    volume: 965935749
   },
   {
     date: new Date('2012-04-30'),
@@ -39,7 +38,7 @@ exports.chartDatas = [
     high: 85.4857,
     low: 80.7385,
     close: 80.75,
-    volume: 58.57054407,
+    volume: 615249365
   },
   {
     date: new Date('2012-05-07'),
@@ -47,7 +46,7 @@ exports.chartDatas = [
     high: 82.2685,
     low: 79.8185,
     close: 80.9585,
-    volume: 541742692,
+    volume: 541742692
   },
   {
     date: new Date('2012-05-14'),
@@ -55,7 +54,7 @@ exports.chartDatas = [
     high: 81.0728,
     low: 74.5971,
     close: 75.7685,
-    volume: 58.57054407,
+    volume: 708126233
   },
   {
     date: new Date('2012-05-21'),
@@ -63,7 +62,7 @@ exports.chartDatas = [
     high: 82.3571,
     low: 76.2928,
     close: 80.3271,
-    volume: 682076215,
+    volume: 682076215
   },
   {
     date: new Date('2012-05-28'),
@@ -71,7 +70,7 @@ exports.chartDatas = [
     high: 83.0714,
     low: 80.0743,
     close: 80.1414,
-    volume: 480059584,
+    volume: 480059584
   },
   {
     date: new Date('2012-06-04'),
@@ -79,7 +78,7 @@ exports.chartDatas = [
     high: 82.9405,
     low: 78.3571,
     close: 82.9028,
-    volume: 517577005,
+    volume: 517577005
   },
   {
     date: new Date('2012-06-11'),
@@ -87,7 +86,7 @@ exports.chartDatas = [
     high: 84.0714,
     low: 80.9571,
     close: 82.0185,
-    volume: 499693120,
+    volume: 499693120
   },
   {
     date: new Date('2012-06-18'),
@@ -95,7 +94,7 @@ exports.chartDatas = [
     high: 84.2857,
     low: 81.4814,
     close: 83.1571,
-    volume: 442172142,
+    volume: 442172142
   },
   {
     date: new Date('2012-06-25'),
@@ -103,7 +102,7 @@ exports.chartDatas = [
     high: 83.4285,
     low: 80.8014,
     close: 83.4285,
-    volume: 371529102,
+    volume: 371529102
   },
   {
     date: new Date('2012-07-02'),
@@ -111,7 +110,7 @@ exports.chartDatas = [
     high: 87.7628,
     low: 83.3714,
     close: 86.5543,
-    volume: 385906790,
+    volume: 385906790
   },
   {
     date: new Date('2012-07-09'),
@@ -119,7 +118,7 @@ exports.chartDatas = [
     high: 88.5528,
     low: 84.6685,
     close: 86.4243,
-    volume: 524235196,
+    volume: 524235196
   },
   {
     date: new Date('2012-07-16'),
@@ -127,7 +126,7 @@ exports.chartDatas = [
     high: 87.9071,
     low: 86.1643,
     close: 86.3285,
-    volume: 419537217,
+    volume: 419537217
   },
   {
     date: new Date('2012-07-23'),
@@ -135,7 +134,7 @@ exports.chartDatas = [
     high: 87.0971,
     low: 81.4285,
     close: 83.5943,
-    volume: 680773023,
+    volume: 680773023
   },
   {
     date: new Date('2012-07-30'),
@@ -143,7 +142,7 @@ exports.chartDatas = [
     high: 88.2828,
     low: 83.9743,
     close: 87.9571,
-    volume: 475109323,
+    volume: 475109323
   },
   {
     date: new Date('2012-08-06'),
@@ -151,7 +150,7 @@ exports.chartDatas = [
     high: 89.2857,
     low: 87.8943,
     close: 88.8143,
-    volume: 312826308,
+    volume: 312826308
   },
   {
     date: new Date('2012-08-13'),
@@ -159,7 +158,7 @@ exports.chartDatas = [
     high: 92.5985,
     low: 89.0357,
     close: 92.5871,
-    volume: 392867193,
+    volume: 392867193
   },
   {
     date: new Date('2012-08-20'),
@@ -167,7 +166,7 @@ exports.chartDatas = [
     high: 96.4114,
     low: 92.5871,
     close: 94.746,
-    volume: 708614692,
+    volume: 708614692
   },
   {
     date: new Date('2012-08-27'),
@@ -175,7 +174,7 @@ exports.chartDatas = [
     high: 97.2671,
     low: 93.8928,
     close: 95.0343,
-    volume: 383807217,
+    volume: 383807217
   },
   {
     date: new Date('2012-09-03'),
@@ -183,7 +182,7 @@ exports.chartDatas = [
     high: 97.4971,
     low: 94.9285,
     close: 97.2057,
-    volume: 355722047,
+    volume: 355722047
   },
   {
     date: new Date('2012-09-10'),
@@ -191,7 +190,7 @@ exports.chartDatas = [
     high: 99.5685,
     low: 93.7143,
     close: 98.7543,
-    volume: 724042207,
+    volume: 724042207
   },
   {
     date: new Date('2012-09-17'),
@@ -199,7 +198,7 @@ exports.chartDatas = [
     high: 100.7243,
     low: 99.0885,
     close: 100.0135,
-    volume: 500166040,
+    volume: 500166040
   },
   {
     date: new Date('2012-09-24'),
@@ -207,7 +206,7 @@ exports.chartDatas = [
     high: 99.3028,
     low: 94.3357,
     close: 95.3007,
-    volume: 714507994,
+    volume: 714507994
   },
   {
     date: new Date('2012-10-01'),
@@ -215,7 +214,7 @@ exports.chartDatas = [
     high: 96.6785,
     low: 92.95,
     close: 93.2271,
-    volume: 638543622,
+    volume: 638543622
   },
   {
     date: new Date('2012-10-08'),
@@ -223,7 +222,7 @@ exports.chartDatas = [
     high: 92.5085,
     low: 89.0785,
     close: 89.9591,
-    volume: 747127724,
+    volume: 747127724
   },
   {
     date: new Date('2012-10-15'),
@@ -231,7 +230,7 @@ exports.chartDatas = [
     high: 93.2557,
     low: 87.0885,
     close: 87.12,
-    volume: 646996264,
+    volume: 646996264
   },
   {
     date: new Date('2012-10-22'),
@@ -239,7 +238,7 @@ exports.chartDatas = [
     high: 90.7685,
     low: 84.4285,
     close: 86.2857,
-    volume: 866040680,
+    volume: 866040680
   },
   {
     date: new Date('2012-10-29'),
@@ -247,7 +246,7 @@ exports.chartDatas = [
     high: 86.1428,
     low: 82.1071,
     close: 82.4,
-    volume: 367371310,
+    volume: 367371310
   },
   {
     date: new Date('2012-11-05'),
@@ -255,7 +254,7 @@ exports.chartDatas = [
     high: 84.3914,
     low: 76.2457,
     close: 78.1514,
-    volume: 919719846,
+    volume: 919719846
   },
   {
     date: new Date('2012-11-12'),
@@ -263,7 +262,7 @@ exports.chartDatas = [
     high: 79.2143,
     low: 72.25,
     close: 75.3825,
-    volume: 894382149,
+    volume: 894382149
   },
   {
     date: new Date('2012-11-19'),
@@ -271,7 +270,7 @@ exports.chartDatas = [
     high: 81.7143,
     low: 77.1257,
     close: 81.6428,
-    volume: 527416747,
+    volume: 527416747
   },
   {
     date: new Date('2012-11-26'),
@@ -279,7 +278,7 @@ exports.chartDatas = [
     high: 84.8928,
     low: 81.7514,
     close: 83.6114,
-    volume: 646467974,
+    volume: 646467974
   },
   {
     date: new Date('2012-12-03'),
@@ -287,7 +286,7 @@ exports.chartDatas = [
     high: 84.9414,
     low: 74.09,
     close: 76.1785,
-    volume: 980096264,
+    volume: 980096264
   },
   {
     date: new Date('2012-12-10'),
@@ -295,7 +294,7 @@ exports.chartDatas = [
     high: 78.5085,
     low: 72.2257,
     close: 72.8277,
-    volume: 835016110,
+    volume: 835016110
   },
   {
     date: new Date('2012-12-17'),
@@ -303,7 +302,7 @@ exports.chartDatas = [
     high: 76.4143,
     low: 71.6043,
     close: 74.19,
-    volume: 726150329,
+    volume: 726150329
   },
   {
     date: new Date('2012-12-24'),
@@ -311,7 +310,7 @@ exports.chartDatas = [
     high: 74.8928,
     low: 72.0943,
     close: 72.7984,
-    volume: 321104733,
+    volume: 321104733
   },
   {
     date: new Date('2012-12-31'),
@@ -319,7 +318,7 @@ exports.chartDatas = [
     high: 79.2857,
     low: 72.7143,
     close: 75.2857,
-    volume: 540854882,
+    volume: 540854882
   },
   {
     date: new Date('2013-01-07'),
@@ -327,7 +326,7 @@ exports.chartDatas = [
     high: 75.9843,
     low: 73.6,
     close: 74.3285,
-    volume: 574594262,
+    volume: 574594262
   },
   {
     date: new Date('2013-01-14'),
@@ -335,7 +334,7 @@ exports.chartDatas = [
     high: 72.9643,
     low: 69.0543,
     close: 71.4285,
-    volume: 803105621,
+    volume: 803105621
   },
   {
     date: new Date('2013-01-21'),
@@ -343,7 +342,7 @@ exports.chartDatas = [
     high: 73.57,
     low: 62.1428,
     close: 62.84,
-    volume: 971912560,
+    volume: 971912560
   },
   {
     date: new Date('2013-01-28'),
@@ -351,7 +350,7 @@ exports.chartDatas = [
     high: 66.0857,
     low: 62.2657,
     close: 64.8028,
-    volume: 656549587,
+    volume: 656549587
   },
   {
     date: new Date('2013-02-04'),
@@ -359,7 +358,7 @@ exports.chartDatas = [
     high: 68.4014,
     low: 63.1428,
     close: 67.8543,
-    volume: 743778993,
+    volume: 743778993
   },
   {
     date: new Date('2013-02-11'),
@@ -367,7 +366,7 @@ exports.chartDatas = [
     high: 69.2771,
     low: 65.7028,
     close: 65.7371,
-    volume: 585292366,
+    volume: 585292366
   },
   {
     date: new Date('2013-02-18'),
@@ -375,7 +374,7 @@ exports.chartDatas = [
     high: 66.1043,
     low: 63.26,
     close: 64.4014,
-    volume: 421766997,
+    volume: 421766997
   },
   {
     date: new Date('2013-02-25'),
@@ -383,7 +382,7 @@ exports.chartDatas = [
     high: 65.0171,
     low: 61.4257,
     close: 61.4957,
-    volume: 582741215,
+    volume: 582741215
   },
   {
     date: new Date('2013-03-04'),
@@ -391,7 +390,7 @@ exports.chartDatas = [
     high: 62.2043,
     low: 59.8571,
     close: 61.6743,
-    volume: 632856539,
+    volume: 632856539
   },
   {
     date: new Date('2013-03-11'),
@@ -399,7 +398,7 @@ exports.chartDatas = [
     high: 63.4614,
     low: 60.7343,
     close: 63.38,
-    volume: 572066981,
+    volume: 572066981
   },
   {
     date: new Date('2013-03-18'),
@@ -407,7 +406,7 @@ exports.chartDatas = [
     high: 66.0143,
     low: 63.0286,
     close: 65.9871,
-    volume: 552156035,
+    volume: 552156035
   },
   {
     date: new Date('2013-03-25'),
@@ -415,7 +414,7 @@ exports.chartDatas = [
     high: 67.1357,
     low: 63.0886,
     close: 63.2371,
-    volume: 390762517,
+    volume: 390762517
   },
   {
     date: new Date('2013-04-01'),
@@ -423,7 +422,7 @@ exports.chartDatas = [
     high: 63.3854,
     low: 59.9543,
     close: 60.4571,
-    volume: 505273732,
+    volume: 505273732
   },
   {
     date: new Date('2013-04-08'),
@@ -431,7 +430,7 @@ exports.chartDatas = [
     high: 62.57,
     low: 60.3557,
     close: 61.4,
-    volume: 387323550,
+    volume: 387323550
   },
   {
     date: new Date('2013-04-15'),
@@ -439,7 +438,7 @@ exports.chartDatas = [
     high: 61.1271,
     low: 55.0143,
     close: 55.79,
-    volume: 709945604,
+    volume: 709945604
   },
   {
     date: new Date('2013-04-22'),
@@ -447,7 +446,7 @@ exports.chartDatas = [
     high: 59.8241,
     low: 55.8964,
     close: 59.6007,
-    volume: 787007506,
+    volume: 787007506
   },
   {
     date: new Date('2013-04-29'),
@@ -455,7 +454,7 @@ exports.chartDatas = [
     high: 64.7471,
     low: 60,
     close: 64.2828,
-    volume: 655020017,
+    volume: 655020017
   },
   {
     date: new Date('2013-05-06'),
@@ -463,7 +462,7 @@ exports.chartDatas = [
     high: 66.5357,
     low: 64.3543,
     close: 64.71,
-    volume: 545488533,
+    volume: 545488533
   },
   {
     date: new Date('2013-05-13'),
@@ -471,7 +470,7 @@ exports.chartDatas = [
     high: 65.4143,
     low: 59.8428,
     close: 61.8943,
-    volume: 633706550,
+    volume: 633706550
   },
   {
     date: new Date('2013-05-20'),
@@ -479,7 +478,7 @@ exports.chartDatas = [
     high: 64.05,
     low: 61.4428,
     close: 63.5928,
-    volume: 494379068,
+    volume: 494379068
   },
   {
     date: new Date('2013-05-27'),
@@ -487,7 +486,7 @@ exports.chartDatas = [
     high: 65.3,
     low: 62.7714,
     close: 64.2478,
-    volume: 362907830,
+    volume: 362907830
   },
   {
     date: new Date('2013-06-03'),
@@ -495,7 +494,7 @@ exports.chartDatas = [
     high: 64.9186,
     low: 61.8243,
     close: 63.1158,
-    volume: 443249793,
+    volume: 443249793
   },
   {
     date: new Date('2013-06-10'),
@@ -503,7 +502,7 @@ exports.chartDatas = [
     high: 64.1541,
     low: 61.2143,
     close: 61.4357,
-    volume: 389680092,
+    volume: 389680092
   },
   {
     date: new Date('2013-06-17'),
@@ -511,7 +510,7 @@ exports.chartDatas = [
     high: 62.2428,
     low: 58.3,
     close: 59.0714,
-    volume: 400384818,
+    volume: 400384818
   },
   {
     date: new Date('2013-06-24'),
@@ -519,7 +518,7 @@ exports.chartDatas = [
     high: 58.38,
     low: 55.5528,
     close: 56.6471,
-    volume: 519314826,
+    volume: 519314826
   },
   {
     date: new Date('2013-07-01'),
@@ -527,7 +526,7 @@ exports.chartDatas = [
     high: 60.47,
     low: 57.3171,
     close: 59.6314,
-    volume: 343878841,
+    volume: 343878841
   },
   {
     date: new Date('2013-07-08'),
@@ -535,7 +534,7 @@ exports.chartDatas = [
     high: 61.3986,
     low: 58.6257,
     close: 60.93,
-    volume: 384106977,
+    volume: 384106977
   },
   {
     date: new Date('2013-07-15'),
@@ -543,7 +542,7 @@ exports.chartDatas = [
     high: 62.1243,
     low: 60.5957,
     close: 60.7071,
-    volume: 286035513,
+    volume: 286035513
   },
   {
     date: new Date('2013-07-22'),
@@ -551,7 +550,7 @@ exports.chartDatas = [
     high: 63.5128,
     low: 59.8157,
     close: 62.9986,
-    volume: 395816827,
+    volume: 395816827
   },
   {
     date: new Date('2013-07-29'),
@@ -559,7 +558,7 @@ exports.chartDatas = [
     high: 66.1214,
     low: 62.8857,
     close: 66.0771,
-    volume: 339668858,
+    volume: 339668858
   },
   {
     date: new Date('2013-08-05'),
@@ -567,7 +566,7 @@ exports.chartDatas = [
     high: 67.4128,
     low: 64.8071,
     close: 64.9214,
-    volume: 368486781,
+    volume: 368486781
   },
   {
     date: new Date('2013-08-12'),
@@ -575,7 +574,7 @@ exports.chartDatas = [
     high: 72.0357,
     low: 65.2328,
     close: 71.7614,
-    volume: 711563584,
+    volume: 711563584
   },
   {
     date: new Date('2013-08-19'),
@@ -583,7 +582,7 @@ exports.chartDatas = [
     high: 73.3914,
     low: 71.1714,
     close: 71.5743,
-    volume: 417119660,
+    volume: 417119660
   },
   {
     date: new Date('2013-08-26'),
@@ -591,7 +590,7 @@ exports.chartDatas = [
     high: 72.8857,
     low: 69.4286,
     close: 69.6023,
-    volume: 392805888,
+    volume: 392805888
   },
   {
     date: new Date('2013-09-02'),
@@ -599,7 +598,7 @@ exports.chartDatas = [
     high: 71.7485,
     low: 69.6214,
     close: 71.1743,
-    volume: 317244380,
+    volume: 317244380
   },
   {
     date: new Date('2013-09-09'),
@@ -607,7 +606,7 @@ exports.chartDatas = [
     high: 72.56,
     low: 66.3857,
     close: 66.4143,
-    volume: 669376320,
+    volume: 669376320
   },
   {
     date: new Date('2013-09-16'),
@@ -615,7 +614,7 @@ exports.chartDatas = [
     high: 68.3643,
     low: 63.8886,
     close: 66.7728,
-    volume: 625142677,
+    volume: 625142677
   },
   {
     date: new Date('2013-09-23'),
@@ -623,7 +622,7 @@ exports.chartDatas = [
     high: 70.9871,
     low: 68.6743,
     close: 68.9643,
-    volume: 475274537,
+    volume: 475274537
   },
   {
     date: new Date('2013-09-30'),
@@ -631,7 +630,7 @@ exports.chartDatas = [
     high: 70.3357,
     low: 67.773,
     close: 69.0043,
-    volume: 368198906,
+    volume: 368198906
   },
   {
     date: new Date('2013-10-07'),
@@ -639,7 +638,7 @@ exports.chartDatas = [
     high: 70.5486,
     low: 68.3257,
     close: 70.4017,
-    volume: 361437661,
+    volume: 361437661
   },
   {
     date: new Date('2013-10-14'),
@@ -647,7 +646,7 @@ exports.chartDatas = [
     high: 72.7514,
     low: 69.9071,
     close: 72.6985,
-    volume: 342694379,
+    volume: 342694379
   },
   {
     date: new Date('2013-10-21'),
@@ -655,7 +654,7 @@ exports.chartDatas = [
     high: 76.1757,
     low: 72.5757,
     close: 75.1368,
-    volume: 490458997,
+    volume: 490458997
   },
   {
     date: new Date('2013-10-28'),
@@ -663,7 +662,7 @@ exports.chartDatas = [
     high: 77.0357,
     low: 73.5057,
     close: 74.29,
-    volume: 508130174,
+    volume: 508130174
   },
   {
     date: new Date('2013-11-04'),
@@ -671,7 +670,7 @@ exports.chartDatas = [
     high: 75.555,
     low: 73.1971,
     close: 74.3657,
-    volume: 318132218,
+    volume: 318132218
   },
   {
     date: new Date('2013-11-11'),
@@ -679,7 +678,7 @@ exports.chartDatas = [
     high: 75.6114,
     low: 73.4871,
     close: 74.9987,
-    volume: 306711021,
+    volume: 306711021
   },
   {
     date: new Date('2013-11-18'),
@@ -687,7 +686,7 @@ exports.chartDatas = [
     high: 75.3128,
     low: 73.3814,
     close: 74.2571,
-    volume: 282778778,
+    volume: 282778778
   },
   {
     date: new Date('2013-11-25'),
@@ -695,7 +694,7 @@ exports.chartDatas = [
     high: 79.7614,
     low: 74.4285,
     close: 79.4385,
-    volume: 327405302,
+    volume: 327405302
   },
   {
     date: new Date('2013-12-02'),
@@ -703,7 +702,7 @@ exports.chartDatas = [
     high: 82.1622,
     low: 78.6885,
     close: 80.0028,
-    volume: 522055676,
+    volume: 522055676
   },
   {
     date: new Date('2013-12-09'),
@@ -711,7 +710,7 @@ exports.chartDatas = [
     high: 81.5671,
     low: 79.0957,
     close: 79.2043,
-    volume: 387271099,
+    volume: 387271099
   },
   {
     date: new Date('2013-12-16'),
@@ -719,7 +718,7 @@ exports.chartDatas = [
     high: 80.377,
     low: 76.9714,
     close: 78.4314,
-    volume: 457580848,
+    volume: 457580848
   },
   {
     date: new Date('2013-12-23'),
@@ -727,7 +726,7 @@ exports.chartDatas = [
     high: 81.6971,
     low: 79.9285,
     close: 80.0128,
-    volume: 274253503,
+    volume: 274253503
   },
   {
     date: new Date('2013-12-30'),
@@ -735,7 +734,7 @@ exports.chartDatas = [
     high: 80.1828,
     low: 77.2043,
     close: 77.2828,
-    volume: 275734934,
+    volume: 275734934
   },
   {
     date: new Date('2014-01-06'),
@@ -743,7 +742,7 @@ exports.chartDatas = [
     high: 78.1228,
     low: 75.8728,
     close: 76.1343,
-    volume: 393462075,
+    volume: 393462075
   },
   {
     date: new Date('2014-01-13'),
@@ -751,7 +750,7 @@ exports.chartDatas = [
     high: 80.0285,
     low: 75.6971,
     close: 77.2385,
-    volume: 439557459,
+    volume: 439557459
   },
   {
     date: new Date('2014-01-20'),
@@ -759,7 +758,7 @@ exports.chartDatas = [
     high: 79.6128,
     low: 77.2028,
     close: 78.01,
-    volume: 385585525,
+    volume: 385585525
   },
   {
     date: new Date('2014-01-27'),
@@ -767,7 +766,7 @@ exports.chartDatas = [
     high: 79.2571,
     low: 70.5071,
     close: 71.5143,
-    volume: 813702575,
+    volume: 813702575
   },
   {
     date: new Date('2014-02-03'),
@@ -775,7 +774,7 @@ exports.chartDatas = [
     high: 74.7042,
     low: 71.3286,
     close: 74.24,
-    volume: 434447570,
+    volume: 434447570
   },
   {
     date: new Date('2014-02-10'),
@@ -783,7 +782,7 @@ exports.chartDatas = [
     high: 77.9971,
     low: 74,
     close: 77.7128,
-    volume: 379011880,
+    volume: 379011880
   },
   {
     date: new Date('2014-02-17'),
@@ -791,7 +790,7 @@ exports.chartDatas = [
     high: 78.7414,
     low: 74.9428,
     close: 75.0357,
-    volume: 289609443,
+    volume: 289609443
   },
   {
     date: new Date('2014-02-24'),
@@ -799,7 +798,7 @@ exports.chartDatas = [
     high: 76.1071,
     low: 73.6571,
     close: 75.1771,
-    volume: 367569649,
+    volume: 367569649
   },
   {
     date: new Date('2014-03-03'),
@@ -807,7 +806,7 @@ exports.chartDatas = [
     high: 76.3928,
     low: 74.6871,
     close: 75.7771,
-    volume: 275972640,
+    volume: 275972640
   },
   {
     date: new Date('2014-03-10'),
@@ -815,7 +814,7 @@ exports.chartDatas = [
     high: 77.0943,
     low: 74.7143,
     close: 74.9557,
-    volume: 287729528,
+    volume: 287729528
   },
   {
     date: new Date('2014-03-17'),
@@ -823,7 +822,7 @@ exports.chartDatas = [
     high: 76.6057,
     low: 75.0286,
     close: 76.1243,
-    volume: 303531061,
+    volume: 303531061
   },
   {
     date: new Date('2014-03-24'),
@@ -831,7 +830,7 @@ exports.chartDatas = [
     high: 78.4285,
     low: 76.3214,
     close: 76.6943,
-    volume: 338387221,
+    volume: 338387221
   },
   {
     date: new Date('2014-03-31'),
@@ -839,7 +838,7 @@ exports.chartDatas = [
     high: 77.64,
     low: 75.7971,
     close: 75.9743,
-    volume: 245749459,
+    volume: 245749459
   },
   {
     date: new Date('2014-04-07'),
@@ -847,7 +846,7 @@ exports.chartDatas = [
     high: 76.0343,
     low: 73.8771,
     close: 74.23,
-    volume: 312008139,
+    volume: 312008139
   },
   {
     date: new Date('2014-04-14'),
@@ -855,7 +854,7 @@ exports.chartDatas = [
     high: 75.3943,
     low: 73.0471,
     close: 74.9914,
-    volume: 241209047,
+    volume: 241209047
   },
   {
     date: new Date('2014-04-21'),
@@ -863,7 +862,7 @@ exports.chartDatas = [
     high: 81.7128,
     low: 74.8514,
     close: 81.7057,
-    volume: 476651465,
+    volume: 476651465
   },
   {
     date: new Date('2014-04-28'),
@@ -871,7 +870,7 @@ exports.chartDatas = [
     high: 85.6328,
     low: 81.7928,
     close: 84.6543,
-    volume: 473712709,
+    volume: 473712709
   },
   {
     date: new Date('2014-05-05'),
@@ -879,7 +878,7 @@ exports.chartDatas = [
     high: 86.3442,
     low: 82.9043,
     close: 83.6489,
-    volume: 365535013,
+    volume: 365535013
   },
   {
     date: new Date('2014-05-12'),
@@ -887,7 +886,7 @@ exports.chartDatas = [
     high: 85.3614,
     low: 83.6285,
     close: 85.3585,
-    volume: 260931637,
+    volume: 260931637
   },
   {
     date: new Date('2014-05-19'),
@@ -895,7 +894,7 @@ exports.chartDatas = [
     high: 87.8184,
     low: 85.3328,
     close: 87.7328,
-    volume: 294298274,
+    volume: 294298274
   },
   {
     date: new Date('2014-05-26'),
@@ -903,7 +902,7 @@ exports.chartDatas = [
     high: 92.0243,
     low: 87.9471,
     close: 90.4285,
-    volume: 400232120,
+    volume: 400232120
   },
   {
     date: new Date('2014-06-02'),
@@ -911,7 +910,7 @@ exports.chartDatas = [
     high: 93.0371,
     low: 88.9285,
     close: 92.2243,
-    volume: 412158024,
+    volume: 412158024
   },
   {
     date: new Date('2014-06-09'),
@@ -919,7 +918,7 @@ exports.chartDatas = [
     high: 95.05,
     low: 90.88,
     close: 91.28,
-    volume: 292422550,
+    volume: 292422550
   },
   {
     date: new Date('2014-06-16'),
@@ -927,7 +926,7 @@ exports.chartDatas = [
     high: 92.75,
     low: 90.9,
     close: 90.91,
-    volume: 234325480,
+    volume: 234325480
   },
   {
     date: new Date('2014-06-23'),
@@ -935,7 +934,7 @@ exports.chartDatas = [
     high: 92,
     low: 89.65,
     close: 91.98,
-    volume: 213712160,
+    volume: 213712160
   },
   {
     date: new Date('2014-06-30'),
@@ -943,7 +942,7 @@ exports.chartDatas = [
     high: 94.1,
     low: 92.09,
     close: 94.03,
-    volume: 138936570,
+    volume: 138936570
   },
   {
     date: new Date('2014-07-07'),
@@ -951,7 +950,7 @@ exports.chartDatas = [
     high: 96.8,
     low: 93.52,
     close: 95.22,
-    volume: 229782440,
+    volume: 229782440
   },
   {
     date: new Date('2014-07-14'),
@@ -959,7 +958,7 @@ exports.chartDatas = [
     high: 97.1,
     low: 92.57,
     close: 94.43,
-    volume: 248104390,
+    volume: 248104390
   },
   {
     date: new Date('2014-07-21'),
@@ -967,7 +966,7 @@ exports.chartDatas = [
     high: 97.88,
     low: 93.72,
     close: 97.671,
-    volume: 273021350,
+    volume: 273021350
   },
   {
     date: new Date('2014-07-28'),
@@ -975,7 +974,7 @@ exports.chartDatas = [
     high: 99.44,
     low: 94.81,
     close: 96.13,
-    volume: 235868530,
+    volume: 235868530
   },
   {
     date: new Date('2014-08-04'),
@@ -983,7 +982,7 @@ exports.chartDatas = [
     high: 96.58,
     low: 93.28,
     close: 94.74,
-    volume: 222522120,
+    volume: 222522120
   },
   {
     date: new Date('2014-08-11'),
@@ -991,7 +990,7 @@ exports.chartDatas = [
     high: 98.19,
     low: 94.8355,
     close: 97.98,
-    volume: 178806580,
+    volume: 178806580
   },
   {
     date: new Date('2014-08-18'),
@@ -999,7 +998,7 @@ exports.chartDatas = [
     high: 101.47,
     low: 97.98,
     close: 101.32,
-    volume: 246446280,
+    volume: 246446280
   },
   {
     date: new Date('2014-08-25'),
@@ -1007,7 +1006,7 @@ exports.chartDatas = [
     high: 102.9,
     low: 100.7,
     close: 102.5,
-    volume: 232858250,
+    volume: 232858250
   },
   {
     date: new Date('2014-09-01'),
@@ -1015,7 +1014,7 @@ exports.chartDatas = [
     high: 103.74,
     low: 97.79,
     close: 98.97,
-    volume: 322045910,
+    volume: 322045910
   },
   {
     date: new Date('2014-09-08'),
@@ -1023,7 +1022,7 @@ exports.chartDatas = [
     high: 103.08,
     low: 96.14,
     close: 101.66,
-    volume: 460851840,
+    volume: 460851840
   },
   {
     date: new Date('2014-09-15'),
@@ -1031,7 +1030,7 @@ exports.chartDatas = [
     high: 103.05,
     low: 98.89,
     close: 100.96,
-    volume: 296425730,
+    volume: 296425730
   },
   {
     date: new Date('2014-09-22'),
@@ -1039,7 +1038,7 @@ exports.chartDatas = [
     high: 102.94,
     low: 97.72,
     close: 100.75,
-    volume: 337617850,
+    volume: 337617850
   },
   {
     date: new Date('2014-09-29'),
@@ -1047,7 +1046,7 @@ exports.chartDatas = [
     high: 101.54,
     low: 98.04,
     close: 99.62,
-    volume: 246900230,
+    volume: 246900230
   },
   {
     date: new Date('2014-10-06'),
@@ -1055,7 +1054,7 @@ exports.chartDatas = [
     high: 102.38,
     low: 98.31,
     close: 100.73,
-    volume: 279646740,
+    volume: 279646740
   },
   {
     date: new Date('2014-10-13'),
@@ -1063,7 +1062,7 @@ exports.chartDatas = [
     high: 101.78,
     low: 95.18,
     close: 97.67,
-    volume: 356408760,
+    volume: 356408760
   },
   {
     date: new Date('2014-10-20'),
@@ -1071,7 +1070,7 @@ exports.chartDatas = [
     high: 105.49,
     low: 98.22,
     close: 105.22,
-    volume: 355329760,
+    volume: 355329760
   },
   {
     date: new Date('2014-10-27'),
@@ -1079,7 +1078,7 @@ exports.chartDatas = [
     high: 108.04,
     low: 104.7,
     close: 108,
-    volume: 219443560,
+    volume: 219443560
   },
   {
     date: new Date('2014-11-03'),
@@ -1087,7 +1086,7 @@ exports.chartDatas = [
     high: 110.3,
     low: 107.72,
     close: 109.01,
-    volume: 199332700,
+    volume: 199332700
   },
   {
     date: new Date('2014-11-10'),
@@ -1095,7 +1094,7 @@ exports.chartDatas = [
     high: 114.19,
     low: 108.4,
     close: 114.18,
-    volume: 203976340,
+    volume: 203976340
   },
   {
     date: new Date('2014-11-17'),
@@ -1103,7 +1102,7 @@ exports.chartDatas = [
     high: 117.57,
     low: 113.3,
     close: 116.47,
-    volume: 232574480,
+    volume: 232574480
   },
   {
     date: new Date('2014-11-24'),
@@ -1111,7 +1110,7 @@ exports.chartDatas = [
     high: 119.75,
     low: 116.62,
     close: 118.93,
-    volume: 181158620,
+    volume: 181158620
   },
   {
     date: new Date('2014-12-01'),
@@ -1119,7 +1118,7 @@ exports.chartDatas = [
     high: 119.25,
     low: 111.27,
     close: 115,
-    volume: 266118290,
+    volume: 266118290
   },
   {
     date: new Date('2014-12-08'),
@@ -1127,7 +1126,7 @@ exports.chartDatas = [
     high: 114.85,
     low: 109.35,
     close: 109.73,
-    volume: 259311140,
+    volume: 259311140
   },
   {
     date: new Date('2014-12-15'),
@@ -1135,7 +1134,7 @@ exports.chartDatas = [
     high: 113.24,
     low: 106.26,
     close: 111.78,
-    volume: 326382400,
+    volume: 326382400
   },
   {
     date: new Date('2014-12-22'),
@@ -1143,7 +1142,7 @@ exports.chartDatas = [
     high: 114.52,
     low: 111.97,
     close: 113.99,
-    volume: 119248900,
+    volume: 119248900
   },
   {
     date: new Date('2014-12-29'),
@@ -1151,7 +1150,7 @@ exports.chartDatas = [
     high: 114.77,
     low: 107.35,
     close: 109.33,
-    volume: 151780640,
+    volume: 151780640
   },
   {
     date: new Date('2015-01-05'),
@@ -1159,7 +1158,7 @@ exports.chartDatas = [
     high: 113.25,
     low: 104.63,
     close: 112.01,
-    volume: 282690970,
+    volume: 282690970
   },
   {
     date: new Date('2015-01-12'),
@@ -1167,7 +1166,7 @@ exports.chartDatas = [
     high: 112.8,
     low: 105.2,
     close: 105.99,
-    volume: 303531140,
+    volume: 303531140
   },
   {
     date: new Date('2015-01-19'),
@@ -1175,7 +1174,7 @@ exports.chartDatas = [
     high: 113.75,
     low: 106.5,
     close: 112.98,
-    volume: 198362640,
+    volume: 198362640
   },
   {
     date: new Date('2015-01-26'),
@@ -1183,7 +1182,7 @@ exports.chartDatas = [
     high: 120,
     low: 109.03,
     close: 117.16,
-    volume: 461747290,
+    volume: 461747290
   },
   {
     date: new Date('2015-02-02'),
@@ -1191,7 +1190,7 @@ exports.chartDatas = [
     high: 120.51,
     low: 116.08,
     close: 118.93,
-    volume: 270190470,
+    volume: 270190470
   },
   {
     date: new Date('2015-02-09'),
@@ -1199,7 +1198,7 @@ exports.chartDatas = [
     high: 127.48,
     low: 118.43,
     close: 127.08,
-    volume: 301354470,
+    volume: 301354470
   },
   {
     date: new Date('2015-02-16'),
@@ -1207,7 +1206,7 @@ exports.chartDatas = [
     high: 129.5,
     low: 126.92,
     close: 129.495,
-    volume: 193883960,
+    volume: 193883960
   },
   {
     date: new Date('2015-02-23'),
@@ -1215,7 +1214,7 @@ exports.chartDatas = [
     high: 133.6,
     low: 126.61,
     close: 128.46,
-    volume: 369856960,
+    volume: 369856960
   },
   {
     date: new Date('2015-03-02'),
@@ -1223,7 +1222,7 @@ exports.chartDatas = [
     high: 130.28,
     low: 125.76,
     close: 126.6,
-    volume: 246472020,
+    volume: 246472020
   },
   {
     date: new Date('2015-03-09'),
@@ -1231,7 +1230,7 @@ exports.chartDatas = [
     high: 129.57,
     low: 121.63,
     close: 123.59,
-    volume: 325921230,
+    volume: 325921230
   },
   {
     date: new Date('2015-03-16'),
@@ -1239,7 +1238,7 @@ exports.chartDatas = [
     high: 129.2451,
     low: 122.87,
     close: 125.9,
-    volume: 266016400,
+    volume: 266016400
   },
   {
     date: new Date('2015-03-23'),
@@ -1247,7 +1246,7 @@ exports.chartDatas = [
     high: 128.04,
     low: 122.6,
     close: 123.25,
-    volume: 208731730,
+    volume: 208731730
   },
   {
     date: new Date('2015-03-30'),
@@ -1255,7 +1254,7 @@ exports.chartDatas = [
     high: 126.49,
     low: 123.1,
     close: 125.32,
-    volume: 161628950,
+    volume: 161628950
   },
   {
     date: new Date('2015-04-06'),
@@ -1263,7 +1262,7 @@ exports.chartDatas = [
     high: 128.1218,
     low: 124.33,
     close: 127.1,
-    volume: 181454510,
+    volume: 181454510
   },
   {
     date: new Date('2015-04-13'),
@@ -1271,7 +1270,7 @@ exports.chartDatas = [
     high: 128.57,
     low: 124.46,
     close: 124.75,
-    volume: 170090870,
+    volume: 170090870
   },
   {
     date: new Date('2015-04-20'),
@@ -1279,7 +1278,7 @@ exports.chartDatas = [
     high: 130.63,
     low: 125.17,
     close: 130.28,
-    volume: 206698310,
+    volume: 206698310
   },
   {
     date: new Date('2015-04-27'),
@@ -1287,7 +1286,7 @@ exports.chartDatas = [
     high: 134.54,
     low: 124.58,
     close: 128.95,
-    volume: 417115180,
+    volume: 417115180
   },
   {
     date: new Date('2015-05-04'),
@@ -1295,7 +1294,7 @@ exports.chartDatas = [
     high: 130.57,
     low: 123.36,
     close: 127.62,
-    volume: 270197900,
+    volume: 270197900
   },
   {
     date: new Date('2015-05-11'),
@@ -1303,7 +1302,7 @@ exports.chartDatas = [
     high: 129.49,
     low: 124.82,
     close: 128.77,
-    volume: 207858180,
+    volume: 207858180
   },
   {
     date: new Date('2015-05-18'),
@@ -1311,7 +1310,7 @@ exports.chartDatas = [
     high: 132.97,
     low: 128.36,
     close: 132.54,
-    volume: 216438970,
+    volume: 216438970
   },
   {
     date: new Date('2015-05-25'),
@@ -1319,7 +1318,7 @@ exports.chartDatas = [
     high: 132.91,
     low: 129.12,
     close: 130.28,
-    volume: 197468800,
+    volume: 197468800
   },
   {
     date: new Date('2015-06-01'),
@@ -1327,7 +1326,7 @@ exports.chartDatas = [
     high: 131.39,
     low: 128.36,
     close: 128.65,
-    volume: 170465550,
+    volume: 170465550
   },
   {
     date: new Date('2015-06-08'),
@@ -1335,7 +1334,7 @@ exports.chartDatas = [
     high: 130.18,
     low: 125.62,
     close: 127.17,
-    volume: 219812710,
+    volume: 219812710
   },
   {
     date: new Date('2015-06-15'),
@@ -1343,7 +1342,7 @@ exports.chartDatas = [
     high: 128.31,
     low: 125.71,
     close: 126.6,
-    volume: 197925030,
+    volume: 197925030
   },
   {
     date: new Date('2015-06-22'),
@@ -1351,7 +1350,7 @@ exports.chartDatas = [
     high: 129.8,
     low: 126.51,
     close: 126.75,
-    volume: 195104520,
+    volume: 195104520
   },
   {
     date: new Date('2015-06-29'),
@@ -1359,7 +1358,7 @@ exports.chartDatas = [
     high: 126.94,
     low: 124.48,
     close: 126.44,
-    volume: 150747530,
+    volume: 150747530
   },
   {
     date: new Date('2015-07-06'),
@@ -1367,7 +1366,7 @@ exports.chartDatas = [
     high: 126.23,
     low: 119.22,
     close: 123.28,
-    volume: 274904180,
+    volume: 274904180
   },
   {
     date: new Date('2015-07-13'),
@@ -1375,7 +1374,7 @@ exports.chartDatas = [
     high: 129.62,
     low: 124.32,
     close: 129.62,
-    volume: 188579340,
+    volume: 188579340
   },
   {
     date: new Date('2015-07-20'),
@@ -1383,7 +1382,7 @@ exports.chartDatas = [
     high: 132.97,
     low: 121.99,
     close: 124.5,
-    volume: 336423370,
+    volume: 336423370
   },
   {
     date: new Date('2015-07-27'),
@@ -1391,7 +1390,7 @@ exports.chartDatas = [
     high: 123.91,
     low: 120.91,
     close: 121.3,
-    volume: 191087840,
+    volume: 191087840
   },
   {
     date: new Date('2015-08-03'),
@@ -1399,7 +1398,7 @@ exports.chartDatas = [
     high: 122.57,
     low: 112.1,
     close: 115.52,
-    volume: 383883210,
+    volume: 383883210
   },
   {
     date: new Date('2015-08-10'),
@@ -1407,7 +1406,7 @@ exports.chartDatas = [
     high: 119.99,
     low: 109.63,
     close: 115.96,
-    volume: 344549090,
+    volume: 344549090
   },
   {
     date: new Date('2015-08-17'),
@@ -1415,15 +1414,15 @@ exports.chartDatas = [
     high: 117.65,
     low: 105.645,
     close: 105.76,
-    volume: 318855760,
+    volume: 318855760
   },
   {
     date: new Date('2015-08-24'),
-    open: 110.87,
+    open: 94.87,
     high: 113.31,
-    low: 102.6,
+    low: 92,
     close: 113.29,
-    volume: 498047270,
+    volume: 498047270
   },
   {
     date: new Date('2015-08-31'),
@@ -1431,7 +1430,7 @@ exports.chartDatas = [
     high: 114.53,
     low: 107.36,
     close: 109.27,
-    volume: 297402060,
+    volume: 297402060
   },
   {
     date: new Date('2015-09-07'),
@@ -1439,7 +1438,7 @@ exports.chartDatas = [
     high: 114.21,
     low: 109.77,
     close: 114.21,
-    volume: 251859600,
+    volume: 251859600
   },
   {
     date: new Date('2015-09-14'),
@@ -1447,7 +1446,7 @@ exports.chartDatas = [
     high: 116.89,
     low: 111.87,
     close: 113.45,
-    volume: 276281980,
+    volume: 276281980
   },
   {
     date: new Date('2015-09-21'),
@@ -1455,7 +1454,7 @@ exports.chartDatas = [
     high: 116.69,
     low: 112.37,
     close: 114.71,
-    volume: 238617740,
+    volume: 238617740
   },
   {
     date: new Date('2015-09-28'),
@@ -1463,7 +1462,7 @@ exports.chartDatas = [
     high: 114.57,
     low: 107.31,
     close: 110.38,
-    volume: 313017610,
+    volume: 313017610
   },
   {
     date: new Date('2015-10-05'),
@@ -1471,7 +1470,7 @@ exports.chartDatas = [
     high: 112.28,
     low: 108.21,
     close: 112.12,
-    volume: 261920950,
+    volume: 261920950
   },
   {
     date: new Date('2015-10-12'),
@@ -1479,7 +1478,7 @@ exports.chartDatas = [
     high: 112.75,
     low: 109.56,
     close: 111.04,
-    volume: 184208970,
+    volume: 184208970
   },
   {
     date: new Date('2015-10-19'),
@@ -1487,7 +1486,7 @@ exports.chartDatas = [
     high: 119.228,
     low: 110.11,
     close: 119.08,
-    volume: 221612230,
+    volume: 221612230
   },
   {
     date: new Date('2015-10-26'),
@@ -1495,7 +1494,7 @@ exports.chartDatas = [
     high: 121.22,
     low: 113.99,
     close: 119.5,
-    volume: 319660750,
+    volume: 319660750
   },
   {
     date: new Date('2015-11-02'),
@@ -1503,7 +1502,7 @@ exports.chartDatas = [
     high: 123.82,
     low: 119.61,
     close: 121.06,
-    volume: 194953700,
+    volume: 194953700
   },
   {
     date: new Date('2015-11-09'),
@@ -1511,7 +1510,7 @@ exports.chartDatas = [
     high: 121.81,
     low: 112.27,
     close: 112.34,
-    volume: 216054740,
+    volume: 216054740
   },
   {
     date: new Date('2015-11-16'),
@@ -1519,7 +1518,7 @@ exports.chartDatas = [
     high: 119.92,
     low: 111,
     close: 119.3,
-    volume: 189492500,
+    volume: 189492500
   },
   {
     date: new Date('2015-11-23'),
@@ -1527,7 +1526,7 @@ exports.chartDatas = [
     high: 119.73,
     low: 117.12,
     close: 117.81,
-    volume: 109582040,
+    volume: 109582040
   },
   {
     date: new Date('2015-11-30'),
@@ -1535,7 +1534,7 @@ exports.chartDatas = [
     high: 119.41,
     low: 114.22,
     close: 119.03,
-    volume: 205415620,
+    volume: 205415620
   },
   {
     date: new Date('2015-12-07'),
@@ -1543,7 +1542,7 @@ exports.chartDatas = [
     high: 119.86,
     low: 112.851,
     close: 113.18,
-    volume: 188609110,
+    volume: 188609110
   },
   {
     date: new Date('2015-12-14'),
@@ -1551,7 +1550,7 @@ exports.chartDatas = [
     high: 112.8,
     low: 105.81,
     close: 106.03,
-    volume: 314856190,
+    volume: 314856190
   },
   {
     date: new Date('2015-12-21'),
@@ -1559,7 +1558,7 @@ exports.chartDatas = [
     high: 109,
     low: 105.57,
     close: 108.03,
-    volume: 126450510,
+    volume: 126450510
   },
   {
     date: new Date('2015-12-28'),
@@ -1567,7 +1566,7 @@ exports.chartDatas = [
     high: 109.43,
     low: 104.82,
     close: 105.26,
-    volume: 123621760,
+    volume: 123621760
   },
   {
     date: new Date('2016-01-04'),
@@ -1575,7 +1574,7 @@ exports.chartDatas = [
     high: 105.85,
     low: 96.43,
     close: 96.96,
-    volume: 343000960,
+    volume: 343000960
   },
   {
     date: new Date('2016-01-11'),
@@ -1583,7 +1582,7 @@ exports.chartDatas = [
     high: 101.19,
     low: 95.36,
     close: 97.13,
-    volume: 303375940,
+    volume: 303375940
   },
   {
     date: new Date('2016-01-18'),
@@ -1591,7 +1590,7 @@ exports.chartDatas = [
     high: 101.46,
     low: 93.42,
     close: 101.42,
-    volume: 242982970,
+    volume: 242982970
   },
   {
     date: new Date('2016-01-25'),
@@ -1599,7 +1598,7 @@ exports.chartDatas = [
     high: 101.53,
     low: 92.39,
     close: 97.34,
-    volume: 376481100,
+    volume: 376481100
   },
   {
     date: new Date('2016-02-01'),
@@ -1607,7 +1606,7 @@ exports.chartDatas = [
     high: 97.33,
     low: 93.69,
     close: 94.02,
-    volume: 216608840,
+    volume: 216608840
   },
   {
     date: new Date('2016-02-08'),
@@ -1615,7 +1614,7 @@ exports.chartDatas = [
     high: 96.35,
     low: 92.59,
     close: 93.99,
-    volume: 230794620,
+    volume: 230794620
   },
   {
     date: new Date('2016-02-15'),
@@ -1623,7 +1622,7 @@ exports.chartDatas = [
     high: 98.89,
     low: 94.61,
     close: 96.04,
-    volume: 167001070,
+    volume: 167001070
   },
   {
     date: new Date('2016-02-22'),
@@ -1631,7 +1630,7 @@ exports.chartDatas = [
     high: 98.0237,
     low: 93.32,
     close: 96.91,
-    volume: 158759600,
+    volume: 158759600
   },
   {
     date: new Date('2016-02-29'),
@@ -1639,7 +1638,7 @@ exports.chartDatas = [
     high: 103.75,
     low: 96.65,
     close: 103.01,
-    volume: 201482180,
+    volume: 201482180
   },
   {
     date: new Date('2016-03-07'),
@@ -1647,7 +1646,7 @@ exports.chartDatas = [
     high: 102.83,
     low: 100.15,
     close: 102.26,
-    volume: 155437450,
+    volume: 155437450
   },
   {
     date: new Date('2016-03-14'),
@@ -1655,7 +1654,7 @@ exports.chartDatas = [
     high: 106.5,
     low: 101.78,
     close: 105.92,
-    volume: 181323210,
+    volume: 181323210
   },
   {
     date: new Date('2016-03-21'),
@@ -1663,7 +1662,7 @@ exports.chartDatas = [
     high: 107.65,
     low: 104.89,
     close: 105.67,
-    volume: 119054360,
+    volume: 119054360
   },
   {
     date: new Date('2016-03-28'),
@@ -1671,7 +1670,7 @@ exports.chartDatas = [
     high: 110.42,
     low: 104.88,
     close: 109.99,
-    volume: 147641240,
+    volume: 147641240
   },
   {
     date: new Date('2016-04-04'),
@@ -1679,7 +1678,7 @@ exports.chartDatas = [
     high: 112.19,
     low: 108.121,
     close: 108.66,
-    volume: 145351790,
+    volume: 145351790
   },
   {
     date: new Date('2016-04-11'),
@@ -1687,7 +1686,7 @@ exports.chartDatas = [
     high: 112.39,
     low: 108.66,
     close: 109.85,
-    volume: 161518860,
+    volume: 161518860
   },
   {
     date: new Date('2016-04-18'),
@@ -1695,7 +1694,7 @@ exports.chartDatas = [
     high: 108.95,
     low: 104.62,
     close: 105.68,
-    volume: 188775240,
+    volume: 188775240
   },
   {
     date: new Date('2016-04-25'),
@@ -1703,7 +1702,7 @@ exports.chartDatas = [
     high: 105.65,
     low: 92.51,
     close: 93.74,
-    volume: 345910030,
+    volume: 345910030
   },
   {
     date: new Date('2016-05-02'),
@@ -1711,7 +1710,7 @@ exports.chartDatas = [
     high: 95.9,
     low: 91.85,
     close: 92.72,
-    volume: 225114110,
+    volume: 225114110
   },
   {
     date: new Date('2016-05-09'),
@@ -1719,7 +1718,7 @@ exports.chartDatas = [
     high: 93.77,
     low: 89.47,
     close: 90.52,
-    volume: 215596350,
+    volume: 215596350
   },
   {
     date: new Date('2016-05-16'),
@@ -1727,7 +1726,7 @@ exports.chartDatas = [
     high: 95.43,
     low: 91.65,
     close: 95.22,
-    volume: 212312980,
+    volume: 212312980
   },
   {
     date: new Date('2016-05-23'),
@@ -1735,7 +1734,7 @@ exports.chartDatas = [
     high: 100.73,
     low: 95.67,
     close: 100.35,
-    volume: 203902650,
+    volume: 203902650
   },
   {
     date: new Date('2016-05-30'),
@@ -1743,7 +1742,7 @@ exports.chartDatas = [
     high: 100.4,
     low: 96.63,
     close: 97.92,
-    volume: 140064910,
+    volume: 140064910
   },
   {
     date: new Date('2016-06-06'),
@@ -1751,7 +1750,7 @@ exports.chartDatas = [
     high: 101.89,
     low: 97.55,
     close: 98.83,
-    volume: 124731320,
+    volume: 124731320
   },
   {
     date: new Date('2016-06-13'),
@@ -1759,7 +1758,7 @@ exports.chartDatas = [
     high: 99.12,
     low: 95.3,
     close: 95.33,
-    volume: 191017280,
+    volume: 191017280
   },
   {
     date: new Date('2016-06-20'),
@@ -1767,7 +1766,7 @@ exports.chartDatas = [
     high: 96.89,
     low: 92.65,
     close: 93.4,
-    volume: 206149160,
+    volume: 206149160
   },
   {
     date: new Date('2016-06-27'),
@@ -1775,7 +1774,7 @@ exports.chartDatas = [
     high: 96.465,
     low: 91.5,
     close: 95.89,
-    volume: 184254460,
+    volume: 184254460
   },
   {
     date: new Date('2016-07-04'),
@@ -1783,7 +1782,7 @@ exports.chartDatas = [
     high: 96.89,
     low: 94.37,
     close: 96.68,
-    volume: 111769640,
+    volume: 111769640
   },
   {
     date: new Date('2016-07-11'),
@@ -1791,7 +1790,7 @@ exports.chartDatas = [
     high: 99.3,
     low: 96.73,
     close: 98.78,
-    volume: 142244590,
+    volume: 142244590
   },
   {
     date: new Date('2016-07-18'),
@@ -1799,7 +1798,7 @@ exports.chartDatas = [
     high: 101,
     low: 98.31,
     close: 98.66,
-    volume: 147358320,
+    volume: 147358320
   },
   {
     date: new Date('2016-07-25'),
@@ -1807,7 +1806,7 @@ exports.chartDatas = [
     high: 104.55,
     low: 96.42,
     close: 104.21,
-    volume: 252358930,
+    volume: 252358930
   },
   {
     date: new Date('2016-08-01'),
@@ -1815,7 +1814,7 @@ exports.chartDatas = [
     high: 107.65,
     low: 104,
     close: 107.48,
-    volume: 168265830,
+    volume: 168265830
   },
   {
     date: new Date('2016-08-08'),
@@ -1823,7 +1822,7 @@ exports.chartDatas = [
     high: 108.94,
     low: 107.16,
     close: 108.18,
-    volume: 124255340,
+    volume: 124255340
   },
   {
     date: new Date('2016-08-15'),
@@ -1831,7 +1830,7 @@ exports.chartDatas = [
     high: 110.23,
     low: 108.08,
     close: 109.36,
-    volume: 131814920,
+    volume: 131814920
   },
   {
     date: new Date('2016-08-22'),
@@ -1839,7 +1838,7 @@ exports.chartDatas = [
     high: 109.32,
     low: 106.31,
     close: 106.94,
-    volume: 123373540,
+    volume: 123373540
   },
   {
     date: new Date('2016-08-29'),
@@ -1847,7 +1846,7 @@ exports.chartDatas = [
     high: 108,
     low: 105.5,
     close: 107.73,
-    volume: 134426100,
+    volume: 134426100
   },
   {
     date: new Date('2016-09-05'),
@@ -1855,7 +1854,7 @@ exports.chartDatas = [
     high: 108.76,
     low: 103.13,
     close: 103.13,
-    volume: 168312530,
+    volume: 168312530
   },
   {
     date: new Date('2016-09-12'),
@@ -1863,7 +1862,7 @@ exports.chartDatas = [
     high: 116.13,
     low: 102.53,
     close: 114.92,
-    volume: 388543710,
+    volume: 388543710
   },
   {
     date: new Date('2016-09-19'),
@@ -1871,7 +1870,7 @@ exports.chartDatas = [
     high: 116.18,
     low: 111.55,
     close: 112.71,
-    volume: 200842480,
+    volume: 200842480
   },
   {
     date: new Date('2016-09-26'),
@@ -1879,7 +1878,7 @@ exports.chartDatas = [
     high: 114.64,
     low: 111.55,
     close: 113.05,
-    volume: 156186800,
+    volume: 156186800
   },
   {
     date: new Date('2016-10-03'),
@@ -1887,7 +1886,7 @@ exports.chartDatas = [
     high: 114.56,
     low: 112.28,
     close: 114.06,
-    volume: 125587350,
+    volume: 125587350
   },
   {
     date: new Date('2016-10-10'),
@@ -1895,7 +1894,7 @@ exports.chartDatas = [
     high: 118.69,
     low: 114.72,
     close: 117.63,
-    volume: 208231690,
+    volume: 208231690
   },
   {
     date: new Date('2016-10-17'),
@@ -1903,7 +1902,7 @@ exports.chartDatas = [
     high: 118.21,
     low: 113.8,
     close: 116.6,
-    volume: 114497020,
+    volume: 114497020
   },
   {
     date: new Date('2016-10-24'),
@@ -1911,7 +1910,7 @@ exports.chartDatas = [
     high: 118.36,
     low: 113.31,
     close: 113.72,
-    volume: 204530120,
+    volume: 204530120
   },
   {
     date: new Date('2016-10-31'),
@@ -1919,7 +1918,7 @@ exports.chartDatas = [
     high: 114.23,
     low: 108.11,
     close: 108.84,
-    volume: 155287280,
+    volume: 155287280
   },
   {
     date: new Date('2016-11-07'),
@@ -1927,7 +1926,7 @@ exports.chartDatas = [
     high: 111.72,
     low: 105.83,
     close: 108.43,
-    volume: 206825070,
+    volume: 206825070
   },
   {
     date: new Date('2016-11-14'),
@@ -1935,7 +1934,7 @@ exports.chartDatas = [
     high: 110.54,
     low: 104.08,
     close: 110.06,
-    volume: 197790040,
+    volume: 197790040
   },
   {
     date: new Date('2016-11-21'),
@@ -1943,7 +1942,7 @@ exports.chartDatas = [
     high: 112.42,
     low: 110.01,
     close: 111.79,
-    volume: 93992370,
+    volume: 93992370
   },
   {
     date: new Date('2016-11-28'),
@@ -1951,7 +1950,7 @@ exports.chartDatas = [
     high: 112.465,
     low: 108.85,
     close: 109.9,
-    volume: 155229390,
+    volume: 155229390
   },
   {
     date: new Date('2016-12-05'),
@@ -1959,7 +1958,7 @@ exports.chartDatas = [
     high: 114.7,
     low: 108.25,
     close: 113.95,
-    volume: 151624650,
+    volume: 151624650
   },
   {
     date: new Date('2016-12-12'),
@@ -1967,7 +1966,7 @@ exports.chartDatas = [
     high: 116.73,
     low: 112.49,
     close: 115.97,
-    volume: 194003220,
+    volume: 194003220
   },
   {
     date: new Date('2016-12-19'),
@@ -1975,7 +1974,7 @@ exports.chartDatas = [
     high: 117.5,
     low: 115.59,
     close: 116.52,
-    volume: 113106370,
+    volume: 113106370
   },
   {
     date: new Date('2016-12-26'),
@@ -1983,7 +1982,7 @@ exports.chartDatas = [
     high: 118.0166,
     low: 115.43,
     close: 115.82,
-    volume: 84354060,
+    volume: 84354060
   },
   {
     date: new Date('2017-01-02'),
@@ -1991,7 +1990,7 @@ exports.chartDatas = [
     high: 118.16,
     low: 114.76,
     close: 117.91,
-    volume: 103680760,
+    volume: 103680760
   },
   {
     date: new Date('2017-01-09'),
@@ -1999,7 +1998,7 @@ exports.chartDatas = [
     high: 119.93,
     low: 117.94,
     close: 119.04,
-    volume: 138446660,
+    volume: 138446660
   },
   {
     date: new Date('2017-01-16'),
@@ -2007,7 +2006,7 @@ exports.chartDatas = [
     high: 120.5,
     low: 118.22,
     close: 120,
-    volume: 113576380,
+    volume: 113576380
   },
   {
     date: new Date('2017-01-23'),
@@ -2015,7 +2014,7 @@ exports.chartDatas = [
     high: 122.44,
     low: 119.5,
     close: 121.95,
-    volume: 124406640,
+    volume: 124406640
   },
   {
     date: new Date('2017-01-30'),
@@ -2023,7 +2022,7 @@ exports.chartDatas = [
     high: 130.49,
     low: 120.62,
     close: 129.08,
-    volume: 248063580,
+    volume: 248063580
   },
   {
     date: new Date('2017-02-06'),
@@ -2031,7 +2030,7 @@ exports.chartDatas = [
     high: 132.94,
     low: 128.9,
     close: 132.12,
-    volume: 136252280,
+    volume: 136252280
   },
   {
     date: new Date('2017-02-13'),
@@ -2039,7 +2038,7 @@ exports.chartDatas = [
     high: 136.27,
     low: 132.75,
     close: 135.72,
-    volume: 136326260,
+    volume: 136326260
   },
   {
     date: new Date('2017-02-20'),
@@ -2047,7 +2046,7 @@ exports.chartDatas = [
     high: 137.48,
     low: 135.28,
     close: 136.66,
-    volume: 87773190,
+    volume: 87773190
   },
   {
     date: new Date('2017-02-27'),
@@ -2055,7 +2054,7 @@ exports.chartDatas = [
     high: 140.2786,
     low: 136.28,
     close: 139.78,
-    volume: 127757050,
+    volume: 127757050
   },
   {
     date: new Date('2017-03-06'),
@@ -2063,7 +2062,7 @@ exports.chartDatas = [
     high: 139.98,
     low: 137.05,
     close: 139.14,
-    volume: 99061270,
+    volume: 99061270
   },
   {
     date: new Date('2017-03-13'),
@@ -2071,7 +2070,7 @@ exports.chartDatas = [
     high: 141.02,
     low: 138.82,
     close: 139.99,
-    volume: 120881720,
+    volume: 120881720
   },
   {
     date: new Date('2017-03-20'),
@@ -2079,7 +2078,7 @@ exports.chartDatas = [
     high: 142.8,
     low: 139.73,
     close: 140.64,
-    volume: 129178500,
+    volume: 129178500
   },
   {
     date: new Date('2017-03-27'),
@@ -2087,7 +2086,7 @@ exports.chartDatas = [
     high: 144.5,
     low: 138.62,
     close: 143.66,
-    volume: 126819590,
+    volume: 126819590
   },
   {
     date: new Date('2017-04-03'),
@@ -2095,7 +2094,7 @@ exports.chartDatas = [
     high: 145.46,
     low: 143.05,
     close: 143.34,
-    volume: 105274540,
+    volume: 105274540
   },
   {
     date: new Date('2017-04-10'),
@@ -2103,7 +2102,7 @@ exports.chartDatas = [
     high: 143.8792,
     low: 140.06,
     close: 141.05,
-    volume: 87342130,
+    volume: 87342130
   },
   {
     date: new Date('2017-04-17'),
@@ -2111,7 +2110,7 @@ exports.chartDatas = [
     high: 142.92,
     low: 140.45,
     close: 142.27,
-    volume: 89092650,
+    volume: 89092650
   },
   {
     date: new Date('2017-04-24'),
@@ -2119,7 +2118,7 @@ exports.chartDatas = [
     high: 144.9,
     low: 143.18,
     close: 143.65,
-    volume: 90423600,
+    volume: 90423600
   },
   {
     date: new Date('2017-05-01'),
@@ -2127,7 +2126,7 @@ exports.chartDatas = [
     high: 148.98,
     low: 144.27,
     close: 148.96,
-    volume: 173861760,
+    volume: 173861760
   },
   {
     date: new Date('2017-05-08'),
@@ -2135,7 +2134,7 @@ exports.chartDatas = [
     high: 156.42,
     low: 149.03,
     close: 156.1,
-    volume: 173087500,
+    volume: 173087500
   },
   {
     date: new Date('2017-05-15'),
@@ -2143,7 +2142,7 @@ exports.chartDatas = [
     high: 156.65,
     low: 149.71,
     close: 153.06,
-    volume: 156993820,
+    volume: 156993820
   },
   {
     date: new Date('2017-05-22'),
@@ -2151,7 +2150,7 @@ exports.chartDatas = [
     high: 154.9,
     low: 152.67,
     close: 153.61,
-    volume: 103151450,
+    volume: 103151450
   },
   {
     date: new Date('2017-05-29'),
@@ -2159,7 +2158,7 @@ exports.chartDatas = [
     high: 155.45,
     low: 152.22,
     close: 155.45,
-    volume: 88670120,
+    volume: 88670120
   },
   {
     date: new Date('2017-06-05'),
@@ -2167,7 +2166,7 @@ exports.chartDatas = [
     high: 155.98,
     low: 146.02,
     close: 148.98,
-    volume: 158814040,
+    volume: 158814040
   },
   {
     date: new Date('2017-06-12'),
@@ -2175,7 +2174,7 @@ exports.chartDatas = [
     high: 147.5,
     low: 142.2,
     close: 142.27,
-    volume: 219638930,
+    volume: 219638930
   },
   {
     date: new Date('2017-06-19'),
@@ -2183,7 +2182,7 @@ exports.chartDatas = [
     high: 147.16,
     low: 143.66,
     close: 146.28,
-    volume: 132832660,
+    volume: 132832660
   },
   {
     date: new Date('2017-06-26'),
@@ -2191,7 +2190,7 @@ exports.chartDatas = [
     high: 148.28,
     low: 142.28,
     close: 144.02,
-    volume: 126890110,
+    volume: 126890110
   },
   {
     date: new Date('2017-07-03'),
@@ -2199,7 +2198,7 @@ exports.chartDatas = [
     high: 145.3001,
     low: 142.41,
     close: 144.18,
-    volume: 78465450,
+    volume: 78465450
   },
   {
     date: new Date('2017-07-10'),
@@ -2207,7 +2206,7 @@ exports.chartDatas = [
     high: 149.33,
     low: 143.37,
     close: 149.04,
-    volume: 109759170,
+    volume: 109759170
   },
   {
     date: new Date('2017-07-17'),
@@ -2215,7 +2214,7 @@ exports.chartDatas = [
     high: 151.74,
     low: 148.57,
     close: 150.27,
-    volume: 104744470,
+    volume: 104744470
   },
   {
     date: new Date('2017-07-24'),
@@ -2223,7 +2222,7 @@ exports.chartDatas = [
     high: 153.99,
     low: 147.3,
     close: 149.5,
-    volume: 105536280,
+    volume: 105536280
   },
   {
     date: new Date('2017-07-31'),
@@ -2231,7 +2230,7 @@ exports.chartDatas = [
     high: 159.75,
     low: 148.13,
     close: 156.39,
-    volume: 170204830,
+    volume: 170204830
   },
   {
     date: new Date('2017-08-07'),
@@ -2239,7 +2238,7 @@ exports.chartDatas = [
     high: 161.83,
     low: 154.63,
     close: 157.48,
-    volume: 149860480,
+    volume: 149860480
   },
   {
     date: new Date('2017-08-14'),
@@ -2247,7 +2246,7 @@ exports.chartDatas = [
     high: 162.51,
     low: 156.72,
     close: 157.5,
-    volume: 133829670,
+    volume: 133829670
   },
   {
     date: new Date('2017-08-21'),
@@ -2255,7 +2254,7 @@ exports.chartDatas = [
     high: 160.74,
     low: 155.1101,
     close: 159.86,
-    volume: 112238670,
+    volume: 112238670
   },
   {
     date: new Date('2017-08-28'),
@@ -2263,7 +2262,7 @@ exports.chartDatas = [
     high: 164.94,
     low: 159.93,
     close: 164.05,
-    volume: 125610990,
+    volume: 125610990
   },
   {
     date: new Date('2017-09-04'),
@@ -2271,7 +2270,7 @@ exports.chartDatas = [
     high: 164.25,
     low: 158.53,
     close: 158.63,
-    volume: 101419110,
+    volume: 101419110
   },
   {
     date: new Date('2017-09-11'),
@@ -2279,7 +2278,7 @@ exports.chartDatas = [
     high: 163.96,
     low: 157.91,
     close: 159.88,
-    volume: 220431100,
+    volume: 220431100
   },
   {
     date: new Date('2017-09-18'),
@@ -2287,6 +2286,6 @@ exports.chartDatas = [
     high: 160.5,
     low: 157.995,
     close: 158.67,
-    volume: 27939544,
-  },
-]
+    volume: 27939544
+  }
+];

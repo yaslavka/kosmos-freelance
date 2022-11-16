@@ -16,7 +16,7 @@ class Fmat extends Component{
     const marketsTab = isMobile ? null : (<Market pair = {pair} t={t}/>)
     return(
       <>
-        <Col xl={9}>
+        <Col xl={8}>
           <div className={cl.contentBlock}>
             <Chart pair = { pairFormatted } t={t} />
             <br/>
