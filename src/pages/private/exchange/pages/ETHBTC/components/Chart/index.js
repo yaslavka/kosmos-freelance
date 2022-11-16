@@ -1,27 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-//import ChartWrap from './Chart'
+import {
+  StockChartComponent, StockChartSeriesCollectionDirective, StockChartSeriesDirective, Inject,ITooltipRenderEventArgs,Crosshair,IAxisLabelRenderEventArgs,
+  DateTime, Tooltip, RangeTooltip, ColumnSeries, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines,
+  StockChartRowsDirective, StockChartRowDirective, StockChartAxesDirective, StockChartAxisDirective, IStockChartEventArgs, ChartTheme
+} from '@syncfusion/ej2-react-charts';
+import {
+  EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator,
+  AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator ,Export
+} from '@syncfusion/ej2-react-charts';
 import { loadChart } from '../../../../../../../actions/exchenge.action'
 import { marketDataSelector, chartDataSelector } from '../../../../selectors'
 import { MoonLoader } from 'react-spinners';
 import './stockChart.scss'
-import { StockChartComponent, StockChartSeriesCollectionDirective, StockChartSeriesDirective, Inject, DateTime, Tooltip, RangeTooltip, Crosshair, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines } from '@syncfusion/ej2-react-charts';
-import { EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator, Export } from '@syncfusion/ej2-react-charts';
-import './App.css'
 import {chartDatas} from "../../Chart/data";
-class Chart extends Component {
-  constructor() {
-    super(...arguments);
-    this.primaryxAxis = {
-      valueType: 'DateTime',
-      majorGridLines: { width: 0 },
-      majorTickLines: { color: 'transparent' }
-    };
-    this.primaryyAxis = {
-      labelFormat: 'n0',
-      majorTickLines: { width: 0 }
-    };
+const SAMPLE_CSS = `
+    .control-fluid {
+        padding: 0px !important;
+    }
+        .charts {
+            align :center
+        }`;
+export let tooltipRender = (args) => {
+  if (args.text.split('<br/>')[4]) {
+    let target = parseInt(args.text.split('<br/>')[4].split('<b>')[1].split('</b>')[0]);
+    let value = (target / 100000000).toFixed(1) + 'B';
+    args.text = args.text.replace(args.text.split('<br/>')[4].split('<b>')[1].split('</b>')[0], value);
   }
+};
+class Chart extends Component {
+
   componentWillReceiveProps(nextProps) {
     const { loadChart, pair } = this.props
     if(pair !== nextProps.pair) {loadChart(nextProps.pair)}
@@ -38,127 +46,9 @@ class Chart extends Component {
     if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
     if(chartData && chartData.loaded && chartData.data && marketData) {
-      var ohlc = chartData.data.map(item => [new Date(item.date*1000), item.open, item.high, item.low, item.close, item.volume])
+      var ohlc = chartData.data.map(item => ({date:new Date(item.date*1), open:item.open, high:item.high, low:item.low, close:item.close, volume:item.volume}))
+      var volume = chartData.data.map(item => [ +item.volume])
       console.log(ohlc)
-      // var volume = chartData.data.map(item => [new Date(item.date*1000) * 1000, item.volume])
-      // var groupingUnits = [[
-      //   'week',             // unit name
-      //   [1]               // allowed multiples
-      // ], [
-      //   'month',
-      //   [1, 2, 3, 4, 6]
-      // ]]
-      // const options ={
-      //   credits:{
-      //     enabled: false
-      //   },
-      //   styledMode:{
-      //     enabled: true,
-      //   },
-      //   rangeSelector: {
-      //     allButtonsEnabled: true,
-      //     enabled: true,
-      //     selected: 1,
-      //   },
-      //   title: {
-      //     text: 'График Цены'
-      //   },
-      //   navigator: {
-      //     enabled: true,
-      //     series: [{
-      //       data: volume
-      //     }]
-      //   },
-      //   legend: { enabled: false },
-      //   yAxis: [{
-      //     type: 'datetime',
-      //     dateTimeLabelFormats:{
-      //       millisecond: '%H:%M:%S.%L',
-      //       second: '%H:%M:%S',
-      //       minute: '%H:%M',
-      //       hour: '%H:%M',
-      //       day: '%e. %b',
-      //       week: '%e. %b',
-      //       month: '%b \'%y',
-      //       year: '%Y'
-      //     },
-      //     labels: {
-      //       align: 'right',
-      //       x: -2
-      //     },
-      //     title: {
-      //       text: `${t('private.exchange.trade.pair.price')}`
-      //     },
-      //     height: '60%',
-      //     lineWidth: 2,
-      //     resize: {
-      //       enabled: true
-      //     }
-      //   }, {
-      //     labels: {
-      //       align: 'right',
-      //       x: -2
-      //     },
-      //     title: {
-      //       text: 'Volume'
-      //     },
-      //     top: '65%',
-      //     height: '35%',
-      //     offset: 0,
-      //     lineWidth: 2
-      //   }],
-      //
-      //   tooltip: {
-      //     split: true
-      //   },
-      //   xAxis:{
-      //     type: 'datetime',
-      //     dateTimeLabelFormats: {
-      //       millisecond: '%H:%M:%S.%L',
-      //       second: '%H:%M:%S',
-      //       minute: '%H:%M',
-      //       hour: '%H:%M',
-      //       day: '%e. %b',
-      //       week: '%e. %b',
-      //       month: '%b \'%y',
-      //       year: '%Y'
-      //     }
-      //   },
-      //   plotOptions:{
-      //     series:{
-      //       turboThreshold:1000000
-      //     },
-      //     candlestick: {
-      //       color: 'red',
-      //       upColor: 'green'
-      //     }
-      //   },
-      //   series:[{
-      //     type: 'candlestick',
-      //     name: `${marketData.coin}`,
-      //     data: ohlc,
-      //
-      //     dataGrouping: {
-      //       units: groupingUnits
-      //     }
-      //
-      //   },{
-      //     type: 'column',
-      //     name: `${marketData.coin}`,
-      //     data: volume,
-      //     yAxis: 1,
-      //     dataGrouping: {
-      //       units: groupingUnits
-      //     }
-      //
-      //   }
-      //   ]
-      // }
-      // console.log(options)
-      // options.series[0].pointStart = chartData.start*1000
-      // options.series[0].pointInterval = chartData.period*1000
-      // options.series[0].data = ohlc
-      // options.series[1].data = volume
       return (
         <div id='stock-chart'>
           <div className='stock-chart-headers'>
@@ -167,20 +57,58 @@ class Chart extends Component {
             <span className='stock-chart-headers__percent'>{marketData.percentChange} %</span>
             <span className='stock-chart-headers__volume'>Volume: {marketData.baseVolume}BTC</span>
           </div>
-          <StockChartComponent
-            id='stockcharts' primaryXAxis={this.primaryxAxis} primaryYAxis={this.primaryyAxis} height='350' title='AAPL Stock Price'
-          >
-            <Inject services={[DateTime, Tooltip, RangeTooltip, Crosshair, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines, EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, Export, AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator]}/>
-            <StockChartSeriesCollectionDirective>
-              {/* To create a Hilo Open Close series, import HiloOpenCloseSeries from the chart package and inject it into chart services. Then change the series type to HiloOpenClose*/}
-              {/* To create a CandleSeries,import CandleSeries from chart package and inject it into chart series. Then change services type to Candle*/}
-              <StockChartSeriesDirective dataSource={chartDatas} type='Candle' animation={{ enable: true }} id={pair}/>
-            </StockChartSeriesCollectionDirective>
-          </StockChartComponent>
+          <div className='control-pane' style={{height:"500"}}>
+            <style>
+              {SAMPLE_CSS}
+            </style>
+            <div className='control-section'>
+              <StockChartComponent id='stockchartpane'
+                                   primaryYAxis={{
+                                     lineStyle: { color: 'transparent' },
+                                     majorTickLines: { color: 'transparent', width: 0 }
+                                   }}
+                                   primaryXAxis={{
+                                     crosshairTooltip: { enable: true },
+                                     majorGridLines: { width: 0 },
+                                     valueType: 'DateTime',
+                                   }}
+                                   chartArea={{ border: { width: 0 } }}
+                                   tooltip={{ enable: true, animation: { enable: true }}}
+                                   animation={{ enable: true }}
+                                   tooltipRender={tooltipRender}
+                                   axisLabelRender={this.axisLabelRender.bind(this)}
+                                   crosshair={{ enable: true }}
+                                   title='AAPL Historical'
+              >
+                <Inject services={[DateTime, Crosshair, Tooltip, RangeTooltip, ColumnSeries, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines,
+                  EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, Export,
+                  AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator]}/>
+                  <StockChartRowsDirective>
+                    <StockChartRowDirective height={'30%'}/>
+                    <StockChartRowDirective height={'70%'}/>
+                  </StockChartRowsDirective>
+                <StockChartAxesDirective>
+                  <StockChartAxisDirective name='yAxis1' rowIndex={1} labelPosition={'Inside'} tickPosition={'Inside'} opposedPosition={true} lineStyle={{ color: 'transparent' }} majorTickLines={{ color: 'transparent' }}/>
+                </StockChartAxesDirective>
+                <StockChartSeriesCollectionDirective>
+                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='close' type='Candle' yAxisName='yAxis1' animation={{ enable: true }}/>
+                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='volume' type='Column' enableTooltip={false} animation={{ enable: true }}/>
+                  {console.log(chartDatas)}
+                </StockChartSeriesCollectionDirective>
+              </StockChartComponent>
+            </div>
+          </div>
         </div>
       );
     }
+
     return null
+  }
+  axisLabelRender(args) {
+    let text = parseInt(args.text);
+    if (args.axis.name === "primaryYAxis") {
+      args.text = text / 100000000 + 'B';
+    }
   }
 }
 

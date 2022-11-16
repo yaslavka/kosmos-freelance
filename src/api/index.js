@@ -45,7 +45,7 @@ baseInstance.interceptors.response.use(
     }
   },
 )
-const host = 'http://localhost:3030'|| 'https://sheltered-tor-24523.herokuapp.com'
+const host = 'https://sheltered-tor-24523.herokuapp.com'|| 'https://sheltered-tor-24523.herokuapp.com'
 export const app = feathers()
   .configure(rest(host).fetch(fetch))
   .configure(feathers.hooks())

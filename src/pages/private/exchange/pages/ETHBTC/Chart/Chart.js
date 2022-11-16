@@ -10,7 +10,7 @@ import {
   Crosshair,
 } from '@syncfusion/ej2-react-charts'
 import './App.css'
-import { chartData } from './data'
+import { chartDatas } from './data'
 function Chart() {
   return (
     //Hilo Chart
@@ -35,7 +35,7 @@ function Chart() {
         <SeriesDirective
           type="Candle"
           name="Apple INC."
-          dataSource={chartData}
+          dataSource={chartDatas}
           xName="date"
           high="high"
           low="low"

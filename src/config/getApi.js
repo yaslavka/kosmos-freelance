@@ -10,6 +10,7 @@ export default getApi => next => action => {
 
     next({...rest, type: type + START})
 
+
     app.service(service).get(getAPI)
        .then(response => {
          next({...rest, type: type + SUCCESS, response})})

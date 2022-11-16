@@ -6482,6 +6482,13 @@ date-names@^0.1.11:
   resolved "https://registry.yarnpkg.com/date-names/-/date-names-0.1.13.tgz#c4358f6f77c8056e2f5ea68fdbb05f0bf1e53bd0"
   integrity sha512-IxxoeD9tdx8pXVcmqaRlPvrXIsSrSrIZzfzlOkm9u+hyzKp5Wk/odt9O/gd7Ockzy8n/WHeEpTVJ2bF3mMV4LA==
 
+dateparser@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/dateparser/-/dateparser-1.0.6.tgz#5191f0cb5f726273c6d371b703d64a475065521d"
+  integrity sha512-k7Cm66Rlr4OR86jQGQDY46PPhzLOsDjOwGqV5x2os+oGWvbcq2LfgrqMO7/X1aawRIR4hkuaetEKLDru3F254w==
+  dependencies:
+    moment "^2.10.6"
+
 dayjs@1.x, dayjs@^1.10.7, dayjs@^1.8.15:
   version "1.11.5"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.5.tgz#00e8cc627f231f9499c19b38af49f56dc0ac5e93"
@@ -8935,7 +8942,7 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
-highcharts-react-official@^3.1.0:
+highcharts-react-official@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/highcharts-react-official/-/highcharts-react-official-3.1.0.tgz#921e5614f9e8580bc99a1e3b531d51a70f396500"
   integrity sha512-CkWJHrVMOc6CT8KFu1dR+a0w5OxCVKKgZUNWtEi5TmR0xqBDIDe+RyM652MAN/jBYppxMo6TCUVlRObCyWAn0Q==
@@ -8944,6 +8951,11 @@ highcharts@^10.3.1:
   version "10.3.1"
   resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-10.3.1.tgz#d06d7e7543823c80eea24f44e1c3c2142cf1ccda"
   integrity sha512-8UgVcLmgpiYwnsII0Ht76O+GRutfbrLslZFH3c53fXgl3aZ6NRB4mW5qsIyfsUExMny/n9JqYO/BFNejOKC6AA==
+
+highcharts@^6.0.4:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-6.2.0.tgz#2a6d04652eb43c66f462ca7e2d2808f1f2782b61"
+  integrity sha512-A4E89MA+kto8giic7zyLU6ZxfXnVeCUlKOyzFsah3+n4BROx4bgonl92KIBtwLud/mIWir8ahqhuhe2by9LakQ==
 
 history@^3.0.0:
   version "3.3.0"
@@ -11711,7 +11723,7 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-moment@2.x, moment@^2.24.0, moment@^2.29.1, moment@^2.29.2:
+moment@2.x, moment@^2.10.6, moment@^2.24.0, moment@^2.29.1, moment@^2.29.2:
   version "2.29.4"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
   integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
@@ -14877,6 +14889,13 @@ react-flags-select@^2.1.2:
     object-assign ">=4.0.*"
     pubsub-js "^1.5.x"
     tether "^0.6.5"
+
+react-highcharts@^16.1.0:
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/react-highcharts/-/react-highcharts-16.1.0.tgz#aa2d451171197462e07fa8652a42bac43da6068a"
+  integrity sha512-CHpCSMN96lXKeTIpx8UJPsUgeNeJqh81NN6cbzraiHQBiQz2mzXa5aaIWYbMEQ2NHhAEWU5uj5DPhZY1f1Rq+A==
+  dependencies:
+    highcharts "^6.0.4"
 
 react-i18next@^11.15.3:
   version "11.18.6"

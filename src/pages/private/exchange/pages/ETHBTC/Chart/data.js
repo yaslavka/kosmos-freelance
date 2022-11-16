@@ -7,7 +7,7 @@ exports.chartDatas = [
     high: 90.6657,
     low: 85.7685,
     close: 90.5257,
-    volume: 660187068,
+    volume: 58.57054407,
   },
   {
     date: new Date('2012-04-09'),
@@ -23,7 +23,7 @@ exports.chartDatas = [
     high: 88.6071,
     low: 81.4885,
     close: 81.8543,
-    volume: 1221746066,
+    volume: 58.57054407,
   },
   {
     date: new Date('2012-04-23'),
@@ -39,7 +39,7 @@ exports.chartDatas = [
     high: 85.4857,
     low: 80.7385,
     close: 80.75,
-    volume: 615249365,
+    volume: 58.57054407,
   },
   {
     date: new Date('2012-05-07'),
@@ -55,7 +55,7 @@ exports.chartDatas = [
     high: 81.0728,
     low: 74.5971,
     close: 75.7685,
-    volume: 708126233,
+    volume: 58.57054407,
   },
   {
     date: new Date('2012-05-21'),
