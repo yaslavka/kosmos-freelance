@@ -77,7 +77,7 @@ class Chart extends Component {
                                    tooltipRender={tooltipRender}
                                    axisLabelRender={this.axisLabelRender.bind(this)}
                                    crosshair={{ enable: true }}
-                                   title='AAPL Historical'
+                                   title={`${marketData.market} / ${marketData.coin}`}
               >
                 <Inject services={[DateTime, Crosshair, Tooltip, RangeTooltip, ColumnSeries, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines,
                   EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, Export,
