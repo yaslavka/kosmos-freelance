@@ -45,7 +45,8 @@ baseInstance.interceptors.response.use(
     }
   },
 )
-const host = 'https://sheltered-tor-24523.herokuapp.com'|| 'https://sheltered-tor-24523.herokuapp.com'
+const host = 'https://sheltered-tor-24523.herokuapp.com'
+// 'http://localhost:5000/api'||
 export const app = feathers()
   .configure(rest(host).fetch(fetch))
   .configure(feathers.hooks())
@@ -301,4 +302,9 @@ export const api = {
   ssNeighboringMatrices(matrixType) {
     return baseInstance.get(`matrix/super/dash-info?matrix_type=${matrixType}`)
   },
+
+
+  addOrderApi(item){
+    return baseInstance.post('order/create', item)
+  }
 }

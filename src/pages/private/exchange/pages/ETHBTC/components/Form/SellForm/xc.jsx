@@ -5,11 +5,29 @@ import OrderBooc from "../../orderBook/OrderBooc";
 import {chartDataSelector, currentPairSelector} from "../../../../../selectors";
 import {updateTradeForm} from "../../../../../../../../actions/exchenge.action";
 import { connect } from 'react-redux'
+import { api } from "src/api";
 
-class Xc extends Component{
+class Xc extends Component{  constructor(props) {
+  super(props);
+  this.state = {
+    amount: 0,
+    price: 0,
+  };
+}
   render() {
     const { orderType, market, chartData,pair, userInfo, t } = this.props
     const pairFormatted = (pair?? '-').replace('-', '_')
+
+    const addOrder = ()=>{
+      const formData = new FormData()
+      formData.append('amount', this.state.amount)
+      formData.append('price', this.state.price)
+      formData.append('orderType', 'sell')
+      formData.append('all', this.handleTotal())
+      formData.append('allCom', this.handleTotalCom())
+      formData.append('pair', market.pair)
+      api.addOrderApi(formData)
+    }
     return (
       <div className="sell_box fild_box">
         <div className="inset clSellForm">
@@ -24,7 +42,9 @@ class Xc extends Component{
           <>
             <div className="line_first">
               <span className="c1">{t('private.exchange.trade.pair.sell.balance')}</span>
-              <Button className="c2 clBuyBalance">
+              <Button className="c2 clBuyBalance" onClick={()=>this.setState({
+                amount:userInfo.balance
+              })}>
                   <span id="label_buy_balance">
                      {userInfo.balance} {market.coin}
                   </span>
@@ -32,70 +52,76 @@ class Xc extends Component{
             </div>
           </>
           <form onChange={this.handleChange}>
-          <div className="line">
-            <label htmlFor={'amount-'+orderType}>{t('private.exchange.trade.pair.sell.Input.amount')}</label>
-            <div className="poles">
-              <Input
-                name="amount"
-                maxLength="25"
-                type="text"
-                min={0}
-                value={chartData[orderType].amount}
-                id={'amount-'+orderType}
-                data-type='amount'
-              />
-              <span className="currency">{market.coin}</span>
+            <div className="line">
+              <label htmlFor={'amount-'+orderType}>{t('private.exchange.trade.pair.sell.Input.amount')}</label>
+              <div className="poles">
+                <Input
+                  name="amount"
+                  min={0.00000000}
+                  data-type='amount'
+                  type="number"
+                  id={'amount-'+orderType}
+                  onChange={(e)=>this.setState({amount:e.target.value})}
+                  value={this.state.amount}
+                />
+                <span className="currency">{market.coin}</span>
+              </div>
             </div>
-          </div>
-          <div className="line">
-            <label htmlFor={'price-'+orderType}>{t('private.exchange.trade.pair.sell.Input.price')}</label>
-            <div className="poles">
-              <Input
-                name="price"
-                maxLength="25"
-                type="text"
-                data-type='price'
-                id={'price-'+orderType}
-                value={chartData[orderType].price}
-              />
-              <span className="currency">{market.market}</span>
+            <div className="line">
+              <label htmlFor={'price-'+orderType}>{t('private.exchange.trade.pair.sell.Input.price')}</label>
+              <div className="poles">
+                <Input
+                  name="price"
+                  maxLength="25"
+                  type="number"
+                  data-type='price' id={'price-'+orderType}
+                  onChange={(e)=>this.setState({price:e.target.value})}
+                  value={this.state.price}
+                />
+                <span className="currency">{market.market}</span>
+              </div>
             </div>
-          </div>
-          <div className="line">
-            <label htmlFor='total'>{t('private.exchange.trade.pair.sell.Input.total')}</label>
-            <div className="poles">
-              <Input
-                name="total"
-                maxLength="25"
-                type="text"
-                min={0}
-                id='total'
-                value={this.handleTotal()}
-              />
-              <span className="currency">{market.market}</span>
+            <div className="line">
+              <label htmlFor='total'>{t('private.exchange.trade.pair.sell.Input.total')}</label>
+              <div className="poles">
+                <Input
+                  name="total"
+                  maxLength="25"
+                  type="text"
+                  readOnly
+                  id='total'
+                  value={this.handleTotal()}
+                />
+                <span className="currency">{market.market}</span>
+              </div>
             </div>
-          </div>
-          <div className="line">
-            <span>{t('private.exchange.trade.pair.sell.Input.fee')} (0.2%):</span>
-            <div className="poles">
-              <Input name="fee" maxLength="25" type="text"  disabled="" value={this.handleTotal()+0.2}/>
-              <span className="currency">{market.market}</span>
+            <div className="line">
+              <span>{t('private.exchange.trade.pair.sell.Input.fee')} (0.2%):</span>
+              <div className="poles">
+                <Input name="fee" maxLength="25" type="text" min={0.00000000} value={this.handleTotal() * 0.002} readOnly/>
+                <span className="currency">{market.market}</span>
+              </div>
             </div>
-          </div>
-          <div className="line">
-            <span>{t('private.exchange.trade.pair.sell.Input.totalfee')}</span>
-            <div className="poles">
-              <Input name="totalfee" maxLength="25" type="text"  disabled=""/>
-              <span className="currency">{market.market}</span>
+            <div className="line">
+              <span>{t('private.exchange.trade.pair.sell.Input.totalfee')}</span>
+              <div className="poles">
+                <Input
+                  name="totalfee"
+                  maxLength="25"
+                  type="text"
+                  readOnly
+                  value={this.handleTotalCom()}
+                />
+                <span className="currency">{market.market}</span>
+              </div>
             </div>
-          </div>
-          <div className="line" flow="horizontal">
-            <div>
-              <Button type="button" className="clCreateOrder">
-                {t('private.exchange.trade.pair.sell.Input.button')}
-              </Button>
+            <div className="line" flow="horizontal">
+              <div>
+                <Button type="button" onClick={addOrder} className="clCreateOrder">
+                  {t('private.exchange.trade.pair.sell.Input.button')}
+                </Button>
+              </div>
             </div>
-          </div>
           </form>
         </div>
         <OrderBooc pair = { pairFormatted } t={t}/>
@@ -116,6 +142,13 @@ class Xc extends Component{
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
       return +chartData[orderType].price * +chartData[orderType].amount
+    }
+    return ''
+  }
+  handleTotalCom = () => {
+    const { chartData, orderType } = this.props
+    if(chartData[orderType].price && chartData[orderType].amount) {
+      return +chartData[orderType].price * +chartData[orderType].amount - this.handleTotal() * 0.002
     }
     return ''
   }

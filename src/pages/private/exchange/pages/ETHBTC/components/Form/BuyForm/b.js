@@ -5,11 +5,31 @@ import { connect } from 'react-redux'
 import {updateTradeForm} from "../../../../../../../../actions/exchenge.action";
 import {chartDataSelector, currentPairSelector} from "../../../../../selectors";
 import OrderBook from "../../orderBook/OrderBook";
+import { api } from "src/api";
 
 class Form1 extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      amount: 0,
+      price: 0,
+    };
+  }
   render() {
     const { orderType, market, chartData, pair, userInfo, t } = this.props
     const pairFormatted = (pair?? '-').replace('-', '_')
+    const addOrder = ()=>{
+      const formData = new FormData()
+
+      formData.append('amount', this.state.amount)
+      formData.append('price', this.state.price)
+      formData.append('orderType', 'buy')
+      formData.append('all', this.handleTotal())
+      formData.append('allCom', this.handleTotalCom())
+      formData.append('pair', market.pair)
+      api.addOrderApi(formData)
+    }
+    console.log(market);
     return(
       <>
         <div className="buy_box fild_box">
@@ -19,13 +39,15 @@ class Form1 extends Component{
             <div className="meta">
               <div className="all_title title">{t('private.exchange.trade.pair.buy.title')}</div>
               <div className="sm" id="label_bestbuy">
-                {market.price}
+                {chartData[orderType].price} {market.price}
               </div>
             </div>
             <>
               <div className="line_first">
                 <span className="c1">{t('private.exchange.trade.pair.buy.balance')}</span>
-                <Button className="c2 clBuyBalance">
+                <Button onClick={()=>this.setState({
+                  amount:userInfo.balance
+                })} className="c2 clBuyBalance">
                   <span id="label_buy_balance">
                     {userInfo.balance} {market.coin}
                   </span>
@@ -40,8 +62,10 @@ class Form1 extends Component{
                     name="amount"
                     min={0.00000000}
                     data-type='amount'
+                    type="number"
                     id={'amount-'+orderType}
-                    value={chartData[orderType].amount}
+                    onChange={(e)=>this.setState({amount:e.target.value})}
+                    value={this.state.amount}
                   />
                   <span className="currency">{market.coin}</span>
                 </div>
@@ -52,8 +76,10 @@ class Form1 extends Component{
                   <Input
                     name="price"
                     maxLength="25"
-                    data-type='price' type='text' id={'price-'+orderType}
-                    value={chartData[orderType].price}
+                    type="number"
+                    data-type='price' id={'price-'+orderType}
+                    onChange={(e)=>this.setState({price:e.target.value})}
+                    value={this.state.price}
                   />
                   <span className="currency">{market.market}</span>
                 </div>
@@ -65,6 +91,7 @@ class Form1 extends Component{
                     name="total"
                     maxLength="25"
                     type="text"
+                    readOnly
                     id='total'
                     value={this.handleTotal()}
                   />
@@ -74,7 +101,7 @@ class Form1 extends Component{
               <div className="line">
                 <span className="span">{t('private.exchange.trade.pair.buy.Input.fee')} (0.2%):</span>
                 <div className="poles">
-                  <Input name="fee" maxLength="25" type="text" min={0.00000000} value={"fee"} disabled=""/>
+                  <Input name="fee" maxLength="25" type="text" min={0.00000000} value={this.handleTotal() * 0.002} readOnly/>
                   <span className="currency">{market.market}</span>
                 </div>
               </div>
@@ -85,14 +112,15 @@ class Form1 extends Component{
                     name="totalfee"
                     maxLength="25"
                     type="text"
-                    disabled=""
+                    readOnly
+                    value={this.handleTotalCom()}
                   />
                   <span className="currency">{market.market}</span>
                 </div>
               </div>
               <div className="line" flow="horizontal">
                 <div float="left">
-                  <Button type="button" className="clCreateOrder" origin="Купить">
+                  <Button type="button" onClick={addOrder} className="clCreateOrder" origin="Купить">
                     {t('private.exchange.trade.pair.buy.Input.button')}
                   </Button>
                 </div>
@@ -117,6 +145,13 @@ class Form1 extends Component{
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
       return +chartData[orderType].price * +chartData[orderType].amount
+    }
+    return ''
+  }
+  handleTotalCom = () => {
+    const { chartData, orderType } = this.props
+    if(chartData[orderType].price && chartData[orderType].amount) {
+      return +chartData[orderType].price * +chartData[orderType].amount + this.handleTotal() * 0.002
     }
     return ''
   }

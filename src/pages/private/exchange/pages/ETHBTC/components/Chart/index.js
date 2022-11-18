@@ -24,7 +24,7 @@ import {
 } from '@syncfusion/ej2-react-charts';
 import {
   EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator,
-  AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator ,Export, Zoom, ScrollBar
+  AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator ,Export
 } from '@syncfusion/ej2-react-charts';
 import { loadChart } from '../../../../../../../actions/exchenge.action'
 import { marketDataSelector, chartDataSelector } from '../../../../selectors'
@@ -52,9 +52,6 @@ class Chart extends Component {
       majorGridLines: { width: 0 },
       majorTickLines: { color: 'transparent' },
       crosshairTooltip: { enable: true },
-      enableAutoIntervalOnZooming:true,
-      title: 'Время',
-      crossesAt: 115
     };
     this.primaryyAxis = {
       labelFormat: 'n0',
@@ -63,10 +60,10 @@ class Chart extends Component {
     };
     this.crosshair = { enable: true };
     this.periodselector = [
-      { text: '1H', interval: 1, intervalType: 'Hours', selected: true},
-      { text: '12H', interval: 12, intervalType: 'Hours'},
-      { text: '1D', interval: 1, intervalType: 'Days' },
-      { text: '7D', interval: 6, intervalType: 'Days' },
+      { text: '1ч', interval: 1, intervalType: 'Hours', selected: true},
+      { text: '12ч', interval: 12, intervalType: 'Hours'},
+      { text: '1д', interval: 1, intervalType: 'Days' },
+      { text: '7д', interval: 6, intervalType: 'Days' },
       { text: '1M', interval: 1, intervalType: 'Months' },
       { text: '3M', interval: 3, intervalType: 'Months' },
       { text: '6M', interval: 6, intervalType: 'Months' }, { text: 'All' }
@@ -109,9 +106,6 @@ class Chart extends Component {
                                    primaryYAxis={this.primaryyAxis}
                                    primaryXAxis={this.primaryxAxis}
                                    periods={this.periodselector}
-                                   zoomSettings={{
-                                     enableSelectionZooming:true, enablePan:true, enableScrollBar:true, mode:"x", toolbarItems:["ZoomIn", "ZoomOut", "Reset", "Pan"],
-                                   }}
                                    chartArea={{ border: { width: 0 } }}
                                    tooltip={{ enable: true}}
                                    tooltipRender={tooltipRender}
@@ -123,7 +117,7 @@ class Chart extends Component {
               >
                 <Inject services={[DateTime, Crosshair, Tooltip, RangeTooltip, ColumnSeries, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines,
                   EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, Export,
-                  AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator, Zoom, ScrollBar]}/>
+                  AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator]}/>
                   <StockChartRowsDirective>
                     <StockChartRowDirective height={'30%'}/>
                     <StockChartRowDirective height={'70%'}/>

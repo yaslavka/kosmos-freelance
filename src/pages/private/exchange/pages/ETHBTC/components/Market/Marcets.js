@@ -23,9 +23,9 @@ class Markets extends Component{
         <Link to={/trade/+market.market+'-'+market.coin}>
           <tr className={pair===currentPair ? 'even' : 'markets-list__table-row'}>
             <td className="first"> {market.market}-{market.coin}</td>
+            <td >{market.high24hr}</td>
             <td className={market.percentChange>0 ? 'markets-list__percent--plus': 'markets-list__percent--minus' }>{market.percentChange} </td>
             <td className="red">{market.baseVolume}</td>
-            <td >{market.high24hr}</td>
           </tr>
         </Link>
       </>
