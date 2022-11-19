@@ -45,7 +45,7 @@ baseInstance.interceptors.response.use(
     }
   },
 )
-const host = 'https://sheltered-tor-24523.herokuapp.com'
+const host = process.env.REACT_APP_BASE_URL
 // 'http://localhost:5000/api'||
 export const app = feathers()
   .configure(rest(host).fetch(fetch))
@@ -305,6 +305,6 @@ export const api = {
 
 
   addOrderApi(item){
-    return baseInstance.post('order/create', item)
+    return baseInstance.post('orders/create', item)
   }
 }
