@@ -39,7 +39,7 @@ class Form1 extends Component{
             <div className="meta">
               <div className="all_title title">{t('private.exchange.trade.pair.buy.title')}</div>
               <div className="sm" id="label_bestbuy">
-                {chartData[orderType].price} {market.price}
+                {market.price}
               </div>
             </div>
             <>
@@ -49,7 +49,7 @@ class Form1 extends Component{
                   amount:userInfo.balance
                 })} className="c2 clBuyBalance">
                   <span id="label_buy_balance">
-                    {userInfo.balance} {market.market}
+                    {userInfo.balance} {market.coin}
                   </span>
                 </Button>
               </div>
@@ -101,7 +101,7 @@ class Form1 extends Component{
               <div className="line">
                 <span className="span">{t('private.exchange.trade.pair.buy.Input.fee')} (0.2%):</span>
                 <div className="poles">
-                  <Input name="fee" maxLength="25" type="text" min={0.00000000} value={this.handleTotal() * 0.002} readOnly/>
+                  <Input name="fee" maxLength="25" type="text" min={0.00000000} value={(this.handleTotal() * 0.002).toFixed(10)} readOnly/>
                   <span className="currency">{market.market}</span>
                 </div>
               </div>
@@ -144,14 +144,14 @@ class Form1 extends Component{
   handleTotal = () => {
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
-      return +chartData[orderType].price * +chartData[orderType].amount
+      return (+chartData[orderType].price * +chartData[orderType].amount).toFixed(10)
     }
     return ''
   }
   handleTotalCom = () => {
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
-      return +chartData[orderType].price * +chartData[orderType].amount + this.handleTotal() * 0.002
+      return (+chartData[orderType].price * +chartData[orderType].amount + this.handleTotal() * 0.002).toFixed(10)
     }
     return ''
   }

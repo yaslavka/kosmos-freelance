@@ -6,7 +6,10 @@ import {
   SORT_MARKETS,
   UPDATE_TRADE_FORM
 } from "../constants/exchange.constants";
-
+function subtractYears(numOfYears, date = new Date()) {
+  date.setFullYear(date.getFullYear() - numOfYears);
+  return date;
+}
 export function loadAllMarkets() {
   return {
     type: LOAD_MARKETS,
@@ -16,7 +19,7 @@ export function loadAllMarkets() {
   }
 }
 
-export function loadChart(pair='BTC_FARM', end = (+new Date()), start = 1405699200, period=86400) {
+export function loadChart(pair='BTC_FARM', end = (+new Date()), start = +subtractYears(1), period=86400) {
   return {
     type: LOAD_CHART,
     service: 'charts',

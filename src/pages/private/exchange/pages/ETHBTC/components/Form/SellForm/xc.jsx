@@ -42,9 +42,7 @@ class Xc extends Component{  constructor(props) {
           <>
             <div className="line_first">
               <span className="c1">{t('private.exchange.trade.pair.sell.balance')}</span>
-              <Button className="c2 clBuyBalance" onClick={()=>this.setState({
-                amount:userInfo.balance
-              })}>
+              <Button className="c2 clBuyBalance">
                   <span id="label_buy_balance">
                      {userInfo.balance} {market.coin}
                   </span>
@@ -98,7 +96,7 @@ class Xc extends Component{  constructor(props) {
             <div className="line">
               <span>{t('private.exchange.trade.pair.sell.Input.fee')} (0.2%):</span>
               <div className="poles">
-                <Input name="fee" maxLength="25" type="text" min={0.00000000} value={this.handleTotal() * 0.002} readOnly/>
+                <Input name="fee" maxLength="25" type="text" min={0.00000000} value={(this.handleTotal() * 0.002).toFixed(10)} readOnly/>
                 <span className="currency">{market.market}</span>
               </div>
             </div>
@@ -141,14 +139,14 @@ class Xc extends Component{  constructor(props) {
   handleTotal = () => {
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
-      return +chartData[orderType].price * +chartData[orderType].amount
+      return (+chartData[orderType].price * +chartData[orderType].amount).toFixed(10)
     }
     return ''
   }
   handleTotalCom = () => {
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
-      return +chartData[orderType].price * +chartData[orderType].amount - this.handleTotal() * 0.002
+      return (+chartData[orderType].price * +chartData[orderType].amount - this.handleTotal() * 0.002).toFixed(10)
     }
     return ''
   }
