@@ -36,7 +36,7 @@ class Xc extends Component{  constructor(props) {
           <div className="meta">
             <div className="all_title title">{t('private.exchange.trade.pair.sell.title')}</div>
             <div className="sm" id="label_bestsell">
-              {chartData[orderType].price} {market.price}
+
             </div>
           </div>
           <>

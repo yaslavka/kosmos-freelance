@@ -10,7 +10,6 @@ class TradeHistoryEl extends Component{
           <td width="14%">{trade.type}</td>
           <td width="30%">{trade.rate}</td>
           <td width="29%">{trade.amount}</td>
-          <td width="29%">{trade.total}</td>
         </tr>
       </>
     )

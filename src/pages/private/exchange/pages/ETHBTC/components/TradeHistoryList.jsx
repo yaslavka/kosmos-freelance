@@ -26,7 +26,6 @@ class TradeHistoryList extends Component{
               <th width="14%">{t('private.exchange.trade.History.result')}</th>
               <th width="30%">{market}</th>
               <th width="29%">{coin}</th>
-              <th width="29%">{market}</th>
             </tr>
             </thead>
           </table>

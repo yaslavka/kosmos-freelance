@@ -23,7 +23,7 @@ class Market extends Component{
   };
   componentDidMount() {
     const { loadAllMarkets } = this.props
-    loadAllMarkets()
+    setInterval(()=>{loadAllMarkets()},3000)
   }
 
   render() {

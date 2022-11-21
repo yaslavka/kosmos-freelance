@@ -75,17 +75,22 @@ class Chart extends Component {
     if(pair !== nextProps.pair) {loadChart(nextProps.pair)}
 
   }
-
   componentDidMount() {
     const { loadChart, pair} = this.props
     loadChart(pair)
   }
+
+  // componentDidUpdate(pP,pS,sS){
+  //   const nextProps = this.props
+  //   const { loadChart, pair} = this.props
+  //   if(pair !== nextProps.pair) {loadChart(nextProps.pair)}
+  //   setInterval(()=>{loadChart(nextProps.pair)},5000)
+  // }
   render() {
     const { chartData, marketData, pair } = this.props
-    if(chartData && chartData.loading) return <div className='trade-page__spinner-wrap'><MoonLoader color={'#1aba1a'}/></div>
     if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
-    if(chartData && chartData.loaded && chartData.data && marketData) {
+    if(chartData && chartData && chartData.data && marketData) {
       var ohlc = chartData.data.map(item => ({date:new Date(+item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close, volume:+item.volume}))
       var volume = chartData.data.map(item => ({date:new Date(+item.date), volume:+item.volume}))
       console.log(ohlc)

@@ -6,6 +6,7 @@ import {updateTradeForm} from "../../../../../../../../actions/exchenge.action";
 import {chartDataSelector, currentPairSelector} from "../../../../../selectors";
 import OrderBook from "../../orderBook/OrderBook";
 import { api } from "src/api";
+import Orderbuyprice from "../../orderBook/Order/orderbuyprice";
 
 class Form1 extends Component{
   constructor(props) {
@@ -36,12 +37,7 @@ class Form1 extends Component{
           <div className="inset clBuyForm">
             <input type="hidden" name="order_type" value="1" />
             <input type="hidden" name="fee_type" value="1" />
-            <div className="meta">
-              <div className="all_title title">{t('private.exchange.trade.pair.buy.title')}</div>
-              <div className="sm" id="label_bestbuy">
-                {market.price}
-              </div>
-            </div>
+            <Orderbuyprice pair = { pairFormatted } t={t}/>
             <>
               <div className="line_first">
                 <span className="c1">{t('private.exchange.trade.pair.buy.balance')}</span>
@@ -49,7 +45,7 @@ class Form1 extends Component{
                   amount:userInfo.balance
                 })} className="c2 clBuyBalance">
                   <span id="label_buy_balance">
-                    {userInfo.balance} {market.market}
+                    {userInfo.balance} {market.coin}
                   </span>
                 </Button>
               </div>
@@ -62,7 +58,7 @@ class Form1 extends Component{
                     name="amount"
                     min={0.00000000}
                     data-type='amount'
-                    type="number"
+                    type="text"
                     id={'amount-'+orderType}
                     onChange={(e)=>this.setState({amount:e.target.value})}
                     value={this.state.amount}
@@ -76,7 +72,7 @@ class Form1 extends Component{
                   <Input
                     name="price"
                     maxLength="25"
-                    type="number"
+                    type="text"
                     data-type='price' id={'price-'+orderType}
                     onChange={(e)=>this.setState({price:e.target.value})}
                     value={this.state.price}

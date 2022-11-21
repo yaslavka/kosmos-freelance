@@ -1,3 +1,4 @@
+import { Redirect } from 'react-router-dom';
 import r from './constants/routes.constants'
 
 import Home from './pages/public/Home'
@@ -289,22 +290,24 @@ export const panelRouteConfig = [
     exact: true,
   },
   {
-    id: 'b611f7bb-58bf-4230-826d-ec4174e454af',
-    path: r.exchange,
-    component: Exchange,
-    exact: true,
-  },
-  {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454hgdfhgaf',
     path:  r.exchang,
     component: Exchange,
     exact: true,
-  },
-  {
-    id: 'b611f7bb-58bf-4230-826d-ec4174e454afhfhf',
-    path: `${r.exchang}`,
-    component: Exchange,
-    exact: true,
+    // routes:[
+    //   {
+    //     id: 'a0c10036-0a77-43e2-984c-6779f985e849',
+    //     path: r.exchang,
+    //     component: () => <Redirect to={`/trade/+RUR+'-'+BTC`}/>,
+    //     exact: true,
+    //   },
+    //   {
+    //     id: '95e18993-3c49-41ac-9046-dad7df4d0362',
+    //     path: `/trade/+RUR+'-'+BTC`,
+    //     component: Exchange,
+    //     exact: true,
+    //   },
+    // ],
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454gf',

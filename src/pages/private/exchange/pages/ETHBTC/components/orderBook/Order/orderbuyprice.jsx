@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
-import 'simplebar/dist/simplebar.min.css'
-import Orders from "./Order/Orders";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
-import {chartDataSelector} from "../../../../selectors";
-import {loadOrders} from "../../../../../../../actions/exchenge.action";
-import { connect } from 'react-redux'
+import Oderbuyprice from "./oderbuyprice";
+import {connect} from "react-redux";
+import {chartDataSelector} from "../../../../../selectors";
+import {loadOrders} from "../../../../../../../../actions/exchenge.action";
 
-class OrderBook extends Component{
+class Orderbuyprice extends Component{
   static propTypes = {
     pair: PropTypes.string.isRequired,
     chartData: PropTypes.object
@@ -22,17 +21,14 @@ class OrderBook extends Component{
     const { pair, loadOrders } = this.props
     loadOrders(pair)
   }
-  // componentDidUpdate(pP,pS,sS){
-  //   const { pair, loadOrders } = this.props
-  //   setInterval(()=>{loadOrders(pair)},5000)
-  // }
   render() {
     const { pair, chartData, t } = this.props
     if (chartData && chartData.orders){
       const asks = chartData.orders.asks
       return (
-        <div className="sell_orders_box">
-          <Orders type={'sell'} data={asks} pair={pair} t={t}/>
+        <div className="meta">
+          <div className="all_title title">{t('private.exchange.trade.pair.buy.title')}</div>
+          <Oderbuyprice data={asks} pair={pair} t={t}/>
         </div>
       )
     }else {
@@ -40,8 +36,10 @@ class OrderBook extends Component{
     }
   }
 }
+
+
 export default connect(
   (state) => ({
     chartData: chartDataSelector(state)
   }),
-  { loadOrders })(OrderBook);
+  { loadOrders })(Orderbuyprice);
