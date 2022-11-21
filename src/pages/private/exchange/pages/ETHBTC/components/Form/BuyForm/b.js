@@ -45,7 +45,7 @@ class Form1 extends Component{
                   amount:userInfo.balance
                 })} className="c2 clBuyBalance">
                   <span id="label_buy_balance">
-                    {userInfo.balance} {market.coin}
+                    {userInfo.balance} {market.market}
                   </span>
                 </Button>
               </div>
