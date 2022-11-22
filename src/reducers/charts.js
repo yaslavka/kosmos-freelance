@@ -16,8 +16,8 @@ const chartRecord = Record({
 })
 
 const formRecord = Record({
-    price: '',
-    amount: ''
+    price: [],
+    amount: []
 })
 
 const ReducerState = Record({

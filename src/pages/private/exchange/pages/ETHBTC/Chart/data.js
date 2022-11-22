@@ -1,84 +1,85 @@
 Object.defineProperty(exports, '__esModule', { value: true })
-exports.chartData = [
+exports.chartDatas = [
   {
-    date: new Date('2012-04-02'),
-    open: 85.9757,
-    high: 90.6657,
-    low: 85.7685,
-    close: 90.5257,
+    date: new Date('2022-11-21 13:46:51'),
+    open: 1271994.74326001,
+    close: 1042000,
+    high: 1372994.74326001,
+    low: 1042000,
+    volume: 21025.665407422897
+  },
+  {
+    date: new Date('2022-11-21 13:46:52'),
+    open: 1371991.74326001,
+    close: 1032000,
+    high: 1371996.74326001,
+    low: 1032000,
+    volume: 21025.665407422897
+  },
+  {
+    date: new Date('2022-11-21 13:46:53'),
+    open: 1100181.001,
+    high: 1200181.001,
+    low: 1100081.001,
+    close: 1100081.001,
     volume: 660187068
   },
   {
-    date: new Date('2012-04-09'),
-    open: 89.4471,
-    high: 92,
-    low: 86.2157,
-    close: 86.4614,
-    volume: 912634864
-  },
-  {
-    date: new Date('2012-04-16'),
-    open: 87.1514,
-    high: 88.6071,
-    low: 81.4885,
-    close: 81.8543,
-    volume: 1221746066
-  },
-  {
-    date: new Date('2012-04-23'),
-    open: 81.5157,
-    high: 88.2857,
+    date: new Date('2022-11-21 13:46:54'),
+    open: 1100181.001,
+    high: 1100181.001,
     low: 79.2857,
     close: 86.1428,
     volume: 965935749
   },
   {
-    date: new Date('2012-04-30'),
+    date: new Date('2022-11-21 13:46:55'),
     open: 85.4,
-    high: 85.4857,
+    high: 1100181.001,
     low: 80.7385,
-    close: 80.75,
+    close: 1100181.001,
     volume: 615249365
   },
   {
-    date: new Date('2012-05-07'),
-    open: 80.2143,
-    high: 82.2685,
+    date: new Date('2022-11-21 13:46:56'),
+    open: 1200181.001,
+    high: 1300181.001,
     low: 79.8185,
-    close: 80.9585,
+    close: 1200181.001,
     volume: 541742692
   },
   {
-    date: new Date('2012-05-14'),
-    open: 80.3671,
-    high: 81.0728,
+    date: new Date('2022-11-21 13:46:57'),
+    open: 1200181.001,
+    high: 1300181.001,
     low: 74.5971,
-    close: 75.7685,
+    close: 1300181.001,
     volume: 708126233
   },
   {
-    date: new Date('2012-05-21'),
-    open: 76.3571,
-    high: 82.3571,
-    low: 76.2928,
-    close: 80.3271,
+    date: new Date('2022-11-21 13:46:58'),
+    open: 1400181.001,
+    high: 1500181.001,
+    low: 1300181.001,
+    close: 1500181.001,
     volume: 682076215
   },
   {
-    date: new Date('2012-05-28'),
-    open: 81.5571,
-    high: 83.0714,
-    low: 80.0743,
-    close: 80.1414,
+    date: new Date('2022-11-21 13:46:59'),
+    open: 1600181.001,
+    high: 1700181.001,
+    low: 1600181.001,
+    close: 1600181.001,
     volume: 480059584
   },
   {
-    date: new Date('2012-06-04'),
-    open: 80.2143,
-    high: 82.9405,
-    low: 78.3571,
-    close: 82.9028,
-    volume: 517577005
+    date: new Date('2022-11-21 13:47:00'),
+    open: 1710181.001,
+    high: 1710181.001,
+    low: 1600181.001,
+    close: 1610181.001,
+    volume: 480059584,
+    quoteVolume:480059584
   },
   {
     date: new Date('2012-06-11'),

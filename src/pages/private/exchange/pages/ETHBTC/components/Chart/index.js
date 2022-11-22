@@ -28,8 +28,8 @@ import {
 } from '@syncfusion/ej2-react-charts';
 import { loadChart } from '../../../../../../../actions/exchenge.action'
 import { marketDataSelector, chartDataSelector } from '../../../../selectors'
-import { MoonLoader } from 'react-spinners';
 import './stockChart.scss'
+import {chartDatas} from "../../Chart/data";
 const SAMPLE_CSS = `
     .control-fluid {
         padding: 0px !important;
@@ -93,7 +93,6 @@ class Chart extends Component {
     if(chartData && chartData && chartData.data && marketData) {
       var ohlc = chartData.data.map(item => ({date:new Date(+item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close, volume:+item.volume}))
       var volume = chartData.data.map(item => ({date:new Date(+item.date), volume:+item.volume}))
-      console.log(ohlc)
       return (
         <div id='stock-chart'>
           <div className='stock-chart-headers'>

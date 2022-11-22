@@ -16,7 +16,6 @@ class Order extends Component{
   }
   handleClick = value => () => {
     const { pair, type, updateTradeForm } = this.props
-    console.log(pair, type, value)
 
     updateTradeForm({currentPair: pair, inputType: 'price', orderType: type, value: value})
   }
