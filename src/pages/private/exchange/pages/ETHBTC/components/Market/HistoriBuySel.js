@@ -19,7 +19,7 @@ class HistoriBuySel extends  Component{
 
   componentDidMount() {
     const { pair, loadTradeHistory } = this.props
-    setInterval(()=>{loadTradeHistory(pair)},2500)
+    loadTradeHistory(pair)
   }
 
   render() {

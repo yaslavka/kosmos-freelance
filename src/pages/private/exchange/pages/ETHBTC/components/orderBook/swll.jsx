@@ -36,7 +36,7 @@ class Swll extends Component{
             <div className="viewport">
               <div className="overview">
                 <table className="sell_orders" width="100%">
-                  <tbody id="buyord_table">
+                  <tbody id="buyord_table" role={"button"}>
                   {orders}
                   </tbody>
                 </table>

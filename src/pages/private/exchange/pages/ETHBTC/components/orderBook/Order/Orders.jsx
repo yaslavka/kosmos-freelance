@@ -36,7 +36,7 @@ class Orders extends  Component{
             <div className="viewport">
               <div className="overview">
                 <table className="sell_orders" width="100%">
-                  <tbody id="sellord_table">
+                  <tbody id="sellord_table" role={"button"}>
                   {orders}
                   </tbody>
                 </table>

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import cl from "../../Exchange.module.css";
 import BuyFormComponent from "./components/Form/BuyForm";
 import HistoriBuySel from "./components/Market/HistoriBuySel";
-import {Col} from "reactstrap";
+//import {Col} from "reactstrap";
 import Market from "./components/Market/Market";
 import SellFormComponent from "./components/Form/SellForm";
 import Chart from "./components/Chart";
@@ -16,7 +16,7 @@ class Fmat extends Component{
     const marketsTab = isMobile ? null : (<Market pair = {pair} t={t}/>)
     return(
       <>
-        <Col xl={8}>
+
           <div className={cl.contentBlock}>
             <Chart pair = { pairFormatted } t={t} />
             <br/>
@@ -28,7 +28,7 @@ class Fmat extends Component{
             {marketsTab}
             <HistoriBuySel pair = { pairFormatted } t={t}/>
           </div>
-        </Col>
+
       </>
     )
   }

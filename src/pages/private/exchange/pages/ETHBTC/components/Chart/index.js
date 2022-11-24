@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { MoonLoader } from 'react-spinners';
 import {
   StockChartComponent,
   StockChartSeriesCollectionDirective,
@@ -29,7 +30,7 @@ import {
 import { loadChart } from '../../../../../../../actions/exchenge.action'
 import { marketDataSelector, chartDataSelector } from '../../../../selectors'
 import './stockChart.scss'
-import {chartDatas} from "../../Chart/data";
+//import {chartDatas} from "../../Chart/data";
 const SAMPLE_CSS = `
     .control-fluid {
         padding: 0px !important;
@@ -50,8 +51,9 @@ class Chart extends Component {
     this.primaryxAxis = {
       valueType: 'DateTime',
       majorGridLines: { width: 0 },
-      majorTickLines: { color: 'transparent' },
+      majorTickLines: { color: 'transparent'},
       crosshairTooltip: { enable: true },
+      intervalType: 'Hours',
     };
     this.primaryyAxis = {
       labelFormat: 'n0',
@@ -60,9 +62,8 @@ class Chart extends Component {
     };
     this.crosshair = { enable: true };
     this.periodselector = [
-      { text: '1ч', interval: 1, intervalType: 'Hours', selected: true},
-      { text: '12ч', interval: 12, intervalType: 'Hours'},
-      { text: '1д', interval: 1, intervalType: 'Days' },
+      { text: '12ч', interval: 13, intervalType: 'Hours', selected: true},
+      { text: '24ч', interval: 24, intervalType: 'Hours'},
       { text: '7д', interval: 6, intervalType: 'Days' },
       { text: '1M', interval: 1, intervalType: 'Months' },
       { text: '3M', interval: 3, intervalType: 'Months' },
@@ -88,13 +89,14 @@ class Chart extends Component {
   // }
   render() {
     const { chartData, marketData, pair } = this.props
+    if(chartData && chartData.loading) return <div className='trade-page__spinner-wrap'><MoonLoader color={'#1aba1a'}/></div>
     if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
-    if(chartData && chartData && chartData.data && marketData) {
+    if(chartData && chartData.loaded && chartData.data && marketData) {
       var ohlc = chartData.data.map(item => ({date:new Date(+item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close, volume:+item.volume}))
       var volume = chartData.data.map(item => ({date:new Date(+item.date), volume:+item.volume}))
       return (
-        <div id='stock-chart'>
+        <div id='stock-chart' key={pair.id}>
           <div className='stock-chart-headers'>
             <h3 className='stock-chart-headers__header'>{marketData.market} / {marketData.coin}</h3>
             <span className='stock-chart-headers__price'>Price: {marketData.last}</span>
@@ -118,6 +120,7 @@ class Chart extends Component {
                                    load={this.load.bind(this)}
                                    title={`${marketData.market} / ${marketData.coin}`}
                                    height='550'
+                                   id={pair}
               >
                 <Inject services={[DateTime, Crosshair, Tooltip, RangeTooltip, ColumnSeries, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines,
                   EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, Export,
@@ -127,11 +130,11 @@ class Chart extends Component {
                     <StockChartRowDirective height={'70%'}/>
                   </StockChartRowsDirective>
                 <StockChartAxesDirective>
-                  <StockChartAxisDirective name='yAxis1' rowIndex={1} labelPosition={'Inside'} tickPosition={'Inside'} opposedPosition={true} lineStyle={{ color: 'transparent' }} majorTickLines={{ color: 'transparent' }}/>
+                  <StockChartAxisDirective name='yAxis1' rowIndex={1}  tickPosition={'Inside'} opposedPosition={false} lineStyle={{ color: 'transparent' }} majorTickLines={{ color: 'transparent' }}/>
                 </StockChartAxesDirective>
                 <StockChartSeriesCollectionDirective>
-                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='close' type='Candle' yAxisName='yAxis1' id={pair}/>
-                  <StockChartSeriesDirective dataSource={volume} xName='date' yName='volume' type='Column' enableTooltip={false} id={pair}/>
+                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='close' type='Candle' yAxisName='yAxis1' id={pair.id}/>
+                  <StockChartSeriesDirective dataSource={volume} xName='date' yName='volume' type='Column' enableTooltip={false} id={pair.id}/>
                 </StockChartSeriesCollectionDirective>
               </StockChartComponent>
             </div>

@@ -20,7 +20,7 @@ class OrderBooc extends Component{
 
   componentDidMount() {
     const { pair, loadOrders } = this.props
-    setInterval(()=>{loadOrders(pair)},2000)
+    loadOrders(pair)
   }
   render() {
     const { pair, chartData, t } = this.props

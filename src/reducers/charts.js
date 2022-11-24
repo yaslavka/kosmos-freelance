@@ -33,7 +33,7 @@ export default (chartsState = new ReducerState(), action) => {
     case LOAD_CHART+START:
       return chartsState
                 .set('currentPair', pair)
-                .setIn( ['chartsData', pair], new chartRecord( {loading: true, start: start, period: period, buy: new formRecord({}), sell: new formRecord({})} ) )
+                .setIn( ['chartsData', pair], new chartRecord( {loading: true, loaded:true, start: start, period: period, buy: new formRecord({}), sell: new formRecord({})} ) )
 
     case LOAD_CHART+SUCCESS:
       return chartsState
