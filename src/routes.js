@@ -62,6 +62,7 @@ import Nukeworld from "./pages/private/Casino/components/vvvvv";
 import Raccoontales from "./pages/private/Casino/components/blac";
 import Forestdreams from "./pages/private/Casino/components/zzz";
 import Savethehamster from "./pages/private/Casino/components/7777";
+import Fmat from "./pages/private/exchange/pages/ETHBTC/fmat";
 
 export const publicRouteConfig = [
   {
@@ -291,23 +292,15 @@ export const panelRouteConfig = [
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454hgdfhgaf',
-    path:  r.exchang,
+    path:  r.exchange,
     component: Exchange,
     exact: true,
-    // routes:[
-    //   {
-    //     id: 'a0c10036-0a77-43e2-984c-6779f985e849',
-    //     path: r.exchang,
-    //     component: () => <Redirect to={`/trade/+RUR+'-'+BTC`}/>,
-    //     exact: true,
-    //   },
-    //   {
-    //     id: '95e18993-3c49-41ac-9046-dad7df4d0362',
-    //     path: `/trade/+RUR+'-'+BTC`,
-    //     component: Exchange,
-    //     exact: true,
-    //   },
-    // ],
+  },
+  {
+    id: '95e18993-3c49-41ac-9046-dad7df4d0362',
+    path: r.exchang,
+    component: Exchange,
+    exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454gf',

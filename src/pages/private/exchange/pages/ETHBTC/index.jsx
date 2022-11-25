@@ -7,7 +7,7 @@ import Fmat from "./fmat";
 import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 
-function Exchange({match}) {
+function Exchange({match, children}) {
   const { t } = useTranslation('common');
   const userInfo = useSelector((state) => state.app.user)
     return (
@@ -19,6 +19,7 @@ function Exchange({match}) {
                 <NavBar />
               </Col>
               <Fmat pair = {match.params.pair} userInfo={userInfo} t={t}/>
+              {children}
             </Row>
           )
         }
