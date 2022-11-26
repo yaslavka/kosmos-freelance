@@ -64,8 +64,8 @@ function Finances() {
                         <h3 className='card-fin-bal'>
                               {`${formatter
                             .format(
-                              (userInfo.balance> -1 && userInfo.balance) || 0,
-                            ).replace('₽', 'RUR')}`}
+                              (userInfo.allBalances> -1 && userInfo.allBalances) || 0,
+                            ).replace('₽', '₽')}`}
                         </h3>
                           }/>
 
@@ -104,7 +104,7 @@ function Finances() {
                                 userInfo.transferBalance) ||
                               0,
                             )
-                            .replace('₽', 'RUR')}
+                            .replace('₽', '₽')}
 
                         </h3>
                         }/>

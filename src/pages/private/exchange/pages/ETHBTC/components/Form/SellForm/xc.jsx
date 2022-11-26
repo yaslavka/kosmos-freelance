@@ -42,9 +42,13 @@ class Xc extends Component{  constructor(props) {
           <>
             <div className="line_first">
               <span className="c1">{t('private.exchange.trade.pair.sell.balance')}</span>
-              <Button className="c2 clBuyBalance">
+              <Button className="c2 clBuyBalance"
+                      onClick={()=>this.setState({
+                        amount:(userInfo?.balanceCrypto[`${market.coin}`]) ? userInfo?.balanceCrypto[`${market.coin}`] : 0.00000000
+                      })}
+              >
                   <span id="label_buy_balance">
-                     {userInfo.balance} {market.coin}
+                     {(userInfo?.balanceCrypto[`${market.coin}`]) ? userInfo?.balanceCrypto[`${market.coin}`] : 0.00000000} {market.coin}
                   </span>
               </Button>
             </div>

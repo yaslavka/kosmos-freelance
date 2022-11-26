@@ -42,10 +42,11 @@ class Form1 extends Component{
               <div className="line_first">
                 <span className="c1">{t('private.exchange.trade.pair.buy.balance')}</span>
                 <Button onClick={()=>this.setState({
-                  amount:userInfo.balance
+                  amount:(market.market === "RUR") ? userInfo.balance : ((userInfo?.balanceCrypto[`${market.market}`]) ? userInfo?.balanceCrypto[`${market.market}`] : 0.00000000)
                 })} className="c2 clBuyBalance">
                   <span id="label_buy_balance">
-                    {userInfo.balance} {market.market}
+                    {(market.market === "RUR") ? userInfo.balance : ((userInfo?.balanceCrypto[`${market.market}`]) ? userInfo?.balanceCrypto[`${market.market}`] : 0.00000000)} {market.market}
+
                   </span>
                 </Button>
               </div>
