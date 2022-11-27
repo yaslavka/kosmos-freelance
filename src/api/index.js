@@ -59,7 +59,7 @@ export const api = {
     return baseInstance.get(`/v2/?trading-pairs=${name}`)
   },
   tradeMarket() {
-    return baseInstance.get('/v2/trading-pairs ')
+    return baseInstance.get('/chat')
   },
   tradeCreateOrderBuy() {
     return baseInstance.get('/v2/trading-pairs ')
