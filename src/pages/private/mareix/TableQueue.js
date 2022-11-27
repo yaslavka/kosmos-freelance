@@ -30,7 +30,7 @@ const TableQueuem = ({ location: { state = {} } }) => {
     (route = '') => {
       let newRoute = '/'
       if (matrixInfo && matrixInfo.id) {
-        newRoute = `/matrixs/${matrixInfo.id}${route}`
+        newRoute = `/personal-matrixs/${matrixInfo.id}${route}`
       } else if (type) {
         newRoute = `/matrixs/${type}${route}`
       }
@@ -174,7 +174,7 @@ const TableQueuem = ({ location: { state = {} } }) => {
                         style={{
                           backgroundImage: `url(${
                             user.photo
-                              ? `${process.env.REACT_APP_BASE_URL}/getFile/avatar/${user.photo}`
+                              ? `${process.env.REACT_APP_BASE_URL}/user/${user.photo}`
                               : avatarFallback
                           })`,
                         }}

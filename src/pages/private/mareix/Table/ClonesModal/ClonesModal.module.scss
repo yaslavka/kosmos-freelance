@@ -30,6 +30,7 @@
     display: block;
     margin-left: auto;
     cursor: pointer;
+    background-color: #6610F2;
 
     @include media-breakpoint-up(xl) {
       position: absolute;

@@ -9,8 +9,7 @@
   top: 0;
   left: 0;
   z-index: 11;
-  padding: 187px 0 0;
-  background: url('../../../../../scss/media/bg-stars.2e195b56.jpg');
+  padding: 300px 0 0;
 
   @include media-breakpoint-up(xl) {
     position: absolute;
@@ -30,6 +29,8 @@
     right: 24px;
     width: 30px;
     height: 30px;
+    background-color: #6610F2;
+    cursor: pointer;
 
     @include media-breakpoint-up(xl) {
       top: 20px;
@@ -89,6 +90,7 @@
         width: 100%;
         margin-bottom: 0;
         text-transform: uppercase;
+
 
         @include media-breakpoint-up(xl) {
           min-height: 43px;

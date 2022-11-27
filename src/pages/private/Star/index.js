@@ -62,7 +62,7 @@ function Tables() {
 
                     <TablesElement
                       key={i.toString()}
-                      urlPrefix="table"
+                      urlPrefix="personal-table"
                       transform={transform}
                       matrix={matrix}
                     />
