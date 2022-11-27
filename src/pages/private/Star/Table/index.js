@@ -156,7 +156,7 @@ export default function Table({ location: { state = {}, pathname } }) {
     setVisiblePartnerModal(false)
     setTimeout(() => {
       // eslint-disable-next-line react/prop-types
-      if (pathname.startsWith('/personal-table')) {
+      if (pathname.startsWith('/table')) {
         api
           .getMatrixStructureByType(matrixInfo.id)
           .then((response) => {
@@ -197,14 +197,14 @@ export default function Table({ location: { state = {}, pathname } }) {
           const prevMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id - 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(prevMatrix))
-          history.push(`/personal-table/${matrixInfo.id - 1}`)
+          history.push(`/table/${matrixInfo.id - 1}`)
         }
       } else {
         if (matrixInfo.id !== 8) {
           const nextMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id + 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(nextMatrix))
-          history.push(`/personal-table/${matrixInfo.id + 1}`)
+          history.push(`/table/${matrixInfo.id + 1}`)
         }
       }
     }
@@ -349,7 +349,7 @@ export default function Table({ location: { state = {}, pathname } }) {
       let newRoute = '/'
 
       if (matrixInfo && matrixInfo.isActive && !id) {
-        newRoute = `/personal-table/${matrixInfo.id}${route}`
+        newRoute = `/table/${matrixInfo.id}${route}`
       } else if (id) {
         newRoute = `/table/${id}${route}`
       }
@@ -391,7 +391,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                 <Button
                   onClick={handleUpMatrix}
                   disabled={buyingStatus.type === 'pending'}
-                  className="w-100"
+                  className="w-1001"
                   color="perrywinkle"
                   size="small"
                 >
@@ -433,7 +433,7 @@ export default function Table({ location: { state = {}, pathname } }) {
               <Button
                 onClick={handleUpMatrix}
                 disabled={buyingStatus.type === 'pending'}
-                className="w-100"
+                className="w-1001"
                 color="perrywinkle"
                 size="small"
               >

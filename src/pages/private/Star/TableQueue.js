@@ -32,7 +32,7 @@ const TableQueue = ({ location: { state = {} } }) => {
     (route = '') => {
       let newRoute = '/'
       if (matrixInfo && matrixInfo.id) {
-        newRoute = `/personal-table/${matrixInfo.id}${route}`
+        newRoute = `/table/${matrixInfo.id}${route}`
       } else if (type) {
         newRoute = `/table/${type}${route}`
       }

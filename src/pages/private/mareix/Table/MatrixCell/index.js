@@ -35,7 +35,7 @@ const branchingLines = (place) => {
 }
 
 // eslint-disable-next-line react/prop-types
-export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
+export default function MatrixCell({ place, info, isActive }) {
   const history = useHistory()
   const [isMobile, setIsMobile] = useState(null)
 
@@ -45,8 +45,6 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
       if (info && info.id) {
         // eslint-disable-next-line react/prop-types
         history.push(`/matrixs/${info.id}`)
-      } else {
-        onDoubleClick()
       }
     }
   }
@@ -95,7 +93,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
               ? // eslint-disable-next-line react/prop-types
                 info.photo
                 ? // eslint-disable-next-line react/prop-types
-                  `${process.env.REACT_APP_BASE_URL}${info.photo}`
+                  `${process.env.REACT_APP_BASE_URL}/user/${info.photo}`
                 : avatarFallback
               : avatarFallback
           }`}
