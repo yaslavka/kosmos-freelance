@@ -63,6 +63,7 @@ import Raccoontales from "./pages/private/Casino/components/blac";
 import Forestdreams from "./pages/private/Casino/components/zzz";
 import Savethehamster from "./pages/private/Casino/components/7777";
 import Fmat from "./pages/private/exchange/pages/ETHBTC/fmat";
+import Chat from "./pages/private/Chat";
 
 export const publicRouteConfig = [
   {
@@ -432,6 +433,12 @@ export const panelRouteConfig = [
     id: '1tdfrd-5845bf-42gg40-82d-45847477',
     path: r.etraces,
     component: ETRace,
+    exact: true,
+  },
+  {
+    id: '1tdfrd-5845bf-42gg40-82d-45847sdfa477',
+    path: r.chat,
+    component: Chat,
     exact: true,
   },
 ]
