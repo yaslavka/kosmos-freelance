@@ -16,7 +16,7 @@ const r = Object.freeze({
   personalTableQueuemini: '/personal-pegasmini/:type/queue',
   tableQueuemini: '/pegasmini/:type/queue',
   tablemmini: '/pegasmini/:id',
-  matrixs: '/matrixs',
+  matrixs: '/pegas_uno',
   personalTablem: '/personal-matrixs/:type',
   personalTableQueuem: '/personal-matrixs/:type/queue',
   tableQueuem: '/matrixs/:type/queue',

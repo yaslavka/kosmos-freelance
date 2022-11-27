@@ -69,7 +69,7 @@ function Matrix() {
                     <MyViewElement element={
                       <TablesElement
                       key={i.toString()}
-                      urlPrefix="personal-matrixs"
+                      urlPrefix="matrixs"
                       transform={transform}
                       matrix={matrix}
                     />
