@@ -302,7 +302,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
   const handleUpMatrix = () => {
     if (id) {
       api
-        .getUpperStructureById(id)
+        .getUppeUnorStructureById(id)
         .then((response) => {
           if (response.items) {
             setMatrixTree(response.items)
@@ -401,7 +401,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
               <div className={styles.footer}>
             <MyViewElement element={
 
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
             }/>
 
                 {matrixInfo.canBuy && (

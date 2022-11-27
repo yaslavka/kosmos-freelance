@@ -259,6 +259,9 @@ export const api = {
   getUpperStructureById(matrixId) {
     return baseInstance.get(`matrix/structure-upper?matrix_id=${matrixId}`)
   },
+  getUppeUnorStructureById(matrixId) {
+    return baseInstance.get(`matrix/uno/structure-upper?matrix_id=${matrixId}`)
+  },
   // School
   getComments() {
     return baseInstance.get('school/comments')
