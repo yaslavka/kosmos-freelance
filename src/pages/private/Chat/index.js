@@ -23,7 +23,7 @@ function Chat(){
         </Col>
         <Col xl={8}>
           <div className="App">
-            <Chatroom socket={socket} username={userInfo} room={room} />
+            <Chatroom socket={socket} userInfo={userInfo} room={room} />
           </div>
         </Col>
       </Row>
