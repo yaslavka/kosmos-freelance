@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import ScrollToBottom from "react-scroll-to-bottom";
+import avatar from "../../../../scss/media/camera_200.png";
 
 function Chatroom({ socket, userInfo, room }){
   const [currentMessage, setCurrentMessage] = useState("");
@@ -22,25 +23,35 @@ function Chatroom({ socket, userInfo, room }){
       setCurrentMessage("");
     }
   };
+  console.log(socket)
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
+      console.log(data);
       setMessageList((list) => [...list, data]);
     });
   }, [socket]);
+  useEffect(() => {
+    socket.on("getOldMessage", (data) => {
+      console.log(data);
+      setMessageList(()=>data);
+    });
+  }, [socket]);
+
   return(
     <>
       <div className="chat-window">
         <div className="chat-header">
           <p>Live Chat</p>
         </div>
-        <div className="chat-body">
+        <div className="chat-body" style={{overflowY: 'scroll'}}>
           <ScrollToBottom className="message-container">
-            {messageList.map((messageContent) => {
+            {messageList.map((messageContent, index) => {
               return (
                 <div
                   className="message"
-                  id={userInfo === messageContent.author ? "you" : "other"}
+                  id={userInfo?.username == messageContent.author ? "you" : "other"}
+                  key={index}
                 >
                   <div>
                     <div className="message-content">
@@ -49,6 +60,14 @@ function Chatroom({ socket, userInfo, room }){
                     <div className="message-meta">
                       <p id="time">{messageContent.time}</p>
                       <p id="author">{messageContent.author}</p>
+                      {/*<img*/}
+                      {/*  src={*/}
+                      {/*    userInfo.avatar*/}
+                      {/*      ? `${process.env.REACT_APP_BASE_URL}/user/${userInfo.avatar}`*/}
+                      {/*      : avatar*/}
+                      {/*  }*/}
+                      {/*  alt={userInfo.avatar}*/}
+                      {/*/>*/}
                     </div>
                   </div>
                 </div>
