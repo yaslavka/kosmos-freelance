@@ -23,8 +23,12 @@ function Chatroom({ socket, userInfo, room }){
       setCurrentMessage("");
     }
   };
-  console.log(socket)
-
+  const joinRoom = () => {
+    if (room !== "") {
+      socket.emit("join_room", room);
+      // setShowChat(true);
+    }
+  };
   useEffect(() => {
     socket.on("receive_message", (data) => {
       console.log(data);
@@ -37,6 +41,10 @@ function Chatroom({ socket, userInfo, room }){
       setMessageList(()=>data);
     });
   }, [socket]);
+
+  useEffect(()=>{
+    joinRoom()
+  }, [joinRoom])
 
   return(
     <>

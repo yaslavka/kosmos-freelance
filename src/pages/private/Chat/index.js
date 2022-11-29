@@ -12,7 +12,7 @@ const socket = io.connect("http://localhost:5000");
 
 function Chat(){
   const userInfo = useSelector((state) => state.app.user)
-  const [room, setRoom] = useState("");
+  const [room, setRoom] = useState("chat");
 
   return(
     <>
