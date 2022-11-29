@@ -11,6 +11,7 @@ function Chatroom({ socket, userInfo, room }){
       const messageData = {
         room: room,
         author: userInfo.username,
+        userId: userInfo.id,
         message: currentMessage,
         time:
           new Date(Date.now()).getHours() +
@@ -19,10 +20,11 @@ function Chatroom({ socket, userInfo, room }){
       };
 
       await socket.emit("send_message", messageData);
-      setMessageList((list) => [...list, messageData]);
+      setMessageList((list) => [...list, messageData,]);
       setCurrentMessage("");
     }
   };
+  // /static/media/camera_200.77e62bce.png
   const joinRoom = () => {
     if (room !== "") {
       socket.emit("join_room", room);
@@ -31,29 +33,26 @@ function Chatroom({ socket, userInfo, room }){
   };
   useEffect(() => {
     socket.on("receive_message", (data) => {
-      console.log(data);
-      setMessageList((list) => [...list, data]);
+      setMessageList((list) => [ ...list, data]);
     });
   }, [socket]);
   useEffect(() => {
     socket.on("getOldMessage", (data) => {
-      console.log(data);
       setMessageList(()=>data);
     });
   }, [socket]);
 
   useEffect(()=>{
     joinRoom()
-  }, [joinRoom])
-
+  }, [])
   return(
     <>
       <div className="chat-window">
         <div className="chat-header">
           <p>Live Chat</p>
         </div>
-        <div className="chat-body" style={{overflowY: 'scroll'}}>
-          <ScrollToBottom className="message-container">
+        <ScrollToBottom className="message-container">
+          <div className="chat-body" >
             {messageList.map((messageContent, index) => {
               return (
                 <div
@@ -61,28 +60,33 @@ function Chatroom({ socket, userInfo, room }){
                   id={userInfo?.username == messageContent.author ? "you" : "other"}
                   key={index}
                 >
-                  <div>
-                    <div className="message-content">
-                      <p>{messageContent.message}</p>
+                  <div className='d-flex'>
+                    <div>
+                      <img
+                        className='chat-avatar'
+                        src={
+                          userInfo?.username == messageContent.author
+                            ? ((userInfo?.avatar) ? `${process.env.REACT_APP_BASE_URL}/user/${userInfo.avatar}` : avatar)
+                            : ((messageContent?.user?.avatar) ? `${process.env.REACT_APP_BASE_URL}/user/${messageContent.user.avatar}` : avatar)
+                        }
+                        alt={userInfo?.avatar}
+                      />
                     </div>
-                    <div className="message-meta">
-                      <p id="time">{messageContent.time}</p>
-                      <p id="author">{messageContent.author}</p>
-                      {/*<img*/}
-                      {/*  src={*/}
-                      {/*    userInfo.avatar*/}
-                      {/*      ? `${process.env.REACT_APP_BASE_URL}/user/${userInfo.avatar}`*/}
-                      {/*      : avatar*/}
-                      {/*  }*/}
-                      {/*  alt={userInfo.avatar}*/}
-                      {/*/>*/}
+                    <div>
+                      <div className="message-meta">
+                        <p id="author">{messageContent.author}</p>
+                        <p id="time">{messageContent.time}</p>
+                      </div>
+                      <div className="message-content">
+                        <p>{messageContent.message}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               );
             })}
-          </ScrollToBottom>
-        </div>
+          </div>
+        </ScrollToBottom>
         <div className="chat-footer">
           <input
             type="text"

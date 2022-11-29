@@ -116,12 +116,12 @@ const navbarLinks = [
     isDisabled: false,
     icon: team,
   },
-  {
-    label: 'smm',
-    route: routes.smm,
-    isDisabled: false,
-    icon: team,
-  },
+  // {
+  //   label: 'smm',
+  //   route: routes.smm,
+  //   isDisabled: false,
+  //   icon: team,
+  // },
   // {
   //   label: 'Промо',
   //   route: routes.promo,

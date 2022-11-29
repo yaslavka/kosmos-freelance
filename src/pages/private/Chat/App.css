@@ -72,7 +72,7 @@ body {
 
 .chat-window .chat-body {
   height: calc(450px - (45px + 70px));
-  border: 1px solid #263238;
+  /* border: 1px solid #263238; */
   background: #fff;
 
   position: relative;
@@ -120,7 +120,7 @@ body {
 
 #you .message-meta {
   justify-content: flex-start;
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #other {
@@ -134,11 +134,16 @@ body {
 
 #other .message-meta {
   justify-content: flex-end;
-  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.chat-avatar{
+  height: 50px;
+  border-radius: 50%;
 }
 
 .message-meta #author {
-  margin-left: 10px;
+  margin-right: 10px;
   font-weight: bold;
 }
 
@@ -150,7 +155,7 @@ body {
 .chat-window .chat-footer {
   height: 40px;
   border: 1px solid #263238;
-  border-top: none;
+  /* border-top: none; */
   display: flex;
 }
 
