@@ -21,7 +21,7 @@ function Chat(){
           <NavBar />
         </Col>
         <Col xl={8}>
-          <div className="App">
+          <div className="Appcat">
             <Chatroom socket={socket} userInfo={userInfo} room={room} />
           </div>
         </Col>

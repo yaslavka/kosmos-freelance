@@ -1,14 +1,11 @@
-.App {
+.Appcat {
   background: #fff;
   color: #212121;
   font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
 }
-body {
-  margin: 0%;
-  padding: 0%;
-}
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .joinChatContainer {
@@ -73,7 +70,8 @@ body {
 .chat-window .chat-body {
   height: calc(450px - (45px + 70px));
   /* border: 1px solid #263238; */
-  background: #fff;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
 
   position: relative;
 }
@@ -104,6 +102,7 @@ body {
   align-items: center;
   margin-right: 5px;
   margin-left: 5px;
+  font-size: initial;
   padding-right: 5px;
   padding-left: 5px;
   overflow-wrap: break-word;
@@ -181,7 +180,7 @@ body {
   background: transparent;
   outline: none;
   font-size: 25px;
-  color: lightgray;
+  background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
 }
 
 .chat-window .chat-footer button:hover {
@@ -189,4 +188,7 @@ body {
 }
 .hide {
   opacity: 0 !important;
+}
+.chat-input{
+  color: black;
 }

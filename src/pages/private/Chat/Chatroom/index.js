@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import ScrollToBottom from "react-scroll-to-bottom";
 import avatar from "../../../../scss/media/camera_200.png";
+import {Input} from "reactstrap";
 
 function Chatroom({ socket, userInfo, room }){
   const [currentMessage, setCurrentMessage] = useState("");
@@ -88,7 +89,7 @@ function Chatroom({ socket, userInfo, room }){
           </div>
         </ScrollToBottom>
         <div className="chat-footer">
-          <input
+          <Input
             type="text"
             value={currentMessage}
             placeholder="Hey..."
