@@ -1,4 +1,4 @@
-import React, { useRef,useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import cl from './MyViewElements.module.css';
 import { useInView } from 'react-intersection-observer';
 

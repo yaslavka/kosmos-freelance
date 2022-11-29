@@ -1,8 +1,8 @@
-import React, {useMemo, useState, useRef} from "react";
+import React from "react";
 import cl from './MyInput.module.css';
 
 const MyInput = (props)=>{
-    const [inputItem, setInputItem] = useState('')
+
 
     const {classesInput, classesPlace,type, place, setInput, input, valueInput, setCheckInputSite} = props
     return (
