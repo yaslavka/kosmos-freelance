@@ -19,8 +19,8 @@ const CreatePayBTC =({btcmodel, setBtcmodel, title})=>{
     api.createBTC().then().catch(() => {})
   }
   const copyBTCaddres = async () => {
-    if (userInfo && `${userInfo.address}`) {
-      navigator.clipboard.writeText(`${userInfo.address}`).then(() => {
+    if (userInfo && `${userInfo.address.BTC}`) {
+      navigator.clipboard.writeText(`${userInfo.address.BTC}`).then(() => {
         toast.info(`${t('private.finances.copiaddres')}`)
       })
     }
@@ -39,10 +39,10 @@ const CreatePayBTC =({btcmodel, setBtcmodel, title})=>{
                 <p className={cl.modalDescrs}>Внимание!!! Если вы используете наш BTC адрес для майнинга BTC на пулах, пожалуйста, укажите минимальный размер вывода с пула: 0.001 btc или 0.01 btc</p>
                 <div>
                   <p>Ваш адрес для пополнения (<i className="cn_addr">ADDR</i>)</p>
-                  <input name="address" type="text" className={[cl.cn_addrs]} value={`${userInfo.address? userInfo.address :"Создайте Адрес"}`} onClick={copyBTCaddres} readOnly=""/>
+                  <input name="address" type="text" className={[cl.cn_addrs]} value={`${userInfo.address.BTC? userInfo.address.BTC :"Создайте Адрес"}`} onClick={copyBTCaddres} readOnly=""/>
                 </div>
                 <div className={cl.btnBlock}>
-                  <QRCodes value={`${userInfo.address ? userInfo.address :"NEW ADDRESS"}`} />
+                  <QRCodes value={`${userInfo.address.BTC ? userInfo.address.BTC :"NEW ADDRESS"}`} />
                 </div>
                 <MyViewElement element={
                   <Button className="fin-btn" onClick={handleSubmit}>Получить новый Адрес</Button>

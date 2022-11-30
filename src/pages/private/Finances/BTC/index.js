@@ -21,7 +21,7 @@ const BTCbalance =({setBtcmodel, setBtcmodelw})=>{
                 <img src={rubleImg} alt={""}/>
                 {`${formatter
                   .format(
-                    (userInfo.allBalances> -1 && userInfo.allBalances) || 0,
+                    (userInfo.allBalances> -1 && userInfo.allBalances) || 0.00,
                   ).replace('₽', '₽')}`}
               </span>
               <span className={cl.transTopCircle}>
