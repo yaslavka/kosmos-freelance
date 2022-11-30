@@ -12,8 +12,8 @@ class Form1 extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      amount: 0,
-      price: 0,
+      amount: 0.00000000,
+      price: 0.00000000,
     };
   }
   render() {
@@ -62,7 +62,7 @@ class Form1 extends Component{
                     type="text"
                     id={'amount-'+orderType}
                     onChange={(e)=>this.setState({amount:e.target.value})}
-                    value={this.state.amount}
+                    value={(+this.state.amount).toFixed(8)}
                   />
                   <span className="currency">{market.coin}</span>
                 </div>
@@ -76,7 +76,7 @@ class Form1 extends Component{
                     type="text"
                     data-type='price' id={'price-'+orderType}
                     onChange={(e)=>this.setState({price:e.target.value})}
-                    value={this.state.price}
+                    value={(+this.state.price).toFixed(8)}
                   />
                   <span className="currency">{market.market}</span>
                 </div>
@@ -90,7 +90,7 @@ class Form1 extends Component{
                     type="text"
                     readOnly
                     id='total'
-                    value={this.handleTotal()}
+                    value={(+this.handleTotal()).toFixed(8)}
                   />
                   <span className="currency">{market.market}</span>
                 </div>
@@ -98,7 +98,7 @@ class Form1 extends Component{
               <div className="line">
                 <span className="span">{t('private.exchange.trade.pair.buy.Input.fee')} (0.2%):</span>
                 <div className="poles">
-                  <Input name="fee" maxLength="25" type="text" min={0.00000000} value={(this.handleTotal() * 0.002).toFixed(10)} readOnly/>
+                  <Input name="fee" maxLength="25" type="text" min={0.00000000} value={(this.handleTotal() * 0.002).toFixed(8)} readOnly/>
                   <span className="currency">{market.market}</span>
                 </div>
               </div>
@@ -110,7 +110,7 @@ class Form1 extends Component{
                     maxLength="25"
                     type="text"
                     readOnly
-                    value={this.handleTotalCom()}
+                    value={(+this.handleTotalCom()).toFixed(8)}
                   />
                   <span className="currency">{market.market}</span>
                 </div>

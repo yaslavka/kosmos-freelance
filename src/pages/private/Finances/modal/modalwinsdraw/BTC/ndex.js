@@ -39,15 +39,15 @@ const CreatewinsdrawBTC =({title, btcmodelw, setBtcmodelw})=>{
               </div>
               <i className={cl.modalDescrs}>Количество (ВТС)</i>
               <div className={cl.btnBlock}>
-                <Input type="text" name="amount" placeholder={"Количество (ВТС)"} value={amount} onChange={handleChangeInput}/>
+                <Input type="text" name="amount" placeholder={"Количество (ВТС)"} value={(+amount).toFixed(8)} onChange={handleChangeInput}/>
               </div>
               <i className={cl.modalDescrs}>Комиссия за транзакцию (BTC)</i>
               <div className={cl.btnBlock}>
-                <Input type="text" name="fees" disabled value={fees}/>
+                <Input type="text" name="fees" disabled value={(+fees).toFixed(8)}/>
               </div>
               <i className={cl.modalDescrs}>Получите (BTC)</i>
               <div className={cl.btnBlock}>
-                <Input type="text" name="totalfess" disabled value={totalfess} onChange={handleChangeInput}/>
+                <Input type="text" name="totalfess" disabled value={(+totalfess+amount-fees).toFixed(8)} onChange={handleChangeInput}/>
               </div>
               <MyViewElement element={
                 <Button className="fin-btn" type={"submit"}>Отправить</Button>

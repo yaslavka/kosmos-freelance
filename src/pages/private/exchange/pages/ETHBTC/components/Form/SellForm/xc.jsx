@@ -10,8 +10,8 @@ import { api } from "src/api";
 class Xc extends Component{  constructor(props) {
   super(props);
   this.state = {
-    amount: 0,
-    price: 0,
+    amount: 0.00000000,
+    price: 0.00000000,
   };
 }
   render() {
@@ -64,7 +64,7 @@ class Xc extends Component{  constructor(props) {
                   type="number"
                   id={'amount-'+orderType}
                   onChange={(e)=>this.setState({amount:e.target.value})}
-                  value={this.state.amount}
+                  value={(+this.state.amount).toFixed(8)}
                 />
                 <span className="currency">{market.coin}</span>
               </div>
@@ -78,7 +78,7 @@ class Xc extends Component{  constructor(props) {
                   type="number"
                   data-type='price' id={'price-'+orderType}
                   onChange={(e)=>this.setState({price:e.target.value})}
-                  value={this.state.price}
+                  value={(+this.state.price).toFixed(8)}
                 />
                 <span className="currency">{market.market}</span>
               </div>
@@ -92,7 +92,7 @@ class Xc extends Component{  constructor(props) {
                   type="text"
                   readOnly
                   id='total'
-                  value={this.handleTotal()}
+                  value={(+this.handleTotal()).toFixed(8)}
                 />
                 <span className="currency">{market.market}</span>
               </div>
@@ -100,7 +100,7 @@ class Xc extends Component{  constructor(props) {
             <div className="line">
               <span>{t('private.exchange.trade.pair.sell.Input.fee')} (0.2%):</span>
               <div className="poles">
-                <Input name="fee" maxLength="25" type="text" min={0.00000000} value={(this.handleTotal() * 0.002).toFixed(10)} readOnly/>
+                <Input name="fee" maxLength="25" type="text" min={0.00000000} value={(this.handleTotal() * 0.002).toFixed(8)} readOnly/>
                 <span className="currency">{market.market}</span>
               </div>
             </div>
@@ -112,7 +112,7 @@ class Xc extends Component{  constructor(props) {
                   maxLength="25"
                   type="text"
                   readOnly
-                  value={this.handleTotalCom()}
+                  value={(+this.handleTotalCom()).toFixed(8)}
                 />
                 <span className="currency">{market.market}</span>
               </div>
@@ -143,14 +143,14 @@ class Xc extends Component{  constructor(props) {
   handleTotal = () => {
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
-      return (+chartData[orderType].price * +chartData[orderType].amount).toFixed(10)
+      return (+chartData[orderType].price * +chartData[orderType].amount).toFixed(8)
     }
     return ''
   }
   handleTotalCom = () => {
     const { chartData, orderType } = this.props
     if(chartData[orderType].price && chartData[orderType].amount) {
-      return (+chartData[orderType].price * +chartData[orderType].amount - this.handleTotal() * 0.002).toFixed(10)
+      return (+chartData[orderType].price * +chartData[orderType].amount - this.handleTotal() * 0.002).toFixed(8)
     }
     return ''
   }
