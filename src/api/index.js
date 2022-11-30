@@ -73,8 +73,8 @@ export const api = {
   tradeOrderBuy() {
     return baseInstance.get('/v2/trading-pairs ')
   },
-  tradeHistory() {
-    return baseInstance.get('/v2/trading-pairs ')
+  createBTC() {
+    return baseInstance.get('/v2/createBTC')
   },
   investBox(data){
     return baseInstance.post(`/v2/invest_box`, data)

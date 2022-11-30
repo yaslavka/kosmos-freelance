@@ -16,6 +16,18 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-track {
 background: rgb(255, 255, 255);
 }
+#window_deposit .ln input[type=text] {
+  width: 300px;
+  text-align: center;
+}
+.qrcode {
+  width: 250px;
+
+  padding: 17px 0;
+  color: #5e5e5e;
+  font-size: 13px;
+
+}
 body::-webkit-scrollbar-thumb {
 background-color: #afafafcb;
 border-radius: 20px;

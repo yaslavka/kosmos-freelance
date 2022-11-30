@@ -16,7 +16,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-   
+
     grid-template-rows: repeat(1, 600px);
     top: 0;
     left: 0;
@@ -46,11 +46,11 @@
 
 .modalCard {
     height: 100%;
-   
+
     display: -webkit-box;
-   
+
     display: -ms-flexbox;
-   
+
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -62,7 +62,7 @@
 
 
 .modalContent {
-   
+
     position: relative;
     padding: 54px 77px 63px;
     max-width: 560px;
@@ -102,7 +102,7 @@ pointer-events: all;
         -ms-transform: none;
             transform: none;
     pointer-events: all;
-   
+
 }
 
 
@@ -121,7 +121,7 @@ pointer-events: all;
 }
 
 .modalTitle {
-   
+
    font-family: 'Nunito', sans-serif;
     margin-bottom: 32px;
     font-style: normal;
@@ -136,7 +136,7 @@ pointer-events: all;
 
 
 .modalDescr {
-    
+
     margin: 0 auto 32px;
     padding:  0 10px;
     max-width: 406px;
@@ -150,6 +150,22 @@ pointer-events: all;
     letter-spacing: -0.02em;
     color: #607483;
     opacity: 0.8;
+}
+.modalDescrs {
+
+  margin: 0 auto 32px;
+  padding:  0 10px;
+  max-width: 406px;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #25B02B;
+  opacity: 0.8;
 }
 
 .modalWarning {
@@ -173,7 +189,7 @@ pointer-events: all;
 }
 
 .modalInput {
-    
+
     margin-bottom: 10px;
     width: 100%;
     height: 68px;
@@ -192,7 +208,7 @@ pointer-events: all;
 .modalMask {
     margin-bottom: 32px;
     width: 100%;
-   
+
 }
 
 .modalMask::-webkit-input-placeholder {
@@ -218,6 +234,22 @@ pointer-events: all;
 .modalMask::placeholder {
     color: var(--rock-grey-color);
     font-size: 14px;
+}
+.cn_addrs{
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  color: #5e5e5e;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #d9dfe7;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.cn_addrss{
+  width: 300px;
+  text-align: center;
 }
 
 
@@ -264,7 +296,7 @@ pointer-events: all;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-              
+
     }
 }
 
@@ -275,7 +307,7 @@ pointer-events: all;
     .modalContent {
         max-width: 500px;
         padding: 40px 45px;
-       
+
     }
 
 
@@ -296,7 +328,7 @@ pointer-events: all;
     }
 
 
-        
+
     .modalInput {
         margin-bottom: 10px;
         width: 100%;
@@ -305,7 +337,7 @@ pointer-events: all;
         font-size: 12px !important;
         padding: 25px 19px 15px  !important;
     }
-    
+
     .modalMask {
         margin-bottom: 15px;
         width: 100%;
@@ -313,7 +345,7 @@ pointer-events: all;
         min-height: 44px;
         height: 50px !important;
         max-width: 350px;
-       
+
     }
 
     .modalMaskPlace {
@@ -347,7 +379,7 @@ pointer-events: all;
         max-width: 350px;
     }
 
- 
+
 
     .modalTitle {
        font-family: 'Nunito', sans-serif;
@@ -360,9 +392,9 @@ pointer-events: all;
         letter-spacing: -0.02em;
         color: var(--deep-blue);
     }
-    
-    
-    
+
+
+
     .modalDescr {
         display: inline-block;
         padding:  0 ;
@@ -378,7 +410,22 @@ pointer-events: all;
         color: #607483;
         opacity: 0.8;
     }
-    
+  .modalDescrs {
+    display: inline-block;
+    padding:  0 ;
+    max-width: 350px;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #25B02B;
+    opacity: 0.8;
+  }
+
     .modalWarning {
         display: inline-block;
         margin-bottom: 10px;
@@ -394,7 +441,7 @@ pointer-events: all;
         opacity: 0.7;
     }
 
-    
+
 .modalExit {
     display: inline-block;
     position: absolute;
@@ -407,5 +454,4 @@ pointer-events: all;
     background-size: cover;
     cursor: pointer;
 }
-
 }

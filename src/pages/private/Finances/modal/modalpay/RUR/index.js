@@ -6,7 +6,7 @@ import payeerLogo from '../../../../../../scss/media/payeer-logo.8aa750cc.svg'
 import FORMRURpauer from "./FORMRURpauer";
 import FORMRURfrikassa from "./FORMRURfrikassa";
 
-const CreatePayrur =({title, modaleWru, modalrur, setModalrur, setModalWru})=>{
+const CreatePayrur =({title, modalrur, setModalrur})=>{
   const { t } = useTranslation('common');
   const [modals, setModals] = useState(false)
   const [modales, setModales] = useState(false)

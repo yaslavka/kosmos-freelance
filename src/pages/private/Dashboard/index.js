@@ -57,9 +57,9 @@ function Dashboard() {
                         <div className="list-info__group">
                           <div className="list-info__label">{t('private.Dashboard.balance')}</div>
                           <div className="list-info__value">
-                            {formatter.format(userInfo.balance || 0).replace('₽', 'RUB') ? (
+                            {formatter.format(userInfo.balance || 0).replace('₽', '₽') ? (
                               <div>
-                                {formatter.format(userInfo.balance || 0).replace('₽', 'RUB')}
+                                {formatter.format(userInfo.balance || 0).replace('₽', '₽')}
                               </div>
                             ) : (
                               '-'
