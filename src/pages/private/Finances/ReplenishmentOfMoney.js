@@ -6,6 +6,7 @@ import CreatePayrur from "./modal/modalpay/RUR";
 import WinsdrawRUR from "./modal/modalwinsdraw/RUR";
 import BTCbalance from "./BTC";
 import CreatePayBTC from "./modal/modalpay/BTC";
+import CreatewinsdrawBTC from "./modal/modalwinsdraw/BTC/ndex";
 function ReplenishmentOfMoney() {
   const [modalrur, setModalrur] = useState(false)
   const [modaleWru, setModalWru] = useState(false)
@@ -23,6 +24,7 @@ function ReplenishmentOfMoney() {
       <WinsdrawRUR title={`${t('private.finances.sistem')}`} modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
       <BTCbalance btcmodel={btcmodel} setBtcmodel={setBtcmodel} btcmodelw={btcmodelw} setBtcmodelw={setBtcmodelw}/>
       <CreatePayBTC setBtcmodel={setBtcmodel} btcmodel={btcmodel} title={'ВВОД BTC'}/>
+      <CreatewinsdrawBTC btcmodelw={btcmodelw} setBtcmodelw={setBtcmodelw} title={'ВЫВОД BTC'}/>
     </div>
   )
 }

@@ -74,7 +74,7 @@ export const api = {
     return baseInstance.get('/v2/trading-pairs ')
   },
   createBTC() {
-    return baseInstance.get('/v2/createBTC')
+    return baseInstance.post('/v2/createBTC')
   },
   investBox(data){
     return baseInstance.post(`/v2/invest_box`, data)
