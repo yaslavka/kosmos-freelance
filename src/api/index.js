@@ -76,6 +76,9 @@ export const api = {
   createBTC() {
     return baseInstance.post('/v2/createBTC')
   },
+  createWithdrawBTC(data) {
+    return baseInstance.post('/v2/createWithdraw_btc', data)
+  },
   investBox(data){
     return baseInstance.post(`/v2/invest_box`, data)
   },
