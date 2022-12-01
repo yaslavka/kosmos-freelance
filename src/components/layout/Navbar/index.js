@@ -45,7 +45,7 @@ const navbarLinks = [
   {
     label: 'matrixmini',
     route: routes.matrixmini,
-    isDisabled: false,
+    isDisabled: true,
     icon: logo,
   },
   {
@@ -69,7 +69,7 @@ const navbarLinks = [
   {
     label: 'superStars',
     route: routes.superStars,
-    isDisabled: false,
+    isDisabled: true,
     icon: logo,
   },
   {
@@ -131,7 +131,7 @@ const navbarLinks = [
   {
     label: 'education',
     route: routes.education,
-    isDisabled: false,
+    isDisabled: true,
     icon: cap,
   },
   {
