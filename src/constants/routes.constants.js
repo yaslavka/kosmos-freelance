@@ -29,7 +29,7 @@ const r = Object.freeze({
   premiumStars: '/MATRIX2',
   superStars: '/MATRIX3',
   personalPremiumTable: '/MATRIX2-table/:type',
-  premiumTable: '/MATRIX2-table/:id',
+  premiumTable: '/MATRIX2-tables/:id',
   personalSSTable: '/MATRIX3-table/:type',
   ssTable: '/MATRIX3-table/:id',
   exchange: '/trade',
