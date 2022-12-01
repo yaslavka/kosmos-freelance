@@ -14,8 +14,8 @@ function Dashboard() {
   const userInfo = useSelector((state) => state.app.user)
 
   const copyRefLinkToClipboard = async () => {
-    if (userInfo && `http://localhost:3000/sign-up?ref=${userInfo.username}`) {
-      navigator.clipboard.writeText(`http://localhost:3000/sign-up?ref=${userInfo.username}`).then(() => {
+    if (userInfo && `https://kosmoss.host/sign-up?ref=${userInfo.username}`) {
+      navigator.clipboard.writeText(`https://kosmoss.host/sign-up?ref=${userInfo.username}`).then(() => {
         toast.info(`${t('private.Dashboard.copy')}`)
       })
     }
@@ -107,7 +107,7 @@ function Dashboard() {
           <MyViewElement element={
 
                   <div className="referral-link">
-                    <div className="referral-link__url">{`http://localhost:3000/sign-up?ref=${userInfo.username}`}</div>
+                    <div className="referral-link__url">{`https://kosmoss.host/sign-up?ref=${userInfo.username}`}</div>
                     <Button
                       color="link"
                       className="referral-link__btn"
