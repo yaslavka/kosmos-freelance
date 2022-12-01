@@ -62,12 +62,9 @@ export default function OperationsHistoryModal({ onClose }) {
               {operationsList && (
                 <Table
                   columns={{
-                    user: `${t('private.finances.user')}`,
-                    type: `${t('private.finances.type')}`,
-                    amount:`${t('private.finances.amount')}`,
-                    status:`${t('private.finances.status')}`,
-                    date:`${t('private.finances.date')}`,
-                    time:`${t('private.finances.time')}`,
+                    comment: `${t('private.finances.type')}`,
+                    value:`${t('private.finances.amount')}`,
+                    createdAt:`${t('private.finances.date')}`,
                   }}
                   data={operationsList.items}
                   count={operationsList.count}
