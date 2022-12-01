@@ -17,7 +17,7 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#8083E6" strokeWidth="1.5" />
+        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#a7ffb673" strokeWidth="1.5" />
       </svg>
     )
   } else if (place === 1 || place === 2) {
@@ -30,7 +30,7 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M1 18v-8h45m45 9v-9H46m0 0V1" stroke="#8083E6" strokeWidth="1.5" />
+        <path d="M1 18v-8h45m45 9v-9H46m0 0V1" stroke="#a7ffb673" strokeWidth="1.5" />
       </svg>
     )
   } else if (place === null) {
@@ -108,7 +108,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
       )}
       <div className={styles.photo}>
         <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 62">
-          <circle cx="30.6305" cy="30.9177" r="25.2154" stroke="#8083E6" strokeWidth="9.86691" />
+          <circle cx="30.6305" cy="30.9177" r="25.2154" stroke="#a7ffb673" strokeWidth="9.86691" />
         </svg>
         <img
           src={`${
@@ -116,7 +116,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
               ? // eslint-disable-next-line react/prop-types
                 info.photo
                 ? // eslint-disable-next-line react/prop-types
-                  `${process.env.REACT_APP_BASE_URL}${info.photo}`
+                  `${process.env.REACT_APP_BASE_URL}/user/${info.photo}`
                 : avatarFallback
               : avatarFallback
           }`}
@@ -144,7 +144,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
               style={{
                 borderBottomRightRadius: 10,
                 borderBottomLeftRadius: 10,
-                backgroundColor: '#4b0fb2',
+                backgroundColor: '#a7ffb673',
                 border: '1px solid #8083E6',
                 padding: '20px 5px 6px',
                 lineHeight: '11px',

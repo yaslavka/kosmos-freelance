@@ -100,8 +100,8 @@ function Finances() {
 
                           {formatter
                             .format(
-                              (userInfo.transferBalance > -1 &&
-                                userInfo.transferBalance) ||
+                              (userInfo.locale > -1 &&
+                                userInfo.locale) ||
                               0,
                             )
                             .replace('₽', '₽')}

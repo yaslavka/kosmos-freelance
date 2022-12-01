@@ -16,7 +16,7 @@ const branchingLines = (place) => {
       >
         <path
           d="M1 22V12h90m91 12V12H91m0 0V0"
-          stroke="#8083E6"
+          stroke="#a7ffb673"
           strokeWidth="1.5"
         />
       </svg>
@@ -33,7 +33,7 @@ const branchingLines = (place) => {
       >
         <path
           d="M1 18v-8h45m45 9v-9H46m0 0V1"
-          stroke="#8083E6"
+          stroke="#a7ffb673"
           strokeWidth="1.5"
         />
       </svg>
@@ -62,7 +62,7 @@ export default function MatrixCell({
       // eslint-disable-next-line react/prop-types
       if (info && info.id) {
         // eslint-disable-next-line react/prop-types
-        history.push(`/premium-table/${info.id}`)
+        history.push(`/MATRIX2-table/${info.id}`)
       } else {
         onDoubleClick()
       }
@@ -113,7 +113,7 @@ export default function MatrixCell({
               ? // eslint-disable-next-line react/prop-types
                 info.photo
                 ? // eslint-disable-next-line react/prop-types
-                  `${process.env.REACT_APP_BASE_URL}${info.photo}`
+                  `${process.env.REACT_APP_BASE_URL}/user/${info.photo}`
                 : avatarFallback
               : avatarFallback
           }`}

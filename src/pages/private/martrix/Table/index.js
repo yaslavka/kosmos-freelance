@@ -303,7 +303,7 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
   const handleUpMatrix = () => {
     if (id) {
       api
-        .getUpperStructureById(id)
+        .getUpperMiniStructureById(id)
         .then((response) => {
           if (response.items) {
             setMatrixTree(response.items)
@@ -324,7 +324,7 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
 
   const backRouteElement = useMemo(() => {
     let returnRoute = (
-      <Link to={routes.matrixs} className={styles.close}>
+      <Link to={routes.matrixmini} className={styles.close}>
          <span className={styles.closeIT}>
 
         </span>
@@ -396,7 +396,7 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
             {matrixInfo && (
               <div className={styles.footer}>
                 <MyViewElement element={
-                  <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                  <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
                 }/>
                 {matrixInfo.canBuy && (
                   <MyViewElement element={
@@ -435,37 +435,25 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
 
             <div className={styles.matrixTree}>
               <MatrixCell
-                place={0}
+                place={null}
                 info={matrixTree['0']}
                 isActive={matrixInfo && matrixInfo.isActive}
               />
               <div className={styles.secondRow}>
                 <MatrixCell
-                  place={1}
                   info={matrixTree['1']}
                   ancestorInfo={matrixTree['0']}
                   isActive={matrixInfo && matrixInfo.isActive}
-                  onDoubleClick={() => {
-                    showPartnerModal(matrixTree['1'], 1)
-                  }}
                 />
                 <MatrixCell
-                  place={2}
                   ancestorInfo={matrixTree['0']}
                   info={matrixTree['2']}
                   isActive={matrixInfo && matrixInfo.isActive}
-                  onDoubleClick={() => {
-                    showPartnerModal(matrixTree['2'], 2)
-                  }}
                 />
                 <MatrixCell
-                  place={3}
                   info={matrixTree['3']}
                   ancestorInfo={matrixTree['0']}
                   isActive={matrixInfo && matrixInfo.isActive}
-                  onDoubleClick={() => {
-                    showPartnerModal(matrixTree['3'], 3)
-                  }}
                 />
               </div>
             </div>
@@ -482,7 +470,7 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
 
             {matrixInfo && (
               <div className={styles.footer}>
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
                 {matrixInfo.canBuy && (
                   <Button
                     onClick={showBuyMatrixModal}
@@ -494,16 +482,7 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
                     Купить
                   </Button>
                 )}
-                {matrixInfo.isActive && (
-                  <Button
-                    onClick={showClonesModal}
-                    className="w-1001"
-                    color="violet-blue"
-                    size="small"
-                  >
-                    Мои клоны
-                  </Button>
-                )}
+
               </div>
             )}
           </div>

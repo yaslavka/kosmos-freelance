@@ -95,7 +95,7 @@ export const api = {
     return baseInstance.post('/user/registration', userInfo)
   },
   resetPassword(email) {
-    return baseInstance.post('/user/registration/restore-password', { email })
+    return baseInstance.post('/registration/restore-password', { email })
   },
   // User
   getUserInfo() {
@@ -261,6 +261,9 @@ export const api = {
   },
   getUpperStructureById(matrixId) {
     return baseInstance.get(`matrix/structure-upper?matrix_id=${matrixId}`)
+  },
+  getUpperMiniStructureById(matrixId) {
+    return baseInstance.get(`matrix/mini/structure-upper?matrix_id=${matrixId}`)
   },
   getUppeUnorStructureById(matrixId) {
     return baseInstance.get(`matrix/uno/structure-upper?matrix_id=${matrixId}`)

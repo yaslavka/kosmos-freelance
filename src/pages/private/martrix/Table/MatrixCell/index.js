@@ -17,19 +17,34 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#8083E6" strokeWidth="1.5" />
+        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#a7ffb673" strokeWidth="1.5" />
       </svg>
     )
-  } else if (place === 1 || place === 2 || place === 3) {
+  } else if (place === 1 || place === 2) {
     return (
       <svg
-  className={styles.branchingLines}
-  width="92"
-  height="20"
-  viewBox="0 0 92 20"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  />
+        className={styles.branchingLines}
+        width="92"
+        height="20"
+        viewBox="0 0 92 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M1 18v-8h45m45 9v-9H46m0 0V1" stroke="#a7ffb673" strokeWidth="1.5" />
+      </svg>
+    )
+  } else if (place === null) {
+    return (
+      <svg
+        className={styles.branchingLines}
+        width="183"
+        height="24"
+        viewBox="0 0 183 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#a7ffb673" strokeWidth="1.5" />
+      </svg>
     )
   }
 }
@@ -46,7 +61,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
         // eslint-disable-next-line react/prop-types
         history.push(`/pegasmini/${info.id}`)
       } else {
-        onDoubleClick()
+        onDoubleClick && onDoubleClick()
       }
     }
   }
@@ -77,11 +92,13 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
 
   return (
     <div
-      className={`${styles.MatrixCell} ${place === 0 ? styles.main : styles.small}`}
+      className={`${styles.MatrixCell} ${
+        place === 0 || place === null ? styles.main : styles.small
+      }`}
       onDoubleClick={matrixCellHandler}
     >
       {/* eslint-disable-next-line react/prop-types */}
-      {info && info.count > -1 && (
+      {info && info.count > 0 && (
         // eslint-disable-next-line react/prop-types
         <span className={styles.counter}>{info.count}</span>
       )}
@@ -93,9 +110,9 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
           src={`${
             info
               ? // eslint-disable-next-line react/prop-types
-                info.photo
+              info.photo
                 ? // eslint-disable-next-line react/prop-types
-                  `${process.env.REACT_APP_BASE_URL}${info.photo}`
+                `${process.env.REACT_APP_BASE_URL}/user/${info.photo}`
                 : avatarFallback
               : avatarFallback
           }`}
@@ -123,7 +140,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
               style={{
                 borderBottomRightRadius: 10,
                 borderBottomLeftRadius: 10,
-                backgroundColor: '#4b0fb2',
+                backgroundColor: '#a7ffb673',
                 border: '1px solid #8083E6',
                 padding: '20px 5px 6px',
                 lineHeight: '11px',

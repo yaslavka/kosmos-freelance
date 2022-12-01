@@ -13,6 +13,8 @@ import { api } from '../../../api'
 
 import Input from '../../../components/OldInput'
 import Button from '../../../components/OldButton'
+import cl from "../../../scss/MainPage.module.css";
+import Planet from "../../../scss/media/planet-1.gif";
 
 export default function ResetPassword() {
   const [resetPasswordStatus, setResetPasswordStatus] = useState(null)
@@ -35,9 +37,15 @@ export default function ResetPassword() {
       <div className="star-container" />
       <div className="twinkle" />
       <div className={styles.ResetPassword}>
-        <div className={styles.logo}>
+        <div >
           <Link to={routes.root} className="d-block">
-            <img src={logo} alt="Stars logo" />
+            <div className={styles.logoWrapResetPasswor}>
+              <span>KOSM</span>
+              <span className={styles.logo}>
+              <img alt={Planet} src={Planet}/>
+                </span>
+              <span>S</span>
+            </div>
           </Link>
         </div>
         <Container>

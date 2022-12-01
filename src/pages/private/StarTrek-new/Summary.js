@@ -25,7 +25,7 @@ function Summarymilkyway() {
   useEffect(() => {
     async function fetchImage() {
       if (userInfo?.avatar) {
-        const load = await fetch(`${process.env.REACT_APP_BASE_URL}${userInfo.avatar}`)
+        const load = await fetch(`${process.env.REACT_APP_BASE_URL}/user/${userInfo.avatar}`)
         const blob = await load.blob()
         const resizeImage = await resizeFreeInformationImage(blob)
         setFreeInfoAvatar(resizeImage)
@@ -69,7 +69,7 @@ function Summarymilkyway() {
             <figure className={cl.summaryFigure}>
               <img
                 src={freeInfoAvatar || avatar}
-                alt={`${userInfo.firstName} ${userInfo.lastName}`}
+                alt={`${userInfo.first_name} ${userInfo.last_name}`}
               />
             </figure>
             <Button
@@ -84,8 +84,8 @@ function Summarymilkyway() {
           </div>
           <div className={cl.summaryRight}>
           <div className={cl.summaryInitials}>
-              <div>{userInfo.firstName}</div>
-              <div>{userInfo.lastName}</div>
+              <div>{userInfo.first_name}</div>
+              <div>{userInfo.last_name}</div>
             </div>
           <ul className={cl.summaryInfoList}>
             <li className={cl.summaryInfoItem}>
@@ -140,7 +140,7 @@ function Summarymilkyway() {
             <strong>
               {formatterNumber
                 .format(statistics.totalSum + statistics.myInviterIncome || 0)
-                .replace('₽', 'RUB')}
+                .replace('₽', '₽')}
             </strong>
           </div>
           </div>

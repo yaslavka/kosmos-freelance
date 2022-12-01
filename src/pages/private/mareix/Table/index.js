@@ -13,7 +13,7 @@ import routes from '../../../../constants/routes.constants'
 import isEmpty from 'lodash-es/isEmpty'
 
 import Select from '../../../../components/Select'
-import SearchSelect from '../../../../components/SearchSelect'
+//import SearchSelect from '../../../../components/SearchSelect'
 import Button from '../../../../components/OldButton'
 import MatrixCell from './MatrixCell'
 import PartnerModal from './PartnerModal'

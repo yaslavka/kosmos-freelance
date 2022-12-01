@@ -8,7 +8,7 @@ export const changePassword = (data) =>
   baseInstance({ url: '/user/password', method: 'post', data })
 
 export const changeFinancePassword = (data) =>
-  baseInstance({ url: '/user/settings/fin-password', method: 'post', data })
+  baseInstance({ url: '/settings/fin-password', method: 'post', data })
 
 export const changeSocial = (data) => baseInstance({ url: '/user/links', method: 'post', data })
 

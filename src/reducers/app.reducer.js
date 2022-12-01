@@ -111,7 +111,7 @@ const appReducer = (state = initialState, action) => {
     case ActionTypes.CHANGE_FINANCE_PASSWORD_SUCCESS: {
       return {
         ...state,
-        user: { ...state.user, hasFinPassword: true },
+        user: { ...state.user, finance_password: true },
         loadings: { ...state.loadings, changeFinancePassword: false },
         errors: { ...state.errors, changeFinancePassword: null },
       }

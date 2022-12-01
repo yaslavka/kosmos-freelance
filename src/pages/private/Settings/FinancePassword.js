@@ -20,7 +20,7 @@ function FinancePassword() {
   const profile = useSelector((state) => state.app.user)
   const isLoading = useSelector((state) => state.app.loadings.changeFinancePassword)
 
-  const hasFinPassword = useMemo(() => profile && profile.hasFinPassword, [profile])
+  const hasFinPassword = useMemo(() => profile && profile.finance_password, [profile])
 
   const validationSchema = useMemo(() => {
     const defaultSchema = {

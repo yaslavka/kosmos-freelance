@@ -124,9 +124,114 @@ export default function AutoStars() {
                     )}
                   </Link>
                 }/>
+                <MyViewElement element={
+                  <Link
+                    to="/MATRIX2-table/6"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[5])
+                    }}
+                  >
+
+                    <span>6</span>
+                    {!!Number(matrixTypes[5].count) && (
+                      <div className={styles.count}>{matrixTypes[5].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/MATRIX2-table/7"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[6])
+                    }}
+                  >
+
+                    <span>7</span>
+                    {!!Number(matrixTypes[6].count) && (
+                      <div className={styles.count}>{matrixTypes[6].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/MATRIX2-table/8"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[7])
+                    }}
+                  >
+
+                    <span>8</span>
+                    {!!Number(matrixTypes[7].count) && (
+                      <div className={styles.count}>{matrixTypes[7].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/MATRIX2-table/9"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[8])
+                    }}
+                  >
+
+                    <span>9</span>
+                    {!!Number(matrixTypes[8].count) && (
+                      <div className={styles.count}>{matrixTypes[8].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/MATRIX2-table/10"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[9])
+                    }}
+                  >
+
+                    <span>10</span>
+                    {!!Number(matrixTypes[9].count) && (
+                      <div className={styles.count}>{matrixTypes[9].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/MATRIX2-table/11"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[10])
+                    }}
+                  >
+
+                    <span>11</span>
+                    {!!Number(matrixTypes[10].count) && (
+                      <div className={styles.count}>{matrixTypes[10].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/MATRIX2-table/12"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[11])
+                    }}
+                  >
+
+                    <span>12</span>
+                    {!!Number(matrixTypes[11].count) && (
+                      <div className={styles.count}>{matrixTypes[11].count}</div>
+                    )}
+                  </Link>
+                }/>
               </div>
             )}
-            <div className="pdf-preview"></div>
+            <div className="pdf-preview"/>
           </Col>
         </Row>
       </Container>

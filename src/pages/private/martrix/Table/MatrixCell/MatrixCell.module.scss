@@ -79,6 +79,7 @@
     svg {
       width: 100%;
       height: 100%;
+
     }
 
     img {
@@ -102,9 +103,9 @@
     width: 100%;
     height: 100%;
     background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(255, 89, 247, 0.02) 0%,
-      rgba(255, 89, 247, 0) 100%
+        50% 50% at 50% 50%,
+        rgba(255, 89, 247, 0.02) 0%,
+        rgba(255, 89, 247, 0) 100%
     );
 
     img {
@@ -127,7 +128,7 @@
     }
 
     .shadow {
-     box-shadow: none !important;
+      box-shadow: none !important;
     }
   }
 
@@ -144,6 +145,22 @@
       height: 58px;
       bottom: -56px;
 
+      path {
+        stroke-width: 1;
+      }
+    }
+  }
+
+  .branchingHorizontalLines {
+    position: absolute;
+    bottom: -60%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    vertical-align: initial;
+
+    @include media-breakpoint-up(xl) {
+      width: 610px;
       path {
         stroke-width: 1;
       }

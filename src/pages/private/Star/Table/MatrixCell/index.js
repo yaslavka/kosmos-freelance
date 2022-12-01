@@ -17,7 +17,7 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#8083E6" strokeWidth="1.5" />
+        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#a7ffb673" strokeWidth="1.5" />
       </svg>
     )
   } else if (place === 1 || place === 2) {
@@ -30,7 +30,7 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M1 18v-8h45m45 9v-9H46m0 0V1" stroke="#8083E6" strokeWidth="1.5" />
+        <path d="M1 18v-8h45m45 9v-9H46m0 0V1" stroke="#a7ffb673" strokeWidth="1.5" />
       </svg>
     )
   }

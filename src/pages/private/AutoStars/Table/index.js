@@ -337,7 +337,7 @@ export default function Table({ location: { state = {}, pathname } }) {
       }/>
         <div className={styles.container}>
           <div className={styles.sidebar}>
-           
+
             {selectItems && (
               <MyViewElement element={
               <Select
@@ -370,7 +370,7 @@ export default function Table({ location: { state = {}, pathname } }) {
             {matrixInfo && matrixInfo.canBuy && (
               <div className={styles.footer}>
               <MyViewElement element={
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
               }/>
               <MyViewElement element={
                 <Button
@@ -388,15 +388,15 @@ export default function Table({ location: { state = {}, pathname } }) {
             )}
           </div>
           <div className={styles.content}>
-          <MyViewElement element={
-            <SearchSelect
-              className={styles.searchSelect}
-              values={searchUsers}
-              placeholder="Поиск партнера по логину"
-              onInput={setCurrentSearchValue}
-              onChange={redirectToUserMatrix}
-            />
-          }/>
+          {/*<MyViewElement element={*/}
+          {/*  <SearchSelect*/}
+          {/*    className={styles.searchSelect}*/}
+          {/*    values={searchUsers}*/}
+          {/*    placeholder="Поиск партнера по логину"*/}
+          {/*    onInput={setCurrentSearchValue}*/}
+          {/*    onChange={redirectToUserMatrix}*/}
+          {/*  />*/}
+          {/*}/>*/}
           <MyViewElement element={
 
             <div className={styles.matrixTree}>
@@ -482,7 +482,7 @@ export default function Table({ location: { state = {}, pathname } }) {
 
             {matrixInfo && matrixInfo.canBuy && (
               <div className={styles.footer}>
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
                 <Button
                   onClick={showBuyMatrixModal}
                   disabled={buyingStatus.type === 'pending'}
