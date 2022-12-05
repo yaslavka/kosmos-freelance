@@ -1,4 +1,3 @@
-import { Redirect } from 'react-router-dom';
 import r from './constants/routes.constants'
 
 import Home from './pages/public/Home'
@@ -62,7 +61,7 @@ import Nukeworld from "./pages/private/Casino/components/vvvvv";
 import Raccoontales from "./pages/private/Casino/components/blac";
 import Forestdreams from "./pages/private/Casino/components/zzz";
 import Savethehamster from "./pages/private/Casino/components/7777";
-import Fmat from "./pages/private/exchange/pages/ETHBTC/fmat";
+//import Fmat from "./pages/private/exchange/pages/ETHBTC/fmat";
 import Chat from "./pages/private/Chat";
 
 export const publicRouteConfig = [

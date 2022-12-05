@@ -7,7 +7,7 @@ import './App.css'
 import NavBar from "../../../components/layout/Navbar";
 import {Col, Row} from "reactstrap";
 //import {api} from "../../../api";
-const socket = io.connect("https://eldorad.host");
+const socket = io.connect("http://localhost:5000");
 //const socket = io.connect(api.tradeMarket);
 
 function Chat(){

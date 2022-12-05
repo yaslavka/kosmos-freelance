@@ -10,6 +10,7 @@ import {useTranslation} from "react-i18next";
 function Exchange({match, children}) {
   const { t } = useTranslation('common');
   const userInfo = useSelector((state) => state.app.user)
+  console.log('charta baryan danny', match.params.pair)
     return (
       <Container className="root-page">
         {

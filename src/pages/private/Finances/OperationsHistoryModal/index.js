@@ -62,6 +62,7 @@ export default function OperationsHistoryModal({ onClose }) {
               {operationsList && (
                 <Table
                   columns={{
+                    username: 'Кому',
                     comment: `${t('private.finances.type')}`,
                     value:`${t('private.finances.amount')}`,
                     createdAt:`${t('private.finances.date')}`,

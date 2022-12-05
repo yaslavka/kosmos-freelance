@@ -12,7 +12,8 @@ import Chart from "./components/Chart";
 class Fmat extends Component{
   render() {
     const { pair, isMobile, userInfo, t} = this.props
-    const pairFormatted = (pair?? '-').replace('-', '_')
+    const lpair = pair ? pair : "BTC-PTY";
+    const pairFormatted = (lpair?? '-').replace('-', '_')
     const marketsTab = isMobile ? null : (<Market pair = {pair} t={t}/>)
     return(
       <>

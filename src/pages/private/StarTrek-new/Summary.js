@@ -136,7 +136,7 @@ function Summarymilkyway() {
             </li>
           </ul>
           <div className={cl.summaryCheck}>
-            <h3>Общий чек MATRIX Reloaded:</h3>
+            <h3>Общий чек Млечный путь v2.0:</h3>
             <strong>
               {formatterNumber
                 .format(statistics.totalSum + statistics.myInviterIncome || 0)

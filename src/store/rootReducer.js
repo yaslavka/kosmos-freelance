@@ -22,6 +22,7 @@ import { financeMoneyReducer } from 'src/reducers/financeM.reducer'
 import milkywayReducer from "../reducers/milkyway.reducer";
 import charts from '../reducers/charts'
 import markets from '../reducers/markets'
+import { tradeReducer } from 'src/reducers/trade.reducer'
 
 
 const rootReducer = (history) =>
@@ -45,7 +46,8 @@ const rootReducer = (history) =>
     markets:markets,
     milkyway: milkywayReducer,
     router: connectRouter(history),
-    financeMoney: financeMoneyReducer
+    financeMoney: financeMoneyReducer,
+    trade: tradeReducer,
   })
 
 export default rootReducer

@@ -3,6 +3,7 @@ import React, {Component} from "react";
 class TradeHistoryEl extends Component{
   render() {
     const {trade} = this.props
+    // console.log(trade);
     return(
       <>
         <tr className="green animg">

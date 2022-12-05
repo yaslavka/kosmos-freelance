@@ -1,15 +1,21 @@
 import React from "react";
 import cl from './MyInput.module.css';
+import { FormText } from 'reactstrap'
 
-const MyInput = (props)=>{
-
-
-    const {classesInput, classesPlace,type, place, setInput, input, valueInput, setCheckInputSite} = props
+function MyInput ({classesInput, field, form, className, ...props}){
+  // eslint-disable-next-line react/prop-types
+  const isInvalid =
+    // eslint-disable-next-line react/prop-types
+    form && form.errors && form.touched[field.name] && form.errors[field.name]
     return (
-        <label className={cl.inputBlock} htmlFor="inp">
-            <input type={type} required id="inp" className={[cl.myInput, classesInput].join` `} value={valueInput} onChange={e=>{e.preventDefault(); setInput ? setInput({...input, count: e.target.value}) : setCheckInputSite(e.target.value)}} {...props}/>
-            <span className={[cl.inputPlace, classesPlace].join` `}>{place}</span>
-        </label>
+        <div className={`${cl.inputBlock} ${isInvalid ? cl.invalid : ''}`} >
+            <input className={[cl.myInput, classesInput].join` `} {...field} {...props}/>
+          {props.placeholder && (
+            // eslint-disable-next-line react/prop-types
+            <span className={cl.inputPlace}>{props.placeholder}</span>
+          )}
+          {isInvalid && <FormText color="danger">{isInvalid}</FormText>}
+        </div>
 
     )
 }

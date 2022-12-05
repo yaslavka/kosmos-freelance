@@ -14,7 +14,7 @@ class Swll extends Component{
     const market = pair.split('_')[0];
     const coin = pair.split('_')[1];
     const orders = data ?
-      data.map( (order, index) => <Order key ={index} order={order} pair={pair} type={type}/> ) : null
+      data.map( (order, index) => <Order key ={index} indx={index} orders={data}  order={order} pair={pair} type={type} t={t}/> ) : null
     return(
       <>
         <div className="all_title title">{t('private.exchange.trade.Swll.title')}</div>

@@ -24,6 +24,7 @@ class HistoriBuySel extends  Component{
 
   render() {
     const { pair, chartData, t } = this.props
+    // console.log('Historyn nirden gelyani: ', chartData);
     if(chartData && chartData.tradeHistory){
       return(
         <div className="col_3">

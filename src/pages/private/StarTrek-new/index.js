@@ -70,29 +70,29 @@ function Milkyway() {
                 {t('private.StarTrek.link.starTrekPlanets')}
               </Link>
               {/* TODO: delete all functions */}
-              <Button
+              {/*<Button*/}
 
-                className='link-blue'
-                loading={isBuyLoading}
-                disabled={Boolean(timer) || isBuyLoading}
-                onClick={handleButtonClick}
-              >
-                {timer ? (
-                  <Timer
-                    date={timer}
-                    renderer={renderer}
-                    onComplete={() => {
-                      dispatch(actions.milkywayResetTimer())
-                    }}
-                  />
-                ) : (
-                  `${
-                    statistics?.myPlanet > 0
-                      ? `${t('private.StarTrek.link.statistics')}`
-                      : `${t('private.StarTrek.link.myPlanet')} v2.0`.toLocaleUpperCase()
-                  }`
-                )}
-              </Button>
+              {/*  className='link-blue'*/}
+              {/*  loading={isBuyLoading}*/}
+              {/*  disabled={Boolean(timer) || isBuyLoading}*/}
+              {/*  onClick={handleButtonClick}*/}
+              {/*>*/}
+              {/*  {timer ? (*/}
+              {/*    <Timer*/}
+              {/*      date={timer}*/}
+              {/*      renderer={renderer}*/}
+              {/*      onComplete={() => {*/}
+              {/*        dispatch(actions.milkywayResetTimer())*/}
+              {/*      }}*/}
+              {/*    />*/}
+              {/*  ) : (*/}
+              {/*    `${*/}
+              {/*      statistics?.myPlanet > 0*/}
+              {/*        ? `${t('private.StarTrek.link.statistics')}`*/}
+              {/*        : `${t('private.StarTrek.link.myPlanet')} v2.0`.toLocaleUpperCase()*/}
+              {/*    }`*/}
+              {/*  )}*/}
+              {/*</Button>*/}
             </div>
             {/*<div className="text-center">*/}
             {/*  <Link className='link-blue' to={r.milkywayStatistic}>*/}

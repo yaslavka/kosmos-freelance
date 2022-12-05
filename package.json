@@ -2,9 +2,7 @@
   "name": "kosmos",
   "version": "4.1.1",
   "description": "Invest platform KOSMOS",
-  "homepage": "https://kosmoss.host",
-  "proxy": "http://eldorad.host/api",
-  "proxy": "",
+  "homepage": "https://eldorad.host",
   "license": "MIT",
   "author": "Obrubinskii@gmail.com",
   "scripts": {

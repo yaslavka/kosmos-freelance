@@ -53,7 +53,7 @@ function MyPlanetsmilkyway() {
         `${t('private.StarTrek.MyPlanets.result.variant1')}`,
         `${t('private.StarTrek.MyPlanets.result.variant2')}`,
         `${t('private.StarTrek.MyPlanets.result.variant3')}`,
-      ])}, ${t('private.StarTrek.MyPlanets.result.variant4')} ${planetLength * 2500} RUB`,
+      ])}, ${t('private.StarTrek.MyPlanets.result.variant4')} ${planetLength * 5000} RUB`,
       confirmText: `${t('private.StarTrek.MyPlanets.result.confirmText')}`,
       confirmColor: 'danger',
       cancelText: `${t('private.StarTrek.MyPlanets.result.cancelText')}`,

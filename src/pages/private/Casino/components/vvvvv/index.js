@@ -29,7 +29,7 @@ function Nukeworld() {
                    allowFullScreen={true}
                    width="100%"
                    title={'Nuke World'}
-                   src={'/nukeworld'}
+                   src={'/nukeworld/index.html'}
                    height={400}
                  />
                </Col>

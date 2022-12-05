@@ -26,6 +26,7 @@ class OrderBooc extends Component{
     const { pair, chartData, t } = this.props
     if (chartData && chartData.orders){
       const bids = chartData.orders.bids
+      console.log("tapylmayan zat", bids)
       return (
         <div className="buy_orders_box">
           <Swll type={'buy'} data={bids} pair={pair} t={t}/>

@@ -10,7 +10,7 @@ class Oderbuypric extends Component{
 
   render() {
     const { order } = this.props
-    console.log(order)
+    // console.log(order)
    return(
      <>
        <div className="sm" id="label_bestbuy">

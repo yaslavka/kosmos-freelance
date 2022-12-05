@@ -12,6 +12,7 @@ import PropTypes from 'prop-types'
 import Markets from "./Marcets";
 import MarketsToggle from "./MarketsToggle";
 import MarketsTable from "./MarketsTable";
+import { addOrderToBy, addOrderToForm } from 'src/actions/trade.action'
 
 class Market extends Component{
   static propTypes = {
@@ -46,9 +47,11 @@ class Market extends Component{
 
 
 handleClick = (ev) => {
-  const { sortMarkets, sortBy, sortOrder } = this.props
+  const { sortMarkets, sortBy, sortOrder, addOrderToForm, addOrderToBy } = this.props
   const column = ev.target.getAttribute('data-column')
   column === sortBy ? sortMarkets(column, !sortOrder) : sortMarkets(column, false)
+  addOrderToForm({price:0, count:0});
+  addOrderToBy({price:0, count:0});
 }
 getClassName = (value) => {
   const { sortBy, sortOrder } = this.props
@@ -67,4 +70,4 @@ export default connect(
     sortBy: sortBySelector(state),
     sortOrder: sortOrderSelector(state)
   }),
-  { loadAllMarkets, sortMarkets })(Market);
+  { loadAllMarkets, sortMarkets, addOrderToForm, addOrderToBy })(Market);

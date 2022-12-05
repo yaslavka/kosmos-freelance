@@ -31,6 +31,12 @@ import { loadChart } from '../../../../../../../actions/exchenge.action'
 import { marketDataSelector, chartDataSelector } from '../../../../selectors'
 import './stockChart.scss'
 //import {chartDatas} from "../../Chart/data";
+
+import io from 'socket.io-client';
+
+// const socket = io.connect('http://localhost:5000');
+
+
 const SAMPLE_CSS = `
     .control-fluid {
         padding: 0px !important;
@@ -48,6 +54,13 @@ export let tooltipRender = (args) => {
 class Chart extends Component {
   constructor() {
     super(...arguments);
+    this.socket = io('http://localhost:5000');
+    this.state = {
+      chartData:{
+        loading: true,
+        data: []
+      }
+    }
     this.primaryxAxis = {
       valueType: 'DateTime',
       majorGridLines: { width: 0 },
@@ -76,9 +89,43 @@ class Chart extends Component {
     if(pair !== nextProps.pair) {loadChart(nextProps.pair)}
 
   }
-  componentDidMount() {
+  async componentDidMount () {
     const { loadChart, pair} = this.props
+    console.log('Pair dlya potklyuchenie socket', pair);
+    
+    let date = new Date();
+    const get_chart_data = {
+      command:'returnChartData',
+      currencyPair:pair,
+      start: +date.setFullYear(date.getFullYear() - 1),
+      end:+new Date(),
+      period:86400
+    }
+    console.log('connect socket start +++++++++++++++++++++++++++++')
+    // this.socket.open();
+    this.socket.emit('chart_date', get_chart_data);
+    // this.socket.on("chart_date", () => {
+    //   console.log('socket baglandy')
+    // });
+    console.log('IKi socketin arasy: --------------------------------')
+    this.socket.on(`get_chart_data_${pair}`, (data) => {
+      console.log("socket +++++++++++++++++++++++++++", data)
+    })
+    console.log('socketin gutaryan yeri')
     loadChart(pair)
+  }
+
+  componentDidUpdate() {
+    const { loadChart, pair} = this.props
+    console.log('UPDATE COMPONENT')
+    this.socket.on(`get_chart_data_${pair}`, (data) => {
+      this.setState({
+        chartData: {
+          loading: false,
+          data: data
+        }
+      })
+    })
   }
 
   // componentDidUpdate(pP,pS,sS){
@@ -87,14 +134,16 @@ class Chart extends Component {
   //   if(pair !== nextProps.pair) {loadChart(nextProps.pair)}
   //   setInterval(()=>{loadChart(nextProps.pair)},5000)
   // }
+
   render() {
     const { chartData, marketData, pair } = this.props
-    if(chartData && chartData.loading) return <div className='trade-page__spinner-wrap'><MoonLoader color={'#1aba1a'}/></div>
-    if(chartData && chartData.error) {return <h2>ERROR</h2>}
+    // console.log("chartData: ", chartData?.data, "marketData: ", marketData, "pair: ", pair);
+    if(this.state.chartData && this.state.chartData.loading) return <div className='trade-page__spinner-wrap'><MoonLoader color={'#1aba1a'}/></div>
+    // if(chartData && chartData.error) {return <h2>ERROR</h2>}
 
-    if(chartData && chartData.loaded && chartData.data && marketData) {
-      var ohlc = chartData.data.map(item => ({date:new Date(+item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close, volume:+item.volume}))
-      var volume = chartData.data.map(item => ({date:new Date(+item.date), volume:+item.volume}))
+    if(this.state.chartData && !this.state.chartData.loading && this.state.chartData.data && marketData) {
+      var ohlc = this.state.chartData.data.map(item => ({date:new Date(+item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close, volume:+item.volume}))
+      var volume = this.state.chartData.data.map(item => ({date:new Date(+item.date), volume:+item.volume}))
       return (
         <div id='stock-chart' key={pair.id}>
           <div className='stock-chart-headers'>

@@ -20,7 +20,7 @@ class OrderBook extends Component{
 
   componentDidMount() {
     const { pair, loadOrders } = this.props
-    setInterval( async ()=>{loadOrders(pair)},1500)
+    loadOrders(pair)
   }
   // componentDidUpdate(pP,pS,sS){
   //   const { pair, loadOrders } = this.props

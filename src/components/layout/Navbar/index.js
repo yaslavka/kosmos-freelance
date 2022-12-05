@@ -42,12 +42,12 @@ const navbarLinks = [
     isDisabled: false,
     icon: news,
   },
-  {
-    label: 'matrixmini',
-    route: routes.matrixmini,
-    isDisabled: true,
-    icon: logo,
-  },
+  // {
+  //   label: 'matrixmini',
+  //   route: routes.matrixmini,
+  //   isDisabled: true,
+  //   icon: logo,
+  // },
   {
     label: 'matrixs',
     route: routes.matrixs,
@@ -66,12 +66,12 @@ const navbarLinks = [
     isDisabled: false,
     icon: logo,
   },
-  {
-    label: 'superStars',
-    route: routes.superStars,
-    isDisabled: true,
-    icon: logo,
-  },
+  // {
+  //   label: 'superStars',
+  //   route: routes.superStars,
+  //   isDisabled: true,
+  //   icon: logo,
+  // },
   {
     label: 'starTrek',
     route: routes.starTrek,
@@ -128,12 +128,12 @@ const navbarLinks = [
   //   isDisabled: true,
   //   icon: megaphone,
   // },
-  {
-    label: 'education',
-    route: routes.education,
-    isDisabled: true,
-    icon: cap,
-  },
+  // {
+  //   label: 'education',
+  //   route: routes.education,
+  //   isDisabled: true,
+  //   icon: cap,
+  // },
   {
     label: 'chat',
     isDisabled: false,

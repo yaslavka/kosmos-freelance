@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { connect } from 'react-redux';
 import SimpleBar from "simplebar-react";
 import PropTypes from 'prop-types'
 import Order from "./Order";
@@ -14,8 +15,8 @@ class Orders extends  Component{
     const market = pair.split('_')[0];
     const coin = pair.split('_')[1];
     const orders = data ?
-      data.map( (order, index) => <Order key ={index} order={order} pair={pair} type={type} t={t}/> ) : null
-    return(
+      data.map( (order, index) => <Order key ={index} indx={index} orders={data}  order={order} pair={pair} type={type} t={t}/> ) : null
+      return(
       <>
         <div className="all_title title">{t('private.exchange.trade.Orders.title')}</div>
         <div className="result">
@@ -48,4 +49,11 @@ class Orders extends  Component{
     )
   }
 }
-export default Orders
+
+const mapStateToProps = function(state) {
+  return {
+    trade_order: state.trade,
+  }
+}
+
+export default connect(mapStateToProps)(Orders);
