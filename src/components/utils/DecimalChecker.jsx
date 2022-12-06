@@ -38,7 +38,7 @@ export class DecimalChecker extends React.Component {
         if (!e.nativeEvent.ctrlKey) {
             // allow copy-paste
 
-            if (e.key === "." && e.target.value === "") e.target.value = "0";
+            if (e.key === "." && e.target.value === "") e.target.value = "0.00000000";
             var nextValue = e.target.value + e.key;
             var decimal = nextValue.match(/\./g);
             var decimalCount = decimal ? decimal.length : 0;

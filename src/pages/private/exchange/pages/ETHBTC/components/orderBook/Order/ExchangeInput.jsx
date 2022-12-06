@@ -14,7 +14,7 @@ class ExchangeInput extends DecimalChecker{
 
   render() {
     // allowNaN is no valid prop for Input, remove
-    var {allowNaN, ...other} = this.props;
+    const {allowNaN, ...other} = this.props;
     return (
       <Input
         ref="input"
