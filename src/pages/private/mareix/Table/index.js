@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react'
-import { useParams, useHistory, Link, NavLink } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { Container, Row, Col } from 'reactstrap'
+import { Container } from 'reactstrap'
 import styles from './Table.module.scss'
 import { api } from '../../../../api'
 import { matrixActions } from '../../../../store/matrix/actions'
@@ -34,8 +34,6 @@ export default function Tablem({ location: { state = {}, pathname } }) {
   const [visibleBuyModal, setVisibleBuyModal] = useState(false)
   const [visibleClonesModal, setVisibleClonesModal] = useState(false)
   const [visiblePartnersClonesModal, setVisiblePartnersClonesModal] = useState(false)
-  const [searchUsers, setSearchUsers] = useState([])
-  const [currentSearchValue, setCurrentSearchValue] = useState('')
   const [selectItems, setSelectItems] = useState(null)
   const [visibleBuyMatrixModal, setVisibleBuyMatrixModal] = useState(false)
   const matrixInfo = useSelector((state) => state.matrixReducer.matrixInfo)
@@ -129,12 +127,6 @@ export default function Tablem({ location: { state = {}, pathname } }) {
     }
   }
 
-  const showClonesModal = () => {
-    if (window.innerWidth < 1200) {
-      document.body.style.overflow = 'hidden'
-    }
-    setVisibleClonesModal(true)
-  }
 
   const showBuyMatrixModal = () => {
     if (window.innerWidth < 1200) {
@@ -218,10 +210,6 @@ export default function Tablem({ location: { state = {}, pathname } }) {
     setVisiblePartnerModal(true)
   }
 
-  const redirectToUserMatrix = (matrixId) => {
-    history.push(`/personal-matrixs/${matrixId}`)
-    setSearchUsers([])
-  }
 
   useEffect(() => {
     if (matrixInfo && matrixInfo.isActive && isFetching) {
@@ -275,27 +263,6 @@ export default function Tablem({ location: { state = {}, pathname } }) {
         .catch(() => {})
     }
   }, [matricesList, dispatch])
-
-  useEffect(() => {
-    if (currentSearchValue.length > 2 && matrixInfo) {
-      api
-        .searchUserByLogin({
-          user_name: currentSearchValue,
-          matrix_type: matrixInfo.id,
-        })
-        .then((response) => {
-          if (Array.isArray(response.items)) {
-            setSearchUsers(
-              response.items.map(({ user_name, matrix_id }) => ({
-                label: user_name,
-                value: matrix_id,
-              })),
-            )
-          }
-        })
-        .catch(() => {})
-    }
-  }, [currentSearchValue, matrixInfo])
 
   //TODO: Remove hardcoded matrixTree
 

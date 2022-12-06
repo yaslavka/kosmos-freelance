@@ -12,6 +12,7 @@ function ReplenishmentOfMoney() {
   const [modaleWru, setModalWru] = useState(false)
   const [btcmodel, setBtcmodel]= useState(false)
   const [btcmodelw, setBtcmodelw]= useState(false)
+  const [modaleFru, setModalFru] = useState(false)
   const { t } = useTranslation('common');
 
 
@@ -21,7 +22,15 @@ function ReplenishmentOfMoney() {
     <div className={cl.transBlock}>
       <RurBalanse modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
       <CreatePayrur title={`${t('private.finances.sistem')}`} modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
-      <WinsdrawRUR title={`${t('private.finances.sistem')}`} modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
+      <WinsdrawRUR
+        title={`${t('private.finances.sistem')}`}
+        modalrur={modalrur}
+        setModalrur={setModalrur}
+        modaleWru={modaleWru}
+        setModalWru={setModalWru}
+        modaleFru={modaleFru}
+        setModalFru={setModalFru}
+      />
       <BTCbalance btcmodel={btcmodel} setBtcmodel={setBtcmodel} btcmodelw={btcmodelw} setBtcmodelw={setBtcmodelw}/>
       <CreatePayBTC setBtcmodel={setBtcmodel} btcmodel={btcmodel} title={'ВВОД BTC'}/>
       <CreatewinsdrawBTC btcmodelw={btcmodelw} setBtcmodelw={setBtcmodelw} title={'ВЫВОД BTC'}/>

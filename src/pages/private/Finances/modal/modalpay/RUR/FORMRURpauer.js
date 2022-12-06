@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import MyInput from "../../../../../../components/Input/MyInput";
 import MyBtnFiled from "../../../../../../components/buttonback/MyBtnFiled";
 
-const FORMRURpauer = ({ title, visible, setVisible, changeCurrencyAndCount, currencyAndCount})=>{
+const FORMRURpauer = ({ title, modals, setModals, changeCurrencyAndCount, currencyAndCount})=>{
   const { t } = useTranslation('common');
   const [modalInfo, setModalInfo] = useState({count: '', currency: ''})
   const blockModal = useRef('')
@@ -13,7 +13,7 @@ const FORMRURpauer = ({ title, visible, setVisible, changeCurrencyAndCount, curr
   const rootContentClasses = [cl.modalContent]
   const addModalInfo = (e)=>{
     e.preventDefault();
-    setVisible(false);
+    setModals(false);
     const newModal = {
       ...modalInfo, id: Date.now()
     }
@@ -21,10 +21,10 @@ const FORMRURpauer = ({ title, visible, setVisible, changeCurrencyAndCount, curr
     setModalInfo({count:'',tel:''})
   }
   let clean = false
-  visible && rootClasses.push(cl.active) && rootContentClasses.push(cl.activeContent)
+  modals && rootClasses.push(cl.active) && rootContentClasses.push(cl.activeContent)
   return(
     <>
-      <div ref={blockModal} className={rootClasses.join` `} onClick={(e)=>{e.preventDefault();setVisible(false)}}>
+      <div ref={blockModal} className={rootClasses.join` `} onClick={(e)=>{e.preventDefault();setModals(false)}}>
         <div className={rootContentClasses.join` `}>
           <form action="" id='modal' className={cl.modalForm} onClick={e=>e.stopPropagation()}>
             <h3 className={cl.modalTitle}>{title}</h3>
@@ -34,7 +34,7 @@ const FORMRURpauer = ({ title, visible, setVisible, changeCurrencyAndCount, curr
               <option value={"RUB"}>RUB</option>
             </select>
             <p className={cl.modalWarning}>{t('private.finances.modalWarning')}</p>
-            <span className={cl.modalExit} onClick={e=>{e.preventDefault();setVisible(false)}}></span>
+            <span className={cl.modalExit} onClick={e=>{e.preventDefault();setModals(false)}}> </span>
             <div className={cl.btnBlock}>
               <a target='_blank' href={'#'} onClick={e=>{addModalInfo(e); clean = true; changeCurrencyAndCount({...currencyAndCount,count: modalInfo.count, currency: modalInfo.currency})}}>
                 <MyBtnFiled  type='submit' form='modal' classes={cl.modalBtn} >{t('private.finances.modalBtn')}</MyBtnFiled>

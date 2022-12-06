@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { updateTradeForm } from '../../../../../../../../actions/exchenge.action'
 import { connect } from 'react-redux'
 import {  addOrderToForm, addOrderToBy } from 'src/actions/trade.action'
-import { TRADE_SALE_ORDER_SELECTED } from 'src/constants/trade.constants'
-// import {  addOrderToByFrom, addOrderToByForm  } from 'src/actions/trade.action'
+
 
 class Order extends Component {
 
@@ -27,10 +26,10 @@ class Order extends Component {
   //       type: TRADE_SALE_ORDER_SELECTED,
   //       payload: data,
   //   };
-    
+
   // }
 
-  handleClickk = (value) => () => {
+  handleClickk = () => () => {
     const { type, orders, indx, addOrderToForm, addOrderToBy } = this.props;
     let price = Number(orders[indx][0])
     let count = 0

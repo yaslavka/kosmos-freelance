@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, {useState, useMemo, useCallback, useEffect} from 'react'
 import { FormGroup } from 'reactstrap'
 import { Formik, Form, Field } from 'formik'
 import { useDispatch } from 'react-redux'
@@ -36,7 +36,7 @@ function SignIn() {
           .required()
           .test('password', t('signInPage.inputs.password.error'), (value) => isValidPassword(value)),
       }),
-    [],
+    [t],
   )
 
   const submitSignInForm = useCallback(
@@ -59,7 +59,17 @@ function SignIn() {
     },
     [dispatch, clientCredentials],
   )
-
+  useEffect(() => {
+    api
+      .createClient()
+      .then(response => {
+        if (response && response.client_id && response.client_secret) {
+          setClientCredentials(response);
+          localStorage.setItem('client_id', response.client_id);
+          localStorage.setItem('client_secret', response.client_secret);
+        }
+      })
+  }, []);
 
   return (
     <div className={cl.authPage}>

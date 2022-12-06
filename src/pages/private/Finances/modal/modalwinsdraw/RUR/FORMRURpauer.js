@@ -1,25 +1,19 @@
-import React, {useState,  useRef} from "react";
+import React, { useRef} from "react";
 import cl from './MyModal.module.css';
 import {useTranslation} from "react-i18next";
 import MyInput from "../../../../../../components/Input/MyInput";
 import MyBtnFiled from "../../../../../../components/buttonback/MyBtnFiled";
 import { Formik, Form, Field } from 'formik'
 
-const FORMRURpauer = ({ title, visible, setVisible, setModalWru, submitCreateWithdrawForm, payeerValidationSchema, initialValues})=>{
+const FORMRURpauer = ({ title, visible, setVisible, submitCreateWithdrawForm, payeerValidationSchema, initialValues, setParentModal})=>{
   const { t } = useTranslation('common');
-  const [modalInfo, setModalInfo] = useState({count: '', currency: ''})
   const blockModal = useRef('')
-  let forServerInfo = {}
   const rootClasses = [cl.modalBlock]
   const rootContentClasses = [cl.modalContent]
-  const addModalInfo = (e)=>{
-    e.preventDefault();
-    setVisible(false);
-  }
-  let clean = false
+
   visible && rootClasses.push(cl.active) && rootContentClasses.push(cl.activeContent)
   return (
-    <div ref={blockModal} className={rootClasses.join` `} onClick={(e)=>{e.preventDefault();setVisible(false)}}>
+    <div ref={blockModal} className={rootClasses.join` `} onClick={(e)=>{e.preventDefault();setParentModal(false);setVisible(false)}}>
 
       <div  className={rootContentClasses.join` `} >
 
@@ -38,7 +32,7 @@ const FORMRURpauer = ({ title, visible, setVisible, setModalWru, submitCreateWit
                 <Field  name="password" type="password"  classesInput={cl.modalInput} component={MyInput}  placeholder={`${t('Финансовый пароль')}`} />
               </div>
               <p className={cl.modalWarning}>{t('private.finances.modalWarning')}</p>
-              <span className={cl.modalExit} onClick={e=>{e.preventDefault();setVisible(false)}}></span>
+              <span className={cl.modalExit} onClick={e=>{e.preventDefault();setParentModal(false);setVisible(false)}}> </span>
               <div className={cl.btnBlock} >
                 <MyBtnFiled  type='submit'  classes={cl.modalBtn} disabled={!(isValid && dirty)} >{t('private.finances.modalBtn')}</MyBtnFiled>
               </div>

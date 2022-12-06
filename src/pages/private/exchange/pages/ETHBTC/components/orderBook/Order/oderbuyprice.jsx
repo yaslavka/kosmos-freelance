@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import Oderbuypric from "./oderbuypric";
-import Order from "./Order";
 
 class Oderbuyprice extends Component{
   static propTypes = {

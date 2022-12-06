@@ -1,5 +1,6 @@
 import React from 'react'
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default Component => class screenWidth extends React.Component {
     constructor(props) {
         super(props)
@@ -22,7 +23,11 @@ export default Component => class screenWidth extends React.Component {
 
     render() {
         const isMobile = this.state.width <= 700;
-        return <Component {...this.props} handleWindowSizeChange = {this.handleWindowSizeChange} isMobile = {isMobile}/>
+        return (
+          <>
+            <Component {...this.props} handleWindowSizeChange = {this.handleWindowSizeChange} isMobile = {isMobile}/>
+          </>
+        )
     }
 
 

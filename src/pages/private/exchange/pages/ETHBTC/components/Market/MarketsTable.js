@@ -5,7 +5,6 @@ import cl from "../../../../Exchange.module.css";
 import SimpleBar from "simplebar-react";
 
 class MarketsTable extends Component {
-
   static propTypes = {
     handleClick: PropTypes.func,
     getClassName: PropTypes.func,

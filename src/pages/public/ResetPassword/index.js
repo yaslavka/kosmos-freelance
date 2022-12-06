@@ -7,13 +7,11 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import styles from './ResetPassword.module.scss'
 import routes from '../../../constants/routes.constants'
-import logo from '../../../scss/media/kosmos.png'
 import { isValidEmail } from '../../../utils'
 import { api } from '../../../api'
 
 import Input from '../../../components/OldInput'
 import Button from '../../../components/OldButton'
-import cl from "../../../scss/MainPage.module.css";
 import Planet from "../../../scss/media/planet-1.gif";
 
 export default function ResetPassword() {

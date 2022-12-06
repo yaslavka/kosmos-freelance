@@ -54,6 +54,9 @@ export const app = feathers()
 
 export const api = {
   // Auth
+  createClient() {
+    return baseInstance.get('/create-client');
+  },
 
   tradePairsName(name) {
     return baseInstance.get(`/v2/?trading-pairs=${name}`)

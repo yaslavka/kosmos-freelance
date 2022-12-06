@@ -31,7 +31,7 @@ class Form1 extends Component {
     const { market, userInfo } = this.props
     const bal_total = Number((userInfo?.balanceCrypto[`${market.market}`]) ? userInfo?.balanceCrypto[`${market.market}`] : 0.00000000).toFixed(8)
 
-    const bal_count = bal_total == 0 ? 0 : bal_total / this.state.price
+    const bal_count = bal_total === 0 ? 0 : bal_total / this.state.price
     this.setState({
       ...this.state,
       count: bal_count,
@@ -123,7 +123,7 @@ class Form1 extends Component {
                     data-type='total'
                     id={'total-' +orderType}
                     onChange={(e) => {
-                      const tt = e.target.value == 0 ? 0 : e.target.value / this.state.price
+                      const tt = e.target.value === 0 ? 0 : e.target.value / this.state.price
                       this.setState({ ...this.state, count: tt, total: e.target.value })
                     }}
                     value={this.state.total}

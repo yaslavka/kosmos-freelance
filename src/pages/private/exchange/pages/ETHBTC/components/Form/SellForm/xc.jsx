@@ -119,7 +119,7 @@ class Xc extends Component{  constructor(props) {
                   readOnly
                   id='total'
                   onChange={(e) => {
-                    const tt = e.target.value == 0 ? 0 : e.target.value / this.state.price;
+                    const tt = e.target.value === 0 ? 0 : e.target.value / this.state.price;
                     this.setState({...this.state, count: tt, total: e.target.value })
                   }}
                   value={this.state.total}

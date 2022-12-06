@@ -34,6 +34,7 @@ export const toplineDataSelector = createSelector(marketsSelector, (marketsList)
 
 export const tradeMarketsSelector = createSelector(marketsSelector, (marketsList) => {
   const markets = [];
+  // eslint-disable-next-line array-callback-return
   marketsList.map(item => {
     if(markets.indexOf(item.market) === -1) { markets.push(item.market) }
   })
@@ -42,8 +43,10 @@ export const tradeMarketsSelector = createSelector(marketsSelector, (marketsList
 
 export const allMarketsSortedSelector = createSelector(tradeMarketsSelector, marketsSelector, (markets, marketsList) => {
   const marketsSortedByMarket = {}
+  // eslint-disable-next-line array-callback-return
   markets.map(market => {
     marketsSortedByMarket[market] = []
+    // eslint-disable-next-line array-callback-return
     marketsList.map(item => {
       if(item.market === market) { marketsSortedByMarket[market].push(item) }
     })

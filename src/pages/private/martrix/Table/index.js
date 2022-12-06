@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react'
-import { useParams, useHistory, Link, NavLink } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { Container, Row, Col } from 'reactstrap'
+import { Container } from 'reactstrap'
 import styles from './Table.module.scss'
 import { api } from '../../../../api'
 import { matrixActions } from '../../../../store/matrix/actions'
@@ -11,9 +11,7 @@ import rocketLeft from '../../../../scss/media/angle-left.309b1344.svg'
 import rocketRight from '../../../../scss/media/angle-right.2219c635.svg'
 import routes from '../../../../constants/routes.constants'
 import isEmpty from 'lodash-es/isEmpty'
-
 import Select from '../../../../components/Select'
-import SearchSelect from '../../../../components/SearchSelect'
 import Button from '../../../../components/OldButton'
 import MatrixCell from './MatrixCell'
 import PartnerModal from './PartnerModal'
@@ -35,8 +33,6 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
   const [visibleBuyModal, setVisibleBuyModal] = useState(false)
   const [visibleClonesModal, setVisibleClonesModal] = useState(false)
   const [visiblePartnersClonesModal, setVisiblePartnersClonesModal] = useState(false)
-  const [searchUsers, setSearchUsers] = useState([])
-  const [currentSearchValue, setCurrentSearchValue] = useState('')
   const [selectItems, setSelectItems] = useState(null)
   const [visibleBuyMatrixModal, setVisibleBuyMatrixModal] = useState(false)
   const matrixInfo = useSelector((state) => state.matrixReducer.matrixInfo)
@@ -92,50 +88,7 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
   }
 
   //TODO: Rewrite
-  const showPartnerModal = (info, place) => {
-    if (window.innerWidth < 1200) {
-      document.body.style.overflow = 'hidden'
-    }
 
-    if (place === 3 && matrixTree['1']) {
-      if (!info) {
-        dispatch(
-          matrixActions.saveCurrentMatrixCellInfo({
-            ancestor_id: matrixTree['0'].id,
-            place,
-          }),
-        )
-        setVisiblePartnersClonesModal(true)
-      }
-    } else if ((place === 5 || place === 6) && matrixTree['2']) {
-      if (!info) {
-        dispatch(
-          matrixActions.saveCurrentMatrixCellInfo({
-            ancestor_id: matrixTree['0'].id,
-            place,
-          }),
-        )
-        setVisiblePartnersClonesModal(true)
-      }
-    } else if (place === 1 || place === 2 || place === 3) {
-      if (!info) {
-        dispatch(
-          matrixActions.saveCurrentMatrixCellInfo({
-            ancestor_id: matrixTree['0'].id,
-            place,
-          }),
-        )
-        setVisiblePartnersClonesModal(true)
-      }
-    }
-  }
-
-  const showClonesModal = () => {
-    if (window.innerWidth < 1200) {
-      document.body.style.overflow = 'hidden'
-    }
-    setVisibleClonesModal(true)
-  }
 
   const showBuyMatrixModal = () => {
     if (window.innerWidth < 1200) {
@@ -219,10 +172,6 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
     setVisiblePartnerModal(true)
   }
 
-  const redirectToUserMatrix = (matrixId) => {
-    history.push(`/matrixs/${matrixId}`)
-    setSearchUsers([])
-  }
 
   useEffect(() => {
     if (matrixInfo && matrixInfo.isActive && isFetching) {
@@ -277,26 +226,6 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
     }
   }, [matricesList, dispatch])
 
-  useEffect(() => {
-    if (currentSearchValue.length > 2 && matrixInfo) {
-      api
-        .searchUserByLogin({
-          user_name: currentSearchValue,
-          matrix_type: matrixInfo.id,
-        })
-        .then((response) => {
-          if (Array.isArray(response.items)) {
-            setSearchUsers(
-              response.items.map(({ user_name, matrix_id }) => ({
-                label: user_name,
-                value: matrix_id,
-              })),
-            )
-          }
-        })
-        .catch(() => {})
-    }
-  }, [currentSearchValue, matrixInfo])
 
   //TODO: Remove hardcoded matrixTree
 

@@ -1,4 +1,4 @@
-import React, {useState, useRef, useMemo} from "react";
+import React, {useState, useRef} from "react";
 import cl from './MyModal.module.css';
 import {api} from "../../../../../../api";
 import payeerLogo from '../../../../../../scss/media/payeer-logo.8aa750cc.svg'
@@ -11,6 +11,9 @@ import {formatter} from "../../../../../../utils";
 import * as actions from '../../../../../../actions/app.actions'
 import confirm from 'reactstrap-confirm'
 import { toast } from 'react-toastify'
+import FORMRURCard from "./FORMRURCard";
+import logo from './visa-mastercard.png'
+import FORMRURadv from "./FORMRURadv";
 
 const initialValues = {
   amount: '',
@@ -46,17 +49,23 @@ const freeKassaValidationSchema = yup.object({
     ),
 })
 
-const WinsdrawRUR =({ title, setModalWru, modaleWru})=>{
+const WinsdrawRUR =({ title, setModalWru, modaleWru, modaleFru, setModalFru})=>{
   const dispatch = useDispatch()
   const { t } = useTranslation('common');
   const [modals, setModals] = useState(false)
   const [modales, setModales] = useState(false)
+  const [advCash, setAdvCash]= useState(false)
   const blockModal = useRef('')
   const rootClasses = [cl.modalBlock]
   const rootContentClasses = [cl.modalContent]
   const [isCurrencyAndCount, setIsCurrencyAndCount] = useState({count: '', currency: ''})
   const [isCurrencyAndCounts, setIsCurrencyAndCounts] = useState({count: '', currency: ''})
   const submitCreateWithdrawForm = async (values, formBag) => {
+    setModalWru(false);
+    setModals(false);
+    setModales(false);
+    setModalFru(false);
+    setAdvCash(false)
     let result = await confirm({
       title: `Перевод ${values.system.toUpperCase()}`,
       message: `Перевести ${formatter
@@ -93,19 +102,68 @@ modaleWru && rootClasses.push(cl.active) && rootContentClasses.push(cl.activeCon
   return(
     <>
       <div ref={blockModal} className={rootClasses.join` `} onClick={(e)=>{e.preventDefault();setModalWru(false)}}>
-        <div  className={rootContentClasses.join` `} >
-          <div  id='modal' className={cl.modalForm} onClick={e=>e.stopPropagation()}>
-            <h3 className={cl.modalTitle}>{title}</h3>
+        <div  className={rootContentClasses.join` `} onClick={e=>e.stopPropagation()}>
+          <div  id='modal' className={cl.modalForm} >
+           <h3 className={cl.modalTitle}>{title}</h3>
             <p className={cl.modalDescr}>{title}</p>
             <div className={cl.btnBlock}>
               <img src={payeerLogo} role={"button"} alt={''} onClick={(e)=>{e.preventDefault();setModals(true)}}/>
-              <FORMRURpauer initialValues={initialValues} payeerValidationSchema={payeerValidationSchema} currencyAndCount={isCurrencyAndCount} changeCurrencyAndCount={setIsCurrencyAndCount} submitCreateWithdrawForm={submitCreateWithdrawForm} title={`${t('private.finances.sum')}`} setVisible={setModals} visible={modals} setModalWru={setModalWru}/>
+              <FORMRURpauer
+                initialValues={initialValues}
+                payeerValidationSchema={payeerValidationSchema}
+                currencyAndCount={isCurrencyAndCount}
+                changeCurrencyAndCount={setIsCurrencyAndCount}
+                setParentModal={setModalWru}
+                submitCreateWithdrawForm={submitCreateWithdrawForm} title={`${t('private.finances.sum')}`}
+                setVisible={setModals} visible={modals} setModalWru={setModalWru}/>
             </div>
             <br/>
             <br/>
-            <div className={cl.btnBlock} onClick={(e)=>{e.preventDefault();setModales(true)}}>
-              <img src={"https://www.free-kassa.ru/img/fk_btn/23.png"} role={"button"} alt={''} style={{width:"400px"}}/>
-              <FORMRURfrikassa currencyAndCount={isCurrencyAndCounts} changeCurrencyAndCount={setIsCurrencyAndCounts} title={`${t('private.finances.sum')}`} setVisible={setModales} visible={modales}/>
+            <div className={cl.btnBlock} >
+              <img src={"https://www.free-kassa.ru/img/fk_btn/23.png"} role={"button"} alt={''} style={{width:"400px"}} onClick={(e)=>{e.preventDefault();setModales(true)}}/>
+              <FORMRURfrikassa
+                currencyAndCount={isCurrencyAndCounts}
+                changeCurrencyAndCount={setIsCurrencyAndCounts}
+                title={`${t('private.finances.sum')}`}
+                setModales={setModales}
+                initialValues={initialValues}
+                modales={modales}
+                setParentModals={setModalWru}
+                submitCreateWithdrawForm={submitCreateWithdrawForm}
+                freeKassaValidationSchema={freeKassaValidationSchema}
+              />
+            </div>
+            <br/>
+            <br/>
+            <div className={cl.btnBlock} >
+              <img src={logo} role={"button"} alt={''} style={{width:"400px"}} onClick={(e)=>{e.preventDefault();setModalFru(true)}}/>
+              <FORMRURCard
+                currencyAndCount={isCurrencyAndCounts}
+                changeCurrencyAndCount={setIsCurrencyAndCounts}
+                title={`${t('private.finances.sum')}`}
+                setModalFru={setModalFru}
+                initialValues={initialValues}
+                modaleFru={modaleFru}
+                setParentModales={setModalWru}
+                submitCreateWithdrawForm={submitCreateWithdrawForm}
+                freeKassaValidationSchema={freeKassaValidationSchema}
+              />
+            </div>
+            <br/>
+            <br/>
+            <div className={cl.btnBlock} >
+              <img src={`https://static.openfintech.io/payment_methods/advcash_wallet/logo.svg?w=400&c=v0.59.26#w200`} role={"button"} alt={''} style={{width:"400px"}} onClick={(e)=>{e.preventDefault();setAdvCash(true)}}/>
+              <FORMRURadv
+                currencyAndCount={isCurrencyAndCounts}
+                changeCurrencyAndCount={setIsCurrencyAndCounts}
+                title={`${t('private.finances.sum')}`}
+                setAdvCash={setAdvCash}
+                initialValues={initialValues}
+                advCash={advCash}
+                setParentsModales={setModalWru}
+                submitCreateWithdrawForm={submitCreateWithdrawForm}
+                freeKassaValidationSchema={freeKassaValidationSchema}
+              />
             </div>
           </div>
         </div>
