@@ -7,6 +7,7 @@ import { chartDataSelector, currentPairSelector } from '../../../../../selectors
 import OrderBook from '../../orderBook/OrderBook'
 import { api } from 'src/api'
 import Orderbuyprice from '../../orderBook/Order/orderbuyprice'
+import ExchangeInput from "../../orderBook/Order/ExchangeInput";
 
 class Form1 extends Component {
   constructor(props) {
@@ -22,11 +23,14 @@ class Form1 extends Component {
     const addOrder = () => {
       const formData = new FormData()
 
-      formData.append('amount', this.state.amount)
-      formData.append('price', this.state.price)
+      formData.append('amount', this.props.trade.amount.toFixed(8))
+      formData.append('price', this.props.trade.price.toFixed(8))
       formData.append('orderType', 'buy')
-      formData.append('all', this.handleTotal())
-      formData.append('allCom', this.handleTotalCom())
+      formData.append('all', (this.props.trade.price * this.props.trade.amount).toFixed(8))
+      formData.append('allCom', (
+        this.props.trade.price * this.props.trade.amount +
+        this.props.trade.price * this.props.trade.amount * 0.002
+      ).toFixed(8))
       formData.append('pair', market.pair)
       api.addOrderApi(formData)
     }
@@ -43,25 +47,10 @@ class Form1 extends Component {
               <div className="line_first">
                 <span className="c1">{t('private.exchange.trade.pair.buy.balance')}</span>
                 <Button
-                  onClick={() =>
-                    this.setState({
-                      amount:
-                        market.market === 'RUR'
-                          ? userInfo.balance
-                          : userInfo?.balanceCrypto[`${market.market}`]
-                          ? userInfo?.balanceCrypto[`${market.market}`]
-                          : 0.0,
-                    })
-                  }
                   className="c2 clBuyBalance"
                 >
                   <span id="label_buy_balance">
-                    {market.market === 'RUR'
-                      ? userInfo.balance
-                      : userInfo?.balanceCrypto[`${market.market}`]
-                      ? userInfo?.balanceCrypto[`${market.market}`]
-                      : 0.0}{' '}
-                    {market.market}
+                    {(userInfo?.balanceCrypto[`${market.market}`]) ? userInfo?.balanceCrypto[`${market.market}`] : 0.00000000} {market.market}
                   </span>
                 </Button>
               </div>
@@ -70,15 +59,14 @@ class Form1 extends Component {
               <div className="line">
                 <span className="span">{t('private.exchange.trade.pair.buy.Input.amount')}</span>
                 <div className="poles">
-                  <Input
+                  <ExchangeInput
                     name="amount"
                     min={0.0}
                     data-type="amount"
                     type="text"
                     id={'amount-' + orderType}
-                    // onChange={(e)=>this.setState({amount:e.target.value})}
                     // value={(+this.state.amount).toFixed(8)}
-                    value={this.props.trade.by_count.toFixed(8)}
+                    value={this.props.trade.amount.toFixed(8)}
                   />
                   <span className="currency">{market.coin}</span>
                 </div>
@@ -92,9 +80,9 @@ class Form1 extends Component {
                     type="text"
                     data-type="price"
                     id={'price-' + orderType}
-                    // onChange={(e)=>this.setState({price:e.target.value})}
+                    onChange={(e)=>this.setState({price:e.target.value})}
                     // value={(+this.state.price).toFixed(8)}
-                    value={(this.props.trade.by_price).toFixed(8)}
+                    value={(this.props.trade.price).toFixed(8)}
                   />
                   <span className="currency">{market.market}</span>
                 </div>
@@ -108,7 +96,7 @@ class Form1 extends Component {
                     type="text"
                     readOnly
                     id="total"
-                    value={(this.props.trade.by_price * this.props.trade.by_count).toFixed(8)}
+                    value={(this.props.trade.price * this.props.trade.amount).toFixed(8)}
                   />
                   <span className="currency">{market.market}</span>
                 </div>
@@ -123,7 +111,7 @@ class Form1 extends Component {
                     maxLength="25"
                     type="text"
                     min={0.0}
-                    value={(this.props.trade.by_price * this.props.trade.by_count * 0.002).toFixed(8)}
+                    value={(this.props.trade.price * this.props.trade.amount * 0.002).toFixed(8)}
                     readOnly
                   />
                   <span className="currency">{market.market}</span>
@@ -138,8 +126,8 @@ class Form1 extends Component {
                     type="text"
                     readOnly
                     value={(
-                      this.props.trade.by_price * this.props.trade.by_count +
-                      this.props.trade.by_price * this.props.trade.by_count * 0.002
+                      this.props.trade.price * this.props.trade.amount +
+                      this.props.trade.price * this.props.trade.amount * 0.002
                     ).toFixed(8)}
                   />
                   <span className="currency">{market.market}</span>
@@ -172,7 +160,6 @@ class Form1 extends Component {
       updateTradeForm({ currentPair: pair, orderType, inputType, value })
     }
   }
-
   handleTotal = () => {
     const { chartData, orderType, trade } = this.props
     if (trade.price && trade.amount) {

@@ -92,7 +92,7 @@ class Chart extends Component {
   async componentDidMount () {
     const { loadChart, pair} = this.props
     console.log('Pair dlya potklyuchenie socket', pair);
-    
+
     let date = new Date();
     const get_chart_data = {
       command:'returnChartData',

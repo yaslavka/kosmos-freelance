@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import SimpleBar from "simplebar-react";
 import PropTypes from 'prop-types'
-import Order from "./Order/Order";
+//import Order from "./Order/Order";
+import Orderbuy from "./Order/buy";
 
 class Swll extends Component{
   static propTypes = {
@@ -14,7 +15,7 @@ class Swll extends Component{
     const market = pair.split('_')[0];
     const coin = pair.split('_')[1];
     const orders = data ?
-      data.map( (order, index) => <Order key ={index} indx={index} orders={data}  order={order} pair={pair} type={type} t={t}/> ) : null
+      data.map( (order, index) => <Orderbuy key ={index} indx={index} orders={data}  order={order} pair={pair} type={type} t={t}/> ) : null
     return(
       <>
         <div className="all_title title">{t('private.exchange.trade.Swll.title')}</div>

@@ -88,6 +88,7 @@
   height: auto;
   padding: 10px;
   display: flex;
+  background-image: linear-gradient(to bottom, rgb(107 127 195 / 96%) 10%,rgba(13,70,159,1) 100%);
 }
 
 .chat-window .chat-body .message .message-content {
