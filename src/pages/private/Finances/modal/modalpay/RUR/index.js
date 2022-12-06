@@ -56,7 +56,7 @@ const CreatePayrur =({title, modalrur, setModalrur})=>{
             <h3 className={cl.modalTitle}>{title}</h3>
             <p className={cl.modalDescr}>{title}</p>
             <div className={cl.btnBlock}>
-              <img src={payeerLogo} role={"button"} alt={''} onClick={(e)=>{e.preventDefault();setModals(true);}}/>
+              <img src={`https://static.openfintech.io/payment_methods/advcash_wallet/logo.svg?w=400&c=v0.59.26#w200`} role={"button"} alt={''} onClick={(e)=>{e.preventDefault();setModals(true);}}/>
               <FORMRURpauer currencyAndCount={isCurrencyAndCount} changeCurrencyAndCount={setIsCurrencyAndCount} title={`${t('private.finances.sum')}`} setModals={setModals} modals={modals}/>
             </div>
           </div>
