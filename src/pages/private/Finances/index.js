@@ -128,7 +128,7 @@ function Finances() {
 
                 <h2 className='pay-fin-title'>{t('private.finances.pay')}</h2>
               }/>
-              <ReplenishmentOfMoney />
+              <ReplenishmentOfMoney userInfo={userInfo}/>
               </>
             )}
           </Col>

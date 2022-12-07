@@ -7,7 +7,7 @@ import WinsdrawRUR from "./modal/modalwinsdraw/RUR";
 import BTCbalance from "./BTC";
 import CreatePayBTC from "./modal/modalpay/BTC";
 import CreatewinsdrawBTC from "./modal/modalwinsdraw/BTC/ndex";
-function ReplenishmentOfMoney() {
+function ReplenishmentOfMoney({userInfo}) {
   const [modalrur, setModalrur] = useState(false)
   const [modaleWru, setModalWru] = useState(false)
   const [btcmodel, setBtcmodel]= useState(false)
@@ -21,7 +21,7 @@ function ReplenishmentOfMoney() {
   return (
     <div className={cl.transBlock}>
       <RurBalanse modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
-      <CreatePayrur title={`${t('private.finances.sistem')}`} modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
+      <CreatePayrur title={`${t('private.finances.sistem')}`} userInfo={userInfo} modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
       <WinsdrawRUR
         title={`${t('private.finances.sistem')}`}
         modalrur={modalrur}

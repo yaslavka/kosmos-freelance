@@ -50,7 +50,7 @@ class Form1 extends Component {
       formData.append('price', this.state.price)
       formData.append('orderType', 'buy')
       formData.append('all', this.state.total)
-      formData.append('allCom', this.state.total * 0.2)
+      formData.append('allCom', (this.state.total * 0.002 + this.state.total))
       formData.append('pair', market.pair)
       api.addOrderApi(formData)
     }

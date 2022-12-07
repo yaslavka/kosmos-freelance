@@ -11,7 +11,9 @@ export const baseInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 })
 
-
+export const tinkoff = axios.create({
+  baseURL: 'https://securepay.tinkoff.ru',
+})
 baseInstance.interceptors.request.use(
   (config) => {
     const token = getAccessToken()
@@ -260,7 +262,7 @@ export const api = {
     return baseInstance.post('wallet/create-pay', payInfo)
   },
   createPayeerPay(payInfo) {
-    return baseInstance.post('wallet/create-payeer-pay', payInfo)
+    return tinkoff.post( '/v2/Init',payInfo)
   },
   getUpperStructureById(matrixId) {
     return baseInstance.get(`matrix/structure-upper?matrix_id=${matrixId}`)
