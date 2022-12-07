@@ -12,9 +12,9 @@ class Form1 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: 0.0,
-      price: 0.0,
-      total: 0.0,
+      count: (0).toFixed(8),
+      price: (0).toFixed(8),
+      total: (0).toFixed(8),
     }
   }
   componentDidUpdate(prevProps) {
@@ -48,7 +48,7 @@ class Form1 extends Component {
 
       formData.append('amount', this.state.count)
       formData.append('price', this.state.price)
-      formData.append('orderType', 'sell')
+      formData.append('orderType', 'buy')
       formData.append('all', this.state.total)
       formData.append('allCom', this.state.total * 0.2)
       formData.append('pair', market.pair)
@@ -87,6 +87,12 @@ class Form1 extends Component {
                     data-type="amount"
                     type="text"
                     id={'amount-' + orderType}
+                    onBlur={() => {
+                      const ccount = Number(this.state.count).toFixed(8)
+                      const pprice = Number(this.state.price).toFixed(8)
+                      const ttotal = Number(this.state.total).toFixed(8)
+                      this.setState({ count: ccount, price: pprice, total:ttotal })
+                    }}
                     onChange={(e) => {
                       const ttotal = this.state.price * e.target.value
                       this.setState({ ...this.state, count: e.target.value, total: ttotal })
@@ -104,6 +110,12 @@ class Form1 extends Component {
                     maxLength="25"
                     type="text"
                     data-type='price' id={'price-'+orderType}
+                    onBlur={() => {
+                      const ccount = Number(this.state.count).toFixed(8)
+                      const pprice = Number(this.state.price).toFixed(8)
+                      const ttotal = Number(this.state.total).toFixed(8)
+                      this.setState({ count: ccount, price: pprice, total:ttotal })
+                    }}
                     onChange={(e) => {
                       const totall = this.state.count * e.target.value
                       this.setState({ ...this.state, price: e.target.value, total: totall })
@@ -122,6 +134,12 @@ class Form1 extends Component {
                     type="text"
                     data-type='total'
                     id={'total-' +orderType}
+                    onBlur={() => {
+                      const ccount = Number(this.state.count).toFixed(8)
+                      const pprice = Number(this.state.price).toFixed(8)
+                      const ttotal = Number(this.state.total).toFixed(8)
+                      this.setState({ count: ccount, price: pprice, total:ttotal })
+                    }}
                     onChange={(e) => {
                       const tt = e.target.value === 0 ? 0 : e.target.value / this.state.price
                       this.setState({ ...this.state, count: tt, total: e.target.value })

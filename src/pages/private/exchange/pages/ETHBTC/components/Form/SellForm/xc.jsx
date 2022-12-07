@@ -10,9 +10,9 @@ import { api } from "src/api";
 class Xc extends Component{  constructor(props) {
   super(props);
   this.state = {
-    count: 0.0,
-    price: 0.0,
-    total: 0.0,
+    count: (0).toFixed(8),
+    price: (0).toFixed(8),
+    total: (0).toFixed(8),
   }
 }
   componentDidUpdate(prevProps) {
@@ -83,6 +83,12 @@ class Xc extends Component{  constructor(props) {
                   data-type='amount'
                   type="text"
                   id={'amount-'+orderType}
+                  onBlur={() => {
+                    const ccount = Number(this.state.count).toFixed(8)
+                    const pprice = Number(this.state.price).toFixed(8)
+                    const ttotal = Number(this.state.total).toFixed(8)
+                    this.setState({ count: ccount, price: pprice, total:ttotal })
+                  }}
                   onChange={(e) => {
                     const ttotal = this.state.price * e.target.value
                     this.setState({ ...this.state, count: e.target.value, total: ttotal })
@@ -100,6 +106,12 @@ class Xc extends Component{  constructor(props) {
                   maxLength="25"
                   type="text"
                   data-type='price' id={'price-'+orderType}
+                  onBlur={() => {
+                    const ccount = Number(this.state.count).toFixed(8)
+                    const pprice = Number(this.state.price).toFixed(8)
+                    const ttotal = Number(this.state.total).toFixed(8)
+                    this.setState({ count: ccount, price: pprice, total:ttotal })
+                  }}
                   onChange={(e) => {
                     const totall = this.state.count * e.target.value
                     this.setState({ ...this.state, price: e.target.value, total: totall })
@@ -118,6 +130,12 @@ class Xc extends Component{  constructor(props) {
                   type="text"
                   readOnly
                   id='total'
+                  onBlur={() => {
+                    const ccount = Number(this.state.count).toFixed(8)
+                    const pprice = Number(this.state.price).toFixed(8)
+                    const ttotal = Number(this.state.total).toFixed(8)
+                    this.setState({ count: ccount, price: pprice, total:ttotal })
+                  }}
                   onChange={(e) => {
                     const tt = e.target.value === 0 ? 0 : e.target.value / this.state.price;
                     this.setState({...this.state, count: tt, total: e.target.value })
