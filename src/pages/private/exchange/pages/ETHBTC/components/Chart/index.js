@@ -34,8 +34,6 @@ import './stockChart.scss'
 
 import io from 'socket.io-client';
 
-// const socket = io.connect('http://localhost:5000');
-
 
 const SAMPLE_CSS = `
     .control-fluid {
@@ -54,7 +52,7 @@ export let tooltipRender = (args) => {
 class Chart extends Component {
   constructor() {
     super(...arguments);
-    this.socket = io('http://localhost:5000');
+    this.socket = io('http://127.0.0.1:5000');
     this.state = {
       chartData:{
         loading: true,

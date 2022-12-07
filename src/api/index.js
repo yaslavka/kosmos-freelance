@@ -48,7 +48,7 @@ baseInstance.interceptors.response.use(
   },
 )
 const host = process.env.REACT_APP_BASE_URL
-// 'http://localhost:5000/api'||
+
 export const app = feathers()
   .configure(rest(host).fetch(fetch))
   .configure(feathers.hooks())
