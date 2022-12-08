@@ -1,11 +1,11 @@
-import React, {useState,  useRef} from "react";
+import React, {useRef} from "react";
 import cl from './MyModal.module.css';
 import {useTranslation} from "react-i18next";
 import MyInput from "../../../../../../components/Input/MyInput";
 import MyBtnFiled from "../../../../../../components/buttonback/MyBtnFiled";
 import { Formik, Form, Field } from 'formik'
 
-const FORMRURpauer = ({ title, modals, setModals,  setParentModal, submitCreatePayeerPayForm, initialValues, userInfo, validationSchema})=>{
+const FORMRURpauer = ({ title, modals, setModals,  submitCreatePayeerPayForm, initialValues, userInfo, validationSchema})=>{
   const { t } = useTranslation('common');
   const blockModal = useRef('')
 
@@ -25,7 +25,7 @@ const FORMRURpauer = ({ title, modals, setModals,  setParentModal, submitCreateP
                 <h3 className={cl.modalTitle}>{title}</h3>
                 <p className={cl.modalDescr}>{t('private.finances.modalDescr')}</p>
                 <div>
-                  <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1666355954144"/>
+                  <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1670485393713DEMO"/>
                   <input className="tinkoffPayRow" type="hidden" name="frame" value="true"/>
                   <input className="tinkoffPayRow" type="hidden" name="language" value="ru"/>
                   <input className="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" value={`${+(new Date())}:${userInfo.username}`}/>

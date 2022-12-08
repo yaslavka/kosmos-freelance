@@ -17,7 +17,7 @@ const validationSchem = yup.object({
 })
 
 const CreatePayrur =({title, modalrur, setModalrur, userInfo})=>{
-  const initialValue = { Amount: '', OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1666355954144'}
+  const initialValue = { Amount: '', OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1670485393713DEMO'}
   const { t } = useTranslation('common');
   const [modals, setModals] = useState(false)
   const blockModal = useRef('')
@@ -26,7 +26,7 @@ const CreatePayrur =({title, modalrur, setModalrur, userInfo})=>{
   const [isCurrencyAndCount, setIsCurrencyAndCount] = useState({count: '', currency: ''})
   const submitCreatePayeerPayForm = ({ Amount }) => {
     api
-      .createPayeerPay({ Amount:`${Amount}.00`*100,  OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1666355954144'})
+      .createPayeerPay({ Amount:`${Amount}.00`*100,  OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1670485393713DEMO'})
       .then((response) => {
         if (response.data.PaymentURL) {
           window.location.replace(response.data.PaymentURL)
