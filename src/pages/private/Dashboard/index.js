@@ -57,9 +57,9 @@ function Dashboard() {
                         <div className="list-info__group">
                           <div className="list-info__label">{t('private.Dashboard.balance')}</div>
                           <div className="list-info__value">
-                            {formatter.format(userInfo.balance || 0).replace('₽', '₽') ? (
+                            {formatter.format(userInfo.balanceCrypto.RUR || 0).replace('₽', '₽') ? (
                               <div>
-                                {formatter.format(userInfo.balance || 0).replace('₽', '₽')}
+                                {formatter.format(userInfo.balanceCrypto.RUR|| 0).replace('₽', '₽')}
                               </div>
                             ) : (
                               '-'
@@ -120,16 +120,16 @@ function Dashboard() {
 
                 </div>
               </div>
-          <MyViewElement element={
-            <>
-              <div className="startrek__title1 card__title-info">
-                <span>{t('private.Dashboard.timer')}</span>
-              </div>
-              <div className="startrek__title">
-                <CountdownTimer countdownTimestampMs={16599836620000} />
-              </div>
-            </>
-            }/>
+          {/*<MyViewElement element={*/}
+          {/*  <>*/}
+          {/*    <div className="startrek__title1 card__title-info">*/}
+          {/*      <span>{t('private.Dashboard.timer')}</span>*/}
+          {/*    </div>*/}
+          {/*    <div className="startrek__title">*/}
+          {/*      <CountdownTimer countdownTimestampMs={16599836620000} />*/}
+          {/*    </div>*/}
+          {/*  </>*/}
+          {/*  }/>*/}
 
 
             </>

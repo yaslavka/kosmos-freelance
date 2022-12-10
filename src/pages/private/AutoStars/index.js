@@ -60,7 +60,7 @@ export default function AutoStars() {
 
                   <span>1</span>
                   {!!Number(matrixTypes[0].count) && (
-                    <div className={styles.count}>{matrixTypes[0].count}</div>
+                    <div className={styles.count}>Клоны {matrixTypes[0].count}</div>
                   )}
                 </Link>
                 }/>
@@ -75,7 +75,7 @@ export default function AutoStars() {
 
                     <span>2</span>
                     {!!Number(matrixTypes[1].count) && (
-                      <div className={styles.count}>{matrixTypes[1].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[1].count}</div>
                     )}
                   </Link>
                 }/>
@@ -90,7 +90,7 @@ export default function AutoStars() {
 
                     <span>3</span>
                     {!!Number(matrixTypes[2].count) && (
-                      <div className={styles.count}>{matrixTypes[2].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[2].count}</div>
                     )}
                   </Link>
                 }/>
@@ -105,7 +105,7 @@ export default function AutoStars() {
 
                     <span>4</span>
                     {!!Number(matrixTypes[3].count) && (
-                      <div className={styles.count}>{matrixTypes[3].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[3].count}</div>
                     )}
                   </Link>
                 }/>
@@ -120,7 +120,7 @@ export default function AutoStars() {
 
                     <span>5</span>
                     {!!Number(matrixTypes[4].count) && (
-                      <div className={styles.count}>{matrixTypes[4].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[4].count}</div>
                     )}
                   </Link>
                 }/>
@@ -135,7 +135,7 @@ export default function AutoStars() {
 
                     <span>6</span>
                     {!!Number(matrixTypes[5].count) && (
-                      <div className={styles.count}>{matrixTypes[5].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[5].count}</div>
                     )}
                   </Link>
                 }/>
@@ -150,7 +150,7 @@ export default function AutoStars() {
 
                     <span>7</span>
                     {!!Number(matrixTypes[6].count) && (
-                      <div className={styles.count}>{matrixTypes[6].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[6].count}</div>
                     )}
                   </Link>
                 }/>
@@ -165,7 +165,7 @@ export default function AutoStars() {
 
                     <span>8</span>
                     {!!Number(matrixTypes[7].count) && (
-                      <div className={styles.count}>{matrixTypes[7].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[7].count}</div>
                     )}
                   </Link>
                 }/>
@@ -180,7 +180,7 @@ export default function AutoStars() {
 
                     <span>9</span>
                     {!!Number(matrixTypes[8].count) && (
-                      <div className={styles.count}>{matrixTypes[8].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[8].count}</div>
                     )}
                   </Link>
                 }/>
@@ -195,7 +195,7 @@ export default function AutoStars() {
 
                     <span>10</span>
                     {!!Number(matrixTypes[9].count) && (
-                      <div className={styles.count}>{matrixTypes[9].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[9].count}</div>
                     )}
                   </Link>
                 }/>
@@ -210,7 +210,7 @@ export default function AutoStars() {
 
                     <span>11</span>
                     {!!Number(matrixTypes[10].count) && (
-                      <div className={styles.count}>{matrixTypes[10].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[10].count}</div>
                     )}
                   </Link>
                 }/>
@@ -225,7 +225,7 @@ export default function AutoStars() {
 
                     <span>12</span>
                     {!!Number(matrixTypes[11].count) && (
-                      <div className={styles.count}>{matrixTypes[11].count}</div>
+                      <div className={styles.count}>Клоны {matrixTypes[11].count}</div>
                     )}
                   </Link>
                 }/>

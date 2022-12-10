@@ -29,7 +29,7 @@ const RurBalanse =({setModalrur, setModalWru})=>{
                 <div>
               <span className={cl.transMidFirst}>
                 {formatter
-                  .format((userInfo.balance > -1 && userInfo.balance) || 0.00)
+                  .format((userInfo.balanceCrypto.RUR > -1 && userInfo.balanceCrypto.RUR) || 0.00)
                   .replace('₽', '')}
               </span>
                 </div>
