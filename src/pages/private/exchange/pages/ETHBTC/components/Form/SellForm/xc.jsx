@@ -46,7 +46,7 @@ class Xc extends Component{  constructor(props) {
       formData.append('price', this.state.price)
       formData.append('orderType', 'sell')
       formData.append('all', this.state.total)
-      formData.append('allCom', (this.state.total - this.state.total * 0.002))
+      formData.append('allCom', Number(Number(this.state.total) - Number(this.state.total * 0.002)).toFixed(8))
       formData.append('pair', market.pair)
       api.addOrderApi(formData)
     }
