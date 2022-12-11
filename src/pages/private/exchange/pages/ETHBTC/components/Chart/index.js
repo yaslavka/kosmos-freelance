@@ -180,8 +180,8 @@ class Chart extends Component {
                   <StockChartAxisDirective name='yAxis1' rowIndex={1}  tickPosition={'Inside'} opposedPosition={false} lineStyle={{ color: 'transparent' }} majorTickLines={{ color: 'transparent' }}/>
                 </StockChartAxesDirective>
                 <StockChartSeriesCollectionDirective>
-                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='close' type='Candle' yAxisName='yAxis1' id={pair.id}/>
-                  <StockChartSeriesDirective dataSource={volume} xName='date' yName='volume' type='Column' enableTooltip={false} id={pair.id}/>
+                  <StockChartSeriesDirective dataSource={ohlc} xName='date' yName='close' type='Candle' yAxisName='yAxis1' />
+                  <StockChartSeriesDirective dataSource={volume} xName='date' yName='volume' type='Column' enableTooltip={false} />
                 </StockChartSeriesCollectionDirective>
               </StockChartComponent>
             </div>

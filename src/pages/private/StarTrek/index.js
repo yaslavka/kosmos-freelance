@@ -66,27 +66,27 @@ function StarTrek() {
                 {t('private.StarTrek.link.starTrekPlanets')}
               </Link>
               {/* TODO: delete all functions */}
-              {/*<Button*/}
+              <Button
 
-              {/*  className='link-blue'*/}
-              {/*  onClick={handleButtonClick}*/}
-              {/*>*/}
-              {/*  {timer ? (*/}
-              {/*    <Timer*/}
-              {/*      date={timer}*/}
-              {/*      renderer={renderer}*/}
-              {/*      onComplete={() => {*/}
-              {/*        dispatch(actions.startrekResetTimer())*/}
-              {/*      }}*/}
-              {/*    />*/}
-              {/*  ) : (*/}
-              {/*    `${*/}
-              {/*      statistics?.myPlanet > 0*/}
-              {/*        ?`${t('private.StarTrek.link.statistics')}`*/}
-              {/*        :`${t('private.StarTrek.link.myPlanet')}`.toLocaleUpperCase()*/}
-              {/*    }`*/}
-              {/*  )}*/}
-              {/*</Button>*/}
+                className='link-blue'
+                onClick={handleButtonClick}
+              >
+                {timer ? (
+                  <Timer
+                    date={timer}
+                    renderer={renderer}
+                    onComplete={() => {
+                      dispatch(actions.startrekResetTimer())
+                    }}
+                  />
+                ) : (
+                  `${
+                    statistics?.myPlanet > 0
+                      ?`${t('private.StarTrek.link.statistics')}`
+                      :`${t('private.StarTrek.link.myPlanet')}`.toLocaleUpperCase()
+                  }`
+                )}
+              </Button>
             </div>
             {/*<div className="text-center">*/}
             {/*  <Link className='link-blue' to={r.starTrekStatistic}>*/}

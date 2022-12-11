@@ -1,49 +1,80 @@
 import React from 'react'
 import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  CandleSeries,
+  StockChartComponent,
+  StockChartSeriesCollectionDirective,
+  StockChartSeriesDirective,
   Inject,
+  Crosshair,
   DateTime,
   Tooltip,
-  Crosshair,
-} from '@syncfusion/ej2-react-charts'
+  RangeTooltip,
+  ColumnSeries,
+  LineSeries,
+  SplineSeries,
+  CandleSeries,
+  HiloOpenCloseSeries,
+  HiloSeries,
+  RangeAreaSeries,
+  Trendlines,
+  StockChartRowsDirective,
+  StockChartRowDirective,
+  StockChartAxesDirective,
+  StockChartAxisDirective
+} from '@syncfusion/ej2-react-charts';
+import {
+  EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator,
+  AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator ,Export
+} from '@syncfusion/ej2-react-charts';
 import './App.css'
 import { chartDatas } from './data'
+
 function Chart() {
+
   return (
     //Hilo Chart
-    <ChartComponent
-      title="График торгов"
-      primaryXAxis={{
-        valueType: 'DateTime',
-        minimum: new Date('2016, 12, 31'),
-        maximum: new Date('2017, 9, 30'),
-        labelFormat: 'yMMM',
-        title: 'Время',
-        crosshairTooltip: { enable: true },
-      }}
-      primaryYAxis={{ title: 'Цена' }}
-      tooltip={{ enable: true }}
-      crosshair={{ enable: true, lineType: 'Vertical' }}
-    >
-      <Inject services={[CandleSeries, DateTime, Tooltip, Crosshair]}/>
-      <SeriesCollectionDirective>
-        {/* To create a Hilo Open Close series, import HiloOpenCloseSeries from the chart package and inject it into chart services. Then change the series type to HiloOpenClose*/}
-        {/* To create a CandleSeries,import CandleSeries from chart package and inject it into chart series. Then change services type to Candle*/}
-        <SeriesDirective
-          type="Candle"
-          name="Apple INC."
-          dataSource={chartDatas}
-          xName="date"
-          high="high"
-          low="low"
-          open="open"
-          close="close"
-        />
-      </SeriesCollectionDirective>
-    </ChartComponent>
+    <div className='control-pane'>
+      <div className='control-section'>
+        <StockChartComponent
+          primaryYAxis={{
+            valueType: 'DateTime',
+            majorGridLines: { width: 0 },
+            majorTickLines: { color: 'transparent'},
+            crosshairTooltip: { enable: true },
+            intervalType: 'Hours',
+          }}
+          primaryXAxis={{labelFormat: 'n0',
+            lineStyle: { color: 'transparent' },
+            majorTickLines: { color: 'transparent', width: 0 },}}
+          periods={[
+            { text: '12ч', interval: 13, intervalType: 'Hours', selected: true},
+            { text: '24ч', interval: 24, intervalType: 'Hours'},
+            { text: '7д', interval: 6, intervalType: 'Days' },
+            { text: '1M', interval: 1, intervalType: 'Months' },
+            { text: '3M', interval: 3, intervalType: 'Months' },
+            { text: '6M', interval: 6, intervalType: 'Months' }, { text: 'All' }
+          ]}
+          chartArea={{ border: { width: 0 } }}
+          tooltip={{ enable: true}}
+          crosshair={{ enable: true,lineType: 'Vertical' }}
+          height='550'
+        >
+          <Inject services={[DateTime, Crosshair, Tooltip, RangeTooltip, ColumnSeries, LineSeries, SplineSeries, CandleSeries, HiloOpenCloseSeries, HiloSeries, RangeAreaSeries, Trendlines,
+            EmaIndicator, RsiIndicator, BollingerBands, TmaIndicator, MomentumIndicator, SmaIndicator, AtrIndicator, Export,
+            AccumulationDistributionIndicator, MacdIndicator, StochasticIndicator]}/>
+          <StockChartRowsDirective>
+            <StockChartRowDirective height={'30%'}/>
+            <StockChartRowDirective height={'70%'}/>
+          </StockChartRowsDirective>
+          <StockChartAxesDirective>
+            <StockChartAxisDirective name='yAxis1' rowIndex={1}  tickPosition={'Inside'} opposedPosition={false} lineStyle={{ color: 'transparent' }} majorTickLines={{ color: 'transparent' }}/>
+          </StockChartAxesDirective>
+          <StockChartSeriesCollectionDirective>
+            <StockChartSeriesDirective dataSource={chartDatas} xName='date' yName='close' type='Candle' yAxisName='yAxis1' />
+            <StockChartSeriesDirective dataSource={chartDatas} xName='date' yName='volume' type='Column' enableTooltip={false} />
+          </StockChartSeriesCollectionDirective>
+        </StockChartComponent>
+      </div>
+    </div>
   )
 }
 
