@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Integrations } from '@sentry/tracing'
 import * as Sentry from '@sentry/react'
 import Raven from 'raven-js'
-import './scss/styles1.css';
-import './style/normalize.css';
 import PanelRoutes from './route/panel.routes'
 import PublicRoutes from './route/public.routes'
 import * as actions from './actions/app.actions'

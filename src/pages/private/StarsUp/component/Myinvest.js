@@ -12,7 +12,7 @@ import {useTranslation} from "react-i18next";
 
 
 function Myinvest() {
-  const { t } = useTranslation('common');
+  const {t} = useTranslation('common');
   const dispatch = useDispatch();
   const list = useSelector(state => state.casino.active.list);
 
@@ -22,37 +22,41 @@ function Myinvest() {
 
 
   return (
-    <section className={cl.investbox}>
-      <div className={['container', cl.cont].join` `}>
-        <Row>
-          <Col xl={3} className={cl.navBlock}>
-            <NavBar/>
-          </Col>
-          <Col xl={8} style={{marginLeft: '14%'}}>
-            <div className="inset_page">
-              <div className="startrek__title1">
-                <h1 className={cl.title}>{t('private.investbox.Myinvest.title')}</h1>
-              </div>
-              <p className={cl.descr}>{t('private.investbox.descr')}</p>
-              <div className="investbox_page">
-                <ul className={cl.investListText}>
-                  <li>
+    <section className={'investbox'}>
+      <Row>
+        <Col xl={3} className={'navBlock'}>
+          <NavBar/>
+        </Col>
+        <Col xl={8}>
+          <div className={['container', 'cont'].join` `}>
+            <div className="contentos">
+              <div className="investPage">
+                <div className="startrek__t">
+                  <h1 className={cl.title}>{t('private.investbox.Myinvest.title')}</h1>
+                  <p className={cl.descr}>{t('private.investbox.descr')}</p>
+                  <div className="investBlock">
+                    <ul className={'investListText'}>
+                      <li>
                     <span>
                       {t('private.investbox.text1')}
                     </span>
 
-                  </li>
-                  <li>
+                      </li>
+                      <li>
                     <span>
                       {t('private.investbox.text2')}
                     </span>
 
-                  </li>
-                  <li>
-                    <span>{t('private.investbox.text3')}</span>
-                  </li>
-                </ul>
-                <div className="clear"/>
+                      </li>
+                      <li>
+                        <span>{t('private.investbox.text3')}</span>
+                      </li>
+                    </ul>
+
+
+
+                  </div>
+                </div>
                 <div className={cl.listLinks}>
                   <Link to={routes.starsUp} className="active">
                     {t('private.investbox.starsUp')}
@@ -113,13 +117,13 @@ function Myinvest() {
                                       </tr>
                                       </thead>
                                       {!isEmpty(list) ? (
-                                        list.map(draw =>(
+                                        list.map(draw => (
                                           <tbody className={cl.tbody}>
                                           <tr>
-                                          <td>руб</td>
-                                          <td>5%</td>
-                                          <td>{t('private.investbox.period')}</td>
-                                          <List draw={draw}/>
+                                            <td>руб</td>
+                                            <td>5%</td>
+                                            <td>{t('private.investbox.period')}</td>
+                                            <List draw={draw}/>
                                           </tr>
                                           </tbody>
                                         ))
@@ -174,16 +178,13 @@ function Myinvest() {
                     </tbody>
                   </table>
                 </div>
-                <div className="clear"/>
-                <div className="create_new"/>
-                <div className="clear"/>
               </div>
             </div>
-          </Col>
-        </Row>
-      </div>
-    </section>
-  )
+          </div>
+        </Col>
+      </Row>
+</section>
+)
 }
 
 export default Myinvest

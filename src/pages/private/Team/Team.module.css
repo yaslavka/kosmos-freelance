@@ -53,6 +53,7 @@
 
 .imgUnknow {
     padding: 30px;
+
 }
 
 
@@ -73,27 +74,29 @@
     grid-template-columns: 1fr 4fr;
     gap: 40px;
 }
+.imgPerson{
+  max-width: 95%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #9f86c0;
+  background-color: #ddddddb8;
+  border-radius:50%;
+}
 
 .personCircle {
-    max-width: 140px;
-    height: 70px;
-   overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #9f86c0;
-    background-color: #ddddddb8;
-    border-radius:50%;
+
 }
 
 .checkmark {
     margin-left: 10px;
-
     width: 20px;
     height: 20px;
     display: inline-block;
     position: relative;
-    background-image: url('./../../../scss/media/check-mark-button-svgrepo-com.svg');
+    background-image: url('./../../../assets/images/icons/check-mark-button-svgrepo-com.svg');
 }
 
 .notPayed {
@@ -102,7 +105,7 @@
     height: 20px;
     display: inline-block;
     position: relative;
-    background-image: url('./../../../scss/media/cross-svgrepo-com.svg');
+    background-image: url('./../../../assets/images/icons/cross-svgrepo-com.svg');
 }
 
 .payedBlock {

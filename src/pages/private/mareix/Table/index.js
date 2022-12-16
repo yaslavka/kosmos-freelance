@@ -6,14 +6,11 @@ import styles from './Table.module.scss'
 import { api } from '../../../../api'
 import { matrixActions } from '../../../../store/matrix/actions'
 import * as actions from '../../../../actions/app.actions'
-import closeIcon from '../../../../scss/media/close.ac2aaa1a.svg'
-import rocketLeft from '../../../../scss/media/angle-left.309b1344.svg'
-import rocketRight from '../../../../scss/media/angle-right.2219c635.svg'
+import closeIcon from '../../../../assets/images/icons/close.ac2aaa1a.svg'
 import routes from '../../../../constants/routes.constants'
 import isEmpty from 'lodash-es/isEmpty'
 
 import Select from '../../../../components/Select'
-//import SearchSelect from '../../../../components/SearchSelect'
 import Button from '../../../../components/OldButton'
 import MatrixCell from './MatrixCell'
 import PartnerModal from './PartnerModal'
@@ -22,8 +19,11 @@ import BuyStatusModal from './BuyStatusModal'
 import BuyMatrixModal from './BuyMatrixModal'
 import PartnersClonesModal from './PartnersClonesModal'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
+import {useTranslation} from "react-i18next";
+
 // eslint-disable-next-line react/prop-types
-export default function Tablem({ location: { state = {}, pathname } }) {
+export default function Table({ location: { state = {}, pathname } }) {
+  const { t } = useTranslation('common');
   const history = useHistory()
   const dispatch = useDispatch()
   const { id } = useParams()
@@ -34,12 +34,14 @@ export default function Tablem({ location: { state = {}, pathname } }) {
   const [visibleBuyModal, setVisibleBuyModal] = useState(false)
   const [visibleClonesModal, setVisibleClonesModal] = useState(false)
   const [visiblePartnersClonesModal, setVisiblePartnersClonesModal] = useState(false)
+  const [searchUsers, setSearchUsers] = useState([])
+  const [currentSearchValue, setCurrentSearchValue] = useState('')
   const [selectItems, setSelectItems] = useState(null)
   const [visibleBuyMatrixModal, setVisibleBuyMatrixModal] = useState(false)
   const matrixInfo = useSelector((state) => state.matrixReducer.matrixInfo)
   const matricesList = useSelector((state) => state.matrixReducer.matricesList)
 
-  const buyMatrixUno = () => {
+  const buyMatrix = () => {
     if (matrixInfo && matrixInfo.id) {
       setBuyingStatus({ type: 'pending', message: '' })
       api
@@ -47,7 +49,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
         .then(() => {
           setBuyingStatus({
             type: 'success',
-            message: 'Оплата прошла успешно!',
+            message: `${t('private.Pegasus.buyMatrix.message')}`,
           })
           setVisibleBuyMatrixModal(false)
           setVisibleBuyModal(true)
@@ -80,9 +82,9 @@ export default function Tablem({ location: { state = {}, pathname } }) {
             })
             .catch()
         })
-        .catch((err) => {
+        .catch(() => {
           setVisibleBuyMatrixModal(false)
-          setBuyingStatus({ type: 'error', message: err.message })
+          setBuyingStatus({ type: 'error', message: `${t('private.Pegasus.buyMatrix.error')}` })
           setVisibleBuyModal(true)
         })
     }
@@ -94,7 +96,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
       document.body.style.overflow = 'hidden'
     }
 
-    if ((place === 3 || place === 4) && matrixTree['1']) {
+    if (( place === 4) && matrixTree['1']) {
       if (!info) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
@@ -114,7 +116,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
         )
         setVisiblePartnersClonesModal(true)
       }
-    } else if (place === 1 || place === 2) {
+    } else if (place === 1 || place === 2 || place === 3) {
       if (!info) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
@@ -127,6 +129,12 @@ export default function Tablem({ location: { state = {}, pathname } }) {
     }
   }
 
+  const showClonesModal = () => {
+    if (window.innerWidth < 1200) {
+      document.body.style.overflow = 'hidden'
+    }
+    setVisibleClonesModal(true)
+  }
 
   const showBuyMatrixModal = () => {
     if (window.innerWidth < 1200) {
@@ -210,6 +218,10 @@ export default function Tablem({ location: { state = {}, pathname } }) {
     setVisiblePartnerModal(true)
   }
 
+  const redirectToUserMatrix = (matrixId) => {
+    history.push(`/matrixs/${matrixId}`)
+    setSearchUsers([])
+  }
 
   useEffect(() => {
     if (matrixInfo && matrixInfo.isActive && isFetching) {
@@ -237,7 +249,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
   useEffect(() => {
     if (matrixInfo) {
       api
-        .getNeighboringMatricesUno(matrixInfo.id)
+        .getNeighboringMatrices(matrixInfo.id)
         .then((response) => {
           if (Array.isArray(response.items) && response.items.length > 0) {
             const result = response.items.map(({ name, id }) => ({
@@ -263,6 +275,27 @@ export default function Tablem({ location: { state = {}, pathname } }) {
         .catch(() => {})
     }
   }, [matricesList, dispatch])
+
+  useEffect(() => {
+    if (currentSearchValue.length > 2 && matrixInfo) {
+      api
+        .searchUserByLogin({
+          user_name: currentSearchValue,
+          matrix_type: matrixInfo.id,
+        })
+        .then((response) => {
+          if (Array.isArray(response.items)) {
+            setSearchUsers(
+              response.items.map(({ user_name, matrix_id }) => ({
+                label: user_name,
+                value: matrix_id,
+              })),
+            )
+          }
+        })
+        .catch(() => {})
+    }
+  }, [currentSearchValue, matrixInfo])
 
   //TODO: Remove hardcoded matrixTree
 
@@ -314,9 +347,9 @@ export default function Tablem({ location: { state = {}, pathname } }) {
       let newRoute = '/'
 
       if (matrixInfo && matrixInfo.isActive && !id) {
-        newRoute = `/personal-matrixs/${matrixInfo.id}${route}`
+        newRoute = `/personal-Kepler/${matrixInfo.id}${route}`
       } else if (id) {
-        newRoute = `/matrixs/${id}${route}`
+        newRoute = `/Kepler/${id}${route}`
       }
       return newRoute
     },
@@ -327,20 +360,22 @@ export default function Tablem({ location: { state = {}, pathname } }) {
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>PEGAS-UNO - {matrixInfo.name}</h1>}/>}
+
+          {matrixInfo &&  <MyViewElement element={<h1 className={styles.title}>{t('private.navlinks.matrixs')} - {matrixInfo.name}</h1>}/>}
           {backRouteElement}
         </div>
         <div className={styles.container}>
           <div className={styles.sidebar}>
             {selectItems && (
-            <MyViewElement element={
+              <MyViewElement element={
+
               <Select
                 values={selectItems}
-                placeholder="Мои клоны"
+                placeholder={`${t('private.Pegasus.placeholder')}`}
                 className={styles.matrixSelect}
-                onChange={value => {
+                onChange={(value) => {
                   if (value) {
-                    history.push(`/matrixs/${value}`);
+                    history.push(`/Kepler/${value}`)
                   }
                 }}
               />
@@ -348,9 +383,9 @@ export default function Tablem({ location: { state = {}, pathname } }) {
 
             )}
             {id && (
-            <MyViewElement element={
-
               <div className="d-none d-xl-block">
+              <MyViewElement element={
+
                 <Button
                   onClick={handleUpMatrix}
                   disabled={buyingStatus.type === 'pending'}
@@ -358,21 +393,21 @@ export default function Tablem({ location: { state = {}, pathname } }) {
                   color="perrywinkle"
                   size="small"
                 >
-                  Наверх
+                  {t('private.Pegasus.upp')}
                 </Button>
-              </div>
             }/>
 
+              </div>
             )}
             {matrixInfo && (
               <div className={styles.footer}>
-            <MyViewElement element={
+              <MyViewElement element={
 
-                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
+                <p className={styles.price}>{t('private.Pegasus.price')} - {matrixInfo.summ} RUB</p>
             }/>
 
                 {matrixInfo.canBuy && (
-            <MyViewElement element={
+              <MyViewElement element={
 
                   <Button
                     onClick={showBuyMatrixModal}
@@ -381,8 +416,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
                     color="perrywinkle"
                     size="small"
                   >
-                    Купить
-
+                    {t('private.Pegasus.buy')}
                   </Button>
             }/>
 
@@ -391,9 +425,9 @@ export default function Tablem({ location: { state = {}, pathname } }) {
             )}
           </div>
           <div className={styles.content}>
-          <MyViewElement element={
-
             <div className="d-xl-none mt-4">
+            <MyViewElement element={
+
               <Button
                 onClick={handleUpMatrix}
                 disabled={buyingStatus.type === 'pending'}
@@ -401,11 +435,12 @@ export default function Tablem({ location: { state = {}, pathname } }) {
                 color="perrywinkle"
                 size="small"
               >
-                Наверх
+                {t('private.Pegasus.upp')}
               </Button>
+            }/>
+
             </div>
-          }/>
-          <MyViewElement element={
+            <MyViewElement element={
 
             <div className={styles.matrixTree}>
               <MatrixCell
@@ -414,62 +449,81 @@ export default function Tablem({ location: { state = {}, pathname } }) {
                 isActive={matrixInfo && matrixInfo.isActive}
               />
               <div className={styles.secondRow}>
-                <MatrixCell
-                  place={1}
-                  info={matrixTree['1']}
-                  ancestorInfo={matrixTree['0']}
-                  isActive={matrixInfo && matrixInfo.isActive}
-                  onDoubleClick={() => {
-                    showPartnerModal(matrixTree['1'], 1)
-                  }}
-                />
-                <MatrixCell
-                  place={2}
-                  ancestorInfo={matrixTree['0']}
-                  info={matrixTree['2']}
-                  isActive={matrixInfo && matrixInfo.isActive}
-                  onDoubleClick={() => {
-                    showPartnerModal(matrixTree['2'], 2)
-                  }}
-                />
+                {
+                  matrixInfo.id === 1
+                    ?
+                    <>
+                      <MatrixCell
+                        place={1}
+                        info={matrixTree['1']}
+                        ancestorInfo={matrixTree['0']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['1'], 1)
+                        }}
+                      />
+                      <MatrixCell
+                        place={2}
+                        ancestorInfo={matrixTree['0']}
+                        info={matrixTree['2']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['2'], 2)
+                        }}
+                      />
+                      <MatrixCell
+                        place={3}
+                        ancestorInfo={matrixTree['0']}
+                        info={matrixTree['3']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['3'], 3)
+                        }}
+                      />
+                    </>
+                    :
+                    <>
+                      <MatrixCell
+                        place={1}
+                        info={matrixTree['1']}
+                        ancestorInfo={matrixTree['0']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['1'], 1)
+                        }}
+                      />
+                      <MatrixCell
+                        place={2}
+                        ancestorInfo={matrixTree['0']}
+                        info={matrixTree['2']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['2'], 2)
+                        }}
+                      />
+                    </>
+                }
               </div>
-            </div>
-          }/>
-            <div className={styles.navigation}>
-              <button className={styles.arrow} onClick={() => navigateTo('left')}>
-                <img src={rocketLeft} alt="Left" />
-              </button>
-              <button className={styles.arrow} onClick={() => navigateTo('right')}>
-                <img src={rocketRight} alt="Right" />
-              </button>
-            </div>
 
-            {/* {matrixInfo && (
+            </div>
+            }/>
+
+            {matrixInfo && (
               <div className={styles.footer}>
-                <p className={styles.price}>Цена - {matrixInfo.sum} RUB</p>
+                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
                 {matrixInfo.canBuy && (
                   <Button
                     onClick={showBuyMatrixModal}
                     disabled={buyingStatus.type === 'pending'}
-                    className="w-100"
+                    className="w-1001"
                     color="perrywinkle"
                     size="small"
                   >
-                    Купить
-                  </Button>
-                )}
-                {matrixInfo.isActive && (
-                  <Button
-                    onClick={showClonesModal}
-                    className="w-100"
-                    color="violet-blue"
-                    size="small"
-                  >
-                    Мои клоны
+                    {t('private.Pegasus.buy')}
                   </Button>
                 )}
               </div>
-            )} */}
+            )}
           </div>
         </div>
       </Container>
@@ -485,11 +539,7 @@ export default function Tablem({ location: { state = {}, pathname } }) {
         <ClonesModal matrixType={matrixInfo.id} onClose={closeClonesModal} />
       )}
       {visibleBuyMatrixModal && (
-        <BuyMatrixModal
-          onSubmit={buyMatrixUno}
-          status={buyingStatus}
-          onClose={closeBuyMatrixModal}
-        />
+        <BuyMatrixModal onSubmit={buyMatrix} status={buyingStatus} onClose={closeBuyMatrixModal} />
       )}
     </div>
   )

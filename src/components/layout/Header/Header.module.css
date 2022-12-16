@@ -3,11 +3,11 @@
 .Header {
   position: sticky;
   top: 0;
-  background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
+  background-image: linear-gradient(to bottom, rgba(32, 18, 111, 0) 10%, rgba(13, 70, 159, 0) 100%);
   height: 75px;
   padding: 7.5px 0;
   z-index: 1000;
-  box-shadow: 0 4px 14px hsl(0deg 26% 95% / 25%);
+  box-shadow: 0 4px 14px hsla(0, 28%, 95%, 0.98);
 }
 
 
@@ -149,7 +149,7 @@
   height: calc(100vh - 75px);
 
   width: 100%;
-  background-color: #fff;
+  background-color: rgba(54, 52, 52, 0.85);
 }
 
 .mobileNavBar::-webkit-scrollbar {
@@ -162,7 +162,7 @@
 
 
 .mobileNavLink {
-  font-size: 14px;
+  font-size: 20px;
   color: #4cc9f0 !important;
   font-family: 'Nunito';
 

@@ -2,7 +2,6 @@
     min-height: 100vh;
     height: 100%;
     padding: 120px 0 0;
-    background-image: linear-gradient(to bottom, rgba(32,18,111,1) 10%,rgba(13,70,159,1) 100%);
 }
 
 .headerSign {
@@ -10,7 +9,7 @@
     position: fixed;
     display: grid;
     grid-template-columns: repeat(1, auto);
-    
+
     align-items: center;
     top: 0;
     left: 0;

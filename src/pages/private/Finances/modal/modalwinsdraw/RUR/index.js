@@ -1,7 +1,7 @@
 import React, {useState, useRef} from "react";
 import cl from './MyModal.module.css';
 import {api} from "../../../../../../api";
-import payeerLogo from '../../../../../../scss/media/payeer-logo.8aa750cc.svg'
+import payeerLogo from '../../../../../../assets/images/payeer-logo.8aa750cc.svg'
 import {useTranslation} from "react-i18next";
 import FORMRURfrikassa from "./FORMRURfrikassa";
 import FORMRURpauer from "./FORMRURpauer";
@@ -14,6 +14,7 @@ import { toast } from 'react-toastify'
 import FORMRURCard from "./FORMRURCard";
 import logo from './visa-mastercard.png'
 import FORMRURadv from "./FORMRURadv";
+
 
 const initialValues = {
   amount: '',

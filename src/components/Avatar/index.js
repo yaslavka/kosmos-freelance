@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Formik, Form, Field } from 'formik'
 import styles from './Avatar.module.scss'
-import avatar from '../../scss/media/camera_200.png'
+import avatar from '../../assets/images/icons/camera_200.png'
 import { api } from '../../api'
 import * as actions from '../../actions/app.actions'
 import { isValidImageType } from '../../utils'
@@ -37,7 +37,8 @@ export default function Avatar({ url, className }) {
   }
 
   return (
-    <div className={`${className}`}>
+    <div className={`${className} `}>
+      <img src={url || avatar} alt="аватар пользователя" />
       <Formik
         initialValues={{
           avatar: null,
@@ -62,7 +63,7 @@ export default function Avatar({ url, className }) {
             <Field>
               {({ form }) => (
                 <div className={styles.inputWrapper}>
-                  <img src={url || avatar} alt="аватар пользователя" />
+
                   <Input
                     type="file"
                     accept="image/png, image/jpeg, image/jpg"

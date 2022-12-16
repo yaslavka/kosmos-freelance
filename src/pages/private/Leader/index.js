@@ -2,14 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Row, Col, Container, Button } from 'reactstrap'
 
-import posterVideo from '../../../scss/media/leader-poster-video.56a4c9bf.jpg'
-import avatar from '../../../scss/media/camera_200.png'
-import video from '../../../scss/media/leader-poster-video.56a4c9bf.jpg'
+
+import avatar from '../../../assets/images/icons/camera_200.png'
+
 
 import NavBar from '../../../components/layout/Navbar'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 import {useTranslation} from "react-i18next";
-
+import Chat from "../Chat";
 
 function Leader() {
   const { t } = useTranslation('common');
@@ -150,22 +150,11 @@ function Leader() {
 
                 </div>
               </div>
-              <MyViewElement element={
 
-              <div className='video__block'>
-                <video
-                  controls
-                  poster={posterVideo}
-                  controlsList="nodownload nofullscreen noremoteplayback"
-                  className='video__nas'
-                >
-                  <source src={video} type="video/mp4" />
-                </video>
-              </div>
-                }/>
             </>
           )}
         </Col>
+        <Chat/>
       </Row>
     </Container>
   )

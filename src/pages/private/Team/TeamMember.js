@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import cl from './Team.module.css';
-import personImgDef from './../../../scss/media/person-img-main.svg';
+import personImgDef from './../../../assets/images/icons/person-img-main.svg';
 import r from '../../../constants/routes.constants'
 import { matrixActions } from '../../../store/matrix/actions'
 import StarRating from '../../../components/StarRating'
@@ -22,6 +22,7 @@ function TeamMember({ member }) {
     vkontakte,
     // eslint-disable-next-line react/prop-types
     instagram,
+    avatar,
     // eslint-disable-next-line react/prop-types
     first_name,
     matrix,
@@ -38,14 +39,13 @@ function TeamMember({ member }) {
     },
     [dispatch],
   )
-  let personImg = '';
 
   return (
     <div className={cl.itemPerson}>
       <div className={cl.personBlock}>
       <div className={cl.personIcon}>
         <div className={cl.personCircle}>
-          <img src={personImg ? personImg : personImgDef} className={personImg ? cl.imgPerson : cl.imgUnknow} alt={''}/>
+          <img src={avatar ? `${process.env.REACT_APP_BASE_URL}/user/${avatar}` : personImgDef} className={`${process.env.REACT_APP_BASE_URL}/user/${avatar}` ? cl.imgPerson : cl.imgUnknow} alt={''}/>
         </div>
 
       </div>
@@ -188,6 +188,7 @@ TeamMember.propTypes = {
     username: PropTypes.string,
     email: PropTypes.string,
     phone: PropTypes.string,
+    avatar: PropTypes.string
   }),
 }
 

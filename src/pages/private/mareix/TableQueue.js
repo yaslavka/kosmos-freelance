@@ -8,15 +8,17 @@ import isEmpty from 'lodash-es/isEmpty'
 import styles from './TableQueue.module.scss'
 import routes from '../../../constants/routes.constants'
 import * as actions from '../../../actions/stars.actions'
-import avatarFallback from '../../../scss/media/placeholder.7e85be59.svg'
-import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
-import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
+import avatarFallback from '../../../assets/images/icons/camera_200.png'
+import arrowRight from '../../../assets/images/icons/angle-right.2219c635.svg'
+import arrowLeft from '../../../assets/images/icons/angle-left.309b1344.svg'
+import closeIcon from '../../../assets/images/icons/close.ac2aaa1a.svg'
 import StarRating from '../../../components/StarRating'
 import { Spinner } from 'react-bootstrap'
-import MyViewElement from 'src/components/MyViewElements/MyViewElements'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
-const TableQueuem = ({ location: { state = {} } }) => {
+const TableQueue = ({ location: { state = {} } }) => {
+  const { t } = useTranslation('common');
   const { type } = useParams()
   const dispatch = useDispatch()
 
@@ -30,9 +32,9 @@ const TableQueuem = ({ location: { state = {} } }) => {
     (route = '') => {
       let newRoute = '/'
       if (matrixInfo && matrixInfo.id) {
-        newRoute = `/personal-matrixs/${matrixInfo.id}${route}`
+        newRoute = `/personal-Kepler/${matrixInfo.id}${route}`
       } else if (type) {
-        newRoute = `/matrixs/${type}${route}`
+        newRoute = `/Kepler/${type}${route}`
       }
       return newRoute
     },
@@ -41,18 +43,18 @@ const TableQueuem = ({ location: { state = {} } }) => {
 
   useEffect(() => {
     if (matrixInfo && matrixInfo.id) {
-      dispatch(actions.matrixUnoQueue(matrixInfo.id, { ...state }))
+      dispatch(actions.matrixQueue(matrixInfo.id, { ...state }))
     } else if (type) {
-      dispatch(actions.matrixUnoQueue(type, { ...state }))
+      dispatch(actions.matrixQueue(type, { ...state }))
     }
   }, [dispatch, type, matrixInfo, state])
 
   const handleChangeLine = useCallback(
     (line) => {
       if (matrixInfo && matrixInfo.id) {
-        dispatch(actions.setMatrixUnoQueueLine(line, matrixInfo.id))
+        dispatch(actions.setMatrixQueueLine(line, matrixInfo.id))
       } else if (type) {
-        dispatch(actions.setMatrixUnoQueueLine(line, type))
+        dispatch(actions.setMatrixQueueLine(line, type))
       }
     },
     [dispatch, type, matrixInfo],
@@ -61,9 +63,9 @@ const TableQueuem = ({ location: { state = {} } }) => {
   const handleOnChangePage = useCallback(
     (page) => {
       if (matrixInfo && matrixInfo.id) {
-        dispatch(actions.setMatrixUnoQueuePage(page, matrixInfo.id))
+        dispatch(actions.setMatrixQueuePage(page, matrixInfo.id))
       } else if (type) {
-        dispatch(actions.setMatrixUnoQueuePage(page, type))
+        dispatch(actions.setMatrixQueuePage(page, type))
       }
     },
     [dispatch, type, matrixInfo],
@@ -72,49 +74,35 @@ const TableQueuem = ({ location: { state = {} } }) => {
   const handleOnChangeSearch = useCallback(
     (event) => {
       if (matrixInfo && matrixInfo.id) {
-        dispatch(actions.setMatrixUnoQueueSearch(event.target.value, matrixInfo.id))
+        dispatch(actions.setMatrixQueueSearch(event.target.value, matrixInfo.id))
       } else if (type) {
-        dispatch(actions.setMatrixUnoQueueSearch(event.target.value, type))
+        dispatch(actions.setMatrixQueueSearch(event.target.value, type))
       }
     },
     [dispatch, type, matrixInfo],
   )
 
-
   return (
     <div className={styles.Table}>
       <Container>
         <div className={styles.header}>
-
-          {matrixInfo && <MyViewElement element={<h1 className={styles.title}>STARS - {matrixInfo.name}</h1>}/>}
-          <Link to={routes.matrixs} className={styles.close}>
-        <span className={styles.closeIT}>
-
-        </span>
-        <span className={styles.closeIB}>
-
-        </span>
-      </Link>
+          {matrixInfo && <h1 className={styles.title}>STARS - {matrixInfo.name}</h1>}
+          <Link to={routes.tables} className={styles.close}>
+            <img src={closeIcon} alt="Close" />
+          </Link>
         </div>
         <div className={styles.subHeader}>
           {matrixInfo && matrixInfo.isActive && (
             <nav className={styles.nav}>
-              <MyViewElement element={
               <NavLink to={navRoute()} exact activeClassName={styles.active}>
                 Структура
               </NavLink>
-              }/>
-              <MyViewElement element={
               <NavLink to={navRoute('/queue')} exact activeClassName={styles.active}>
                 Очередь
               </NavLink>
-              }/>
-
             </nav>
           )}
           <div className={styles.actions}>
-          <MyViewElement element={
-
             <div>
               <button
                 className={line === 0 ? styles.active : undefined}
@@ -135,10 +123,7 @@ const TableQueuem = ({ location: { state = {} } }) => {
                 Вторая линия
               </button>
             </div>
-              }/>
-
             {!!line && (
-          <MyViewElement element={
               <div className={styles.search}>
                 <input
                   type="text"
@@ -148,8 +133,6 @@ const TableQueuem = ({ location: { state = {} } }) => {
                   placeholder="Поиск по логину"
                 />
               </div>
-              }/>
-
             )}
           </div>
         </div>
@@ -174,7 +157,7 @@ const TableQueuem = ({ location: { state = {} } }) => {
                         style={{
                           backgroundImage: `url(${
                             user.photo
-                              ? `${process.env.REACT_APP_BASE_URL}/user/${user.photo}`
+                              ? `${process.env.REACT_APP_BASE_URL}/getFile/avatar/${user.photo}`
                               : avatarFallback
                           })`,
                         }}
@@ -188,10 +171,7 @@ const TableQueuem = ({ location: { state = {} } }) => {
                         <div className="card__body">
                           <div className="list-info list-info--horizontal">
                             <div className="list-info__group">
-                            <MyViewElement element={
                               <div className="list-info__label">Закрытых мест в столе</div>
-                            }/>
-
                               <div className="list-info__value">
                                 <StarRating
                                   max={10}
@@ -201,8 +181,6 @@ const TableQueuem = ({ location: { state = {} } }) => {
                                 />
                               </div>
                             </div>
-
-
                           </div>
                         </div>
                       </div>
@@ -237,4 +215,4 @@ const TableQueuem = ({ location: { state = {} } }) => {
   )
 }
 
-export default TableQueuem
+export default TableQueue

@@ -6,6 +6,7 @@ import NavBar from '../../../../../components/layout/Navbar'
 import Fmat from "./fmat";
 import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
+import Chat from "../../../Chat";
 
 function Exchange({match, children}) {
   const { t } = useTranslation('common');
@@ -21,6 +22,7 @@ function Exchange({match, children}) {
               </Col>
               <Fmat pair = {match.params.pair} userInfo={userInfo} t={t}/>
               {children}
+              <Chat/>
             </Row>
           )
         }

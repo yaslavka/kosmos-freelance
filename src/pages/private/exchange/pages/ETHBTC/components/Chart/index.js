@@ -52,7 +52,7 @@ export let tooltipRender = (args) => {
 class Chart extends Component {
   constructor() {
     super(...arguments);
-    this.socket = io('http://localhost:5000');
+    this.socket = io('https://kosmoss.host');
     this.state = {
       chartData:{
         loading: true,
@@ -108,6 +108,12 @@ class Chart extends Component {
     console.log('IKi socketin arasy: --------------------------------')
     this.socket.on(`get_chart_data_${pair}`, (data) => {
       console.log("socket +++++++++++++++++++++++++++", data)
+      this.setState({
+        chartData: {
+          loading: false,
+          data: data
+        }
+      })
     })
     console.log('socketin gutaryan yeri')
     loadChart(pair)
@@ -115,7 +121,7 @@ class Chart extends Component {
 
   componentDidUpdate() {
     const { loadChart, pair} = this.props
-    console.log('UPDATE COMPONENT')
+    console.log('UPDATE COMPONENT', this.state)
     this.socket.on(`get_chart_data_${pair}`, (data) => {
       this.setState({
         chartData: {
@@ -142,6 +148,7 @@ class Chart extends Component {
     if(this.state.chartData && !this.state.chartData.loading && this.state.chartData.data && marketData) {
       var ohlc = this.state.chartData.data.map(item => ({date:new Date(+item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close, volume:+item.volume}))
       var volume = this.state.chartData.data.map(item => ({date:new Date(+item.date), volume:+item.volume}))
+      console.log(ohlc, 'chart-----')
       return (
         <div id='stock-chart' key={pair.id}>
           <div className='stock-chart-headers'>

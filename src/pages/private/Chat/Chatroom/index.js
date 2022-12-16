@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import ScrollToBottom from "react-scroll-to-bottom";
-import avatar from "../../../../scss/media/camera_200.png";
+import avatar from "../../../../assets/images/icons/camera_200.png";
 import {Input} from "reactstrap";
 
 function Chatroom({ socket, userInfo, room }){

@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-// import { Container, Row, Col } from 'react-bootstrap'
 import { HashLink } from 'react-router-hash-link'
 import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
-import logo from '../../../scss/media/kosmos.png'
-import hamburger from '../../../scss/media/hamburger.d7c1214b.svg'
-import signIn from '../../../scss/media/sig.svg'
-import signOut from '../../../scss/media/sign-out.23817495.svg'
-import routes from '../../../constants/routes.constants'
+import logo from './../../../assets/images/logo.png'
+import hamburger from '../../../assets/images/icons/hamburger.d7c1214b.svg'
+import signIn from '../../../assets/images/icons/sig.svg'
+import signOut from '../../../assets/images/icons/sign-out.svg'
+import r from '../../../constants/routes.constants'
 import * as actions from '../../../actions/auth.actions'
-import leader from '../../../scss/media/leader.42ee91d2.svg'
-import user from '../../../scss/media/user.5e48b571.svg'
-import news from '../../../scss/media/news.58147b12.svg'
-import luckyStar from '../../../scss/media/12345.png'
-import starsUp from '../../../scss/media/leader.42ee91d2.svg'
-import question from '../../../scss/media/question.d8eb4f5a.svg'
-import money from '../../../scss/media/money-coin.1ab3ac3b.svg'
-import team from '../../../scss/media/team.9cf5738b.svg'
-import cap from '../../../scss/media/academic-cap.24d75e30.svg'
-import gear from '../../../scss/media/gear.08e3a0ec.svg'
-import bbb from '../../../scss/media/bbb.svg'
-import chat from '../../../scss/media/chat.svg'
-import {useTranslation} from "react-i18next";
+import chat from '../../../assets/images/icons/chat-met.svg'
+import leader from '../../../assets/images/icons/leader.42ee91d2.svg'
+import user from '../../../assets/images/icons/user.5e48b571.svg'
+import news from '../../../assets/images/icons/news.58147b12.svg'
+import luckyStar from '../../../assets/images/icons/12345.png'
+import starsUp from '../../../assets/images/icons/leader.42ee91d2.svg'
+import question from '../../../assets/images/icons/question.d8eb4f5a.svg'
+import money from '../../../assets/images/icons/money-coin.1ab3ac3b.svg'
+import team from '../../../assets/images/icons/team.9cf5738b.svg'
+import gear from '../../../assets/images/icons/gear.08e3a0ec.svg'
+import bbb from '../../../assets/images/icons/bbb.svg'
+import { useTranslation } from 'react-i18next'
+import routes from "../../../constants/routes.constants";
 
 const publicNavLinks = [
   {
@@ -68,67 +67,67 @@ const privateNavLinks = [
     isDisabled: false,
     icon: news,
   },
-  // {
-  //   label: 'matrixmini',
-  //   route: routes.matrixmini,
-  //   isDisabled: true,
-  //   icon: logo,
-  // },
-  {
-    label: 'matrixs',
-    route: routes.matrixs,
-    isDisabled: false,
-    icon: logo,
-  },
   {
     label: 'tables',
     route: routes.tables,
     isDisabled: false,
     icon: logo,
   },
-  {
-    label: 'premiumStars',
-    route: routes.premiumStars,
-    isDisabled: false,
-    icon: logo,
-  },
   // {
-  //   label: 'superStars',
-  //   route: routes.superStars,
+  //   label: 'matrixs',
+  //   route: routes.matrixs,
   //   isDisabled: true,
   //   icon: logo,
   // },
-  {
-    label: 'starTrek',
-    route: routes.starTrek,
-    isDisabled: false,
-    icon: logo,
-  },
-  {
-    label: 'milkyway',
-    route: routes.milkyway,
-    isDisabled: false,
-    icon: logo,
-  },
-  {
-    label: 'exchange',
-    route: routes.exchange,
-    isDisabled: false,
-    icon: starsUp ,
-  },
-  {
-    label: 'starsUp',
-    route: routes.starsUp,
-    isDisabled: false,
-    icon: luckyStar,
-  },
-  {
-    label: 'casino',
-    route: routes.casino,
-    isDisabled: false,
-    classImg: styles.gamepad,
-    icon: bbb,
-  },
+  // {
+  //   label: 'matrixmini',
+  //   route: routes.matrixmini,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'premiumStars',
+  //   route: routes.premiumStars,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'superStars',
+  //   route: routes.superStars,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'starTrek',
+  //   route: routes.starTrek,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'milkyway',
+  //   route: routes.milkyway,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'exchange',
+  //   route: routes.exchange,
+  //   isDisabled: false,
+  //   icon: starsUp ,
+  // },
+  // {
+  //   label: 'starsUp',
+  //   route: routes.starsUp,
+  //   isDisabled: false,
+  //   icon: luckyStar,
+  // },
+  // {
+  //   label: 'casino',
+  //   route: routes.casino,
+  //   isDisabled: false,
+  //   classImg: styles.gamepad,
+  //   icon: bbb,
+  // },
   {
     label: 'aboutUs',
     route: routes.aboutUs,
@@ -142,36 +141,12 @@ const privateNavLinks = [
     isDisabled: false,
     icon: team,
   },
-  // {
-  //   label: 'smm',
-  //   route: routes.smm,
-  //   isDisabled: false,
-  //   icon: team,
-  // },
-  // {
-  //   label: 'Промо',
-  //   route: routes.promo,
-  //   isDisabled: true,
-  //   icon: megaphone,
-  // },
-  // {
-  //   label: 'education',
-  //   route: routes.education,
-  //   isDisabled: true,
-  //   icon: cap,
-  // },
   {
     label: 'chat',
     isDisabled: false,
     route: routes.chat,
     icon: chat,
   },
-  // {
-  //   label: 'Отзывы',
-  //   route: routes.reviews,
-  //   isDisabled: true,
-  //   icon: reviews,
-  // },
   {
     label: 'settings',
     route: routes.settings,
@@ -182,7 +157,7 @@ const privateNavLinks = [
 
 // eslint-disable-next-line react/prop-types
 export default function Header({ variant }) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common')
   const dispatch = useDispatch()
   const [isNavMenuVisible, setIsNavMenuVisible] = useState(false)
   const [isHeaderVisible, setIsHeaderVisible] = useState(false)
@@ -211,11 +186,9 @@ export default function Header({ variant }) {
   }, [])
 
   return (
-    <header
-      className={`${styles.Header} ${styles[variant]} ${isHeaderVisible ? styles.visible : ''}`}
-    >
+    <div className={`${styles.Header} ${styles[variant]} ${isHeaderVisible ? styles.visible : ''}`}>
       <div className={styles.wrapper}>
-        <div className='container'>
+        <div className="container">
           {variant === 'public' && (
             <div className={styles.row}>
               <div className={styles.col}>
@@ -262,7 +235,7 @@ export default function Header({ variant }) {
                 </nav>
               </div>
               <div>
-                <Link to={routes.signIn} className={styles.signInLink}>
+                <Link to={r.signIn} className={styles.signInLink}>
                   <img src={signIn} alt="Войти" />
                   Войти
                 </Link>
@@ -273,37 +246,34 @@ export default function Header({ variant }) {
             </div>
           )}
 
-
-
-
-
           {variant === 'private' && (
             <div className={styles.headerMCont}>
               <div className={styles.headerLogoBlock}>
-                <Link to={routes.root} className={styles.mainLogoLink}>
-                    <span className={styles.mainLogo}/>
+                <Link to={r.root} className={styles.mainLogoLink}>
+                  <span className={styles.mainLogo} />
                 </Link>
               </div>
               <div className={styles.contentCard}>
-                <div className={styles.burgerBlock}>
-                  <button className={burger ? [styles.hamburgerButton, styles.burgerActive].join` ` : styles.hamburgerButton} onClick={toggleNavMenu}>
-                  <span className={styles.lineBurgerTop}/>
-                  <span className={styles.lineBurger}/>
-                  <span className={styles.lineBurgerBottom}/>
+                <div className={'burgerBlock'}>
+                  <button
+                    className={
+                      burger ? ['hamburgerButton', 'burgerActive'].join` ` : 'hamburgerButton'
+                    }
+                    onClick={toggleNavMenu}
+                  >
+                    <span className={'lineBurgerTop'} />
+                    <span className={'lineBurger'} />
+                    <span className={'lineBurgerBottom'} />
                   </button>
                 </div>
-                <div className={styles.logoutBlock}>
-                  <button className={styles.signoutButton} onClick={logout}>
-                    <img src={signOut} alt="Выйти" className={styles.imgLogout}/>
+                <div className={'logoutBlock'}>
+                  <button className={'signoutButton'} onClick={logout}>
+                    <img src={signOut} alt="Выйти" className={'imgLogout logoutBlock'} />
                   </button>
                 </div>
-                </div>
+              </div>
             </div>
           )}
-
-
-
-
         </div>
         <nav className={`${styles.mobileNavBar} ${isNavMenuVisible ? styles.opened : ''}`}>
           <div>
@@ -316,7 +286,7 @@ export default function Header({ variant }) {
                     className={styles.mobileNavLink}
                     onClick={toggleNavMenu}
                   >
-                    {t(`private.navlinks.${label.replace(/ /g, "\u00a0")}`)}
+                    {t(`private.navlinks.${label.replace(/ /g, '\u00a0')}`)}
                   </Link>
                 ))}
               </div>
@@ -324,6 +294,6 @@ export default function Header({ variant }) {
           </div>
         </nav>
       </div>
-    </header>
+    </div>
   )
 }

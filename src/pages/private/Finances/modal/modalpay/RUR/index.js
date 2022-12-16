@@ -13,11 +13,11 @@ const validationSchem = yup.object({
     .typeError('Сумма должно быть числом')
     .positive('Сумма должна быть положительной')
     .required('Необходимо заполнить это поле')
-    .min(2000,'минимальная сумма 2000р')
+    .min(600,'минимальная сумма 600р')
 })
 
 const CreatePayrur =({title, modalrur, setModalrur, userInfo})=>{
-  const initialValue = { Amount: '', OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1670485393713DEMO'}
+  const initialValue = { Amount: '', OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1670485393713'}
   const { t } = useTranslation('common');
   const [modals, setModals] = useState(false)
   const blockModal = useRef('')
@@ -26,7 +26,7 @@ const CreatePayrur =({title, modalrur, setModalrur, userInfo})=>{
   const [isCurrencyAndCount, setIsCurrencyAndCount] = useState({count: '', currency: ''})
   const submitCreatePayeerPayForm = ({ Amount }) => {
     api
-      .createPayeerPay({ Amount:`${Amount}.00`*100,  OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1670485393713DEMO'})
+      .createPayeerPay({ Amount:`${Amount}.00`*100,  OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1670485393713'})
       .then((response) => {
         if (response.data.PaymentURL) {
           window.location.replace(response.data.PaymentURL)

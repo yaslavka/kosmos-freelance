@@ -18,7 +18,7 @@ import reportWebVitals from './reportWebVitals'
 import 'react-toastify/dist/ReactToastify.css'
 import 'react-image-lightbox/style.css'
 import './config/i18n'
-import './scss/styles.css'
+import './index.css'
 //import './pages/private/exchange/index.scss';
 
 export const store = configureStore()

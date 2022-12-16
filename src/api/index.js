@@ -122,8 +122,14 @@ export const api = {
   getMatrixMiniStructureByType(type) {
     return baseInstance.get(`matrix/mini/structure?matrix_type=${type}`)
   },
+  getMatrixssStructureByType(type) {
+    return baseInstance.get(`matrix/ss/structure?matrix_type=${type}`)
+  },
   getMatrixMiniStructureById(id) {
     return baseInstance.get(`matrix/mini/structure?matrix_id=${id}`)
+  },
+  getMatrixssStructureById(id) {
+    return baseInstance.get(`matrix/ss/structure?matrix_id=${id}`)
   },
   buyMatrixMini(matrix_id) {
     return baseInstance.post('matrix/mini/buy', { matrix_id })
@@ -131,13 +137,25 @@ export const api = {
   getMatrixMiniListForInstall(matrix_type) {
     return baseInstance.get(`matrix/mini/for-install?matrix_type=${matrix_type}`)
   },
+  getMatrixssListForInstall(matrix_type) {
+    return baseInstance.get(`matrix/ss/for-install?matrix_type=${matrix_type}`)
+  },
   installMatrixMini(matrixInfo) {
+    return baseInstance.post('matrix/mini/install', matrixInfo)
+  },
+  installMatrixss(matrixInfo) {
     return baseInstance.post('matrix/mini/install', matrixInfo)
   },
   getMatrixMiniClonesCout(matrix_type) {
     return baseInstance.get(`matrix/mini/clone?matrix_type=${matrix_type}`)
   },
+  getMatrixssClonesCout(matrix_type) {
+    return baseInstance.get(`matrix/mini/clone?matrix_type=${matrix_type}`)
+  },
   arrangeMatrixMiniClones(matrixClonesInfo) {
+    return baseInstance.post('matrix/mini/install-clone', matrixClonesInfo)
+  },
+  arrangeMatrixssClones(matrixClonesInfo) {
     return baseInstance.post('matrix/mini/install-clone', matrixClonesInfo)
   },
   getNeighboringMatricesMini(matrixType) {
@@ -246,6 +264,9 @@ export const api = {
     return baseInstance.post('matrix/auto/target-install-clone', matrixInfo)
   },
   getUpperAutoStructureById(matrixId) {
+    return baseInstance.get(`matrix/auto/structure-upper?matrix_id=${matrixId}`)
+  },
+  getUpperssStructureById(matrixId) {
     return baseInstance.get(`matrix/auto/structure-upper?matrix_id=${matrixId}`)
   },
   // Wallet

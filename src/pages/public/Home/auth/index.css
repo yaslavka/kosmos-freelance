@@ -1,0 +1,109 @@
+ .authentication {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    transform: translateY(0);
+    -webkit-animation: animate-1 1s ease-out;
+    animation: animate-1 1s ease-out;
+    position: relative;
+    z-index: unset;
+    opacity: 1;
+}
+ .authentication:after {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    top: 99%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 0;
+    animation: animate-2 1s ease-out
+}
+ .authentication--animate {
+    transform: translateY(350px);
+    z-index: 2;
+    animation: unset!important;
+    opacity: 0
+}
+ .authentication--animate:after {
+    min-height: 350px;
+    animation: unset!important
+}
+.authentication--animate  .authentication__flex {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: unset!important
+}
+ .authentication__container {
+     width: 100%;
+     box-sizing: border-box;
+     max-width: 1250px;
+     padding: 0 20px;
+     margin: 0 auto;
+ }
+.authentication__flex {
+     display: flex;
+     flex-wrap: wrap;
+     margin-left: -10px;
+     margin-right: -10px;
+     justify-content: space-between;
+     opacity: 1;
+     transform: translateY(0);
+     -webkit-animation: animate-3 1s ease-out;
+     animation: animate-3 1s ease-out;
+     position: relative;
+     z-index: 1;
+ }
+
+ .authentication__btn {
+     margin-left: 10px;
+     margin-right: 10px
+ }
+ .button--violet{
+     background-color: rgb(255, 255, 255);
+     border-color: #fff;
+ }
+ .button--svg-evlipses{
+     padding-right: 100px;
+     margin-right: 18px!important;
+ }
+ .button__svg-eclipses{
+     position: absolute;
+     top: 50%;
+     right: -18px;
+     transform: translateY(-50%);
+ }
+ .button{
+     position: relative;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding: 15px 35px;
+     border: 1px solid #ffffff;
+     background-color: transparent;
+     border-radius: 35px;
+     color: #ffffff;
+     text-decoration: unset;
+     transition: .3s;
+     font-weight: 700;
+     outline: transparent;
+     cursor: pointer;
+ }
+ @media (max-width: 550px) {
+     .authentication__btn-wrap {
+         align-self: stretch;
+         background-color: #11032c00;
+         width: 100%;
+         display: block;
+         align-items: center;
+         justify-content: center;
+         margin-top: -350px;
+     }
+
+     .authentication__btn-wrap:last-of-type {
+         margin-top: -20px
+     }
+     .button{
+         margin-bottom: 30px;
+     }
+ }

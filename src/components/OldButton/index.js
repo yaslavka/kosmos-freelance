@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Button.module.scss'
 
 export default function Button({
   // eslint-disable-next-line react/prop-types

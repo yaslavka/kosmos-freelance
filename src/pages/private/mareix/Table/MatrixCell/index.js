@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import dayjs from 'dayjs'
 
-import avatarFallback from '../../../../../scss/media/camera_200.png'
+import avatarFallback from '../../../../../assets/images/icons/camera_200.png'
 import styles from './MatrixCell.module.scss'
 
 const branchingLines = (place) => {
@@ -17,7 +17,7 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#a7ffb673" strokeWidth="1.5" />
+        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#00BBF9D1" strokeWidth="1.5" />
       </svg>
     )
   } else if (place === 1 || place === 2 || place === 3) {
@@ -29,13 +29,15 @@ const branchingLines = (place) => {
         viewBox="0 0 92 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-      ></svg>
+      >
+
+      </svg>
     )
   }
 }
 
 // eslint-disable-next-line react/prop-types
-export default function MatrixCell({ place, info, isActive }) {
+export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
   const history = useHistory()
   const [isMobile, setIsMobile] = useState(null)
 
@@ -44,7 +46,9 @@ export default function MatrixCell({ place, info, isActive }) {
       // eslint-disable-next-line react/prop-types
       if (info && info.id) {
         // eslint-disable-next-line react/prop-types
-        history.push(`/matrixs/${info.id}`)
+        history.push(`/Kepler/${info.id}`)
+      } else {
+        onDoubleClick()
       }
     }
   }
@@ -85,7 +89,7 @@ export default function MatrixCell({ place, info, isActive }) {
       )}
       <div className={styles.photo}>
         <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 62">
-          <circle cx="30.6305" cy="30.9177" r="25.2154" stroke="#a7ffb673" strokeWidth="9.86691" />
+          <circle cx="30.6305" cy="30.9177" r="25.2154" stroke="#00BBF9A6" strokeWidth="9.86691" />
         </svg>
         <img
           src={`${

@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col'
 import styles from './PartnerModal.module.scss'
 import { api } from '../../../../../api'
 
-import avatar from '../../../../../scss/media/placeholder.7e85be59.svg'
+import avatar from '../../../../../assets/images/icons/camera_200.png'
 import Button from '../../../../../components/OldButton'
 
 //TODO: create component 'Modal'

@@ -11,6 +11,7 @@ import NewsItemPage from './NewsItemPage'
 import NewsBlock from './NewsBlock'
 import NewsList from './NewsList'
 import { Spinner } from 'react-bootstrap'
+import Chat from "../Chat";
 
 const NewsPage = () => {
   const dispatch = useDispatch()
@@ -43,6 +44,7 @@ function News() {
             <Redirect to={routes.news} />
           </Switch>
         </Col>
+        <Chat/>
       </Row>
     </Container>
   )

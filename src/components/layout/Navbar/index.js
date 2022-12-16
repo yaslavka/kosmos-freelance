@@ -2,19 +2,17 @@ import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './NavBar.module.css'
 import routes from '../../../constants/routes.constants'
-import user from '../../../scss/media/acc.svg'
-import news from '../../../scss/media/news.svg'
-import question from '../../../scss/media/about-m.svg'
-import money from '../../../scss/media/briefcase.svg'
-import team from '../../../scss/media/seo.svg'
-import logo from '../../../scss/media/business.svg'
-import luckyStar from '../../../scss/media/stonks.svg'
-import starsUp from '../../../scss/media/marketing.svg'
-import bbb from '../../../scss/media/gamepad.svg'
-import cap from '../../../scss/media/bot.svg'
-import chat from '../../../scss/media/chat-met.svg'
-import gear from '../../../scss/media/settings-met.svg'
-import leader from '../../../scss/media/mentor-blue.svg'
+import user from '../../../assets/images/icons/acc.svg'
+import news from '../../../assets/images/icons/news.svg'
+import question from '../../../assets/images/icons/about-m.svg'
+import money from '../../../assets/images/icons/briefcase.svg'
+import team from '../../../assets/images/icons/seo.svg'
+import logo from '../../../assets/images/icons/business.svg'
+// import luckyStar from '../../../assets/images/icons/stonks.svg'
+// import starsUp from '../../../assets/images/icons/marketing.svg'
+// import bbb from '../../../assets/images/icons/gamepad.svg'
+import gear from '../../../assets/images/icons/settings-met.svg'
+import leader from '../../../assets/images/icons/mentor-blue.svg'
 import {useTranslation} from "react-i18next";
 
 const navbarLinks = [
@@ -42,67 +40,67 @@ const navbarLinks = [
     isDisabled: false,
     icon: news,
   },
-  // {
-  //   label: 'matrixmini',
-  //   route: routes.matrixmini,
-  //   isDisabled: true,
-  //   icon: logo,
-  // },
-  {
-    label: 'matrixs',
-    route: routes.matrixs,
-    isDisabled: false,
-    icon: logo,
-  },
   {
     label: 'tables',
     route: routes.tables,
     isDisabled: false,
     icon: logo,
   },
-  {
-    label: 'premiumStars',
-    route: routes.premiumStars,
-    isDisabled: false,
-    icon: logo,
-  },
+  // {
+  //   label: 'matrixs',
+  //   route: routes.matrixs,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'matrixmini',
+  //   route: routes.matrixmini,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'premiumStars',
+  //   route: routes.premiumStars,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
   // {
   //   label: 'superStars',
   //   route: routes.superStars,
-  //   isDisabled: true,
+  //   isDisabled: false,
   //   icon: logo,
   // },
-  {
-    label: 'starTrek',
-    route: routes.starTrek,
-    isDisabled: false,
-    icon: logo,
-  },
-  {
-    label: 'milkyway',
-    route: routes.milkyway,
-    isDisabled: false,
-    icon: logo,
-  },
-  {
-    label: 'exchange',
-    route: routes.exchange,
-    isDisabled: false,
-    icon: starsUp ,
-  },
-  {
-    label: 'starsUp',
-    route: routes.starsUp,
-    isDisabled: false,
-    icon: luckyStar,
-  },
-  {
-    label: 'casino',
-    route: routes.casino,
-    isDisabled: false,
-    classImg: styles.gamepad,
-    icon: bbb,
-  },
+  // {
+  //   label: 'starTrek',
+  //   route: routes.starTrek,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'milkyway',
+  //   route: routes.milkyway,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
+  // {
+  //   label: 'exchange',
+  //   route: routes.exchange,
+  //   isDisabled: false,
+  //   icon: starsUp ,
+  // },
+  // {
+  //   label: 'starsUp',
+  //   route: routes.starsUp,
+  //   isDisabled: false,
+  //   icon: luckyStar,
+  // },
+  // {
+  //   label: 'casino',
+  //   route: routes.casino,
+  //   isDisabled: false,
+  //   classImg: styles.gamepad,
+  //   icon: bbb,
+  // },
   {
     label: 'aboutUs',
     route: routes.aboutUs,
@@ -116,36 +114,6 @@ const navbarLinks = [
     isDisabled: false,
     icon: team,
   },
-  // {
-  //   label: 'smm',
-  //   route: routes.smm,
-  //   isDisabled: false,
-  //   icon: team,
-  // },
-  // {
-  //   label: 'Промо',
-  //   route: routes.promo,
-  //   isDisabled: true,
-  //   icon: megaphone,
-  // },
-  // {
-  //   label: 'education',
-  //   route: routes.education,
-  //   isDisabled: true,
-  //   icon: cap,
-  // },
-  {
-    label: 'chat',
-    isDisabled: false,
-    route: routes.chat,
-    icon: chat,
-  },
-  // {
-  //   label: 'Отзывы',
-  //   route: routes.reviews,
-  //   isDisabled: true,
-  //   icon: reviews,
-  // },
   {
     label: 'settings',
     route: routes.settings,

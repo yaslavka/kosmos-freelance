@@ -64,13 +64,13 @@ class Xc extends Component{  constructor(props) {
           <>
             <div className="line_first">
               <span className="c1">{t('private.exchange.trade.pair.sell.balance')}</span>
-              <Button className="c2 clBuyBalance"
+              <div role={"button"} className="c2 clBuyBalance"
                       onClick={this.balanceHandler}
               >
                   <span id="label_buy_balance">
                      {(userInfo?.balanceCrypto[`${market.coin}`]) ? userInfo?.balanceCrypto[`${market.coin}`] : 0.00000000} {market.coin}
                   </span>
-              </Button>
+              </div>
             </div>
           </>
           <form onChange={this.handleChange}>
@@ -95,7 +95,7 @@ class Xc extends Component{  constructor(props) {
                   }}
                   value={this.state.count}
                 />
-                <span className="currency">{market.coin}</span>
+                <label className="currency">{market.coin}</label>
               </div>
             </div>
             <div className="line">
@@ -118,7 +118,7 @@ class Xc extends Component{  constructor(props) {
                   }}
                   value={this.state.price}
                 />
-                <span className="currency">{market.market}</span>
+                <label className="currency">{market.market}</label>
               </div>
             </div>
             <div className="line">
@@ -142,11 +142,11 @@ class Xc extends Component{  constructor(props) {
                   }}
                   value={this.state.total}
                 />
-                <span className="currency">{market.market}</span>
+                <label className="currency">{market.market}</label>
               </div>
             </div>
             <div className="line">
-              <span>{t('private.exchange.trade.pair.sell.Input.fee')} (0.2%):</span>
+              <label>{t('private.exchange.trade.pair.sell.Input.fee')} (0.2%):</label>
               <div className="poles">
                 <Input
                   name="fee"
@@ -155,11 +155,11 @@ class Xc extends Component{  constructor(props) {
                   min={0.00000000}
                   value={Number(this.state.total * 0.002).toFixed(8)}
                   readOnly/>
-                <span className="currency">{market.market}</span>
+                <label className="currency">{market.market}</label>
               </div>
             </div>
             <div className="line">
-              <span>{t('private.exchange.trade.pair.sell.Input.totalfee')}</span>
+              <label>{t('private.exchange.trade.pair.sell.Input.totalfee')}</label>
               <div className="poles">
                 <Input
                   name="totalfee"
@@ -168,7 +168,7 @@ class Xc extends Component{  constructor(props) {
                   readOnly
                   value={Number(Number(this.state.total) - Number(this.state.total * 0.002)).toFixed(8)}
                 />
-                <span className="currency">{market.market}</span>
+                <label className="currency">{market.market}</label>
               </div>
             </div>
             <div className="line" flow="horizontal">

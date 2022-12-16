@@ -66,20 +66,19 @@ class Form1 extends Component {
             <>
               <div className="line_first">
                 <span className="c1">{t('private.exchange.trade.pair.buy.balance')}</span>
-                <Button
+                <div role={"button"}
                   className="c2 clBuyBalance"
                   onClick={this.balanceHandler}
                 >
                   <span id="label_buy_balance">
                     {(userInfo?.balanceCrypto[`${market.market}`]) ? userInfo?.balanceCrypto[`${market.market}`] : 0.00000000} {market.market}
-                    {console.log(userInfo.balanceCrypto)}
                   </span>
-                </Button>
+                </div>
               </div>
             </>
             <form onChange={this.handleChange}>
               <div className="line">
-                <span className="span">{t('private.exchange.trade.pair.buy.Input.amount')}</span>
+                <label className="span">{t('private.exchange.trade.pair.buy.Input.amount')}</label>
                 <div className="poles">
                   <Input
                     name="amount"
@@ -99,11 +98,11 @@ class Form1 extends Component {
                     }}
                     value={this.state.count}
                   />
-                  <span className="currency">{market.coin}</span>
+                  <label className="currency">{market.coin}</label>
                 </div>
               </div>
               <div className="line">
-                <span className="span">{t('private.exchange.trade.pair.buy.Input.price')}</span>
+                <label className="span">{t('private.exchange.trade.pair.buy.Input.price')}</label>
                 <div className="poles">
                   <Input
                     name="price"
@@ -122,11 +121,11 @@ class Form1 extends Component {
                     }}
                     value={this.state.price}
                   />
-                  <span className="currency">{market.market}</span>
+                  <label className="currency">{market.market}</label>
                 </div>
               </div>
               <div className="line">
-                <span className="span">{t('private.exchange.trade.pair.buy.Input.total')}</span>
+                <label className="span">{t('private.exchange.trade.pair.buy.Input.total')}</label>
                 <div className="poles">
                   <Input
                     name="total"
@@ -146,13 +145,13 @@ class Form1 extends Component {
                     }}
                     value={this.state.total}
                   />
-                  <span className="currency">{market.market}</span>
+                  <label className="currency">{market.market}</label>
                 </div>
               </div>
               <div className="line">
-                <span className="span">
+                <label className="span">
                   {t('private.exchange.trade.pair.buy.Input.fee')} (0.2%):
-                </span>
+                </label>
                 <div className="poles">
                   <Input
                     name="fee"
@@ -162,11 +161,11 @@ class Form1 extends Component {
                     value={Number(this.state.total * 0.002).toFixed(8)}
                     readOnly
                   />
-                  <span className="currency">{market.market}</span>
+                  <label className="currency">{market.market}</label>
                 </div>
               </div>
               <div className="line">
-                <span className="span">{t('private.exchange.trade.pair.buy.Input.totalfee')}</span>
+                <label className="span">{t('private.exchange.trade.pair.buy.Input.totalfee')}</label>
                 <div className="poles">
                   <Input
                     name="totalfee"
@@ -177,7 +176,7 @@ class Form1 extends Component {
                       Number(this.state.total) + Number(this.state.total * 0.002),
                     ).toFixed(8)}
                   />
-                  <span className="currency">{market.market}</span>
+                  <label className="currency">{market.market}</label>
                 </div>
               </div>
               <div className="line" flow="horizontal">

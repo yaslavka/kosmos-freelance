@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import spriteIcons from '../../assets/images/icons/sprite-icons.68000db4.svg'
 
-import spriteIcons from '../../scss/media/sprite-icons.68000db4.svg'
 
 function Icon({ iconName, externalClass }) {
   const defaultClass = classNames('icons', {

@@ -2,10 +2,10 @@ import React from 'react'
 import cl from '../Finance.module.css';
 import {useTranslation} from "react-i18next";
 import MyViewElement from "../../../../components/MyViewElements/MyViewElements";
-import rubleImg from "../../../../scss/media/rouble-svgrepo-com.svg";
+import rubleImg from "../../../../assets/images/icons/rouble-svgrepo-com.svg";
 import {useSelector} from "react-redux";
 import {formatter} from "../../../../utils";
-import btcImg from './../../../../scss/media/btc-svgrepo-com.svg'
+import btcImg from './../../../../assets/images/icons/btc-svgrepo-com.svg'
 
 const BTCbalance =({setBtcmodel, setBtcmodelw})=>{
   const userInfo = useSelector((state) => state.app.user)
@@ -38,10 +38,10 @@ const BTCbalance =({setBtcmodel, setBtcmodelw})=>{
             </div>
             <div className={cl.transItemBottom}>
               <div>
-                <button className={cl.transBtn} onClick={e=>{e.preventDefault();setBtcmodel(true)}}>{t('private.finances.pays')}</button>
+                <button  className={'fin-btn'} onClick={e=>{e.preventDefault();setBtcmodel(true)}}>{t('private.finances.pays')}</button>
               </div>
               <div>
-                <button className={cl.transBtn} onClick={e=>{e.preventDefault();setBtcmodelw(true)}}>{t('private.finances.winthdraw')}</button>
+                <button className={'fin-btn'} onClick={e=>{e.preventDefault();setBtcmodelw(true)}}>{t('private.finances.winthdraw')}</button>
               </div>
             </div>
           </div>

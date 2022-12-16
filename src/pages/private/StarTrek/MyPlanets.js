@@ -13,8 +13,6 @@ import Button from '../../../components/Button'
 import Icon from '../../../components/Icon'
 import {useTranslation} from "react-i18next";
 
-
-
 function MyPlanets() {
   const { t } = useTranslation('common');
   const history = useHistory()

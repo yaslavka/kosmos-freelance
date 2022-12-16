@@ -6,11 +6,26 @@ import omit from 'lodash-es/omit'
 import RouteWithSubRoutes from '../components/RouteWithSubRoutes'
 import { publicRouteConfig } from '../routes'
 import r from '../constants/routes.constants'
+import video from '../assets/video/1.mp4'
+import './public.css'
 
 function PublicRoutes({ history }) {
   return (
     <BrowserRouter history={history}>
       <Router>
+        <main className="overlay">
+          <div className="fullscreen-bg">
+            <video
+              loop="loop"
+              muted="muted"
+              autoPlay="autoplay"
+              preload="auto"
+              className="fullscreen-bg__video"
+            >
+              <source src={video} type="video/mp4" />
+            </video>
+          </div>
+        </main>
         <main className="app">
           <Switch>
             {publicRouteConfig.map((route) => (

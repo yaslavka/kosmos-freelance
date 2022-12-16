@@ -7,7 +7,7 @@
   max-width: 400px;
   width: 100%;
    transition: all .35s ease-in-out;
- top: -1090px;
+ top: -550px;
 }
 
 
@@ -25,7 +25,7 @@
 
   overflow: hidden;
   padding-bottom: 100px;
-  background-color: #00e5fd;
+  background-color: rgba(0, 229, 253, 0);
   border-bottom: 2px solid #4cc9f0;
   border-left: 2px solid #4cc9f0;
   border-right: 2px solid #4cc9f0;
@@ -46,7 +46,7 @@
   right: 0;
   left: 0;
   margin: auto;
-  background-image: url('./../../../scss/media/arrow-nav.svg');
+  background-image: url('./../../../assets/images/icons/arrow-nav.svg');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -72,9 +72,12 @@
 }
 
 .navLink span {
-  color: #003566;
+  color: #4cc9f0;
   opacity: 0;
+  font-family: var(--nunito);
+  font-weight: 900;
   pointer-events: none;
+  font-size:20px;
   transform: translateX(-30px);
   transition: all .3s ease-in-out;
 }

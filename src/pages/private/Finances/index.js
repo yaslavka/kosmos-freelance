@@ -9,6 +9,7 @@ import MoneyTransferModal from "./MoneyTransferModal";
 import OperationsHistoryModal from "./OperationsHistoryModal";
 import MyViewElement from 'src/components/MyViewElements/MyViewElements';
 import {useTranslation} from "react-i18next";
+import Chat from "../Chat";
 
 function Finances() {
   const { t } = useTranslation('common');
@@ -132,6 +133,7 @@ function Finances() {
               </>
             )}
           </Col>
+          <Chat/>
         </Row>
       </Container>
       <MoneyTransferModal />

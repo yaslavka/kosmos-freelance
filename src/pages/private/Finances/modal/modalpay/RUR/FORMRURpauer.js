@@ -25,7 +25,7 @@ const FORMRURpauer = ({ title, modals, setModals,  submitCreatePayeerPayForm, in
                 <h3 className={cl.modalTitle}>{title}</h3>
                 <p className={cl.modalDescr}>{t('private.finances.modalDescr')}</p>
                 <div>
-                  <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1670485393713DEMO"/>
+                  <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1670485393713"/>
                   <input className="tinkoffPayRow" type="hidden" name="frame" value="true"/>
                   <input className="tinkoffPayRow" type="hidden" name="language" value="ru"/>
                   <input className="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" value={`${+(new Date())}:${userInfo.username}`}/>

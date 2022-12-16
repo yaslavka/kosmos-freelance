@@ -7,11 +7,10 @@ import { api } from '../../../../api'
 import { matrixActions } from '../../../../store/matrix/actions'
 import * as actions from '../../../../actions/app.actions'
 import routes from '../../../../constants/routes.constants'
-import closeIcon from '../../../../scss/media/close.ac2aaa1a.svg'
+import closeIcon from '../../../../assets/images/icons/close.ac2aaa1a.svg'
 import isEmpty from 'lodash-es/isEmpty'
 
 import Select from '../../../../components/Select'
-import SearchSelect from '../../../../components/SearchSelect'
 import Button from '../../../../components/OldButton'
 import MatrixCell from './MatrixCell'
 import PartnerModal from './PartnerModal'
@@ -19,8 +18,8 @@ import ClonesModal from './ClonesModal'
 import BuyStatusModal from './BuyStatusModal'
 import BuyMatrixModal from './BuyMatrixModal'
 import PartnersClonesModal from './PartnersClonesModal'
-import rocketLeft from '../../../../scss/media/angle-left.309b1344.svg'
-import rocketRight from '../../../../scss/media/angle-right.2219c635.svg'
+import rocketLeft from '../../../../assets/images/icons/angle-left.309b1344.svg'
+import rocketRight from '../../../../assets/images/icons/angle-right.2219c635.svg'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
 // eslint-disable-next-line react/prop-types
@@ -148,7 +147,7 @@ export default function Table({ location: { state = {}, pathname } }) {
     setVisiblePartnerModal(false)
     setTimeout(() => {
       // eslint-disable-next-line react/prop-types
-      if (pathname.startsWith('/MATRIX2-table')) {
+      if (pathname.startsWith('/Westrulund-table')) {
         api
           .getAutoMatrixStructureByType(matrixInfo.id)
           .then((response) => {
@@ -189,14 +188,14 @@ export default function Table({ location: { state = {}, pathname } }) {
           const prevMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id - 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(prevMatrix))
-          history.push(`/MATRIX2-table/${matrixInfo.id - 1}`)
+          history.push(`/Westrulund-table/${matrixInfo.id - 1}`)
         }
       } else {
         if (matrixInfo.id !== 8) {
           const nextMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id + 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(nextMatrix))
-          history.push(`/MATRIX2-table/${matrixInfo.id + 1}`)
+          history.push(`/Westrulund-table/${matrixInfo.id + 1}`)
         }
       }
     }
@@ -213,7 +212,7 @@ export default function Table({ location: { state = {}, pathname } }) {
   }
 
   const redirectToUserMatrix = (matrixId) => {
-    history.push(`/MATRIX2-table/${matrixId}`)
+    history.push(`/Westrulund-table/${matrixId}`)
     setSearchUsers([])
   }
 
@@ -346,7 +345,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                 className={styles.matrixSelect}
                 onChange={(value) => {
                   if (value) {
-                    history.push(`/MATRIX2-table/${value}`)
+                    history.push(`/Westrulund-table/${value}`)
                   }
                 }}
               />
@@ -388,15 +387,6 @@ export default function Table({ location: { state = {}, pathname } }) {
             )}
           </div>
           <div className={styles.content}>
-          {/*<MyViewElement element={*/}
-          {/*  <SearchSelect*/}
-          {/*    className={styles.searchSelect}*/}
-          {/*    values={searchUsers}*/}
-          {/*    placeholder="Поиск партнера по логину"*/}
-          {/*    onInput={setCurrentSearchValue}*/}
-          {/*    onChange={redirectToUserMatrix}*/}
-          {/*  />*/}
-          {/*}/>*/}
           <MyViewElement element={
 
             <div className={styles.matrixTree}>
@@ -406,66 +396,60 @@ export default function Table({ location: { state = {}, pathname } }) {
                 isActive={matrixInfo && matrixInfo.isActive}
               />
               <div className={styles.secondRow}>
-                <MatrixCell
-                  place={1}
-                  info={matrixTree['1']}
-                  ancestorInfo={matrixTree['0']}
-                  isActive={matrixInfo && matrixInfo.isActive}
-                  onDoubleClick={() => {
-                    showPartnerModal(matrixTree['1'], 1)
-                  }}
-                />
-                <MatrixCell
-                  place={2}
-                  ancestorInfo={matrixTree['0']}
-                  info={matrixTree['2']}
-                  isActive={matrixInfo && matrixInfo.isActive}
-                  onDoubleClick={() => {
-                    showPartnerModal(matrixTree['2'], 2)
-                  }}
-                />
-              </div>
-              <div className={styles.thirdRow}>
-                <div className={styles.cellsWrapper}>
-                  <MatrixCell
-                    place={3}
-                    info={matrixTree['3']}
-                    ancestorInfo={matrixTree['0']}
-                    isActive={matrixInfo && matrixInfo.isActive}
-                    onDoubleClick={() => {
-                      showPartnerModal(matrixTree['3'], 3)
-                    }}
-                  />
-                  <MatrixCell
-                    place={4}
-                    info={matrixTree['4']}
-                    ancestorInfo={matrixTree['0']}
-                    isActive={matrixInfo && matrixInfo.isActive}
-                    onDoubleClick={() => {
-                      showPartnerModal(matrixTree['4'], 4)
-                    }}
-                  />
-                </div>
-                <div className={styles.cellsWrapper}>
-                  <MatrixCell
-                    place={5}
-                    info={matrixTree['5']}
-                    ancestorInfo={matrixTree['0']}
-                    isActive={matrixInfo && matrixInfo.isActive}
-                    onDoubleClick={() => {
-                      showPartnerModal(matrixTree['5'], 5)
-                    }}
-                  />
-                  <MatrixCell
-                    place={6}
-                    info={matrixTree['6']}
-                    ancestorInfo={matrixTree['0']}
-                    isActive={matrixInfo && matrixInfo.isActive}
-                    onDoubleClick={() => {
-                      showPartnerModal(matrixTree['6'], 6)
-                    }}
-                  />
-                </div>
+                {matrixInfo.id === 1
+                  ?
+                  <>
+                    <MatrixCell
+                      place={1}
+                      info={matrixTree['1']}
+                      ancestorInfo={matrixTree['0']}
+                      isActive={matrixInfo && matrixInfo.isActive}
+                      onDoubleClick={() => {
+                        showPartnerModal(matrixTree['1'], 1)
+                      }}
+                    />
+                    <MatrixCell
+                      place={2}
+                      ancestorInfo={matrixTree['0']}
+                      info={matrixTree['2']}
+                      isActive={matrixInfo && matrixInfo.isActive}
+                      onDoubleClick={() => {
+                        showPartnerModal(matrixTree['2'], 2)
+                      }}
+                    />
+                    <MatrixCell
+                      place={3}
+                      info={matrixTree['3']}
+                      ancestorInfo={matrixTree['0']}
+                      isActive={matrixInfo && matrixInfo.isActive}
+                      onDoubleClick={() => {
+                        showPartnerModal(matrixTree['3'], 3)
+                      }}
+                    />
+                  </>
+                  :
+                  <>
+                    <MatrixCell
+                      place={1}
+                      info={matrixTree['1']}
+                      ancestorInfo={matrixTree['0']}
+                      isActive={matrixInfo && matrixInfo.isActive}
+                      onDoubleClick={() => {
+                        showPartnerModal(matrixTree['1'], 1)
+                      }}
+                    />
+                    <MatrixCell
+                      place={2}
+                      ancestorInfo={matrixTree['0']}
+                      info={matrixTree['2']}
+                      isActive={matrixInfo && matrixInfo.isActive}
+                      onDoubleClick={() => {
+                        showPartnerModal(matrixTree['2'], 2)
+                      }}
+                    />
+                  </>
+
+                }
               </div>
             </div>
             }/>

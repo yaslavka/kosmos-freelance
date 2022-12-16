@@ -5,9 +5,11 @@ import { api } from '../../../../../api'
 import * as actions from '../../../../../actions/app.actions'
 
 import Button from '../../../../../components/OldButton'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
-export default function PartnersClonesModal({ onClose, showPartnersModal }) {
+export default function PartnersClonesModal({ onClose }) {
+  const { t } = useTranslation('common');
   const dispatch = useDispatch()
   const matrixCellInfo = useSelector((state) => state.matrixReducer.matrixCellInfo)
   const matrixInfo = useSelector((state) => state.matrixReducer.matrixInfo)
@@ -21,7 +23,7 @@ export default function PartnersClonesModal({ onClose, showPartnersModal }) {
       api
         .setUnoClone(matrixCellInfo)
         .then(() => {
-          setInstallCloneStatus('Ваша заявка отправлена')
+          setInstallCloneStatus(`${t('private.Pegasus.ClonesModal.message')}`)
           api.getUserInfo().then((response) => {
             dispatch(actions.userInfoSuccess(response))
           })
@@ -144,7 +146,7 @@ export default function PartnersClonesModal({ onClose, showPartnersModal }) {
                 </defs>
               </svg>
               <h3 className={styles.title}>
-                <span>{matrixClones || 0}</span> клонов
+                <span>{matrixClones || 0}</span>{t('private.Pegasus.ClonesModal.counter')}
               </h3>
             </div>
             <Button
@@ -153,123 +155,7 @@ export default function PartnersClonesModal({ onClose, showPartnersModal }) {
               color="perrywinkle"
               onClick={installClones}
             >
-              Поставить
-            </Button>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.header}>
-              <svg
-                className={styles.partnersIcon}
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 28 32"
-              >
-                <path
-                  d="M21.1 31.4c-.4-.2-.8-.3-1-.7-.2-.3-.4-.5-.4-.8v-2.7h3.5v2.7c-.1.7-.6 1.1-1.2 1.4H21z"
-                  fill="url(#paint0_linear)"
-                />
-                <path
-                  d="M2.4 31.4l-.7-.4c-.5-.4-.7-.9-.7-1.5v-5-5.7l-.2-.5C0 17.7-.2 17 0 16l1.4-6.8c.3-1.3 1-2 2.3-2.2 1.5-.4 3.3.6 3.7 2l.3 2 .3 1a2 2 0 001.4 1.6 13.7 13.7 0 001.3.3h.1c.3-.4.7-.5 1.1-.6l2.3-.1c1.1-.2 1.6-.6 1.9-1.7l.4-2.2a3.2 3.2 0 012.6-2.4 3 3 0 011.6.2A2.2 2.2 0 0122 8.6l2.2 8.7c0 .4.2.8.6 1 .3.1.5.5.7.8 0 .2.1.3.3.3H28v7.3H18v-7.3h2.3l.3-.2c.3-.7.4-.8 1.2-1.2l-.8-2.8-.9-2.8-.2-.5a.3.3 0 00-.2 0l-.1.2v.2c.7 1.7 1.2 3.5 1.6 5.3l-.1.3-.8.9-.3.2c-.9 0-1.6-.5-1.8-1.5l-.6-2.7-.1-.4c-1.2 1.2-2.6 1.3-4 1.5a.4.4 0 00-.4.2c-.3.5-.7.7-1.3.6-1.2-.1-2.5-.3-3.7-1-.5-.2-1-.6-1.5-1l-.3 1.4-.3 1.2c-.1.8-.6 1.3-1.3 1.7-.2 0-.2.2-.2.4v9.8c0 1.3-.3 1.7-1.5 2.2h-.6zm19.1-12h3c0-.5-.4-.6-.7-.4a1.3 1.3 0 01-1.5 0c-.3-.2-.6-.1-.8.3z"
-                  fill="url(#paint1_linear)"
-                />
-                <path
-                  d="M17.2 6.7a3.4 3.4 0 110-6.7 3.4 3.4 0 010 6.7z"
-                  fill="url(#paint2_linear)"
-                />
-                <path d="M6 6.7A3.4 3.4 0 116.2 0a3.4 3.4 0 010 6.7z" fill="url(#paint3_linear)" />
-                <path
-                  d="M2.4 31.4l-.7-.4c-.5-.4-.7-.9-.7-1.5v-5-5.7l-.2-.5C0 17.7-.2 17 0 16l1.4-6.8c.3-1.3 1-2 2.3-2.2 1.5-.4 3.3.6 3.7 2l.3 2 .3 1a2 2 0 001.4 1.6 13.7 13.7 0 001.3.3h.1c.3-.4.7-.5 1.1-.6l2.3-.1c1.1-.2 1.6-.6 1.9-1.7l.4-2.2a3.2 3.2 0 012.6-2.4 3 3 0 011.6.2A2.2 2.2 0 0122 8.6l2.2 8.7c0 .4.2.8.6 1 .3.1.5.5.7.8 0 .2.1.3.3.3H28v7.3H18v-7.3h2.3l.3-.2c.3-.7.4-.8 1.2-1.2l-.8-2.8-.9-2.8-.2-.5a.3.3 0 00-.2 0l-.1.2v.2c.7 1.7 1.2 3.5 1.6 5.3l-.1.3-.8.9-.3.2c-.9 0-1.6-.5-1.8-1.5l-.6-2.7-.1-.4c-1.2 1.2-2.6 1.3-4 1.5a.4.4 0 00-.4.2c-.3.5-.7.7-1.3.6-1.2-.1-2.5-.3-3.7-1-.5-.2-1-.6-1.5-1l-.3 1.4-.3 1.2c-.1.8-.6 1.3-1.3 1.7-.2 0-.2.2-.2.4v9.8c0 1.3-.3 1.7-1.5 2.2h-.6zm19.1-12h3c0-.5-.4-.6-.7-.4a1.3 1.3 0 01-1.5 0c-.3-.2-.6-.1-.8.3z"
-                  fill="url(#paint4_linear)"
-                />
-                <path
-                  d="M17.2 6.7a3.4 3.4 0 110-6.7 3.4 3.4 0 010 6.7z"
-                  fill="url(#paint5_linear)"
-                />
-                <path d="M6 6.7A3.4 3.4 0 116.2 0a3.4 3.4 0 010 6.7z" fill="url(#paint6_linear)" />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear"
-                    x1="3645.6"
-                    y1="1370.1"
-                    x2="3781.1"
-                    y2="3092.2"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset="1" stopColor="#615AD0" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint1_linear"
-                    x1="26430"
-                    y1="8074.6"
-                    x2="27017.8"
-                    y2="18251.9"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset="1" stopColor="#615AD0" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint2_linear"
-                    x1="6768.3"
-                    y1="2194.7"
-                    x2="6953.5"
-                    y2="4993.9"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset="1" stopColor="#615AD0" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint3_linear"
-                    x1="5696.2"
-                    y1="2265.4"
-                    x2="5881.4"
-                    y2="5065.2"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset="1" stopColor="#615AD0" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint4_linear"
-                    x1="26430"
-                    y1="8074.6"
-                    x2="27017.8"
-                    y2="18251.9"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset="1" stopColor="#615AD0" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint5_linear"
-                    x1="6768.3"
-                    y1="2194.7"
-                    x2="6953.5"
-                    y2="4993.9"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset="1" stopColor="#615AD0" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint6_linear"
-                    x1="5696.2"
-                    y1="2265.4"
-                    x2="5881.4"
-                    y2="5065.2"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#fff" />
-                    <stop offset="1" stopColor="#615AD0" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <h3 className={styles.title}>Партнеры</h3>
-            </div>
-            <Button size="medium" color="perrywinkle" onClick={showPartnersModal}>
-              Выбрать
+              {t('private.Pegasus.ClonesModal.onClick')}
             </Button>
           </div>
         </div>

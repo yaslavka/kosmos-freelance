@@ -7,10 +7,10 @@ import { Button } from 'reactstrap'
 import Raven from 'raven-js'
 import cl from './StarTrek.module.css';
 import * as actions from '../../../actions/app.actions'
-import avatar from '../../../scss/media/camera_200.png'
-import inImage from '../../../scss/media/insta.svg'
-import vkImage from '../../../scss/media/vk.svg'
-import tgImage from '../../../scss/media/vk.svg'
+import avatar from '../../../assets/images/icons/camera_200.png'
+import inImage from '../../../assets/images/icons/insta.svg'
+import vkImage from '../../../assets/images/icons/vk.svg'
+import tgImage from '../../../assets/images/icons/vk.svg'
 import Icon from '../../../components/Icon'
 import {useTranslation} from "react-i18next";
 

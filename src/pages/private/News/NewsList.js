@@ -7,8 +7,8 @@ import isEmpty from 'lodash-es/isEmpty'
 import styles from './News.module.css'
 
 import * as actions from '../../../actions/news.actions'
-import arrowRight from '../../../scss/media/angle-right.2219c635.svg'
-import arrowLeft from '../../../scss/media/angle-left.309b1344.svg'
+import arrowRight from '../../../assets/images/icons/angle-right.2219c635.svg'
+import arrowLeft from '../../../assets/images/icons/angle-left.309b1344.svg'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 import {useTranslation} from "react-i18next";
 

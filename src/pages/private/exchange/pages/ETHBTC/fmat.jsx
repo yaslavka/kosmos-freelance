@@ -5,7 +5,7 @@ import HistoriBuySel from "./components/Market/HistoriBuySel";
 //import {Col} from "reactstrap";
 import Market from "./components/Market/Market";
 import SellFormComponent from "./components/Form/SellForm";
-import Chart from "./Chart/Chart";
+import Chart from "./components/Chart";
 
 
 

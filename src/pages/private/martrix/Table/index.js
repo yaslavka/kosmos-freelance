@@ -7,8 +7,6 @@ import { api } from '../../../../api'
 import { matrixActions } from '../../../../store/matrix/actions'
 import * as actions from '../../../../actions/app.actions'
 import closeIcon from '../../../../scss/media/close.ac2aaa1a.svg'
-import rocketLeft from '../../../../scss/media/angle-left.309b1344.svg'
-import rocketRight from '../../../../scss/media/angle-right.2219c635.svg'
 import routes from '../../../../constants/routes.constants'
 import isEmpty from 'lodash-es/isEmpty'
 import Select from '../../../../components/Select'
@@ -387,15 +385,6 @@ export default function Tablemini({ location: { state = {}, pathname } }) {
               </div>
             </div>
           }/>
-
-            <div className={styles.navigation}>
-              <button className={styles.arrow} onClick={() => navigateTo('left')}>
-                <img src={rocketLeft} alt="Left" />
-              </button>
-              <button className={styles.arrow} onClick={() => navigateTo('right')}>
-                <img src={rocketRight} alt="Right" />
-              </button>
-            </div>
 
             {matrixInfo && (
               <div className={styles.footer}>

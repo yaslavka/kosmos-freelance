@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import styles from './MatrixCell.module.scss'
-import avatarFallback from '../../../../../scss/media/camera_200.png'
+import avatarFallback from '../../../../../assets/images/icons/camera_200.png'
 
 const branchingLines = (place) => {
   if (place === 0) {
@@ -62,7 +62,7 @@ export default function MatrixCell({
       // eslint-disable-next-line react/prop-types
       if (info && info.id) {
         // eslint-disable-next-line react/prop-types
-        history.push(`/MATRIX2-tables/${info.id}`)
+        history.push(`/Westrulund-tables/${info.id}`)
       } else {
         onDoubleClick()
       }

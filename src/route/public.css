@@ -1,0 +1,25 @@
+.overlay{
+    background: rgba(0,0,0,0.6) no-repeat fixed;
+    top: 0;
+    left: 0;
+    width: 105%;
+    height: 100%;
+}
+.fullscreen-bg {
+    height: 110vh;
+    overflow: hidden;
+    z-index: -100;
+    position: fixed;
+    width: 100%;
+    padding-top: 45%;
+}
+.fullscreen-bg video {
+    height: 110%;
+    width: auto;
+}
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

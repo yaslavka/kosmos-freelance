@@ -9,10 +9,10 @@ import styles from './ResetPassword.module.scss'
 import routes from '../../../constants/routes.constants'
 import { isValidEmail } from '../../../utils'
 import { api } from '../../../api'
-
 import Input from '../../../components/OldInput'
 import Button from '../../../components/OldButton'
-import Planet from "../../../scss/media/planet-1.gif";
+import Planet from "../../../assets/images/planet-1.gif";
+
 
 export default function ResetPassword() {
   const [resetPasswordStatus, setResetPasswordStatus] = useState(null)
