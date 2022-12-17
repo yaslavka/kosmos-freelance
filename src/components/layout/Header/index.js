@@ -73,12 +73,12 @@ const privateNavLinks = [
     isDisabled: false,
     icon: logo,
   },
-  // {
-  //   label: 'matrixs',
-  //   route: routes.matrixs,
-  //   isDisabled: true,
-  //   icon: logo,
-  // },
+  {
+    label: 'matrixs',
+    route: routes.matrixs,
+    isDisabled: false,
+    icon: logo,
+  },
   // {
   //   label: 'matrixmini',
   //   route: routes.matrixmini,

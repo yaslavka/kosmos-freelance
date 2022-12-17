@@ -46,12 +46,12 @@ const navbarLinks = [
     isDisabled: false,
     icon: logo,
   },
-  // {
-  //   label: 'matrixs',
-  //   route: routes.matrixs,
-  //   isDisabled: false,
-  //   icon: logo,
-  // },
+  {
+    label: 'matrixs',
+    route: routes.matrixs,
+    isDisabled: false,
+    icon: logo,
+  },
   // {
   //   label: 'matrixmini',
   //   route: routes.matrixmini,

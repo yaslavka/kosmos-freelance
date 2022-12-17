@@ -120,6 +120,7 @@ export default function KeplerTable({ location: { state = {}, pathname } }) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
             ancestor_id: matrixTree['0'].id,
+            matrix_id: matrixInfo.id,
             place,
           }),
         )
