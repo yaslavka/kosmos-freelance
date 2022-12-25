@@ -9,8 +9,8 @@ import money from '../../../assets/images/icons/briefcase.svg'
 import team from '../../../assets/images/icons/seo.svg'
 import logo from '../../../assets/images/icons/business.svg'
 // import luckyStar from '../../../assets/images/icons/stonks.svg'
-// import starsUp from '../../../assets/images/icons/marketing.svg'
-// import bbb from '../../../assets/images/icons/gamepad.svg'
+import starsUp from '../../../assets/images/icons/marketing.svg'
+import bbb from '../../../assets/images/icons/gamepad.svg'
 import gear from '../../../assets/images/icons/settings-met.svg'
 import leader from '../../../assets/images/icons/mentor-blue.svg'
 import {useTranslation} from "react-i18next";
@@ -40,33 +40,33 @@ const navbarLinks = [
     isDisabled: false,
     icon: news,
   },
-  {
-    label: 'tables',
-    route: routes.tables,
-    isDisabled: false,
-    icon: logo,
-  },
+  // {
+  //   label: 'tables',
+  //   route: routes.tables,
+  //   isDisabled: false,
+  //   icon: logo,
+  // },
   {
     label: 'matrixs',
     route: routes.matrixs,
     isDisabled: false,
     icon: logo,
   },
-  // {
-  //   label: 'matrixmini',
-  //   route: routes.matrixmini,
-  //   isDisabled: false,
-  //   icon: logo,
-  // },
+  {
+    label: 'matrixmini',
+    route: routes.matrixmini,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'superStars',
+    route: routes.superStars,
+    isDisabled: false,
+    icon: logo,
+  },
   // {
   //   label: 'premiumStars',
   //   route: routes.premiumStars,
-  //   isDisabled: false,
-  //   icon: logo,
-  // },
-  // {
-  //   label: 'superStars',
-  //   route: routes.superStars,
   //   isDisabled: false,
   //   icon: logo,
   // },

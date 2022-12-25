@@ -1,0 +1,1 @@
+{"customBounds":[0,0,"$[100pw - 200]",null],"anchor":{"x":0.5,"y":0},"x":"$[50pw]","children":[{"__type":"GridLayout","customBounds":[0,0,"$[100pw]",null],"name":"bonusItems","columns":2,"spacing":{"x":50,"y":50},"children":[]}]}

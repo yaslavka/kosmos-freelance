@@ -1,0 +1,1 @@
+{"__type":"Container","name":"tournament_ui_container","children":[{"__prefab":"tournament_screen","name":"tournamentScreen","__static":{"visible":false}},{"__prefab":"tournament_welcome_screen","name":"tournamentWelcomeScreen","__static":{"visible":false}}]}

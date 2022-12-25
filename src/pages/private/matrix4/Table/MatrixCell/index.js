@@ -58,7 +58,7 @@ export default function MatrixCell({
       // eslint-disable-next-line react/prop-types
       if (info && info.id) {
         // eslint-disable-next-line react/prop-types
-        history.push(`/personal-Gliese/${info.id}`)
+        history.push(`/Glieses/${info.id}`)
       } else {
         onDoubleClick()
       }

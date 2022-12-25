@@ -1,0 +1,1 @@
+{"name":"symbol_","__states":{"animation":"${animations}"},"children":[{"__type":"Spine","skeleton":"${skeleton}","animation":"${states.animation}"}]}

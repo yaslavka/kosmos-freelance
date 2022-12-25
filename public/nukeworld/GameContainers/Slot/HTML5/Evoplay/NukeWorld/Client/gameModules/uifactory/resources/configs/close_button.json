@@ -1,0 +1,1 @@
+{"__type":"FactoryButton","name":"closeButton","buttonActions":{"pointerDown":{"playAudio":["click"]}},"children":[{"__type":"Graphics","alpha":0,"chain":[{"beginFill":["${styles.color__primary--dark}"]},{"drawRect":[-100,-100,200,200]}]},{"__type":"Sprite","anchor":{"x":0.5,"y":0.5},"texture":"${textures.btn_panel_close}"}]}

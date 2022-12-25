@@ -81,7 +81,7 @@
           }
 
           span {
-            color: rgba(101, 231, 255, 0.7);
+            color: rgb(7, 100, 224);
           }
         }
       }
@@ -109,6 +109,7 @@
     font-weight: bold;
     font-size: 1.125rem;
     text-align: center;
+    color: rgba(76, 201, 240, 0.82);
 
     @include media-breakpoint-up(xl) {
       padding-top: 53px;

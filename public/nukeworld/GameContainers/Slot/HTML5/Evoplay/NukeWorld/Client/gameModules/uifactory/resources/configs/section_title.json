@@ -1,0 +1,1 @@
+{"__type":"Container","y":100,"children":[{"__type":"Graphics","chain":[{"beginFill":["${styles.color__primary--dark}"]},{"drawRect":[-100,0,"$[100pw + 200]",80]}]},{"__type":"PrefabText","x":34,"y":35,"text":"${text}","fontName":"text__h2","upperCase":true,"fitToArea":["$[100pw - 40]",0],"anchor":{"x":0,"y":0.5}}]}

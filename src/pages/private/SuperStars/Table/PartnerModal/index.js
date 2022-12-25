@@ -1,11 +1,12 @@
-import { Scrollbars } from 'react-custom-scrollbars'
 import React, { useEffect, useState } from 'react'
+import { Scrollbars } from 'react-custom-scrollbars'
 import { useSelector } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import styles from './PartnerModal.module.scss'
 import { api } from '../../../../../api'
+
 import avatar from '../../../../../assets/images/icons/camera_200.png'
 import Button from '../../../../../components/OldButton'
 

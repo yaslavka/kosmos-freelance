@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import styles from './MatrixCell.module.scss'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import dayjs from 'dayjs'
+
 import avatarFallback from '../../../../../assets/images/icons/camera_200.png'
+import styles from './MatrixCell.module.scss'
 
 const branchingLines = (place) => {
   if (place === 0) {
@@ -14,14 +17,10 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M1 22V12h90m91 12V12H91m0 0V0"
-          stroke="#00BBF9A6"
-          strokeWidth="1.5"
-        />
+        <path d="M1 22V12h90m91 12V12H91m0 0V0" stroke="#00BBF9D1" strokeWidth="1.5" />
       </svg>
-    );
-  } else if (place === 1 || place === 2 || place === 3 ) {
+    )
+  } else if (place === 1 || place === 2 || place === 3) {
     return (
       <svg
         className={styles.branchingLines}
@@ -31,24 +30,14 @@ const branchingLines = (place) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+
       </svg>
-    );
+    )
   }
-};
+}
 
 // eslint-disable-next-line react/prop-types
-export default function MatrixCell({
-  // eslint-disable-next-line react/prop-types
-  place,
-  // eslint-disable-next-line react/prop-types
-  info,
-  // eslint-disable-next-line react/prop-types
-  isActive,
-  // eslint-disable-next-line react/prop-types
-  onClick,
-  // eslint-disable-next-line react/prop-types
-  onDoubleClick,
-}) {
+export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
   const history = useHistory()
   const [isMobile, setIsMobile] = useState(null)
 
@@ -57,7 +46,7 @@ export default function MatrixCell({
       // eslint-disable-next-line react/prop-types
       if (info && info.id) {
         // eslint-disable-next-line react/prop-types
-        history.push(`/aida-table/${info.id}`)
+        history.push(`/aida-user/${info.id}`)
       } else {
         onDoubleClick()
       }
@@ -126,8 +115,38 @@ export default function MatrixCell({
         />
       </div>
       {branchingLines(place)}
-      {/* eslint-disable-next-line react/prop-types */}
-      {info && <span className={styles.userName}>{info.userName}</span>}
+      {info && (
+        <OverlayTrigger
+          trigger="click"
+          placement="bottom"
+          overlay={({ placement, scheduleUpdate, arrowProps, outOfBoundaries, show, ...props }) => (
+            <div
+              {...props}
+              style={{
+                borderBottomRightRadius: 10,
+                borderBottomLeftRadius: 10,
+                backgroundColor: '#4b0fb2',
+                border: '1px solid #8083E6',
+                padding: '20px 5px 6px',
+                lineHeight: '11px',
+                marginTop: -16,
+                fontSize: 11,
+                color: '#fff',
+                zIndex: 2,
+                // eslint-disable-next-line react/prop-types
+                ...props.style,
+              }}
+            >
+              {/* eslint-disable-next-line react/prop-types */}
+              {dayjs(info.date).format('DD.MM.YY HH:mm')}
+            </div>
+          )}
+          rootClose
+        >
+          {/* eslint-disable-next-line react/prop-types */}
+          <span className={styles.userName}>{info.userName}</span>
+        </OverlayTrigger>
+      )}
     </div>
   )
 }

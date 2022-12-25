@@ -9,11 +9,13 @@ import { isValidNumber } from '../../../../../utils'
 
 import Input from '../../../../../components/OldInput'
 import Button from '../../../../../components/OldButton'
+import {useTranslation} from "react-i18next";
 
 //TODO: create component 'Modal'
 
 // eslint-disable-next-line react/prop-types
-export default function ClonesModal({ status, matrixType, onClose }) {
+export default function ClonesModal({ matrixType, onClose }) {
+  const { t } = useTranslation('common');
   const [callStatus, setCallStatus] = useState(false)
   const [matrixClones, setMatrixClones] = useState(null)
   const [submitMessage, setSubmitMessage] = useState(null)
@@ -26,12 +28,12 @@ export default function ClonesModal({ status, matrixType, onClose }) {
         count: Number(info.count),
       })
       .then(() => {
-        setSubmitMessage('Ваша заявка отправлена')
+        setSubmitMessage(`${t('private.Pegasus.ClonesModal.message')}`)
         setMatrixClones((prevState) => prevState - info.count)
         setCallStatus(false)
       })
       .catch(() => {
-        setSubmitMessage('Произошла ошибка')
+        setSubmitMessage(`${t('private.Pegasus.ClonesModal.erro')}`)
         setCallStatus(false)
       })
   }
@@ -78,9 +80,8 @@ export default function ClonesModal({ status, matrixType, onClose }) {
           <Col xs={12} className="d-xl-flex justify-content-between">
             {matrixClones > -1 && (
               <div className={styles.clonesCounter}>
-                <p>У вас есть</p>
                 <span className={styles.counter}>{matrixClones}</span>
-                <p>клонов в M{matrixType}</p>
+                <p>{t('private.Pegasus.ClonesModal.counter')} M{matrixType}</p>
               </div>
             )}
 
@@ -105,7 +106,7 @@ export default function ClonesModal({ status, matrixType, onClose }) {
                   {() => (
                     <Form>
                       <Field placeholder="Количество" type="text" name="count" component={Input} />
-                      <Button type="submit" disabled={callStatus || true} color="violet-blue">
+                      <Button disabled={callStatus || true} color="violet-blue" type="submit">
                         Расставить
                       </Button>
                     </Form>

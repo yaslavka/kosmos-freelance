@@ -34,7 +34,7 @@ const TableQueue = ({ location: { state = {} } }) => {
       if (matrixInfo && matrixInfo.id) {
         newRoute = `/personal-Kepler/${matrixInfo.id}${route}`
       } else if (type) {
-        newRoute = `/Kepler/${type}${route}`
+        newRoute = `/Keplers/${type}${route}`
       }
       return newRoute
     },
@@ -144,7 +144,7 @@ const TableQueue = ({ location: { state = {} } }) => {
                   <Col key={user.id} lg={4}>
                     <Link
                       to={{
-                        pathname: `/matrixs/${user.id}`,
+                        pathname: `/Keplers/${user.id}`,
                         state: {
                           query: { line, offset, name },
                           meta: { page },

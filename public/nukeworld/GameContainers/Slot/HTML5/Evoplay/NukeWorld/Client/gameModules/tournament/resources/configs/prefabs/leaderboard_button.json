@@ -1,0 +1,1 @@
+{"__type":"FactoryButton","name":"leaderboard_button","buttonActions":{"pointerDown":{"playAudio":["click"]}},"children":[{"__type":"Sprite","texture":"${bgTexture}","scale":{"x":0.8,"y":0.8},"anchor":{"x":0.5,"y":0.5}},{"__type":"PrefabText","fontName":"text__small","text":"${texts.core.tournament_leaderboard_button}","y":-5,"anchor":{"x":0.5,"y":0.5}}]}

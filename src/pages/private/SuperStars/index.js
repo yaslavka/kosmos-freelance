@@ -1,96 +1,82 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Row, Col, Container } from 'reactstrap'
 import { useDispatch } from 'react-redux'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import styles from './AutoStars.module.css'
-import { api } from '../../../api'
+import isEmpty from 'lodash/isEmpty'
+
 import { matrixActions } from '../../../store/matrix/actions'
+import styles from './Tables.module.scss'
+import { api } from '../../../api'
+
+import TablesElement from './TablesElement'
 import NavBar from '../../../components/layout/Navbar'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
 
-export default function SStars() {
-  const [matrixTypes, setMatrixTypes] = useState(null)
-  const dispatch = useDispatch()
 
-  const saveMatrixInfo = (matrixInfo) => {
-    dispatch(matrixActions.saveCurrentMatrix(matrixInfo))
-  }
+function SStars() {
+  const dispatch = useDispatch()
+  const [matrixTypes, setMatrixTypes] = useState([])
 
   useEffect(() => {
     api
-      .ssMatrixTypes()
-      .then((response) => {
-        if (Array.isArray(response.items)) {
-          dispatch(matrixActions.saveUserMatrices(response.items))
-          setMatrixTypes(response.items)
-        }
+      .ssMatrixCloneStatTypes()
+      .then((cloneStats) => {
+        api
+          .ssMatrixTypes()
+          .then((response) => {
+            if (!isEmpty(cloneStats.items) && !isEmpty(response.items)) {
+              const newArrayItems = response.items.map((type, index) => ({
+                ...type,
+                clones: cloneStats.items[index].count,
+              }))
+
+              dispatch(matrixActions.saveUserMatrices(newArrayItems))
+              setMatrixTypes(newArrayItems)
+            }
+          })
+          .catch(() => {})
       })
       .catch(() => {})
   }, [dispatch])
 
   return (
-    <div className={styles.AutoStars}>
+    <div className={styles.Tables}>
       <Container>
         <Row>
           <Col className="d-none d-xl-block" xl={3}>
             <NavBar />
           </Col>
-          <Col xs={12} xl={9}>
-            {matrixTypes && (
-              <div className={styles.tables}>
-                <MyViewElement element={
-                  <Link
-                  to="/aida-table/1"
-                  className={styles.table}
-                  onClick={() => {
-                    saveMatrixInfo(matrixTypes[0])
-                  }}
-                >
+          <Col xl={8}>
+            <div className="circle-stars__container">
+              <div className="circle__container">
+                <div className="circle__center">
+                  <div className="circle__center-content">
+                    <div className={styles.userInfo}/>
+                  </div>
+                </div>
+                {matrixTypes.map((matrix, i) => {
+                  const deg = -90 + i * (360 / matrixTypes.length)
+                  const deg2 = deg * -1
+                  const transform = 'rotate(' + deg + 'deg) translate(15em) rotate(' + deg2 + 'deg)'
+                  return (
+                    <MyViewElement element={
 
-                  <span>1</span>
-                  {!!Number(matrixTypes[0].count) && (
-                    <div className={styles.count}>Клоны {matrixTypes[0].count}</div>
-                  )}
-                </Link>
-                }/>
-                <MyViewElement element={
-                 <Link
-                    to="/aida-table/2"
-                    className={styles.table}
-                    onClick={() => {
-                      saveMatrixInfo(matrixTypes[1])
-                    }}
-                  >
+                    <TablesElement
+                      key={i.toString()}
+                      urlPrefix="aida-table"
+                      transform={transform}
+                      matrix={matrix}
+                    />
+                  }/>
 
-                    <span>2</span>
-                    {!!Number(matrixTypes[1].count) && (
-                      <div className={styles.count}>Клоны {matrixTypes[1].count}</div>
-                    )}
-                  </Link>
-                }/>
-                <MyViewElement element={
-                  <Link
-                    to="/aida-table/3"
-                    className={styles.table}
-                    onClick={() => {
-                      saveMatrixInfo(matrixTypes[2])
-                    }}
-                  >
-
-                    <span>3</span>
-                    {!!Number(matrixTypes[2].count) && (
-                      <div className={styles.count}>Клоны {matrixTypes[2].count}</div>
-                    )}
-                  </Link>
-                }/>
+                  )
+                })}
               </div>
-            )}
-            <div className="pdf-preview"/>
+            </div>
           </Col>
         </Row>
       </Container>
     </div>
   )
 }
+
+export default SStars

@@ -3,11 +3,12 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import styles from './BuyMatrixModal.module.scss'
-
 import Button from '../../../../../components/OldButton'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 export default function BuyMatrixModal({ onSubmit, onClose, status }) {
+  const { t } = useTranslation('common');
   return (
     <div className={styles.BuyMatrixModal}>
       <Container>
@@ -35,8 +36,8 @@ export default function BuyMatrixModal({ onSubmit, onClose, status }) {
         </Row>
         <Row>
           <Col>
-            <h3>Подтверждение покупки матрицы</h3>
-            <p>Вы действительно хотите купить матрицу?</p>
+            <h3>{t('private.Pegasus.buyMatrix.title')}</h3>
+            <p>{t('private.Pegasus.buyMatrix.text')}</p>
             <Button
               className={styles.buyButton}
               /* eslint-disable-next-line react/prop-types */
@@ -45,7 +46,7 @@ export default function BuyMatrixModal({ onSubmit, onClose, status }) {
               color="perrywinkle"
               size="medium"
             >
-              Купить
+              {t('private.Pegasus.buyMatrix.onSubmit')}
             </Button>
           </Col>
         </Row>

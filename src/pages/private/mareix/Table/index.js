@@ -82,9 +82,9 @@ export default function Table({ location: { state = {}, pathname } }) {
             })
             .catch()
         })
-        .catch(() => {
+        .catch((response) => {
           setVisibleBuyMatrixModal(false)
-          setBuyingStatus({ type: 'error', message: `${t('private.Pegasus.buyMatrix.error')}` })
+          setBuyingStatus({ type: 'error', message: `${response.message}` })
           setVisibleBuyModal(true)
         })
     }
@@ -121,6 +121,7 @@ export default function Table({ location: { state = {}, pathname } }) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
             ancestor_id: matrixTree['0'].id,
+            matrix_id:matrixInfo.id,
             place,
           }),
         )
@@ -154,7 +155,7 @@ export default function Table({ location: { state = {}, pathname } }) {
     setVisiblePartnerModal(false)
     setTimeout(() => {
       // eslint-disable-next-line react/prop-types
-      if (pathname.startsWith('/personal-matrixs')) {
+      if (pathname.startsWith('/personal-Kepler')) {
         api
           .getMatrixUnoStructureByType(matrixInfo.id)
           .then((response) => {
@@ -195,14 +196,14 @@ export default function Table({ location: { state = {}, pathname } }) {
           const prevMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id - 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(prevMatrix))
-          history.push(`/personal-matrixs/${matrixInfo.id - 1}`)
+          history.push(`/personal-Kepler/${matrixInfo.id - 1}`)
         }
       } else {
         if (matrixInfo.id !== 8) {
           const nextMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id + 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(nextMatrix))
-          history.push(`/personal-matrixs/${matrixInfo.id + 1}`)
+          history.push(`/personal-Kepler/${matrixInfo.id + 1}`)
         }
       }
     }
@@ -219,7 +220,7 @@ export default function Table({ location: { state = {}, pathname } }) {
   }
 
   const redirectToUserMatrix = (matrixId) => {
-    history.push(`/matrixs/${matrixId}`)
+    history.push(`/Keplers/${matrixId}`)
     setSearchUsers([])
   }
 
@@ -349,7 +350,7 @@ export default function Table({ location: { state = {}, pathname } }) {
       if (matrixInfo && matrixInfo.isActive && !id) {
         newRoute = `/personal-Kepler/${matrixInfo.id}${route}`
       } else if (id) {
-        newRoute = `/Kepler/${id}${route}`
+        newRoute = `/Keplers/${id}${route}`
       }
       return newRoute
     },
@@ -375,7 +376,7 @@ export default function Table({ location: { state = {}, pathname } }) {
                 className={styles.matrixSelect}
                 onChange={(value) => {
                   if (value) {
-                    history.push(`/Kepler/${value}`)
+                    history.push(`/Keplers/${value}`)
                   }
                 }}
               />

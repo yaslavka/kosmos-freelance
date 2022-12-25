@@ -85,6 +85,111 @@ export default function MStars() {
                     )}
                   </Link>
                 }/>
+                <MyViewElement element={
+                  <Link
+                    to="/personal-Gliese/4"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[3])
+                    }}
+                  >
+
+                    <span>4</span>
+                    {!!Number(matrixTypes[3].count) && (
+                      <div className={styles.count}>Клоны {matrixTypes[3].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/personal-Gliese/5"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[4])
+                    }}
+                  >
+
+                    <span>5</span>
+                    {!!Number(matrixTypes[4].count) && (
+                      <div className={styles.count}>Клоны {matrixTypes[4].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/personal-Gliese/6"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[5])
+                    }}
+                  >
+
+                    <span>6</span>
+                    {!!Number(matrixTypes[5].count) && (
+                      <div className={styles.count}>Клоны {matrixTypes[5].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/personal-Gliese/7"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[6])
+                    }}
+                  >
+
+                    <span>7</span>
+                    {!!Number(matrixTypes[6].count) && (
+                      <div className={styles.count}>Клоны {matrixTypes[6].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/personal-Gliese/8"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[7])
+                    }}
+                  >
+
+                    <span>8</span>
+                    {!!Number(matrixTypes[7].count) && (
+                      <div className={styles.count}>Клоны {matrixTypes[7].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/personal-Gliese/9"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[8])
+                    }}
+                  >
+
+                    <span>9</span>
+                    {!!Number(matrixTypes[8].count) && (
+                      <div className={styles.count}>Клоны {matrixTypes[8].count}</div>
+                    )}
+                  </Link>
+                }/>
+                <MyViewElement element={
+                  <Link
+                    to="/personal-Gliese/10"
+                    className={styles.table}
+                    onClick={() => {
+                      saveMatrixInfo(matrixTypes[9])
+                    }}
+                  >
+
+                    <span>10</span>
+                    {!!Number(matrixTypes[9].count) && (
+                      <div className={styles.count}>Клоны {matrixTypes[9].count}</div>
+                    )}
+                  </Link>
+                }/>
               </div>
             )}
             <div className="pdf-preview"/>

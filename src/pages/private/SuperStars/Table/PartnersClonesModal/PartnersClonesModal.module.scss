@@ -48,7 +48,7 @@
       max-width: max-content;
       margin: 0 auto;
       padding: 20px 30px;
-      background-color: #53f57882;
+      background-color: rgba(101, 231, 255, 0.7);
       border-radius: 30px;
 
       @include media-breakpoint-up(xl) {
@@ -77,10 +77,11 @@
           font-size: 1.5rem;
 
           @include media-breakpoint-up(xl) {
+            font-weight: 500;
           }
 
           span {
-            color: #0b2e13;
+            color: rgb(6, 77, 245);
           }
         }
       }
@@ -89,6 +90,7 @@
         width: 100%;
         margin-bottom: 0;
         text-transform: uppercase;
+
 
         @include media-breakpoint-up(xl) {
           min-height: 43px;
@@ -107,6 +109,7 @@
     font-weight: bold;
     font-size: 1.125rem;
     text-align: center;
+    color: rgba(76, 201, 240, 0.82);
 
     @include media-breakpoint-up(xl) {
       padding-top: 53px;

@@ -1,0 +1,1 @@
+{"skeleton":{"hash":"oWnvKHiOVZc","spine":"4.0.61","x":-100,"y":-34,"width":200,"height":68},"bones":[{"name":"root"}],"slots":[{"name":"blick","bone":"root","color":"ffffff00","attachment":"blick"}],"skins":[{"name":"default","attachments":{"blick":{"blick":{"width":200,"height":68}}}}],"animations":{"empty":{}}}

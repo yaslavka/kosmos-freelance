@@ -38,7 +38,7 @@ export default function BuyStatusModal({ status, onClose }) {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} className="d-xl-flex justify-content-between">
+          <Col xs={11} className="d-xl-flex justify-content-between">
             {/* eslint-disable-next-line react/prop-types */}
             {status.message}
           </Col>

@@ -138,13 +138,13 @@ export const api = {
     return baseInstance.get(`matrix/mini/for-install?matrix_type=${matrix_type}`)
   },
   getMatrixssListForInstall(matrix_type) {
-    return baseInstance.get(`matrix/ss/for-install?matrix_type=${matrix_type}`)
+    return baseInstance.get(`matrix/super/for-install?matrix_type=${matrix_type}`)
   },
   installMatrixMini(matrixInfo) {
     return baseInstance.post('matrix/mini/install', matrixInfo)
   },
   installMatrixss(matrixInfo) {
-    return baseInstance.post('matrix/mini/install', matrixInfo)
+    return baseInstance.post('matrix/super/install', matrixInfo)
   },
   getMatrixMiniClonesCout(matrix_type) {
     return baseInstance.get(`matrix/mini/clone?matrix_type=${matrix_type}`)
@@ -313,14 +313,14 @@ export const api = {
   },
 
   /* SUPER STARS */
-  ssBuyMatrix(matrix_id) {
-    return baseInstance.post('matrix/super/buy', { matrix_id })
-  },
   ssMatrixTypes() {
     return baseInstance.get('matrix/super/type')
   },
-  ssMatrixClones(matrix_type) {
-    return baseInstance.get(`matrix/super/clone?matrix_type=${matrix_type}`)
+  ssMatrixCloneStatTypes() {
+    return baseInstance.get('matrix/super/clone-stat')
+  },
+  ssBuyMatrix(matrix_id) {
+    return baseInstance.post('matrix/super/buy', { matrix_id })
   },
   ssMatrixStructureByType(type) {
     return baseInstance.get(`matrix/super/structure?matrix_type=${type}`)
@@ -328,14 +328,17 @@ export const api = {
   ssMatrixStructureById(id) {
     return baseInstance.get(`matrix/super/structure?matrix_id=${id}`)
   },
+  ssMatrixClones(matrix_type) {
+    return baseInstance.get(`matrix/super/clone?matrix_type=${matrix_type}`)
+  },
   ssInstallMatrixClones(matrixClonesInfo) {
     return baseInstance.post('matrix/super/install-clone', matrixClonesInfo)
   },
   ssBuyMatrixClones(matrixClonesInfo) {
     return baseInstance.post('matrix/super/buy-comet', matrixClonesInfo)
   },
-  ssNeighboringMatrices(matrixType) {
-    return baseInstance.get(`matrix/super/dash-info?matrix_type=${matrixType}`)
+  ssStructureUpper(matrixId) {
+    return baseInstance.get(`matrix/uno/structure-upper?matrix_id=${matrixId}`)
   },
 
 

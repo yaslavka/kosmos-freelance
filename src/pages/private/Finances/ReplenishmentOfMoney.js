@@ -13,6 +13,7 @@ function ReplenishmentOfMoney({userInfo}) {
   const [btcmodel, setBtcmodel]= useState(false)
   const [btcmodelw, setBtcmodelw]= useState(false)
   const [modaleFru, setModalFru] = useState(false)
+  const [freekassa, setFreekassa] = useState(false)
   const { t } = useTranslation('common');
 
 
@@ -21,7 +22,7 @@ function ReplenishmentOfMoney({userInfo}) {
   return (
     <div className={cl.transBlock}>
       <RurBalanse modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
-      <CreatePayrur title={`${t('private.finances.sistem')}`} userInfo={userInfo} modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru}/>
+      <CreatePayrur title={`${t('private.finances.sistem')}`} titles={`${t('private.finances.si')}`} userInfo={userInfo} modalrur={modalrur} setModalrur={setModalrur} modaleWru={modaleWru} setModalWru={setModalWru} freekassa={freekassa} setFreekassa={setFreekassa}/>
       <WinsdrawRUR
         title={`${t('private.finances.sistem')}`}
         modalrur={modalrur}

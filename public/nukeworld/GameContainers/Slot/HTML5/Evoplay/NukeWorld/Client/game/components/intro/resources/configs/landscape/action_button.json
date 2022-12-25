@@ -1,0 +1,1 @@
+{"__type":"Container","name":"actionButton","children":[{"__type":"Graphics","name":"${buttonAreaName}","chain":[{"beginFill":["0x101010",0.4]},{"drawRect":[0,0,260,120]}],"interactive":true,"buttonMode":true},{"__type":"TextField","name":"${buttonLabelName}","style":"${styles.button_style}","position":{"x":130,"y":65},"anchor":{"x":0.5,"y":0.5},"text":"${buttonText}"}]}

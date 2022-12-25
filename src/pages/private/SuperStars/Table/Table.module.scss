@@ -8,7 +8,7 @@
   .userName {
     margin: 0 20px 0 0;
     padding: 10px;
-    background-color: #0b2e13;
+    background-color: rgba(101, 231, 255, 0.82);
     font-size: 1.25rem;
     border-radius: 5px;
 
@@ -40,7 +40,7 @@
         position: absolute;
 
         border-radius: 15px;
-        background-color: #ff9f1c;
+        background-color: #65e7ff;
         transition: all .4s ease-in-out;
       }
 
@@ -70,7 +70,7 @@
       font-weight: 800;
       font-size: 26px;
       line-height: 1;
-      color: #ff9f1c;
+      color: rgba(101, 231, 255, 0.82);
       margin: 0;
 
       @include media-breakpoint-up(xl) {
@@ -164,9 +164,9 @@
     .price {
       text-transform: uppercase;
       text-align: center;
-      line-height: 2px;
+      line-height: 34px;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 32px;
       margin: 25px 0;
       color: #cbf3f0;
 

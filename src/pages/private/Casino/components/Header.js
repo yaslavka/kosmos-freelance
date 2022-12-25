@@ -1,9 +1,8 @@
-import React, { useCallback, useContext, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-//import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import CasinoIcon from '@material-ui/icons/Casino'
 import Container from '@material-ui/core/Container'
@@ -13,7 +12,7 @@ import configureStore, { history } from '../../../../config/store'
 import { Link } from 'react-router-dom'
 import routes from '../../../../constants/routes.constants'
 import styles from '../../Star/Table/Table.module.scss'
-import closeIcon from '../../../../scss/media/close.ac2aaa1a.svg'
+import closeIcon from '../../../../assets/images/icons/close.ac2aaa1a.svg'
 import { formatter } from '../../../../utils'
 import { useDispatch, useSelector } from 'react-redux'
 import * as actions from '../../../../actions/finance.actions'
@@ -106,7 +105,7 @@ function Spin(props) {
                   />
                 ) : (
                   formatter
-                    .format((userInfo.balance > -1 && userInfo.balance) || 0)
+                    .format((userInfo.balanceCrypto.RUR > -1 && userInfo.balanceCrypto.RUR) || 0)
                     .replace('₽', 'RUB')
                 )}
               </Typography>

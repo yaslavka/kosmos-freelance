@@ -11,12 +11,12 @@
   padding: 60px 20px;
   border-radius: 10px;
   overflow-y: initial;
-  background-color: #cbf3f0;
+  background-color: #65e7ff;
   font-size: 30px;
   z-index: 100;
 
   &.isError {
-    background-color: #da4948;
+    background-color: #DA4948;
   }
 
   .closeButton {
@@ -30,7 +30,7 @@
       right: 15px;
 
       path {
-        fill: $indigo;
+        fill: #00bbf9;
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState, useCallback, useMemo } from 'react'
 import { useParams, useHistory, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { Container } from 'reactstrap'
@@ -6,8 +6,8 @@ import styles from './Table.module.scss'
 import { api } from '../../../../api'
 import { matrixActions } from '../../../../store/matrix/actions'
 import * as actions from '../../../../actions/app.actions'
-import routes from '../../../../constants/routes.constants'
 import closeIcon from '../../../../assets/images/icons/close.ac2aaa1a.svg'
+import routes from '../../../../constants/routes.constants'
 import isEmpty from 'lodash-es/isEmpty'
 
 import Select from '../../../../components/Select'
@@ -19,9 +19,11 @@ import BuyStatusModal from './BuyStatusModal'
 import BuyMatrixModal from './BuyMatrixModal'
 import PartnersClonesModal from './PartnersClonesModal'
 import MyViewElement from 'src/components/MyViewElements/MyViewElements'
+import {useTranslation} from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
 export default function STable({ location: { state = {}, pathname } }) {
+  const { t } = useTranslation('common');
   const history = useHistory()
   const dispatch = useDispatch()
   const { id } = useParams()
@@ -47,7 +49,7 @@ export default function STable({ location: { state = {}, pathname } }) {
         .then(() => {
           setBuyingStatus({
             type: 'success',
-            message: 'Оплата прошла успешно!',
+            message: `${t('private.Pegasus.buyMatrix.message')}`,
           })
           setVisibleBuyMatrixModal(false)
           setVisibleBuyModal(true)
@@ -80,9 +82,9 @@ export default function STable({ location: { state = {}, pathname } }) {
             })
             .catch()
         })
-        .catch((err) => {
+        .catch((response) => {
           setVisibleBuyMatrixModal(false)
-          setBuyingStatus({ type: 'error', message: err.message })
+          setBuyingStatus({ type: 'error', message: `${response.message}` })
           setVisibleBuyModal(true)
         })
     }
@@ -94,7 +96,7 @@ export default function STable({ location: { state = {}, pathname } }) {
       document.body.style.overflow = 'hidden'
     }
 
-    if ((place === 3 || place === 4) && matrixTree['1']) {
+    if (( place === 4) && matrixTree['1']) {
       if (!info) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
@@ -114,17 +116,25 @@ export default function STable({ location: { state = {}, pathname } }) {
         )
         setVisiblePartnersClonesModal(true)
       }
-    } else if (place === 1 || place === 2) {
+    } else if (place === 1 || place === 2 || place === 3) {
       if (!info) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
             ancestor_id: matrixTree['0'].id,
+            matrix_id:matrixInfo.id,
             place,
           }),
         )
         setVisiblePartnersClonesModal(true)
       }
     }
+  }
+
+  const showClonesModal = () => {
+    if (window.innerWidth < 1200) {
+      document.body.style.overflow = 'hidden'
+    }
+    setVisibleClonesModal(true)
   }
 
   const showBuyMatrixModal = () => {
@@ -145,7 +155,7 @@ export default function STable({ location: { state = {}, pathname } }) {
     setVisiblePartnerModal(false)
     setTimeout(() => {
       // eslint-disable-next-line react/prop-types
-      if (pathname.startsWith('/personal-Gliese')) {
+      if (pathname.startsWith('/aida-table')) {
         api
           .ssMatrixStructureByType(matrixInfo.id)
           .then((response) => {
@@ -186,14 +196,14 @@ export default function STable({ location: { state = {}, pathname } }) {
           const prevMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id - 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(prevMatrix))
-          history.push(`/personal-Gliese/${matrixInfo.id - 1}`)
+          history.push(`/aida-table/${matrixInfo.id - 1}`)
         }
       } else {
         if (matrixInfo.id !== 8) {
           const nextMatrix = matricesList.find((matrix) => matrix.id === matrixInfo.id + 1)
           setIsFetching(true)
           dispatch(matrixActions.saveCurrentMatrix(nextMatrix))
-          history.push(`/personal-Gliese/${matrixInfo.id + 1}`)
+          history.push(`/aida-table/${matrixInfo.id + 1}`)
         }
       }
     }
@@ -210,14 +220,14 @@ export default function STable({ location: { state = {}, pathname } }) {
   }
 
   const redirectToUserMatrix = (matrixId) => {
-    history.push(`/personal-Gliese/${matrixId}`)
+    history.push(`/aida-user/${matrixId}`)
     setSearchUsers([])
   }
 
   useEffect(() => {
     if (matrixInfo && matrixInfo.isActive && isFetching) {
       api
-        .getMatrixssStructureByType(matrixInfo.id)
+        .ssMatrixStructureByType(matrixInfo.id)
         .then((response) => {
           if (response.items) {
             setMatrixTree(response.items)
@@ -227,7 +237,7 @@ export default function STable({ location: { state = {}, pathname } }) {
         .catch()
     } else if (id) {
       api
-        .getMatrixssStructureById(id)
+        .ssMatrixStructureById(id)
         .then((response) => {
           if (response.items) {
             setMatrixTree(response.items)
@@ -240,7 +250,7 @@ export default function STable({ location: { state = {}, pathname } }) {
   useEffect(() => {
     if (matrixInfo) {
       api
-        .ssNeighboringMatrices(matrixInfo.id)
+        .getNeighboringMatrices(matrixInfo.id)
         .then((response) => {
           if (Array.isArray(response.items) && response.items.length > 0) {
             const result = response.items.map(({ name, id }) => ({
@@ -293,12 +303,19 @@ export default function STable({ location: { state = {}, pathname } }) {
   const handleUpMatrix = () => {
     if (id) {
       api
-        .getUpperssStructureById(id)
+        .ssStructureUpper(id)
         .then((response) => {
           if (response.items) {
             setMatrixTree(response.items)
             setIsFetching(false)
-            history.goBack()
+            if (!isEmpty(state) && state.query && state.meta) {
+              history.push(navRoute('/queue'), {
+                query: state.query,
+                meta: state.meta,
+              })
+            } else {
+              history.goBack()
+            }
           }
         })
         .catch()
@@ -308,12 +325,12 @@ export default function STable({ location: { state = {}, pathname } }) {
   const backRouteElement = useMemo(() => {
     let returnRoute = (
       <Link to={routes.superStars} className={styles.close}>
-         <span className={styles.closeIT}>
+        <span className={styles.closeIT}>
 
-</span>
-<span className={styles.closeIB}>
+        </span>
+        <span className={styles.closeIB}>
 
-</span>
+        </span>
       </Link>
     )
     if (!isEmpty(state) && state.useBack) {
@@ -326,24 +343,40 @@ export default function STable({ location: { state = {}, pathname } }) {
     return returnRoute
   }, [history, state])
 
+  const navRoute = useCallback(
+    (route = '') => {
+      let newRoute = '/'
+
+      if (matrixInfo && matrixInfo.isActive && !id) {
+        newRoute = `/aida-table/${matrixInfo.id}${route}`
+      } else if (id) {
+        newRoute = `/aida-user/${id}${route}`
+      }
+      return newRoute
+    },
+    [matrixInfo, id],
+  )
+
   return (
     <div className={styles.Table}>
       <Container>
-        <MyViewElement element={
-        <div className={styles.header}> {matrixInfo && <h1 className={styles.title}>Aida - M{matrixInfo.id}</h1>} {backRouteElement}</div>
-      }/>
+        <div className={styles.header}>
+
+          {matrixInfo &&  <MyViewElement element={<h1 className={styles.title}>{t('private.navlinks.superStars')} - {matrixInfo.name}</h1>}/>}
+          {backRouteElement}
+        </div>
         <div className={styles.container}>
           <div className={styles.sidebar}>
-
             {selectItems && (
               <MyViewElement element={
+
               <Select
                 values={selectItems}
-                placeholder="Выберите клон"
+                placeholder={`${t('private.Pegasus.placeholder')}`}
                 className={styles.matrixSelect}
                 onChange={(value) => {
                   if (value) {
-                    history.push(`/aida-table/${value}`)
+                    history.push(`/aida-user/${value}`)
                   }
                 }}
               />
@@ -351,7 +384,51 @@ export default function STable({ location: { state = {}, pathname } }) {
 
             )}
             {id && (
+              <div className="d-none d-xl-block">
               <MyViewElement element={
+
+                <Button
+                  onClick={handleUpMatrix}
+                  disabled={buyingStatus.type === 'pending'}
+                  className="w-1001"
+                  color="perrywinkle"
+                  size="small"
+                >
+                  {t('private.Pegasus.upp')}
+                </Button>
+            }/>
+
+              </div>
+            )}
+            {matrixInfo && (
+              <div className={styles.footer}>
+              <MyViewElement element={
+
+                <p className={styles.price}>{t('private.Pegasus.price')} - {matrixInfo.summ} RUB</p>
+            }/>
+
+                {matrixInfo.canBuy && (
+              <MyViewElement element={
+
+                  <Button
+                    onClick={showBuyMatrixModal}
+                    disabled={buyingStatus.type === 'pending'}
+                    className="w-1001"
+                    color="perrywinkle"
+                    size="small"
+                  >
+                    {t('private.Pegasus.buy')}
+                  </Button>
+            }/>
+
+                )}
+              </div>
+            )}
+          </div>
+          <div className={styles.content}>
+            <div className="d-xl-none mt-4">
+            <MyViewElement element={
+
               <Button
                 onClick={handleUpMatrix}
                 disabled={buyingStatus.type === 'pending'}
@@ -359,33 +436,12 @@ export default function STable({ location: { state = {}, pathname } }) {
                 color="perrywinkle"
                 size="small"
               >
-                Наверх
+                {t('private.Pegasus.upp')}
               </Button>
             }/>
 
-            )}
-            {matrixInfo && matrixInfo.canBuy && (
-              <div className={styles.footer}>
-              <MyViewElement element={
-                <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
-              }/>
-              <MyViewElement element={
-                <Button
-                  onClick={showBuyMatrixModal}
-                  disabled={buyingStatus.type === 'pending'}
-                  className="w-1001"
-                  color="perrywinkle"
-                  size="small"
-                >
-                  Купить
-                </Button>
-              }/>
-
-              </div>
-            )}
-          </div>
-          <div className={styles.content}>
-          <MyViewElement element={
+            </div>
+            <MyViewElement element={
 
             <div className={styles.matrixTree}>
               <MatrixCell
@@ -394,77 +450,79 @@ export default function STable({ location: { state = {}, pathname } }) {
                 isActive={matrixInfo && matrixInfo.isActive}
               />
               <div className={styles.secondRow}>
-                {matrixInfo.id === 1
-                  ?
-                  <>
-                    <MatrixCell
-                      place={1}
-                      info={matrixTree['1']}
-                      ancestorInfo={matrixTree['0']}
-                      isActive={matrixInfo && matrixInfo.isActive}
-                      onDoubleClick={() => {
-                        showPartnerModal(matrixTree['1'], 1)
-                      }}
-                    />
-                    <MatrixCell
-                      place={2}
-                      ancestorInfo={matrixTree['0']}
-                      info={matrixTree['2']}
-                      isActive={matrixInfo && matrixInfo.isActive}
-                      onDoubleClick={() => {
-                        showPartnerModal(matrixTree['2'], 2)
-                      }}
-                    />
-                    <MatrixCell
-                      place={3}
-                      info={matrixTree['3']}
-                      ancestorInfo={matrixTree['0']}
-                      isActive={matrixInfo && matrixInfo.isActive}
-                      onDoubleClick={() => {
-                        showPartnerModal(matrixTree['3'], 3)
-                      }}
-                    />
-                  </>
-                  :
-                  <>
-                    <MatrixCell
-                      place={1}
-                      info={matrixTree['1']}
-                      ancestorInfo={matrixTree['0']}
-                      isActive={matrixInfo && matrixInfo.isActive}
-                      onDoubleClick={() => {
-                        showPartnerModal(matrixTree['1'], 1)
-                      }}
-                    />
-                    <MatrixCell
-                      place={2}
-                      ancestorInfo={matrixTree['0']}
-                      info={matrixTree['2']}
-                      isActive={matrixInfo && matrixInfo.isActive}
-                      onDoubleClick={() => {
-                        showPartnerModal(matrixTree['2'], 2)
-                      }}
-                    />
-                  </>
-
+                {
+                  matrixInfo.id === 1
+                    ?
+                    <>
+                      <MatrixCell
+                        place={1}
+                        info={matrixTree['1']}
+                        ancestorInfo={matrixTree['0']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['1'], 1)
+                        }}
+                      />
+                      <MatrixCell
+                        place={2}
+                        ancestorInfo={matrixTree['0']}
+                        info={matrixTree['2']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['2'], 2)
+                        }}
+                      />
+                      <MatrixCell
+                        place={3}
+                        ancestorInfo={matrixTree['0']}
+                        info={matrixTree['3']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['3'], 3)
+                        }}
+                      />
+                    </>
+                    :
+                    <>
+                      <MatrixCell
+                        place={1}
+                        info={matrixTree['1']}
+                        ancestorInfo={matrixTree['0']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['1'], 1)
+                        }}
+                      />
+                      <MatrixCell
+                        place={2}
+                        ancestorInfo={matrixTree['0']}
+                        info={matrixTree['2']}
+                        isActive={matrixInfo && matrixInfo.isActive}
+                        onDoubleClick={() => {
+                          showPartnerModal(matrixTree['2'], 2)
+                        }}
+                      />
+                    </>
                 }
               </div>
+
             </div>
             }/>
 
-
-            {matrixInfo && matrixInfo.canBuy && (
+            {matrixInfo && (
               <div className={styles.footer}>
                 <p className={styles.price}>Цена - {matrixInfo.summ} RUB</p>
-                <Button
-                  onClick={showBuyMatrixModal}
-                  disabled={buyingStatus.type === 'pending'}
-                  className="w-1001"
-                  color="perrywinkle"
-                  size="small"
-                >
-                  Купить
-                </Button>
+                {matrixInfo.canBuy && (
+                  <Button
+                    onClick={showBuyMatrixModal}
+                    disabled={buyingStatus.type === 'pending'}
+                    className="w-1001"
+                    color="perrywinkle"
+                    size="small"
+                  >
+                    {t('private.Pegasus.buy')}
+                  </Button>
+                )}
               </div>
             )}
           </div>
@@ -482,7 +540,7 @@ export default function STable({ location: { state = {}, pathname } }) {
         <ClonesModal matrixType={matrixInfo.id} onClose={closeClonesModal} />
       )}
       {visibleBuyMatrixModal && (
-        <BuyMatrixModal status={buyingStatus} onSubmit={buyMatrix} onClose={closeBuyMatrixModal} />
+        <BuyMatrixModal onSubmit={buyMatrix} status={buyingStatus} onClose={closeBuyMatrixModal} />
       )}
     </div>
   )

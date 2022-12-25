@@ -1,0 +1,1 @@
+{"y":50,"children":[{"__type":"Sprite","texture":"${icon}","x":75,"y":0,"anchor":{"x":0.5,"y":0}},{"__type":"VerticalLayout","x":60,"children":[{"__prefab":"sectionSubTitle","y":0,"__variables":{"text":"${label}"}},{"__prefab":"sectionTextWithIcon","y":7,"__variables":{"text":"${description}"}}]}]}

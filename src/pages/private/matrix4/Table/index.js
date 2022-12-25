@@ -93,7 +93,7 @@ export default function MTable({ location: { state = {}, pathname } }) {
       document.body.style.overflow = 'hidden'
     }
 
-    if ((place === 3 || place === 4) && matrixTree['1']) {
+    if ((place === 4) && matrixTree['1']) {
       if (!info) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
@@ -113,12 +113,13 @@ export default function MTable({ location: { state = {}, pathname } }) {
         )
         setVisiblePartnersClonesModal(true)
       }
-    } else if (place === 1 || place === 2) {
+    } else if (place === 1 || place === 2 || place === 3) {
       if (!info) {
         dispatch(
           matrixActions.saveCurrentMatrixCellInfo({
             ancestor_id: matrixTree['0'].id,
             place,
+            matrix_id:matrixInfo.id
           }),
         )
         setVisiblePartnersClonesModal(true)
@@ -416,8 +417,8 @@ export default function MTable({ location: { state = {}, pathname } }) {
                     />
                     <MatrixCell
                       place={3}
-                      info={matrixTree['3']}
                       ancestorInfo={matrixTree['0']}
+                      info={matrixTree['3']}
                       isActive={matrixInfo && matrixInfo.isActive}
                       onDoubleClick={() => {
                         showPartnerModal(matrixTree['3'], 3)

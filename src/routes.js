@@ -35,6 +35,7 @@ import Settings from "./pages/private/Settings";
 import SignUp from "./pages/public/SignUp";
 import ResetPassword from "./pages/public/ResetPassword";
 import Chat from "./pages/private/Chat/chat";
+import Nukeworld from "./pages/private/Casino/components/vvvvv";
 
 
 export const publicRouteConfig = [
@@ -350,7 +351,7 @@ export const panelRouteConfig = [
   {
     id: 'b611f7b-58bf-4230-82d-ec4174e454584147477',
     path: r.nukeworld,
-    //component: Nukeworld,
+    component: Nukeworld,
     exact: true,
   },
   {
