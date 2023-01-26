@@ -1,0 +1,1 @@
+{"children":[{"name":"game","children":[{"name":"background"}]},{"name":"ui","x":"$[- left]","y":0,"children":[{"name":"sfx"},{"name":"touch_area"},{"name":"custom_buttons"},{"name":"scene_ui"},{"name":"game_screen"},{"name":"tutorial"},{"name":"info_screen","children":[{"name":"darkness_area"},{"name":"screens_area"},{"name":"menu_area"}]}]},{"name":"intro"},{"name":"default"}]}

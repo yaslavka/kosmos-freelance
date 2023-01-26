@@ -80,8 +80,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
   return (
     <div
       className={`${styles.MatrixCell} ${place === 0 ? styles.main : styles.small}`}
-      onDoubleClick={matrixCellHandler}
-    >
+      onDoubleClick={matrixCellHandler}>
       {/* eslint-disable-next-line react/prop-types */}
       {info && info.count > -1 && (
         // eslint-disable-next-line react/prop-types
@@ -92,15 +91,7 @@ export default function MatrixCell({ place, info, isActive, onDoubleClick }) {
           <circle cx="30.6305" cy="30.9177" r="25.2154" stroke="#00BBF9A6" strokeWidth="9.86691" />
         </svg>
         <img
-          src={`${
-            info
-              ? // eslint-disable-next-line react/prop-types
-                info.photo
-                ? // eslint-disable-next-line react/prop-types
-                  `${process.env.REACT_APP_BASE_URL}/user/${info.photo}`
-                : avatarFallback
-              : avatarFallback
-          }`}
+          src={`${info ? info.photo ? `${process.env.REACT_APP_BASE_URL}/user/${info.photo}` : avatarFallback : avatarFallback}`}
           alt=""
         />
         <div

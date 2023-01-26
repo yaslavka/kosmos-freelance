@@ -1,0 +1,28 @@
+{"frames": {
+
+"intro_desktop_bg_day":
+{
+	"frame": {"x":2,"y":2,"w":1800,"h":1013},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1800,"h":1013},
+	"sourceSize": {"w":1800,"h":1013}
+},
+"intro_desktop_bg_night":
+{
+	"frame": {"x":2,"y":1017,"w":1800,"h":1013},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1800,"h":1013},
+	"sourceSize": {"w":1800,"h":1013}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "intro_rgb-hd.jpg",
+	"format": "RGB888",
+	"size": {"w":1804,"h":2032},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3f64b51fd0046c29e0e8545722ec8ef8:e58022f342c41792d4d828edf38ba108:77e359ab83bbeaa75174d965940927cd$"
+}
+}

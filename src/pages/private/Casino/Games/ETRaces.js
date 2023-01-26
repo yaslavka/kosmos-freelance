@@ -18,10 +18,10 @@ function ETRaces() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.etraces}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={luckyHaunter} />
                         </div>
-                        <div className="tmb-title">E.T. Races</div>
+                        <div className="tmb-titl">E.T. Races</div>
                       </Link>
                     </div>
                   </div>

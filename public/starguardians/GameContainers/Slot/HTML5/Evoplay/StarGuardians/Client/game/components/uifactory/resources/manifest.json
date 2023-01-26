@@ -1,0 +1,22 @@
+[
+  "/configs/close_button.json",
+  "/configs/desktop/close_button.json",
+  "/spritesheets/desktop/flatUI_desktop.json",
+  "/spritesheets/desktop/flatUI_desktop.png",
+  "/spritesheets/desktop/flatUI_desktop.webp",
+  "/spritesheets/desktop/flatUI_mobile.json",
+  "/spritesheets/desktop/flatUI_mobile.png",
+  "/spritesheets/desktop/flatUI_mobile.webp",
+  "/spritesheets/flatUI_desktop.json",
+  "/spritesheets/flatUI_desktop.png",
+  "/spritesheets/flatUI_desktop.webp",
+  "/spritesheets/flatUI_mobile.json",
+  "/spritesheets/flatUI_mobile.png",
+  "/spritesheets/flatUI_mobile.webp",
+  "/spritesheets/tablet/flatUI_desktop.json",
+  "/spritesheets/tablet/flatUI_desktop.png",
+  "/spritesheets/tablet/flatUI_desktop.webp",
+  "/spritesheets/tablet/flatUI_mobile.json",
+  "/spritesheets/tablet/flatUI_mobile.png",
+  "/spritesheets/tablet/flatUI_mobile.webp"
+]

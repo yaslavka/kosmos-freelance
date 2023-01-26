@@ -44,10 +44,10 @@ const rootReducer = (history) =>
     sellExchange: sellReducer,
     charts:charts,
     markets:markets,
+    trade: tradeReducer,
     milkyway: milkywayReducer,
     router: connectRouter(history),
     financeMoney: financeMoneyReducer,
-    trade: tradeReducer,
   })
 
 export default rootReducer

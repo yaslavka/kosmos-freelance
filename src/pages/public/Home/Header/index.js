@@ -71,7 +71,7 @@ function Header() {
               <div className="header__social">
                 <a
                   className="header__social-link"
-                  href="https://t.me/joinchat/5trTW-xurLRlN2Uy"
+                  href="https://t.me/kosmosmatrix"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -90,7 +90,7 @@ function Header() {
                 </a>
                 <a
                   className="header__social-link"
-                  href="https://vk.com/public202035837"
+                  href="https://vk.com/kosmos_tr"
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -109,7 +109,7 @@ function Header() {
                 </a>
                 <a
                   className="header__social-link"
-                  href="https://www.youtube.com/channel/UCrmcF7JcICRxIYCMMnPyrrg"
+                  href="https://www.youtube.com/channel/UC_uER-pkXylg1Ji_ueNbpJg"
                   rel="noreferrer"
                   target="_blank"
                 >

@@ -18,11 +18,13 @@ const AutoSubmit = ({ initialValues, values, submitForm }) => {
   return null
 }
 
+
 // eslint-disable-next-line react/prop-types
 export default function Avatar({ url, className }) {
   const dispatch = useDispatch()
 
   const submitAvatarForm = ({ avatar }) => {
+    //console.log(avatar)
     api
       .updateAvatar(avatar)
       .then(() => {

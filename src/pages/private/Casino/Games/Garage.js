@@ -18,10 +18,10 @@ function Garage() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.boom}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={garage} />
                         </div>
-                        <div className="tmb-title">Garage</div>
+                        <div className="tmb-titl">Garage</div>
                       </Link>
                     </div>
                   </div>

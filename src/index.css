@@ -270,6 +270,7 @@ gap: 40px; */
   width: 100%;
   min-height: 300px;
   padding: 55px 50px;
+  background-color: rgba(0,0,0,.24);
 }
 
 
@@ -2729,7 +2730,9 @@ iframe{
 @media (max-width: 767px) {
   .why-choose-us__logo-title {
     font-size: 30px;
-    margin-bottom: 16px
+    margin-bottom: 30px;
+    padding: 35px;
+    margin-top: revert;
   }
 }
 

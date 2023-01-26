@@ -1,0 +1,71 @@
+{"frames": {
+
+"dragon1":
+{
+	"frame": {"x":1261,"y":233,"w":342,"h":203},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":342,"h":203},
+	"sourceSize": {"w":342,"h":203}
+},
+"dragon2":
+{
+	"frame": {"x":865,"y":2,"w":342,"h":251},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":342,"h":251},
+	"sourceSize": {"w":342,"h":251}
+},
+"dragon3":
+{
+	"frame": {"x":1605,"y":233,"w":342,"h":203},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":342,"h":203},
+	"sourceSize": {"w":342,"h":203}
+},
+"dragons":
+{
+	"frame": {"x":1209,"y":2,"w":1299,"h":229},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1299,"h":229},
+	"sourceSize": {"w":1299,"h":229}
+},
+"dragons_mob":
+{
+	"frame": {"x":441,"y":256,"w":818,"h":144},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":818,"h":144},
+	"sourceSize": {"w":818,"h":144}
+},
+"history_cave":
+{
+	"frame": {"x":441,"y":2,"w":422,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":422,"h":252},
+	"sourceSize": {"w":422,"h":252}
+},
+"history_chest":
+{
+	"frame": {"x":2,"y":2,"w":437,"h":443},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":437,"h":443},
+	"sourceSize": {"w":437,"h":443}
+}},
+"animations": {
+	"dragon": ["dragon1","dragon2","dragon3"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "paytable-hd.png",
+	"format": "RGBA8888",
+	"size": {"w":2510,"h":447},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3b856c5a9c5cedf99e0f550148c45d90:e279efa1af8861181ffad7e15c38e60c:716fed4f5bfa07dface9898e160ccdd0$"
+}
+}

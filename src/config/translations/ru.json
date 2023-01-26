@@ -140,10 +140,10 @@
         "error": "Согласитесь с правилами"
       }
     },
-    "mainTitle": "Присоеденяйся уже сейчас",
+    "mainTitle": "Присоединяйся уже сейчас",
     "text": "",
     "buttons": {
-      "signUp": "Присоеденится"
+      "signUp": "Присоединится"
     },
     "links": {
       "signIn": {
@@ -215,11 +215,15 @@
       "starsUp": "Инвест Бокс",
       "casino": "Игры",
       "aboutUs": "О нас",
+      "Rockets": "Rockets",
+      "Ion": "Ion",
+      "Royals": "Royals",
       "team": "Рефераллы",
       "smm": "Продвижение",
       "education": "Торговый бот",
       "chat": "Чат участников",
-      "settings": "Настройки"
+      "settings": "Настройки",
+      "mymaterial": "Оплаченные услуги"
     },
     "MoneyTrans": {
       "result": {

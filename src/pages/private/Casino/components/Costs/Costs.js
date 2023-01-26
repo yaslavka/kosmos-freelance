@@ -14,9 +14,12 @@ function Costs() {
         </Col>
         <Col xl={8}>
           <Spin />
-          <iframe src={"/gnom"} width="100%"
+          <iframe src={"https://aplaydemo.slotwalker.com/game/fullstate/html5/igrosoft/gnomev2/?project=294&user_id=ffd6dbf0-50e9-482c-b98f-1204ee804871&demo=1&wid=1&s=a477af9db50e1efa2b68c0f733e66d9f"} width="100%"
                   allowFullScreen
-  height={500}/>
+                  height={500}/>
+  {/*        <iframe src={"/gnom"} width="100%"*/}
+  {/*                allowFullScreen*/}
+  {/*height={500}/>*/}
         </Col>
       </Row>
     </Container>

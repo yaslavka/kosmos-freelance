@@ -36,6 +36,37 @@ import SignUp from "./pages/public/SignUp";
 import ResetPassword from "./pages/public/ResetPassword";
 import Chat from "./pages/private/Chat/chat";
 import Nukeworld from "./pages/private/Casino/components/vvvvv";
+import MyMaterial from "./pages/private/MyMaterial";
+import RocketsTables from "./pages/private/Rockets";
+import RocketsTableQueue from "./pages/private/Rockets/TableQueue";
+import RocketsTable from "./pages/private/Rockets/Table";
+import IonTables from "./pages/private/Ion";
+import IonTableQueue from "./pages/private/Ion/TableQueue";
+import IonTable from "./pages/private/Ion/Table";
+import RoyalsTables from "./pages/private/Royals";
+import RoyalsTable from "./pages/private/Royals/Table";
+import Savethehamster from "./pages/private/Casino/components/7777";
+import Forestdreams from "./pages/private/Casino/components/zzz";
+import Blacs from "./pages/private/Casino/components/DDD";
+import Blacsd from "./pages/private/Casino/components/777";
+import Roll from "./pages/private/Casino/components/roulette";
+import Christmas from "./pages/private/Casino/components/ChristmasParty";
+import MagicWhee from "./pages/private/Casino/components/MagicWheel";
+import ETRace from "./pages/private/Casino/components/ETRaces";
+import Blaccd from "./pages/private/Casino/components/cccc";
+import Raccoontales from "./pages/private/Casino/components/blac";
+import Smm from "./pages/private/SMM";
+import Snapsocial from "./pages/private/SMM/pages/Snapsocial";
+import JuegoRuleta from "./pages/private/Casino/components/JuegoRuleta";
+import Megaciti from "./pages/private/Casino/components/MegaCity/Megaciti";
+import DICE from "./pages/private/Casino/components/dice/App";
+import Fool from "./pages/private/Casino/components/fool/Casino";
+import Canvas from "./pages/private/Casino/components/Slots/components/Canvas";
+import Bar from "./pages/private/Casino/components/Slots/BAR/App";
+import Cost from "./pages/private/Casino/components/cost/Components/Cost";
+import Costs from "./pages/private/Casino/components/Costs/Costs";
+import Monk from "./pages/private/Casino/components/obesyn";
+import Booom from "./pages/private/Casino/components/Boom";
 
 
 export const publicRouteConfig = [
@@ -162,6 +193,63 @@ export const panelRouteConfig = [
     component: STable,
     exact: true,
   },
+
+  {
+    id: '5a02e212143a-028e-4a64-9de7-a84shfiuhfc4a289f',
+    path: r.rockets,
+    component: RocketsTables,
+    exact: false,
+  },
+  {
+    id: '470c1df2-4bf9-45as66c41-897a-b72dfs67e53aa68',
+    path: [r.personalTableRockets, r.tableRockets],
+    component: RocketsTable,
+    exact: true,
+  },
+  {
+    id: 'fa4bc3a7-6beadsgd454-47dgsdae-bb00-9bbass1f1f3349',
+    path: [r.personalTableQueueRockets, r.tableQueueRockets],
+    component: RocketsTableQueue,
+    exact: true,
+  },
+
+  {
+    id: '5a02e212gsds143a-028e-4a64-9de7-a84shfiuhfc4a289f',
+    path: r.ion,
+    component: IonTables,
+    exact: false,
+  },
+  {
+    id: '470csdfsd1df2-4bf9-45as66c41-897a-b72dfs67e53aa68',
+    path: [r.personalTableion, r.tableion],
+    component: IonTable,
+    exact: true,
+  },
+  {
+    id: 'fa4bc3a7-6bsdgsdea454-47dgsdae-bb00-9bbass1f1f3349',
+    path: [r.personalTableQueueion, r.tableQueueion],
+    component: IonTableQueue,
+    exact: true,
+  },
+
+  {
+    id: '5a02e212teregsds143a-028e-4a64-9de7-a84shfiuhfc4a289f',
+    path: r.royal,
+    component: RoyalsTables,
+    exact: false,
+  },
+  {
+    id: '470csdfsd1df2-4beryrf9-45as66c41-897a-b72dfs67e53aa68',
+    path: [r.personalTableroyal, r.tableroyal],
+    component: RoyalsTable,
+    exact: true,
+  },
+  {
+    id: 'fa4bc3a7-6bsdgsdea454-47dgserrgddae-bb00-9bbass1f1f3349',
+    path: [r.personalTableQueueroyal, r.tableQueueroyal],
+    component: IonTableQueue,
+    exact: true,
+  },
   {
     id: 'a682cca2-82df-4daa-81ed-70cc6868d3e2',
     path: r.starTrek,
@@ -254,10 +342,16 @@ export const panelRouteConfig = [
   },
   {
     id: '0a51ed92-9f9f-4d95-9bf3-fb47eb36289f',
-    path: [r.education, r.educationComment, r.educationForm],
-    //component: Education,
+    path: [r.educations],
+    component: MyMaterial,
     exact: true,
   },
+  // {
+  //   id: '0a51ed92-9f9f-4d95-9bf3-fb47eb36289f',
+  //   path: [r.education, r.educationComment, r.educationForm],
+  //   component: MyMaterial,
+  //   exact: true,
+  // },
   {
     id: '1tdfrd-5845bf-42gg40-82d-45847sdfa477',
     path: r.chat,
@@ -273,79 +367,79 @@ export const panelRouteConfig = [
   {
     id: '0ea39de5-795b-45a8-b40e-ab75f5e514',
     path: r.smm,
-    //component: Smm,
+    component: Smm,
     exact: true,
   },
   {
     id: '0ea39de5-795b-45a8-b454540e-ab75f5e514',
     path: r.smmsoc,
-    //component: Snapsocial,
+    component: Snapsocial,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e45',
     path: r.rollet,
-    //component: JuegoRuleta,
+    component: JuegoRuleta,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4154kjkjhkf',
     path: r.megacity,
-    //component: Megaciti,
+    component: Megaciti,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454589361',
     path: r.dice,
-    //component: DICE,
+    component: DICE,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454561',
     path: r.fool,
-    //component: Fool,
+    component: Fool,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e45456147',
     path: r.slots,
-    //component: Canvas,
+    component: Canvas,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454561479',
     path: r.barr,
-    //component: Bar,
+    component: Bar,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454561474',
     path: r.cost,
-    //component: Cost,
+    component: Cost,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e4545614740',
     path: r.costs,
-    //component: Costs,
+    component: Costs,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e45458414740',
     path: r.obes,
-    //component: Monk,
+    component: Monk,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-826d-ec4174e454584147477',
     path: r.boom,
-    //component: Booom,
+    component: Booom,
     exact: true,
   },
   {
     id: 'b611f7bb-58bf-4230-82d-ec4174e454584147477',
     path: r.raccoontales,
-    //component: Raccoontales,
+   component: Raccoontales,
     exact: true,
   },
   {
@@ -357,55 +451,55 @@ export const panelRouteConfig = [
   {
     id: 'b611f7b-58bf-4230-82d-ec4174e4545847477',
     path: r.blaacb,
-    //component: Blaccd,
+    component: Blaccd,
     exact: true,
   },
   {
     id: '1tdd-5845bf-423440-82d-ec4174e4545847477',
     path: r.blaa,
-    //component: Blacsd,
+    component: Blacsd,
     exact: true,
   },
   {
     id: '1tdd-5845bf-423440-82d-ec4174e4545847477',
     path: r.lacs,
-    //component: Blacs,
+    component: Blacs,
     exact: true,
   },
   {
     id: '1tdffrd-5845bf-423440-82d-ec4174e4545847477',
     path: r.savethehamster,
-    //component: Savethehamster,
+    component: Savethehamster,
     exact: true,
   },
   {
     id: '1tdddfrd-5845bf-423440-82d-ec4174e4545847477',
     path: r.forestdreams,
-    //component: Forestdreams,
+    component: Forestdreams,
     exact: true,
   },
   {
     id: '1tdfrd-5845bf-423440-82d-ec4174e4545847477',
     path: r.roll,
-    //component: Roll,
+    component: Roll,
     exact: true,
   },
   {
     id: '1tdfrd-5845bf-42gg40-82d-ec4174e4545847477',
     path: r.magicwhee,
-    //component: MagicWhee,
+    component: MagicWhee,
     exact: true,
   },
   {
     id: '1tdfrd-5845bf-42gg40-82d-174e4545847477',
     path: r.christmasparty,
-    //component: Christmas,
+   component: Christmas,
     exact: true,
   },
   {
     id: '1tdfrd-5845bf-42gg40-82d-45847477',
     path: r.etraces,
-    //component: ETRace,
+    component: ETRace,
     exact: true,
   },
 ]

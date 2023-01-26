@@ -91,18 +91,36 @@ const privateNavLinks = [
     isDisabled: false,
     icon: logo,
   },
+  {
+    label: 'Rockets',
+    route: routes.rockets,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'Ion',
+    route: routes.ion,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'Royals',
+    route: routes.royal,
+    isDisabled: false,
+    icon: logo,
+  },
   // {
   //   label: 'premiumStars',
   //   route: routes.premiumStars,
   //   isDisabled: false,
   //   icon: logo,
   // },
-  // {
-  //   label: 'starTrek',
-  //   route: routes.starTrek,
-  //   isDisabled: false,
-  //   icon: logo,
-  // },
+  {
+    label: 'starTrek',
+    route: routes.starTrek,
+    isDisabled: false,
+    icon: logo,
+  },
   // {
   //   label: 'milkyway',
   //   route: routes.milkyway,
@@ -121,13 +139,13 @@ const privateNavLinks = [
   //   isDisabled: false,
   //   icon: luckyStar,
   // },
-  // {
-  //   label: 'casino',
-  //   route: routes.casino,
-  //   isDisabled: false,
-  //   classImg: styles.gamepad,
-  //   icon: bbb,
-  // },
+  {
+    label: 'casino',
+    route: routes.casino,
+    isDisabled: false,
+    classImg: styles.gamepad,
+    icon: bbb,
+  },
   {
     label: 'aboutUs',
     route: routes.aboutUs,
@@ -150,6 +168,12 @@ const privateNavLinks = [
   {
     label: 'settings',
     route: routes.settings,
+    isDisabled: false,
+    icon: gear,
+  },
+  {
+    label: 'mymaterial',
+    route: routes.education,
     isDisabled: false,
     icon: gear,
   },

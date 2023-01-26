@@ -18,10 +18,10 @@ function ChristmasParty() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.christmasparty}>
-                        <div className="tmb-img">
-                          <img src={luckyHaunter} />
+                        <div className="tmb-imgz">
+                          <img src={luckyHaunter} style={{width: "180px"}}/>
                         </div>
-                        <div className="tmb-title">Christmas Party</div>
+                        <div className="tmb-titl">Christmas Party</div>
                       </Link>
                     </div>
                   </div>

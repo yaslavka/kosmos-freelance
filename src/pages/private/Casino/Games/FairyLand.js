@@ -18,10 +18,10 @@ function FairyLand() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.dice}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={Coktail} />
                         </div>
-                        <div className="tmb-title">Fairy Land</div>
+                        <div className="tmb-titl">Fairy Land</div>
                       </Link>
                     </div>
                   </div>

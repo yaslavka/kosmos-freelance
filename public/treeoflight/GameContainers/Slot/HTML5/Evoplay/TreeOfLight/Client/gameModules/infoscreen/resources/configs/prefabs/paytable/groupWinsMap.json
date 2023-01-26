@@ -1,0 +1,598 @@
+{
+  "__type": "Container",
+  "children": [
+    {
+      "__type": "Graphics",
+      "chain": [
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            0,
+            0,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            50,
+            0,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            100,
+            0,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            150,
+            0,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            200,
+            0,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            250,
+            0,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            300,
+            0,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            0,
+            50,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            50,
+            50,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            100,
+            50,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            150,
+            50,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            200,
+            50,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            250,
+            50,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            300,
+            50,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            0,
+            100,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            50,
+            100,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            100,
+            100,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            150,
+            100,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            200,
+            100,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            250,
+            100,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            300,
+            100,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            0,
+            150,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            50,
+            150,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            100,
+            150,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            150,
+            150,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            200,
+            150,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            250,
+            150,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            300,
+            150,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            0,
+            200,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            50,
+            200,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            100,
+            200,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            150,
+            200,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            200,
+            200,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            250,
+            200,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            300,
+            200,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            0,
+            250,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            50,
+            250,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            100,
+            250,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            150,
+            250,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            200,
+            250,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            250,
+            250,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            300,
+            250,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            0,
+            300,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            50,
+            300,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            100,
+            300,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${loseColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            150,
+            300,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            200,
+            300,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            250,
+            300,
+            "${cellSize}"
+          ]
+        },
+        {
+          "beginFill": [
+            "${winColor}"
+          ]
+        },
+        {
+          "drawCircle": [
+            300,
+            300,
+            "${cellSize}"
+          ]
+        }
+      ]
+    }
+  ]
+}

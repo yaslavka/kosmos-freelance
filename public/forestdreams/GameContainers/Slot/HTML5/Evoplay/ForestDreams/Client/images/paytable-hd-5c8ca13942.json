@@ -1,0 +1,118 @@
+{"frames": {
+
+"buba":
+{
+	"frame": {"x":0,"y":269,"w":298,"h":292},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":298,"h":292},
+	"sourceSize": {"w":298,"h":292}
+},
+"chirva":
+{
+	"frame": {"x":280,"y":0,"w":275,"h":269},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":275,"h":269},
+	"sourceSize": {"w":275,"h":269}
+},
+"chrest":
+{
+	"frame": {"x":555,"y":0,"w":279,"h":269},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":269},
+	"sourceSize": {"w":279,"h":269}
+},
+"Fox":
+{
+	"frame": {"x":605,"y":948,"w":383,"h":422},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":383,"h":422},
+	"sourceSize": {"w":383,"h":422}
+},
+"Ko dama":
+{
+	"frame": {"x":371,"y":948,"w":234,"h":408},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":234,"h":408},
+	"sourceSize": {"w":234,"h":408}
+},
+"paytable_reelset_1":
+{
+	"frame": {"x":575,"y":269,"w":412,"h":327},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":412,"h":327},
+	"sourceSize": {"w":412,"h":327}
+},
+"paytable_reelset_1_mob":
+{
+	"frame": {"x":0,"y":0,"w":280,"h":225},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":280,"h":225},
+	"sourceSize": {"w":280,"h":225}
+},
+"pika":
+{
+	"frame": {"x":298,"y":269,"w":277,"h":296},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":277,"h":296},
+	"sourceSize": {"w":277,"h":296}
+},
+"Racoon":
+{
+	"frame": {"x":268,"y":596,"w":367,"h":352},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":352},
+	"sourceSize": {"w":367,"h":352}
+},
+"spirit_day":
+{
+	"frame": {"x":0,"y":1370,"w":471,"h":548},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":471,"h":548},
+	"sourceSize": {"w":471,"h":548}
+},
+"spirit_night":
+{
+	"frame": {"x":471,"y":1370,"w":469,"h":623},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":469,"h":623},
+	"sourceSize": {"w":469,"h":623}
+},
+"Turtle":
+{
+	"frame": {"x":0,"y":596,"w":268,"h":337},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":268,"h":337},
+	"sourceSize": {"w":268,"h":337}
+},
+"Voron":
+{
+	"frame": {"x":0,"y":948,"w":371,"h":395},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":371,"h":395},
+	"sourceSize": {"w":371,"h":395}
+}},
+"animations": {
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "paytable-hd.jpg",
+	"format": "RGB888",
+	"size": {"w":988,"h":1993},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:6d4a8c60345246962a90e5e99c6a06fc:81922702bdad4270ab7184efbc77846b:9ff87e5fa4a1d2dc6b35bf32675ec732$"
+}
+}

@@ -1,0 +1,1 @@
+{"__type":"Container","y":50,"children":[{"__type":"Graphics","chain":[{"beginFill":["${styles.color__primary--dark}"]},{"drawRect":[0,0,"$[100pw]",70]}]},{"__type":"PrefabText","x":0,"y":24,"text":"${text}","fontName":"text__h3","upperCase":true}]}

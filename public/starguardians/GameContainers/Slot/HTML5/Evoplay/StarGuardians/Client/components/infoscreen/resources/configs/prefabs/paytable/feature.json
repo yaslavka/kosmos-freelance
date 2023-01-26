@@ -1,0 +1,1 @@
+{"__type":"VerticalLayout","spacing":0,"children":[{"__type":"TextField","localizedText":"${name}","style":"${styles.text__h3}","wordWrap":true,"fitToArea":[1500,0]},{"__type":"TextField","localizedText":"${description}","style":"${styles.text}","wordWrap":true,"fitToArea":[1500,0]}]}

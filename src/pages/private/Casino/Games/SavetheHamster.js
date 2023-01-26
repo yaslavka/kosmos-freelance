@@ -18,10 +18,10 @@ function Hamster() {
                         <div className="icoc icoc-tmb-fav"/>
                       </div>
                       <Link to={routes.savethehamster}>
-                        <div className="tmb-img">
-                          <img src={garage}  alt={''}/>
+                        <div className="tmb-imgz">
+                          <img src={garage}  alt={''} style={{width: "180px"}}/>
                         </div>
-                        <div className="tmb-title">Save the Hamster</div>
+                        <div className="tmb-titl">Save the Hamster</div>
                       </Link>
                     </div>
                   </div>

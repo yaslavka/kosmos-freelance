@@ -18,10 +18,10 @@ function Gnome() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.costs}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={costs} />
                         </div>
-                        <div className="tmb-title">Gnome</div>
+                        <div className="tmb-titl">Gnome</div>
                       </Link>
                     </div>
                   </div>

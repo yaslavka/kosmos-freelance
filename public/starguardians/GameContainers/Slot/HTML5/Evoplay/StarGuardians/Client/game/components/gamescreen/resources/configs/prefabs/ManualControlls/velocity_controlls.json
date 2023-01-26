@@ -1,0 +1,1 @@
+{"__type":"Sprite","texture":"${textures.big_arc}","anchor":{"x":0.5,"y":0.5},"interactive":true,"x":"$[10pw]","y":"$[60ph]","children":[{"__type":"Sprite","texture":"${textures.small_arc}","name":"velocityCursor","anchor":{"x":0.5,"y":0.5}}]}

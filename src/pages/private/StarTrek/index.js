@@ -65,34 +65,34 @@ function StarTrek() {
               <Link className='link-blue' to={r.starTrekPlanets} >
                 {t('private.StarTrek.link.starTrekPlanets')}
               </Link>
-              {/* TODO: delete all functions */}
-              {/*<Button*/}
+               TODO: delete all functions
+              <Button
 
-              {/*  className='link-blue'*/}
-              {/*  onClick={handleButtonClick}*/}
-              {/*>*/}
-              {/*  {timer ? (*/}
-              {/*    <Timer*/}
-              {/*      date={timer}*/}
-              {/*      renderer={renderer}*/}
-              {/*      onComplete={() => {*/}
-              {/*        dispatch(actions.startrekResetTimer())*/}
-              {/*      }}*/}
-              {/*    />*/}
-              {/*  ) : (*/}
-              {/*    `${*/}
-              {/*      statistics?.myPlanet > 0*/}
-              {/*        ?`${t('private.StarTrek.link.statistics')}`*/}
-              {/*        :`${t('private.StarTrek.link.myPlanet')}`.toLocaleUpperCase()*/}
-              {/*    }`*/}
-              {/*  )}*/}
-              {/*</Button>*/}
+                className='link-blue'
+                onClick={handleButtonClick}
+              >
+                {timer ? (
+                  <Timer
+                    date={timer}
+                    renderer={renderer}
+                    onComplete={() => {
+                      dispatch(actions.startrekResetTimer())
+                    }}
+                  />
+                ) : (
+                  `${
+                    statistics?.myPlanet > 0
+                      ?`${t('private.StarTrek.link.statistics')}`
+                      :`${t('private.StarTrek.link.myPlanet')}`.toLocaleUpperCase()
+                  }`
+                )}
+              </Button>
             </div>
-            {/*<div className="text-center">*/}
-            {/*  <Link className='link-blue' to={r.starTrekStatistic}>*/}
-            {/*    {t('private.StarTrek.link.starTrekStatistic')}*/}
-            {/*  </Link>*/}
-            {/*</div>*/}
+            <div className="text-center">
+              <Link className='link-blue' to={r.starTrekStatistic}>
+                {t('private.StarTrek.link.starTrekStatistic')}
+              </Link>
+            </div>
         </Col>
       </Row>
     </Container>

@@ -1,0 +1,1 @@
+{"default":"basegame","types":[{"id":"basegame","randomize":[{"id":"0","chance":1},{"id":"1","chance":1},{"id":"2","chance":1},{"id":"3","chance":1},{"id":"4","chance":1},{"id":"5","chance":1},{"id":"6","chance":5},{"id":"7","chance":5},{"id":"8","chance":5}],"priority":[0,1,2,3,4,5,6,7,8],"features":{}}]}

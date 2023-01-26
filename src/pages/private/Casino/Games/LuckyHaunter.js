@@ -18,10 +18,10 @@ function LuckyHaunter() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.cost}>
-                        <div className="tmb-img">
-                          <img src={luckyHaunter} />
+                        <div className="tmb-imgz">
+                          <img src={luckyHaunter} style={{width: "180px"}}/>
                         </div>
-                        <div className="tmb-title">Lucky Haunter</div>
+                        <div className="tmb-titl">Lucky Haunter</div>
                       </Link>
                     </div>
                   </div>

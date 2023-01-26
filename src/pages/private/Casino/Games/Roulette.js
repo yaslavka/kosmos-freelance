@@ -18,10 +18,10 @@ function Roulette() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.blaacb}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={roulette} />
                         </div>
-                        <div className="tmb-title">Roulette</div>
+                        <div className="tmb-titl">Roulette</div>
                       </Link>
                     </div>
                   </div>

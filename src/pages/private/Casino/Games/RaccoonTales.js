@@ -18,10 +18,10 @@ function RaccoonTales() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.raccoontales}>
-                        <div className="tmb-img">
-                          <img src={raccoonTales} />
+                        <div className="tmb-imgz">
+                          <img src={raccoonTales} style={{width: "180px"}}/>
                         </div>
-                        <div className="tmb-title">Raccoon Tales</div>
+                        <div className="tmb-titl">Raccoon Tales</div>
                       </Link>
                     </div>
                   </div>

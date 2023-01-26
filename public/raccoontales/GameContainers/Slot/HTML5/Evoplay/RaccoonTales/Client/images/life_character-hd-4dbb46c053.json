@@ -1,0 +1,60 @@
+{"frames": {
+
+"bar_blue":
+{
+	"frame": {"x":12,"y":12,"w":311,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":1,"w":311,"h":23},
+	"sourceSize": {"w":320,"h":30}
+},
+"bar_green":
+{
+	"frame": {"x":347,"y":12,"w":311,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":1,"w":311,"h":23},
+	"sourceSize": {"w":320,"h":30}
+},
+"bar_red":
+{
+	"frame": {"x":682,"y":12,"w":311,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":311,"h":23},
+	"sourceSize": {"w":317,"h":26}
+},
+"health_mini_boss":
+{
+	"frame": {"x":1017,"y":12,"w":98,"h":12},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":98,"h":12},
+	"sourceSize": {"w":99,"h":14}
+},
+"health_mini_boss_blue":
+{
+	"frame": {"x":1139,"y":12,"w":98,"h":12},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":98,"h":12},
+	"sourceSize": {"w":99,"h":14}
+},
+"health_mini_boss_red":
+{
+	"frame": {"x":1261,"y":12,"w":98,"h":12},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":98,"h":12},
+	"sourceSize": {"w":99,"h":14}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "life_character-hd.png",
+	"format": "RGBA8888",
+	"size": {"w":1371,"h":47},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:cbe891b0cac10571658cb3c5a2f38d14:cbf798fff560b94eb6afdc80b32be21c:fd1527bed7af59d55b245ec6cd6628d3$"
+}
+}

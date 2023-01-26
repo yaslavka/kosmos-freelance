@@ -60,6 +60,7 @@ export const createFormDataObj = (payload) => {
   for (let key in payload) {
     formData.append(key, payload[key])
   }
+  //console.log(JSON.stringify(formData));
   return formData
 }
 

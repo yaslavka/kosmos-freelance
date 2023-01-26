@@ -18,10 +18,10 @@ function Keks() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.slots}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={keks} />
                         </div>
-                        <div className="tmb-title">keks</div>
+                        <div className="tmb-titl">keks</div>
                       </Link>
                     </div>
                   </div>

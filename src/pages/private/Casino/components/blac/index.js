@@ -19,17 +19,24 @@ function Raccoontales() {
         </Col>
         <Col xl={7}>
           <Spio />
-          {
-            desktop
-              ?<iframe
-                id="game-frame"
-                allowFullScreen={"allowfullscreen"}
-                src={"/raccoontales"}
-                width="100%"
-                height={500}
-              />
-              :<iframe id="game-frame" allowFullScreen src={"/raccoontales/mobile.html"} width="100%" height={600} autofocus/>
-          }
+          <iframe
+            id="game-frame"
+            allowFullScreen={"allowfullscreen"}
+            src={"https://demo.evoplay.games/demo/fullstate/html5/evoplay/raccoontales"}
+            width="100%"
+            height={500}
+          />
+          {/*{*/}
+          {/*  desktop*/}
+          {/*    ?<iframe*/}
+          {/*      id="game-frame"*/}
+          {/*      allowFullScreen={"allowfullscreen"}*/}
+          {/*      src={"/raccoontales"}*/}
+          {/*      width="100%"*/}
+          {/*      height={500}*/}
+          {/*    />*/}
+          {/*    :<iframe id="game-frame" allowFullScreen src={"/raccoontales/mobile.html"} width="100%" height={600} autofocus/>*/}
+          {/*}*/}
         </Col>
       </Row>
     </Container>

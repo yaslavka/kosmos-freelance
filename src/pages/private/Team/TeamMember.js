@@ -84,7 +84,7 @@ function TeamMember({ member }) {
                   matrix={Object.values(superStar)}
                   onClick={(value) => {
                     saveCurrentMatrix(value)
-                    history.push(`/MATRIX3-table/${value.matrixId}`, {
+                    history.push(`/personal-Kepler/${value.matrixId}`, {
                       useBack: true,
                     })
                   }}
@@ -104,7 +104,7 @@ function TeamMember({ member }) {
                   matrix={Object.values(matrix)}
                   onClick={(value) => {
                     saveCurrentMatrix(value)
-                    history.push(`/table/${value.matrixId}`, { useBack: true })
+                    history.push(`/personal-Kepler/${value.matrixId}`, { useBack: true })
                   }}
                 />
               ) : (
@@ -122,7 +122,7 @@ function TeamMember({ member }) {
                   matrix={Object.values(auto)}
                   onClick={(value) => {
                     saveCurrentMatrix(value)
-                    history.push(`/auto-table/${value.matrixId}`, {
+                    history.push(`/personal-Kepler/${value.matrixId}`, {
                       useBack: true,
                     })
                   }}

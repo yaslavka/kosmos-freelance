@@ -1,0 +1,111 @@
+{"frames": {
+
+"number_dragon/0":
+{
+	"frame": {"x":2,"y":316,"w":127,"h":153},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":127,"h":153},
+	"sourceSize": {"w":129,"h":156}
+},
+"number_dragon/1":
+{
+	"frame": {"x":374,"y":314,"w":104,"h":154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":1,"w":104,"h":154},
+	"sourceSize": {"w":108,"h":156}
+},
+"number_dragon/2":
+{
+	"frame": {"x":131,"y":316,"w":122,"h":153},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":122,"h":153},
+	"sourceSize": {"w":124,"h":155}
+},
+"number_dragon/3":
+{
+	"frame": {"x":255,"y":158,"w":120,"h":154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":120,"h":154},
+	"sourceSize": {"w":122,"h":156}
+},
+"number_dragon/4":
+{
+	"frame": {"x":133,"y":2,"w":131,"h":152},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":131,"h":152},
+	"sourceSize": {"w":133,"h":154}
+},
+"number_dragon/5":
+{
+	"frame": {"x":255,"y":314,"w":117,"h":154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":117,"h":154},
+	"sourceSize": {"w":119,"h":156}
+},
+"number_dragon/6":
+{
+	"frame": {"x":266,"y":2,"w":126,"h":154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":2,"w":126,"h":154},
+	"sourceSize": {"w":128,"h":157}
+},
+"number_dragon/7":
+{
+	"frame": {"x":131,"y":159,"w":122,"h":155},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":122,"h":155},
+	"sourceSize": {"w":125,"h":158}
+},
+"number_dragon/8":
+{
+	"frame": {"x":2,"y":2,"w":129,"h":155},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":129,"h":155},
+	"sourceSize": {"w":131,"h":157}
+},
+"number_dragon/9":
+{
+	"frame": {"x":2,"y":159,"w":127,"h":155},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":127,"h":155},
+	"sourceSize": {"w":130,"h":157}
+},
+"number_dragon/dot":
+{
+	"frame": {"x":394,"y":2,"w":80,"h":89},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":1,"w":80,"h":89},
+	"sourceSize": {"w":83,"h":90}
+},
+"number_dragon/x":
+{
+	"frame": {"x":377,"y":158,"w":103,"h":114},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":8,"w":103,"h":114},
+	"sourceSize": {"w":103,"h":130}
+}},
+"animations": {
+	"number_dragon": ["number_dragon/0","number_dragon/1","number_dragon/2","number_dragon/3","number_dragon/4","number_dragon/5","number_dragon/6","number_dragon/7","number_dragon/8","number_dragon/9"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "number_dragon-hd.png",
+	"format": "RGBA8888",
+	"size": {"w":482,"h":471},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:490eb3a97073dcb70f02554e4f11467f:7a7b24e16e964566fa1e36817d1aeb40:56c8fe581a9601d0c72503195256483e$"
+}
+}

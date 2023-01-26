@@ -18,10 +18,10 @@ function CrazyMonkey() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.barr}>
-                        <div className="tmb-img">
-                          <img src={crazyMonkey} />
+                        <div className="tmb-imgz">
+                          <img src={crazyMonkey} style={{width: "180px"}}/>
                         </div>
-                        <div className="tmb-title">Crazy Monkey</div>
+                        <div className="tmb-titl">Crazy Monkey</div>
                       </Link>
                     </div>
                   </div>

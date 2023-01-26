@@ -18,10 +18,10 @@ function StarGuardians() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.blaa}>
-                        <div className="tmb-img">
-                          <img src={starGuardians} />
+                        <div className="tmb-imgz">
+                          <img src={starGuardians} style={{width: "180px"}}/>
                         </div>
-                        <div className="tmb-title">Star Guardians</div>
+                        <div className="tmb-titl">Star Guardians</div>
                       </Link>
                     </div>
                   </div>

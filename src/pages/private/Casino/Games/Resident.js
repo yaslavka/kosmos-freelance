@@ -18,10 +18,10 @@ function Resident() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.fool}>
-                        <div className="tmb-img" style={{width:"400px", marginLeft:"10px" }}>
+                        <div className="tmb-imgz" style={{width:"400px", marginLeft:"10px" }}>
                           <img src={resident} style={{height:"105px", }}/>
                         </div>
-                        <div className="tmb-title">Resident</div>
+                        <div className="tmb-titl">Resident</div>
                       </Link>
                     </div>
                   </div>

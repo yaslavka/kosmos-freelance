@@ -33,7 +33,8 @@ function Leader() {
                     src={
                       userInfo.referal.avatar
                         ? `${process.env.REACT_APP_BASE_URL}/user/${userInfo.referal.avatar}`
-                        : avatar
+                        : avatar?
+                      console.log(userInfo.referal.avatar):''
                     }
                     alt={userInfo.referal.avatar}
                   />

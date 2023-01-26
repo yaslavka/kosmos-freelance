@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 .Appcat {
   background: #fff;
   color: #212121;
@@ -7,14 +8,9 @@
 }
 .Appcatd {
   animation: 300ms cubic-bezier(0.39, 0.24, 0.21, 0.99) 0s 1 normal both running WidgetContainer_OPEN_WIDGET_f82b;
-  --jright: 30px;
-  --jheight: 496px;
   display: block;
   position: fixed;
-  --jlabelwidth: 300px;
-  --jlabelright: 30px;
   padding: 80px;
-  margin-top: 8vh;
 }
 .chat-windows {
   clip: auto;
@@ -47,7 +43,7 @@
   hyphens: manual;
   image-rendering: auto;
   justify-content: flex-start;
-  left: auto;
+
   letter-spacing: normal;
   line-height: normal;
   margin: 0;
@@ -89,7 +85,6 @@
   z-index: auto;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .joinChatContainer {
   display: flex;
@@ -275,7 +270,8 @@
 }
 
 .chat-avatar{
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 

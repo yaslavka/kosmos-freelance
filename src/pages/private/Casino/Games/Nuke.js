@@ -18,10 +18,10 @@ function NUKEWORLD() {
                         <div className="icoc icoc-tmb-fav"/>
                       </div>
                       <Link to={routes.nukeworld}>
-                        <div className="tmb-img">
-                          <img src={NUKEWORLd} height="1%"  alt={""}/>
+                        <div className="tmb-imgz">
+                          <img src={NUKEWORLd} height="1%"  alt={""} style={{width: "180px"}}/>
                         </div>
-                        <div className="tmb-title">NUKE WORLD</div>
+                        <div className="tmb-titl">NUKE WORLD</div>
                       </Link>
                     </div>
                   </div>

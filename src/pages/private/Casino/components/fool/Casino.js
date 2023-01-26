@@ -12,9 +12,12 @@ function Fool() {
         </Col>
         <Col xl={7}>
           <Spin />
-          <iframe src={"/resident"} width="100%"
+          <iframe src={"https://aplaydemo.slotwalker.com/game/fullstate/html5/igrosoft/residentv2/?project=294&user_id=00019f60-fac5-4af3-8603-153d9ea51805&demo=1&wid=1&s=0d07f2fab89215833e8c623b5fe03a14"} width="100%"
                   allowFullScreen
                   height={500}/>
+          {/*<iframe src={"/resident"} width="100%"*/}
+          {/*        allowFullScreen*/}
+          {/*        height={500}/>*/}
         </Col>
       </Row>
     </Container>

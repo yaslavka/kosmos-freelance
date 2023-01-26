@@ -14,10 +14,17 @@ function Blaccd() {
           <iframe
             id="game-frame"
             allowFullScreen={"allowfullscreen"}
-            src={"/europeanroulette"}
+            src={"https://demo.evoplay.games/demo/table/html5/evoplay/europeanroulette"}
             width="100%"
             height={500}
           />
+          {/*<iframe*/}
+          {/*  id="game-frame"*/}
+          {/*  allowFullScreen={"allowfullscreen"}*/}
+          {/*  src={"/europeanroulette"}*/}
+          {/*  width="100%"*/}
+          {/*  height={500}*/}
+          {/*/>*/}
         </Col>
       </Row>
     </Container>

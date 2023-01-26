@@ -18,10 +18,10 @@ function RockClimber() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.obes}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={rockClimber} />
                         </div>
-                        <div className="tmb-title">Rock Climber</div>
+                        <div className="tmb-titl">Rock Climber</div>
                       </Link>
                     </div>
                   </div>

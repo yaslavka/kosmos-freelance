@@ -8,7 +8,7 @@ import question from '../../../assets/images/icons/about-m.svg'
 import money from '../../../assets/images/icons/briefcase.svg'
 import team from '../../../assets/images/icons/seo.svg'
 import logo from '../../../assets/images/icons/business.svg'
-// import luckyStar from '../../../assets/images/icons/stonks.svg'
+import luckyStar from '../../../assets/images/icons/stonks.svg'
 import starsUp from '../../../assets/images/icons/marketing.svg'
 import bbb from '../../../assets/images/icons/gamepad.svg'
 import gear from '../../../assets/images/icons/settings-met.svg'
@@ -64,18 +64,30 @@ const navbarLinks = [
     isDisabled: false,
     icon: logo,
   },
-  // {
-  //   label: 'premiumStars',
-  //   route: routes.premiumStars,
-  //   isDisabled: false,
-  //   icon: logo,
-  // },
-  // {
-  //   label: 'starTrek',
-  //   route: routes.starTrek,
-  //   isDisabled: false,
-  //   icon: logo,
-  // },
+  {
+    label: 'Rockets',
+    route: routes.rockets,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'Ion',
+    route: routes.ion,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'Royals',
+    route: routes.royal,
+    isDisabled: false,
+    icon: logo,
+  },
+  {
+    label: 'starTrek',
+    route: routes.starTrek,
+    isDisabled: false,
+    icon: logo,
+  },
   // {
   //   label: 'milkyway',
   //   route: routes.milkyway,
@@ -94,13 +106,13 @@ const navbarLinks = [
   //   isDisabled: false,
   //   icon: luckyStar,
   // },
-  // {
-  //   label: 'casino',
-  //   route: routes.casino,
-  //   isDisabled: false,
-  //   classImg: styles.gamepad,
-  //   icon: bbb,
-  // },
+  {
+    label: 'casino',
+    route: routes.casino,
+    isDisabled: false,
+    classImg: styles.gamepad,
+    icon: bbb,
+  },
   {
     label: 'aboutUs',
     route: routes.aboutUs,
@@ -117,6 +129,12 @@ const navbarLinks = [
   {
     label: 'settings',
     route: routes.settings,
+    isDisabled: false,
+    icon: gear,
+  },
+  {
+    label: 'mymaterial',
+    route: routes.educations,
     isDisabled: false,
     icon: gear,
   },

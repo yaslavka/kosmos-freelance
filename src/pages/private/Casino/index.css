@@ -98,7 +98,7 @@ i {
   background-image: url(./assets/img/sys/bg/sprite.png);
   background-repeat: no-repeat;
 }
-.tmb-img img {
+.tmb-imgz img {
   border: 2px solid #000;
   border-radius: 2px;
   -webkit-box-shadow: 0 0 1px rgb(121 131 153 / 85%);
@@ -113,11 +113,12 @@ i {
   -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
-.tmb-title {
+.tmb-titl {
   margin: 0 26px 0 1px;
   font-family: Arial,Helvetica,Verdana,Tahoma,sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 26px;
+  color: #96caef;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

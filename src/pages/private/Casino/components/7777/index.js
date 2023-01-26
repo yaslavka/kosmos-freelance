@@ -10,7 +10,7 @@ function Savethehamster() {
     '(min-width: 800px)'
   ]
   const [mobile, desktop] = useMatchMedia(queries)
-  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src="https://pervyimillion.host/savethehamster/mobile.html" width="100%" height={500}/>
+  if(mobile) return <iframe id="game-frame" allowFullScreen={"allowfullscreen"} autofocus src={"https://demo.evoplay.games/demo/socketgames/evoplay/savethehamster"} width="100%" height={500}/>
   return (
     <Container className="root-page">
       <Row>
@@ -24,11 +24,11 @@ function Savethehamster() {
               ?<iframe
                 id="game-frame"
                 allowFullScreen={"allowfullscreen"}
-                src="https://pervyimillion.host/nukeworld"
+                src="https://demo.evoplay.games/demo/socketgames/evoplay/savethehamster"
                 width="100%"
                 height={500}
               />
-              :<iframe id="game-frame" allowFullScreen src="https://pervyimillion.host/nukeworld/mobile.html"  width="100%" height={600} autofocus/>
+              :<iframe id="game-frame" allowFullScreen src="https://demo.evoplay.games/demo/socketgames/evoplay/savethehamster"  width="100%" height={600} autofocus/>
           }
         </Col>
       </Row>

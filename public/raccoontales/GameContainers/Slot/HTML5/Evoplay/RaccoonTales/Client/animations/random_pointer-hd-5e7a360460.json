@@ -1,0 +1,40 @@
+{
+"skeleton": { "hash": "gAcfW6MsWOM+AwWCUtQj4fu6DqY", "spine": "3.8.99", "x": -138, "y": -18.93, "width": 276, "height": 331 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "pointer", "parent": "root" }
+],
+"slots": [
+	{ "name": "pointer", "bone": "pointer", "color": "ffffff00", "attachment": "pointer" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"pointer": {
+				"pointer": { "y": 146.57, "width": 276, "height": 331 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle": {
+		"slots": {
+			"pointer": {
+				"color": [
+					{ "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"in": {
+		"slots": {
+			"pointer": {
+				"color": [
+					{ "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}

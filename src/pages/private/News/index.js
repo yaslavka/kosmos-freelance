@@ -8,7 +8,6 @@ import routes from '../../../constants/routes.constants'
 import NavBar from '../../../components/layout/Navbar'
 //import UserInfo from '../../../components/UserInfo'
 import NewsItemPage from './NewsItemPage'
-import NewsBlock from './NewsBlock'
 import NewsList from './NewsList'
 import { Spinner } from 'react-bootstrap'
 import Chat from "../Chat";

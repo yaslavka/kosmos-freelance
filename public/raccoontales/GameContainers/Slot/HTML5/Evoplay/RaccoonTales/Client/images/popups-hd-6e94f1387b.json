@@ -1,0 +1,255 @@
+{"frames": {
+
+"popup_dragon_ray":
+{
+	"frame": {"x":357,"y":2200,"w":154,"h":389},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":389},
+	"sourceSize": {"w":154,"h":389}
+},
+"Ring_of_Fire_Cycled_slow_00":
+{
+	"frame": {"x":2,"y":2,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_01":
+{
+	"frame": {"x":2,"y":425,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_02":
+{
+	"frame": {"x":2,"y":848,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_03":
+{
+	"frame": {"x":357,"y":2,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_04":
+{
+	"frame": {"x":357,"y":357,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_05":
+{
+	"frame": {"x":425,"y":712,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_06":
+{
+	"frame": {"x":425,"y":1135,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_07":
+{
+	"frame": {"x":780,"y":2,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_08":
+{
+	"frame": {"x":780,"y":357,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_09":
+{
+	"frame": {"x":780,"y":712,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_10":
+{
+	"frame": {"x":2,"y":1203,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_11":
+{
+	"frame": {"x":848,"y":1067,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_12":
+{
+	"frame": {"x":357,"y":1490,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_13":
+{
+	"frame": {"x":2,"y":1626,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_14":
+{
+	"frame": {"x":780,"y":1490,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_15":
+{
+	"frame": {"x":357,"y":1845,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_16":
+{
+	"frame": {"x":2,"y":2049,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_17":
+{
+	"frame": {"x":780,"y":1845,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_18":
+{
+	"frame": {"x":1203,"y":2,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_19":
+{
+	"frame": {"x":1203,"y":425,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_20":
+{
+	"frame": {"x":1203,"y":848,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_21":
+{
+	"frame": {"x":1203,"y":1271,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_22":
+{
+	"frame": {"x":1203,"y":1694,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_23":
+{
+	"frame": {"x":1203,"y":2117,"w":353,"h":421},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_24":
+{
+	"frame": {"x":1558,"y":2,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_25":
+{
+	"frame": {"x":1558,"y":425,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_26":
+{
+	"frame": {"x":1558,"y":848,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_27":
+{
+	"frame": {"x":1558,"y":1271,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+},
+"Ring_of_Fire_Cycled_slow_28":
+{
+	"frame": {"x":1558,"y":1694,"w":353,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":353,"h":421},
+	"sourceSize": {"w":353,"h":421}
+}},
+"animations": {
+	"Ring_of_Fire_Cycled_slow": ["Ring_of_Fire_Cycled_slow_00","Ring_of_Fire_Cycled_slow_01","Ring_of_Fire_Cycled_slow_02","Ring_of_Fire_Cycled_slow_03","Ring_of_Fire_Cycled_slow_04","Ring_of_Fire_Cycled_slow_05","Ring_of_Fire_Cycled_slow_06","Ring_of_Fire_Cycled_slow_07","Ring_of_Fire_Cycled_slow_08","Ring_of_Fire_Cycled_slow_09","Ring_of_Fire_Cycled_slow_10","Ring_of_Fire_Cycled_slow_11","Ring_of_Fire_Cycled_slow_12","Ring_of_Fire_Cycled_slow_13","Ring_of_Fire_Cycled_slow_14","Ring_of_Fire_Cycled_slow_15","Ring_of_Fire_Cycled_slow_16","Ring_of_Fire_Cycled_slow_17","Ring_of_Fire_Cycled_slow_18","Ring_of_Fire_Cycled_slow_19","Ring_of_Fire_Cycled_slow_20","Ring_of_Fire_Cycled_slow_21","Ring_of_Fire_Cycled_slow_22","Ring_of_Fire_Cycled_slow_23","Ring_of_Fire_Cycled_slow_24","Ring_of_Fire_Cycled_slow_25","Ring_of_Fire_Cycled_slow_26","Ring_of_Fire_Cycled_slow_27","Ring_of_Fire_Cycled_slow_28"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "popups-hd.jpg",
+	"format": "RGB888",
+	"size": {"w":1913,"h":2472},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:71286330aa235657ddeee8cb4d1a95f9:cd907089c60623087c4f5bc19293bd65:93532cbe777052cb937768b7db3ece53$"
+}
+}

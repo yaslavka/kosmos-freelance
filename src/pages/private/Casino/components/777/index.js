@@ -12,11 +12,17 @@ function Blacsd() {
         <Col xl={7}>
           <Spin />
           <iframe
-            src={"/starguardians"}
+            src={"https://demo.evoplay.games/demo/fullstate/html5/evoplay/starguardians"}
             width="100%"
             height={500}
             allowFullScreen
           />
+          {/*<iframe*/}
+          {/*  src={"/starguardians"}*/}
+          {/*  width="100%"*/}
+          {/*  height={500}*/}
+          {/*  allowFullScreen*/}
+          {/*/>*/}
         </Col>
       </Row>
     </Container>

@@ -18,10 +18,10 @@ function Fruit() {
                         <div className="icoc icoc-tmb-fav"/>
                       </div>
                       <Link to={routes.rollet}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={Coktail} />
                         </div>
-                        <div className="tmb-title">Fruit Cocktail</div>
+                        <div className="tmb-titl">Fruit Cocktail</div>
                       </Link>
                     </div>
                   </div>

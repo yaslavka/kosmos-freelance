@@ -3,19 +3,18 @@ import {useTranslation} from "react-i18next";
 import cl from './MyModal.module.css';
 import {api} from "../../../../../../api";
 import FORMRURpauer from "./FORMRURpauer";
-import logo from './inkof.png'
+import logo from '../../../../../../assets/images/payeer-logo.8aa750cc.svg'
 import * as yup from 'yup'
-import Freekassa from "../freekassa";
 import FORMRURfrikassa from "./FORMRURfrikassa";
 
 
 const validationSchem = yup.object({
-  Amount: yup
+  amount: yup
     .number()
     .typeError('Сумма должно быть числом')
     .positive('Сумма должна быть положительной')
     .required('Необходимо заполнить это поле')
-    .min(600,'минимальная сумма 600р')
+    .min(1,'минимальная сумма 600р')
 })
 const validationSchema = yup.object({
   amount: yup
@@ -35,15 +34,15 @@ const CreatePayrur =({title,titles, modalrur, setModalrur, userInfo, freekassa, 
   const rootClasses = [cl.modalBlock]
   const rootContentClasses = [cl.modalContent]
   const [isCurrencyAndCount, setIsCurrencyAndCount] = useState({count: '', currency: ''})
-  const submitCreatePayeerPayForm = ({ Amount }) => {
+  const submitCreatePayeerPayForm = ({ amount }) => {
     api
-      .createPayeerPay({ Amount:`${Amount}.00`*100,  OrderId:`${+(new Date())}:${userInfo.username}`, TerminalKey:'1670485393713'})
-      .then((response) => {
-        if (response.data.PaymentURL) {
-          window.location.replace(response.data.PaymentURL)
+      .createPayeerPay({amount: Number(amount)})
+      .then(async response => {
+        if (response.url) {
+          window.location.replace(response.url);
         }
       })
-      .catch(() => {})
+      .catch(() => {});
   }
 
   const submitCreatePayForm = ({ amount }) => {
@@ -66,18 +65,6 @@ const CreatePayrur =({title,titles, modalrur, setModalrur, userInfo, freekassa, 
             <h3 className={cl.modalTitle}>{title}</h3>
             <p className={cl.modalDescr}>{titles}</p>
             <div className={cl.btnBlock}>
-              {/*<img src={logo} role={"button"} alt={''} onClick={(e)=>{e.preventDefault();setModals(true);}}/>*/}
-              {/*<FORMRURpauer*/}
-              {/*  currencyAndCount={isCurrencyAndCount}*/}
-              {/*  changeCurrencyAndCount={setIsCurrencyAndCount}*/}
-              {/*  title={`${t('private.finances.sum')}`}*/}
-              {/*  setModals={setModals} modals={modals}*/}
-              {/*  initialValues={initialValue}*/}
-              {/*  validationSchema={validationSchem}*/}
-              {/*  userInfo={userInfo}*/}
-              {/*  submitCreatePayeerPayForm={submitCreatePayeerPayForm}*/}
-              {/*/>*/}
-              {/*<Freekassa setModals={setFreekassa}/>*/}
               <img width={350} src="https://www.free-kassa.ru/banner/logomail.png" role={"button"} onClick={(e)=>{e.preventDefault();setFreekassa(true);}}/>
              <FORMRURfrikassa
                initialValues={initialValues}
@@ -87,6 +74,19 @@ const CreatePayrur =({title,titles, modalrur, setModalrur, userInfo, freekassa, 
                freekassa={freekassa}
                setFreekassa={setFreekassa}
              />
+            </div>
+            <div className={cl.btnBlock}>
+              <img src={logo} role={"button"} alt={''} onClick={(e)=>{e.preventDefault();setModals(true);}}/>
+              <FORMRURpauer
+                currencyAndCount={isCurrencyAndCount}
+                changeCurrencyAndCount={setIsCurrencyAndCount}
+                title={`${t('private.finances.sum')}`}
+                setModals={setModals} modals={modals}
+                initialValues={initialValues}
+                validationSchema={validationSchem}
+                userInfo={userInfo}
+                submitCreatePayeerPayForm={submitCreatePayeerPayForm}
+              />
             </div>
           </div>
         </div>

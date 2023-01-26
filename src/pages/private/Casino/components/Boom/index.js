@@ -12,9 +12,12 @@ function Booom() {
         </Col>
         <Col xl={8}>
           <Spin />
-          <iframe src={"/garage"} width="100%"
+          <iframe src={"https://aplaydemo.slotwalker.com/game/fullstate/html5/igrosoft/garagev2/?project=294&user_id=6edfb55b-7ed8-4c57-b44d-b62ddf4e5310&demo=1&wid=1&s=9a2378fe5cd3d413dc98532f74eddef8"} width="100%"
                   allowFullScreen
                   height={500} />
+          {/*<iframe src={"/garage"} width="100%"*/}
+          {/*        allowFullScreen*/}
+          {/*        height={500} />*/}
         </Col>
       </Row>
     </Container>

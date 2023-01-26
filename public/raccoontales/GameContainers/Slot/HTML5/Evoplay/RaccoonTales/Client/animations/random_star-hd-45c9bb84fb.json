@@ -1,0 +1,167 @@
+{
+"skeleton": { "hash": "Txw1lzZck1TJsYjEhP43s8CtqqU", "spine": "3.8.99", "x": 8.8, "y": 635.5, "width": 61.87, "height": 60.62 },
+"bones": [
+	{ "name": "root", "scaleX": 0.9, "scaleY": 0.9 },
+	{ "name": "stars_comet", "parent": "root", "x": 44.15, "y": 739.79 },
+	{ "name": "bone", "parent": "stars_comet", "x": -0.46, "y": 12.91 },
+	{ "name": "star_comet", "parent": "stars_comet" },
+	{ "name": "star_comet2", "parent": "stars_comet", "scaleX": 0.8751, "scaleY": 0.8751 }
+],
+"slots": [
+	{ "name": "star_comet", "bone": "star_comet", "color": "ffffff00", "attachment": "star_sky1" },
+	{ "name": "star_comet2", "bone": "star_comet2", "color": "ffffff00", "attachment": "star_sky1" },
+	{ "name": "asca", "bone": "bone" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"asca": {
+				"cometa_00000_00000": { "width": 480, "height": 171 },
+				"cometa_00000_00002": { "width": 480, "height": 171 },
+				"cometa_00000_00004": { "width": 480, "height": 171 },
+				"cometa_00000_00006": { "width": 480, "height": 171 },
+				"cometa_00000_00008": { "width": 480, "height": 171 }
+			},
+			"star_comet": {
+				"star_sky1": { "scaleX": 0.4614, "scaleY": 0.4614, "width": 149, "height": 146 }
+			},
+			"star_comet2": {
+				"star_sky1": { "scaleX": 0.3763, "scaleY": 0.3763, "rotation": -31.26, "width": 149, "height": 146 }
+			}
+		}
+	}
+],
+"events": {
+	"hit": {}
+},
+"animations": {
+	"idle": {
+		"slots": {
+			"asca": {
+				"attachment": [
+					{ "name": "cometa_00000_00000" },
+					{ "time": 0.0333, "name": "cometa_00000_00002" },
+					{ "time": 0.1, "name": "cometa_00000_00004" },
+					{ "time": 0.1333, "name": "cometa_00000_00006" },
+					{ "time": 0.1667, "name": "cometa_00000_00008" },
+					{ "time": 0.2333, "name": "cometa_00000_00000" },
+					{ "time": 0.2667, "name": "cometa_00000_00002" },
+					{ "time": 0.3, "name": "cometa_00000_00004" },
+					{ "time": 0.3667, "name": "cometa_00000_00006" },
+					{ "time": 0.4, "name": "cometa_00000_00008" },
+					{ "time": 0.4667, "name": "cometa_00000_00000" },
+					{ "time": 0.5, "name": "cometa_00000_00002" },
+					{ "time": 0.5333, "name": "cometa_00000_00004" },
+					{ "time": 0.6, "name": "cometa_00000_00006" },
+					{ "time": 0.6333, "name": "cometa_00000_00008" },
+					{ "time": 0.6667, "name": "cometa_00000_00000" },
+					{ "time": 0.7333, "name": "cometa_00000_00002" },
+					{ "time": 0.7667, "name": "cometa_00000_00004" },
+					{ "time": 0.8, "name": "cometa_00000_00006" },
+					{ "time": 0.8667, "name": "cometa_00000_00008" },
+					{ "time": 0.9, "name": "cometa_00000_00000" },
+					{ "time": 0.9333, "name": "cometa_00000_00002" },
+					{ "time": 1, "name": "cometa_00000_00004" },
+					{ "time": 1.0333, "name": "cometa_00000_00006" },
+					{ "time": 1.1, "name": "cometa_00000_00008" },
+					{ "time": 1.1333, "name": "cometa_00000_00000" },
+					{ "time": 1.1667, "name": "cometa_00000_00002" },
+					{ "time": 1.2333, "name": "cometa_00000_00004" },
+					{ "time": 1.2667, "name": "cometa_00000_00006" },
+					{ "time": 1.3, "name": "cometa_00000_00008" },
+					{ "time": 1.3667, "name": "cometa_00000_00000" },
+					{ "time": 1.4, "name": "cometa_00000_00002" },
+					{ "time": 1.4333, "name": "cometa_00000_00004" },
+					{ "time": 1.5, "name": "cometa_00000_00006" },
+					{ "time": 1.5333, "name": "cometa_00000_00008" },
+					{ "time": 1.5667, "name": "cometa_00000_00000" },
+					{ "time": 1.6333, "name": "cometa_00000_00002" },
+					{ "time": 1.6667, "name": "cometa_00000_00004" },
+					{ "time": 1.7333, "name": "cometa_00000_00006" },
+					{ "time": 1.7667, "name": "cometa_00000_00008" },
+					{ "time": 1.8, "name": "cometa_00000_00000" },
+					{ "time": 1.8667, "name": "cometa_00000_00002" },
+					{ "time": 1.9, "name": "cometa_00000_00004" },
+					{ "time": 1.9333, "name": "cometa_00000_00006" },
+					{ "time": 2, "name": "cometa_00000_00008" }
+				]
+			},
+			"star_comet": {
+				"color": [
+					{ "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.3667, "color": "ffffff00" }
+				]
+			},
+			"star_comet2": {
+				"color": [
+					{ "color": "ffffffff", "curve": "stepped" },
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 1.3667, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"stars_comet": {
+				"rotate": [
+					{ "angle": 10.51 },
+					{ "time": 1.3333, "angle": 7.96 }
+				],
+				"translate": [
+					{ "x": -29.53, "y": -99.22, "curve": 0.545, "c4": 0.68 },
+					{ "time": 1.3333, "x": 1057.12, "y": -1058.07 }
+				]
+			},
+			"star_comet": {
+				"rotate": [
+					{},
+					{ "time": 0.2333, "angle": 90 },
+					{ "time": 0.5, "angle": 180 },
+					{ "time": 0.7333, "angle": -120 },
+					{ "time": 1 },
+					{ "time": 1.2333, "angle": 90 },
+					{ "time": 1.5, "angle": 180 },
+					{ "time": 1.7333, "angle": -120 },
+					{ "time": 2 }
+				],
+				"scale": [
+					{ "curve": 0.562, "c3": 0.361 },
+					{ "time": 0.2333, "x": 0.807, "y": 0.807, "curve": 0.562, "c3": 0.361 },
+					{ "time": 0.5, "x": 1.096, "y": 1.096, "curve": 0.562, "c3": 0.361 },
+					{ "time": 0.7333, "x": 0.807, "y": 0.807, "curve": 0.562, "c3": 0.361 },
+					{ "time": 1, "x": 1.096, "y": 1.096, "curve": 0.562, "c3": 0.361 },
+					{ "time": 1.2333, "x": 0.807, "y": 0.807, "curve": 0.562, "c3": 0.361 },
+					{ "time": 1.5, "x": 1.096, "y": 1.096, "curve": 0.562, "c3": 0.361 },
+					{ "time": 1.7333, "x": 0.807, "y": 0.807, "curve": 0.562, "c3": 0.361 },
+					{ "time": 2 }
+				]
+			},
+			"star_comet2": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "angle": -90 },
+					{ "time": 0.6667, "angle": 180 },
+					{ "time": 1 },
+					{ "time": 1.3333, "angle": -90 },
+					{ "time": 1.6667, "angle": 180 },
+					{ "time": 2 }
+				]
+			},
+			"bone": {
+				"rotate": [
+					{ "angle": -55.4 }
+				],
+				"translate": [
+					{ "x": -78.02, "y": 106.28 }
+				]
+			}
+		},
+		"drawOrder": [
+			{},
+			{ "time": 0.7333 },
+			{ "time": 2 }
+		]
+	}
+}
+}

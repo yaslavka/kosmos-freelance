@@ -76,8 +76,7 @@ function Summary() {
             disabled={isLoadingPublish}
             className={cl.summaryBtnDownload}
             onClick={downloadSummary}
-            color="link"
-          >
+            color="link">
             <Icon iconName="download" />
           </Button>
 

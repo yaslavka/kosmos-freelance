@@ -22,8 +22,7 @@ const StarsUp = () => {
   }
   const handleSubmit = e => {
     e.preventDefault()
-    api.investBox(userData).then().catch(() => {
-    })
+    api.promocode(userData)
   }
 
   return (

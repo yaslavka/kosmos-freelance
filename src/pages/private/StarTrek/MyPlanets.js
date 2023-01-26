@@ -17,33 +17,17 @@ function MyPlanets() {
   const { t } = useTranslation('common');
   const history = useHistory()
   const dispatch = useDispatch()
-  const startrekState = useSelector((state) => state.startrek)
   const list = useSelector((state) => state.startrek.list)
   const selected = useSelector((state) => state.startrek.selected)
   const isLoading = useSelector((state) => state.startrek.loadings.list)
   const isUpdateLoading = useSelector((state) => state.startrek.loadings.update)
-  const user = useSelector(state => state.app.user);
-  const { total, page } = useSelector((state) => state.startrek.meta)
-  const { limit } = useSelector((state) => state.startrek.query)
-  const start = dayjs().tz('Europe/Minsk').startOf('date')
-  const end = start.add(10, 'hour')
 
 
 
-  const isDisable = useMemo(() => {
-    return dayjs().isBetween(start, end)
-  }, [start, end])
 
   useEffect(() => {
     dispatch(actions.startrekPlanets())
   }, [dispatch])
-
-  const handleOnChangePage = useCallback(
-    (page) => {
-      dispatch(actions.setStartrekPlanetsPage(page))
-    },
-    [dispatch],
-  )
 
   const handleOnPlanetsUpdate = async () => {
     const planetLength = selected.length
@@ -75,11 +59,7 @@ function MyPlanets() {
     console.log(data)
   },[])
 
-  const rendererTimer = ({ hours, minutes, seconds }) => (
-    <span>
-      {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-    </span>
-  )
+
   const [solaryList, setSolaryList]  = useState([{count: 0, namePlanet: 'Mercury', classItem:['mercury-line-1'], classPlanet: ['mercury active-planet'], classDescr: ['mercury-descr planet-descr'], descr: 'mercury'},
   {count: 1, namePlanet: 'Venus', classItem:['venus-line-1'], classPlanet: ['venus'], classDescr: ['venus-descr planet-descr'], descr: 'venus'},
   {count: 2, namePlanet: 'Earth', classItem:['earth-line-1'], classPlanet: ['earth'], classDescr: ['earth-descr planet-descr'], descr: 'earth'},

@@ -11,7 +11,7 @@ function Nukeworld() {
     '(f)'
   ]
   const [mobile, desktop] = useMatchMedia(queries)
-  if(mobile) return <iframe id="game-frame"  title={'Nuke World'} allowFullScreen={true} autofocus={true} src={'/nukeworld/mobile.html'} height={500}/>
+  if(mobile) return <iframe id="game-frame"  title={'Nuke World'} allowFullScreen={true} autofocus={true} src={'https://demo.evoplay.games/demo/fullstate/html5/evoplay/nukeworld'} height={500}/>
     return(
      <>
        {
@@ -29,12 +29,45 @@ function Nukeworld() {
                    allowFullScreen={true}
                    width="100%"
                    title={'Nuke World'}
-                   src={'/nukeworld/index.html'}
+                   src={'https://demo.evoplay.games/demo/fullstate/html5/evoplay/nukeworld'}
                    height={400}
                  />
                </Col>
              </Row>
-           </Container>:<iframe id="game-frame"  title={'Nuke World'} allowFullScreen={true} src={'/nukeworld/mobile.html'}  autofocus={true}  height={500}/>}
+           </Container>:
+           <iframe
+             id="game-frame"
+             title={'Nuke World'}
+             allowFullScreen={true}
+             src={'https://demo.evoplay.games/demo/fullstate/html5/evoplay/nukeworld'}
+             autofocus={true}  height={500}/>}
+       {/*{*/}
+       {/*  desktop*/}
+       {/*    ?*/}
+       {/*    <Container className="root-page" title={'Nuke World'}>*/}
+       {/*      <Row>*/}
+       {/*        <Col xl={3} className="d-none d-xl-block">*/}
+       {/*          <NavBar />*/}
+       {/*        </Col>*/}
+       {/*        <Col xl={7}>*/}
+       {/*          <Spin />*/}
+       {/*          <iframe*/}
+       {/*            id="game-frame"*/}
+       {/*            allowFullScreen={true}*/}
+       {/*            width="100%"*/}
+       {/*            title={'Nuke World'}*/}
+       {/*            src={'/nukeworld/index.html'}*/}
+       {/*            height={400}*/}
+       {/*          />*/}
+       {/*        </Col>*/}
+       {/*      </Row>*/}
+       {/*    </Container>:*/}
+       {/*    <iframe*/}
+       {/*      id="game-frame"*/}
+       {/*      title={'Nuke World'}*/}
+       {/*      allowFullScreen={true}*/}
+       {/*      src={'/nukeworld/mobile.html'}*/}
+       {/*      autofocus={true}  height={500}/>}*/}
      </>
 
     )

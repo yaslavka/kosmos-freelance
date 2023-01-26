@@ -12,9 +12,12 @@ function Cost() {
         </Col>
         <Col xl={7}>
           <Spin />
-          <iframe src={"/lucky_haunter"} width="100%"
+          <iframe src={"https://aplaydemo.slotwalker.com/game/fullstate/html5/igrosoft/luckyhaunterv2/?project=294&user_id=a9a38c73-f9c6-4a0a-9c80-5e7817cdbdb7&demo=1&wid=1&s=64907cc30d9ff490cf909c63908ff16b"} width="100%"
                   allowFullScreen
                   height={500} />
+          {/*<iframe src={"/lucky_haunter"} width="100%"*/}
+          {/*        allowFullScreen*/}
+          {/*        height={500} />*/}
         </Col>
       </Row>
     </Container>

@@ -157,7 +157,7 @@ function Dashboard() {
                     </div>
                   </div>
                 </Col>
-                <Chat/>
+                <Chat />
               </>
             )}
 

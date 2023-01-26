@@ -18,10 +18,10 @@ function MagicWheel() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.magicwhee}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={luckyHaunter} />
                         </div>
-                        <div className="tmb-title">Magic Wheel</div>
+                        <div className="tmb-titl">Magic Wheel</div>
                       </Link>
                     </div>
                   </div>

@@ -1,0 +1,40 @@
+{
+"skeleton": { "hash": "DiiMRubKzSBJcZ9mcFkWK35LsZE", "spine": "3.8.99", "x": -87, "y": -5.65, "width": 174, "height": 181 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "cakes", "parent": "root" }
+],
+"slots": [
+	{ "name": "cakes", "bone": "cakes", "color": "ffffff00", "attachment": "cakes" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"cakes": {
+				"cakes": { "y": 84.85, "width": 174, "height": 181 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle": {
+		"slots": {
+			"cakes": {
+				"color": [
+					{ "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"in": {
+		"slots": {
+			"cakes": {
+				"color": [
+					{ "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}

@@ -18,10 +18,10 @@ function Treeoflight() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.lacs}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={treeoflight} />
                         </div>
-                        <div className="tmb-title">Treeo flight</div>
+                        <div className="tmb-titl">Treeo flight</div>
                       </Link>
                     </div>
                   </div>

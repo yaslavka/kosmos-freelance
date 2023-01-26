@@ -19,10 +19,10 @@ const City = () => {
                         <div className="icoc icoc-tmb-fav"/>
                       </div>
                       <Link to={routes.megacity} >
-                        <div className="tmb-img" style={{width:"400px", marginLeft:"10px" }}>
+                        <div className="tmb-imgz" style={{width:"400px", marginLeft:"10px" }}>
                           <img alt={Coktail} src={Coktail} style={{height:"105px", }}/>
                         </div>
-                        <div className="tmb-title">Book of ra</div>
+                        <div className="tmb-titl">Book of ra</div>
                       </Link>
                     </div>
                   </div>

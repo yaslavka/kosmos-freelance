@@ -18,10 +18,10 @@ function AnimalQuest() {
                         <div className="icoc icoc-tmb-fav"></div>
                       </div>
                       <Link to={routes.roll}>
-                        <div className="tmb-img">
+                        <div className="tmb-imgz">
                           <img src={Coktail} />
                         </div>
-                        <div className="tmb-title">Animal Quest</div>
+                        <div className="tmb-titl">Animal Quest</div>
                       </Link>
                     </div>
                   </div>

@@ -12,10 +12,15 @@ function DICE() {
         <Col xl={7}>
           <Spin />
           <iframe
-            src={"/fairyland2"}
+            src={"https://aplaydemo.slotwalker.com/game/fullstate/html5/belatra/fairyland2/?project=294&user_id=c5be57a4-ffc8-4542-8ada-a466e1df32b7&demo=1&wid=1&s=9cfee95755a85ed32ed686dd8571ace5"}
             width="100%"
             allowFullScreen
             height={500} />
+          {/*<iframe*/}
+          {/*  src={"/fairyland2"}*/}
+          {/*  width="100%"*/}
+          {/*  allowFullScreen*/}
+          {/*  height={500} />*/}
         </Col>
       </Row>
     </Container>
